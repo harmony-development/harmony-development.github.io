@@ -42,6 +42,10 @@
         color: var(--on-header-seconday);
         text-decoration: none;
         margin-left: 16px;
+
+        &:last-child {
+            font-weight: 900;
+        }
     }
 }
 

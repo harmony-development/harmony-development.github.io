@@ -20,3 +20,17 @@
         margin-top: 10px;
     }
 }
+
+.harmony-card {
+    max-width: 300px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.harmony-card-collection {
+    max-width: 1000px;
+    margin: 20px auto 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
