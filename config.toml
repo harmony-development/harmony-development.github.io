@@ -1,0 +1,27 @@
+baseURL = "http://example.org/"
+languageCode = "en-us"
+title = "Nushell"
+theme = "nu"
+
+[params]
+    description = "The modern and powerful shell."
+
+[menu]
+
+  [[menu.main]]
+    identifier = "home"
+    name = "Home"
+    url = "/"
+    weight = -110
+
+  [[menu.main]]
+    identifier = "github"
+    name = "Github"
+    url = "https://github.com/harmony-development"
+    weight = -90
+
+  [[menu.main]]
+    identifier = "trynow"
+    name = "Try Now"
+    url = "https://staccato.harmonychat.vercel.app"
+    weight = -80
