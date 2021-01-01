@@ -1,1 +1,0 @@
-(window.webpackJsonp=window.webpackJsonp||[]).push([[10],{608:function(e,n,t){"use strict";t.r(n);var o=t(0).a.extend({components:{},beforeCreate:function(){this.$router.push("/entry/serverselect")}}),r=t(59),component=Object(r.a)(o,void 0,void 0,!1,null,null,null);n.default=component.exports}}]);
