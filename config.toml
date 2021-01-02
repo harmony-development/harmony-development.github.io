@@ -23,5 +23,5 @@ theme = "nu"
   [[menu.main]]
     identifier = "trynow"
     name = "Try Now"
-    url = "https://staccato.harmonychat.vercel.app"
+    url = "https://tempest.bluskript.vercel.app"
     weight = -80
