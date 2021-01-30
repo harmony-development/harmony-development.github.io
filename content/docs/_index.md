@@ -6,7 +6,6 @@
 
 Harmony is designed to be simple to implement, both for the server and client.
 
-## Protocol Reference
+## Pages
 
-You can view a reference of our protocol, generated from our Protocol Buffers
-files [here]({{< ref "reference" >}}).
+This section contains the following pages:
