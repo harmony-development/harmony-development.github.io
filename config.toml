@@ -15,6 +15,12 @@ theme = "nu"
     weight = -110
 
   [[menu.main]]
+    identifier = "docs"
+    name = "Docs"
+    url = "/docs"
+    weight = -105
+
+  [[menu.main]]
     identifier = "github"
     name = "Github"
     url = "https://github.com/harmony-development"

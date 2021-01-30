@@ -12,7 +12,7 @@ Get Harmony
 {{< index/cardcollection >}}
 
 {{< index/card "Simple" >}}
-Harmony is so simple you already know how to use it.
+For users and devs alike, Harmony's so simple you already know how to use it.
 {{< /index/card >}}
 
 {{< index/card "Private" >}}
@@ -20,7 +20,7 @@ Harmony chats belong to you and your friends, not to anyone else.
 {{< /index/card >}}
 
 {{< index/card "Shareable" >}}
-Harmony lets you easily share your chats with your friends.
+Harmony lets you easily share your chats and media with your friends.
 {{< /index/card >}}
 
 {{< index/card "Open Source" >}}
