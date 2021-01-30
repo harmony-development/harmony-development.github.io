@@ -69,9 +69,133 @@
     </div>
 </header><main class="nu-content">
 <h2 class="h1">Reference: protocol.chat.v1</h2>
+
+<details>
+<summary>Table Of Contents</summary>
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#message-types">Message Types</a>
+      <ul>
+        <li><a href="#getuserrequest">GetUserRequest</a></li>
+        <li><a href="#getuserresponse">GetUserResponse</a></li>
+        <li><a href="#getusermetadatarequest">GetUserMetadataRequest</a></li>
+        <li><a href="#getusermetadataresponse">GetUserMetadataResponse</a></li>
+        <li><a href="#profileupdaterequest">ProfileUpdateRequest</a></li>
+        <li><a href="#createguildrequest">CreateGuildRequest</a></li>
+        <li><a href="#createguildresponse">CreateGuildResponse</a></li>
+        <li><a href="#createinviterequest">CreateInviteRequest</a></li>
+        <li><a href="#createinviteresponse">CreateInviteResponse</a></li>
+        <li><a href="#getguildlistrequest">GetGuildListRequest</a></li>
+        <li><a href="#getguildlistresponse">GetGuildListResponse</a></li>
+        <li><a href="#getguildrequest">GetGuildRequest</a></li>
+        <li><a href="#getguildresponse">GetGuildResponse</a></li>
+        <li><a href="#getguildinvitesrequest">GetGuildInvitesRequest</a></li>
+        <li><a href="#getguildinvitesresponse">GetGuildInvitesResponse</a></li>
+        <li><a href="#getguildmembersrequest">GetGuildMembersRequest</a></li>
+        <li><a href="#getguildmembersresponse">GetGuildMembersResponse</a></li>
+        <li><a href="#updateguildinformationrequest">UpdateGuildInformationRequest</a></li>
+        <li><a href="#deleteguildrequest">DeleteGuildRequest</a></li>
+        <li><a href="#deleteinviterequest">DeleteInviteRequest</a></li>
+        <li><a href="#joinguildrequest">JoinGuildRequest</a></li>
+        <li><a href="#joinguildresponse">JoinGuildResponse</a></li>
+        <li><a href="#previewguildrequest">PreviewGuildRequest</a></li>
+        <li><a href="#previewguildresponse">PreviewGuildResponse</a></li>
+        <li><a href="#leaveguildrequest">LeaveGuildRequest</a></li>
+        <li><a href="#addguildtoguildlistrequest">AddGuildToGuildListRequest</a></li>
+        <li><a href="#addguildtoguildlistresponse">AddGuildToGuildListResponse</a></li>
+        <li><a href="#removeguildfromguildlistrequest">RemoveGuildFromGuildListRequest</a></li>
+        <li><a href="#removeguildfromguildlistresponse">RemoveGuildFromGuildListResponse</a></li>
+        <li><a href="#getguildlistresponseguildlistentry">GetGuildListResponse.GuildListEntry</a></li>
+        <li><a href="#getguildinvitesresponseinvite">GetGuildInvitesResponse.Invite</a></li>
+        <li><a href="#createchannelrequest">CreateChannelRequest</a></li>
+        <li><a href="#createchannelresponse">CreateChannelResponse</a></li>
+        <li><a href="#getguildchannelsrequest">GetGuildChannelsRequest</a></li>
+        <li><a href="#getguildchannelsresponse">GetGuildChannelsResponse</a></li>
+        <li><a href="#updatechannelinformationrequest">UpdateChannelInformationRequest</a></li>
+        <li><a href="#updatechannelorderrequest">UpdateChannelOrderRequest</a></li>
+        <li><a href="#deletechannelrequest">DeleteChannelRequest</a></li>
+        <li><a href="#typingrequest">TypingRequest</a></li>
+        <li><a href="#getguildchannelsresponsechannel">GetGuildChannelsResponse.Channel</a></li>
+        <li><a href="#getchannelmessagesrequest">GetChannelMessagesRequest</a></li>
+        <li><a href="#getchannelmessagesresponse">GetChannelMessagesResponse</a></li>
+        <li><a href="#getmessagerequest">GetMessageRequest</a></li>
+        <li><a href="#getmessageresponse">GetMessageResponse</a></li>
+        <li><a href="#updatemessagerequest">UpdateMessageRequest</a></li>
+        <li><a href="#deletemessagerequest">DeleteMessageRequest</a></li>
+        <li><a href="#triggeractionrequest">TriggerActionRequest</a></li>
+        <li><a href="#sendmessagerequest">SendMessageRequest</a></li>
+        <li><a href="#sendmessageresponse">SendMessageResponse</a></li>
+        <li><a href="#createemotepackrequest">CreateEmotePackRequest</a></li>
+        <li><a href="#createemotepackresponse">CreateEmotePackResponse</a></li>
+        <li><a href="#getemotepacksrequest">GetEmotePacksRequest</a></li>
+        <li><a href="#getemotepacksresponse">GetEmotePacksResponse</a></li>
+        <li><a href="#getemotepackemotesrequest">GetEmotePackEmotesRequest</a></li>
+        <li><a href="#getemotepackemotesresponse">GetEmotePackEmotesResponse</a></li>
+        <li><a href="#addemotetopackrequest">AddEmoteToPackRequest</a></li>
+        <li><a href="#deleteemotefrompackrequest">DeleteEmoteFromPackRequest</a></li>
+        <li><a href="#deleteemotepackrequest">DeleteEmotePackRequest</a></li>
+        <li><a href="#dequipemotepackrequest">DequipEmotePackRequest</a></li>
+        <li><a href="#getemotepacksresponseemotepack">GetEmotePacksResponse.EmotePack</a></li>
+        <li><a href="#getemotepackemotesresponseemote">GetEmotePackEmotesResponse.Emote</a></li>
+        <li><a href="#querypermissionsrequest">QueryPermissionsRequest</a></li>
+        <li><a href="#querypermissionsresponse">QueryPermissionsResponse</a></li>
+        <li><a href="#permission">Permission</a></li>
+        <li><a href="#permissionlist">PermissionList</a></li>
+        <li><a href="#setpermissionsrequest">SetPermissionsRequest</a></li>
+        <li><a href="#getpermissionsrequest">GetPermissionsRequest</a></li>
+        <li><a href="#getpermissionsresponse">GetPermissionsResponse</a></li>
+        <li><a href="#role">Role</a></li>
+        <li><a href="#moverolerequest">MoveRoleRequest</a></li>
+        <li><a href="#moveroleresponse">MoveRoleResponse</a></li>
+        <li><a href="#getguildrolesrequest">GetGuildRolesRequest</a></li>
+        <li><a href="#getguildrolesresponse">GetGuildRolesResponse</a></li>
+        <li><a href="#addguildrolerequest">AddGuildRoleRequest</a></li>
+        <li><a href="#addguildroleresponse">AddGuildRoleResponse</a></li>
+        <li><a href="#deleteguildrolerequest">DeleteGuildRoleRequest</a></li>
+        <li><a href="#modifyguildrolerequest">ModifyGuildRoleRequest</a></li>
+        <li><a href="#manageuserrolesrequest">ManageUserRolesRequest</a></li>
+        <li><a href="#getuserrolesrequest">GetUserRolesRequest</a></li>
+        <li><a href="#getuserrolesresponse">GetUserRolesResponse</a></li>
+        <li><a href="#streameventsrequest">StreamEventsRequest</a></li>
+        <li><a href="#event">Event</a></li>
+        <li><a href="#streameventsrequestsubscribetoguild">StreamEventsRequest.SubscribeToGuild</a></li>
+        <li><a href="#streameventsrequestsubscribetoactions">StreamEventsRequest.SubscribeToActions</a></li>
+        <li><a href="#streameventsrequestsubscribetohomeserverevents">StreamEventsRequest.SubscribeToHomeserverEvents</a></li>
+        <li><a href="#eventmessagesent">Event.MessageSent</a></li>
+        <li><a href="#eventmessageupdated">Event.MessageUpdated</a></li>
+        <li><a href="#eventmessagedeleted">Event.MessageDeleted</a></li>
+        <li><a href="#eventchannelcreated">Event.ChannelCreated</a></li>
+        <li><a href="#eventchannelupdated">Event.ChannelUpdated</a></li>
+        <li><a href="#eventchanneldeleted">Event.ChannelDeleted</a></li>
+        <li><a href="#eventguildupdated">Event.GuildUpdated</a></li>
+        <li><a href="#eventguilddeleted">Event.GuildDeleted</a></li>
+        <li><a href="#eventmemberjoined">Event.MemberJoined</a></li>
+        <li><a href="#eventmemberleft">Event.MemberLeft</a></li>
+        <li><a href="#eventguildaddedtolist">Event.GuildAddedToList</a></li>
+        <li><a href="#eventguildremovedfromlist">Event.GuildRemovedFromList</a></li>
+        <li><a href="#eventactionperformed">Event.ActionPerformed</a></li>
+        <li><a href="#eventrolemoved">Event.RoleMoved</a></li>
+        <li><a href="#eventprofileupdated">Event.ProfileUpdated</a></li>
+        <li><a href="#eventtyping">Event.Typing</a></li>
+        <li><a href="#syncrequest">SyncRequest</a></li>
+        <li><a href="#syncevent">SyncEvent</a></li>
+        <li><a href="#synceventdminvite">SyncEvent.DMInvite</a></li>
+      </ul>
+    </li>
+    <li><a href="#services">Services</a>
+      <ul>
+        <li><a href="#chatservice">ChatService</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+</details>
+
+<br>
+
 <article class="content">
-    <h1 id="message-types">Message Types</h1>
-<h2 id="getuserrequest">GetUserRequest</h2>
+    <h2 id="message-types">Message Types</h2>
+<h3 id="getuserrequest">GetUserRequest</h3>
 <p>Fields</p>
 <table>
 <thead>
@@ -87,7 +211,7 @@
 </tr>
 </tbody>
 </table>
-<h2 id="getuserresponse">GetUserResponse</h2>
+<h3 id="getuserresponse">GetUserResponse</h3>
 <p>Fields</p>
 <table>
 <thead>
@@ -115,7 +239,7 @@
 </tr>
 </tbody>
 </table>
-<h2 id="getusermetadatarequest">GetUserMetadataRequest</h2>
+<h3 id="getusermetadatarequest">GetUserMetadataRequest</h3>
 <p>Fields</p>
 <table>
 <thead>
@@ -131,7 +255,7 @@
 </tr>
 </tbody>
 </table>
-<h2 id="getusermetadataresponse">GetUserMetadataResponse</h2>
+<h3 id="getusermetadataresponse">GetUserMetadataResponse</h3>
 <p>Fields</p>
 <table>
 <thead>
@@ -147,7 +271,7 @@
 </tr>
 </tbody>
 </table>
-<h2 id="profileupdaterequest">ProfileUpdateRequest</h2>
+<h3 id="profileupdaterequest">ProfileUpdateRequest</h3>
 <p>Fields</p>
 <table>
 <thead>
@@ -191,7 +315,7 @@
 </tr>
 </tbody>
 </table>
-<h2 id="createguildrequest">CreateGuildRequest</h2>
+<h3 id="createguildrequest">CreateGuildRequest</h3>
 <p>Fields</p>
 <table>
 <thead>
@@ -215,7 +339,7 @@
 </tr>
 </tbody>
 </table>
-<h2 id="createguildresponse">CreateGuildResponse</h2>
+<h3 id="createguildresponse">CreateGuildResponse</h3>
 <p>Fields</p>
 <table>
 <thead>
@@ -231,7 +355,7 @@
 </tr>
 </tbody>
 </table>
-<h2 id="createinviterequest">CreateInviteRequest</h2>
+<h3 id="createinviterequest">CreateInviteRequest</h3>
 <p>Fields</p>
 <table>
 <thead>
@@ -255,7 +379,7 @@
 </tr>
 </tbody>
 </table>
-<h2 id="createinviteresponse">CreateInviteResponse</h2>
+<h3 id="createinviteresponse">CreateInviteResponse</h3>
 <p>Fields</p>
 <table>
 <thead>
@@ -271,7 +395,7 @@
 </tr>
 </tbody>
 </table>
-<h2 id="getguildlistrequest">GetGuildListRequest</h2>
+<h3 id="getguildlistrequest">GetGuildListRequest</h3>
 <p>Fields</p>
 <table>
 <thead>
@@ -281,7 +405,7 @@
 </tr>
 </thead>
 </table>
-<h2 id="getguildlistresponse">GetGuildListResponse</h2>
+<h3 id="getguildlistresponse">GetGuildListResponse</h3>
 <p>Fields</p>
 <table>
 <thead>
@@ -297,7 +421,7 @@
 </tr>
 </tbody>
 </table>
-<h2 id="getguildrequest">GetGuildRequest</h2>
+<h3 id="getguildrequest">GetGuildRequest</h3>
 <p>Fields</p>
 <table>
 <thead>
@@ -313,7 +437,7 @@
 </tr>
 </tbody>
 </table>
-<h2 id="getguildresponse">GetGuildResponse</h2>
+<h3 id="getguildresponse">GetGuildResponse</h3>
 <p>Fields</p>
 <table>
 <thead>
@@ -341,7 +465,7 @@
 </tr>
 </tbody>
 </table>
-<h2 id="getguildinvitesrequest">GetGuildInvitesRequest</h2>
+<h3 id="getguildinvitesrequest">GetGuildInvitesRequest</h3>
 <p>Fields</p>
 <table>
 <thead>
@@ -357,7 +481,7 @@
 </tr>
 </tbody>
 </table>
-<h2 id="getguildinvitesresponse">GetGuildInvitesResponse</h2>
+<h3 id="getguildinvitesresponse">GetGuildInvitesResponse</h3>
 <p>Fields</p>
 <table>
 <thead>
@@ -373,7 +497,7 @@
 </tr>
 </tbody>
 </table>
-<h2 id="getguildmembersrequest">GetGuildMembersRequest</h2>
+<h3 id="getguildmembersrequest">GetGuildMembersRequest</h3>
 <p>Fields</p>
 <table>
 <thead>
@@ -389,7 +513,7 @@
 </tr>
 </tbody>
 </table>
-<h2 id="getguildmembersresponse">GetGuildMembersResponse</h2>
+<h3 id="getguildmembersresponse">GetGuildMembersResponse</h3>
 <p>Fields</p>
 <table>
 <thead>
@@ -405,7 +529,7 @@
 </tr>
 </tbody>
 </table>
-<h2 id="updateguildinformationrequest">UpdateGuildInformationRequest</h2>
+<h3 id="updateguildinformationrequest">UpdateGuildInformationRequest</h3>
 <p>Fields</p>
 <table>
 <thead>
@@ -445,7 +569,7 @@
 </tr>
 </tbody>
 </table>
-<h2 id="deleteguildrequest">DeleteGuildRequest</h2>
+<h3 id="deleteguildrequest">DeleteGuildRequest</h3>
 <p>Fields</p>
 <table>
 <thead>
@@ -461,7 +585,7 @@
 </tr>
 </tbody>
 </table>
-<h2 id="deleteinviterequest">DeleteInviteRequest</h2>
+<h3 id="deleteinviterequest">DeleteInviteRequest</h3>
 <p>Fields</p>
 <table>
 <thead>
@@ -481,7 +605,7 @@
 </tr>
 </tbody>
 </table>
-<h2 id="joinguildrequest">JoinGuildRequest</h2>
+<h3 id="joinguildrequest">JoinGuildRequest</h3>
 <p>Fields</p>
 <table>
 <thead>
@@ -497,7 +621,7 @@
 </tr>
 </tbody>
 </table>
-<h2 id="joinguildresponse">JoinGuildResponse</h2>
+<h3 id="joinguildresponse">JoinGuildResponse</h3>
 <p>Fields</p>
 <table>
 <thead>
@@ -513,7 +637,7 @@
 </tr>
 </tbody>
 </table>
-<h2 id="previewguildrequest">PreviewGuildRequest</h2>
+<h3 id="previewguildrequest">PreviewGuildRequest</h3>
 <p>Fields</p>
 <table>
 <thead>
@@ -529,7 +653,7 @@
 </tr>
 </tbody>
 </table>
-<h2 id="previewguildresponse">PreviewGuildResponse</h2>
+<h3 id="previewguildresponse">PreviewGuildResponse</h3>
 <p>Fields</p>
 <table>
 <thead>
@@ -553,7 +677,7 @@
 </tr>
 </tbody>
 </table>
-<h2 id="leaveguildrequest">LeaveGuildRequest</h2>
+<h3 id="leaveguildrequest">LeaveGuildRequest</h3>
 <p>Fields</p>
 <table>
 <thead>
@@ -569,37 +693,7 @@
 </tr>
 </tbody>
 </table>
-<h2 id="addguildtoguildlistrequest">AddGuildToGuildListRequest</h2>
-<p>Fields</p>
-<table>
-<thead>
-<tr>
-<th>Name</th>
-<th>Type</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>guild_id</td>
-<td><code>uint64</code></td>
-</tr>
-<tr>
-<td>homeserver</td>
-<td><code>string</code></td>
-</tr>
-</tbody>
-</table>
-<h2 id="addguildtoguildlistresponse">AddGuildToGuildListResponse</h2>
-<p>Fields</p>
-<table>
-<thead>
-<tr>
-<th>Name</th>
-<th>Type</th>
-</tr>
-</thead>
-</table>
-<h2 id="removeguildfromguildlistrequest">RemoveGuildFromGuildListRequest</h2>
+<h3 id="addguildtoguildlistrequest">AddGuildToGuildListRequest</h3>
 <p>Fields</p>
 <table>
 <thead>
@@ -619,7 +713,7 @@
 </tr>
 </tbody>
 </table>
-<h2 id="removeguildfromguildlistresponse">RemoveGuildFromGuildListResponse</h2>
+<h3 id="addguildtoguildlistresponse">AddGuildToGuildListResponse</h3>
 <p>Fields</p>
 <table>
 <thead>
@@ -629,7 +723,37 @@
 </tr>
 </thead>
 </table>
-<h2 id="getguildlistresponseguildlistentry">GetGuildListResponse.GuildListEntry</h2>
+<h3 id="removeguildfromguildlistrequest">RemoveGuildFromGuildListRequest</h3>
+<p>Fields</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>guild_id</td>
+<td><code>uint64</code></td>
+</tr>
+<tr>
+<td>homeserver</td>
+<td><code>string</code></td>
+</tr>
+</tbody>
+</table>
+<h3 id="removeguildfromguildlistresponse">RemoveGuildFromGuildListResponse</h3>
+<p>Fields</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+</tr>
+</thead>
+</table>
+<h3 id="getguildlistresponseguildlistentry">GetGuildListResponse.GuildListEntry</h3>
 <p>Fields</p>
 <table>
 <thead>
@@ -649,7 +773,7 @@
 </tr>
 </tbody>
 </table>
-<h2 id="getguildinvitesresponseinvite">GetGuildInvitesResponse.Invite</h2>
+<h3 id="getguildinvitesresponseinvite">GetGuildInvitesResponse.Invite</h3>
 <p>Fields</p>
 <table>
 <thead>
@@ -673,7 +797,7 @@
 </tr>
 </tbody>
 </table>
-<h2 id="createchannelrequest">CreateChannelRequest</h2>
+<h3 id="createchannelrequest">CreateChannelRequest</h3>
 <p>Fields</p>
 <table>
 <thead>
@@ -709,7 +833,7 @@
 </tr>
 </tbody>
 </table>
-<h2 id="createchannelresponse">CreateChannelResponse</h2>
+<h3 id="createchannelresponse">CreateChannelResponse</h3>
 <p>Fields</p>
 <table>
 <thead>
@@ -725,7 +849,7 @@
 </tr>
 </tbody>
 </table>
-<h2 id="getguildchannelsrequest">GetGuildChannelsRequest</h2>
+<h3 id="getguildchannelsrequest">GetGuildChannelsRequest</h3>
 <p>Fields</p>
 <table>
 <thead>
@@ -741,7 +865,7 @@
 </tr>
 </tbody>
 </table>
-<h2 id="getguildchannelsresponse">GetGuildChannelsResponse</h2>
+<h3 id="getguildchannelsresponse">GetGuildChannelsResponse</h3>
 <p>Fields</p>
 <table>
 <thead>
@@ -757,7 +881,7 @@
 </tr>
 </tbody>
 </table>
-<h2 id="updatechannelinformationrequest">UpdateChannelInformationRequest</h2>
+<h3 id="updatechannelinformationrequest">UpdateChannelInformationRequest</h3>
 <p>Fields</p>
 <table>
 <thead>
@@ -793,7 +917,7 @@
 </tr>
 </tbody>
 </table>
-<h2 id="updatechannelorderrequest">UpdateChannelOrderRequest</h2>
+<h3 id="updatechannelorderrequest">UpdateChannelOrderRequest</h3>
 <p>Fields</p>
 <table>
 <thead>
@@ -821,7 +945,7 @@
 </tr>
 </tbody>
 </table>
-<h2 id="deletechannelrequest">DeleteChannelRequest</h2>
+<h3 id="deletechannelrequest">DeleteChannelRequest</h3>
 <p>Fields</p>
 <table>
 <thead>
@@ -841,7 +965,7 @@
 </tr>
 </tbody>
 </table>
-<h2 id="typingrequest">TypingRequest</h2>
+<h3 id="typingrequest">TypingRequest</h3>
 <p>Fields</p>
 <table>
 <thead>
@@ -861,7 +985,7 @@
 </tr>
 </tbody>
 </table>
-<h2 id="getguildchannelsresponsechannel">GetGuildChannelsResponse.Channel</h2>
+<h3 id="getguildchannelsresponsechannel">GetGuildChannelsResponse.Channel</h3>
 <p>Fields</p>
 <table>
 <thead>
@@ -889,7 +1013,7 @@
 </tr>
 </tbody>
 </table>
-<h2 id="getchannelmessagesrequest">GetChannelMessagesRequest</h2>
+<h3 id="getchannelmessagesrequest">GetChannelMessagesRequest</h3>
 <p>Fields</p>
 <table>
 <thead>
@@ -913,7 +1037,7 @@
 </tr>
 </tbody>
 </table>
-<h2 id="getchannelmessagesresponse">GetChannelMessagesResponse</h2>
+<h3 id="getchannelmessagesresponse">GetChannelMessagesResponse</h3>
 <p>Fields</p>
 <table>
 <thead>
@@ -933,7 +1057,7 @@
 </tr>
 </tbody>
 </table>
-<h2 id="getmessagerequest">GetMessageRequest</h2>
+<h3 id="getmessagerequest">GetMessageRequest</h3>
 <p>Fields</p>
 <table>
 <thead>
@@ -957,7 +1081,7 @@
 </tr>
 </tbody>
 </table>
-<h2 id="getmessageresponse">GetMessageResponse</h2>
+<h3 id="getmessageresponse">GetMessageResponse</h3>
 <p>Fields</p>
 <table>
 <thead>
@@ -973,7 +1097,7 @@
 </tr>
 </tbody>
 </table>
-<h2 id="updatemessagerequest">UpdateMessageRequest</h2>
+<h3 id="updatemessagerequest">UpdateMessageRequest</h3>
 <p>Fields</p>
 <table>
 <thead>
@@ -1045,7 +1169,7 @@
 </tr>
 </tbody>
 </table>
-<h2 id="deletemessagerequest">DeleteMessageRequest</h2>
+<h3 id="deletemessagerequest">DeleteMessageRequest</h3>
 <p>Fields</p>
 <table>
 <thead>
@@ -1069,7 +1193,7 @@
 </tr>
 </tbody>
 </table>
-<h2 id="triggeractionrequest">TriggerActionRequest</h2>
+<h3 id="triggeractionrequest">TriggerActionRequest</h3>
 <p>Fields</p>
 <table>
 <thead>
@@ -1101,7 +1225,7 @@
 </tr>
 </tbody>
 </table>
-<h2 id="sendmessagerequest">SendMessageRequest</h2>
+<h3 id="sendmessagerequest">SendMessageRequest</h3>
 <p>Fields</p>
 <table>
 <thead>
@@ -1153,7 +1277,7 @@
 </tr>
 </tbody>
 </table>
-<h2 id="sendmessageresponse">SendMessageResponse</h2>
+<h3 id="sendmessageresponse">SendMessageResponse</h3>
 <p>Fields</p>
 <table>
 <thead>
@@ -1169,7 +1293,7 @@
 </tr>
 </tbody>
 </table>
-<h2 id="createemotepackrequest">CreateEmotePackRequest</h2>
+<h3 id="createemotepackrequest">CreateEmotePackRequest</h3>
 <p>Fields</p>
 <table>
 <thead>
@@ -1185,7 +1309,7 @@
 </tr>
 </tbody>
 </table>
-<h2 id="createemotepackresponse">CreateEmotePackResponse</h2>
+<h3 id="createemotepackresponse">CreateEmotePackResponse</h3>
 <p>Fields</p>
 <table>
 <thead>
@@ -1201,7 +1325,7 @@
 </tr>
 </tbody>
 </table>
-<h2 id="getemotepacksrequest">GetEmotePacksRequest</h2>
+<h3 id="getemotepacksrequest">GetEmotePacksRequest</h3>
 <p>Fields</p>
 <table>
 <thead>
@@ -1211,7 +1335,7 @@
 </tr>
 </thead>
 </table>
-<h2 id="getemotepacksresponse">GetEmotePacksResponse</h2>
+<h3 id="getemotepacksresponse">GetEmotePacksResponse</h3>
 <p>Fields</p>
 <table>
 <thead>
@@ -1227,7 +1351,7 @@
 </tr>
 </tbody>
 </table>
-<h2 id="getemotepackemotesrequest">GetEmotePackEmotesRequest</h2>
+<h3 id="getemotepackemotesrequest">GetEmotePackEmotesRequest</h3>
 <p>Fields</p>
 <table>
 <thead>
@@ -1243,7 +1367,7 @@
 </tr>
 </tbody>
 </table>
-<h2 id="getemotepackemotesresponse">GetEmotePackEmotesResponse</h2>
+<h3 id="getemotepackemotesresponse">GetEmotePackEmotesResponse</h3>
 <p>Fields</p>
 <table>
 <thead>
@@ -1259,7 +1383,7 @@
 </tr>
 </tbody>
 </table>
-<h2 id="addemotetopackrequest">AddEmoteToPackRequest</h2>
+<h3 id="addemotetopackrequest">AddEmoteToPackRequest</h3>
 <p>Fields</p>
 <table>
 <thead>
@@ -1283,7 +1407,7 @@
 </tr>
 </tbody>
 </table>
-<h2 id="deleteemotefrompackrequest">DeleteEmoteFromPackRequest</h2>
+<h3 id="deleteemotefrompackrequest">DeleteEmoteFromPackRequest</h3>
 <p>Fields</p>
 <table>
 <thead>
@@ -1303,7 +1427,7 @@
 </tr>
 </tbody>
 </table>
-<h2 id="deleteemotepackrequest">DeleteEmotePackRequest</h2>
+<h3 id="deleteemotepackrequest">DeleteEmotePackRequest</h3>
 <p>Fields</p>
 <table>
 <thead>
@@ -1319,7 +1443,7 @@
 </tr>
 </tbody>
 </table>
-<h2 id="dequipemotepackrequest">DequipEmotePackRequest</h2>
+<h3 id="dequipemotepackrequest">DequipEmotePackRequest</h3>
 <p>Fields</p>
 <table>
 <thead>
@@ -1335,7 +1459,7 @@
 </tr>
 </tbody>
 </table>
-<h2 id="getemotepacksresponseemotepack">GetEmotePacksResponse.EmotePack</h2>
+<h3 id="getemotepacksresponseemotepack">GetEmotePacksResponse.EmotePack</h3>
 <p>Fields</p>
 <table>
 <thead>
@@ -1359,7 +1483,7 @@
 </tr>
 </tbody>
 </table>
-<h2 id="getemotepackemotesresponseemote">GetEmotePackEmotesResponse.Emote</h2>
+<h3 id="getemotepackemotesresponseemote">GetEmotePackEmotesResponse.Emote</h3>
 <p>Fields</p>
 <table>
 <thead>
@@ -1379,7 +1503,7 @@
 </tr>
 </tbody>
 </table>
-<h2 id="querypermissionsrequest">QueryPermissionsRequest</h2>
+<h3 id="querypermissionsrequest">QueryPermissionsRequest</h3>
 <p>Fields</p>
 <table>
 <thead>
@@ -1407,7 +1531,7 @@
 </tr>
 </tbody>
 </table>
-<h2 id="querypermissionsresponse">QueryPermissionsResponse</h2>
+<h3 id="querypermissionsresponse">QueryPermissionsResponse</h3>
 <p>Fields</p>
 <table>
 <thead>
@@ -1423,7 +1547,7 @@
 </tr>
 </tbody>
 </table>
-<h2 id="permission">Permission</h2>
+<h3 id="permission">Permission</h3>
 <p>Fields</p>
 <table>
 <thead>
@@ -1443,7 +1567,7 @@
 </tr>
 </tbody>
 </table>
-<h2 id="permissionlist">PermissionList</h2>
+<h3 id="permissionlist">PermissionList</h3>
 <p>Fields</p>
 <table>
 <thead>
@@ -1459,7 +1583,7 @@
 </tr>
 </tbody>
 </table>
-<h2 id="setpermissionsrequest">SetPermissionsRequest</h2>
+<h3 id="setpermissionsrequest">SetPermissionsRequest</h3>
 <p>Fields</p>
 <table>
 <thead>
@@ -1487,7 +1611,7 @@
 </tr>
 </tbody>
 </table>
-<h2 id="getpermissionsrequest">GetPermissionsRequest</h2>
+<h3 id="getpermissionsrequest">GetPermissionsRequest</h3>
 <p>Fields</p>
 <table>
 <thead>
@@ -1511,7 +1635,7 @@
 </tr>
 </tbody>
 </table>
-<h2 id="getpermissionsresponse">GetPermissionsResponse</h2>
+<h3 id="getpermissionsresponse">GetPermissionsResponse</h3>
 <p>Fields</p>
 <table>
 <thead>
@@ -1527,7 +1651,7 @@
 </tr>
 </tbody>
 </table>
-<h2 id="role">Role</h2>
+<h3 id="role">Role</h3>
 <p>Fields</p>
 <table>
 <thead>
@@ -1559,7 +1683,7 @@
 </tr>
 </tbody>
 </table>
-<h2 id="moverolerequest">MoveRoleRequest</h2>
+<h3 id="moverolerequest">MoveRoleRequest</h3>
 <p>Fields</p>
 <table>
 <thead>
@@ -1587,7 +1711,7 @@
 </tr>
 </tbody>
 </table>
-<h2 id="moveroleresponse">MoveRoleResponse</h2>
+<h3 id="moveroleresponse">MoveRoleResponse</h3>
 <p>Fields</p>
 <table>
 <thead>
@@ -1597,7 +1721,7 @@
 </tr>
 </thead>
 </table>
-<h2 id="getguildrolesrequest">GetGuildRolesRequest</h2>
+<h3 id="getguildrolesrequest">GetGuildRolesRequest</h3>
 <p>Fields</p>
 <table>
 <thead>
@@ -1613,7 +1737,7 @@
 </tr>
 </tbody>
 </table>
-<h2 id="getguildrolesresponse">GetGuildRolesResponse</h2>
+<h3 id="getguildrolesresponse">GetGuildRolesResponse</h3>
 <p>Fields</p>
 <table>
 <thead>
@@ -1629,7 +1753,7 @@
 </tr>
 </tbody>
 </table>
-<h2 id="addguildrolerequest">AddGuildRoleRequest</h2>
+<h3 id="addguildrolerequest">AddGuildRoleRequest</h3>
 <p>Fields</p>
 <table>
 <thead>
@@ -1649,7 +1773,7 @@
 </tr>
 </tbody>
 </table>
-<h2 id="addguildroleresponse">AddGuildRoleResponse</h2>
+<h3 id="addguildroleresponse">AddGuildRoleResponse</h3>
 <p>Fields</p>
 <table>
 <thead>
@@ -1665,7 +1789,7 @@
 </tr>
 </tbody>
 </table>
-<h2 id="deleteguildrolerequest">DeleteGuildRoleRequest</h2>
+<h3 id="deleteguildrolerequest">DeleteGuildRoleRequest</h3>
 <p>Fields</p>
 <table>
 <thead>
@@ -1685,7 +1809,7 @@
 </tr>
 </tbody>
 </table>
-<h2 id="modifyguildrolerequest">ModifyGuildRoleRequest</h2>
+<h3 id="modifyguildrolerequest">ModifyGuildRoleRequest</h3>
 <p>Fields</p>
 <table>
 <thead>
@@ -1721,7 +1845,7 @@
 </tr>
 </tbody>
 </table>
-<h2 id="manageuserrolesrequest">ManageUserRolesRequest</h2>
+<h3 id="manageuserrolesrequest">ManageUserRolesRequest</h3>
 <p>Fields</p>
 <table>
 <thead>
@@ -1749,7 +1873,7 @@
 </tr>
 </tbody>
 </table>
-<h2 id="getuserrolesrequest">GetUserRolesRequest</h2>
+<h3 id="getuserrolesrequest">GetUserRolesRequest</h3>
 <p>Fields</p>
 <table>
 <thead>
@@ -1769,7 +1893,7 @@
 </tr>
 </tbody>
 </table>
-<h2 id="getuserrolesresponse">GetUserRolesResponse</h2>
+<h3 id="getuserrolesresponse">GetUserRolesResponse</h3>
 <p>Fields</p>
 <table>
 <thead>
@@ -1785,7 +1909,7 @@
 </tr>
 </tbody>
 </table>
-<h2 id="streameventsrequest">StreamEventsRequest</h2>
+<h3 id="streameventsrequest">StreamEventsRequest</h3>
 <p>Fields</p>
 <table>
 <thead>
@@ -1809,7 +1933,7 @@
 </tr>
 </tbody>
 </table>
-<h2 id="event">Event</h2>
+<h3 id="event">Event</h3>
 <p>Fields</p>
 <table>
 <thead>
@@ -1885,7 +2009,7 @@
 </tr>
 </tbody>
 </table>
-<h2 id="streameventsrequestsubscribetoguild">StreamEventsRequest.SubscribeToGuild</h2>
+<h3 id="streameventsrequestsubscribetoguild">StreamEventsRequest.SubscribeToGuild</h3>
 <p>Fields</p>
 <table>
 <thead>
@@ -1901,7 +2025,7 @@
 </tr>
 </tbody>
 </table>
-<h2 id="streameventsrequestsubscribetoactions">StreamEventsRequest.SubscribeToActions</h2>
+<h3 id="streameventsrequestsubscribetoactions">StreamEventsRequest.SubscribeToActions</h3>
 <p>Fields</p>
 <table>
 <thead>
@@ -1911,7 +2035,7 @@
 </tr>
 </thead>
 </table>
-<h2 id="streameventsrequestsubscribetohomeserverevents">StreamEventsRequest.SubscribeToHomeserverEvents</h2>
+<h3 id="streameventsrequestsubscribetohomeserverevents">StreamEventsRequest.SubscribeToHomeserverEvents</h3>
 <p>Fields</p>
 <table>
 <thead>
@@ -1921,7 +2045,7 @@
 </tr>
 </thead>
 </table>
-<h2 id="eventmessagesent">Event.MessageSent</h2>
+<h3 id="eventmessagesent">Event.MessageSent</h3>
 <p>Fields</p>
 <table>
 <thead>
@@ -1941,7 +2065,7 @@
 </tr>
 </tbody>
 </table>
-<h2 id="eventmessageupdated">Event.MessageUpdated</h2>
+<h3 id="eventmessageupdated">Event.MessageUpdated</h3>
 <p>Fields</p>
 <table>
 <thead>
@@ -2017,7 +2141,7 @@
 </tr>
 </tbody>
 </table>
-<h2 id="eventmessagedeleted">Event.MessageDeleted</h2>
+<h3 id="eventmessagedeleted">Event.MessageDeleted</h3>
 <p>Fields</p>
 <table>
 <thead>
@@ -2041,7 +2165,7 @@
 </tr>
 </tbody>
 </table>
-<h2 id="eventchannelcreated">Event.ChannelCreated</h2>
+<h3 id="eventchannelcreated">Event.ChannelCreated</h3>
 <p>Fields</p>
 <table>
 <thead>
@@ -2081,7 +2205,7 @@
 </tr>
 </tbody>
 </table>
-<h2 id="eventchannelupdated">Event.ChannelUpdated</h2>
+<h3 id="eventchannelupdated">Event.ChannelUpdated</h3>
 <p>Fields</p>
 <table>
 <thead>
@@ -2129,7 +2253,7 @@
 </tr>
 </tbody>
 </table>
-<h2 id="eventchanneldeleted">Event.ChannelDeleted</h2>
+<h3 id="eventchanneldeleted">Event.ChannelDeleted</h3>
 <p>Fields</p>
 <table>
 <thead>
@@ -2149,7 +2273,7 @@
 </tr>
 </tbody>
 </table>
-<h2 id="eventguildupdated">Event.GuildUpdated</h2>
+<h3 id="eventguildupdated">Event.GuildUpdated</h3>
 <p>Fields</p>
 <table>
 <thead>
@@ -2189,7 +2313,7 @@
 </tr>
 </tbody>
 </table>
-<h2 id="eventguilddeleted">Event.GuildDeleted</h2>
+<h3 id="eventguilddeleted">Event.GuildDeleted</h3>
 <p>Fields</p>
 <table>
 <thead>
@@ -2205,27 +2329,7 @@
 </tr>
 </tbody>
 </table>
-<h2 id="eventmemberjoined">Event.MemberJoined</h2>
-<p>Fields</p>
-<table>
-<thead>
-<tr>
-<th>Name</th>
-<th>Type</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>member_id</td>
-<td><code>uint64</code></td>
-</tr>
-<tr>
-<td>guild_id</td>
-<td><code>uint64</code></td>
-</tr>
-</tbody>
-</table>
-<h2 id="eventmemberleft">Event.MemberLeft</h2>
+<h3 id="eventmemberjoined">Event.MemberJoined</h3>
 <p>Fields</p>
 <table>
 <thead>
@@ -2245,7 +2349,27 @@
 </tr>
 </tbody>
 </table>
-<h2 id="eventguildaddedtolist">Event.GuildAddedToList</h2>
+<h3 id="eventmemberleft">Event.MemberLeft</h3>
+<p>Fields</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>member_id</td>
+<td><code>uint64</code></td>
+</tr>
+<tr>
+<td>guild_id</td>
+<td><code>uint64</code></td>
+</tr>
+</tbody>
+</table>
+<h3 id="eventguildaddedtolist">Event.GuildAddedToList</h3>
 <p>Fields</p>
 <table>
 <thead>
@@ -2265,7 +2389,7 @@
 </tr>
 </tbody>
 </table>
-<h2 id="eventguildremovedfromlist">Event.GuildRemovedFromList</h2>
+<h3 id="eventguildremovedfromlist">Event.GuildRemovedFromList</h3>
 <p>Fields</p>
 <table>
 <thead>
@@ -2285,7 +2409,7 @@
 </tr>
 </tbody>
 </table>
-<h2 id="eventactionperformed">Event.ActionPerformed</h2>
+<h3 id="eventactionperformed">Event.ActionPerformed</h3>
 <p>Fields</p>
 <table>
 <thead>
@@ -2317,7 +2441,7 @@
 </tr>
 </tbody>
 </table>
-<h2 id="eventrolemoved">Event.RoleMoved</h2>
+<h3 id="eventrolemoved">Event.RoleMoved</h3>
 <p>Fields</p>
 <table>
 <thead>
@@ -2337,7 +2461,7 @@
 </tr>
 </tbody>
 </table>
-<h2 id="eventprofileupdated">Event.ProfileUpdated</h2>
+<h3 id="eventprofileupdated">Event.ProfileUpdated</h3>
 <p>Fields</p>
 <table>
 <thead>
@@ -2385,7 +2509,7 @@
 </tr>
 </tbody>
 </table>
-<h2 id="eventtyping">Event.Typing</h2>
+<h3 id="eventtyping">Event.Typing</h3>
 <p>Fields</p>
 <table>
 <thead>
@@ -2409,7 +2533,7 @@
 </tr>
 </tbody>
 </table>
-<h2 id="syncrequest">SyncRequest</h2>
+<h3 id="syncrequest">SyncRequest</h3>
 <p>Fields</p>
 <table>
 <thead>
@@ -2429,7 +2553,7 @@
 </tr>
 </tbody>
 </table>
-<h2 id="syncevent">SyncEvent</h2>
+<h3 id="syncevent">SyncEvent</h3>
 <p>Fields</p>
 <table>
 <thead>
@@ -2445,7 +2569,7 @@
 </tr>
 </tbody>
 </table>
-<h2 id="synceventdminvite">SyncEvent.DMInvite</h2>
+<h3 id="synceventdminvite">SyncEvent.DMInvite</h3>
 <p>Fields</p>
 <table>
 <thead>
@@ -2477,9 +2601,9 @@
 </tr>
 </tbody>
 </table>
-<h1 id="services">Services</h1>
-<h2 id="chatservice">ChatService</h2>
-<h3 id="unary-methods">Unary Methods</h3>
+<h2 id="services">Services</h2>
+<h3 id="chatservice">ChatService</h3>
+<h4 id="unary-methods">Unary Methods</h4>
 <table>
 <thead>
 <tr>
@@ -2721,7 +2845,7 @@
 </tr>
 </tbody>
 </table>
-<h3 id="streaming-methods">Streaming Methods</h3>
+<h4 id="streaming-methods">Streaming Methods</h4>
 <table>
 <thead>
 <tr>
