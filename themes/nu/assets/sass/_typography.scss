@@ -80,4 +80,15 @@ article.content {
     h3 {
         font-size: 25px;
     }
+    li {
+        margin: 1em 0em;
+        margin-left: 1em;
+        padding-left: 0.5em;
+    }
+    ul li {
+        list-style: disc;
+    }
+    ol li {
+        list-style: decimal;
+    }
 }
