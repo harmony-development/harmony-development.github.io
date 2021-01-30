@@ -13,11 +13,6 @@
   </url>
   
   <url>
-    <loc>https://harmonyapp.io/docs/reference/</loc>
-    <priority>0</priority>
-  </url>
-  
-  <url>
     <loc>https://harmonyapp.io/protocol/chat/v1/formatting/</loc>
   </url>
   
@@ -35,6 +30,30 @@
   
   <url>
     <loc>https://harmonyapp.io/protocol/</loc>
+  </url>
+  
+  <url>
+    <loc>https://harmonyapp.io/docs/google.protobuf/</loc>
+  </url>
+  
+  <url>
+    <loc>https://harmonyapp.io/docs/protocol.auth.v1/</loc>
+  </url>
+  
+  <url>
+    <loc>https://harmonyapp.io/docs/protocol.chat.v1/</loc>
+  </url>
+  
+  <url>
+    <loc>https://harmonyapp.io/docs/protocol.harmonytypes.v1/</loc>
+  </url>
+  
+  <url>
+    <loc>https://harmonyapp.io/docs/protocol.mediaproxy.v1/</loc>
+  </url>
+  
+  <url>
+    <loc>https://harmonyapp.io/docs/protocol.voice.v1/</loc>
   </url>
   
   <url>

@@ -7,8 +7,8 @@ for dir in $(find "protocol" -name '*.proto' -print0 | xargs -0 -n1 dirname | so
 
     protoc \
     --proto_path=protocol \
-    --doc_out=./docs \
-    --doc_opt=markdown,reference.md \
+    --hdocs_out=./docs \
+    --hdocs_opt=markdown,reference.md \
     $(find "${dir}" -name '*.proto')
 
 done

@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en-us"><head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no">
+    <title>Reference: protocol.voice.v1 | Harmony</title>
+    <meta name="description" content="Message Types ClientSignal Fields
+   Name Type     answer protocol.voice.v1.ClientSignal.Answer   candidate protocol.voice.v1.ClientSignal.Candidate    Signal Fields
+   Name Type     candidate protocol.voice.v1.Signal.ICECandidate   offer protocol.voice.v1.Signal.Offer    ClientSignal.Answer Fields
+   Name Type     answer string    ClientSignal.Candidate Fields
+   Name Type     candidate string    Signal. ">
+    <link rel="canonical" href="https://harmonyapp.io/docs/protocol.voice.v1/" />
+
+    
+    
+    <link rel="stylesheet" href="https://harmonyapp.io/sass/main.css" />
+
+    <meta property="og:title" content="Reference: protocol.voice.v1" />
+<meta property="og:description" content="Message Types ClientSignal Fields
+   Name Type     answer protocol.voice.v1.ClientSignal.Answer   candidate protocol.voice.v1.ClientSignal.Candidate    Signal Fields
+   Name Type     candidate protocol.voice.v1.Signal.ICECandidate   offer protocol.voice.v1.Signal.Offer    ClientSignal.Answer Fields
+   Name Type     answer string    ClientSignal.Candidate Fields
+   Name Type     candidate string    Signal." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://harmonyapp.io/docs/protocol.voice.v1/" />
+
+
+    <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Reference: protocol.voice.v1"/>
+<meta name="twitter:description" content="Message Types ClientSignal Fields
+   Name Type     answer protocol.voice.v1.ClientSignal.Answer   candidate protocol.voice.v1.ClientSignal.Candidate    Signal Fields
+   Name Type     candidate protocol.voice.v1.Signal.ICECandidate   offer protocol.voice.v1.Signal.Offer    ClientSignal.Answer Fields
+   Name Type     answer string    ClientSignal.Candidate Fields
+   Name Type     candidate string    Signal."/>
+
+	<meta name="theme-color" content="#E93D58">
+	<meta property="og:image" content="https://harmonyapp.io/img/harmony-embed.png" />
+
+    <script src="https://unpkg.com/quicklink@2.0.0/dist/quicklink.umd.js"></script>
+    <script defer>
+        quicklink.listen()
+    </script>
+</head>
+<body><header class="nu-top-app-bar">
+    <div class="nu-top-app-bar__row">
+        <div class="nu-top-app-bar__section nu-top-app-bar__section--start">
+            <span class="h1-minor">
+                <span class="harmony-thin-header">Harmony </span><span class="harmony-thick-header">Chat</span>
+            </span>
+        </div>
+        <div class="nu-top-app-bar__section nu-top-app-bar__section--end">
+        
+        <a href="/" class="nu-top-app-bar__link h1-minor-minor">
+            <span>Home</span>
+        </a>
+        
+        <a href="/docs" class="nu-top-app-bar__link h1-minor-minor">
+            <span>Docs</span>
+        </a>
+        
+        <a href="https://github.com/harmony-development" class="nu-top-app-bar__link h1-minor-minor">
+            <span>Github</span>
+        </a>
+        
+        <a href="https://tempest.bluskript.vercel.app" class="nu-top-app-bar__link h1-minor-minor">
+            <span>Try Now</span>
+        </a>
+        
+        </div>
+    </div>
+</header><main class="nu-content">
+<h2 class="h1">Reference: protocol.voice.v1</h2>
+<article class="content">
+    <h1 id="message-types">Message Types</h1>
+<h2 id="clientsignal">ClientSignal</h2>
+<p>Fields</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>answer</td>
+<td><a href="#clientsignal-answer">protocol.voice.v1.ClientSignal.Answer</a></td>
+</tr>
+<tr>
+<td>candidate</td>
+<td><a href="#clientsignal-candidate">protocol.voice.v1.ClientSignal.Candidate</a></td>
+</tr>
+</tbody>
+</table>
+<h2 id="signal">Signal</h2>
+<p>Fields</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>candidate</td>
+<td><a href="#signal-icecandidate">protocol.voice.v1.Signal.ICECandidate</a></td>
+</tr>
+<tr>
+<td>offer</td>
+<td><a href="#signal-offer">protocol.voice.v1.Signal.Offer</a></td>
+</tr>
+</tbody>
+</table>
+<h2 id="clientsignalanswer">ClientSignal.Answer</h2>
+<p>Fields</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>answer</td>
+<td><code>string</code></td>
+</tr>
+</tbody>
+</table>
+<h2 id="clientsignalcandidate">ClientSignal.Candidate</h2>
+<p>Fields</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>candidate</td>
+<td><code>string</code></td>
+</tr>
+</tbody>
+</table>
+<h2 id="signalicecandidate">Signal.ICECandidate</h2>
+<p>Fields</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>candidate</td>
+<td><code>string</code></td>
+</tr>
+</tbody>
+</table>
+<h2 id="signaloffer">Signal.Offer</h2>
+<p>Fields</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>offer</td>
+<td><code>string</code></td>
+</tr>
+</tbody>
+</table>
+<h1 id="services">Services</h1>
+<h2 id="voiceservice">VoiceService</h2>
+<h3 id="unary-methods">Unary Methods</h3>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Request</th>
+<th>Response</th>
+</tr>
+</thead>
+</table>
+<h3 id="streaming-methods">Streaming Methods</h3>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Client Streams</th>
+<th>Server Streams</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Connect</td>
+<td><a href="#clientsignal">protocol.voice.v1.ClientSignal</a></td>
+<td><a href="#signal">protocol.voice.v1.Signal</a></td>
+</tr>
+</tbody>
+</table>
+
+</article>
+
+        </main></body>
+</html>

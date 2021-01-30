@@ -156,7 +156,7 @@ body, .body {
 .nu-command-link {
   font-family: 'Fira Code', monospace;
   font-weight: bold;
-  font-size: 32px;
+  font-size: 22px;
   color: var(--on-base); }
 
 .harmony-thin-header {
@@ -166,6 +166,22 @@ body, .body {
 .harmony-thick-header {
   font-family: Manrope;
   font-weight: bold; }
+
+table {
+  margin: 2rem 0;
+  border: 1px solid var(--border); }
+  table th, table td {
+    padding: 1rem;
+    border: 1px solid var(--border); }
+
+article.content h1 {
+  font-size: 40px; }
+
+article.content h2 {
+  font-size: 30px; }
+
+article.content h3 {
+  font-size: 25px; }
 
 .nu-content {
   margin-left: auto;

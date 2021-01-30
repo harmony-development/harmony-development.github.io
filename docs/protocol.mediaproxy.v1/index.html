@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en-us"><head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no">
+    <title>Reference: protocol.mediaproxy.v1 | Harmony</title>
+    <meta name="description" content="Message Types SiteMetadata Fields
+   Name Type     site_title string   page_title string   kind string   description string   url string   image string    FetchLinkMetadataRequest Fields
+   Name Type     url string    InstantViewRequest Fields
+   Name Type     url string    InstantViewResponse Fields ">
+    <link rel="canonical" href="https://harmonyapp.io/docs/protocol.mediaproxy.v1/" />
+
+    
+    
+    <link rel="stylesheet" href="https://harmonyapp.io/sass/main.css" />
+
+    <meta property="og:title" content="Reference: protocol.mediaproxy.v1" />
+<meta property="og:description" content="Message Types SiteMetadata Fields
+   Name Type     site_title string   page_title string   kind string   description string   url string   image string    FetchLinkMetadataRequest Fields
+   Name Type     url string    InstantViewRequest Fields
+   Name Type     url string    InstantViewResponse Fields" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://harmonyapp.io/docs/protocol.mediaproxy.v1/" />
+
+
+    <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Reference: protocol.mediaproxy.v1"/>
+<meta name="twitter:description" content="Message Types SiteMetadata Fields
+   Name Type     site_title string   page_title string   kind string   description string   url string   image string    FetchLinkMetadataRequest Fields
+   Name Type     url string    InstantViewRequest Fields
+   Name Type     url string    InstantViewResponse Fields"/>
+
+	<meta name="theme-color" content="#E93D58">
+	<meta property="og:image" content="https://harmonyapp.io/img/harmony-embed.png" />
+
+    <script src="https://unpkg.com/quicklink@2.0.0/dist/quicklink.umd.js"></script>
+    <script defer>
+        quicklink.listen()
+    </script>
+</head>
+<body><header class="nu-top-app-bar">
+    <div class="nu-top-app-bar__row">
+        <div class="nu-top-app-bar__section nu-top-app-bar__section--start">
+            <span class="h1-minor">
+                <span class="harmony-thin-header">Harmony </span><span class="harmony-thick-header">Chat</span>
+            </span>
+        </div>
+        <div class="nu-top-app-bar__section nu-top-app-bar__section--end">
+        
+        <a href="/" class="nu-top-app-bar__link h1-minor-minor">
+            <span>Home</span>
+        </a>
+        
+        <a href="/docs" class="nu-top-app-bar__link h1-minor-minor">
+            <span>Docs</span>
+        </a>
+        
+        <a href="https://github.com/harmony-development" class="nu-top-app-bar__link h1-minor-minor">
+            <span>Github</span>
+        </a>
+        
+        <a href="https://tempest.bluskript.vercel.app" class="nu-top-app-bar__link h1-minor-minor">
+            <span>Try Now</span>
+        </a>
+        
+        </div>
+    </div>
+</header><main class="nu-content">
+<h2 class="h1">Reference: protocol.mediaproxy.v1</h2>
+<article class="content">
+    <h1 id="message-types">Message Types</h1>
+<h2 id="sitemetadata">SiteMetadata</h2>
+<p>Fields</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>site_title</td>
+<td><code>string</code></td>
+</tr>
+<tr>
+<td>page_title</td>
+<td><code>string</code></td>
+</tr>
+<tr>
+<td>kind</td>
+<td><code>string</code></td>
+</tr>
+<tr>
+<td>description</td>
+<td><code>string</code></td>
+</tr>
+<tr>
+<td>url</td>
+<td><code>string</code></td>
+</tr>
+<tr>
+<td>image</td>
+<td><code>string</code></td>
+</tr>
+</tbody>
+</table>
+<h2 id="fetchlinkmetadatarequest">FetchLinkMetadataRequest</h2>
+<p>Fields</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>url</td>
+<td><code>string</code></td>
+</tr>
+</tbody>
+</table>
+<h2 id="instantviewrequest">InstantViewRequest</h2>
+<p>Fields</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>url</td>
+<td><code>string</code></td>
+</tr>
+</tbody>
+</table>
+<h2 id="instantviewresponse">InstantViewResponse</h2>
+<p>Fields</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>metadata</td>
+<td><a href="#sitemetadata">protocol.mediaproxy.v1.SiteMetadata</a></td>
+</tr>
+<tr>
+<td>content</td>
+<td><code>string</code></td>
+</tr>
+<tr>
+<td>is_valid</td>
+<td><code>bool</code></td>
+</tr>
+</tbody>
+</table>
+<h2 id="caninstantviewresponse">CanInstantViewResponse</h2>
+<p>Fields</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>can_instant_view</td>
+<td><code>bool</code></td>
+</tr>
+</tbody>
+</table>
+<h1 id="services">Services</h1>
+<h2 id="mediaproxyservice">MediaProxyService</h2>
+<h3 id="unary-methods">Unary Methods</h3>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Request</th>
+<th>Response</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>FetchLinkMetadata</td>
+<td><a href="#fetchlinkmetadatarequest">protocol.mediaproxy.v1.FetchLinkMetadataRequest</a></td>
+<td><a href="#sitemetadata">protocol.mediaproxy.v1.SiteMetadata</a></td>
+</tr>
+<tr>
+<td>InstantView</td>
+<td><a href="#instantviewrequest">protocol.mediaproxy.v1.InstantViewRequest</a></td>
+<td><a href="#instantviewresponse">protocol.mediaproxy.v1.InstantViewResponse</a></td>
+</tr>
+<tr>
+<td>CanInstantView</td>
+<td><a href="#instantviewrequest">protocol.mediaproxy.v1.InstantViewRequest</a></td>
+<td><a href="#caninstantviewresponse">protocol.mediaproxy.v1.CanInstantViewResponse</a></td>
+</tr>
+</tbody>
+</table>
+<h3 id="streaming-methods">Streaming Methods</h3>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Client Streams</th>
+<th>Server Streams</th>
+</tr>
+</thead>
+</table>
+
+</article>
+
+        </main></body>
+</html>

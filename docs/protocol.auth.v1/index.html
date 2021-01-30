@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="en-us"><head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no">
+    <title>Reference: protocol.auth.v1 | Harmony</title>
+    <meta name="description" content="Message Types BeginAuthResponse Fields
+   Name Type     auth_id string    Session Fields
+   Name Type     user_id uint64   session_token string    AuthStep Fields
+   Name Type     fallback_url string   can_go_back bool   choice protocol.auth.v1.AuthStep.Choice   form protocol.auth.v1.AuthStep.Form   session protocol.auth.v1.Session   waiting protocol. ">
+    <link rel="canonical" href="https://harmonyapp.io/docs/protocol.auth.v1/" />
+
+    
+    
+    <link rel="stylesheet" href="https://harmonyapp.io/sass/main.css" />
+
+    <meta property="og:title" content="Reference: protocol.auth.v1" />
+<meta property="og:description" content="Message Types BeginAuthResponse Fields
+   Name Type     auth_id string    Session Fields
+   Name Type     user_id uint64   session_token string    AuthStep Fields
+   Name Type     fallback_url string   can_go_back bool   choice protocol.auth.v1.AuthStep.Choice   form protocol.auth.v1.AuthStep.Form   session protocol.auth.v1.Session   waiting protocol." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://harmonyapp.io/docs/protocol.auth.v1/" />
+
+
+    <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Reference: protocol.auth.v1"/>
+<meta name="twitter:description" content="Message Types BeginAuthResponse Fields
+   Name Type     auth_id string    Session Fields
+   Name Type     user_id uint64   session_token string    AuthStep Fields
+   Name Type     fallback_url string   can_go_back bool   choice protocol.auth.v1.AuthStep.Choice   form protocol.auth.v1.AuthStep.Form   session protocol.auth.v1.Session   waiting protocol."/>
+
+	<meta name="theme-color" content="#E93D58">
+	<meta property="og:image" content="https://harmonyapp.io/img/harmony-embed.png" />
+
+    <script src="https://unpkg.com/quicklink@2.0.0/dist/quicklink.umd.js"></script>
+    <script defer>
+        quicklink.listen()
+    </script>
+</head>
+<body><header class="nu-top-app-bar">
+    <div class="nu-top-app-bar__row">
+        <div class="nu-top-app-bar__section nu-top-app-bar__section--start">
+            <span class="h1-minor">
+                <span class="harmony-thin-header">Harmony </span><span class="harmony-thick-header">Chat</span>
+            </span>
+        </div>
+        <div class="nu-top-app-bar__section nu-top-app-bar__section--end">
+        
+        <a href="/" class="nu-top-app-bar__link h1-minor-minor">
+            <span>Home</span>
+        </a>
+        
+        <a href="/docs" class="nu-top-app-bar__link h1-minor-minor">
+            <span>Docs</span>
+        </a>
+        
+        <a href="https://github.com/harmony-development" class="nu-top-app-bar__link h1-minor-minor">
+            <span>Github</span>
+        </a>
+        
+        <a href="https://tempest.bluskript.vercel.app" class="nu-top-app-bar__link h1-minor-minor">
+            <span>Try Now</span>
+        </a>
+        
+        </div>
+    </div>
+</header><main class="nu-content">
+<h2 class="h1">Reference: protocol.auth.v1</h2>
+<article class="content">
+    <h1 id="message-types">Message Types</h1>
+<h2 id="beginauthresponse">BeginAuthResponse</h2>
+<p>Fields</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>auth_id</td>
+<td><code>string</code></td>
+</tr>
+</tbody>
+</table>
+<h2 id="session">Session</h2>
+<p>Fields</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>user_id</td>
+<td><code>uint64</code></td>
+</tr>
+<tr>
+<td>session_token</td>
+<td><code>string</code></td>
+</tr>
+</tbody>
+</table>
+<h2 id="authstep">AuthStep</h2>
+<p>Fields</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>fallback_url</td>
+<td><code>string</code></td>
+</tr>
+<tr>
+<td>can_go_back</td>
+<td><code>bool</code></td>
+</tr>
+<tr>
+<td>choice</td>
+<td><a href="#authstep-choice">protocol.auth.v1.AuthStep.Choice</a></td>
+</tr>
+<tr>
+<td>form</td>
+<td><a href="#authstep-form">protocol.auth.v1.AuthStep.Form</a></td>
+</tr>
+<tr>
+<td>session</td>
+<td><a href="#session">protocol.auth.v1.Session</a></td>
+</tr>
+<tr>
+<td>waiting</td>
+<td><a href="#authstep-waiting">protocol.auth.v1.AuthStep.Waiting</a></td>
+</tr>
+</tbody>
+</table>
+<h2 id="nextsteprequest">NextStepRequest</h2>
+<p>Fields</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>auth_id</td>
+<td><code>string</code></td>
+</tr>
+<tr>
+<td>choice</td>
+<td><a href="#nextsteprequest-choice">protocol.auth.v1.NextStepRequest.Choice</a></td>
+</tr>
+<tr>
+<td>form</td>
+<td><a href="#nextsteprequest-form">protocol.auth.v1.NextStepRequest.Form</a></td>
+</tr>
+</tbody>
+</table>
+<h2 id="stepbackrequest">StepBackRequest</h2>
+<p>Fields</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>auth_id</td>
+<td><code>string</code></td>
+</tr>
+</tbody>
+</table>
+<h2 id="streamstepsrequest">StreamStepsRequest</h2>
+<p>Fields</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>auth_id</td>
+<td><code>string</code></td>
+</tr>
+</tbody>
+</table>
+<h2 id="federaterequest">FederateRequest</h2>
+<p>Fields</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>target</td>
+<td><code>string</code></td>
+</tr>
+</tbody>
+</table>
+<h2 id="federatereply">FederateReply</h2>
+<p>Fields</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>token</td>
+<td><code>string</code></td>
+</tr>
+<tr>
+<td>nonce</td>
+<td><code>string</code></td>
+</tr>
+</tbody>
+</table>
+<h2 id="keyreply">KeyReply</h2>
+<p>Fields</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>key</td>
+<td><code>string</code></td>
+</tr>
+</tbody>
+</table>
+<h2 id="loginfederatedrequest">LoginFederatedRequest</h2>
+<p>Fields</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>auth_token</td>
+<td><code>string</code></td>
+</tr>
+<tr>
+<td>domain</td>
+<td><code>string</code></td>
+</tr>
+</tbody>
+</table>
+<h2 id="authstepchoice">AuthStep.Choice</h2>
+<p>Fields</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>title</td>
+<td><code>string</code></td>
+</tr>
+<tr>
+<td>options</td>
+<td><code>string</code></td>
+</tr>
+</tbody>
+</table>
+<h2 id="authstepform">AuthStep.Form</h2>
+<p>Fields</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>title</td>
+<td><code>string</code></td>
+</tr>
+<tr>
+<td>fields</td>
+<td><a href="#authstep-form-formfield">protocol.auth.v1.AuthStep.Form.FormField</a></td>
+</tr>
+</tbody>
+</table>
+<h2 id="authstepwaiting">AuthStep.Waiting</h2>
+<p>Fields</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>title</td>
+<td><code>string</code></td>
+</tr>
+<tr>
+<td>description</td>
+<td><code>string</code></td>
+</tr>
+</tbody>
+</table>
+<h2 id="authstepformformfield">AuthStep.Form.FormField</h2>
+<p>Fields</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>name</td>
+<td><code>string</code></td>
+</tr>
+<tr>
+<td>type</td>
+<td><code>string</code></td>
+</tr>
+</tbody>
+</table>
+<h2 id="nextsteprequestchoice">NextStepRequest.Choice</h2>
+<p>Fields</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>choice</td>
+<td><code>string</code></td>
+</tr>
+</tbody>
+</table>
+<h2 id="nextsteprequestformfields">NextStepRequest.FormFields</h2>
+<p>Fields</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>bytes</td>
+<td><code>bytes</code></td>
+</tr>
+<tr>
+<td>string</td>
+<td><code>string</code></td>
+</tr>
+<tr>
+<td>number</td>
+<td><code>int64</code></td>
+</tr>
+</tbody>
+</table>
+<h2 id="nextsteprequestform">NextStepRequest.Form</h2>
+<p>Fields</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>fields</td>
+<td><a href="#nextsteprequest-formfields">protocol.auth.v1.NextStepRequest.FormFields</a></td>
+</tr>
+</tbody>
+</table>
+<h1 id="services">Services</h1>
+<h2 id="authservice">AuthService</h2>
+<h3 id="unary-methods">Unary Methods</h3>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Request</th>
+<th>Response</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Federate</td>
+<td><a href="#federaterequest">protocol.auth.v1.FederateRequest</a></td>
+<td><a href="#federatereply">protocol.auth.v1.FederateReply</a></td>
+</tr>
+<tr>
+<td>LoginFederated</td>
+<td><a href="#loginfederatedrequest">protocol.auth.v1.LoginFederatedRequest</a></td>
+<td><a href="#session">protocol.auth.v1.Session</a></td>
+</tr>
+<tr>
+<td>Key</td>
+<td><a href="https://harmonyapp.io/docs/google.protobuf/#empty">google.protobuf.Empty</a></td>
+<td><a href="#keyreply">protocol.auth.v1.KeyReply</a></td>
+</tr>
+<tr>
+<td>BeginAuth</td>
+<td><a href="https://harmonyapp.io/docs/google.protobuf/#empty">google.protobuf.Empty</a></td>
+<td><a href="#beginauthresponse">protocol.auth.v1.BeginAuthResponse</a></td>
+</tr>
+<tr>
+<td>NextStep</td>
+<td><a href="#nextsteprequest">protocol.auth.v1.NextStepRequest</a></td>
+<td><a href="#authstep">protocol.auth.v1.AuthStep</a></td>
+</tr>
+<tr>
+<td>StepBack</td>
+<td><a href="#stepbackrequest">protocol.auth.v1.StepBackRequest</a></td>
+<td><a href="#authstep">protocol.auth.v1.AuthStep</a></td>
+</tr>
+</tbody>
+</table>
+<h3 id="streaming-methods">Streaming Methods</h3>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Client Streams</th>
+<th>Server Streams</th>
+</tr>
+</thead>
+</table>
+
+</article>
+
+        </main></body>
+</html>

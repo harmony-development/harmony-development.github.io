@@ -62,8 +62,9 @@ When IP Address (xxx.xxx.xxx.xxx &#43; optional :port) When the server name is a
         </div>
     </div>
 </header><main class="nu-content">
-<h2></h2>
-<h1 id="names">Names</h1>
+<h2 class="h1"></h2>
+<article class="content">
+    <h1 id="names">Names</h1>
 <p>Every Harmony homeserver is identified by a &ldquo;server name.&rdquo; A server name uniquely identifies a server, regardless of whether the resolved IP address changes or not. Two server names pointing to the same IP address would be considered two different homeservers.</p>
 <p>A server name is resolved to an IP address and port using the following process:</p>
 <h2 id="when-ip-address-xxxxxxxxxxxx--optional-port">When IP Address (<code>xxx.xxx.xxx.xxx</code> + optional <code>:port</code>)</h2>
@@ -80,6 +81,7 @@ When IP Address (xxx.xxx.xxx.xxx &#43; optional :port) When the server name is a
 </code></pre></div><p><code>h.server</code> should be either an IP address or a domain + port. It may not be another domain without a port. <code>h.server</code> should be resolved using the above two methods as per usual to an IP address. This IP address will be the one requests are sent to.</p>
 <p>The <code>Host</code> header in requests should be set to the domain name without port.</p>
 
+</article>
 
         </main></body>
 </html>
