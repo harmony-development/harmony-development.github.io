@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en-us"><head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no">
+    <title>Harmony</title>
+    <meta name="description" content="Formatting Clients are expected to support the Commonmark specification for all message text, with the following changes:
+ Images (![]()) should be explicitly ignored by the client &lt;@123456789&gt; should be interpreted as a user mention, and render as the specified user&rsquo;s display name, with other decoration optional &lt;@|123456789&gt; should be interpreted as a role mention, and render as the specified role&rsquo;s name and colour, with other decorations optional &lt;:123456789:&gt; should be interpreted as a local emoji, and render as the emoji&rsquo;s content as provided by the homeserver of the guild &lt;:123456789|homeserver. ">
+    <link rel="canonical" href="https://harmonyapp.io/protocol/chat/v1/formatting/" />
+
+    
+    
+    <link rel="stylesheet" href="https://harmonyapp.io/sass/main.css" />
+
+    <meta property="og:title" content="" />
+<meta property="og:description" content="Formatting Clients are expected to support the Commonmark specification for all message text, with the following changes:
+ Images (![]()) should be explicitly ignored by the client &lt;@123456789&gt; should be interpreted as a user mention, and render as the specified user&rsquo;s display name, with other decoration optional &lt;@|123456789&gt; should be interpreted as a role mention, and render as the specified role&rsquo;s name and colour, with other decorations optional &lt;:123456789:&gt; should be interpreted as a local emoji, and render as the emoji&rsquo;s content as provided by the homeserver of the guild &lt;:123456789|homeserver." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://harmonyapp.io/protocol/chat/v1/formatting/" />
+
+
+    <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content=""/>
+<meta name="twitter:description" content="Formatting Clients are expected to support the Commonmark specification for all message text, with the following changes:
+ Images (![]()) should be explicitly ignored by the client &lt;@123456789&gt; should be interpreted as a user mention, and render as the specified user&rsquo;s display name, with other decoration optional &lt;@|123456789&gt; should be interpreted as a role mention, and render as the specified role&rsquo;s name and colour, with other decorations optional &lt;:123456789:&gt; should be interpreted as a local emoji, and render as the emoji&rsquo;s content as provided by the homeserver of the guild &lt;:123456789|homeserver."/>
+
+	<meta name="theme-color" content="#E93D58">
+	<meta property="og:image" content="https://harmonyapp.io/img/harmony-embed.png" />
+
+    <script src="https://unpkg.com/quicklink@2.0.0/dist/quicklink.umd.js"></script>
+    <script defer>
+        quicklink.listen()
+    </script>
+</head>
+<body><header class="nu-top-app-bar">
+    <div class="nu-top-app-bar__row">
+        <div class="nu-top-app-bar__section nu-top-app-bar__section--start">
+            <span class="h1-minor">
+                <span class="harmony-thin-header">Harmony </span><span class="harmony-thick-header">Chat</span>
+            </span>
+        </div>
+        <div class="nu-top-app-bar__section nu-top-app-bar__section--end">
+        
+        <a href="/" class="nu-top-app-bar__link h1-minor-minor">
+            <span>Home</span>
+        </a>
+        
+        <a href="/docs" class="nu-top-app-bar__link h1-minor-minor">
+            <span>Docs</span>
+        </a>
+        
+        <a href="https://github.com/harmony-development" class="nu-top-app-bar__link h1-minor-minor">
+            <span>Github</span>
+        </a>
+        
+        <a href="https://tempest.bluskript.vercel.app" class="nu-top-app-bar__link h1-minor-minor">
+            <span>Try Now</span>
+        </a>
+        
+        </div>
+    </div>
+</header><main class="nu-content">
+<h2></h2>
+<h1 id="formatting">Formatting</h1>
+<p>Clients are expected to support the Commonmark specification for all message text, with the following changes:</p>
+<ul>
+<li>Images (<code>![]()</code>) should be explicitly ignored by the client</li>
+<li><code>&lt;@123456789&gt;</code> should be interpreted as a user mention, and render as the specified user&rsquo;s display name, with other decoration optional</li>
+<li><code>&lt;@|123456789&gt;</code> should be interpreted as a role mention, and render as the specified role&rsquo;s name and colour, with other decorations optional</li>
+<li><code>&lt;:123456789:&gt;</code> should be interpreted as a local emoji, and render as the emoji&rsquo;s content as provided by the homeserver of the guild</li>
+<li><code>&lt;:123456789|homeserver.url:&gt;</code> should be interpreted as a foreign emoji, and render as the emoji&rsquo;s content as provided by the homeserver specified in the emoji</li>
+</ul>
+
+
+        </main></body>
+</html>

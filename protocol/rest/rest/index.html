@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en-us"><head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no">
+    <title>Harmony</title>
+    <meta name="description" content="RESTful Endpoints Authentication If an endpoint expects authentication, the user should set the Authorization header to a valid token from the gRPC API.
+POST /_harmony/media/upload Expects authentication: yes
+The body should be POST-ed as a multipart form (multipart/form-data), with a single part named file which contains the body of the file being uploaded.
+URL Parameters  filename: The name of the file being uploaded. contentType: The MIME type of the file. ">
+    <link rel="canonical" href="https://harmonyapp.io/protocol/rest/rest/" />
+
+    
+    
+    <link rel="stylesheet" href="https://harmonyapp.io/sass/main.css" />
+
+    <meta property="og:title" content="" />
+<meta property="og:description" content="RESTful Endpoints Authentication If an endpoint expects authentication, the user should set the Authorization header to a valid token from the gRPC API.
+POST /_harmony/media/upload Expects authentication: yes
+The body should be POST-ed as a multipart form (multipart/form-data), with a single part named file which contains the body of the file being uploaded.
+URL Parameters  filename: The name of the file being uploaded. contentType: The MIME type of the file." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://harmonyapp.io/protocol/rest/rest/" />
+
+
+    <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content=""/>
+<meta name="twitter:description" content="RESTful Endpoints Authentication If an endpoint expects authentication, the user should set the Authorization header to a valid token from the gRPC API.
+POST /_harmony/media/upload Expects authentication: yes
+The body should be POST-ed as a multipart form (multipart/form-data), with a single part named file which contains the body of the file being uploaded.
+URL Parameters  filename: The name of the file being uploaded. contentType: The MIME type of the file."/>
+
+	<meta name="theme-color" content="#E93D58">
+	<meta property="og:image" content="https://harmonyapp.io/img/harmony-embed.png" />
+
+    <script src="https://unpkg.com/quicklink@2.0.0/dist/quicklink.umd.js"></script>
+    <script defer>
+        quicklink.listen()
+    </script>
+</head>
+<body><header class="nu-top-app-bar">
+    <div class="nu-top-app-bar__row">
+        <div class="nu-top-app-bar__section nu-top-app-bar__section--start">
+            <span class="h1-minor">
+                <span class="harmony-thin-header">Harmony </span><span class="harmony-thick-header">Chat</span>
+            </span>
+        </div>
+        <div class="nu-top-app-bar__section nu-top-app-bar__section--end">
+        
+        <a href="/" class="nu-top-app-bar__link h1-minor-minor">
+            <span>Home</span>
+        </a>
+        
+        <a href="/docs" class="nu-top-app-bar__link h1-minor-minor">
+            <span>Docs</span>
+        </a>
+        
+        <a href="https://github.com/harmony-development" class="nu-top-app-bar__link h1-minor-minor">
+            <span>Github</span>
+        </a>
+        
+        <a href="https://tempest.bluskript.vercel.app" class="nu-top-app-bar__link h1-minor-minor">
+            <span>Try Now</span>
+        </a>
+        
+        </div>
+    </div>
+</header><main class="nu-content">
+<h2></h2>
+<h1 id="restful-endpoints">RESTful Endpoints</h1>
+<h2 id="authentication">Authentication</h2>
+<p>If an endpoint expects authentication, the user should set the <code>Authorization</code> header to a valid token from the gRPC API.</p>
+<h2 id="post-_harmonymediaupload">POST <code>/_harmony/media/upload</code></h2>
+<p>Expects authentication: yes</p>
+<p>The body should be POST-ed as a multipart form (<code>multipart/form-data</code>), with a single part named <code>file</code> which contains the body of the file being uploaded.</p>
+<h3 id="url-parameters">URL Parameters</h3>
+<ul>
+<li><code>filename</code>: The name of the file being uploaded.</li>
+<li><code>contentType</code>: The MIME type of the file.</li>
+</ul>
+<h3 id="responses">Responses</h3>
+<h4 id="200-ok">200 OK</h4>
+<p>Returns a JSON object with a single key, <code>id</code>.</p>
+<h4 id="400-bad-request">400 Bad Request</h4>
+<h5 id="body-missing-files">Body: <code>missing-files</code></h5>
+<p>You forgot to upload a file.</p>
+<h5 id="body-too-many-files">Body: <code>too-many-files</code></h5>
+<p>You have uploaded more than one <code>file</code> form part.</p>
+<h2 id="get-_harmonymediadownloadfile_id">GET <code>/_harmony/media/download/:file_id</code></h2>
+<p>Expects authentication: no</p>
+<p>The file ID should be one of the following:</p>
+<ul>
+<li>An attachment ID returned from POST <code>/_harmony/media/upload</code></li>
+<li>A URI-encoded URL of an image</li>
+<li>A URI-encoded HMC URL.</li>
+</ul>
+<h3 id="responses-1">Responses</h3>
+<h4 id="200-ok-1">200 OK</h4>
+<table>
+<thead>
+<tr>
+<th>Header</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>Content-Type</code></td>
+<td>The type of the file being downloaded.</td>
+</tr>
+<tr>
+<td><code>Content-Disposition</code></td>
+<td><code>attachment; filename=&lt;filename&gt;</code> or <code>inline; filename=&lt;filename&gt;</code>.</td>
+</tr>
+</tbody>
+</table>
+<h5 id="body">Body</h5>
+<p>The body will contain the content of the requested file.</p>
+
+
+        </main></body>
+</html>

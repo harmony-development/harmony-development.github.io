@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en-us"><head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no">
+    <title>Harmony</title>
+    <meta name="description" content="Names Every Harmony homeserver is identified by a &ldquo;server name.&rdquo; A server name uniquely identifies a server, regardless of whether the resolved IP address changes or not. Two server names pointing to the same IP address would be considered two different homeservers.
+A server name is resolved to an IP address and port using the following process:
+When IP Address (xxx.xxx.xxx.xxx &#43; optional :port) When the server name is an IP address, this is the resolved IP of the server that requests should be sent to. ">
+    <link rel="canonical" href="https://harmonyapp.io/protocol/name-resolution/name-resolution/" />
+
+    
+    
+    <link rel="stylesheet" href="https://harmonyapp.io/sass/main.css" />
+
+    <meta property="og:title" content="" />
+<meta property="og:description" content="Names Every Harmony homeserver is identified by a &ldquo;server name.&rdquo; A server name uniquely identifies a server, regardless of whether the resolved IP address changes or not. Two server names pointing to the same IP address would be considered two different homeservers.
+A server name is resolved to an IP address and port using the following process:
+When IP Address (xxx.xxx.xxx.xxx &#43; optional :port) When the server name is an IP address, this is the resolved IP of the server that requests should be sent to." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://harmonyapp.io/protocol/name-resolution/name-resolution/" />
+
+
+    <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content=""/>
+<meta name="twitter:description" content="Names Every Harmony homeserver is identified by a &ldquo;server name.&rdquo; A server name uniquely identifies a server, regardless of whether the resolved IP address changes or not. Two server names pointing to the same IP address would be considered two different homeservers.
+A server name is resolved to an IP address and port using the following process:
+When IP Address (xxx.xxx.xxx.xxx &#43; optional :port) When the server name is an IP address, this is the resolved IP of the server that requests should be sent to."/>
+
+	<meta name="theme-color" content="#E93D58">
+	<meta property="og:image" content="https://harmonyapp.io/img/harmony-embed.png" />
+
+    <script src="https://unpkg.com/quicklink@2.0.0/dist/quicklink.umd.js"></script>
+    <script defer>
+        quicklink.listen()
+    </script>
+</head>
+<body><header class="nu-top-app-bar">
+    <div class="nu-top-app-bar__row">
+        <div class="nu-top-app-bar__section nu-top-app-bar__section--start">
+            <span class="h1-minor">
+                <span class="harmony-thin-header">Harmony </span><span class="harmony-thick-header">Chat</span>
+            </span>
+        </div>
+        <div class="nu-top-app-bar__section nu-top-app-bar__section--end">
+        
+        <a href="/" class="nu-top-app-bar__link h1-minor-minor">
+            <span>Home</span>
+        </a>
+        
+        <a href="/docs" class="nu-top-app-bar__link h1-minor-minor">
+            <span>Docs</span>
+        </a>
+        
+        <a href="https://github.com/harmony-development" class="nu-top-app-bar__link h1-minor-minor">
+            <span>Github</span>
+        </a>
+        
+        <a href="https://tempest.bluskript.vercel.app" class="nu-top-app-bar__link h1-minor-minor">
+            <span>Try Now</span>
+        </a>
+        
+        </div>
+    </div>
+</header><main class="nu-content">
+<h2></h2>
+<h1 id="names">Names</h1>
+<p>Every Harmony homeserver is identified by a &ldquo;server name.&rdquo; A server name uniquely identifies a server, regardless of whether the resolved IP address changes or not. Two server names pointing to the same IP address would be considered two different homeservers.</p>
+<p>A server name is resolved to an IP address and port using the following process:</p>
+<h2 id="when-ip-address-xxxxxxxxxxxx--optional-port">When IP Address (<code>xxx.xxx.xxx.xxx</code> + optional <code>:port</code>)</h2>
+<p>When the server name is an IP address, this is the resolved IP of the server that requests should be sent to. If not specified, <code>:port</code> is 2289.</p>
+<p>The <code>Host</code> header in requests should be set to the IP literal including the port if specified in the server name.</p>
+<h2 id="when-domain-and-port-examplecomport">When domain and port (<code>example.com:port</code>)</h2>
+<p>When the server name is a hostname with a port, the hostname should be resolved to an IP address using AAAA or A record lookups in the DNS. This IP address will be the one requests are sent to.</p>
+<p>The <code>Host</code> header in requests should be set to the domain name and given port, not the resolved IP address.</p>
+<h2 id="when-domain-without-port-examplecom">When domain without port (<code>example.com</code>)</h2>
+<p>When the server name is a host without a port, a request should be made to <code>https://hostname/_harmony/server</code>. If the request fails with a 404, resolution of the server name should be done as if it had port 2289 specified using the above method for resolving domains with ports. Otherwise, the request is expected to return a JSON object with the following schema:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">{
+    <span style="color:#f92672">&#34;h.server&#34;</span>: <span style="color:#e6db74">&#34;&#34;</span>,
+}
+</code></pre></div><p><code>h.server</code> should be either an IP address or a domain + port. It may not be another domain without a port. <code>h.server</code> should be resolved using the above two methods as per usual to an IP address. This IP address will be the one requests are sent to.</p>
+<p>The <code>Host</code> header in requests should be set to the domain name without port.</p>
+
+
+        </main></body>
+</html>
