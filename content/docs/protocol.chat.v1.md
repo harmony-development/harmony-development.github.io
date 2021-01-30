@@ -1,9 +1,9 @@
 ---
 title: "Reference: protocol.chat.v1"
 ---
-# Message Types 
+## Message Types 
 
-## GetUserRequest
+### GetUserRequest
 
 Fields
 
@@ -11,7 +11,7 @@ Fields
 | ---- | ---- |
 | user_id | `uint64` |
 
-## GetUserResponse
+### GetUserResponse
 
 Fields
 
@@ -22,7 +22,7 @@ Fields
 | UNHANDLED | TYPE |
 | is_bot | `bool` |
 
-## GetUserMetadataRequest
+### GetUserMetadataRequest
 
 Fields
 
@@ -30,7 +30,7 @@ Fields
 | ---- | ---- |
 | app_id | `string` |
 
-## GetUserMetadataResponse
+### GetUserMetadataResponse
 
 Fields
 
@@ -38,7 +38,7 @@ Fields
 | ---- | ---- |
 | metadata | `string` |
 
-## ProfileUpdateRequest
+### ProfileUpdateRequest
 
 Fields
 
@@ -53,7 +53,7 @@ Fields
 | is_bot | `bool` |
 | update_is_bot | `bool` |
 
-## CreateGuildRequest
+### CreateGuildRequest
 
 Fields
 
@@ -63,7 +63,7 @@ Fields
 | guild_name | `string` |
 | picture_url | `string` |
 
-## CreateGuildResponse
+### CreateGuildResponse
 
 Fields
 
@@ -71,7 +71,7 @@ Fields
 | ---- | ---- |
 | guild_id | `uint64` |
 
-## CreateInviteRequest
+### CreateInviteRequest
 
 Fields
 
@@ -81,7 +81,7 @@ Fields
 | name | `string` |
 | possible_uses | `int32` |
 
-## CreateInviteResponse
+### CreateInviteResponse
 
 Fields
 
@@ -89,14 +89,14 @@ Fields
 | ---- | ---- |
 | name | `string` |
 
-## GetGuildListRequest
+### GetGuildListRequest
 
 Fields
 
 | Name | Type |
 | ---- | ---- |
 
-## GetGuildListResponse
+### GetGuildListResponse
 
 Fields
 
@@ -104,7 +104,7 @@ Fields
 | ---- | ---- |
 | guilds | [protocol.chat.v1.GetGuildListResponse.GuildListEntry](#getguildlistresponse-guildlistentry) |
 
-## GetGuildRequest
+### GetGuildRequest
 
 Fields
 
@@ -112,7 +112,7 @@ Fields
 | ---- | ---- |
 | guild_id | `uint64` |
 
-## GetGuildResponse
+### GetGuildResponse
 
 Fields
 
@@ -123,7 +123,7 @@ Fields
 | guild_owner | `uint64` |
 | guild_picture | `string` |
 
-## GetGuildInvitesRequest
+### GetGuildInvitesRequest
 
 Fields
 
@@ -131,7 +131,7 @@ Fields
 | ---- | ---- |
 | guild_id | `uint64` |
 
-## GetGuildInvitesResponse
+### GetGuildInvitesResponse
 
 Fields
 
@@ -139,7 +139,7 @@ Fields
 | ---- | ---- |
 | invites | [protocol.chat.v1.GetGuildInvitesResponse.Invite](#getguildinvitesresponse-invite) |
 
-## GetGuildMembersRequest
+### GetGuildMembersRequest
 
 Fields
 
@@ -147,7 +147,7 @@ Fields
 | ---- | ---- |
 | guild_id | `uint64` |
 
-## GetGuildMembersResponse
+### GetGuildMembersResponse
 
 Fields
 
@@ -155,7 +155,7 @@ Fields
 | ---- | ---- |
 | members | `uint64` |
 
-## UpdateGuildInformationRequest
+### UpdateGuildInformationRequest
 
 Fields
 
@@ -169,7 +169,7 @@ Fields
 | metadata | [protocol.harmonytypes.v1.Metadata]({{< ref "protocol.harmonytypes.v1.md" >}}#metadata) |
 | update_metadata | `bool` |
 
-## DeleteGuildRequest
+### DeleteGuildRequest
 
 Fields
 
@@ -177,7 +177,7 @@ Fields
 | ---- | ---- |
 | guild_id | `uint64` |
 
-## DeleteInviteRequest
+### DeleteInviteRequest
 
 Fields
 
@@ -186,7 +186,7 @@ Fields
 | guild_id | `uint64` |
 | invite_id | `string` |
 
-## JoinGuildRequest
+### JoinGuildRequest
 
 Fields
 
@@ -194,7 +194,7 @@ Fields
 | ---- | ---- |
 | invite_id | `string` |
 
-## JoinGuildResponse
+### JoinGuildResponse
 
 Fields
 
@@ -202,7 +202,7 @@ Fields
 | ---- | ---- |
 | guild_id | `uint64` |
 
-## PreviewGuildRequest
+### PreviewGuildRequest
 
 Fields
 
@@ -210,7 +210,7 @@ Fields
 | ---- | ---- |
 | invite_id | `string` |
 
-## PreviewGuildResponse
+### PreviewGuildResponse
 
 Fields
 
@@ -220,7 +220,7 @@ Fields
 | avatar | `string` |
 | member_count | `uint64` |
 
-## LeaveGuildRequest
+### LeaveGuildRequest
 
 Fields
 
@@ -228,23 +228,7 @@ Fields
 | ---- | ---- |
 | guild_id | `uint64` |
 
-## AddGuildToGuildListRequest
-
-Fields
-
-| Name | Type |
-| ---- | ---- |
-| guild_id | `uint64` |
-| homeserver | `string` |
-
-## AddGuildToGuildListResponse
-
-Fields
-
-| Name | Type |
-| ---- | ---- |
-
-## RemoveGuildFromGuildListRequest
+### AddGuildToGuildListRequest
 
 Fields
 
@@ -253,14 +237,30 @@ Fields
 | guild_id | `uint64` |
 | homeserver | `string` |
 
-## RemoveGuildFromGuildListResponse
+### AddGuildToGuildListResponse
 
 Fields
 
 | Name | Type |
 | ---- | ---- |
 
-## GetGuildListResponse.GuildListEntry
+### RemoveGuildFromGuildListRequest
+
+Fields
+
+| Name | Type |
+| ---- | ---- |
+| guild_id | `uint64` |
+| homeserver | `string` |
+
+### RemoveGuildFromGuildListResponse
+
+Fields
+
+| Name | Type |
+| ---- | ---- |
+
+### GetGuildListResponse.GuildListEntry
 
 Fields
 
@@ -269,7 +269,7 @@ Fields
 | guild_id | `uint64` |
 | host | `string` |
 
-## GetGuildInvitesResponse.Invite
+### GetGuildInvitesResponse.Invite
 
 Fields
 
@@ -279,7 +279,7 @@ Fields
 | possible_uses | `int32` |
 | use_count | `int32` |
 
-## CreateChannelRequest
+### CreateChannelRequest
 
 Fields
 
@@ -292,7 +292,7 @@ Fields
 | next_id | `uint64` |
 | metadata | [protocol.harmonytypes.v1.Metadata]({{< ref "protocol.harmonytypes.v1.md" >}}#metadata) |
 
-## CreateChannelResponse
+### CreateChannelResponse
 
 Fields
 
@@ -300,7 +300,7 @@ Fields
 | ---- | ---- |
 | channel_id | `uint64` |
 
-## GetGuildChannelsRequest
+### GetGuildChannelsRequest
 
 Fields
 
@@ -308,7 +308,7 @@ Fields
 | ---- | ---- |
 | guild_id | `uint64` |
 
-## GetGuildChannelsResponse
+### GetGuildChannelsResponse
 
 Fields
 
@@ -316,7 +316,7 @@ Fields
 | ---- | ---- |
 | channels | [protocol.chat.v1.GetGuildChannelsResponse.Channel](#getguildchannelsresponse-channel) |
 
-## UpdateChannelInformationRequest
+### UpdateChannelInformationRequest
 
 Fields
 
@@ -329,7 +329,7 @@ Fields
 | metadata | [protocol.harmonytypes.v1.Metadata]({{< ref "protocol.harmonytypes.v1.md" >}}#metadata) |
 | update_metadata | `bool` |
 
-## UpdateChannelOrderRequest
+### UpdateChannelOrderRequest
 
 Fields
 
@@ -340,7 +340,7 @@ Fields
 | previous_id | `uint64` |
 | next_id | `uint64` |
 
-## DeleteChannelRequest
+### DeleteChannelRequest
 
 Fields
 
@@ -349,7 +349,7 @@ Fields
 | guild_id | `uint64` |
 | channel_id | `uint64` |
 
-## TypingRequest
+### TypingRequest
 
 Fields
 
@@ -358,7 +358,7 @@ Fields
 | guild_id | `uint64` |
 | channel_id | `uint64` |
 
-## GetGuildChannelsResponse.Channel
+### GetGuildChannelsResponse.Channel
 
 Fields
 
@@ -369,7 +369,7 @@ Fields
 | channel_name | `string` |
 | is_category | `bool` |
 
-## GetChannelMessagesRequest
+### GetChannelMessagesRequest
 
 Fields
 
@@ -379,7 +379,7 @@ Fields
 | channel_id | `uint64` |
 | before_message | `uint64` |
 
-## GetChannelMessagesResponse
+### GetChannelMessagesResponse
 
 Fields
 
@@ -388,7 +388,7 @@ Fields
 | reached_top | `bool` |
 | messages | [protocol.harmonytypes.v1.Message]({{< ref "protocol.harmonytypes.v1.md" >}}#message) |
 
-## GetMessageRequest
+### GetMessageRequest
 
 Fields
 
@@ -398,7 +398,7 @@ Fields
 | channel_id | `uint64` |
 | message_id | `uint64` |
 
-## GetMessageResponse
+### GetMessageResponse
 
 Fields
 
@@ -406,7 +406,7 @@ Fields
 | ---- | ---- |
 | message | [protocol.harmonytypes.v1.Message]({{< ref "protocol.harmonytypes.v1.md" >}}#message) |
 
-## UpdateMessageRequest
+### UpdateMessageRequest
 
 Fields
 
@@ -428,7 +428,7 @@ Fields
 | metadata | [protocol.harmonytypes.v1.Metadata]({{< ref "protocol.harmonytypes.v1.md" >}}#metadata) |
 | update_metadata | `bool` |
 
-## DeleteMessageRequest
+### DeleteMessageRequest
 
 Fields
 
@@ -438,7 +438,7 @@ Fields
 | channel_id | `uint64` |
 | message_id | `uint64` |
 
-## TriggerActionRequest
+### TriggerActionRequest
 
 Fields
 
@@ -450,7 +450,7 @@ Fields
 | action_id | `string` |
 | action_data | `string` |
 
-## SendMessageRequest
+### SendMessageRequest
 
 Fields
 
@@ -467,7 +467,7 @@ Fields
 | echo_id | `uint64` |
 | metadata | [protocol.harmonytypes.v1.Metadata]({{< ref "protocol.harmonytypes.v1.md" >}}#metadata) |
 
-## SendMessageResponse
+### SendMessageResponse
 
 Fields
 
@@ -475,7 +475,7 @@ Fields
 | ---- | ---- |
 | message_id | `uint64` |
 
-## CreateEmotePackRequest
+### CreateEmotePackRequest
 
 Fields
 
@@ -483,7 +483,7 @@ Fields
 | ---- | ---- |
 | pack_name | `string` |
 
-## CreateEmotePackResponse
+### CreateEmotePackResponse
 
 Fields
 
@@ -491,14 +491,14 @@ Fields
 | ---- | ---- |
 | pack_id | `uint64` |
 
-## GetEmotePacksRequest
+### GetEmotePacksRequest
 
 Fields
 
 | Name | Type |
 | ---- | ---- |
 
-## GetEmotePacksResponse
+### GetEmotePacksResponse
 
 Fields
 
@@ -506,7 +506,7 @@ Fields
 | ---- | ---- |
 | packs | [protocol.chat.v1.GetEmotePacksResponse.EmotePack](#getemotepacksresponse-emotepack) |
 
-## GetEmotePackEmotesRequest
+### GetEmotePackEmotesRequest
 
 Fields
 
@@ -514,7 +514,7 @@ Fields
 | ---- | ---- |
 | pack_id | `uint64` |
 
-## GetEmotePackEmotesResponse
+### GetEmotePackEmotesResponse
 
 Fields
 
@@ -522,7 +522,7 @@ Fields
 | ---- | ---- |
 | emotes | [protocol.chat.v1.GetEmotePackEmotesResponse.Emote](#getemotepackemotesresponse-emote) |
 
-## AddEmoteToPackRequest
+### AddEmoteToPackRequest
 
 Fields
 
@@ -532,7 +532,7 @@ Fields
 | image_id | `string` |
 | name | `string` |
 
-## DeleteEmoteFromPackRequest
+### DeleteEmoteFromPackRequest
 
 Fields
 
@@ -541,7 +541,7 @@ Fields
 | pack_id | `uint64` |
 | image_id | `string` |
 
-## DeleteEmotePackRequest
+### DeleteEmotePackRequest
 
 Fields
 
@@ -549,7 +549,7 @@ Fields
 | ---- | ---- |
 | pack_id | `uint64` |
 
-## DequipEmotePackRequest
+### DequipEmotePackRequest
 
 Fields
 
@@ -557,7 +557,7 @@ Fields
 | ---- | ---- |
 | pack_id | `uint64` |
 
-## GetEmotePacksResponse.EmotePack
+### GetEmotePacksResponse.EmotePack
 
 Fields
 
@@ -567,7 +567,7 @@ Fields
 | pack_owner | `uint64` |
 | pack_name | `string` |
 
-## GetEmotePackEmotesResponse.Emote
+### GetEmotePackEmotesResponse.Emote
 
 Fields
 
@@ -576,7 +576,7 @@ Fields
 | image_id | `string` |
 | name | `string` |
 
-## QueryPermissionsRequest
+### QueryPermissionsRequest
 
 Fields
 
@@ -587,7 +587,7 @@ Fields
 | check_for | `string` |
 | as | `uint64` |
 
-## QueryPermissionsResponse
+### QueryPermissionsResponse
 
 Fields
 
@@ -595,7 +595,7 @@ Fields
 | ---- | ---- |
 | ok | `bool` |
 
-## Permission
+### Permission
 
 Fields
 
@@ -604,7 +604,7 @@ Fields
 | matches | `string` |
 | UNHANDLED | TYPE |
 
-## PermissionList
+### PermissionList
 
 Fields
 
@@ -612,7 +612,7 @@ Fields
 | ---- | ---- |
 | permissions | [protocol.chat.v1.Permission](#permission) |
 
-## SetPermissionsRequest
+### SetPermissionsRequest
 
 Fields
 
@@ -623,7 +623,7 @@ Fields
 | role_id | `uint64` |
 | perms | [protocol.chat.v1.PermissionList](#permissionlist) |
 
-## GetPermissionsRequest
+### GetPermissionsRequest
 
 Fields
 
@@ -633,7 +633,7 @@ Fields
 | channel_id | `uint64` |
 | role_id | `uint64` |
 
-## GetPermissionsResponse
+### GetPermissionsResponse
 
 Fields
 
@@ -641,7 +641,7 @@ Fields
 | ---- | ---- |
 | perms | [protocol.chat.v1.PermissionList](#permissionlist) |
 
-## Role
+### Role
 
 Fields
 
@@ -653,7 +653,7 @@ Fields
 | hoist | `bool` |
 | pingable | `bool` |
 
-## MoveRoleRequest
+### MoveRoleRequest
 
 Fields
 
@@ -664,14 +664,14 @@ Fields
 | before_id | `uint64` |
 | after_id | `uint64` |
 
-## MoveRoleResponse
+### MoveRoleResponse
 
 Fields
 
 | Name | Type |
 | ---- | ---- |
 
-## GetGuildRolesRequest
+### GetGuildRolesRequest
 
 Fields
 
@@ -679,7 +679,7 @@ Fields
 | ---- | ---- |
 | guild_id | `uint64` |
 
-## GetGuildRolesResponse
+### GetGuildRolesResponse
 
 Fields
 
@@ -687,7 +687,7 @@ Fields
 | ---- | ---- |
 | roles | [protocol.chat.v1.Role](#role) |
 
-## AddGuildRoleRequest
+### AddGuildRoleRequest
 
 Fields
 
@@ -696,7 +696,7 @@ Fields
 | guild_id | `uint64` |
 | role | [protocol.chat.v1.Role](#role) |
 
-## AddGuildRoleResponse
+### AddGuildRoleResponse
 
 Fields
 
@@ -704,7 +704,7 @@ Fields
 | ---- | ---- |
 | role_id | `uint64` |
 
-## DeleteGuildRoleRequest
+### DeleteGuildRoleRequest
 
 Fields
 
@@ -713,7 +713,7 @@ Fields
 | guild_id | `uint64` |
 | role_id | `uint64` |
 
-## ModifyGuildRoleRequest
+### ModifyGuildRoleRequest
 
 Fields
 
@@ -726,7 +726,7 @@ Fields
 | modify_hoist | `bool` |
 | modify_pingable | `bool` |
 
-## ManageUserRolesRequest
+### ManageUserRolesRequest
 
 Fields
 
@@ -737,7 +737,7 @@ Fields
 | give_role_ids | `uint64` |
 | take_role_ids | `uint64` |
 
-## GetUserRolesRequest
+### GetUserRolesRequest
 
 Fields
 
@@ -746,7 +746,7 @@ Fields
 | guild_id | `uint64` |
 | user_id | `uint64` |
 
-## GetUserRolesResponse
+### GetUserRolesResponse
 
 Fields
 
@@ -754,7 +754,7 @@ Fields
 | ---- | ---- |
 | roles | `uint64` |
 
-## StreamEventsRequest
+### StreamEventsRequest
 
 Fields
 
@@ -764,7 +764,7 @@ Fields
 | subscribe_to_actions | [protocol.chat.v1.StreamEventsRequest.SubscribeToActions](#streameventsrequest-subscribetoactions) |
 | subscribe_to_homeserver_events | [protocol.chat.v1.StreamEventsRequest.SubscribeToHomeserverEvents](#streameventsrequest-subscribetohomeserverevents) |
 
-## Event
+### Event
 
 Fields
 
@@ -787,7 +787,7 @@ Fields
 | profile_updated | [protocol.chat.v1.Event.ProfileUpdated](#event-profileupdated) |
 | typing | [protocol.chat.v1.Event.Typing](#event-typing) |
 
-## StreamEventsRequest.SubscribeToGuild
+### StreamEventsRequest.SubscribeToGuild
 
 Fields
 
@@ -795,21 +795,21 @@ Fields
 | ---- | ---- |
 | guild_id | `uint64` |
 
-## StreamEventsRequest.SubscribeToActions
+### StreamEventsRequest.SubscribeToActions
 
 Fields
 
 | Name | Type |
 | ---- | ---- |
 
-## StreamEventsRequest.SubscribeToHomeserverEvents
+### StreamEventsRequest.SubscribeToHomeserverEvents
 
 Fields
 
 | Name | Type |
 | ---- | ---- |
 
-## Event.MessageSent
+### Event.MessageSent
 
 Fields
 
@@ -818,7 +818,7 @@ Fields
 | echo_id | `uint64` |
 | message | [protocol.harmonytypes.v1.Message]({{< ref "protocol.harmonytypes.v1.md" >}}#message) |
 
-## Event.MessageUpdated
+### Event.MessageUpdated
 
 Fields
 
@@ -841,7 +841,7 @@ Fields
 | metadata | [protocol.harmonytypes.v1.Metadata]({{< ref "protocol.harmonytypes.v1.md" >}}#metadata) |
 | update_metadata | `bool` |
 
-## Event.MessageDeleted
+### Event.MessageDeleted
 
 Fields
 
@@ -851,7 +851,7 @@ Fields
 | channel_id | `uint64` |
 | message_id | `uint64` |
 
-## Event.ChannelCreated
+### Event.ChannelCreated
 
 Fields
 
@@ -865,7 +865,7 @@ Fields
 | is_category | `bool` |
 | metadata | [protocol.harmonytypes.v1.Metadata]({{< ref "protocol.harmonytypes.v1.md" >}}#metadata) |
 
-## Event.ChannelUpdated
+### Event.ChannelUpdated
 
 Fields
 
@@ -881,7 +881,7 @@ Fields
 | metadata | [protocol.harmonytypes.v1.Metadata]({{< ref "protocol.harmonytypes.v1.md" >}}#metadata) |
 | update_metadata | `bool` |
 
-## Event.ChannelDeleted
+### Event.ChannelDeleted
 
 Fields
 
@@ -890,7 +890,7 @@ Fields
 | guild_id | `uint64` |
 | channel_id | `uint64` |
 
-## Event.GuildUpdated
+### Event.GuildUpdated
 
 Fields
 
@@ -904,7 +904,7 @@ Fields
 | metadata | [protocol.harmonytypes.v1.Metadata]({{< ref "protocol.harmonytypes.v1.md" >}}#metadata) |
 | update_metadata | `bool` |
 
-## Event.GuildDeleted
+### Event.GuildDeleted
 
 Fields
 
@@ -912,16 +912,7 @@ Fields
 | ---- | ---- |
 | guild_id | `uint64` |
 
-## Event.MemberJoined
-
-Fields
-
-| Name | Type |
-| ---- | ---- |
-| member_id | `uint64` |
-| guild_id | `uint64` |
-
-## Event.MemberLeft
+### Event.MemberJoined
 
 Fields
 
@@ -930,7 +921,16 @@ Fields
 | member_id | `uint64` |
 | guild_id | `uint64` |
 
-## Event.GuildAddedToList
+### Event.MemberLeft
+
+Fields
+
+| Name | Type |
+| ---- | ---- |
+| member_id | `uint64` |
+| guild_id | `uint64` |
+
+### Event.GuildAddedToList
 
 Fields
 
@@ -939,7 +939,7 @@ Fields
 | guild_id | `uint64` |
 | homeserver | `string` |
 
-## Event.GuildRemovedFromList
+### Event.GuildRemovedFromList
 
 Fields
 
@@ -948,7 +948,7 @@ Fields
 | guild_id | `uint64` |
 | homeserver | `string` |
 
-## Event.ActionPerformed
+### Event.ActionPerformed
 
 Fields
 
@@ -960,7 +960,7 @@ Fields
 | action_id | `string` |
 | action_data | `string` |
 
-## Event.RoleMoved
+### Event.RoleMoved
 
 Fields
 
@@ -969,7 +969,7 @@ Fields
 | guild_id | `uint64` |
 | role_id | `uint64` |
 
-## Event.ProfileUpdated
+### Event.ProfileUpdated
 
 Fields
 
@@ -985,7 +985,7 @@ Fields
 | is_bot | `bool` |
 | update_is_bot | `bool` |
 
-## Event.Typing
+### Event.Typing
 
 Fields
 
@@ -995,7 +995,7 @@ Fields
 | guild_id | `uint64` |
 | channel_id | `uint64` |
 
-## SyncRequest
+### SyncRequest
 
 Fields
 
@@ -1004,7 +1004,7 @@ Fields
 | token | `string` |
 | host | `string` |
 
-## SyncEvent
+### SyncEvent
 
 Fields
 
@@ -1012,7 +1012,7 @@ Fields
 | ---- | ---- |
 | dm_invite | [protocol.chat.v1.SyncEvent.DMInvite](#syncevent-dminvite) |
 
-## SyncEvent.DMInvite
+### SyncEvent.DMInvite
 
 Fields
 
@@ -1024,11 +1024,11 @@ Fields
 | dm_avatar | `string` |
 | invite_id | `string` |
 
-# Services 
+## Services 
 
-## ChatService
+### ChatService
 
-### Unary Methods
+#### Unary Methods
 
 | Name | Request | Response |
 | ---- | ------- | -------- |
@@ -1079,7 +1079,7 @@ Fields
 |Typing|[protocol.chat.v1.TypingRequest](#typingrequest)|[google.protobuf.Empty]({{< ref "google.protobuf.md" >}}#empty)|
 |PreviewGuild|[protocol.chat.v1.PreviewGuildRequest](#previewguildrequest)|[protocol.chat.v1.PreviewGuildResponse](#previewguildresponse)|
 
-### Streaming Methods
+#### Streaming Methods
 
 | Name | Client Streams | Server Streams |
 | ---- | -------------- | -------------- |

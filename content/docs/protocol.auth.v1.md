@@ -1,9 +1,9 @@
 ---
 title: "Reference: protocol.auth.v1"
 ---
-# Message Types 
+## Message Types 
 
-## BeginAuthResponse
+### BeginAuthResponse
 
 Fields
 
@@ -11,7 +11,7 @@ Fields
 | ---- | ---- |
 | auth_id | `string` |
 
-## Session
+### Session
 
 Fields
 
@@ -20,7 +20,7 @@ Fields
 | user_id | `uint64` |
 | session_token | `string` |
 
-## AuthStep
+### AuthStep
 
 Fields
 
@@ -33,7 +33,7 @@ Fields
 | session | [protocol.auth.v1.Session](#session) |
 | waiting | [protocol.auth.v1.AuthStep.Waiting](#authstep-waiting) |
 
-## NextStepRequest
+### NextStepRequest
 
 Fields
 
@@ -43,7 +43,7 @@ Fields
 | choice | [protocol.auth.v1.NextStepRequest.Choice](#nextsteprequest-choice) |
 | form | [protocol.auth.v1.NextStepRequest.Form](#nextsteprequest-form) |
 
-## StepBackRequest
+### StepBackRequest
 
 Fields
 
@@ -51,7 +51,7 @@ Fields
 | ---- | ---- |
 | auth_id | `string` |
 
-## StreamStepsRequest
+### StreamStepsRequest
 
 Fields
 
@@ -59,7 +59,7 @@ Fields
 | ---- | ---- |
 | auth_id | `string` |
 
-## FederateRequest
+### FederateRequest
 
 Fields
 
@@ -67,7 +67,7 @@ Fields
 | ---- | ---- |
 | target | `string` |
 
-## FederateReply
+### FederateReply
 
 Fields
 
@@ -76,7 +76,7 @@ Fields
 | token | `string` |
 | nonce | `string` |
 
-## KeyReply
+### KeyReply
 
 Fields
 
@@ -84,7 +84,7 @@ Fields
 | ---- | ---- |
 | key | `string` |
 
-## LoginFederatedRequest
+### LoginFederatedRequest
 
 Fields
 
@@ -93,7 +93,7 @@ Fields
 | auth_token | `string` |
 | domain | `string` |
 
-## AuthStep.Choice
+### AuthStep.Choice
 
 Fields
 
@@ -102,7 +102,7 @@ Fields
 | title | `string` |
 | options | `string` |
 
-## AuthStep.Form
+### AuthStep.Form
 
 Fields
 
@@ -111,7 +111,7 @@ Fields
 | title | `string` |
 | fields | [protocol.auth.v1.AuthStep.Form.FormField](#authstep-form-formfield) |
 
-## AuthStep.Waiting
+### AuthStep.Waiting
 
 Fields
 
@@ -120,7 +120,7 @@ Fields
 | title | `string` |
 | description | `string` |
 
-## AuthStep.Form.FormField
+### AuthStep.Form.FormField
 
 Fields
 
@@ -129,7 +129,7 @@ Fields
 | name | `string` |
 | type | `string` |
 
-## NextStepRequest.Choice
+### NextStepRequest.Choice
 
 Fields
 
@@ -137,7 +137,7 @@ Fields
 | ---- | ---- |
 | choice | `string` |
 
-## NextStepRequest.FormFields
+### NextStepRequest.FormFields
 
 Fields
 
@@ -147,7 +147,7 @@ Fields
 | string | `string` |
 | number | `int64` |
 
-## NextStepRequest.Form
+### NextStepRequest.Form
 
 Fields
 
@@ -155,11 +155,11 @@ Fields
 | ---- | ---- |
 | fields | [protocol.auth.v1.NextStepRequest.FormFields](#nextsteprequest-formfields) |
 
-# Services 
+## Services 
 
-## AuthService
+### AuthService
 
-### Unary Methods
+#### Unary Methods
 
 | Name | Request | Response |
 | ---- | ------- | -------- |
@@ -170,7 +170,7 @@ Fields
 |NextStep|[protocol.auth.v1.NextStepRequest](#nextsteprequest)|[protocol.auth.v1.AuthStep](#authstep)|
 |StepBack|[protocol.auth.v1.StepBackRequest](#stepbackrequest)|[protocol.auth.v1.AuthStep](#authstep)|
 
-### Streaming Methods
+#### Streaming Methods
 
 | Name | Client Streams | Server Streams |
 | ---- | -------------- | -------------- |

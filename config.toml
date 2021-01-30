@@ -6,6 +6,9 @@ theme = "nu"
 [params]
     description = "Your place. Your communities. Your friends."
 
+[markup.goldmark.renderer]
+    unsafe = "true"
+
 [menu]
 
   [[menu.main]]

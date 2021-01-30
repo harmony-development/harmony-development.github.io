@@ -1,9 +1,9 @@
 ---
 title: "Reference: protocol.harmonytypes.v1"
 ---
-# Message Types 
+## Message Types 
 
-## HarmonyMethodMetadata
+### HarmonyMethodMetadata
 
 Fields
 
@@ -13,7 +13,7 @@ Fields
 | requires_local | `bool` |
 | requires_permission_node | `string` |
 
-## Override
+### Override
 
 Fields
 
@@ -27,7 +27,7 @@ Fields
 | system_message | [google.protobuf.Empty]({{< ref "google.protobuf.md" >}}#empty) |
 | bridge | [google.protobuf.Empty]({{< ref "google.protobuf.md" >}}#empty) |
 
-## Action
+### Action
 
 Fields
 
@@ -40,7 +40,7 @@ Fields
 | UNHANDLED | TYPE |
 | children | [protocol.harmonytypes.v1.Action](#action) |
 
-## EmbedHeading
+### EmbedHeading
 
 Fields
 
@@ -51,7 +51,7 @@ Fields
 | url | `string` |
 | icon | `string` |
 
-## EmbedField
+### EmbedField
 
 Fields
 
@@ -64,7 +64,7 @@ Fields
 | UNHANDLED | TYPE |
 | actions | [protocol.harmonytypes.v1.Action](#action) |
 
-## Embed
+### Embed
 
 Fields
 
@@ -78,7 +78,7 @@ Fields
 | fields | [protocol.harmonytypes.v1.EmbedField](#embedfield) |
 | actions | [protocol.harmonytypes.v1.Action](#action) |
 
-## Attachment
+### Attachment
 
 Fields
 
@@ -89,7 +89,7 @@ Fields
 | type | `string` |
 | size | `int32` |
 
-## Metadata
+### Metadata
 
 Fields
 
@@ -98,7 +98,7 @@ Fields
 | kind | `string` |
 | extension | [protocol.harmonytypes.v1.Metadata.ExtensionEntry](#metadata-extensionentry) |
 
-## Message
+### Message
 
 Fields
 
@@ -118,7 +118,7 @@ Fields
 | in_reply_to | `uint64` |
 | overrides | [protocol.harmonytypes.v1.Override](#override) |
 
-## Metadata.ExtensionEntry
+### Metadata.ExtensionEntry
 
 Fields
 
@@ -127,5 +127,5 @@ Fields
 | key | `string` |
 | value | [google.protobuf.Any]({{< ref "google.protobuf.md" >}}#any) |
 
-# Services 
+## Services 
 

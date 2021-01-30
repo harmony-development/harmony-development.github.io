@@ -1,9 +1,9 @@
 ---
 title: "Reference: protocol.mediaproxy.v1"
 ---
-# Message Types 
+## Message Types 
 
-## SiteMetadata
+### SiteMetadata
 
 Fields
 
@@ -16,7 +16,7 @@ Fields
 | url | `string` |
 | image | `string` |
 
-## FetchLinkMetadataRequest
+### FetchLinkMetadataRequest
 
 Fields
 
@@ -24,7 +24,7 @@ Fields
 | ---- | ---- |
 | url | `string` |
 
-## InstantViewRequest
+### InstantViewRequest
 
 Fields
 
@@ -32,7 +32,7 @@ Fields
 | ---- | ---- |
 | url | `string` |
 
-## InstantViewResponse
+### InstantViewResponse
 
 Fields
 
@@ -42,7 +42,7 @@ Fields
 | content | `string` |
 | is_valid | `bool` |
 
-## CanInstantViewResponse
+### CanInstantViewResponse
 
 Fields
 
@@ -50,11 +50,11 @@ Fields
 | ---- | ---- |
 | can_instant_view | `bool` |
 
-# Services 
+## Services 
 
-## MediaProxyService
+### MediaProxyService
 
-### Unary Methods
+#### Unary Methods
 
 | Name | Request | Response |
 | ---- | ------- | -------- |
@@ -62,7 +62,7 @@ Fields
 |InstantView|[protocol.mediaproxy.v1.InstantViewRequest](#instantviewrequest)|[protocol.mediaproxy.v1.InstantViewResponse](#instantviewresponse)|
 |CanInstantView|[protocol.mediaproxy.v1.InstantViewRequest](#instantviewrequest)|[protocol.mediaproxy.v1.CanInstantViewResponse](#caninstantviewresponse)|
 
-### Streaming Methods
+#### Streaming Methods
 
 | Name | Client Streams | Server Streams |
 | ---- | -------------- | -------------- |

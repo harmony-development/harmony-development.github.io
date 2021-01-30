@@ -1,14 +1,14 @@
 ---
 title: "Reference: google.protobuf"
 ---
-# Message Types 
+## Message Types 
 
-## Empty
+### Empty
 
 Fields
 
 | Name | Type |
 | ---- | ---- |
 
-# Services 
+## Services 
 

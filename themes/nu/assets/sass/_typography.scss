@@ -95,4 +95,22 @@ article.content {
     ol li {
         list-style: decimal;
     }
+    a {
+        color: var(--link);
+    }
+}
+
+#TableOfContents {
+    a {
+        color: var(--link);
+    }
+    li {
+        font-size: 15px;
+        margin: 0.25em 0em;
+        margin-left: 1em;
+        padding-left: 0.5em;
+    }
+    ul li {
+        list-style: disc;
+    }
 }
