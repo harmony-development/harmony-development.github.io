@@ -11,6 +11,16 @@
     
     
     <item>
+      <title>Formatting</title>
+      <link>https://harmonyapp.io/docs/formatting/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://harmonyapp.io/docs/formatting/</guid>
+      <description>Clients are expected to support the Commonmark specification for all message text, with the following changes:
+ Images (![]()) should be explicitly ignored by the client &amp;lt;@123456789&amp;gt; should be interpreted as a user mention, and render as the specified user&amp;rsquo;s display name, with other decoration optional &amp;lt;@|123456789&amp;gt; should be interpreted as a role mention, and render as the specified role&amp;rsquo;s name and colour, with other decorations optional &amp;lt;:123456789:&amp;gt; should be interpreted as a local emoji, and render as the emoji&amp;rsquo;s content as provided by the homeserver of the guild &amp;lt;:123456789|homeserver.</description>
+    </item>
+    
+    <item>
       <title>Reference: google.protobuf</title>
       <link>https://harmonyapp.io/docs/google.protobuf/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -80,6 +90,17 @@
    Name Type     candidate protocol.voice.v1.Signal.ICECandidate   offer protocol.voice.v1.Signal.Offer    ClientSignal.Answer Fields
    Name Type     answer string    ClientSignal.Candidate Fields
    Name Type     candidate string    Signal.</description>
+    </item>
+    
+    <item>
+      <title>Server Name Resolution</title>
+      <link>https://harmonyapp.io/docs/name-resolution/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://harmonyapp.io/docs/name-resolution/</guid>
+      <description>Every Harmony homeserver is identified by a &amp;ldquo;server name.&amp;rdquo; A server name uniquely identifies a server, regardless of whether the resolved IP address changes or not. Two server names pointing to the same IP address would be considered two different homeservers.
+A server name is resolved to an IP address and port using the following process:
+When IP Address (xxx.xxx.xxx.xxx + optional :port) When the server name is an IP address, this is the resolved IP of the server that requests should be sent to.</description>
     </item>
     
   </channel>

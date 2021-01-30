@@ -183,6 +183,17 @@ article.content h2 {
 article.content h3 {
   font-size: 25px; }
 
+article.content li {
+  margin: 1em 0em;
+  margin-left: 1em;
+  padding-left: 0.5em; }
+
+article.content ul li {
+  list-style: disc; }
+
+article.content ol li {
+  list-style: decimal; }
+
 .nu-content {
   margin-left: auto;
   margin-right: auto;
@@ -335,8 +346,7 @@ pre:not(.nu-code-block) {
 pre code {
   font-family: 'Fira Code', monospace;
   font-weight: 500;
-  font-size: 14px;
-  padding: 16px; }
+  font-size: 14px; }
 
 .nu-flag-definition {
   display: flex;

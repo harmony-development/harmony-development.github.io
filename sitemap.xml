@@ -13,19 +13,19 @@
   </url>
   
   <url>
-    <loc>https://harmonyapp.io/protocol/chat/v1/formatting/</loc>
-  </url>
-  
-  <url>
-    <loc>https://harmonyapp.io/protocol/name-resolution/name-resolution/</loc>
-  </url>
-  
-  <url>
     <loc>https://harmonyapp.io/protocol/rest/rest/</loc>
   </url>
   
   <url>
     <loc>https://harmonyapp.io/categories/</loc>
+  </url>
+  
+  <url>
+    <loc>https://harmonyapp.io/docs/formatting/</loc>
+  </url>
+  
+  <url>
+    <loc>https://harmonyapp.io/protocol/chat/v1/formatting/</loc>
   </url>
   
   <url>
@@ -54,6 +54,14 @@
   
   <url>
     <loc>https://harmonyapp.io/docs/protocol.voice.v1/</loc>
+  </url>
+  
+  <url>
+    <loc>https://harmonyapp.io/docs/name-resolution/</loc>
+  </url>
+  
+  <url>
+    <loc>https://harmonyapp.io/protocol/name-resolution/name-resolution/</loc>
   </url>
   
   <url>
