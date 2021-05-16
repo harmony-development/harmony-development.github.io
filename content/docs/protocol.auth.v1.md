@@ -169,6 +169,7 @@ Fields
 |BeginAuth|[google.protobuf.Empty]({{< ref "google.protobuf.md" >}}#empty)|[protocol.auth.v1.BeginAuthResponse](#beginauthresponse)|
 |NextStep|[protocol.auth.v1.NextStepRequest](#nextsteprequest)|[protocol.auth.v1.AuthStep](#authstep)|
 |StepBack|[protocol.auth.v1.StepBackRequest](#stepbackrequest)|[protocol.auth.v1.AuthStep](#authstep)|
+|CheckLoggedIn|[google.protobuf.Empty]({{< ref "google.protobuf.md" >}}#empty)|[google.protobuf.Empty]({{< ref "google.protobuf.md" >}}#empty)|
 
 #### Streaming Methods
 

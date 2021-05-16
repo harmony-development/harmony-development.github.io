@@ -22,6 +22,22 @@ Fields
 | UNHANDLED | TYPE |
 | is_bot | `bool` |
 
+### GetUserBulkRequest
+
+Fields
+
+| Name | Type |
+| ---- | ---- |
+| user_ids | `uint64` |
+
+### GetUserBulkResponse
+
+Fields
+
+| Name | Type |
+| ---- | ---- |
+| users | [protocol.chat.v1.GetUserResponse](#getuserresponse) |
+
 ### GetUserMetadataRequest
 
 Fields
@@ -260,6 +276,33 @@ Fields
 | Name | Type |
 | ---- | ---- |
 
+### BanUserRequest
+
+Fields
+
+| Name | Type |
+| ---- | ---- |
+| guild_id | `uint64` |
+| user_id | `uint64` |
+
+### KickUserRequest
+
+Fields
+
+| Name | Type |
+| ---- | ---- |
+| guild_id | `uint64` |
+| user_id | `uint64` |
+
+### UnbanUserRequest
+
+Fields
+
+| Name | Type |
+| ---- | ---- |
+| guild_id | `uint64` |
+| user_id | `uint64` |
+
 ### GetGuildListResponse.GuildListEntry
 
 Fields
@@ -406,28 +449,6 @@ Fields
 | ---- | ---- |
 | message | [protocol.harmonytypes.v1.Message]({{< ref "protocol.harmonytypes.v1.md" >}}#message) |
 
-### UpdateMessageRequest
-
-Fields
-
-| Name | Type |
-| ---- | ---- |
-| guild_id | `uint64` |
-| channel_id | `uint64` |
-| message_id | `uint64` |
-| content | `string` |
-| update_content | `bool` |
-| embeds | [protocol.harmonytypes.v1.Embed]({{< ref "protocol.harmonytypes.v1.md" >}}#embed) |
-| update_embeds | `bool` |
-| actions | [protocol.harmonytypes.v1.Action]({{< ref "protocol.harmonytypes.v1.md" >}}#action) |
-| update_actions | `bool` |
-| attachments | `string` |
-| update_attachments | `bool` |
-| overrides | [protocol.harmonytypes.v1.Override]({{< ref "protocol.harmonytypes.v1.md" >}}#override) |
-| update_overrides | `bool` |
-| metadata | [protocol.harmonytypes.v1.Metadata]({{< ref "protocol.harmonytypes.v1.md" >}}#metadata) |
-| update_metadata | `bool` |
-
 ### DeleteMessageRequest
 
 Fields
@@ -458,14 +479,11 @@ Fields
 | ---- | ---- |
 | guild_id | `uint64` |
 | channel_id | `uint64` |
-| content | `string` |
-| actions | [protocol.harmonytypes.v1.Action]({{< ref "protocol.harmonytypes.v1.md" >}}#action) |
-| embeds | [protocol.harmonytypes.v1.Embed]({{< ref "protocol.harmonytypes.v1.md" >}}#embed) |
-| attachments | `string` |
-| in_reply_to | `uint64` |
-| overrides | [protocol.harmonytypes.v1.Override]({{< ref "protocol.harmonytypes.v1.md" >}}#override) |
+| content | [protocol.harmonytypes.v1.Content]({{< ref "protocol.harmonytypes.v1.md" >}}#content) |
 | echo_id | `uint64` |
 | metadata | [protocol.harmonytypes.v1.Metadata]({{< ref "protocol.harmonytypes.v1.md" >}}#metadata) |
+| overrides | [protocol.harmonytypes.v1.Override]({{< ref "protocol.harmonytypes.v1.md" >}}#override) |
+| in_reply_to | `uint64` |
 
 ### SendMessageResponse
 
@@ -474,6 +492,17 @@ Fields
 | Name | Type |
 | ---- | ---- |
 | message_id | `uint64` |
+
+### UpdateMessageTextRequest
+
+Fields
+
+| Name | Type |
+| ---- | ---- |
+| guild_id | `uint64` |
+| channel_id | `uint64` |
+| message_id | `uint64` |
+| new_content | `string` |
 
 ### CreateEmotePackRequest
 
@@ -829,17 +858,6 @@ Fields
 | message_id | `uint64` |
 | edited_at | [google.protobuf.Timestamp]({{< ref "google.protobuf.md" >}}#timestamp) |
 | content | `string` |
-| update_content | `bool` |
-| embeds | [protocol.harmonytypes.v1.Embed]({{< ref "protocol.harmonytypes.v1.md" >}}#embed) |
-| update_embeds | `bool` |
-| actions | [protocol.harmonytypes.v1.Action]({{< ref "protocol.harmonytypes.v1.md" >}}#action) |
-| update_actions | `bool` |
-| attachments | [protocol.harmonytypes.v1.Attachment]({{< ref "protocol.harmonytypes.v1.md" >}}#attachment) |
-| update_attachments | `bool` |
-| overrides | [protocol.harmonytypes.v1.Override]({{< ref "protocol.harmonytypes.v1.md" >}}#override) |
-| update_overrides | `bool` |
-| metadata | [protocol.harmonytypes.v1.Metadata]({{< ref "protocol.harmonytypes.v1.md" >}}#metadata) |
-| update_metadata | `bool` |
 
 ### Event.MessageDeleted
 
@@ -929,6 +947,7 @@ Fields
 | ---- | ---- |
 | member_id | `uint64` |
 | guild_id | `uint64` |
+| UNHANDLED | TYPE |
 
 ### Event.GuildAddedToList
 
@@ -995,35 +1014,6 @@ Fields
 | guild_id | `uint64` |
 | channel_id | `uint64` |
 
-### SyncRequest
-
-Fields
-
-| Name | Type |
-| ---- | ---- |
-| token | `string` |
-| host | `string` |
-
-### SyncEvent
-
-Fields
-
-| Name | Type |
-| ---- | ---- |
-| dm_invite | [protocol.chat.v1.SyncEvent.DMInvite](#syncevent-dminvite) |
-
-### SyncEvent.DMInvite
-
-Fields
-
-| Name | Type |
-| ---- | ---- |
-| user_name | `string` |
-| user_avatar | `string` |
-| dm_name | `string` |
-| dm_avatar | `string` |
-| invite_id | `string` |
-
 ## Services 
 
 ### ChatService
@@ -1050,7 +1040,7 @@ Fields
 |UpdateGuildInformation|[protocol.chat.v1.UpdateGuildInformationRequest](#updateguildinformationrequest)|[google.protobuf.Empty]({{< ref "google.protobuf.md" >}}#empty)|
 |UpdateChannelInformation|[protocol.chat.v1.UpdateChannelInformationRequest](#updatechannelinformationrequest)|[google.protobuf.Empty]({{< ref "google.protobuf.md" >}}#empty)|
 |UpdateChannelOrder|[protocol.chat.v1.UpdateChannelOrderRequest](#updatechannelorderrequest)|[google.protobuf.Empty]({{< ref "google.protobuf.md" >}}#empty)|
-|UpdateMessage|[protocol.chat.v1.UpdateMessageRequest](#updatemessagerequest)|[google.protobuf.Empty]({{< ref "google.protobuf.md" >}}#empty)|
+|UpdateMessageText|[protocol.chat.v1.UpdateMessageTextRequest](#updatemessagetextrequest)|[google.protobuf.Empty]({{< ref "google.protobuf.md" >}}#empty)|
 |AddEmoteToPack|[protocol.chat.v1.AddEmoteToPackRequest](#addemotetopackrequest)|[google.protobuf.Empty]({{< ref "google.protobuf.md" >}}#empty)|
 |DeleteGuild|[protocol.chat.v1.DeleteGuildRequest](#deleteguildrequest)|[google.protobuf.Empty]({{< ref "google.protobuf.md" >}}#empty)|
 |DeleteInvite|[protocol.chat.v1.DeleteInviteRequest](#deleteinviterequest)|[google.protobuf.Empty]({{< ref "google.protobuf.md" >}}#empty)|
@@ -1074,10 +1064,14 @@ Fields
 |ManageUserRoles|[protocol.chat.v1.ManageUserRolesRequest](#manageuserrolesrequest)|[google.protobuf.Empty]({{< ref "google.protobuf.md" >}}#empty)|
 |GetUserRoles|[protocol.chat.v1.GetUserRolesRequest](#getuserrolesrequest)|[protocol.chat.v1.GetUserRolesResponse](#getuserrolesresponse)|
 |GetUser|[protocol.chat.v1.GetUserRequest](#getuserrequest)|[protocol.chat.v1.GetUserResponse](#getuserresponse)|
+|GetUserBulk|[protocol.chat.v1.GetUserBulkRequest](#getuserbulkrequest)|[protocol.chat.v1.GetUserBulkResponse](#getuserbulkresponse)|
 |GetUserMetadata|[protocol.chat.v1.GetUserMetadataRequest](#getusermetadatarequest)|[protocol.chat.v1.GetUserMetadataResponse](#getusermetadataresponse)|
 |ProfileUpdate|[protocol.chat.v1.ProfileUpdateRequest](#profileupdaterequest)|[google.protobuf.Empty]({{< ref "google.protobuf.md" >}}#empty)|
 |Typing|[protocol.chat.v1.TypingRequest](#typingrequest)|[google.protobuf.Empty]({{< ref "google.protobuf.md" >}}#empty)|
 |PreviewGuild|[protocol.chat.v1.PreviewGuildRequest](#previewguildrequest)|[protocol.chat.v1.PreviewGuildResponse](#previewguildresponse)|
+|BanUser|[protocol.chat.v1.BanUserRequest](#banuserrequest)|[google.protobuf.Empty]({{< ref "google.protobuf.md" >}}#empty)|
+|KickUser|[protocol.chat.v1.KickUserRequest](#kickuserrequest)|[google.protobuf.Empty]({{< ref "google.protobuf.md" >}}#empty)|
+|UnbanUser|[protocol.chat.v1.UnbanUserRequest](#unbanuserrequest)|[google.protobuf.Empty]({{< ref "google.protobuf.md" >}}#empty)|
 
 #### Streaming Methods
 

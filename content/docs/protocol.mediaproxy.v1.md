@@ -16,6 +16,15 @@ Fields
 | url | `string` |
 | image | `string` |
 
+### MediaMetadata
+
+Fields
+
+| Name | Type |
+| ---- | ---- |
+| mimetype | `string` |
+| filename | `string` |
+
 ### FetchLinkMetadataRequest
 
 Fields
@@ -23,6 +32,15 @@ Fields
 | Name | Type |
 | ---- | ---- |
 | url | `string` |
+
+### FetchLinkMetadataResponse
+
+Fields
+
+| Name | Type |
+| ---- | ---- |
+| is_site | [protocol.mediaproxy.v1.SiteMetadata](#sitemetadata) |
+| is_media | [protocol.mediaproxy.v1.MediaMetadata](#mediametadata) |
 
 ### InstantViewRequest
 
@@ -58,7 +76,7 @@ Fields
 
 | Name | Request | Response |
 | ---- | ------- | -------- |
-|FetchLinkMetadata|[protocol.mediaproxy.v1.FetchLinkMetadataRequest](#fetchlinkmetadatarequest)|[protocol.mediaproxy.v1.SiteMetadata](#sitemetadata)|
+|FetchLinkMetadata|[protocol.mediaproxy.v1.FetchLinkMetadataRequest](#fetchlinkmetadatarequest)|[protocol.mediaproxy.v1.FetchLinkMetadataResponse](#fetchlinkmetadataresponse)|
 |InstantView|[protocol.mediaproxy.v1.InstantViewRequest](#instantviewrequest)|[protocol.mediaproxy.v1.InstantViewResponse](#instantviewresponse)|
 |CanInstantView|[protocol.mediaproxy.v1.InstantViewRequest](#instantviewrequest)|[protocol.mediaproxy.v1.CanInstantViewResponse](#caninstantviewresponse)|
 

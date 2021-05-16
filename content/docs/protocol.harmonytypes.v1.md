@@ -33,12 +33,11 @@ Fields
 
 | Name | Type |
 | ---- | ---- |
-| text | `string` |
-| url | `string` |
+| UNHANDLED | TYPE |
 | id | `string` |
-| UNHANDLED | TYPE |
-| UNHANDLED | TYPE |
-| children | [protocol.harmonytypes.v1.Action](#action) |
+| button | [protocol.harmonytypes.v1.Action.Button](#action-button) |
+| dropdown | [protocol.harmonytypes.v1.Action.Dropdown](#action-dropdown) |
+| input | [protocol.harmonytypes.v1.Action.Input](#action-input) |
 
 ### EmbedHeading
 
@@ -76,7 +75,6 @@ Fields
 | header | [protocol.harmonytypes.v1.EmbedHeading](#embedheading) |
 | footer | [protocol.harmonytypes.v1.EmbedHeading](#embedheading) |
 | fields | [protocol.harmonytypes.v1.EmbedField](#embedfield) |
-| actions | [protocol.harmonytypes.v1.Action](#action) |
 
 ### Attachment
 
@@ -88,6 +86,7 @@ Fields
 | name | `string` |
 | type | `string` |
 | size | `int32` |
+| caption | `string` |
 
 ### Metadata
 
@@ -98,6 +97,40 @@ Fields
 | kind | `string` |
 | extension | [protocol.harmonytypes.v1.Metadata.ExtensionEntry](#metadata-extensionentry) |
 
+### ContentText
+
+Fields
+
+| Name | Type |
+| ---- | ---- |
+| content | `string` |
+
+### ContentEmbed
+
+Fields
+
+| Name | Type |
+| ---- | ---- |
+| embeds | [protocol.harmonytypes.v1.Embed](#embed) |
+
+### ContentFiles
+
+Fields
+
+| Name | Type |
+| ---- | ---- |
+| attachments | [protocol.harmonytypes.v1.Attachment](#attachment) |
+
+### Content
+
+Fields
+
+| Name | Type |
+| ---- | ---- |
+| text_message | [protocol.harmonytypes.v1.ContentText](#contenttext) |
+| embed_message | [protocol.harmonytypes.v1.ContentEmbed](#contentembed) |
+| files_message | [protocol.harmonytypes.v1.ContentFiles](#contentfiles) |
+
 ### Message
 
 Fields
@@ -105,18 +138,52 @@ Fields
 | Name | Type |
 | ---- | ---- |
 | metadata | [protocol.harmonytypes.v1.Metadata](#metadata) |
+| overrides | [protocol.harmonytypes.v1.Override](#override) |
 | guild_id | `uint64` |
 | channel_id | `uint64` |
 | message_id | `uint64` |
 | author_id | `uint64` |
 | created_at | [google.protobuf.Timestamp]({{< ref "google.protobuf.md" >}}#timestamp) |
 | edited_at | [google.protobuf.Timestamp]({{< ref "google.protobuf.md" >}}#timestamp) |
-| content | `string` |
-| embeds | [protocol.harmonytypes.v1.Embed](#embed) |
-| actions | [protocol.harmonytypes.v1.Action](#action) |
-| attachments | [protocol.harmonytypes.v1.Attachment](#attachment) |
 | in_reply_to | `uint64` |
-| overrides | [protocol.harmonytypes.v1.Override](#override) |
+| content | [protocol.harmonytypes.v1.Content](#content) |
+
+### Error
+
+Fields
+
+| Name | Type |
+| ---- | ---- |
+| identifier | `string` |
+| human_message | `string` |
+| more_details | `bytes` |
+
+### Action.Button
+
+Fields
+
+| Name | Type |
+| ---- | ---- |
+| text | `string` |
+| url | `string` |
+
+### Action.Dropdown
+
+Fields
+
+| Name | Type |
+| ---- | ---- |
+| text | `string` |
+| options | `string` |
+
+### Action.Input
+
+Fields
+
+| Name | Type |
+| ---- | ---- |
+| label | `string` |
+| wide | `bool` |
 
 ### Metadata.ExtensionEntry
 
