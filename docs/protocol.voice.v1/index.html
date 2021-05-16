@@ -3,11 +3,11 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no">
     <title>Reference: protocol.voice.v1 | Harmony</title>
-    <meta name="description" content="Message Types ClientSignal Fields
-   Name Type     answer protocol.voice.v1.ClientSignal.Answer   candidate protocol.voice.v1.ClientSignal.Candidate    Signal Fields
-   Name Type     candidate protocol.voice.v1.Signal.ICECandidate   offer protocol.voice.v1.Signal.Offer    ClientSignal.Answer Fields
-   Name Type     answer string    ClientSignal.Candidate Fields
-   Name Type     candidate string    Signal. ">
+    <meta name="description" content="Message Types Signal Fields
+   Name Type     ice_candidate string   renegotiation_needed google.protobuf.Empty    ConnectRequest Fields
+   Name Type     channel_id uint64   offer string    ConnectResponse Fields
+   Name Type     answer string    StreamStateRequest Fields
+   Name Type     channel_id uint64    Services VoiceService Unary Methods    Name Request Response     Connect protocol. ">
     <link rel="canonical" href="https://harmonyapp.io/docs/protocol.voice.v1/" />
 
     
@@ -15,22 +15,22 @@
     <link rel="stylesheet" href="https://harmonyapp.io/sass/main.css" />
 
     <meta property="og:title" content="Reference: protocol.voice.v1" />
-<meta property="og:description" content="Message Types ClientSignal Fields
-   Name Type     answer protocol.voice.v1.ClientSignal.Answer   candidate protocol.voice.v1.ClientSignal.Candidate    Signal Fields
-   Name Type     candidate protocol.voice.v1.Signal.ICECandidate   offer protocol.voice.v1.Signal.Offer    ClientSignal.Answer Fields
-   Name Type     answer string    ClientSignal.Candidate Fields
-   Name Type     candidate string    Signal." />
+<meta property="og:description" content="Message Types Signal Fields
+   Name Type     ice_candidate string   renegotiation_needed google.protobuf.Empty    ConnectRequest Fields
+   Name Type     channel_id uint64   offer string    ConnectResponse Fields
+   Name Type     answer string    StreamStateRequest Fields
+   Name Type     channel_id uint64    Services VoiceService Unary Methods    Name Request Response     Connect protocol." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://harmonyapp.io/docs/protocol.voice.v1/" />
 
 
     <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Reference: protocol.voice.v1"/>
-<meta name="twitter:description" content="Message Types ClientSignal Fields
-   Name Type     answer protocol.voice.v1.ClientSignal.Answer   candidate protocol.voice.v1.ClientSignal.Candidate    Signal Fields
-   Name Type     candidate protocol.voice.v1.Signal.ICECandidate   offer protocol.voice.v1.Signal.Offer    ClientSignal.Answer Fields
-   Name Type     answer string    ClientSignal.Candidate Fields
-   Name Type     candidate string    Signal."/>
+<meta name="twitter:description" content="Message Types Signal Fields
+   Name Type     ice_candidate string   renegotiation_needed google.protobuf.Empty    ConnectRequest Fields
+   Name Type     channel_id uint64   offer string    ConnectResponse Fields
+   Name Type     answer string    StreamStateRequest Fields
+   Name Type     channel_id uint64    Services VoiceService Unary Methods    Name Request Response     Connect protocol."/>
 
 	<meta name="theme-color" content="#E93D58">
 	<meta property="og:image" content="https://harmonyapp.io/img/harmony-embed.png" />
@@ -76,12 +76,10 @@
   <ul>
     <li><a href="#message-types">Message Types</a>
       <ul>
-        <li><a href="#clientsignal">ClientSignal</a></li>
         <li><a href="#signal">Signal</a></li>
-        <li><a href="#clientsignalanswer">ClientSignal.Answer</a></li>
-        <li><a href="#clientsignalcandidate">ClientSignal.Candidate</a></li>
-        <li><a href="#signalicecandidate">Signal.ICECandidate</a></li>
-        <li><a href="#signaloffer">Signal.Offer</a></li>
+        <li><a href="#connectrequest">ConnectRequest</a></li>
+        <li><a href="#connectresponse">ConnectResponse</a></li>
+        <li><a href="#streamstaterequest">StreamStateRequest</a></li>
       </ul>
     </li>
     <li><a href="#services">Services</a>
@@ -97,26 +95,6 @@
 
 <article class="content">
     <h2 id="message-types">Message Types</h2>
-<h3 id="clientsignal">ClientSignal</h3>
-<p>Fields</p>
-<table>
-<thead>
-<tr>
-<th>Name</th>
-<th>Type</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>answer</td>
-<td><a href="#clientsignal-answer">protocol.voice.v1.ClientSignal.Answer</a></td>
-</tr>
-<tr>
-<td>candidate</td>
-<td><a href="#clientsignal-candidate">protocol.voice.v1.ClientSignal.Candidate</a></td>
-</tr>
-</tbody>
-</table>
 <h3 id="signal">Signal</h3>
 <p>Fields</p>
 <table>
@@ -128,16 +106,36 @@
 </thead>
 <tbody>
 <tr>
-<td>candidate</td>
-<td><a href="#signal-icecandidate">protocol.voice.v1.Signal.ICECandidate</a></td>
+<td>ice_candidate</td>
+<td><code>string</code></td>
 </tr>
 <tr>
-<td>offer</td>
-<td><a href="#signal-offer">protocol.voice.v1.Signal.Offer</a></td>
+<td>renegotiation_needed</td>
+<td><a href="https://harmonyapp.io/docs/google.protobuf/#empty">google.protobuf.Empty</a></td>
 </tr>
 </tbody>
 </table>
-<h3 id="clientsignalanswer">ClientSignal.Answer</h3>
+<h3 id="connectrequest">ConnectRequest</h3>
+<p>Fields</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>channel_id</td>
+<td><code>uint64</code></td>
+</tr>
+<tr>
+<td>offer</td>
+<td><code>string</code></td>
+</tr>
+</tbody>
+</table>
+<h3 id="connectresponse">ConnectResponse</h3>
 <p>Fields</p>
 <table>
 <thead>
@@ -153,7 +151,7 @@
 </tr>
 </tbody>
 </table>
-<h3 id="clientsignalcandidate">ClientSignal.Candidate</h3>
+<h3 id="streamstaterequest">StreamStateRequest</h3>
 <p>Fields</p>
 <table>
 <thead>
@@ -164,40 +162,8 @@
 </thead>
 <tbody>
 <tr>
-<td>candidate</td>
-<td><code>string</code></td>
-</tr>
-</tbody>
-</table>
-<h3 id="signalicecandidate">Signal.ICECandidate</h3>
-<p>Fields</p>
-<table>
-<thead>
-<tr>
-<th>Name</th>
-<th>Type</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>candidate</td>
-<td><code>string</code></td>
-</tr>
-</tbody>
-</table>
-<h3 id="signaloffer">Signal.Offer</h3>
-<p>Fields</p>
-<table>
-<thead>
-<tr>
-<th>Name</th>
-<th>Type</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>offer</td>
-<td><code>string</code></td>
+<td>channel_id</td>
+<td><code>uint64</code></td>
 </tr>
 </tbody>
 </table>
@@ -212,6 +178,13 @@
 <th>Response</th>
 </tr>
 </thead>
+<tbody>
+<tr>
+<td>Connect</td>
+<td><a href="#connectrequest">protocol.voice.v1.ConnectRequest</a></td>
+<td><a href="#connectresponse">protocol.voice.v1.ConnectResponse</a></td>
+</tr>
+</tbody>
 </table>
 <h4 id="streaming-methods">Streaming Methods</h4>
 <table>
@@ -222,13 +195,6 @@
 <th>Server Streams</th>
 </tr>
 </thead>
-<tbody>
-<tr>
-<td>Connect</td>
-<td><a href="#clientsignal">protocol.voice.v1.ClientSignal</a></td>
-<td><a href="#signal">protocol.voice.v1.Signal</a></td>
-</tr>
-</tbody>
 </table>
 
 </article>

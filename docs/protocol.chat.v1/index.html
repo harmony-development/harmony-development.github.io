@@ -5,9 +5,9 @@
     <title>Reference: protocol.chat.v1 | Harmony</title>
     <meta name="description" content="Message Types GetUserRequest Fields
    Name Type     user_id uint64    GetUserResponse Fields
-   Name Type     user_name string   user_avatar string   UNHANDLED TYPE   is_bot bool    GetUserMetadataRequest Fields
-   Name Type     app_id string    GetUserMetadataResponse Fields
-   Name Type     metadata string    ProfileUpdateRequest Fields ">
+   Name Type     user_name string   user_avatar string   UNHANDLED TYPE   is_bot bool    GetUserBulkRequest Fields
+   Name Type     user_ids uint64    GetUserBulkResponse Fields
+   Name Type     users protocol. ">
     <link rel="canonical" href="https://harmonyapp.io/docs/protocol.chat.v1/" />
 
     
@@ -17,9 +17,9 @@
     <meta property="og:title" content="Reference: protocol.chat.v1" />
 <meta property="og:description" content="Message Types GetUserRequest Fields
    Name Type     user_id uint64    GetUserResponse Fields
-   Name Type     user_name string   user_avatar string   UNHANDLED TYPE   is_bot bool    GetUserMetadataRequest Fields
-   Name Type     app_id string    GetUserMetadataResponse Fields
-   Name Type     metadata string    ProfileUpdateRequest Fields" />
+   Name Type     user_name string   user_avatar string   UNHANDLED TYPE   is_bot bool    GetUserBulkRequest Fields
+   Name Type     user_ids uint64    GetUserBulkResponse Fields
+   Name Type     users protocol." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://harmonyapp.io/docs/protocol.chat.v1/" />
 
@@ -28,9 +28,9 @@
 <meta name="twitter:title" content="Reference: protocol.chat.v1"/>
 <meta name="twitter:description" content="Message Types GetUserRequest Fields
    Name Type     user_id uint64    GetUserResponse Fields
-   Name Type     user_name string   user_avatar string   UNHANDLED TYPE   is_bot bool    GetUserMetadataRequest Fields
-   Name Type     app_id string    GetUserMetadataResponse Fields
-   Name Type     metadata string    ProfileUpdateRequest Fields"/>
+   Name Type     user_name string   user_avatar string   UNHANDLED TYPE   is_bot bool    GetUserBulkRequest Fields
+   Name Type     user_ids uint64    GetUserBulkResponse Fields
+   Name Type     users protocol."/>
 
 	<meta name="theme-color" content="#E93D58">
 	<meta property="og:image" content="https://harmonyapp.io/img/harmony-embed.png" />
@@ -78,6 +78,8 @@
       <ul>
         <li><a href="#getuserrequest">GetUserRequest</a></li>
         <li><a href="#getuserresponse">GetUserResponse</a></li>
+        <li><a href="#getuserbulkrequest">GetUserBulkRequest</a></li>
+        <li><a href="#getuserbulkresponse">GetUserBulkResponse</a></li>
         <li><a href="#getusermetadatarequest">GetUserMetadataRequest</a></li>
         <li><a href="#getusermetadataresponse">GetUserMetadataResponse</a></li>
         <li><a href="#profileupdaterequest">ProfileUpdateRequest</a></li>
@@ -105,6 +107,9 @@
         <li><a href="#addguildtoguildlistresponse">AddGuildToGuildListResponse</a></li>
         <li><a href="#removeguildfromguildlistrequest">RemoveGuildFromGuildListRequest</a></li>
         <li><a href="#removeguildfromguildlistresponse">RemoveGuildFromGuildListResponse</a></li>
+        <li><a href="#banuserrequest">BanUserRequest</a></li>
+        <li><a href="#kickuserrequest">KickUserRequest</a></li>
+        <li><a href="#unbanuserrequest">UnbanUserRequest</a></li>
         <li><a href="#getguildlistresponseguildlistentry">GetGuildListResponse.GuildListEntry</a></li>
         <li><a href="#getguildinvitesresponseinvite">GetGuildInvitesResponse.Invite</a></li>
         <li><a href="#createchannelrequest">CreateChannelRequest</a></li>
@@ -120,11 +125,11 @@
         <li><a href="#getchannelmessagesresponse">GetChannelMessagesResponse</a></li>
         <li><a href="#getmessagerequest">GetMessageRequest</a></li>
         <li><a href="#getmessageresponse">GetMessageResponse</a></li>
-        <li><a href="#updatemessagerequest">UpdateMessageRequest</a></li>
         <li><a href="#deletemessagerequest">DeleteMessageRequest</a></li>
         <li><a href="#triggeractionrequest">TriggerActionRequest</a></li>
         <li><a href="#sendmessagerequest">SendMessageRequest</a></li>
         <li><a href="#sendmessageresponse">SendMessageResponse</a></li>
+        <li><a href="#updatemessagetextrequest">UpdateMessageTextRequest</a></li>
         <li><a href="#createemotepackrequest">CreateEmotePackRequest</a></li>
         <li><a href="#createemotepackresponse">CreateEmotePackResponse</a></li>
         <li><a href="#getemotepacksrequest">GetEmotePacksRequest</a></li>
@@ -177,9 +182,6 @@
         <li><a href="#eventrolemoved">Event.RoleMoved</a></li>
         <li><a href="#eventprofileupdated">Event.ProfileUpdated</a></li>
         <li><a href="#eventtyping">Event.Typing</a></li>
-        <li><a href="#syncrequest">SyncRequest</a></li>
-        <li><a href="#syncevent">SyncEvent</a></li>
-        <li><a href="#synceventdminvite">SyncEvent.DMInvite</a></li>
       </ul>
     </li>
     <li><a href="#services">Services</a>
@@ -236,6 +238,38 @@
 <tr>
 <td>is_bot</td>
 <td><code>bool</code></td>
+</tr>
+</tbody>
+</table>
+<h3 id="getuserbulkrequest">GetUserBulkRequest</h3>
+<p>Fields</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>user_ids</td>
+<td><code>uint64</code></td>
+</tr>
+</tbody>
+</table>
+<h3 id="getuserbulkresponse">GetUserBulkResponse</h3>
+<p>Fields</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>users</td>
+<td><a href="#getuserresponse">protocol.chat.v1.GetUserResponse</a></td>
 </tr>
 </tbody>
 </table>
@@ -753,6 +787,66 @@
 </tr>
 </thead>
 </table>
+<h3 id="banuserrequest">BanUserRequest</h3>
+<p>Fields</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>guild_id</td>
+<td><code>uint64</code></td>
+</tr>
+<tr>
+<td>user_id</td>
+<td><code>uint64</code></td>
+</tr>
+</tbody>
+</table>
+<h3 id="kickuserrequest">KickUserRequest</h3>
+<p>Fields</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>guild_id</td>
+<td><code>uint64</code></td>
+</tr>
+<tr>
+<td>user_id</td>
+<td><code>uint64</code></td>
+</tr>
+</tbody>
+</table>
+<h3 id="unbanuserrequest">UnbanUserRequest</h3>
+<p>Fields</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>guild_id</td>
+<td><code>uint64</code></td>
+</tr>
+<tr>
+<td>user_id</td>
+<td><code>uint64</code></td>
+</tr>
+</tbody>
+</table>
 <h3 id="getguildlistresponseguildlistentry">GetGuildListResponse.GuildListEntry</h3>
 <p>Fields</p>
 <table>
@@ -1097,78 +1191,6 @@
 </tr>
 </tbody>
 </table>
-<h3 id="updatemessagerequest">UpdateMessageRequest</h3>
-<p>Fields</p>
-<table>
-<thead>
-<tr>
-<th>Name</th>
-<th>Type</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>guild_id</td>
-<td><code>uint64</code></td>
-</tr>
-<tr>
-<td>channel_id</td>
-<td><code>uint64</code></td>
-</tr>
-<tr>
-<td>message_id</td>
-<td><code>uint64</code></td>
-</tr>
-<tr>
-<td>content</td>
-<td><code>string</code></td>
-</tr>
-<tr>
-<td>update_content</td>
-<td><code>bool</code></td>
-</tr>
-<tr>
-<td>embeds</td>
-<td><a href="https://harmonyapp.io/docs/protocol.harmonytypes.v1/#embed">protocol.harmonytypes.v1.Embed</a></td>
-</tr>
-<tr>
-<td>update_embeds</td>
-<td><code>bool</code></td>
-</tr>
-<tr>
-<td>actions</td>
-<td><a href="https://harmonyapp.io/docs/protocol.harmonytypes.v1/#action">protocol.harmonytypes.v1.Action</a></td>
-</tr>
-<tr>
-<td>update_actions</td>
-<td><code>bool</code></td>
-</tr>
-<tr>
-<td>attachments</td>
-<td><code>string</code></td>
-</tr>
-<tr>
-<td>update_attachments</td>
-<td><code>bool</code></td>
-</tr>
-<tr>
-<td>overrides</td>
-<td><a href="https://harmonyapp.io/docs/protocol.harmonytypes.v1/#override">protocol.harmonytypes.v1.Override</a></td>
-</tr>
-<tr>
-<td>update_overrides</td>
-<td><code>bool</code></td>
-</tr>
-<tr>
-<td>metadata</td>
-<td><a href="https://harmonyapp.io/docs/protocol.harmonytypes.v1/#metadata">protocol.harmonytypes.v1.Metadata</a></td>
-</tr>
-<tr>
-<td>update_metadata</td>
-<td><code>bool</code></td>
-</tr>
-</tbody>
-</table>
 <h3 id="deletemessagerequest">DeleteMessageRequest</h3>
 <p>Fields</p>
 <table>
@@ -1245,27 +1267,7 @@
 </tr>
 <tr>
 <td>content</td>
-<td><code>string</code></td>
-</tr>
-<tr>
-<td>actions</td>
-<td><a href="https://harmonyapp.io/docs/protocol.harmonytypes.v1/#action">protocol.harmonytypes.v1.Action</a></td>
-</tr>
-<tr>
-<td>embeds</td>
-<td><a href="https://harmonyapp.io/docs/protocol.harmonytypes.v1/#embed">protocol.harmonytypes.v1.Embed</a></td>
-</tr>
-<tr>
-<td>attachments</td>
-<td><code>string</code></td>
-</tr>
-<tr>
-<td>in_reply_to</td>
-<td><code>uint64</code></td>
-</tr>
-<tr>
-<td>overrides</td>
-<td><a href="https://harmonyapp.io/docs/protocol.harmonytypes.v1/#override">protocol.harmonytypes.v1.Override</a></td>
+<td><a href="https://harmonyapp.io/docs/protocol.harmonytypes.v1/#content">protocol.harmonytypes.v1.Content</a></td>
 </tr>
 <tr>
 <td>echo_id</td>
@@ -1274,6 +1276,14 @@
 <tr>
 <td>metadata</td>
 <td><a href="https://harmonyapp.io/docs/protocol.harmonytypes.v1/#metadata">protocol.harmonytypes.v1.Metadata</a></td>
+</tr>
+<tr>
+<td>overrides</td>
+<td><a href="https://harmonyapp.io/docs/protocol.harmonytypes.v1/#override">protocol.harmonytypes.v1.Override</a></td>
+</tr>
+<tr>
+<td>in_reply_to</td>
+<td><code>uint64</code></td>
 </tr>
 </tbody>
 </table>
@@ -1290,6 +1300,34 @@
 <tr>
 <td>message_id</td>
 <td><code>uint64</code></td>
+</tr>
+</tbody>
+</table>
+<h3 id="updatemessagetextrequest">UpdateMessageTextRequest</h3>
+<p>Fields</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>guild_id</td>
+<td><code>uint64</code></td>
+</tr>
+<tr>
+<td>channel_id</td>
+<td><code>uint64</code></td>
+</tr>
+<tr>
+<td>message_id</td>
+<td><code>uint64</code></td>
+</tr>
+<tr>
+<td>new_content</td>
+<td><code>string</code></td>
 </tr>
 </tbody>
 </table>
@@ -2095,50 +2133,6 @@
 <td>content</td>
 <td><code>string</code></td>
 </tr>
-<tr>
-<td>update_content</td>
-<td><code>bool</code></td>
-</tr>
-<tr>
-<td>embeds</td>
-<td><a href="https://harmonyapp.io/docs/protocol.harmonytypes.v1/#embed">protocol.harmonytypes.v1.Embed</a></td>
-</tr>
-<tr>
-<td>update_embeds</td>
-<td><code>bool</code></td>
-</tr>
-<tr>
-<td>actions</td>
-<td><a href="https://harmonyapp.io/docs/protocol.harmonytypes.v1/#action">protocol.harmonytypes.v1.Action</a></td>
-</tr>
-<tr>
-<td>update_actions</td>
-<td><code>bool</code></td>
-</tr>
-<tr>
-<td>attachments</td>
-<td><a href="https://harmonyapp.io/docs/protocol.harmonytypes.v1/#attachment">protocol.harmonytypes.v1.Attachment</a></td>
-</tr>
-<tr>
-<td>update_attachments</td>
-<td><code>bool</code></td>
-</tr>
-<tr>
-<td>overrides</td>
-<td><a href="https://harmonyapp.io/docs/protocol.harmonytypes.v1/#override">protocol.harmonytypes.v1.Override</a></td>
-</tr>
-<tr>
-<td>update_overrides</td>
-<td><code>bool</code></td>
-</tr>
-<tr>
-<td>metadata</td>
-<td><a href="https://harmonyapp.io/docs/protocol.harmonytypes.v1/#metadata">protocol.harmonytypes.v1.Metadata</a></td>
-</tr>
-<tr>
-<td>update_metadata</td>
-<td><code>bool</code></td>
-</tr>
 </tbody>
 </table>
 <h3 id="eventmessagedeleted">Event.MessageDeleted</h3>
@@ -2367,6 +2361,10 @@
 <td>guild_id</td>
 <td><code>uint64</code></td>
 </tr>
+<tr>
+<td>UNHANDLED</td>
+<td>TYPE</td>
+</tr>
 </tbody>
 </table>
 <h3 id="eventguildaddedtolist">Event.GuildAddedToList</h3>
@@ -2533,74 +2531,6 @@
 </tr>
 </tbody>
 </table>
-<h3 id="syncrequest">SyncRequest</h3>
-<p>Fields</p>
-<table>
-<thead>
-<tr>
-<th>Name</th>
-<th>Type</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>token</td>
-<td><code>string</code></td>
-</tr>
-<tr>
-<td>host</td>
-<td><code>string</code></td>
-</tr>
-</tbody>
-</table>
-<h3 id="syncevent">SyncEvent</h3>
-<p>Fields</p>
-<table>
-<thead>
-<tr>
-<th>Name</th>
-<th>Type</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>dm_invite</td>
-<td><a href="#syncevent-dminvite">protocol.chat.v1.SyncEvent.DMInvite</a></td>
-</tr>
-</tbody>
-</table>
-<h3 id="synceventdminvite">SyncEvent.DMInvite</h3>
-<p>Fields</p>
-<table>
-<thead>
-<tr>
-<th>Name</th>
-<th>Type</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>user_name</td>
-<td><code>string</code></td>
-</tr>
-<tr>
-<td>user_avatar</td>
-<td><code>string</code></td>
-</tr>
-<tr>
-<td>dm_name</td>
-<td><code>string</code></td>
-</tr>
-<tr>
-<td>dm_avatar</td>
-<td><code>string</code></td>
-</tr>
-<tr>
-<td>invite_id</td>
-<td><code>string</code></td>
-</tr>
-</tbody>
-</table>
 <h2 id="services">Services</h2>
 <h3 id="chatservice">ChatService</h3>
 <h4 id="unary-methods">Unary Methods</h4>
@@ -2704,8 +2634,8 @@
 <td><a href="https://harmonyapp.io/docs/google.protobuf/#empty">google.protobuf.Empty</a></td>
 </tr>
 <tr>
-<td>UpdateMessage</td>
-<td><a href="#updatemessagerequest">protocol.chat.v1.UpdateMessageRequest</a></td>
+<td>UpdateMessageText</td>
+<td><a href="#updatemessagetextrequest">protocol.chat.v1.UpdateMessageTextRequest</a></td>
 <td><a href="https://harmonyapp.io/docs/google.protobuf/#empty">google.protobuf.Empty</a></td>
 </tr>
 <tr>
@@ -2824,6 +2754,11 @@
 <td><a href="#getuserresponse">protocol.chat.v1.GetUserResponse</a></td>
 </tr>
 <tr>
+<td>GetUserBulk</td>
+<td><a href="#getuserbulkrequest">protocol.chat.v1.GetUserBulkRequest</a></td>
+<td><a href="#getuserbulkresponse">protocol.chat.v1.GetUserBulkResponse</a></td>
+</tr>
+<tr>
 <td>GetUserMetadata</td>
 <td><a href="#getusermetadatarequest">protocol.chat.v1.GetUserMetadataRequest</a></td>
 <td><a href="#getusermetadataresponse">protocol.chat.v1.GetUserMetadataResponse</a></td>
@@ -2842,6 +2777,21 @@
 <td>PreviewGuild</td>
 <td><a href="#previewguildrequest">protocol.chat.v1.PreviewGuildRequest</a></td>
 <td><a href="#previewguildresponse">protocol.chat.v1.PreviewGuildResponse</a></td>
+</tr>
+<tr>
+<td>BanUser</td>
+<td><a href="#banuserrequest">protocol.chat.v1.BanUserRequest</a></td>
+<td><a href="https://harmonyapp.io/docs/google.protobuf/#empty">google.protobuf.Empty</a></td>
+</tr>
+<tr>
+<td>KickUser</td>
+<td><a href="#kickuserrequest">protocol.chat.v1.KickUserRequest</a></td>
+<td><a href="https://harmonyapp.io/docs/google.protobuf/#empty">google.protobuf.Empty</a></td>
+</tr>
+<tr>
+<td>UnbanUser</td>
+<td><a href="#unbanuserrequest">protocol.chat.v1.UnbanUserRequest</a></td>
+<td><a href="https://harmonyapp.io/docs/google.protobuf/#empty">google.protobuf.Empty</a></td>
 </tr>
 </tbody>
 </table>

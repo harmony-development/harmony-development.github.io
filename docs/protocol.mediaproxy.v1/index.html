@@ -4,9 +4,9 @@
     <meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no">
     <title>Reference: protocol.mediaproxy.v1 | Harmony</title>
     <meta name="description" content="Message Types SiteMetadata Fields
-   Name Type     site_title string   page_title string   kind string   description string   url string   image string    FetchLinkMetadataRequest Fields
-   Name Type     url string    InstantViewRequest Fields
-   Name Type     url string    InstantViewResponse Fields ">
+   Name Type     site_title string   page_title string   kind string   description string   url string   image string    MediaMetadata Fields
+   Name Type     mimetype string   filename string    FetchLinkMetadataRequest Fields
+   Name Type     url string    FetchLinkMetadataResponse Fields ">
     <link rel="canonical" href="https://harmonyapp.io/docs/protocol.mediaproxy.v1/" />
 
     
@@ -15,9 +15,9 @@
 
     <meta property="og:title" content="Reference: protocol.mediaproxy.v1" />
 <meta property="og:description" content="Message Types SiteMetadata Fields
-   Name Type     site_title string   page_title string   kind string   description string   url string   image string    FetchLinkMetadataRequest Fields
-   Name Type     url string    InstantViewRequest Fields
-   Name Type     url string    InstantViewResponse Fields" />
+   Name Type     site_title string   page_title string   kind string   description string   url string   image string    MediaMetadata Fields
+   Name Type     mimetype string   filename string    FetchLinkMetadataRequest Fields
+   Name Type     url string    FetchLinkMetadataResponse Fields" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://harmonyapp.io/docs/protocol.mediaproxy.v1/" />
 
@@ -25,9 +25,9 @@
     <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Reference: protocol.mediaproxy.v1"/>
 <meta name="twitter:description" content="Message Types SiteMetadata Fields
-   Name Type     site_title string   page_title string   kind string   description string   url string   image string    FetchLinkMetadataRequest Fields
-   Name Type     url string    InstantViewRequest Fields
-   Name Type     url string    InstantViewResponse Fields"/>
+   Name Type     site_title string   page_title string   kind string   description string   url string   image string    MediaMetadata Fields
+   Name Type     mimetype string   filename string    FetchLinkMetadataRequest Fields
+   Name Type     url string    FetchLinkMetadataResponse Fields"/>
 
 	<meta name="theme-color" content="#E93D58">
 	<meta property="og:image" content="https://harmonyapp.io/img/harmony-embed.png" />
@@ -74,7 +74,9 @@
     <li><a href="#message-types">Message Types</a>
       <ul>
         <li><a href="#sitemetadata">SiteMetadata</a></li>
+        <li><a href="#mediametadata">MediaMetadata</a></li>
         <li><a href="#fetchlinkmetadatarequest">FetchLinkMetadataRequest</a></li>
+        <li><a href="#fetchlinkmetadataresponse">FetchLinkMetadataResponse</a></li>
         <li><a href="#instantviewrequest">InstantViewRequest</a></li>
         <li><a href="#instantviewresponse">InstantViewResponse</a></li>
         <li><a href="#caninstantviewresponse">CanInstantViewResponse</a></li>
@@ -129,6 +131,26 @@
 </tr>
 </tbody>
 </table>
+<h3 id="mediametadata">MediaMetadata</h3>
+<p>Fields</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>mimetype</td>
+<td><code>string</code></td>
+</tr>
+<tr>
+<td>filename</td>
+<td><code>string</code></td>
+</tr>
+</tbody>
+</table>
 <h3 id="fetchlinkmetadatarequest">FetchLinkMetadataRequest</h3>
 <p>Fields</p>
 <table>
@@ -142,6 +164,26 @@
 <tr>
 <td>url</td>
 <td><code>string</code></td>
+</tr>
+</tbody>
+</table>
+<h3 id="fetchlinkmetadataresponse">FetchLinkMetadataResponse</h3>
+<p>Fields</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>is_site</td>
+<td><a href="#sitemetadata">protocol.mediaproxy.v1.SiteMetadata</a></td>
+</tr>
+<tr>
+<td>is_media</td>
+<td><a href="#mediametadata">protocol.mediaproxy.v1.MediaMetadata</a></td>
 </tr>
 </tbody>
 </table>
@@ -216,7 +258,7 @@
 <tr>
 <td>FetchLinkMetadata</td>
 <td><a href="#fetchlinkmetadatarequest">protocol.mediaproxy.v1.FetchLinkMetadataRequest</a></td>
-<td><a href="#sitemetadata">protocol.mediaproxy.v1.SiteMetadata</a></td>
+<td><a href="#fetchlinkmetadataresponse">protocol.mediaproxy.v1.FetchLinkMetadataResponse</a></td>
 </tr>
 <tr>
 <td>InstantView</td>

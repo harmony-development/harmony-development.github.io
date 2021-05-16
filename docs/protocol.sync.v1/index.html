@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en-us"><head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no">
+    <title>Reference: protocol.sync.v1 | Harmony</title>
+    <meta name="description" content="Message Types SyncRequest Fields
+   Name Type     token string   host string    PostBoxEvent Fields
+   Name Type     event google.protobuf.Any    PostEventRequest Fields
+   Name Type     sync_request protocol.sync.v1.SyncRequest   event protocol.sync.v1.PostBoxEvent    Services PostboxService Unary Methods    Name Request Response     PostEvent protocol. ">
+    <link rel="canonical" href="https://harmonyapp.io/docs/protocol.sync.v1/" />
+
+    
+    
+    <link rel="stylesheet" href="https://harmonyapp.io/sass/main.css" />
+
+    <meta property="og:title" content="Reference: protocol.sync.v1" />
+<meta property="og:description" content="Message Types SyncRequest Fields
+   Name Type     token string   host string    PostBoxEvent Fields
+   Name Type     event google.protobuf.Any    PostEventRequest Fields
+   Name Type     sync_request protocol.sync.v1.SyncRequest   event protocol.sync.v1.PostBoxEvent    Services PostboxService Unary Methods    Name Request Response     PostEvent protocol." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://harmonyapp.io/docs/protocol.sync.v1/" />
+
+
+    <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Reference: protocol.sync.v1"/>
+<meta name="twitter:description" content="Message Types SyncRequest Fields
+   Name Type     token string   host string    PostBoxEvent Fields
+   Name Type     event google.protobuf.Any    PostEventRequest Fields
+   Name Type     sync_request protocol.sync.v1.SyncRequest   event protocol.sync.v1.PostBoxEvent    Services PostboxService Unary Methods    Name Request Response     PostEvent protocol."/>
+
+	<meta name="theme-color" content="#E93D58">
+	<meta property="og:image" content="https://harmonyapp.io/img/harmony-embed.png" />
+
+    <script src="https://unpkg.com/quicklink@2.0.0/dist/quicklink.umd.js"></script>
+    <script defer>
+        quicklink.listen()
+    </script>
+</head>
+<body><header class="nu-top-app-bar">
+    <div class="nu-top-app-bar__row">
+        <div class="nu-top-app-bar__section nu-top-app-bar__section--start">
+            <a class="h1-minor" href="/">
+                <span class="harmony-thin-header">Harmony </span><span class="harmony-thick-header">Chat</span>
+            </a>
+        </div>
+        <div class="nu-top-app-bar__section nu-top-app-bar__section--end">
+        
+        <a href="/" class="nu-top-app-bar__link h1-minor-minor">
+            <span>Home</span>
+        </a>
+        
+        <a href="/docs" class="nu-top-app-bar__link h1-minor-minor">
+            <span>Docs</span>
+        </a>
+        
+        <a href="https://github.com/harmony-development" class="nu-top-app-bar__link h1-minor-minor">
+            <span>Github</span>
+        </a>
+        
+        <a href="https://tempest.bluskript.vercel.app" class="nu-top-app-bar__link h1-minor-minor">
+            <span>Try Now</span>
+        </a>
+        
+        </div>
+    </div>
+</header><main class="nu-content">
+<h2 class="h1">Reference: protocol.sync.v1</h2>
+
+<details>
+<summary>Table Of Contents</summary>
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#message-types">Message Types</a>
+      <ul>
+        <li><a href="#syncrequest">SyncRequest</a></li>
+        <li><a href="#postboxevent">PostBoxEvent</a></li>
+        <li><a href="#posteventrequest">PostEventRequest</a></li>
+      </ul>
+    </li>
+    <li><a href="#services">Services</a>
+      <ul>
+        <li><a href="#postboxservice">PostboxService</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+</details>
+
+<br>
+
+<article class="content">
+    <h2 id="message-types">Message Types</h2>
+<h3 id="syncrequest">SyncRequest</h3>
+<p>Fields</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>token</td>
+<td><code>string</code></td>
+</tr>
+<tr>
+<td>host</td>
+<td><code>string</code></td>
+</tr>
+</tbody>
+</table>
+<h3 id="postboxevent">PostBoxEvent</h3>
+<p>Fields</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>event</td>
+<td><a href="https://harmonyapp.io/docs/google.protobuf/#any">google.protobuf.Any</a></td>
+</tr>
+</tbody>
+</table>
+<h3 id="posteventrequest">PostEventRequest</h3>
+<p>Fields</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>sync_request</td>
+<td><a href="#syncrequest">protocol.sync.v1.SyncRequest</a></td>
+</tr>
+<tr>
+<td>event</td>
+<td><a href="#postboxevent">protocol.sync.v1.PostBoxEvent</a></td>
+</tr>
+</tbody>
+</table>
+<h2 id="services">Services</h2>
+<h3 id="postboxservice">PostboxService</h3>
+<h4 id="unary-methods">Unary Methods</h4>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Request</th>
+<th>Response</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>PostEvent</td>
+<td><a href="#posteventrequest">protocol.sync.v1.PostEventRequest</a></td>
+<td><a href="https://harmonyapp.io/docs/google.protobuf/#empty">google.protobuf.Empty</a></td>
+</tr>
+</tbody>
+</table>
+<h4 id="streaming-methods">Streaming Methods</h4>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Client Streams</th>
+<th>Server Streams</th>
+</tr>
+</thead>
+</table>
+
+</article>
+
+        </main></body>
+</html>
