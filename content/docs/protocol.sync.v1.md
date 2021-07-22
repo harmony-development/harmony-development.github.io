@@ -3,31 +3,49 @@ title: "Reference: protocol.sync.v1"
 ---
 ## Message Types 
 
-### SyncRequest
+### AuthData
 
 Fields
 
 | Name | Type |
 | ---- | ---- |
-| token | `string` |
 | host | `string` |
+| time | `uint64` |
 
-### PostBoxEvent
-
-Fields
-
-| Name | Type |
-| ---- | ---- |
-| event | [google.protobuf.Any]({{< ref "google.protobuf.md" >}}#any) |
-
-### PostEventRequest
+### EventQueue
 
 Fields
 
 | Name | Type |
 | ---- | ---- |
-| sync_request | [protocol.sync.v1.SyncRequest](#syncrequest) |
-| event | [protocol.sync.v1.PostBoxEvent](#postboxevent) |
+| events | [protocol.sync.v1.Event](#event) |
+
+### Event
+
+Fields
+
+| Name | Type |
+| ---- | ---- |
+| user_removed_from_guild | [protocol.sync.v1.Event.UserRemovedFromGuild](#event-userremovedfromguild) |
+| user_added_to_guild | [protocol.sync.v1.Event.UserAddedToGuild](#event-useraddedtoguild) |
+
+### Event.UserRemovedFromGuild
+
+Fields
+
+| Name | Type |
+| ---- | ---- |
+| user_id | `uint64` |
+| guild_id | `uint64` |
+
+### Event.UserAddedToGuild
+
+Fields
+
+| Name | Type |
+| ---- | ---- |
+| user_id | `uint64` |
+| guild_id | `uint64` |
 
 ## Services 
 
@@ -37,7 +55,8 @@ Fields
 
 | Name | Request | Response |
 | ---- | ------- | -------- |
-|PostEvent|[protocol.sync.v1.PostEventRequest](#posteventrequest)|[google.protobuf.Empty]({{< ref "google.protobuf.md" >}}#empty)|
+|Pull|[google.protobuf.Empty]({{< ref "google.protobuf.md" >}}#empty)|[protocol.sync.v1.EventQueue](#eventqueue)|
+|Push|[protocol.sync.v1.Event](#event)|[google.protobuf.Empty]({{< ref "google.protobuf.md" >}}#empty)|
 
 #### Streaming Methods
 

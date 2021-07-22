@@ -73,7 +73,7 @@ Fields
 
 | Name | Type |
 | ---- | ---- |
-| token | `string` |
+| token | [protocol.harmonytypes.v1.Token]({{< ref "protocol.harmonytypes.v1.md" >}}#token) |
 | nonce | `string` |
 
 ### KeyReply
@@ -90,8 +90,19 @@ Fields
 
 | Name | Type |
 | ---- | ---- |
-| auth_token | `string` |
+| auth_token | [protocol.harmonytypes.v1.Token]({{< ref "protocol.harmonytypes.v1.md" >}}#token) |
 | domain | `string` |
+
+### TokenData
+
+Fields
+
+| Name | Type |
+| ---- | ---- |
+| user_id | `uint64` |
+| target | `string` |
+| username | `string` |
+| avatar | `string` |
 
 ### AuthStep.Choice
 

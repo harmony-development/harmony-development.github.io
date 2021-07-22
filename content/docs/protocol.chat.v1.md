@@ -244,38 +244,6 @@ Fields
 | ---- | ---- |
 | guild_id | `uint64` |
 
-### AddGuildToGuildListRequest
-
-Fields
-
-| Name | Type |
-| ---- | ---- |
-| guild_id | `uint64` |
-| homeserver | `string` |
-
-### AddGuildToGuildListResponse
-
-Fields
-
-| Name | Type |
-| ---- | ---- |
-
-### RemoveGuildFromGuildListRequest
-
-Fields
-
-| Name | Type |
-| ---- | ---- |
-| guild_id | `uint64` |
-| homeserver | `string` |
-
-### RemoveGuildFromGuildListResponse
-
-Fields
-
-| Name | Type |
-| ---- | ---- |
-
 ### BanUserRequest
 
 Fields
@@ -1027,8 +995,6 @@ Fields
 |CreateChannel|[protocol.chat.v1.CreateChannelRequest](#createchannelrequest)|[protocol.chat.v1.CreateChannelResponse](#createchannelresponse)|
 |CreateEmotePack|[protocol.chat.v1.CreateEmotePackRequest](#createemotepackrequest)|[protocol.chat.v1.CreateEmotePackResponse](#createemotepackresponse)|
 |GetGuildList|[protocol.chat.v1.GetGuildListRequest](#getguildlistrequest)|[protocol.chat.v1.GetGuildListResponse](#getguildlistresponse)|
-|AddGuildToGuildList|[protocol.chat.v1.AddGuildToGuildListRequest](#addguildtoguildlistrequest)|[protocol.chat.v1.AddGuildToGuildListResponse](#addguildtoguildlistresponse)|
-|RemoveGuildFromGuildList|[protocol.chat.v1.RemoveGuildFromGuildListRequest](#removeguildfromguildlistrequest)|[protocol.chat.v1.RemoveGuildFromGuildListResponse](#removeguildfromguildlistresponse)|
 |GetGuild|[protocol.chat.v1.GetGuildRequest](#getguildrequest)|[protocol.chat.v1.GetGuildResponse](#getguildresponse)|
 |GetGuildInvites|[protocol.chat.v1.GetGuildInvitesRequest](#getguildinvitesrequest)|[protocol.chat.v1.GetGuildInvitesResponse](#getguildinvitesresponse)|
 |GetGuildMembers|[protocol.chat.v1.GetGuildMembersRequest](#getguildmembersrequest)|[protocol.chat.v1.GetGuildMembersResponse](#getguildmembersresponse)|

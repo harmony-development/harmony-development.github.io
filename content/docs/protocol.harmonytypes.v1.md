@@ -158,6 +158,15 @@ Fields
 | human_message | `string` |
 | more_details | `bytes` |
 
+### Token
+
+Fields
+
+| Name | Type |
+| ---- | ---- |
+| sig | `bytes` |
+| data | `bytes` |
+
 ### Action.Button
 
 Fields
