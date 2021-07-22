@@ -103,10 +103,6 @@
         <li><a href="#previewguildrequest">PreviewGuildRequest</a></li>
         <li><a href="#previewguildresponse">PreviewGuildResponse</a></li>
         <li><a href="#leaveguildrequest">LeaveGuildRequest</a></li>
-        <li><a href="#addguildtoguildlistrequest">AddGuildToGuildListRequest</a></li>
-        <li><a href="#addguildtoguildlistresponse">AddGuildToGuildListResponse</a></li>
-        <li><a href="#removeguildfromguildlistrequest">RemoveGuildFromGuildListRequest</a></li>
-        <li><a href="#removeguildfromguildlistresponse">RemoveGuildFromGuildListResponse</a></li>
         <li><a href="#banuserrequest">BanUserRequest</a></li>
         <li><a href="#kickuserrequest">KickUserRequest</a></li>
         <li><a href="#unbanuserrequest">UnbanUserRequest</a></li>
@@ -726,66 +722,6 @@
 <td><code>uint64</code></td>
 </tr>
 </tbody>
-</table>
-<h3 id="addguildtoguildlistrequest">AddGuildToGuildListRequest</h3>
-<p>Fields</p>
-<table>
-<thead>
-<tr>
-<th>Name</th>
-<th>Type</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>guild_id</td>
-<td><code>uint64</code></td>
-</tr>
-<tr>
-<td>homeserver</td>
-<td><code>string</code></td>
-</tr>
-</tbody>
-</table>
-<h3 id="addguildtoguildlistresponse">AddGuildToGuildListResponse</h3>
-<p>Fields</p>
-<table>
-<thead>
-<tr>
-<th>Name</th>
-<th>Type</th>
-</tr>
-</thead>
-</table>
-<h3 id="removeguildfromguildlistrequest">RemoveGuildFromGuildListRequest</h3>
-<p>Fields</p>
-<table>
-<thead>
-<tr>
-<th>Name</th>
-<th>Type</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>guild_id</td>
-<td><code>uint64</code></td>
-</tr>
-<tr>
-<td>homeserver</td>
-<td><code>string</code></td>
-</tr>
-</tbody>
-</table>
-<h3 id="removeguildfromguildlistresponse">RemoveGuildFromGuildListResponse</h3>
-<p>Fields</p>
-<table>
-<thead>
-<tr>
-<th>Name</th>
-<th>Type</th>
-</tr>
-</thead>
 </table>
 <h3 id="banuserrequest">BanUserRequest</h3>
 <p>Fields</p>
@@ -2567,16 +2503,6 @@
 <td>GetGuildList</td>
 <td><a href="#getguildlistrequest">protocol.chat.v1.GetGuildListRequest</a></td>
 <td><a href="#getguildlistresponse">protocol.chat.v1.GetGuildListResponse</a></td>
-</tr>
-<tr>
-<td>AddGuildToGuildList</td>
-<td><a href="#addguildtoguildlistrequest">protocol.chat.v1.AddGuildToGuildListRequest</a></td>
-<td><a href="#addguildtoguildlistresponse">protocol.chat.v1.AddGuildToGuildListResponse</a></td>
-</tr>
-<tr>
-<td>RemoveGuildFromGuildList</td>
-<td><a href="#removeguildfromguildlistrequest">protocol.chat.v1.RemoveGuildFromGuildListRequest</a></td>
-<td><a href="#removeguildfromguildlistresponse">protocol.chat.v1.RemoveGuildFromGuildListResponse</a></td>
 </tr>
 <tr>
 <td>GetGuild</td>

@@ -81,10 +81,11 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://harmonyapp.io/docs/protocol.sync.v1/</guid>
-      <description>Message Types SyncRequest Fields
-   Name Type     token string   host string    PostBoxEvent Fields
-   Name Type     event google.protobuf.Any    PostEventRequest Fields
-   Name Type     sync_request protocol.sync.v1.SyncRequest   event protocol.sync.v1.PostBoxEvent    Services PostboxService Unary Methods    Name Request Response     PostEvent protocol.</description>
+      <description>Message Types AuthData Fields
+   Name Type     host string   time uint64    EventQueue Fields
+   Name Type     events protocol.sync.v1.Event    Event Fields
+   Name Type     user_removed_from_guild protocol.sync.v1.Event.UserRemovedFromGuild   user_added_to_guild protocol.sync.v1.Event.UserAddedToGuild    Event.UserRemovedFromGuild Fields
+   Name Type     user_id uint64   guild_id uint64    Event.</description>
     </item>
     
     <item>

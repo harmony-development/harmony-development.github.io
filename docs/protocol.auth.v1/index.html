@@ -83,6 +83,7 @@
         <li><a href="#federatereply">FederateReply</a></li>
         <li><a href="#keyreply">KeyReply</a></li>
         <li><a href="#loginfederatedrequest">LoginFederatedRequest</a></li>
+        <li><a href="#tokendata">TokenData</a></li>
         <li><a href="#authstepchoice">AuthStep.Choice</a></li>
         <li><a href="#authstepform">AuthStep.Form</a></li>
         <li><a href="#authstepwaiting">AuthStep.Waiting</a></li>
@@ -261,7 +262,7 @@
 <tbody>
 <tr>
 <td>token</td>
-<td><code>string</code></td>
+<td><a href="https://harmonyapp.io/docs/protocol.harmonytypes.v1/#token">protocol.harmonytypes.v1.Token</a></td>
 </tr>
 <tr>
 <td>nonce</td>
@@ -297,10 +298,38 @@
 <tbody>
 <tr>
 <td>auth_token</td>
-<td><code>string</code></td>
+<td><a href="https://harmonyapp.io/docs/protocol.harmonytypes.v1/#token">protocol.harmonytypes.v1.Token</a></td>
 </tr>
 <tr>
 <td>domain</td>
+<td><code>string</code></td>
+</tr>
+</tbody>
+</table>
+<h3 id="tokendata">TokenData</h3>
+<p>Fields</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>user_id</td>
+<td><code>uint64</code></td>
+</tr>
+<tr>
+<td>target</td>
+<td><code>string</code></td>
+</tr>
+<tr>
+<td>username</td>
+<td><code>string</code></td>
+</tr>
+<tr>
+<td>avatar</td>
 <td><code>string</code></td>
 </tr>
 </tbody>

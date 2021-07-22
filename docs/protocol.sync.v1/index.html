@@ -3,10 +3,11 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no">
     <title>Reference: protocol.sync.v1 | Harmony</title>
-    <meta name="description" content="Message Types SyncRequest Fields
-   Name Type     token string   host string    PostBoxEvent Fields
-   Name Type     event google.protobuf.Any    PostEventRequest Fields
-   Name Type     sync_request protocol.sync.v1.SyncRequest   event protocol.sync.v1.PostBoxEvent    Services PostboxService Unary Methods    Name Request Response     PostEvent protocol. ">
+    <meta name="description" content="Message Types AuthData Fields
+   Name Type     host string   time uint64    EventQueue Fields
+   Name Type     events protocol.sync.v1.Event    Event Fields
+   Name Type     user_removed_from_guild protocol.sync.v1.Event.UserRemovedFromGuild   user_added_to_guild protocol.sync.v1.Event.UserAddedToGuild    Event.UserRemovedFromGuild Fields
+   Name Type     user_id uint64   guild_id uint64    Event. ">
     <link rel="canonical" href="https://harmonyapp.io/docs/protocol.sync.v1/" />
 
     
@@ -14,20 +15,22 @@
     <link rel="stylesheet" href="https://harmonyapp.io/sass/main.css" />
 
     <meta property="og:title" content="Reference: protocol.sync.v1" />
-<meta property="og:description" content="Message Types SyncRequest Fields
-   Name Type     token string   host string    PostBoxEvent Fields
-   Name Type     event google.protobuf.Any    PostEventRequest Fields
-   Name Type     sync_request protocol.sync.v1.SyncRequest   event protocol.sync.v1.PostBoxEvent    Services PostboxService Unary Methods    Name Request Response     PostEvent protocol." />
+<meta property="og:description" content="Message Types AuthData Fields
+   Name Type     host string   time uint64    EventQueue Fields
+   Name Type     events protocol.sync.v1.Event    Event Fields
+   Name Type     user_removed_from_guild protocol.sync.v1.Event.UserRemovedFromGuild   user_added_to_guild protocol.sync.v1.Event.UserAddedToGuild    Event.UserRemovedFromGuild Fields
+   Name Type     user_id uint64   guild_id uint64    Event." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://harmonyapp.io/docs/protocol.sync.v1/" />
 
 
     <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Reference: protocol.sync.v1"/>
-<meta name="twitter:description" content="Message Types SyncRequest Fields
-   Name Type     token string   host string    PostBoxEvent Fields
-   Name Type     event google.protobuf.Any    PostEventRequest Fields
-   Name Type     sync_request protocol.sync.v1.SyncRequest   event protocol.sync.v1.PostBoxEvent    Services PostboxService Unary Methods    Name Request Response     PostEvent protocol."/>
+<meta name="twitter:description" content="Message Types AuthData Fields
+   Name Type     host string   time uint64    EventQueue Fields
+   Name Type     events protocol.sync.v1.Event    Event Fields
+   Name Type     user_removed_from_guild protocol.sync.v1.Event.UserRemovedFromGuild   user_added_to_guild protocol.sync.v1.Event.UserAddedToGuild    Event.UserRemovedFromGuild Fields
+   Name Type     user_id uint64   guild_id uint64    Event."/>
 
 	<meta name="theme-color" content="#E93D58">
 	<meta property="og:image" content="https://harmonyapp.io/img/harmony-embed.png" />
@@ -73,9 +76,11 @@
   <ul>
     <li><a href="#message-types">Message Types</a>
       <ul>
-        <li><a href="#syncrequest">SyncRequest</a></li>
-        <li><a href="#postboxevent">PostBoxEvent</a></li>
-        <li><a href="#posteventrequest">PostEventRequest</a></li>
+        <li><a href="#authdata">AuthData</a></li>
+        <li><a href="#eventqueue">EventQueue</a></li>
+        <li><a href="#event">Event</a></li>
+        <li><a href="#eventuserremovedfromguild">Event.UserRemovedFromGuild</a></li>
+        <li><a href="#eventuseraddedtoguild">Event.UserAddedToGuild</a></li>
       </ul>
     </li>
     <li><a href="#services">Services</a>
@@ -91,7 +96,7 @@
 
 <article class="content">
     <h2 id="message-types">Message Types</h2>
-<h3 id="syncrequest">SyncRequest</h3>
+<h3 id="authdata">AuthData</h3>
 <p>Fields</p>
 <table>
 <thead>
@@ -101,17 +106,17 @@
 </tr>
 </thead>
 <tbody>
-<tr>
-<td>token</td>
-<td><code>string</code></td>
-</tr>
 <tr>
 <td>host</td>
 <td><code>string</code></td>
 </tr>
+<tr>
+<td>time</td>
+<td><code>uint64</code></td>
+</tr>
 </tbody>
 </table>
-<h3 id="postboxevent">PostBoxEvent</h3>
+<h3 id="eventqueue">EventQueue</h3>
 <p>Fields</p>
 <table>
 <thead>
@@ -122,12 +127,12 @@
 </thead>
 <tbody>
 <tr>
-<td>event</td>
-<td><a href="https://harmonyapp.io/docs/google.protobuf/#any">google.protobuf.Any</a></td>
+<td>events</td>
+<td><a href="#event">protocol.sync.v1.Event</a></td>
 </tr>
 </tbody>
 </table>
-<h3 id="posteventrequest">PostEventRequest</h3>
+<h3 id="event">Event</h3>
 <p>Fields</p>
 <table>
 <thead>
@@ -138,12 +143,52 @@
 </thead>
 <tbody>
 <tr>
-<td>sync_request</td>
-<td><a href="#syncrequest">protocol.sync.v1.SyncRequest</a></td>
+<td>user_removed_from_guild</td>
+<td><a href="#event-userremovedfromguild">protocol.sync.v1.Event.UserRemovedFromGuild</a></td>
 </tr>
 <tr>
-<td>event</td>
-<td><a href="#postboxevent">protocol.sync.v1.PostBoxEvent</a></td>
+<td>user_added_to_guild</td>
+<td><a href="#event-useraddedtoguild">protocol.sync.v1.Event.UserAddedToGuild</a></td>
+</tr>
+</tbody>
+</table>
+<h3 id="eventuserremovedfromguild">Event.UserRemovedFromGuild</h3>
+<p>Fields</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>user_id</td>
+<td><code>uint64</code></td>
+</tr>
+<tr>
+<td>guild_id</td>
+<td><code>uint64</code></td>
+</tr>
+</tbody>
+</table>
+<h3 id="eventuseraddedtoguild">Event.UserAddedToGuild</h3>
+<p>Fields</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>user_id</td>
+<td><code>uint64</code></td>
+</tr>
+<tr>
+<td>guild_id</td>
+<td><code>uint64</code></td>
 </tr>
 </tbody>
 </table>
@@ -160,8 +205,13 @@
 </thead>
 <tbody>
 <tr>
-<td>PostEvent</td>
-<td><a href="#posteventrequest">protocol.sync.v1.PostEventRequest</a></td>
+<td>Pull</td>
+<td><a href="https://harmonyapp.io/docs/google.protobuf/#empty">google.protobuf.Empty</a></td>
+<td><a href="#eventqueue">protocol.sync.v1.EventQueue</a></td>
+</tr>
+<tr>
+<td>Push</td>
+<td><a href="#event">protocol.sync.v1.Event</a></td>
 <td><a href="https://harmonyapp.io/docs/google.protobuf/#empty">google.protobuf.Empty</a></td>
 </tr>
 </tbody>
