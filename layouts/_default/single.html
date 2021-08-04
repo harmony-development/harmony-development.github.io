@@ -1,0 +1,17 @@
+{{ define "main" }}
+
+<div class="prose-wrapper mt-4">
+    <article class="prose">
+        <h2 class="h1">{{ .Title }}</h2>
+
+        <details>
+            <summary>Table Of Contents</summary>
+            {{ .TableOfContents }}
+        </details>
+
+        <br>
+        {{ .Content }}
+    </article>
+</div>
+
+{{ end }}

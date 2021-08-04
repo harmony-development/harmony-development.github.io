@@ -6,33 +6,41 @@ date: 2020-06-29T21:07:15-04:00
 {{< index/header >}}
 
 {{< index/button "https://github.com/harmony-development" >}}
-Get Harmony
+Explore Harmony on GitHub
 {{< /index/button >}}
 
-{{< index/cardcollection >}}
+<div class="prose-wrapper">
 
-{{< index/card "Simple" >}}
-For users and devs alike, Harmony's so simple you already know how to use it.
-{{< /index/card >}}
+<div class="prose">
 
-{{< index/card "Private" >}}
-Harmony chats belong to you and your friends, not to anyone else.
-{{< /index/card >}}
+## Why Harmony?
 
-{{< index/card "Shareable" >}}
-Harmony lets you easily share your chats and media with your friends.
-{{< /index/card >}}
+### Simple
 
-{{< index/card "Open Source" >}}
-Harmony is an open protocol with open code, free for everyone.
-{{< /index/card >}}
+For developers, the Harmony protocol is so simple writing a client is like child's play.
+For users, the official clients are so simple and familiar you already know how to use them.
 
-{{< index/card "Secure" >}}
-Harmony protects your messages, safe from hackers.
-{{< /index/card >}}
+### Private
 
-{{< index/card "Synchronised" >}}
-Harmony lets you stay in touch across all your devices.
-{{< /index/card >}}
+Conversations across Harmony belongs to you and your friends, not to anyone else.
 
-{{< /index/cardcollection >}}
+### Shareable
+
+Harmony lets you easily share your content on Harmony with friends.
+
+### Open Source
+
+Harmony was born in open source, and will be open source forever.
+Strong licensing on the servers and clients, as well as the protocol documentation guarantees this.
+
+### Secure
+
+Harmony mandates HTTPS, and features many safety guards to make sure that you can trust the servers you're connecting and federating to.
+
+### Global
+
+Harmony allows you to communicate from any device anywhere, with all your messages where you left them on the server.
+
+</div>
+
+</div>

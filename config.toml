@@ -1,7 +1,6 @@
 baseURL = "http://harmonyapp.io"
 languageCode = "en-us"
 title = "Harmony"
-theme = "nu"
 
 [params]
     description = "Your place. Your communities. Your friends."
@@ -10,12 +9,6 @@ theme = "nu"
     unsafe = "true"
 
 [menu]
-
-  [[menu.main]]
-    identifier = "home"
-    name = "Home"
-    url = "/"
-    weight = -110
 
   [[menu.main]]
     identifier = "docs"

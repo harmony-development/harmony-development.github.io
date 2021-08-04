@@ -1,0 +1,57 @@
+@import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@100;200;300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@keyframes fading {
+    0%  { background-color: #E93D58; }
+    25% { background-color: #EF973C; }
+    50% { background-color: #3DAEE9; }
+    75% { background-color: #00D485; }
+}
+
+.fading-bg {
+    background-color: #EF973C;
+    animation: 60s fading infinite;
+    animation-direction: alternate;
+}
+
+.prose-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-left: 1rem;
+    padding-right: 1rem;
+}
+
+.prose {
+    max-width: 100ch;
+    width: 100%;
+}
+
+.prose h1 {
+    @apply text-2xl;
+}
+.prose h2 {
+    @apply text-xl;
+    @apply mt-2;
+}
+.prose h3 {
+    @apply text-lg;
+    @apply mt-2;
+}
+.prose td, .prose th {
+    @apply border;
+    @apply border-gray-400;
+    @apply px-4;
+    @apply py-2;
+}
+.prose th {
+    @apply font-bold;
+}
+.prose p {
+    @apply dark:text-gray-400;
+}
+
