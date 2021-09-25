@@ -40,6 +40,16 @@ URL Parameters  filename: The name of the file being uploaded. contentType: The 
     </item>
     
     <item>
+      <title>Harmony FAQ</title>
+      <link>https://harmonyapp.io/docs/faq/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://harmonyapp.io/docs/faq/</guid>
+      <description>What is Harmony? A chat protocol which:
+ is split into communities which contain channels which contain messages is defined entirely within the Protobuf format, using a simple RPC mechanism called hRPC.  What are the design goals of Harmony? Harmony&amp;rsquo;s protocol is designed to be as straightforward and pragmatic as possible. We do not make attempts at creating a &amp;ldquo;universal&amp;rdquo; design philosophy which the entire protocol is forced to follow, instead implementing things that make sense as a single cohesive system.</description>
+    </item>
+    
+    <item>
       <title>Reference: google.protobuf</title>
       <link>https://harmonyapp.io/docs/google.protobuf/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>

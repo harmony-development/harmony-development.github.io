@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en-us"><head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no">
+    <title>Harmony FAQ | Harmony</title>
+    <meta name="description" content="What is Harmony? A chat protocol which:
+ is split into communities which contain channels which contain messages is defined entirely within the Protobuf format, using a simple RPC mechanism called hRPC.  What are the design goals of Harmony? Harmony&rsquo;s protocol is designed to be as straightforward and pragmatic as possible. We do not make attempts at creating a &ldquo;universal&rdquo; design philosophy which the entire protocol is forced to follow, instead implementing things that make sense as a single cohesive system. ">
+    <link rel="canonical" href="https://harmonyapp.io/docs/faq/" />
+
+    
+
+    
+      
+      <link rel="stylesheet" href="/css/main.min.1124d8291d9ef3056ab41d1b63463d0b41dacf83ef5ab11cfde803edd4e450ff.css" integrity="sha256-ESTYKR2e8wVqtB0bY0Y9C0Haz4PvWrEc/egD7dTkUP8="/>
+    
+
+    <meta property="og:title" content="Harmony FAQ" />
+<meta property="og:description" content="What is Harmony? A chat protocol which:
+ is split into communities which contain channels which contain messages is defined entirely within the Protobuf format, using a simple RPC mechanism called hRPC.  What are the design goals of Harmony? Harmony&rsquo;s protocol is designed to be as straightforward and pragmatic as possible. We do not make attempts at creating a &ldquo;universal&rdquo; design philosophy which the entire protocol is forced to follow, instead implementing things that make sense as a single cohesive system." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://harmonyapp.io/docs/faq/" />
+
+
+    <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Harmony FAQ"/>
+<meta name="twitter:description" content="What is Harmony? A chat protocol which:
+ is split into communities which contain channels which contain messages is defined entirely within the Protobuf format, using a simple RPC mechanism called hRPC.  What are the design goals of Harmony? Harmony&rsquo;s protocol is designed to be as straightforward and pragmatic as possible. We do not make attempts at creating a &ldquo;universal&rdquo; design philosophy which the entire protocol is forced to follow, instead implementing things that make sense as a single cohesive system."/>
+
+    <meta name="theme-color" content="#E93D58">
+    <meta property="og:image" content="https://harmonyapp.io/img/harmony-embed.png" />
+
+    <script src="https://unpkg.com/quicklink@2.0.0/dist/quicklink.umd.js"></script>
+    <script defer>
+        quicklink.listen()
+    </script>
+</head>
+<body class="dark:text-white dark:bg-gray-900"><header class="w-full bg-gray-200 dark:bg-gray-800 flex text-lg">
+    <div class="flex flex-row w-full">
+        <div class="flex-auto p-4 justify-start order-first inline-flex">
+            <a class="font-header" href="/">
+                <span class="font-light">Harmony </span><span class="font-bold">Chat</span>
+            </a>
+        </div>
+        <div class="flex-auto p-4 justify-end order-last inline-flex">
+        
+        <a href="/docs" class="ml-2 nu-top-app-bar__link h1-minor-minor">
+            <span>Docs</span>
+        </a>
+        
+        <a href="https://github.com/harmony-development" class="ml-2 nu-top-app-bar__link h1-minor-minor">
+            <span>Github</span>
+        </a>
+        
+        <a href="https://tempest.bluskript.vercel.app" class="ml-2 nu-top-app-bar__link h1-minor-minor">
+            <span>Try Now</span>
+        </a>
+        
+        </div>
+    </div>
+</header><main>
+
+<div class="prose-wrapper mt-4">
+    <article class="prose">
+        <h2 class="h1">Harmony FAQ</h2>
+
+        <details>
+            <summary>Table Of Contents</summary>
+            <nav id="TableOfContents">
+  <ul>
+    <li><a href="#what-is-harmony">What is Harmony?</a></li>
+    <li><a href="#what-are-the-design-goals-of-harmony">What are the design goals of Harmony?</a></li>
+    <li><a href="#why-not-matrix">Why not Matrix?</a></li>
+    <li><a href="#why-not-revolt">Why not Revolt?</a></li>
+    <li><a href="#where-is-e2ee">Where is E2EE?</a></li>
+  </ul>
+</nav>
+        </details>
+
+        <br>
+        <h2 id="what-is-harmony">What is Harmony?</h2>
+<p>A chat protocol which:</p>
+<ul>
+<li>is split into communities which contain channels which contain messages</li>
+<li>is defined entirely within the <a href="https://developers.google.com/protocol-buffers">Protobuf</a> format, using a simple <a href="https://github.com/harmony-development/hrpc">RPC mechanism called hRPC</a>.</li>
+</ul>
+<h2 id="what-are-the-design-goals-of-harmony">What are the design goals of Harmony?</h2>
+<p>Harmony&rsquo;s protocol is designed to be as straightforward and pragmatic as possible. We do not make attempts at creating a &ldquo;universal&rdquo; design philosophy which the entire protocol is forced to follow, instead implementing things that make sense as a single cohesive system. Time has proven over time over that design idealism is often a limiting factor in services.</p>
+<h2 id="why-not-matrix">Why not Matrix?</h2>
+<ul>
+<li>We believe that Matrix&rsquo;s design philosophy works in many cases, but fails in terms of performance and handling large communities.</li>
+<li>We believe that requiring all data to be transferred between servers for federation is inefficient.</li>
+<li>Harmony allows clients to connect directly to foreignservers if they wish for reduced latency and stress on their homeservers.</li>
+<li>Harmony wishes to represent many things that don&rsquo;t work well in Matrix&rsquo;s model of &ldquo;everything is a JSON message appended to a stream called a room.&rdquo;</li>
+<li>Matrix is lacking in many functions we want from a chat service</li>
+<li>Having an independent protocol allows us to move faster to achieve our goals compared to working on Matrix.</li>
+</ul>
+<h2 id="why-not-revolt">Why not Revolt?</h2>
+<p>Revolt is an interesting project, and we actually hadn&rsquo;t known about it while Harmony was under development. However, there are currently a few issues, namely:</p>
+<ul>
+<li>No federation. The developers have stated that federation was too &ldquo;messy&rdquo; for a big chat app. We disagree.</li>
+<li>Protocol is primarily designed around its single client and server implementation; not with the implementability of a wide array of clients and servers in mind.</li>
+<li>It wants to be &ldquo;Discord but open source&rdquo;, we want to be more than that.</li>
+</ul>
+<h2 id="where-is-e2ee">Where is E2EE?</h2>
+<p>E2EE is currently under development as part of our &ldquo;Secret Service&rdquo;
+It is currently being worked on in a branch of our <a href="https://github.com/harmony-development/protocol/tree/work/e2ee">Protocol</a> repository and a library called <a href="https://github.com/harmony-development/lockdown">Lockdown</a>, which allows clients to implement E2EE trivially.</p>
+<p>E2EE rooms adopt a different style from the rest of Harmony, allowing us to have all three by having a design specifically tailored to E2EE conversation: good performance, good security, good user experience.</p>
+
+    </article>
+</div>
+
+
+        </main></body>
+</html>
