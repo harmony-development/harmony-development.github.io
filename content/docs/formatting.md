@@ -1,1 +1,0 @@
-../protocol/chat/v1/Formatting.md
