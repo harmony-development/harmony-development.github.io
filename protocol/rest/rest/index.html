@@ -85,6 +85,11 @@ URL Parameters  filename: The name of the file being uploaded. contentType: The 
         <li><a href="#responses-1">Responses</a></li>
       </ul>
     </li>
+    <li><a href="#get-_harmonyabout">GET <code>/_harmony/about</code></a>
+      <ul>
+        <li><a href="#responses-2">Responses</a></li>
+      </ul>
+    </li>
   </ul>
 </nav>
         </details>
@@ -139,6 +144,22 @@ URL Parameters  filename: The name of the file being uploaded. contentType: The 
 </table>
 <h5 id="body">Body</h5>
 <p>The body will contain the content of the requested file.</p>
+<h2 id="get-_harmonyabout">GET <code>/_harmony/about</code></h2>
+<p>Expects authentication: no</p>
+<h3 id="responses-2">Responses</h3>
+<h4 id="200-ok-2">200 OK</h4>
+<h5 id="body-1">Body</h5>
+<p>The body will contain JSON object in the following format:</p>
+<pre><code>{
+    &quot;serverName&quot;: &quot;Scherzo&quot;,
+    &quot;version&quot;: &quot;git-0c062f6&quot;,
+    &quot;aboutServer&quot;: &quot;The main Harmony server.&quot;,
+    &quot;messageOfTheDay&quot;: &quot;A maintenance will be done between 18:00 - 20:00.&quot;
+}
+</code></pre><p><code>serverName</code>: the Harmony server software being hosted</p>
+<p><code>version</code>: the version of said Harmony server software</p>
+<p><code>aboutServer</code>: A description of why / who this server is hosted for.</p>
+<p><code>messageOfTheDay</code>: &ldquo;message of the day&rdquo;, can be used to put maintenance information.</p>
 
     </article>
 </div>

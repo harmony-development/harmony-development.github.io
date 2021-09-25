@@ -9,6 +9,33 @@
     <lastBuildDate>Mon, 29 Jun 2020 21:07:15 -0400</lastBuildDate><atom:link href="https://harmonyapp.io/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title></title>
+      <link>https://harmonyapp.io/protocol/guidelines/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://harmonyapp.io/protocol/guidelines/</guid>
+      <description>Guidelines Protocol endpoints adhere to the following standard naming conventions:
+  All actions being applied must be prefixed.
+❌ What not to do:
+ rpc ProfileUpdate(ProfileUpdateRequest) returns (ProfileUpdateResponse) {}  ✅ What to do:
+ rpc UpdateProfile(UpdateProfileRequest) returns (UpdateProfileResponse) {}    Objects (types that aren&amp;rsquo;t request or response types) should go at the top of the file.
+  Objects should not be nested inside request or response types.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://harmonyapp.io/protocol/readme/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://harmonyapp.io/protocol/readme/</guid>
+      <description>Harmony Protocol This is the repository containing the Harmony protocol specification and documentation.
+Read here for frequently asked questions.
+To read about protocol conventions, please read GUIDELINES.
+If you are looking for:
+ a client to communicate with, check out Tempest, Challah or Crust. a server to host, check out Scherzo. an SDK to develop bots / clients / servers with, check out Rust SDK, Web SDK and C++ SDK.  </description>
+    </item>
+    
+    <item>
+      <title></title>
       <link>https://harmonyapp.io/protocol/rest/rest/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
@@ -20,26 +47,6 @@ URL Parameters  filename: The name of the file being uploaded. contentType: The 
     </item>
     
     <item>
-      <title>Formatting</title>
-      <link>https://harmonyapp.io/docs/formatting/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://harmonyapp.io/docs/formatting/</guid>
-      <description>Clients are expected to support the Commonmark specification for all message text, with the following changes:
- Images (![]()) should be explicitly ignored by the client &amp;lt;@123456789&amp;gt; should be interpreted as a user mention, and render as the specified user&amp;rsquo;s display name, with other decoration optional &amp;lt;@|123456789&amp;gt; should be interpreted as a role mention, and render as the specified role&amp;rsquo;s name and colour, with other decorations optional &amp;lt;:123456789:&amp;gt; should be interpreted as a local emoji, and render as the emoji&amp;rsquo;s content as provided by the homeserver of the guild &amp;lt;:123456789|homeserver.</description>
-    </item>
-    
-    <item>
-      <title>Formatting</title>
-      <link>https://harmonyapp.io/protocol/chat/v1/formatting/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://harmonyapp.io/protocol/chat/v1/formatting/</guid>
-      <description>Clients are expected to support the Commonmark specification for all message text, with the following changes:
- Images (![]()) should be explicitly ignored by the client &amp;lt;@123456789&amp;gt; should be interpreted as a user mention, and render as the specified user&amp;rsquo;s display name, with other decoration optional &amp;lt;@|123456789&amp;gt; should be interpreted as a role mention, and render as the specified role&amp;rsquo;s name and colour, with other decorations optional &amp;lt;:123456789:&amp;gt; should be interpreted as a local emoji, and render as the emoji&amp;rsquo;s content as provided by the homeserver of the guild &amp;lt;:123456789|homeserver.</description>
-    </item>
-    
-    <item>
       <title>Harmony FAQ</title>
       <link>https://harmonyapp.io/docs/faq/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -47,6 +54,27 @@ URL Parameters  filename: The name of the file being uploaded. contentType: The 
       <guid>https://harmonyapp.io/docs/faq/</guid>
       <description>What is Harmony? A chat protocol which:
  is split into communities which contain channels which contain messages is defined entirely within the Protobuf format, using a simple RPC mechanism called hRPC.  What are the design goals of Harmony? Harmony&amp;rsquo;s protocol is designed to be as straightforward and pragmatic as possible. We do not make attempts at creating a &amp;ldquo;universal&amp;rdquo; design philosophy which the entire protocol is forced to follow, instead implementing things that make sense as a single cohesive system.</description>
+    </item>
+    
+    <item>
+      <title>Harmony FAQ</title>
+      <link>https://harmonyapp.io/protocol/faq/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://harmonyapp.io/protocol/faq/</guid>
+      <description>What is Harmony? A chat protocol which:
+ is split into communities which contain channels which contain messages is defined entirely within the Protobuf format, using a simple RPC mechanism called hRPC.  What are the design goals of Harmony? Harmony&amp;rsquo;s protocol is designed to be as straightforward and pragmatic as possible. We do not make attempts at creating a &amp;ldquo;universal&amp;rdquo; design philosophy which the entire protocol is forced to follow, instead implementing things that make sense as a single cohesive system.</description>
+    </item>
+    
+    <item>
+      <title>Permissions</title>
+      <link>https://harmonyapp.io/protocol/chat/v1/permissions/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://harmonyapp.io/protocol/chat/v1/permissions/</guid>
+      <description>The permissions system of Harmony resembles that of the permissions system common to open-source Minecraft server software, featuring rules and querying a node string against those rules.
+Permission In a community, there will be features, management functionality, bot commands, and other things which exist. Most of these actions have a permission associated with them, allowing you to control which members have access to each feature.
+A permission is just a string, such as roles.</description>
     </item>
     
     <item>

@@ -13,6 +13,14 @@
   </url>
   
   <url>
+    <loc>https://harmonyapp.io/protocol/guidelines/</loc>
+  </url>
+  
+  <url>
+    <loc>https://harmonyapp.io/protocol/readme/</loc>
+  </url>
+  
+  <url>
     <loc>https://harmonyapp.io/protocol/rest/rest/</loc>
   </url>
   
@@ -21,15 +29,15 @@
   </url>
   
   <url>
-    <loc>https://harmonyapp.io/docs/formatting/</loc>
-  </url>
-  
-  <url>
-    <loc>https://harmonyapp.io/protocol/chat/v1/formatting/</loc>
-  </url>
-  
-  <url>
     <loc>https://harmonyapp.io/docs/faq/</loc>
+  </url>
+  
+  <url>
+    <loc>https://harmonyapp.io/protocol/faq/</loc>
+  </url>
+  
+  <url>
+    <loc>https://harmonyapp.io/protocol/chat/v1/permissions/</loc>
   </url>
   
   <url>

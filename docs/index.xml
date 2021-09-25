@@ -7,16 +7,6 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language><atom:link href="https://harmonyapp.io/docs/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Formatting</title>
-      <link>https://harmonyapp.io/docs/formatting/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://harmonyapp.io/docs/formatting/</guid>
-      <description>Clients are expected to support the Commonmark specification for all message text, with the following changes:
- Images (![]()) should be explicitly ignored by the client &amp;lt;@123456789&amp;gt; should be interpreted as a user mention, and render as the specified user&amp;rsquo;s display name, with other decoration optional &amp;lt;@|123456789&amp;gt; should be interpreted as a role mention, and render as the specified role&amp;rsquo;s name and colour, with other decorations optional &amp;lt;:123456789:&amp;gt; should be interpreted as a local emoji, and render as the emoji&amp;rsquo;s content as provided by the homeserver of the guild &amp;lt;:123456789|homeserver.</description>
-    </item>
-    
-    <item>
       <title>Harmony FAQ</title>
       <link>https://harmonyapp.io/docs/faq/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>

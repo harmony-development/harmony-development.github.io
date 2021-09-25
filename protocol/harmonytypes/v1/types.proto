@@ -1,154 +1,50 @@
 syntax = "proto3";
 
-import "google/protobuf/timestamp.proto";
-import "google/protobuf/empty.proto";
-import "google/protobuf/any.proto";
-
 package protocol.harmonytypes.v1;
 
 option go_package = "github.com/harmony-development/legato/gen/harmonytypes/v1";
 
 import "google/protobuf/descriptor.proto";
 
+// Metadata for methods. These are set in individual RPC endpoints and are
+// typically used by servers.
 message HarmonyMethodMetadata {
+  // whether the method requires authentication.
   bool requires_authentication = 1;
+  // whether the method allows federation or not.
   bool requires_local = 2;
+  // the permission nodes required to invoke the method.
   string requires_permission_node = 3;
 }
 
-extend google.protobuf.MethodOptions { HarmonyMethodMetadata metadata = 1091; }
-
-enum UserStatus {
-  USER_STATUS_ONLINE_UNSPECIFIED = 0;
-  USER_STATUS_STREAMING = 1;
-  USER_STATUS_DO_NOT_DISTURB = 2;
-  USER_STATUS_IDLE = 3;
-  USER_STATUS_OFFLINE = 4;
+extend google.protobuf.MethodOptions {
+  // Harmony method metadata.
+  HarmonyMethodMetadata metadata = 1091;
 }
 
-// OVERRIDES
-message Override {
-  string name = 1;
-  string avatar = 2;
-  oneof reason {
-    string user_defined = 3;
-    google.protobuf.Empty webhook = 4;
-    google.protobuf.Empty system_plurality =
-        5; // plurality, not system as in computer
-    google.protobuf.Empty system_message = 6;
-    google.protobuf.Empty bridge = 7;
-  }
-}
-
-// EMBEDS AND ACTIONS
-
-message Action {
-  enum Type {
-    Normal = 0;
-    Primary = 1;
-    Destructive = 2;
-  }
-  message Button {
-    string text = 1;
-    string url = 2;
-  }
-  message Dropdown {
-    string text = 1;
-    repeated string options = 2;
-  }
-  message Input {
-    string label = 1;
-    bool wide = 2;
-  }
-
-  Type action_type = 1;
-  string id = 2;
-  oneof kind {
-    Button button = 3;
-    Dropdown dropdown = 4;
-    Input input = 5;
-  }
-}
-
-message EmbedHeading {
-  string text = 1;
-  string subtext = 2;
-  string url = 3;
-  string icon = 4;
-}
-
-message EmbedField {
-  enum Presentation {
-    Data = 0;
-    CaptionedImage = 1;
-    Row = 2;
-  }
-  string title = 1;
-  string subtitle = 2;
-  string body = 3;
-
-  string image_url = 4;
-
-  Presentation presentation = 5;
-
-  repeated Action actions = 6;
-}
-
-message Embed {
-  string title = 1;
-  string body = 2;
-
-  int64 color = 3;
-
-  EmbedHeading header = 4;
-  EmbedHeading footer = 5;
-
-  repeated EmbedField fields = 6;
-}
-
-// TYPES
-message Attachment {
-  string id = 1;
-  string name = 2;
-  string type = 3;
-  int32 size = 4;
-  string caption = 5;
-}
-
-message Metadata {
+// Anything holds anything
+message Anything {
+  // Kind is the kind of the message
   string kind = 1;
-  map<string, google.protobuf.Any> extension = 2;
+  // Body is the serialised bytes
+  bytes body = 2;
 }
 
-message ContentText { string content = 1; }
-message ContentEmbed { Embed embeds = 1; }
-message ContentFiles { repeated Attachment attachments = 1; }
-
-message Content {
-  oneof content {
-    ContentText text_message = 2;
-    ContentEmbed embed_message = 4;
-    ContentFiles files_message = 5;
-  }
+// Metadata type used by many messages.
+message Metadata {
+  // Kind of this metadata.
+  string kind = 1;
+  // A map containing information.
+  map<string, Anything> extension = 2;
 }
 
-message Message {
-  Metadata metadata = 1;
-  Override overrides = 2;
-
-  uint64 guild_id = 3 [ jstype = JS_STRING ];
-  uint64 channel_id = 4 [ jstype = JS_STRING ];
-  uint64 message_id = 5 [ jstype = JS_STRING ];
-  uint64 author_id = 6 [ jstype = JS_STRING ];
-  google.protobuf.Timestamp created_at = 7;
-  google.protobuf.Timestamp edited_at = 8;
-  uint64 in_reply_to = 9 [ jstype = JS_STRING ];
-  Content content = 10;
-}
-
+// Error type that will be returned by servers. 
 message Error {
+  // The identifier of this error, can be used as an i18n key.
   string identifier = 1;
+  // A (usually english) human message for this error.
   string human_message = 2;
+  // More details about this message. Is dependent on the endpoint.
   bytes more_details = 3;
 }
 
@@ -161,6 +57,35 @@ message Token {
   // Has to be 64 bytes long, otherwise it will be rejected.
   bytes sig = 1;
   // Serialized protobuf data.
-  // The protobuf type of this serialized data is dependent on the API endpoint used.
+  // The protobuf type of this serialized data is dependent on the API endpoint
+  // used.
   bytes data = 2;
+}
+
+// An empty message
+message Empty { }
+
+// An object representing an item position between two other items.
+message ItemPosition {
+  // An object that represents the top of an ordered list.
+  message Top { }
+  // An object that represents a place between two items in an ordered list.
+  message Between {
+    // The ID of the previous item.
+    uint64 previous_id = 1;
+    // The ID of the next item.
+    uint64 next_id = 2;
+  }
+  // An object that represents the bottom of an ordered list.
+  message Bottom { }
+
+  // Position of this item.
+  oneof position {
+    // The item is at the top.
+    Top top = 1;
+    // The item is in between two other items.
+    Between between = 2;
+    // The item is at the bottom.
+    Bottom bottom = 3;
+  }
 }

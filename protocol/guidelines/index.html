@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en-us"><head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no">
+    <title>Harmony</title>
+    <meta name="description" content="Guidelines Protocol endpoints adhere to the following standard naming conventions:
+  All actions being applied must be prefixed.
+❌ What not to do:
+ rpc ProfileUpdate(ProfileUpdateRequest) returns (ProfileUpdateResponse) {}  ✅ What to do:
+ rpc UpdateProfile(UpdateProfileRequest) returns (UpdateProfileResponse) {}    Objects (types that aren&rsquo;t request or response types) should go at the top of the file.
+  Objects should not be nested inside request or response types. ">
+    <link rel="canonical" href="https://harmonyapp.io/protocol/guidelines/" />
+
+    
+
+    
+      
+      <link rel="stylesheet" href="/css/main.min.1124d8291d9ef3056ab41d1b63463d0b41dacf83ef5ab11cfde803edd4e450ff.css" integrity="sha256-ESTYKR2e8wVqtB0bY0Y9C0Haz4PvWrEc/egD7dTkUP8="/>
+    
+
+    <meta property="og:title" content="" />
+<meta property="og:description" content="Guidelines Protocol endpoints adhere to the following standard naming conventions:
+  All actions being applied must be prefixed.
+❌ What not to do:
+ rpc ProfileUpdate(ProfileUpdateRequest) returns (ProfileUpdateResponse) {}  ✅ What to do:
+ rpc UpdateProfile(UpdateProfileRequest) returns (UpdateProfileResponse) {}    Objects (types that aren&rsquo;t request or response types) should go at the top of the file.
+  Objects should not be nested inside request or response types." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://harmonyapp.io/protocol/guidelines/" />
+
+
+    <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content=""/>
+<meta name="twitter:description" content="Guidelines Protocol endpoints adhere to the following standard naming conventions:
+  All actions being applied must be prefixed.
+❌ What not to do:
+ rpc ProfileUpdate(ProfileUpdateRequest) returns (ProfileUpdateResponse) {}  ✅ What to do:
+ rpc UpdateProfile(UpdateProfileRequest) returns (UpdateProfileResponse) {}    Objects (types that aren&rsquo;t request or response types) should go at the top of the file.
+  Objects should not be nested inside request or response types."/>
+
+    <meta name="theme-color" content="#E93D58">
+    <meta property="og:image" content="https://harmonyapp.io/img/harmony-embed.png" />
+
+    <script src="https://unpkg.com/quicklink@2.0.0/dist/quicklink.umd.js"></script>
+    <script defer>
+        quicklink.listen()
+    </script>
+</head>
+<body class="dark:text-white dark:bg-gray-900"><header class="w-full bg-gray-200 dark:bg-gray-800 flex text-lg">
+    <div class="flex flex-row w-full">
+        <div class="flex-auto p-4 justify-start order-first inline-flex">
+            <a class="font-header" href="/">
+                <span class="font-light">Harmony </span><span class="font-bold">Chat</span>
+            </a>
+        </div>
+        <div class="flex-auto p-4 justify-end order-last inline-flex">
+        
+        <a href="/docs" class="ml-2 nu-top-app-bar__link h1-minor-minor">
+            <span>Docs</span>
+        </a>
+        
+        <a href="https://github.com/harmony-development" class="ml-2 nu-top-app-bar__link h1-minor-minor">
+            <span>Github</span>
+        </a>
+        
+        <a href="https://tempest.bluskript.vercel.app" class="ml-2 nu-top-app-bar__link h1-minor-minor">
+            <span>Try Now</span>
+        </a>
+        
+        </div>
+    </div>
+</header><main>
+
+<div class="prose-wrapper mt-4">
+    <article class="prose">
+        <h2 class="h1"></h2>
+
+        <details>
+            <summary>Table Of Contents</summary>
+            <nav id="TableOfContents"></nav>
+        </details>
+
+        <br>
+        <h1 id="guidelines">Guidelines</h1>
+<p>Protocol endpoints adhere to the following standard naming conventions:</p>
+<ul>
+<li>
+<p>All actions being applied must be <strong>prefixed</strong>.</p>
+<p><strong>❌ What not to do:</strong></p>
+<ul>
+<li><code>rpc ProfileUpdate(ProfileUpdateRequest) returns (ProfileUpdateResponse) {}</code></li>
+</ul>
+<p><strong>✅ What to do:</strong></p>
+<ul>
+<li><code>rpc UpdateProfile(UpdateProfileRequest) returns (UpdateProfileResponse) {}</code></li>
+</ul>
+</li>
+<li>
+<p>Objects (types that aren&rsquo;t request or response types) should go at the top of the file.</p>
+</li>
+<li>
+<p>Objects should not be nested inside request or response types.</p>
+</li>
+</ul>
+
+    </article>
+</div>
+
+
+        </main></body>
+</html>

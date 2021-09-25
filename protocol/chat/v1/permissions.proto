@@ -2,86 +2,184 @@ syntax = "proto3";
 
 package protocol.chat.v1;
 
+import "harmonytypes/v1/types.proto";
+
 option go_package = "github.com/harmony-development/legato/gen/chat/v1";
 
-message QueryPermissionsRequest {
-  uint64 guild_id = 1 [jstype = JS_STRING];
-  uint64 channel_id = 2 [jstype = JS_STRING];
-  string check_for = 3;
-  uint64 as = 4;
-}
-message QueryPermissionsResponse { bool ok = 1; }
-
+// Object representing a single permission node.
 message Permission {
-  enum Mode { Allow = 0; Deny = 1; }
+  // the permission matcher. (example: roles.manage)
   string matches = 1;
-  Mode mode = 2;
+  // whether the permission is allowed or not.
+  bool ok = 2;
 }
 
-message PermissionList { repeated Permission permissions = 1; }
-
-message SetPermissionsRequest {
-  uint64 guild_id = 1 [jstype = JS_STRING];
-  uint64 channel_id = 2 [jstype = JS_STRING];
-  uint64 role_id = 3 [jstype = JS_STRING];
-  PermissionList perms = 4;
-}
-
-message GetPermissionsRequest {
-  uint64 guild_id = 1 [jstype = JS_STRING];
-  uint64 channel_id = 2 [jstype = JS_STRING];
-  uint64 role_id = 3 [jstype = JS_STRING];
-}
-message GetPermissionsResponse { PermissionList perms = 1; }
-
+// Object representing a role without the ID.
 message Role {
-  uint64 role_id = 1 [jstype = JS_STRING];
-  string name = 2;
-  int32 color = 3;
-  bool hoist = 4;
-  bool pingable = 5;
+  // the role name.
+  string name = 1;
+  // the role color.
+  int32 color = 2;
+  // whether the role is hoisted or not.
+  bool hoist = 3;
+  // whether the role is mentionable or not.
+  bool pingable = 4;
 }
 
-message MoveRoleRequest {
-  uint64 guild_id = 1 [jstype = JS_STRING];
-  uint64 role_id = 2 [jstype = JS_STRING];
-  uint64 before_id = 3 [jstype = JS_STRING];
-  uint64 after_id = 4 [jstype = JS_STRING];
+// Object representing a role with it's ID.
+message RoleWithId {
+  // ID of the role.
+  uint64 role_id = 1;
+  // The role data.
+  Role role = 2;
 }
+
+// Used in the `QueryHasPermission` endpoint.
+message QueryHasPermissionRequest {
+  // the guild ID to query permissions for
+  uint64 guild_id = 1;
+  // the channel ID to query permissions for. If not set, it will query
+  // permissions for the guild.
+  optional uint64 channel_id = 2;
+  // the user ID to query permissions for (if not provided, the current user is
+  // assumed).
+  optional uint64 as = 4;
+  // the permission node to check for.
+  string check_for = 3;
+}
+// Used in the `QueryHasPermission` endpoint.
+message QueryHasPermissionResponse {
+  // the permissions for the given node.
+  bool ok = 1;
+}
+
+// Used in the `SetPermissions` endpoint.
+message SetPermissionsRequest {
+  // the guild ID to set permissions for.
+  uint64 guild_id = 1;
+  // the channel ID to set permissions for. Only set if the role is for a
+  // channel.
+  optional uint64 channel_id = 2;
+  // the role ID to set permissions for.
+  uint64 role_id = 3;
+  // the permission list to give.
+  //
+  // There is no "perms_to_take" because not given permissions are by
+  // default not allowed.
+  repeated Permission perms_to_give = 4;
+}
+// Used in the `SetPermissions` endpoint.
+message SetPermissionsResponse {}
+
+// Used in the `GetPermissions` endpoint.
+message GetPermissionsRequest {
+  // the guild ID to get permissions for.
+  uint64 guild_id = 1;
+  // the channel ID to get permissions for. Only applicable for roles in a
+  // channel.
+  optional uint64 channel_id = 2;
+  // the role ID to get permissions for.
+  uint64 role_id = 3;
+}
+// Used in the `GetPermissions` endpoint.
+message GetPermissionsResponse {
+  // the permissions list for the given role.
+  repeated Permission perms = 1;
+}
+
+// Used in the `MoveRole` endpoint.
+message MoveRoleRequest {
+  // the guild ID to move the role in.
+  uint64 guild_id = 1;
+  // the role ID to move.
+  uint64 role_id = 2;
+  // the new position of the role.
+  harmonytypes.v1.ItemPosition new_position = 3;
+}
+// Used in the `MoveRole` endpoint.
 message MoveRoleResponse {}
 
-message GetGuildRolesRequest { uint64 guild_id = 1 [jstype = JS_STRING]; }
-message GetGuildRolesResponse { repeated Role roles = 1; }
+// Used in the `GetGuildRoles` endpoint.
+message GetGuildRolesRequest {
+  // the guild ID to get roles for.
+  uint64 guild_id = 1;
+}
+// Used in the `GetGuildRoles` endpoint.
+message GetGuildRolesResponse {
+  // the list of roles in the guild.
+  repeated RoleWithId roles = 1;
+}
 
+// Used in the `AddGuildRole` endpoint.
 message AddGuildRoleRequest {
-  uint64 guild_id = 1 [jstype = JS_STRING];
-  Role role = 2;
+  // the guild ID to add the role to.
+  uint64 guild_id = 1;
+  // the role name.
+  string name = 2;
+  // the role color.
+  int32 color = 3;
+  // whether the role is hoisted or not.
+  bool hoist = 4;
+  // whether the role is mentionable or not.
+  bool pingable = 5;
 }
-message AddGuildRoleResponse { uint64 role_id = 1 [jstype = JS_STRING]; }
+// Used in the `AddGuildRole` endpoint.
+message AddGuildRoleResponse {
+  // the ID of the newly created role.
+  uint64 role_id = 1;
+}
 
+// Used in the `DeleteGuildRole` endpoint.
 message DeleteGuildRoleRequest {
-  uint64 guild_id = 1 [jstype = JS_STRING];
-  uint64 role_id = 2 [jstype = JS_STRING];
+  // the guild ID to delete the role from.
+  uint64 guild_id = 1;
+  // the role ID to delete.
+  uint64 role_id = 2;
 }
+// Used in the `DeleteGuildRole` endpoint.
+message DeleteGuildRoleResponse {}
+
+// Used in the `ModifyGuildRole` endpoint.
 message ModifyGuildRoleRequest {
-  uint64 guild_id = 1 [jstype = JS_STRING];
-  Role role = 2;
-  bool modify_name = 3;
-  bool modify_color = 4;
-  bool modify_hoist = 5;
-  bool modify_pingable = 6;
+  // the ID of the guild where the role is located
+  uint64 guild_id = 1;
+  // the ID of the role to modify
+  uint64 role_id = 2;
+  // the new name of the role
+  optional string new_name = 3;
+  // the new color of the role
+  optional int32 new_color = 4;
+  // the new hoist status of the role
+  optional bool new_hoist = 5;
+  // the new pingable status of the role
+  optional bool new_pingable = 6;
 }
+// Used in the `ModifyGuildRole` endpoint.
+message ModifyGuildRoleResponse {}
 
+// Used in the `ManageUserRoles` endpoint.
 message ManageUserRolesRequest {
-  uint64 guild_id = 1 [jstype = JS_STRING];
-  uint64 user_id = 2 [jstype = JS_STRING];
-  repeated uint64 give_role_ids = 3 [jstype = JS_STRING];
-  repeated uint64 take_role_ids = 4 [jstype = JS_STRING];
+  // the ID of the guild where the user is being managed
+  uint64 guild_id = 1;
+  // the ID of the user to modify
+  uint64 user_id = 2;
+  // the IDs of the roles to add
+  repeated uint64 give_role_ids = 3;
+  // the IDs of the roles to remove
+  repeated uint64 take_role_ids = 4;
 }
+// Used in the `ManageUserRoles` endpoint.
+message ManageUserRolesResponse {}
 
+// Used in the `GetUserRoles` endpoint.
 message GetUserRolesRequest {
-  uint64 guild_id = 1 [jstype = JS_STRING];
-  uint64 user_id = 2 [jstype = JS_STRING];
+  // the ID of the guild where the user is located
+  uint64 guild_id = 1;
+  // the ID of the user to get roles for
+  uint64 user_id = 2;
 }
-
-message GetUserRolesResponse { repeated uint64 roles = 1 [jstype = JS_STRING]; }
+// Used in the `GetUserRoles` endpoint.
+message GetUserRolesResponse {
+  // a list of IDs of the roles the user has
+  repeated uint64 roles = 1;
+}
