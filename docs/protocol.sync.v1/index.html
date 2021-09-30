@@ -4,10 +4,10 @@
     <meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no">
     <title>Reference: protocol.sync.v1 | Harmony</title>
     <meta name="description" content="Message Types AuthData Fields
-   Name Type     host string   time uint64    EventQueue Fields
-   Name Type     events protocol.sync.v1.Event    Event Fields
-   Name Type     user_removed_from_guild protocol.sync.v1.Event.UserRemovedFromGuild   user_added_to_guild protocol.sync.v1.Event.UserAddedToGuild    Event.UserRemovedFromGuild Fields
-   Name Type     user_id uint64   guild_id uint64    Event. ">
+   Name Type     server_id string   time uint64    Event Fields
+   Name Type     user_removed_from_guild protocol.sync.v1.Event.UserRemovedFromGuild   user_added_to_guild protocol.sync.v1.Event.UserAddedToGuild    PullRequest Fields
+   Name Type    PullResponse Fields
+   Name Type     event_queue protocol.sync.v1.Event    PushRequest Fields ">
     <link rel="canonical" href="https://harmonyapp.io/docs/protocol.sync.v1/" />
 
     
@@ -19,10 +19,10 @@
 
     <meta property="og:title" content="Reference: protocol.sync.v1" />
 <meta property="og:description" content="Message Types AuthData Fields
-   Name Type     host string   time uint64    EventQueue Fields
-   Name Type     events protocol.sync.v1.Event    Event Fields
-   Name Type     user_removed_from_guild protocol.sync.v1.Event.UserRemovedFromGuild   user_added_to_guild protocol.sync.v1.Event.UserAddedToGuild    Event.UserRemovedFromGuild Fields
-   Name Type     user_id uint64   guild_id uint64    Event." />
+   Name Type     server_id string   time uint64    Event Fields
+   Name Type     user_removed_from_guild protocol.sync.v1.Event.UserRemovedFromGuild   user_added_to_guild protocol.sync.v1.Event.UserAddedToGuild    PullRequest Fields
+   Name Type    PullResponse Fields
+   Name Type     event_queue protocol.sync.v1.Event    PushRequest Fields" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://harmonyapp.io/docs/protocol.sync.v1/" />
 
@@ -30,10 +30,10 @@
     <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Reference: protocol.sync.v1"/>
 <meta name="twitter:description" content="Message Types AuthData Fields
-   Name Type     host string   time uint64    EventQueue Fields
-   Name Type     events protocol.sync.v1.Event    Event Fields
-   Name Type     user_removed_from_guild protocol.sync.v1.Event.UserRemovedFromGuild   user_added_to_guild protocol.sync.v1.Event.UserAddedToGuild    Event.UserRemovedFromGuild Fields
-   Name Type     user_id uint64   guild_id uint64    Event."/>
+   Name Type     server_id string   time uint64    Event Fields
+   Name Type     user_removed_from_guild protocol.sync.v1.Event.UserRemovedFromGuild   user_added_to_guild protocol.sync.v1.Event.UserAddedToGuild    PullRequest Fields
+   Name Type    PullResponse Fields
+   Name Type     event_queue protocol.sync.v1.Event    PushRequest Fields"/>
 
     <meta name="theme-color" content="#E93D58">
     <meta property="og:image" content="https://harmonyapp.io/img/harmony-embed.png" />
@@ -79,8 +79,13 @@
     <li><a href="#message-types">Message Types</a>
       <ul>
         <li><a href="#authdata">AuthData</a></li>
-        <li><a href="#eventqueue">EventQueue</a></li>
         <li><a href="#event">Event</a></li>
+        <li><a href="#pullrequest">PullRequest</a></li>
+        <li><a href="#pullresponse">PullResponse</a></li>
+        <li><a href="#pushrequest">PushRequest</a></li>
+        <li><a href="#pushresponse">PushResponse</a></li>
+        <li><a href="#notifynewidrequest">NotifyNewIdRequest</a></li>
+        <li><a href="#notifynewidresponse">NotifyNewIdResponse</a></li>
         <li><a href="#eventuserremovedfromguild">Event.UserRemovedFromGuild</a></li>
         <li><a href="#eventuseraddedtoguild">Event.UserAddedToGuild</a></li>
       </ul>
@@ -107,28 +112,12 @@
 </thead>
 <tbody>
 <tr>
-<td>host</td>
+<td>server_id</td>
 <td><code>string</code></td>
 </tr>
 <tr>
 <td>time</td>
 <td><code>uint64</code></td>
-</tr>
-</tbody>
-</table>
-<h3 id="eventqueue">EventQueue</h3>
-<p>Fields</p>
-<table>
-<thead>
-<tr>
-<th>Name</th>
-<th>Type</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>events</td>
-<td><a href="#event">protocol.sync.v1.Event</a></td>
 </tr>
 </tbody>
 </table>
@@ -151,6 +140,84 @@
 <td><a href="#event-useraddedtoguild">protocol.sync.v1.Event.UserAddedToGuild</a></td>
 </tr>
 </tbody>
+</table>
+<h3 id="pullrequest">PullRequest</h3>
+<p>Fields</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+</tr>
+</thead>
+</table>
+<h3 id="pullresponse">PullResponse</h3>
+<p>Fields</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>event_queue</td>
+<td><a href="#event">protocol.sync.v1.Event</a></td>
+</tr>
+</tbody>
+</table>
+<h3 id="pushrequest">PushRequest</h3>
+<p>Fields</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>event</td>
+<td><a href="#event">protocol.sync.v1.Event</a></td>
+</tr>
+</tbody>
+</table>
+<h3 id="pushresponse">PushResponse</h3>
+<p>Fields</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+</tr>
+</thead>
+</table>
+<h3 id="notifynewidrequest">NotifyNewIdRequest</h3>
+<p>Fields</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>new_server_id</td>
+<td><code>string</code></td>
+</tr>
+</tbody>
+</table>
+<h3 id="notifynewidresponse">NotifyNewIdResponse</h3>
+<p>Fields</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+</tr>
+</thead>
 </table>
 <h3 id="eventuserremovedfromguild">Event.UserRemovedFromGuild</h3>
 <p>Fields</p>
@@ -206,13 +273,18 @@
 <tbody>
 <tr>
 <td>Pull</td>
-<td><a href="https://harmonyapp.io/docs/google.protobuf/#empty">google.protobuf.Empty</a></td>
-<td><a href="#eventqueue">protocol.sync.v1.EventQueue</a></td>
+<td><a href="#pullrequest">protocol.sync.v1.PullRequest</a></td>
+<td><a href="#pullresponse">protocol.sync.v1.PullResponse</a></td>
 </tr>
 <tr>
 <td>Push</td>
-<td><a href="#event">protocol.sync.v1.Event</a></td>
-<td><a href="https://harmonyapp.io/docs/google.protobuf/#empty">google.protobuf.Empty</a></td>
+<td><a href="#pushrequest">protocol.sync.v1.PushRequest</a></td>
+<td><a href="#pushresponse">protocol.sync.v1.PushResponse</a></td>
+</tr>
+<tr>
+<td>NotifyNewId</td>
+<td><a href="#notifynewidrequest">protocol.sync.v1.NotifyNewIdRequest</a></td>
+<td><a href="#notifynewidresponse">protocol.sync.v1.NotifyNewIdResponse</a></td>
 </tr>
 </tbody>
 </table>

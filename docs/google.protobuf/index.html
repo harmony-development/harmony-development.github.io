@@ -3,8 +3,9 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no">
     <title>Reference: google.protobuf | Harmony</title>
-    <meta name="description" content="Message Types Empty Fields
-   Name Type    Services  ">
+    <meta name="description" content="Message Types FileDescriptorSet Fields
+   Name Type     file google.protobuf.FileDescriptorProto    FileDescriptorProto Fields
+   Name Type     name string   package string   dependency string   public_dependency int32   weak_dependency int32   message_type google.protobuf.DescriptorProto   enum_type google.protobuf.EnumDescriptorProto   service google.protobuf.ServiceDescriptorProto   extension google.protobuf.FieldDescriptorProto   options google.protobuf.FileOptions   source_code_info google. ">
     <link rel="canonical" href="https://harmonyapp.io/docs/google.protobuf/" />
 
     
@@ -15,16 +16,18 @@
     
 
     <meta property="og:title" content="Reference: google.protobuf" />
-<meta property="og:description" content="Message Types Empty Fields
-   Name Type    Services " />
+<meta property="og:description" content="Message Types FileDescriptorSet Fields
+   Name Type     file google.protobuf.FileDescriptorProto    FileDescriptorProto Fields
+   Name Type     name string   package string   dependency string   public_dependency int32   weak_dependency int32   message_type google.protobuf.DescriptorProto   enum_type google.protobuf.EnumDescriptorProto   service google.protobuf.ServiceDescriptorProto   extension google.protobuf.FieldDescriptorProto   options google.protobuf.FileOptions   source_code_info google." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://harmonyapp.io/docs/google.protobuf/" />
 
 
     <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Reference: google.protobuf"/>
-<meta name="twitter:description" content="Message Types Empty Fields
-   Name Type    Services "/>
+<meta name="twitter:description" content="Message Types FileDescriptorSet Fields
+   Name Type     file google.protobuf.FileDescriptorProto    FileDescriptorProto Fields
+   Name Type     name string   package string   dependency string   public_dependency int32   weak_dependency int32   message_type google.protobuf.DescriptorProto   enum_type google.protobuf.EnumDescriptorProto   service google.protobuf.ServiceDescriptorProto   extension google.protobuf.FieldDescriptorProto   options google.protobuf.FileOptions   source_code_info google."/>
 
     <meta name="theme-color" content="#E93D58">
     <meta property="og:image" content="https://harmonyapp.io/img/harmony-embed.png" />
@@ -69,7 +72,33 @@
   <ul>
     <li><a href="#message-types">Message Types</a>
       <ul>
-        <li><a href="#empty">Empty</a></li>
+        <li><a href="#filedescriptorset">FileDescriptorSet</a></li>
+        <li><a href="#filedescriptorproto">FileDescriptorProto</a></li>
+        <li><a href="#descriptorproto">DescriptorProto</a></li>
+        <li><a href="#extensionrangeoptions">ExtensionRangeOptions</a></li>
+        <li><a href="#fielddescriptorproto">FieldDescriptorProto</a></li>
+        <li><a href="#oneofdescriptorproto">OneofDescriptorProto</a></li>
+        <li><a href="#enumdescriptorproto">EnumDescriptorProto</a></li>
+        <li><a href="#enumvaluedescriptorproto">EnumValueDescriptorProto</a></li>
+        <li><a href="#servicedescriptorproto">ServiceDescriptorProto</a></li>
+        <li><a href="#methoddescriptorproto">MethodDescriptorProto</a></li>
+        <li><a href="#fileoptions">FileOptions</a></li>
+        <li><a href="#messageoptions">MessageOptions</a></li>
+        <li><a href="#fieldoptions">FieldOptions</a></li>
+        <li><a href="#oneofoptions">OneofOptions</a></li>
+        <li><a href="#enumoptions">EnumOptions</a></li>
+        <li><a href="#enumvalueoptions">EnumValueOptions</a></li>
+        <li><a href="#serviceoptions">ServiceOptions</a></li>
+        <li><a href="#methodoptions">MethodOptions</a></li>
+        <li><a href="#uninterpretedoption">UninterpretedOption</a></li>
+        <li><a href="#sourcecodeinfo">SourceCodeInfo</a></li>
+        <li><a href="#generatedcodeinfo">GeneratedCodeInfo</a></li>
+        <li><a href="#descriptorprotoextensionrange">DescriptorProto.ExtensionRange</a></li>
+        <li><a href="#descriptorprotoreservedrange">DescriptorProto.ReservedRange</a></li>
+        <li><a href="#enumdescriptorprotoenumreservedrange">EnumDescriptorProto.EnumReservedRange</a></li>
+        <li><a href="#uninterpretedoptionnamepart">UninterpretedOption.NamePart</a></li>
+        <li><a href="#sourcecodeinfolocation">SourceCodeInfo.Location</a></li>
+        <li><a href="#generatedcodeinfoannotation">GeneratedCodeInfo.Annotation</a></li>
       </ul>
     </li>
     <li><a href="#services">Services</a></li>
@@ -79,7 +108,7 @@
 
         <br>
         <h2 id="message-types">Message Types</h2>
-<h3 id="empty">Empty</h3>
+<h3 id="filedescriptorset">FileDescriptorSet</h3>
 <p>Fields</p>
 <table>
 <thead>
@@ -88,6 +117,820 @@
 <th>Type</th>
 </tr>
 </thead>
+<tbody>
+<tr>
+<td>file</td>
+<td><a href="#filedescriptorproto">google.protobuf.FileDescriptorProto</a></td>
+</tr>
+</tbody>
+</table>
+<h3 id="filedescriptorproto">FileDescriptorProto</h3>
+<p>Fields</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>name</td>
+<td><code>string</code></td>
+</tr>
+<tr>
+<td>package</td>
+<td><code>string</code></td>
+</tr>
+<tr>
+<td>dependency</td>
+<td><code>string</code></td>
+</tr>
+<tr>
+<td>public_dependency</td>
+<td><code>int32</code></td>
+</tr>
+<tr>
+<td>weak_dependency</td>
+<td><code>int32</code></td>
+</tr>
+<tr>
+<td>message_type</td>
+<td><a href="#descriptorproto">google.protobuf.DescriptorProto</a></td>
+</tr>
+<tr>
+<td>enum_type</td>
+<td><a href="#enumdescriptorproto">google.protobuf.EnumDescriptorProto</a></td>
+</tr>
+<tr>
+<td>service</td>
+<td><a href="#servicedescriptorproto">google.protobuf.ServiceDescriptorProto</a></td>
+</tr>
+<tr>
+<td>extension</td>
+<td><a href="#fielddescriptorproto">google.protobuf.FieldDescriptorProto</a></td>
+</tr>
+<tr>
+<td>options</td>
+<td><a href="#fileoptions">google.protobuf.FileOptions</a></td>
+</tr>
+<tr>
+<td>source_code_info</td>
+<td><a href="#sourcecodeinfo">google.protobuf.SourceCodeInfo</a></td>
+</tr>
+<tr>
+<td>syntax</td>
+<td><code>string</code></td>
+</tr>
+</tbody>
+</table>
+<h3 id="descriptorproto">DescriptorProto</h3>
+<p>Fields</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>name</td>
+<td><code>string</code></td>
+</tr>
+<tr>
+<td>field</td>
+<td><a href="#fielddescriptorproto">google.protobuf.FieldDescriptorProto</a></td>
+</tr>
+<tr>
+<td>extension</td>
+<td><a href="#fielddescriptorproto">google.protobuf.FieldDescriptorProto</a></td>
+</tr>
+<tr>
+<td>nested_type</td>
+<td><a href="#descriptorproto">google.protobuf.DescriptorProto</a></td>
+</tr>
+<tr>
+<td>enum_type</td>
+<td><a href="#enumdescriptorproto">google.protobuf.EnumDescriptorProto</a></td>
+</tr>
+<tr>
+<td>extension_range</td>
+<td><a href="#descriptorproto-extensionrange">google.protobuf.DescriptorProto.ExtensionRange</a></td>
+</tr>
+<tr>
+<td>oneof_decl</td>
+<td><a href="#oneofdescriptorproto">google.protobuf.OneofDescriptorProto</a></td>
+</tr>
+<tr>
+<td>options</td>
+<td><a href="#messageoptions">google.protobuf.MessageOptions</a></td>
+</tr>
+<tr>
+<td>reserved_range</td>
+<td><a href="#descriptorproto-reservedrange">google.protobuf.DescriptorProto.ReservedRange</a></td>
+</tr>
+<tr>
+<td>reserved_name</td>
+<td><code>string</code></td>
+</tr>
+</tbody>
+</table>
+<h3 id="extensionrangeoptions">ExtensionRangeOptions</h3>
+<p>Fields</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>uninterpreted_option</td>
+<td><a href="#uninterpretedoption">google.protobuf.UninterpretedOption</a></td>
+</tr>
+</tbody>
+</table>
+<h3 id="fielddescriptorproto">FieldDescriptorProto</h3>
+<p>Fields</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>name</td>
+<td><code>string</code></td>
+</tr>
+<tr>
+<td>number</td>
+<td><code>int32</code></td>
+</tr>
+<tr>
+<td>UNHANDLED</td>
+<td>TYPE</td>
+</tr>
+<tr>
+<td>UNHANDLED</td>
+<td>TYPE</td>
+</tr>
+<tr>
+<td>type_name</td>
+<td><code>string</code></td>
+</tr>
+<tr>
+<td>extendee</td>
+<td><code>string</code></td>
+</tr>
+<tr>
+<td>default_value</td>
+<td><code>string</code></td>
+</tr>
+<tr>
+<td>oneof_index</td>
+<td><code>int32</code></td>
+</tr>
+<tr>
+<td>json_name</td>
+<td><code>string</code></td>
+</tr>
+<tr>
+<td>options</td>
+<td><a href="#fieldoptions">google.protobuf.FieldOptions</a></td>
+</tr>
+<tr>
+<td>proto3_optional</td>
+<td><code>bool</code></td>
+</tr>
+</tbody>
+</table>
+<h3 id="oneofdescriptorproto">OneofDescriptorProto</h3>
+<p>Fields</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>name</td>
+<td><code>string</code></td>
+</tr>
+<tr>
+<td>options</td>
+<td><a href="#oneofoptions">google.protobuf.OneofOptions</a></td>
+</tr>
+</tbody>
+</table>
+<h3 id="enumdescriptorproto">EnumDescriptorProto</h3>
+<p>Fields</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>name</td>
+<td><code>string</code></td>
+</tr>
+<tr>
+<td>value</td>
+<td><a href="#enumvaluedescriptorproto">google.protobuf.EnumValueDescriptorProto</a></td>
+</tr>
+<tr>
+<td>options</td>
+<td><a href="#enumoptions">google.protobuf.EnumOptions</a></td>
+</tr>
+<tr>
+<td>reserved_range</td>
+<td><a href="#enumdescriptorproto-enumreservedrange">google.protobuf.EnumDescriptorProto.EnumReservedRange</a></td>
+</tr>
+<tr>
+<td>reserved_name</td>
+<td><code>string</code></td>
+</tr>
+</tbody>
+</table>
+<h3 id="enumvaluedescriptorproto">EnumValueDescriptorProto</h3>
+<p>Fields</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>name</td>
+<td><code>string</code></td>
+</tr>
+<tr>
+<td>number</td>
+<td><code>int32</code></td>
+</tr>
+<tr>
+<td>options</td>
+<td><a href="#enumvalueoptions">google.protobuf.EnumValueOptions</a></td>
+</tr>
+</tbody>
+</table>
+<h3 id="servicedescriptorproto">ServiceDescriptorProto</h3>
+<p>Fields</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>name</td>
+<td><code>string</code></td>
+</tr>
+<tr>
+<td>method</td>
+<td><a href="#methoddescriptorproto">google.protobuf.MethodDescriptorProto</a></td>
+</tr>
+<tr>
+<td>options</td>
+<td><a href="#serviceoptions">google.protobuf.ServiceOptions</a></td>
+</tr>
+</tbody>
+</table>
+<h3 id="methoddescriptorproto">MethodDescriptorProto</h3>
+<p>Fields</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>name</td>
+<td><code>string</code></td>
+</tr>
+<tr>
+<td>input_type</td>
+<td><code>string</code></td>
+</tr>
+<tr>
+<td>output_type</td>
+<td><code>string</code></td>
+</tr>
+<tr>
+<td>options</td>
+<td><a href="#methodoptions">google.protobuf.MethodOptions</a></td>
+</tr>
+<tr>
+<td>client_streaming</td>
+<td><code>bool</code></td>
+</tr>
+<tr>
+<td>server_streaming</td>
+<td><code>bool</code></td>
+</tr>
+</tbody>
+</table>
+<h3 id="fileoptions">FileOptions</h3>
+<p>Fields</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>java_package</td>
+<td><code>string</code></td>
+</tr>
+<tr>
+<td>java_outer_classname</td>
+<td><code>string</code></td>
+</tr>
+<tr>
+<td>java_multiple_files</td>
+<td><code>bool</code></td>
+</tr>
+<tr>
+<td>java_generate_equals_and_hash</td>
+<td><code>bool</code></td>
+</tr>
+<tr>
+<td>java_string_check_utf8</td>
+<td><code>bool</code></td>
+</tr>
+<tr>
+<td>UNHANDLED</td>
+<td>TYPE</td>
+</tr>
+<tr>
+<td>go_package</td>
+<td><code>string</code></td>
+</tr>
+<tr>
+<td>cc_generic_services</td>
+<td><code>bool</code></td>
+</tr>
+<tr>
+<td>java_generic_services</td>
+<td><code>bool</code></td>
+</tr>
+<tr>
+<td>py_generic_services</td>
+<td><code>bool</code></td>
+</tr>
+<tr>
+<td>php_generic_services</td>
+<td><code>bool</code></td>
+</tr>
+<tr>
+<td>deprecated</td>
+<td><code>bool</code></td>
+</tr>
+<tr>
+<td>cc_enable_arenas</td>
+<td><code>bool</code></td>
+</tr>
+<tr>
+<td>objc_class_prefix</td>
+<td><code>string</code></td>
+</tr>
+<tr>
+<td>csharp_namespace</td>
+<td><code>string</code></td>
+</tr>
+<tr>
+<td>swift_prefix</td>
+<td><code>string</code></td>
+</tr>
+<tr>
+<td>php_class_prefix</td>
+<td><code>string</code></td>
+</tr>
+<tr>
+<td>php_namespace</td>
+<td><code>string</code></td>
+</tr>
+<tr>
+<td>php_metadata_namespace</td>
+<td><code>string</code></td>
+</tr>
+<tr>
+<td>ruby_package</td>
+<td><code>string</code></td>
+</tr>
+<tr>
+<td>uninterpreted_option</td>
+<td><a href="#uninterpretedoption">google.protobuf.UninterpretedOption</a></td>
+</tr>
+</tbody>
+</table>
+<h3 id="messageoptions">MessageOptions</h3>
+<p>Fields</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>message_set_wire_format</td>
+<td><code>bool</code></td>
+</tr>
+<tr>
+<td>no_standard_descriptor_accessor</td>
+<td><code>bool</code></td>
+</tr>
+<tr>
+<td>deprecated</td>
+<td><code>bool</code></td>
+</tr>
+<tr>
+<td>map_entry</td>
+<td><code>bool</code></td>
+</tr>
+<tr>
+<td>uninterpreted_option</td>
+<td><a href="#uninterpretedoption">google.protobuf.UninterpretedOption</a></td>
+</tr>
+</tbody>
+</table>
+<h3 id="fieldoptions">FieldOptions</h3>
+<p>Fields</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>UNHANDLED</td>
+<td>TYPE</td>
+</tr>
+<tr>
+<td>packed</td>
+<td><code>bool</code></td>
+</tr>
+<tr>
+<td>UNHANDLED</td>
+<td>TYPE</td>
+</tr>
+<tr>
+<td>lazy</td>
+<td><code>bool</code></td>
+</tr>
+<tr>
+<td>deprecated</td>
+<td><code>bool</code></td>
+</tr>
+<tr>
+<td>weak</td>
+<td><code>bool</code></td>
+</tr>
+<tr>
+<td>uninterpreted_option</td>
+<td><a href="#uninterpretedoption">google.protobuf.UninterpretedOption</a></td>
+</tr>
+</tbody>
+</table>
+<h3 id="oneofoptions">OneofOptions</h3>
+<p>Fields</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>uninterpreted_option</td>
+<td><a href="#uninterpretedoption">google.protobuf.UninterpretedOption</a></td>
+</tr>
+</tbody>
+</table>
+<h3 id="enumoptions">EnumOptions</h3>
+<p>Fields</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>allow_alias</td>
+<td><code>bool</code></td>
+</tr>
+<tr>
+<td>deprecated</td>
+<td><code>bool</code></td>
+</tr>
+<tr>
+<td>uninterpreted_option</td>
+<td><a href="#uninterpretedoption">google.protobuf.UninterpretedOption</a></td>
+</tr>
+</tbody>
+</table>
+<h3 id="enumvalueoptions">EnumValueOptions</h3>
+<p>Fields</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>deprecated</td>
+<td><code>bool</code></td>
+</tr>
+<tr>
+<td>uninterpreted_option</td>
+<td><a href="#uninterpretedoption">google.protobuf.UninterpretedOption</a></td>
+</tr>
+</tbody>
+</table>
+<h3 id="serviceoptions">ServiceOptions</h3>
+<p>Fields</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>deprecated</td>
+<td><code>bool</code></td>
+</tr>
+<tr>
+<td>uninterpreted_option</td>
+<td><a href="#uninterpretedoption">google.protobuf.UninterpretedOption</a></td>
+</tr>
+</tbody>
+</table>
+<h3 id="methodoptions">MethodOptions</h3>
+<p>Fields</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>deprecated</td>
+<td><code>bool</code></td>
+</tr>
+<tr>
+<td>UNHANDLED</td>
+<td>TYPE</td>
+</tr>
+<tr>
+<td>uninterpreted_option</td>
+<td><a href="#uninterpretedoption">google.protobuf.UninterpretedOption</a></td>
+</tr>
+</tbody>
+</table>
+<h3 id="uninterpretedoption">UninterpretedOption</h3>
+<p>Fields</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>name</td>
+<td><a href="#uninterpretedoption-namepart">google.protobuf.UninterpretedOption.NamePart</a></td>
+</tr>
+<tr>
+<td>identifier_value</td>
+<td><code>string</code></td>
+</tr>
+<tr>
+<td>positive_int_value</td>
+<td><code>uint64</code></td>
+</tr>
+<tr>
+<td>negative_int_value</td>
+<td><code>int64</code></td>
+</tr>
+<tr>
+<td>double_value</td>
+<td><code>double</code></td>
+</tr>
+<tr>
+<td>string_value</td>
+<td><code>bytes</code></td>
+</tr>
+<tr>
+<td>aggregate_value</td>
+<td><code>string</code></td>
+</tr>
+</tbody>
+</table>
+<h3 id="sourcecodeinfo">SourceCodeInfo</h3>
+<p>Fields</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>location</td>
+<td><a href="#sourcecodeinfo-location">google.protobuf.SourceCodeInfo.Location</a></td>
+</tr>
+</tbody>
+</table>
+<h3 id="generatedcodeinfo">GeneratedCodeInfo</h3>
+<p>Fields</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>annotation</td>
+<td><a href="#generatedcodeinfo-annotation">google.protobuf.GeneratedCodeInfo.Annotation</a></td>
+</tr>
+</tbody>
+</table>
+<h3 id="descriptorprotoextensionrange">DescriptorProto.ExtensionRange</h3>
+<p>Fields</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>start</td>
+<td><code>int32</code></td>
+</tr>
+<tr>
+<td>end</td>
+<td><code>int32</code></td>
+</tr>
+<tr>
+<td>options</td>
+<td><a href="#extensionrangeoptions">google.protobuf.ExtensionRangeOptions</a></td>
+</tr>
+</tbody>
+</table>
+<h3 id="descriptorprotoreservedrange">DescriptorProto.ReservedRange</h3>
+<p>Fields</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>start</td>
+<td><code>int32</code></td>
+</tr>
+<tr>
+<td>end</td>
+<td><code>int32</code></td>
+</tr>
+</tbody>
+</table>
+<h3 id="enumdescriptorprotoenumreservedrange">EnumDescriptorProto.EnumReservedRange</h3>
+<p>Fields</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>start</td>
+<td><code>int32</code></td>
+</tr>
+<tr>
+<td>end</td>
+<td><code>int32</code></td>
+</tr>
+</tbody>
+</table>
+<h3 id="uninterpretedoptionnamepart">UninterpretedOption.NamePart</h3>
+<p>Fields</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>name_part</td>
+<td><code>string</code></td>
+</tr>
+<tr>
+<td>is_extension</td>
+<td><code>bool</code></td>
+</tr>
+</tbody>
+</table>
+<h3 id="sourcecodeinfolocation">SourceCodeInfo.Location</h3>
+<p>Fields</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>path</td>
+<td><code>int32</code></td>
+</tr>
+<tr>
+<td>span</td>
+<td><code>int32</code></td>
+</tr>
+<tr>
+<td>leading_comments</td>
+<td><code>string</code></td>
+</tr>
+<tr>
+<td>trailing_comments</td>
+<td><code>string</code></td>
+</tr>
+<tr>
+<td>leading_detached_comments</td>
+<td><code>string</code></td>
+</tr>
+</tbody>
+</table>
+<h3 id="generatedcodeinfoannotation">GeneratedCodeInfo.Annotation</h3>
+<p>Fields</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>path</td>
+<td><code>int32</code></td>
+</tr>
+<tr>
+<td>source_file</td>
+<td><code>string</code></td>
+</tr>
+<tr>
+<td>begin</td>
+<td><code>int32</code></td>
+</tr>
+<tr>
+<td>end</td>
+<td><code>int32</code></td>
+</tr>
+</tbody>
 </table>
 <h2 id="services">Services</h2>
 

@@ -4,9 +4,10 @@
     <meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no">
     <title>Reference: protocol.harmonytypes.v1 | Harmony</title>
     <meta name="description" content="Message Types HarmonyMethodMetadata Fields
-   Name Type     requires_authentication bool   requires_local bool   requires_permission_node string    Override Fields
-   Name Type     name string   avatar string   user_defined string   webhook google.protobuf.Empty   system_plurality google.protobuf.Empty   system_message google.protobuf.Empty   bridge google.protobuf.Empty    Action Fields
-   Name Type     UNHANDLED TYPE   id string   button protocol. ">
+   Name Type     requires_authentication bool   requires_local bool   requires_permission_node string    Anything Fields
+   Name Type     kind string   body bytes    Metadata Fields
+   Name Type     kind string   extension protocol.harmonytypes.v1.Metadata.ExtensionEntry    Error Fields
+   Name Type     identifier string   human_message string   more_details bytes    Token Fields ">
     <link rel="canonical" href="https://harmonyapp.io/docs/protocol.harmonytypes.v1/" />
 
     
@@ -18,9 +19,10 @@
 
     <meta property="og:title" content="Reference: protocol.harmonytypes.v1" />
 <meta property="og:description" content="Message Types HarmonyMethodMetadata Fields
-   Name Type     requires_authentication bool   requires_local bool   requires_permission_node string    Override Fields
-   Name Type     name string   avatar string   user_defined string   webhook google.protobuf.Empty   system_plurality google.protobuf.Empty   system_message google.protobuf.Empty   bridge google.protobuf.Empty    Action Fields
-   Name Type     UNHANDLED TYPE   id string   button protocol." />
+   Name Type     requires_authentication bool   requires_local bool   requires_permission_node string    Anything Fields
+   Name Type     kind string   body bytes    Metadata Fields
+   Name Type     kind string   extension protocol.harmonytypes.v1.Metadata.ExtensionEntry    Error Fields
+   Name Type     identifier string   human_message string   more_details bytes    Token Fields" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://harmonyapp.io/docs/protocol.harmonytypes.v1/" />
 
@@ -28,9 +30,10 @@
     <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Reference: protocol.harmonytypes.v1"/>
 <meta name="twitter:description" content="Message Types HarmonyMethodMetadata Fields
-   Name Type     requires_authentication bool   requires_local bool   requires_permission_node string    Override Fields
-   Name Type     name string   avatar string   user_defined string   webhook google.protobuf.Empty   system_plurality google.protobuf.Empty   system_message google.protobuf.Empty   bridge google.protobuf.Empty    Action Fields
-   Name Type     UNHANDLED TYPE   id string   button protocol."/>
+   Name Type     requires_authentication bool   requires_local bool   requires_permission_node string    Anything Fields
+   Name Type     kind string   body bytes    Metadata Fields
+   Name Type     kind string   extension protocol.harmonytypes.v1.Metadata.ExtensionEntry    Error Fields
+   Name Type     identifier string   human_message string   more_details bytes    Token Fields"/>
 
     <meta name="theme-color" content="#E93D58">
     <meta property="og:image" content="https://harmonyapp.io/img/harmony-embed.png" />
@@ -76,23 +79,12 @@
     <li><a href="#message-types">Message Types</a>
       <ul>
         <li><a href="#harmonymethodmetadata">HarmonyMethodMetadata</a></li>
-        <li><a href="#override">Override</a></li>
-        <li><a href="#action">Action</a></li>
-        <li><a href="#embedheading">EmbedHeading</a></li>
-        <li><a href="#embedfield">EmbedField</a></li>
-        <li><a href="#embed">Embed</a></li>
-        <li><a href="#attachment">Attachment</a></li>
+        <li><a href="#anything">Anything</a></li>
         <li><a href="#metadata">Metadata</a></li>
-        <li><a href="#contenttext">ContentText</a></li>
-        <li><a href="#contentembed">ContentEmbed</a></li>
-        <li><a href="#contentfiles">ContentFiles</a></li>
-        <li><a href="#content">Content</a></li>
-        <li><a href="#message">Message</a></li>
         <li><a href="#error">Error</a></li>
         <li><a href="#token">Token</a></li>
-        <li><a href="#actionbutton">Action.Button</a></li>
-        <li><a href="#actiondropdown">Action.Dropdown</a></li>
-        <li><a href="#actioninput">Action.Input</a></li>
+        <li><a href="#empty">Empty</a></li>
+        <li><a href="#itemposition">ItemPosition</a></li>
         <li><a href="#metadataextensionentry">Metadata.ExtensionEntry</a></li>
       </ul>
     </li>
@@ -127,7 +119,7 @@
 </tr>
 </tbody>
 </table>
-<h3 id="override">Override</h3>
+<h3 id="anything">Anything</h3>
 <p>Fields</p>
 <table>
 <thead>
@@ -138,196 +130,12 @@
 </thead>
 <tbody>
 <tr>
-<td>name</td>
-<td><code>string</code></td>
-</tr>
-<tr>
-<td>avatar</td>
-<td><code>string</code></td>
-</tr>
-<tr>
-<td>user_defined</td>
-<td><code>string</code></td>
-</tr>
-<tr>
-<td>webhook</td>
-<td><a href="https://harmonyapp.io/docs/google.protobuf/#empty">google.protobuf.Empty</a></td>
-</tr>
-<tr>
-<td>system_plurality</td>
-<td><a href="https://harmonyapp.io/docs/google.protobuf/#empty">google.protobuf.Empty</a></td>
-</tr>
-<tr>
-<td>system_message</td>
-<td><a href="https://harmonyapp.io/docs/google.protobuf/#empty">google.protobuf.Empty</a></td>
-</tr>
-<tr>
-<td>bridge</td>
-<td><a href="https://harmonyapp.io/docs/google.protobuf/#empty">google.protobuf.Empty</a></td>
-</tr>
-</tbody>
-</table>
-<h3 id="action">Action</h3>
-<p>Fields</p>
-<table>
-<thead>
-<tr>
-<th>Name</th>
-<th>Type</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>UNHANDLED</td>
-<td>TYPE</td>
-</tr>
-<tr>
-<td>id</td>
-<td><code>string</code></td>
-</tr>
-<tr>
-<td>button</td>
-<td><a href="#action-button">protocol.harmonytypes.v1.Action.Button</a></td>
-</tr>
-<tr>
-<td>dropdown</td>
-<td><a href="#action-dropdown">protocol.harmonytypes.v1.Action.Dropdown</a></td>
-</tr>
-<tr>
-<td>input</td>
-<td><a href="#action-input">protocol.harmonytypes.v1.Action.Input</a></td>
-</tr>
-</tbody>
-</table>
-<h3 id="embedheading">EmbedHeading</h3>
-<p>Fields</p>
-<table>
-<thead>
-<tr>
-<th>Name</th>
-<th>Type</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>text</td>
-<td><code>string</code></td>
-</tr>
-<tr>
-<td>subtext</td>
-<td><code>string</code></td>
-</tr>
-<tr>
-<td>url</td>
-<td><code>string</code></td>
-</tr>
-<tr>
-<td>icon</td>
-<td><code>string</code></td>
-</tr>
-</tbody>
-</table>
-<h3 id="embedfield">EmbedField</h3>
-<p>Fields</p>
-<table>
-<thead>
-<tr>
-<th>Name</th>
-<th>Type</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>title</td>
-<td><code>string</code></td>
-</tr>
-<tr>
-<td>subtitle</td>
+<td>kind</td>
 <td><code>string</code></td>
 </tr>
 <tr>
 <td>body</td>
-<td><code>string</code></td>
-</tr>
-<tr>
-<td>image_url</td>
-<td><code>string</code></td>
-</tr>
-<tr>
-<td>UNHANDLED</td>
-<td>TYPE</td>
-</tr>
-<tr>
-<td>actions</td>
-<td><a href="#action">protocol.harmonytypes.v1.Action</a></td>
-</tr>
-</tbody>
-</table>
-<h3 id="embed">Embed</h3>
-<p>Fields</p>
-<table>
-<thead>
-<tr>
-<th>Name</th>
-<th>Type</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>title</td>
-<td><code>string</code></td>
-</tr>
-<tr>
-<td>body</td>
-<td><code>string</code></td>
-</tr>
-<tr>
-<td>color</td>
-<td><code>int64</code></td>
-</tr>
-<tr>
-<td>header</td>
-<td><a href="#embedheading">protocol.harmonytypes.v1.EmbedHeading</a></td>
-</tr>
-<tr>
-<td>footer</td>
-<td><a href="#embedheading">protocol.harmonytypes.v1.EmbedHeading</a></td>
-</tr>
-<tr>
-<td>fields</td>
-<td><a href="#embedfield">protocol.harmonytypes.v1.EmbedField</a></td>
-</tr>
-</tbody>
-</table>
-<h3 id="attachment">Attachment</h3>
-<p>Fields</p>
-<table>
-<thead>
-<tr>
-<th>Name</th>
-<th>Type</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>id</td>
-<td><code>string</code></td>
-</tr>
-<tr>
-<td>name</td>
-<td><code>string</code></td>
-</tr>
-<tr>
-<td>type</td>
-<td><code>string</code></td>
-</tr>
-<tr>
-<td>size</td>
-<td><code>int32</code></td>
-</tr>
-<tr>
-<td>caption</td>
-<td><code>string</code></td>
+<td><code>bytes</code></td>
 </tr>
 </tbody>
 </table>
@@ -348,130 +156,6 @@
 <tr>
 <td>extension</td>
 <td><a href="#metadata-extensionentry">protocol.harmonytypes.v1.Metadata.ExtensionEntry</a></td>
-</tr>
-</tbody>
-</table>
-<h3 id="contenttext">ContentText</h3>
-<p>Fields</p>
-<table>
-<thead>
-<tr>
-<th>Name</th>
-<th>Type</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>content</td>
-<td><code>string</code></td>
-</tr>
-</tbody>
-</table>
-<h3 id="contentembed">ContentEmbed</h3>
-<p>Fields</p>
-<table>
-<thead>
-<tr>
-<th>Name</th>
-<th>Type</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>embeds</td>
-<td><a href="#embed">protocol.harmonytypes.v1.Embed</a></td>
-</tr>
-</tbody>
-</table>
-<h3 id="contentfiles">ContentFiles</h3>
-<p>Fields</p>
-<table>
-<thead>
-<tr>
-<th>Name</th>
-<th>Type</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>attachments</td>
-<td><a href="#attachment">protocol.harmonytypes.v1.Attachment</a></td>
-</tr>
-</tbody>
-</table>
-<h3 id="content">Content</h3>
-<p>Fields</p>
-<table>
-<thead>
-<tr>
-<th>Name</th>
-<th>Type</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>text_message</td>
-<td><a href="#contenttext">protocol.harmonytypes.v1.ContentText</a></td>
-</tr>
-<tr>
-<td>embed_message</td>
-<td><a href="#contentembed">protocol.harmonytypes.v1.ContentEmbed</a></td>
-</tr>
-<tr>
-<td>files_message</td>
-<td><a href="#contentfiles">protocol.harmonytypes.v1.ContentFiles</a></td>
-</tr>
-</tbody>
-</table>
-<h3 id="message">Message</h3>
-<p>Fields</p>
-<table>
-<thead>
-<tr>
-<th>Name</th>
-<th>Type</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>metadata</td>
-<td><a href="#metadata">protocol.harmonytypes.v1.Metadata</a></td>
-</tr>
-<tr>
-<td>overrides</td>
-<td><a href="#override">protocol.harmonytypes.v1.Override</a></td>
-</tr>
-<tr>
-<td>guild_id</td>
-<td><code>uint64</code></td>
-</tr>
-<tr>
-<td>channel_id</td>
-<td><code>uint64</code></td>
-</tr>
-<tr>
-<td>message_id</td>
-<td><code>uint64</code></td>
-</tr>
-<tr>
-<td>author_id</td>
-<td><code>uint64</code></td>
-</tr>
-<tr>
-<td>created_at</td>
-<td><a href="https://harmonyapp.io/docs/google.protobuf/#timestamp">google.protobuf.Timestamp</a></td>
-</tr>
-<tr>
-<td>edited_at</td>
-<td><a href="https://harmonyapp.io/docs/google.protobuf/#timestamp">google.protobuf.Timestamp</a></td>
-</tr>
-<tr>
-<td>in_reply_to</td>
-<td><code>uint64</code></td>
-</tr>
-<tr>
-<td>content</td>
-<td><a href="#content">protocol.harmonytypes.v1.Content</a></td>
 </tr>
 </tbody>
 </table>
@@ -519,7 +203,7 @@
 </tr>
 </tbody>
 </table>
-<h3 id="actionbutton">Action.Button</h3>
+<h3 id="empty">Empty</h3>
 <p>Fields</p>
 <table>
 <thead>
@@ -528,18 +212,8 @@
 <th>Type</th>
 </tr>
 </thead>
-<tbody>
-<tr>
-<td>text</td>
-<td><code>string</code></td>
-</tr>
-<tr>
-<td>url</td>
-<td><code>string</code></td>
-</tr>
-</tbody>
 </table>
-<h3 id="actiondropdown">Action.Dropdown</h3>
+<h3 id="itemposition">ItemPosition</h3>
 <p>Fields</p>
 <table>
 <thead>
@@ -550,32 +224,12 @@
 </thead>
 <tbody>
 <tr>
-<td>text</td>
-<td><code>string</code></td>
+<td>item_id</td>
+<td><code>uint64</code></td>
 </tr>
 <tr>
-<td>options</td>
-<td><code>string</code></td>
-</tr>
-</tbody>
-</table>
-<h3 id="actioninput">Action.Input</h3>
-<p>Fields</p>
-<table>
-<thead>
-<tr>
-<th>Name</th>
-<th>Type</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>label</td>
-<td><code>string</code></td>
-</tr>
-<tr>
-<td>wide</td>
-<td><code>bool</code></td>
+<td>UNHANDLED</td>
+<td>TYPE</td>
 </tr>
 </tbody>
 </table>
@@ -595,7 +249,7 @@
 </tr>
 <tr>
 <td>value</td>
-<td><a href="https://harmonyapp.io/docs/google.protobuf/#any">google.protobuf.Any</a></td>
+<td><a href="#anything">protocol.harmonytypes.v1.Anything</a></td>
 </tr>
 </tbody>
 </table>

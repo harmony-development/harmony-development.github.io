@@ -2,13 +2,13 @@
 <html lang="en-us"><head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no">
-    <title>Reference: protocol.voice.v1 | Harmony</title>
-    <meta name="description" content="Message Types Signal Fields
-   Name Type     ice_candidate string   renegotiation_needed protocol.harmonytypes.v1.Empty    ConnectRequest Fields
-   Name Type     guild_id uint64   channel_id uint64   offer string    ConnectResponse Fields
-   Name Type     answer string    StreamStateRequest Fields
-   Name Type     guild_id uint64   channel_id uint64    StreamStateResponse Fields ">
-    <link rel="canonical" href="https://harmonyapp.io/docs/protocol.voice.v1/" />
+    <title>Reference: protocol.batch.v1 | Harmony</title>
+    <meta name="description" content="Message Types AnyRequest Fields
+   Name Type     endpoint string   request bytes    BatchRequest Fields
+   Name Type     requests protocol.batch.v1.AnyRequest    BatchResponse Fields
+   Name Type     responses bytes    BatchSameRequest Fields
+   Name Type     endpoint string   requests bytes    BatchSameResponse Fields ">
+    <link rel="canonical" href="https://harmonyapp.io/docs/protocol.batch.v1/" />
 
     
 
@@ -17,23 +17,23 @@
       <link rel="stylesheet" href="/css/main.min.1124d8291d9ef3056ab41d1b63463d0b41dacf83ef5ab11cfde803edd4e450ff.css" integrity="sha256-ESTYKR2e8wVqtB0bY0Y9C0Haz4PvWrEc/egD7dTkUP8="/>
     
 
-    <meta property="og:title" content="Reference: protocol.voice.v1" />
-<meta property="og:description" content="Message Types Signal Fields
-   Name Type     ice_candidate string   renegotiation_needed protocol.harmonytypes.v1.Empty    ConnectRequest Fields
-   Name Type     guild_id uint64   channel_id uint64   offer string    ConnectResponse Fields
-   Name Type     answer string    StreamStateRequest Fields
-   Name Type     guild_id uint64   channel_id uint64    StreamStateResponse Fields" />
+    <meta property="og:title" content="Reference: protocol.batch.v1" />
+<meta property="og:description" content="Message Types AnyRequest Fields
+   Name Type     endpoint string   request bytes    BatchRequest Fields
+   Name Type     requests protocol.batch.v1.AnyRequest    BatchResponse Fields
+   Name Type     responses bytes    BatchSameRequest Fields
+   Name Type     endpoint string   requests bytes    BatchSameResponse Fields" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://harmonyapp.io/docs/protocol.voice.v1/" />
+<meta property="og:url" content="https://harmonyapp.io/docs/protocol.batch.v1/" />
 
 
     <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Reference: protocol.voice.v1"/>
-<meta name="twitter:description" content="Message Types Signal Fields
-   Name Type     ice_candidate string   renegotiation_needed protocol.harmonytypes.v1.Empty    ConnectRequest Fields
-   Name Type     guild_id uint64   channel_id uint64   offer string    ConnectResponse Fields
-   Name Type     answer string    StreamStateRequest Fields
-   Name Type     guild_id uint64   channel_id uint64    StreamStateResponse Fields"/>
+<meta name="twitter:title" content="Reference: protocol.batch.v1"/>
+<meta name="twitter:description" content="Message Types AnyRequest Fields
+   Name Type     endpoint string   request bytes    BatchRequest Fields
+   Name Type     requests protocol.batch.v1.AnyRequest    BatchResponse Fields
+   Name Type     responses bytes    BatchSameRequest Fields
+   Name Type     endpoint string   requests bytes    BatchSameResponse Fields"/>
 
     <meta name="theme-color" content="#E93D58">
     <meta property="og:image" content="https://harmonyapp.io/img/harmony-embed.png" />
@@ -70,7 +70,7 @@
 
 <div class="prose-wrapper mt-4">
     <article class="prose">
-        <h2 class="h1">Reference: protocol.voice.v1</h2>
+        <h2 class="h1">Reference: protocol.batch.v1</h2>
 
         <details>
             <summary>Table Of Contents</summary>
@@ -78,16 +78,16 @@
   <ul>
     <li><a href="#message-types">Message Types</a>
       <ul>
-        <li><a href="#signal">Signal</a></li>
-        <li><a href="#connectrequest">ConnectRequest</a></li>
-        <li><a href="#connectresponse">ConnectResponse</a></li>
-        <li><a href="#streamstaterequest">StreamStateRequest</a></li>
-        <li><a href="#streamstateresponse">StreamStateResponse</a></li>
+        <li><a href="#anyrequest">AnyRequest</a></li>
+        <li><a href="#batchrequest">BatchRequest</a></li>
+        <li><a href="#batchresponse">BatchResponse</a></li>
+        <li><a href="#batchsamerequest">BatchSameRequest</a></li>
+        <li><a href="#batchsameresponse">BatchSameResponse</a></li>
       </ul>
     </li>
     <li><a href="#services">Services</a>
       <ul>
-        <li><a href="#voiceservice">VoiceService</a></li>
+        <li><a href="#batchservice">BatchService</a></li>
       </ul>
     </li>
   </ul>
@@ -96,7 +96,7 @@
 
         <br>
         <h2 id="message-types">Message Types</h2>
-<h3 id="signal">Signal</h3>
+<h3 id="anyrequest">AnyRequest</h3>
 <p>Fields</p>
 <table>
 <thead>
@@ -107,16 +107,16 @@
 </thead>
 <tbody>
 <tr>
-<td>ice_candidate</td>
+<td>endpoint</td>
 <td><code>string</code></td>
 </tr>
 <tr>
-<td>renegotiation_needed</td>
-<td><a href="https://harmonyapp.io/docs/protocol.harmonytypes.v1/#empty">protocol.harmonytypes.v1.Empty</a></td>
+<td>request</td>
+<td><code>bytes</code></td>
 </tr>
 </tbody>
 </table>
-<h3 id="connectrequest">ConnectRequest</h3>
+<h3 id="batchrequest">BatchRequest</h3>
 <p>Fields</p>
 <table>
 <thead>
@@ -127,20 +127,48 @@
 </thead>
 <tbody>
 <tr>
-<td>guild_id</td>
-<td><code>uint64</code></td>
+<td>requests</td>
+<td><a href="#anyrequest">protocol.batch.v1.AnyRequest</a></td>
 </tr>
+</tbody>
+</table>
+<h3 id="batchresponse">BatchResponse</h3>
+<p>Fields</p>
+<table>
+<thead>
 <tr>
-<td>channel_id</td>
-<td><code>uint64</code></td>
+<th>Name</th>
+<th>Type</th>
 </tr>
+</thead>
+<tbody>
 <tr>
-<td>offer</td>
+<td>responses</td>
+<td><code>bytes</code></td>
+</tr>
+</tbody>
+</table>
+<h3 id="batchsamerequest">BatchSameRequest</h3>
+<p>Fields</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>endpoint</td>
 <td><code>string</code></td>
 </tr>
+<tr>
+<td>requests</td>
+<td><code>bytes</code></td>
+</tr>
 </tbody>
 </table>
-<h3 id="connectresponse">ConnectResponse</h3>
+<h3 id="batchsameresponse">BatchSameResponse</h3>
 <p>Fields</p>
 <table>
 <thead>
@@ -151,49 +179,13 @@
 </thead>
 <tbody>
 <tr>
-<td>answer</td>
-<td><code>string</code></td>
-</tr>
-</tbody>
-</table>
-<h3 id="streamstaterequest">StreamStateRequest</h3>
-<p>Fields</p>
-<table>
-<thead>
-<tr>
-<th>Name</th>
-<th>Type</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>guild_id</td>
-<td><code>uint64</code></td>
-</tr>
-<tr>
-<td>channel_id</td>
-<td><code>uint64</code></td>
-</tr>
-</tbody>
-</table>
-<h3 id="streamstateresponse">StreamStateResponse</h3>
-<p>Fields</p>
-<table>
-<thead>
-<tr>
-<th>Name</th>
-<th>Type</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>signal</td>
-<td><a href="#signal">protocol.voice.v1.Signal</a></td>
+<td>responses</td>
+<td><code>bytes</code></td>
 </tr>
 </tbody>
 </table>
 <h2 id="services">Services</h2>
-<h3 id="voiceservice">VoiceService</h3>
+<h3 id="batchservice">BatchService</h3>
 <h4 id="unary-methods">Unary Methods</h4>
 <table>
 <thead>
@@ -205,9 +197,14 @@
 </thead>
 <tbody>
 <tr>
-<td>Connect</td>
-<td><a href="#connectrequest">protocol.voice.v1.ConnectRequest</a></td>
-<td><a href="#connectresponse">protocol.voice.v1.ConnectResponse</a></td>
+<td>Batch</td>
+<td><a href="#batchrequest">protocol.batch.v1.BatchRequest</a></td>
+<td><a href="#batchresponse">protocol.batch.v1.BatchResponse</a></td>
+</tr>
+<tr>
+<td>BatchSame</td>
+<td><a href="#batchsamerequest">protocol.batch.v1.BatchSameRequest</a></td>
+<td><a href="#batchsameresponse">protocol.batch.v1.BatchSameResponse</a></td>
 </tr>
 </tbody>
 </table>

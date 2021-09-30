@@ -3,10 +3,11 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no">
     <title>Reference: protocol.auth.v1 | Harmony</title>
-    <meta name="description" content="Message Types BeginAuthResponse Fields
+    <meta name="description" content="Message Types BeginAuthRequest Fields
+   Name Type    BeginAuthResponse Fields
    Name Type     auth_id string    Session Fields
    Name Type     user_id uint64   session_token string    AuthStep Fields
-   Name Type     fallback_url string   can_go_back bool   choice protocol.auth.v1.AuthStep.Choice   form protocol.auth.v1.AuthStep.Form   session protocol.auth.v1.Session   waiting protocol. ">
+   Name Type     fallback_url string   can_go_back bool   choice protocol.auth.v1.AuthStep.Choice   form protocol. ">
     <link rel="canonical" href="https://harmonyapp.io/docs/protocol.auth.v1/" />
 
     
@@ -17,20 +18,22 @@
     
 
     <meta property="og:title" content="Reference: protocol.auth.v1" />
-<meta property="og:description" content="Message Types BeginAuthResponse Fields
+<meta property="og:description" content="Message Types BeginAuthRequest Fields
+   Name Type    BeginAuthResponse Fields
    Name Type     auth_id string    Session Fields
    Name Type     user_id uint64   session_token string    AuthStep Fields
-   Name Type     fallback_url string   can_go_back bool   choice protocol.auth.v1.AuthStep.Choice   form protocol.auth.v1.AuthStep.Form   session protocol.auth.v1.Session   waiting protocol." />
+   Name Type     fallback_url string   can_go_back bool   choice protocol.auth.v1.AuthStep.Choice   form protocol." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://harmonyapp.io/docs/protocol.auth.v1/" />
 
 
     <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Reference: protocol.auth.v1"/>
-<meta name="twitter:description" content="Message Types BeginAuthResponse Fields
+<meta name="twitter:description" content="Message Types BeginAuthRequest Fields
+   Name Type    BeginAuthResponse Fields
    Name Type     auth_id string    Session Fields
    Name Type     user_id uint64   session_token string    AuthStep Fields
-   Name Type     fallback_url string   can_go_back bool   choice protocol.auth.v1.AuthStep.Choice   form protocol.auth.v1.AuthStep.Form   session protocol.auth.v1.Session   waiting protocol."/>
+   Name Type     fallback_url string   can_go_back bool   choice protocol.auth.v1.AuthStep.Choice   form protocol."/>
 
     <meta name="theme-color" content="#E93D58">
     <meta property="og:image" content="https://harmonyapp.io/img/harmony-embed.png" />
@@ -75,17 +78,25 @@
   <ul>
     <li><a href="#message-types">Message Types</a>
       <ul>
+        <li><a href="#beginauthrequest">BeginAuthRequest</a></li>
         <li><a href="#beginauthresponse">BeginAuthResponse</a></li>
         <li><a href="#session">Session</a></li>
         <li><a href="#authstep">AuthStep</a></li>
         <li><a href="#nextsteprequest">NextStepRequest</a></li>
+        <li><a href="#nextstepresponse">NextStepResponse</a></li>
         <li><a href="#stepbackrequest">StepBackRequest</a></li>
+        <li><a href="#stepbackresponse">StepBackResponse</a></li>
         <li><a href="#streamstepsrequest">StreamStepsRequest</a></li>
+        <li><a href="#streamstepsresponse">StreamStepsResponse</a></li>
         <li><a href="#federaterequest">FederateRequest</a></li>
-        <li><a href="#federatereply">FederateReply</a></li>
-        <li><a href="#keyreply">KeyReply</a></li>
+        <li><a href="#federateresponse">FederateResponse</a></li>
+        <li><a href="#keyrequest">KeyRequest</a></li>
+        <li><a href="#keyresponse">KeyResponse</a></li>
         <li><a href="#loginfederatedrequest">LoginFederatedRequest</a></li>
+        <li><a href="#loginfederatedresponse">LoginFederatedResponse</a></li>
         <li><a href="#tokendata">TokenData</a></li>
+        <li><a href="#checkloggedinrequest">CheckLoggedInRequest</a></li>
+        <li><a href="#checkloggedinresponse">CheckLoggedInResponse</a></li>
         <li><a href="#authstepchoice">AuthStep.Choice</a></li>
         <li><a href="#authstepform">AuthStep.Form</a></li>
         <li><a href="#authstepwaiting">AuthStep.Waiting</a></li>
@@ -106,6 +117,16 @@
 
         <br>
         <h2 id="message-types">Message Types</h2>
+<h3 id="beginauthrequest">BeginAuthRequest</h3>
+<p>Fields</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+</tr>
+</thead>
+</table>
 <h3 id="beginauthresponse">BeginAuthResponse</h3>
 <p>Fields</p>
 <table>
@@ -202,6 +223,22 @@
 </tr>
 </tbody>
 </table>
+<h3 id="nextstepresponse">NextStepResponse</h3>
+<p>Fields</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>step</td>
+<td><a href="#authstep">protocol.auth.v1.AuthStep</a></td>
+</tr>
+</tbody>
+</table>
 <h3 id="stepbackrequest">StepBackRequest</h3>
 <p>Fields</p>
 <table>
@@ -215,6 +252,22 @@
 <tr>
 <td>auth_id</td>
 <td><code>string</code></td>
+</tr>
+</tbody>
+</table>
+<h3 id="stepbackresponse">StepBackResponse</h3>
+<p>Fields</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>step</td>
+<td><a href="#authstep">protocol.auth.v1.AuthStep</a></td>
 </tr>
 </tbody>
 </table>
@@ -234,6 +287,22 @@
 </tr>
 </tbody>
 </table>
+<h3 id="streamstepsresponse">StreamStepsResponse</h3>
+<p>Fields</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>step</td>
+<td><a href="#authstep">protocol.auth.v1.AuthStep</a></td>
+</tr>
+</tbody>
+</table>
 <h3 id="federaterequest">FederateRequest</h3>
 <p>Fields</p>
 <table>
@@ -245,12 +314,12 @@
 </thead>
 <tbody>
 <tr>
-<td>target</td>
+<td>server_id</td>
 <td><code>string</code></td>
 </tr>
 </tbody>
 </table>
-<h3 id="federatereply">FederateReply</h3>
+<h3 id="federateresponse">FederateResponse</h3>
 <p>Fields</p>
 <table>
 <thead>
@@ -264,13 +333,19 @@
 <td>token</td>
 <td><a href="https://harmonyapp.io/docs/protocol.harmonytypes.v1/#token">protocol.harmonytypes.v1.Token</a></td>
 </tr>
-<tr>
-<td>nonce</td>
-<td><code>string</code></td>
-</tr>
 </tbody>
 </table>
-<h3 id="keyreply">KeyReply</h3>
+<h3 id="keyrequest">KeyRequest</h3>
+<p>Fields</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+</tr>
+</thead>
+</table>
+<h3 id="keyresponse">KeyResponse</h3>
 <p>Fields</p>
 <table>
 <thead>
@@ -282,7 +357,7 @@
 <tbody>
 <tr>
 <td>key</td>
-<td><code>string</code></td>
+<td><code>bytes</code></td>
 </tr>
 </tbody>
 </table>
@@ -301,8 +376,24 @@
 <td><a href="https://harmonyapp.io/docs/protocol.harmonytypes.v1/#token">protocol.harmonytypes.v1.Token</a></td>
 </tr>
 <tr>
-<td>domain</td>
+<td>server_id</td>
 <td><code>string</code></td>
+</tr>
+</tbody>
+</table>
+<h3 id="loginfederatedresponse">LoginFederatedResponse</h3>
+<p>Fields</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>session</td>
+<td><a href="#session">protocol.auth.v1.Session</a></td>
 </tr>
 </tbody>
 </table>
@@ -321,7 +412,7 @@
 <td><code>uint64</code></td>
 </tr>
 <tr>
-<td>target</td>
+<td>server_id</td>
 <td><code>string</code></td>
 </tr>
 <tr>
@@ -333,6 +424,26 @@
 <td><code>string</code></td>
 </tr>
 </tbody>
+</table>
+<h3 id="checkloggedinrequest">CheckLoggedInRequest</h3>
+<p>Fields</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+</tr>
+</thead>
+</table>
+<h3 id="checkloggedinresponse">CheckLoggedInResponse</h3>
+<p>Fields</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+</tr>
+</thead>
 </table>
 <h3 id="authstepchoice">AuthStep.Choice</h3>
 <p>Fields</p>
@@ -485,37 +596,37 @@
 <tr>
 <td>Federate</td>
 <td><a href="#federaterequest">protocol.auth.v1.FederateRequest</a></td>
-<td><a href="#federatereply">protocol.auth.v1.FederateReply</a></td>
+<td><a href="#federateresponse">protocol.auth.v1.FederateResponse</a></td>
 </tr>
 <tr>
 <td>LoginFederated</td>
 <td><a href="#loginfederatedrequest">protocol.auth.v1.LoginFederatedRequest</a></td>
-<td><a href="#session">protocol.auth.v1.Session</a></td>
+<td><a href="#loginfederatedresponse">protocol.auth.v1.LoginFederatedResponse</a></td>
 </tr>
 <tr>
 <td>Key</td>
-<td><a href="https://harmonyapp.io/docs/google.protobuf/#empty">google.protobuf.Empty</a></td>
-<td><a href="#keyreply">protocol.auth.v1.KeyReply</a></td>
+<td><a href="#keyrequest">protocol.auth.v1.KeyRequest</a></td>
+<td><a href="#keyresponse">protocol.auth.v1.KeyResponse</a></td>
 </tr>
 <tr>
 <td>BeginAuth</td>
-<td><a href="https://harmonyapp.io/docs/google.protobuf/#empty">google.protobuf.Empty</a></td>
+<td><a href="#beginauthrequest">protocol.auth.v1.BeginAuthRequest</a></td>
 <td><a href="#beginauthresponse">protocol.auth.v1.BeginAuthResponse</a></td>
 </tr>
 <tr>
 <td>NextStep</td>
 <td><a href="#nextsteprequest">protocol.auth.v1.NextStepRequest</a></td>
-<td><a href="#authstep">protocol.auth.v1.AuthStep</a></td>
+<td><a href="#nextstepresponse">protocol.auth.v1.NextStepResponse</a></td>
 </tr>
 <tr>
 <td>StepBack</td>
 <td><a href="#stepbackrequest">protocol.auth.v1.StepBackRequest</a></td>
-<td><a href="#authstep">protocol.auth.v1.AuthStep</a></td>
+<td><a href="#stepbackresponse">protocol.auth.v1.StepBackResponse</a></td>
 </tr>
 <tr>
 <td>CheckLoggedIn</td>
-<td><a href="https://harmonyapp.io/docs/google.protobuf/#empty">google.protobuf.Empty</a></td>
-<td><a href="https://harmonyapp.io/docs/google.protobuf/#empty">google.protobuf.Empty</a></td>
+<td><a href="#checkloggedinrequest">protocol.auth.v1.CheckLoggedInRequest</a></td>
+<td><a href="#checkloggedinresponse">protocol.auth.v1.CheckLoggedInResponse</a></td>
 </tr>
 </tbody>
 </table>

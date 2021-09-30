@@ -22,8 +22,9 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://harmonyapp.io/docs/google.protobuf/</guid>
-      <description>Message Types Empty Fields
-   Name Type    Services </description>
+      <description>Message Types FileDescriptorSet Fields
+   Name Type     file google.protobuf.FileDescriptorProto    FileDescriptorProto Fields
+   Name Type     name string   package string   dependency string   public_dependency int32   weak_dependency int32   message_type google.protobuf.DescriptorProto   enum_type google.protobuf.EnumDescriptorProto   service google.protobuf.ServiceDescriptorProto   extension google.protobuf.FieldDescriptorProto   options google.protobuf.FileOptions   source_code_info google.</description>
     </item>
     
     <item>
@@ -32,10 +33,24 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://harmonyapp.io/docs/protocol.auth.v1/</guid>
-      <description>Message Types BeginAuthResponse Fields
+      <description>Message Types BeginAuthRequest Fields
+   Name Type    BeginAuthResponse Fields
    Name Type     auth_id string    Session Fields
    Name Type     user_id uint64   session_token string    AuthStep Fields
-   Name Type     fallback_url string   can_go_back bool   choice protocol.auth.v1.AuthStep.Choice   form protocol.auth.v1.AuthStep.Form   session protocol.auth.v1.Session   waiting protocol.</description>
+   Name Type     fallback_url string   can_go_back bool   choice protocol.auth.v1.AuthStep.Choice   form protocol.</description>
+    </item>
+    
+    <item>
+      <title>Reference: protocol.batch.v1</title>
+      <link>https://harmonyapp.io/docs/protocol.batch.v1/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://harmonyapp.io/docs/protocol.batch.v1/</guid>
+      <description>Message Types AnyRequest Fields
+   Name Type     endpoint string   request bytes    BatchRequest Fields
+   Name Type     requests protocol.batch.v1.AnyRequest    BatchResponse Fields
+   Name Type     responses bytes    BatchSameRequest Fields
+   Name Type     endpoint string   requests bytes    BatchSameResponse Fields</description>
     </item>
     
     <item>
@@ -58,9 +73,10 @@
       
       <guid>https://harmonyapp.io/docs/protocol.harmonytypes.v1/</guid>
       <description>Message Types HarmonyMethodMetadata Fields
-   Name Type     requires_authentication bool   requires_local bool   requires_permission_node string    Override Fields
-   Name Type     name string   avatar string   user_defined string   webhook google.protobuf.Empty   system_plurality google.protobuf.Empty   system_message google.protobuf.Empty   bridge google.protobuf.Empty    Action Fields
-   Name Type     UNHANDLED TYPE   id string   button protocol.</description>
+   Name Type     requires_authentication bool   requires_local bool   requires_permission_node string    Anything Fields
+   Name Type     kind string   body bytes    Metadata Fields
+   Name Type     kind string   extension protocol.harmonytypes.v1.Metadata.ExtensionEntry    Error Fields
+   Name Type     identifier string   human_message string   more_details bytes    Token Fields</description>
     </item>
     
     <item>
@@ -82,10 +98,10 @@
       
       <guid>https://harmonyapp.io/docs/protocol.sync.v1/</guid>
       <description>Message Types AuthData Fields
-   Name Type     host string   time uint64    EventQueue Fields
-   Name Type     events protocol.sync.v1.Event    Event Fields
-   Name Type     user_removed_from_guild protocol.sync.v1.Event.UserRemovedFromGuild   user_added_to_guild protocol.sync.v1.Event.UserAddedToGuild    Event.UserRemovedFromGuild Fields
-   Name Type     user_id uint64   guild_id uint64    Event.</description>
+   Name Type     server_id string   time uint64    Event Fields
+   Name Type     user_removed_from_guild protocol.sync.v1.Event.UserRemovedFromGuild   user_added_to_guild protocol.sync.v1.Event.UserAddedToGuild    PullRequest Fields
+   Name Type    PullResponse Fields
+   Name Type     event_queue protocol.sync.v1.Event    PushRequest Fields</description>
     </item>
     
     <item>
@@ -95,10 +111,10 @@
       
       <guid>https://harmonyapp.io/docs/protocol.voice.v1/</guid>
       <description>Message Types Signal Fields
-   Name Type     ice_candidate string   renegotiation_needed google.protobuf.Empty    ConnectRequest Fields
-   Name Type     channel_id uint64   offer string    ConnectResponse Fields
+   Name Type     ice_candidate string   renegotiation_needed protocol.harmonytypes.v1.Empty    ConnectRequest Fields
+   Name Type     guild_id uint64   channel_id uint64   offer string    ConnectResponse Fields
    Name Type     answer string    StreamStateRequest Fields
-   Name Type     channel_id uint64    Services VoiceService Unary Methods    Name Request Response     Connect protocol.</description>
+   Name Type     guild_id uint64   channel_id uint64    StreamStateResponse Fields</description>
     </item>
     
     <item>
