@@ -1,4 +1,6 @@
-# Docs
+---
+title: Docs
+---
 
 Harmony is designed to be simple to implement, both for the server and client.
 

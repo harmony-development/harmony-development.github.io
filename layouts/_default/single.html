@@ -1,15 +1,12 @@
 {{ define "main" }}
 
 <div class="prose-wrapper mt-4">
+    <aside class="prose-toc">
+        <h4><strong>Table Of Contents</strong></h4>
+        {{ .TableOfContents }}
+    </aside>
     <article class="prose">
-        <h2 class="h1">{{ .Title }}</h2>
-
-        <details>
-            <summary>Table Of Contents</summary>
-            {{ .TableOfContents }}
-        </details>
-
-        <br>
+        <h1 class="h1">{{ .Title }}</h1>
         {{ .Content }}
     </article>
 </div>
