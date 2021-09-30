@@ -3,6 +3,13 @@ title: "Reference: protocol.auth.v1"
 ---
 ## Message Types 
 
+### BeginAuthRequest
+
+Fields
+
+| Name | Type |
+| ---- | ---- |
+
 ### BeginAuthResponse
 
 Fields
@@ -43,6 +50,14 @@ Fields
 | choice | [protocol.auth.v1.NextStepRequest.Choice](#nextsteprequest-choice) |
 | form | [protocol.auth.v1.NextStepRequest.Form](#nextsteprequest-form) |
 
+### NextStepResponse
+
+Fields
+
+| Name | Type |
+| ---- | ---- |
+| step | [protocol.auth.v1.AuthStep](#authstep) |
+
 ### StepBackRequest
 
 Fields
@@ -50,6 +65,14 @@ Fields
 | Name | Type |
 | ---- | ---- |
 | auth_id | `string` |
+
+### StepBackResponse
+
+Fields
+
+| Name | Type |
+| ---- | ---- |
+| step | [protocol.auth.v1.AuthStep](#authstep) |
 
 ### StreamStepsRequest
 
@@ -59,30 +82,44 @@ Fields
 | ---- | ---- |
 | auth_id | `string` |
 
+### StreamStepsResponse
+
+Fields
+
+| Name | Type |
+| ---- | ---- |
+| step | [protocol.auth.v1.AuthStep](#authstep) |
+
 ### FederateRequest
 
 Fields
 
 | Name | Type |
 | ---- | ---- |
-| target | `string` |
+| server_id | `string` |
 
-### FederateReply
+### FederateResponse
 
 Fields
 
 | Name | Type |
 | ---- | ---- |
 | token | [protocol.harmonytypes.v1.Token]({{< ref "protocol.harmonytypes.v1.md" >}}#token) |
-| nonce | `string` |
 
-### KeyReply
+### KeyRequest
 
 Fields
 
 | Name | Type |
 | ---- | ---- |
-| key | `string` |
+
+### KeyResponse
+
+Fields
+
+| Name | Type |
+| ---- | ---- |
+| key | `bytes` |
 
 ### LoginFederatedRequest
 
@@ -91,7 +128,15 @@ Fields
 | Name | Type |
 | ---- | ---- |
 | auth_token | [protocol.harmonytypes.v1.Token]({{< ref "protocol.harmonytypes.v1.md" >}}#token) |
-| domain | `string` |
+| server_id | `string` |
+
+### LoginFederatedResponse
+
+Fields
+
+| Name | Type |
+| ---- | ---- |
+| session | [protocol.auth.v1.Session](#session) |
 
 ### TokenData
 
@@ -100,9 +145,23 @@ Fields
 | Name | Type |
 | ---- | ---- |
 | user_id | `uint64` |
-| target | `string` |
+| server_id | `string` |
 | username | `string` |
 | avatar | `string` |
+
+### CheckLoggedInRequest
+
+Fields
+
+| Name | Type |
+| ---- | ---- |
+
+### CheckLoggedInResponse
+
+Fields
+
+| Name | Type |
+| ---- | ---- |
 
 ### AuthStep.Choice
 
@@ -174,13 +233,13 @@ Fields
 
 | Name | Request | Response |
 | ---- | ------- | -------- |
-|Federate|[protocol.auth.v1.FederateRequest](#federaterequest)|[protocol.auth.v1.FederateReply](#federatereply)|
-|LoginFederated|[protocol.auth.v1.LoginFederatedRequest](#loginfederatedrequest)|[protocol.auth.v1.Session](#session)|
-|Key|[google.protobuf.Empty]({{< ref "google.protobuf.md" >}}#empty)|[protocol.auth.v1.KeyReply](#keyreply)|
-|BeginAuth|[google.protobuf.Empty]({{< ref "google.protobuf.md" >}}#empty)|[protocol.auth.v1.BeginAuthResponse](#beginauthresponse)|
-|NextStep|[protocol.auth.v1.NextStepRequest](#nextsteprequest)|[protocol.auth.v1.AuthStep](#authstep)|
-|StepBack|[protocol.auth.v1.StepBackRequest](#stepbackrequest)|[protocol.auth.v1.AuthStep](#authstep)|
-|CheckLoggedIn|[google.protobuf.Empty]({{< ref "google.protobuf.md" >}}#empty)|[google.protobuf.Empty]({{< ref "google.protobuf.md" >}}#empty)|
+|Federate|[protocol.auth.v1.FederateRequest](#federaterequest)|[protocol.auth.v1.FederateResponse](#federateresponse)|
+|LoginFederated|[protocol.auth.v1.LoginFederatedRequest](#loginfederatedrequest)|[protocol.auth.v1.LoginFederatedResponse](#loginfederatedresponse)|
+|Key|[protocol.auth.v1.KeyRequest](#keyrequest)|[protocol.auth.v1.KeyResponse](#keyresponse)|
+|BeginAuth|[protocol.auth.v1.BeginAuthRequest](#beginauthrequest)|[protocol.auth.v1.BeginAuthResponse](#beginauthresponse)|
+|NextStep|[protocol.auth.v1.NextStepRequest](#nextsteprequest)|[protocol.auth.v1.NextStepResponse](#nextstepresponse)|
+|StepBack|[protocol.auth.v1.StepBackRequest](#stepbackrequest)|[protocol.auth.v1.StepBackResponse](#stepbackresponse)|
+|CheckLoggedIn|[protocol.auth.v1.CheckLoggedInRequest](#checkloggedinrequest)|[protocol.auth.v1.CheckLoggedInResponse](#checkloggedinresponse)|
 
 #### Streaming Methods
 

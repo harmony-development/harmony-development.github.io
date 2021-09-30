@@ -60,6 +60,14 @@ Fields
 | content | `string` |
 | is_valid | `bool` |
 
+### CanInstantViewRequest
+
+Fields
+
+| Name | Type |
+| ---- | ---- |
+| url | `string` |
+
 ### CanInstantViewResponse
 
 Fields
@@ -78,7 +86,7 @@ Fields
 | ---- | ------- | -------- |
 |FetchLinkMetadata|[protocol.mediaproxy.v1.FetchLinkMetadataRequest](#fetchlinkmetadatarequest)|[protocol.mediaproxy.v1.FetchLinkMetadataResponse](#fetchlinkmetadataresponse)|
 |InstantView|[protocol.mediaproxy.v1.InstantViewRequest](#instantviewrequest)|[protocol.mediaproxy.v1.InstantViewResponse](#instantviewresponse)|
-|CanInstantView|[protocol.mediaproxy.v1.InstantViewRequest](#instantviewrequest)|[protocol.mediaproxy.v1.CanInstantViewResponse](#caninstantviewresponse)|
+|CanInstantView|[protocol.mediaproxy.v1.CanInstantViewRequest](#caninstantviewrequest)|[protocol.mediaproxy.v1.CanInstantViewResponse](#caninstantviewresponse)|
 
 #### Streaming Methods
 

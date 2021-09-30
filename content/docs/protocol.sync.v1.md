@@ -9,16 +9,8 @@ Fields
 
 | Name | Type |
 | ---- | ---- |
-| host | `string` |
+| server_id | `string` |
 | time | `uint64` |
-
-### EventQueue
-
-Fields
-
-| Name | Type |
-| ---- | ---- |
-| events | [protocol.sync.v1.Event](#event) |
 
 ### Event
 
@@ -28,6 +20,51 @@ Fields
 | ---- | ---- |
 | user_removed_from_guild | [protocol.sync.v1.Event.UserRemovedFromGuild](#event-userremovedfromguild) |
 | user_added_to_guild | [protocol.sync.v1.Event.UserAddedToGuild](#event-useraddedtoguild) |
+
+### PullRequest
+
+Fields
+
+| Name | Type |
+| ---- | ---- |
+
+### PullResponse
+
+Fields
+
+| Name | Type |
+| ---- | ---- |
+| event_queue | [protocol.sync.v1.Event](#event) |
+
+### PushRequest
+
+Fields
+
+| Name | Type |
+| ---- | ---- |
+| event | [protocol.sync.v1.Event](#event) |
+
+### PushResponse
+
+Fields
+
+| Name | Type |
+| ---- | ---- |
+
+### NotifyNewIdRequest
+
+Fields
+
+| Name | Type |
+| ---- | ---- |
+| new_server_id | `string` |
+
+### NotifyNewIdResponse
+
+Fields
+
+| Name | Type |
+| ---- | ---- |
 
 ### Event.UserRemovedFromGuild
 
@@ -55,8 +92,9 @@ Fields
 
 | Name | Request | Response |
 | ---- | ------- | -------- |
-|Pull|[google.protobuf.Empty]({{< ref "google.protobuf.md" >}}#empty)|[protocol.sync.v1.EventQueue](#eventqueue)|
-|Push|[protocol.sync.v1.Event](#event)|[google.protobuf.Empty]({{< ref "google.protobuf.md" >}}#empty)|
+|Pull|[protocol.sync.v1.PullRequest](#pullrequest)|[protocol.sync.v1.PullResponse](#pullresponse)|
+|Push|[protocol.sync.v1.PushRequest](#pushrequest)|[protocol.sync.v1.PushResponse](#pushresponse)|
+|NotifyNewId|[protocol.sync.v1.NotifyNewIdRequest](#notifynewidrequest)|[protocol.sync.v1.NotifyNewIdResponse](#notifynewidresponse)|
 
 #### Streaming Methods
 
