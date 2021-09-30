@@ -22,8 +22,8 @@ title = "Harmony"
     url = "https://github.com/harmony-development"
     weight = -90
 
-  [[menu.main]]
-    identifier = "trynow"
-    name = "Try Now"
-    url = "https://tempest.bluskript.vercel.app"
-    weight = -80
+  # [[menu.main]]
+  #   identifier = "trynow"
+  #   name = "Try Now"
+  #   url = "https://tempest.bluskript.vercel.app"
+  #   weight = -80
