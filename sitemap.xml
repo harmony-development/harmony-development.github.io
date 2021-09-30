@@ -8,11 +8,6 @@
   </url>
   
   <url>
-    <loc>https://harmonyapp.io/docs/</loc>
-    <priority>0</priority>
-  </url>
-  
-  <url>
     <loc>https://harmonyapp.io/protocol/guidelines/</loc>
   </url>
   
@@ -26,6 +21,10 @@
   
   <url>
     <loc>https://harmonyapp.io/categories/</loc>
+  </url>
+  
+  <url>
+    <loc>https://harmonyapp.io/docs/</loc>
   </url>
   
   <url>

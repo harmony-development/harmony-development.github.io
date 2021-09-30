@@ -13,7 +13,7 @@ URL Parameters  filename: The name of the file being uploaded. contentType: The 
 
     
       
-      <link rel="stylesheet" href="/css/main.min.1124d8291d9ef3056ab41d1b63463d0b41dacf83ef5ab11cfde803edd4e450ff.css" integrity="sha256-ESTYKR2e8wVqtB0bY0Y9C0Haz4PvWrEc/egD7dTkUP8="/>
+      <link rel="stylesheet" href="/css/main.min.7cc14bd27d9ce04bbac7032144405e7348f78d90586d9ad05ee3c11a6840b91a.css" integrity="sha256-fMFL0n2c4Eu6xwMhREBec0j3jZBYbZrQXuPBGmhAuRo="/>
     
 
     <meta property="og:title" content="" />
@@ -40,7 +40,7 @@ URL Parameters  filename: The name of the file being uploaded. contentType: The 
         quicklink.listen()
     </script>
 </head>
-<body class="dark:text-white dark:bg-gray-900"><header class="w-full bg-gray-200 dark:bg-gray-800 flex text-lg">
+<body class="dark:text-white"><header class="w-full bg-gray-200 header flex text-lg">
     <div class="flex flex-row w-full">
         <div class="flex-auto p-4 justify-start order-first inline-flex">
             <a class="font-header" href="/">
@@ -66,12 +66,9 @@ URL Parameters  filename: The name of the file being uploaded. contentType: The 
 </header><main>
 
 <div class="prose-wrapper mt-4">
-    <article class="prose">
-        <h2 class="h1"></h2>
-
-        <details>
-            <summary>Table Of Contents</summary>
-            <nav id="TableOfContents">
+    <aside class="prose-toc">
+        <h4><strong>Table Of Contents</strong></h4>
+        <nav id="TableOfContents">
   <ul>
     <li><a href="#authentication">Authentication</a></li>
     <li><a href="#post-_harmonymediaupload">POST <code>/_harmony/media/upload</code></a>
@@ -92,9 +89,9 @@ URL Parameters  filename: The name of the file being uploaded. contentType: The 
     </li>
   </ul>
 </nav>
-        </details>
-
-        <br>
+    </aside>
+    <article class="prose">
+        <h1 class="h1"></h1>
         <h1 id="restful-endpoints">RESTful Endpoints</h1>
 <h2 id="authentication">Authentication</h2>
 <p>If an endpoint expects authentication, the user should set the <code>Authorization</code> header to a valid token from the gRPC API.</p>
