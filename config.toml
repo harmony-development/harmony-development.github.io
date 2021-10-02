@@ -11,6 +11,12 @@ title = "Harmony"
 [menu]
 
   [[menu.main]]
+    identifier = "faq"
+    name = "FAQ"
+    url = "/docs/faq"
+    weight = -110
+
+  [[menu.main]]
     identifier = "docs"
     name = "Docs"
     url = "/docs"
