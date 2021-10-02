@@ -5,11 +5,7 @@
     <loc>https://harmonyapp.io/</loc>
     <lastmod>2020-06-29T21:07:15-04:00</lastmod>
   </url><url>
-    <loc>https://harmonyapp.io/protocol/guidelines/</loc>
-  </url><url>
     <loc>https://harmonyapp.io/protocol/readme/</loc>
-  </url><url>
-    <loc>https://harmonyapp.io/protocol/rest/rest/</loc>
   </url><url>
     <loc>https://harmonyapp.io/categories/</loc>
   </url><url>
@@ -19,7 +15,13 @@
   </url><url>
     <loc>https://harmonyapp.io/protocol/faq/</loc>
   </url><url>
+    <loc>https://harmonyapp.io/docs/permissions/</loc>
+  </url><url>
     <loc>https://harmonyapp.io/protocol/chat/v1/permissions/</loc>
+  </url><url>
+    <loc>https://harmonyapp.io/docs/guidelines/</loc>
+  </url><url>
+    <loc>https://harmonyapp.io/protocol/guidelines/</loc>
   </url><url>
     <loc>https://harmonyapp.io/protocol/</loc>
   </url><url>
@@ -38,6 +40,10 @@
     <loc>https://harmonyapp.io/docs/protocol.sync.v1/</loc>
   </url><url>
     <loc>https://harmonyapp.io/docs/protocol.voice.v1/</loc>
+  </url><url>
+    <loc>https://harmonyapp.io/docs/rest/</loc>
+  </url><url>
+    <loc>https://harmonyapp.io/protocol/rest/rest/</loc>
   </url><url>
     <loc>https://harmonyapp.io/docs/name-resolution/</loc>
   </url><url>

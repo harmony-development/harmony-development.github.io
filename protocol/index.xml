@@ -8,20 +8,6 @@
     <language>en-us</language><atom:link href="https://harmonyapp.io/protocol/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title></title>
-      <link>https://harmonyapp.io/protocol/guidelines/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://harmonyapp.io/protocol/guidelines/</guid>
-      <description>Guidelines Protocol endpoints adhere to the following standard naming conventions:
-  All actions being applied must be prefixed.
-❌ What not to do:
- rpc ProfileUpdate(ProfileUpdateRequest) returns (ProfileUpdateResponse) {}  ✅ What to do:
- rpc UpdateProfile(UpdateProfileRequest) returns (UpdateProfileResponse) {}    Objects (types that aren&amp;rsquo;t request or response types) should go at the top of the file.
-  Objects should not be nested inside request or response types.</description>
-    </item>
-    
-    <item>
-      <title></title>
       <link>https://harmonyapp.io/protocol/readme/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
@@ -31,18 +17,6 @@ Read here for frequently asked questions.
 To read about protocol conventions, please read GUIDELINES.
 If you are looking for:
  a client to communicate with, check out Tempest, Challah or Crust. a server to host, check out Scherzo. an SDK to develop bots / clients / servers with, check out Rust SDK, Web SDK and C++ SDK.  </description>
-    </item>
-    
-    <item>
-      <title></title>
-      <link>https://harmonyapp.io/protocol/rest/rest/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://harmonyapp.io/protocol/rest/rest/</guid>
-      <description>RESTful Endpoints Authentication If an endpoint expects authentication, the user should set the Authorization header to a valid token from the gRPC API.
-POST /_harmony/media/upload Expects authentication: yes
-The body should be POST-ed as a multipart form (multipart/form-data), with a single part named file which contains the body of the file being uploaded.
-URL Parameters  filename: The name of the file being uploaded. contentType: The MIME type of the file.</description>
     </item>
     
     <item>
@@ -64,6 +38,32 @@ URL Parameters  filename: The name of the file being uploaded. contentType: The 
       <description>The permissions system of Harmony resembles that of the permissions system common to open-source Minecraft server software, featuring rules and querying a node string against those rules.
 Permission In a community, there will be features, management functionality, bot commands, and other things which exist. Most of these actions have a permission associated with them, allowing you to control which members have access to each feature.
 A permission is just a string, such as roles.</description>
+    </item>
+    
+    <item>
+      <title>Protocol Guidelines</title>
+      <link>https://harmonyapp.io/protocol/guidelines/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://harmonyapp.io/protocol/guidelines/</guid>
+      <description>Protocol endpoints adhere to the following standard naming conventions:
+  All actions being applied must be prefixed.
+❌ What not to do:
+ rpc ProfileUpdate(ProfileUpdateRequest) returns (ProfileUpdateResponse) {}  ✅ What to do:
+ rpc UpdateProfile(UpdateProfileRequest) returns (UpdateProfileResponse) {}    Objects (types that aren&amp;rsquo;t request or response types) should go at the top of the file.
+  Objects should not be nested inside request or response types.</description>
+    </item>
+    
+    <item>
+      <title>RESTful Endpoints</title>
+      <link>https://harmonyapp.io/protocol/rest/rest/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://harmonyapp.io/protocol/rest/rest/</guid>
+      <description>Authentication If an endpoint expects authentication, the user should set the Authorization header to a valid token from the gRPC API.
+POST /_harmony/media/upload Expects authentication: yes
+The body should be POST-ed as a multipart form (multipart/form-data), with a single part named file which contains the body of the file being uploaded.
+URL Parameters  filename: The name of the file being uploaded. contentType: The MIME type of the file.  Responses 200 OK Returns a JSON object with a single key, id.</description>
     </item>
     
     <item>

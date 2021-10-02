@@ -17,6 +17,31 @@
     </item>
     
     <item>
+      <title>Permissions</title>
+      <link>https://harmonyapp.io/docs/permissions/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://harmonyapp.io/docs/permissions/</guid>
+      <description>The permissions system of Harmony resembles that of the permissions system common to open-source Minecraft server software, featuring rules and querying a node string against those rules.
+Permission In a community, there will be features, management functionality, bot commands, and other things which exist. Most of these actions have a permission associated with them, allowing you to control which members have access to each feature.
+A permission is just a string, such as roles.</description>
+    </item>
+    
+    <item>
+      <title>Protocol Guidelines</title>
+      <link>https://harmonyapp.io/docs/guidelines/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://harmonyapp.io/docs/guidelines/</guid>
+      <description>Protocol endpoints adhere to the following standard naming conventions:
+  All actions being applied must be prefixed.
+❌ What not to do:
+ rpc ProfileUpdate(ProfileUpdateRequest) returns (ProfileUpdateResponse) {}  ✅ What to do:
+ rpc UpdateProfile(UpdateProfileRequest) returns (UpdateProfileResponse) {}    Objects (types that aren&amp;rsquo;t request or response types) should go at the top of the file.
+  Objects should not be nested inside request or response types.</description>
+    </item>
+    
+    <item>
       <title>Reference: google.protobuf</title>
       <link>https://harmonyapp.io/docs/google.protobuf/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -115,6 +140,18 @@
    Name Type     guild_id uint64   channel_id uint64   offer string    ConnectResponse Fields
    Name Type     answer string    StreamStateRequest Fields
    Name Type     guild_id uint64   channel_id uint64    StreamStateResponse Fields</description>
+    </item>
+    
+    <item>
+      <title>RESTful Endpoints</title>
+      <link>https://harmonyapp.io/docs/rest/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://harmonyapp.io/docs/rest/</guid>
+      <description>Authentication If an endpoint expects authentication, the user should set the Authorization header to a valid token from the gRPC API.
+POST /_harmony/media/upload Expects authentication: yes
+The body should be POST-ed as a multipart form (multipart/form-data), with a single part named file which contains the body of the file being uploaded.
+URL Parameters  filename: The name of the file being uploaded. contentType: The MIME type of the file.  Responses 200 OK Returns a JSON object with a single key, id.</description>
     </item>
     
     <item>
