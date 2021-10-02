@@ -40,17 +40,17 @@
 .prose a {
     text-decoration: underline;
 }
-.prose a, .prose-toc a {
+.prose a, .prose-toc a, .prose-toc a:visited {
     color: #2aa1bf;
 }
-.prose a:visited, .prose-toc a:visited {
+.prose a:visited {
     color: #7655c8;
 }
 @media (prefers-color-scheme: dark) {
-    .prose a, .prose-toc a {
+    .prose a, .prose-toc a, .prose-toc a:visited {
         color: #3daee9;
     }
-    .prose a:visited, .prose-toc a:visited {
+    .prose a:visited {
         color: #926ee4;
     }
     body {
@@ -77,8 +77,12 @@
 }
 
 .prose {
-    max-width: 80ch;
+    max-width: 120ch;
     width: 100%;
+}
+
+.prose-index {
+    max-width: 80ch;
 }
 
 .prose {
@@ -100,31 +104,51 @@
     @apply list-decimal;
 }
 
-.prose h1 {
-    font-weight: 600;
-    margin-bottom: 1.25rem;
-
-    @apply dark:text-white;
+.prose code {
+    color: #f8f8f2;
+    background-color: #32332E;
+    border-radius: 10px;
+    padding: 4px;
 }
+
+.prose pre {
+    background-color: #32332E !important;
+    border-radius: 10px;
+    padding: 4px;
+}
+
+.prose pre > code {
+    border-radius: 0;
+    padding: 0;
+}
+
 .prose h1 {
-    font-weight: 600;
+    font-weight: 800;
     margin-bottom: 1.25rem;
     margin-top: 2.6875rem;
     font-size: 2.25rem;
     line-height: 1.3;
+    border-bottom: 1px solid #676862;
 
     @apply dark:text-white;
 }
 .prose h2 {
+    font-weight: 700;
     font-size: 1.875rem;
     margin: 2.6875rem 0 0.9375rem 0;
+    border-bottom: 1px solid #676862;
 
     @apply dark:text-white;
 }
 .prose h3 {
+    font-weight: 600;
     font-size: 1.3125rem;
-    line-height: 143%;
-    margin: 0 0 0.5rem 0;
+    margin: 1rem 0 0.5rem 0;
+
+    @apply dark:text-white;
+}
+.prose h4, .prose h5, .prose h6 {
+    margin: 0.75rem 0 0.35rem 0;
 
     @apply dark:text-white;
 }

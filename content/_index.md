@@ -11,7 +11,7 @@ Explore Harmony on GitHub
 
 <div class="prose-wrapper">
 
-<div class="prose">
+<div class="prose prose-index">
 
 ## Why Harmony?
 
