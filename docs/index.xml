@@ -148,10 +148,10 @@ A permission is just a string, such as roles.</description>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://harmonyapp.io/docs/rest/</guid>
-      <description>Authentication If an endpoint expects authentication, the user should set the Authorization header to a valid token from the gRPC API.
+      <description>Authentication If an endpoint expects authentication, the user should set the Authorization header to a valid token from the hRPC API.
 POST /_harmony/media/upload Expects authentication: yes
 The body should be POST-ed as a multipart form (multipart/form-data), with a single part named file which contains the body of the file being uploaded.
-URL Parameters  filename: The name of the file being uploaded. contentType: The MIME type of the file.  Responses 200 OK Returns a JSON object with a single key, id.</description>
+URL Parameters    Name Description     filename The name of the file being uploaded.   contentType The MIME type of the file.</description>
     </item>
     
     <item>

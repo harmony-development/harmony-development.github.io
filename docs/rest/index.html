@@ -3,10 +3,10 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no">
     <title>RESTful Endpoints | Harmony</title>
-    <meta name="description" content="Authentication If an endpoint expects authentication, the user should set the Authorization header to a valid token from the gRPC API.
+    <meta name="description" content="Authentication If an endpoint expects authentication, the user should set the Authorization header to a valid token from the hRPC API.
 POST /_harmony/media/upload Expects authentication: yes
 The body should be POST-ed as a multipart form (multipart/form-data), with a single part named file which contains the body of the file being uploaded.
-URL Parameters  filename: The name of the file being uploaded. contentType: The MIME type of the file.  Responses 200 OK Returns a JSON object with a single key, id. ">
+URL Parameters    Name Description     filename The name of the file being uploaded.   contentType The MIME type of the file. ">
     <link rel="canonical" href="https://harmonyapp.io/docs/rest/" />
 
     
@@ -17,10 +17,10 @@ URL Parameters  filename: The name of the file being uploaded. contentType: The 
     
 
     <meta property="og:title" content="RESTful Endpoints" />
-<meta property="og:description" content="Authentication If an endpoint expects authentication, the user should set the Authorization header to a valid token from the gRPC API.
+<meta property="og:description" content="Authentication If an endpoint expects authentication, the user should set the Authorization header to a valid token from the hRPC API.
 POST /_harmony/media/upload Expects authentication: yes
 The body should be POST-ed as a multipart form (multipart/form-data), with a single part named file which contains the body of the file being uploaded.
-URL Parameters  filename: The name of the file being uploaded. contentType: The MIME type of the file.  Responses 200 OK Returns a JSON object with a single key, id." />
+URL Parameters    Name Description     filename The name of the file being uploaded.   contentType The MIME type of the file." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://harmonyapp.io/docs/rest/" /><meta property="article:section" content="docs" />
 
@@ -29,10 +29,10 @@ URL Parameters  filename: The name of the file being uploaded. contentType: The 
 
     <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="RESTful Endpoints"/>
-<meta name="twitter:description" content="Authentication If an endpoint expects authentication, the user should set the Authorization header to a valid token from the gRPC API.
+<meta name="twitter:description" content="Authentication If an endpoint expects authentication, the user should set the Authorization header to a valid token from the hRPC API.
 POST /_harmony/media/upload Expects authentication: yes
 The body should be POST-ed as a multipart form (multipart/form-data), with a single part named file which contains the body of the file being uploaded.
-URL Parameters  filename: The name of the file being uploaded. contentType: The MIME type of the file.  Responses 200 OK Returns a JSON object with a single key, id."/>
+URL Parameters    Name Description     filename The name of the file being uploaded.   contentType The MIME type of the file."/>
 
     <meta name="theme-color" content="#E93D58">
     <meta property="og:image" content="https://harmonyapp.io/img/harmony-embed.png" />
@@ -95,26 +95,86 @@ URL Parameters  filename: The name of the file being uploaded. contentType: The 
     <article class="prose">
         <h1 class="h1">RESTful Endpoints</h1>
         <h2 id="authentication">Authentication</h2>
-<p>If an endpoint expects authentication, the user should set the <code>Authorization</code> header to a valid token from the gRPC API.</p>
+<p>If an endpoint expects authentication, the user should set the <code>Authorization</code>
+header to a valid token from the hRPC API.</p>
 <h2 id="post-_harmonymediaupload">POST <code>/_harmony/media/upload</code></h2>
 <p>Expects authentication: yes</p>
-<p>The body should be POST-ed as a multipart form (<code>multipart/form-data</code>), with a single part named <code>file</code> which contains the body of the file being uploaded.</p>
+<p>The body should be POST-ed as a multipart form (<code>multipart/form-data</code>), with a
+single part named <code>file</code> which contains the body of the file being uploaded.</p>
 <h3 id="url-parameters">URL Parameters</h3>
-<ul>
-<li><code>filename</code>: The name of the file being uploaded.</li>
-<li><code>contentType</code>: The MIME type of the file.</li>
-</ul>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>filename</code></td>
+<td>The name of the file being uploaded.</td>
+</tr>
+<tr>
+<td><code>contentType</code></td>
+<td>The MIME type of the file.</td>
+</tr>
+</tbody>
+</table>
 <h3 id="responses">Responses</h3>
 <h4 id="200-ok">200 OK</h4>
-<p>Returns a JSON object with a single key, <code>id</code>.</p>
+<p>The body will contain a JSON object in the following format:</p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>id</code></td>
+<td>The file ID of the file that was uploaded.</td>
+</tr>
+</tbody>
+</table>
 <h4 id="400-bad-request">400 Bad Request</h4>
-<h5 id="body-missing-files">Body: <code>missing-files</code></h5>
-<p>You forgot to upload a file.</p>
-<h5 id="body-too-many-files">Body: <code>too-many-files</code></h5>
-<p>You have uploaded more than one <code>file</code> form part.</p>
+<p>The body will contain a JSON object in the following format:</p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>message</code></td>
+<td>The error message.</td>
+</tr>
+</tbody>
+</table>
+<p>Possible error messages and their meanings:</p>
+<table>
+<thead>
+<tr>
+<th>Error</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>missing-files</code></td>
+<td>You forgot to upload a file.</td>
+</tr>
+<tr>
+<td><code>too-many-files</code></td>
+<td>You have uploaded more than one <code>file</code> form part.</td>
+</tr>
+</tbody>
+</table>
 <h2 id="get-_harmonymediadownloadfile_id">GET <code>/_harmony/media/download/:file_id</code></h2>
 <p>Expects authentication: no</p>
-<p>The file ID should be one of the following:</p>
+<p>The <code>file_id</code> should be one of the following:</p>
 <ul>
 <li>An attachment ID returned from POST <code>/_harmony/media/upload</code></li>
 <li>A URI-encoded URL of an image</li>
@@ -147,18 +207,41 @@ URL Parameters  filename: The name of the file being uploaded. contentType: The 
 <h3 id="responses-2">Responses</h3>
 <h4 id="200-ok-2">200 OK</h4>
 <h5 id="body-1">Body</h5>
-<p>The body will contain JSON object in the following format:</p>
-<pre><code>{
-    &quot;serverName&quot;: &quot;Scherzo&quot;,
-    &quot;version&quot;: &quot;git-0c062f6&quot;,
-    &quot;aboutServer&quot;: &quot;The main Harmony server.&quot;,
-    &quot;messageOfTheDay&quot;: &quot;A maintenance will be done between 18:00 - 20:00.&quot;
+<p>The body will contain a JSON object in the following format:</p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>serverName</code></td>
+<td>the name of the Harmony server software being hosted</td>
+</tr>
+<tr>
+<td><code>version</code></td>
+<td>the version of said Harmony server software</td>
+</tr>
+<tr>
+<td><code>aboutServer</code></td>
+<td>A description of why / who this server is hosted for.</td>
+</tr>
+<tr>
+<td><code>messageOfTheDay</code></td>
+<td>&ldquo;message of the day&rdquo;, can be used to put maintenance information.</td>
+</tr>
+</tbody>
+</table>
+<p>Example response:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">{
+    <span style="color:#f92672">&#34;serverName&#34;</span>: <span style="color:#e6db74">&#34;Scherzo&#34;</span>,
+    <span style="color:#f92672">&#34;version&#34;</span>: <span style="color:#e6db74">&#34;git-0c062f6&#34;</span>,
+    <span style="color:#f92672">&#34;aboutServer&#34;</span>: <span style="color:#e6db74">&#34;The main Harmony server.&#34;</span>,
+    <span style="color:#f92672">&#34;messageOfTheDay&#34;</span>: <span style="color:#e6db74">&#34;A maintenance will be done between 18:00 - 20:00.&#34;</span>
 }
-</code></pre><p><code>serverName</code>: the Harmony server software being hosted</p>
-<p><code>version</code>: the version of said Harmony server software</p>
-<p><code>aboutServer</code>: A description of why / who this server is hosted for.</p>
-<p><code>messageOfTheDay</code>: &ldquo;message of the day&rdquo;, can be used to put maintenance information.</p>
-
+</code></pre></div>
     </article>
 </div>
 
