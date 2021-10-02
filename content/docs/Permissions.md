@@ -1,0 +1,1 @@
+../protocol/chat/v1/Permissions.md
