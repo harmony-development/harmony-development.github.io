@@ -131,7 +131,6 @@
     @apply dark:text-white;
 }
 .prose h2 {
-    font-weight: 700;
     font-size: 1.875rem;
     margin: 2.6875rem 0 0.9375rem 0;
     border-bottom: 1px solid #676862;
