@@ -77,12 +77,8 @@
 }
 
 .prose {
-    max-width: 120ch;
-    width: 100%;
-}
-
-.prose-index {
     max-width: 80ch;
+    width: 100%;
 }
 
 .prose {
@@ -109,6 +105,7 @@
     background-color: #32332E;
     border-radius: 10px;
     padding: 4px;
+    white-space: nowrap;
 }
 
 .prose pre {
@@ -120,6 +117,7 @@
 .prose pre > code {
     border-radius: 0;
     padding: 0;
+    white-space: pre;
 }
 
 .prose h1 {
