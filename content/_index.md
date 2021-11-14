@@ -5,11 +5,7 @@ date: 2020-06-29T21:07:15-04:00
 
 {{< index/header >}}
 
-{{< index/button "https://github.com/harmony-development" >}}
-Explore Harmony on GitHub
-{{< /index/button >}}
-
-<div class="prose-wrapper">
+<div class="prose-wrapper flex justify-center pb-4">
 
 <div class="prose">
 

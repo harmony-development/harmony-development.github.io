@@ -1,14 +1,16 @@
 {{ define "main" }}
 
-<div class="prose-wrapper mt-4">
-    <aside class="prose-toc">
-        <h4><strong>Table Of Contents</strong></h4>
-        {{ .TableOfContents }}
-    </aside>
+<div class="prose-wrapper">
+  <aside class="prose-toc">
+    <h4><strong>Table Of Contents</strong></h4>
+    {{ .TableOfContents }}
+  </aside>
+  <div class="flex justify-center w-full">
     <article class="prose">
-        <h1 class="h1">{{ .Title }}</h1>
-        {{ .Content }}
+      <h1 class="h1">{{ .Title }}</h1>
+      {{ .Content }}
     </article>
+  </div>
 </div>
 
 {{ end }}
