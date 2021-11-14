@@ -12,7 +12,7 @@ When IP Address (xxx.xxx.xxx.xxx &#43; optional :port) When the server name is a
 
     
       
-      <link rel="stylesheet" href="/css/main.min.0fbd17f5ca089350765695b34f43e5ac4332234025f761cc347fe70fc3198444.css" integrity="sha256-D70X9coIk1B2VpWzT0PlrEMyI0Al92HMNH/nD8MZhEQ="/>
+      <link rel="stylesheet" href="/css/main.min.b9c1f04032caf166ced95c8538cccd405cd81e73e324f36c541d5d69deb01565.css" integrity="sha256-ucHwQDLK8WbO2VyFOMzNQFzYHnPjJPNsVB1dad6wFWU="/>
     
 
     <meta property="og:title" content="Server Name Resolution" />
@@ -40,44 +40,86 @@ When IP Address (xxx.xxx.xxx.xxx &#43; optional :port) When the server name is a
     </script>
 </head>
 <body class="dark:text-white"><header class="w-full bg-gray-200 header flex text-lg">
-    <div class="flex flex-row w-full">
-        <div class="flex-auto p-4 justify-start order-first inline-flex">
-            <a class="font-header" href="/">
-                <span class="font-light">Harmony </span><span class="font-bold">Chat</span>
-            </a>
-        </div>
-        <div class="flex-auto p-4 justify-end order-last inline-flex">
-        
-        <a href="/docs/faq" class="ml-2 nu-top-app-bar__link h1-minor-minor">
-            <span>FAQ</span>
-        </a>
-        
-        <a href="/docs" class="ml-2 nu-top-app-bar__link h1-minor-minor">
-            <span>Docs</span>
-        </a>
-        
-        <a href="https://github.com/harmony-development" class="ml-2 nu-top-app-bar__link h1-minor-minor">
-            <span>Github</span>
-        </a>
-        
-        </div>
+  <div class="flex flex-row w-full items-center">
+    <div class="flex-auto px-3 justify-start order-first inline-flex">
+      <a class="font-header" href="/">
+        <span class="font-light">Harmony </span
+        ><span class="font-bold">Chat</span>
+      </a>
     </div>
-</header><main>
+    <div class="flex-auto p-2 justify-end order-last inline-flex gap-1">
+      
+      <a
+        href="/docs/faq"
+        class="
+          ml-2
+          nu-top-app-bar__link
+          h1-minor-minor
+          border-2 border-transparent
+          px-2
+          hover:border-current hover:bg-white hover:bg-opacity-5
+          rounded-sm
+          transition
+          duration-100
+        "
+      >
+        FAQ
+      </a>
+      
+      <a
+        href="/docs"
+        class="
+          ml-2
+          nu-top-app-bar__link
+          h1-minor-minor
+          border-2 border-transparent
+          px-2
+          hover:border-current hover:bg-white hover:bg-opacity-5
+          rounded-sm
+          transition
+          duration-100
+        "
+      >
+        Docs
+      </a>
+      
+      <a
+        href="https://github.com/harmony-development"
+        class="
+          ml-2
+          nu-top-app-bar__link
+          h1-minor-minor
+          border-2 border-transparent
+          px-2
+          hover:border-current hover:bg-white hover:bg-opacity-5
+          rounded-sm
+          transition
+          duration-100
+        "
+      >
+        Github
+      </a>
+      
+    </div>
+  </div>
+</header>
+<main>
 
-<div class="prose-wrapper mt-4">
-    <aside class="prose-toc">
-        <h4><strong>Table Of Contents</strong></h4>
-        <nav id="TableOfContents">
+<div class="prose-wrapper">
+  <aside class="prose-toc">
+    <h4><strong>Table Of Contents</strong></h4>
+    <nav id="TableOfContents">
   <ul>
     <li><a href="#when-ip-address-xxxxxxxxxxxx--optional-port">When IP Address (<code>xxx.xxx.xxx.xxx</code> + optional <code>:port</code>)</a></li>
     <li><a href="#when-domain-and-port-examplecomport">When domain and port (<code>example.com:port</code>)</a></li>
     <li><a href="#when-domain-without-port-examplecom">When domain without port (<code>example.com</code>)</a></li>
   </ul>
 </nav>
-    </aside>
+  </aside>
+  <div class="flex justify-center w-full">
     <article class="prose">
-        <h1 class="h1">Server Name Resolution</h1>
-        <p>Every Harmony homeserver is identified by a &ldquo;server name.&rdquo; A server name uniquely identifies a server, regardless of whether the resolved IP address changes or not. Two server names pointing to the same IP address would be considered two different homeservers.</p>
+      <h1 class="h1">Server Name Resolution</h1>
+      <p>Every Harmony homeserver is identified by a &ldquo;server name.&rdquo; A server name uniquely identifies a server, regardless of whether the resolved IP address changes or not. Two server names pointing to the same IP address would be considered two different homeservers.</p>
 <p>A server name is resolved to an IP address and port using the following process:</p>
 <h2 id="when-ip-address-xxxxxxxxxxxx--optional-port">When IP Address (<code>xxx.xxx.xxx.xxx</code> + optional <code>:port</code>)</h2>
 <p>When the server name is an IP address, this is the resolved IP of the server that requests should be sent to. If not specified, <code>:port</code> is 2289.</p>
@@ -94,10 +136,12 @@ When IP Address (xxx.xxx.xxx.xxx &#43; optional :port) When the server name is a
 <p>The <code>Host</code> header in requests should be set to the domain name without port.</p>
 
     </article>
+  </div>
 </div>
 
 
-        </main><footer class="py-16">
-
-</footer></body>
+        </main><footer class="py-8 bg-dark-900 flex justify-center">
+  <div class="max-w-prose">Harmony Development</div>
+</footer>
+</body>
 </html>

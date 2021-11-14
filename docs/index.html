@@ -12,7 +12,7 @@ Pages  ">
 
     
       
-      <link rel="stylesheet" href="/css/main.min.0fbd17f5ca089350765695b34f43e5ac4332234025f761cc347fe70fc3198444.css" integrity="sha256-D70X9coIk1B2VpWzT0PlrEMyI0Al92HMNH/nD8MZhEQ="/>
+      <link rel="stylesheet" href="/css/main.min.b9c1f04032caf166ced95c8538cccd405cd81e73e324f36c541d5d69deb01565.css" integrity="sha256-ucHwQDLK8WbO2VyFOMzNQFzYHnPjJPNsVB1dad6wFWU="/>
     
 
     <meta property="og:title" content="Docs" />
@@ -34,98 +34,140 @@ Pages  ">
     </script>
 </head>
 <body class="dark:text-white"><header class="w-full bg-gray-200 header flex text-lg">
-    <div class="flex flex-row w-full">
-        <div class="flex-auto p-4 justify-start order-first inline-flex">
-            <a class="font-header" href="/">
-                <span class="font-light">Harmony </span><span class="font-bold">Chat</span>
-            </a>
-        </div>
-        <div class="flex-auto p-4 justify-end order-last inline-flex">
-        
-        <a href="/docs/faq" class="ml-2 nu-top-app-bar__link h1-minor-minor">
-            <span>FAQ</span>
-        </a>
-        
-        <a href="/docs" class="ml-2 nu-top-app-bar__link h1-minor-minor">
-            <span>Docs</span>
-        </a>
-        
-        <a href="https://github.com/harmony-development" class="ml-2 nu-top-app-bar__link h1-minor-minor">
-            <span>Github</span>
-        </a>
-        
-        </div>
+  <div class="flex flex-row w-full items-center">
+    <div class="flex-auto px-3 justify-start order-first inline-flex">
+      <a class="font-header" href="/">
+        <span class="font-light">Harmony </span
+        ><span class="font-bold">Chat</span>
+      </a>
     </div>
-</header><main>
+    <div class="flex-auto p-2 justify-end order-last inline-flex gap-1">
+      
+      <a
+        href="/docs/faq"
+        class="
+          ml-2
+          nu-top-app-bar__link
+          h1-minor-minor
+          border-2 border-transparent
+          px-2
+          hover:border-current hover:bg-white hover:bg-opacity-5
+          rounded-sm
+          transition
+          duration-100
+        "
+      >
+        FAQ
+      </a>
+      
+      <a
+        href="/docs"
+        class="
+          ml-2
+          nu-top-app-bar__link
+          h1-minor-minor
+          border-2 border-transparent
+          px-2
+          hover:border-current hover:bg-white hover:bg-opacity-5
+          rounded-sm
+          transition
+          duration-100
+        "
+      >
+        Docs
+      </a>
+      
+      <a
+        href="https://github.com/harmony-development"
+        class="
+          ml-2
+          nu-top-app-bar__link
+          h1-minor-minor
+          border-2 border-transparent
+          px-2
+          hover:border-current hover:bg-white hover:bg-opacity-5
+          rounded-sm
+          transition
+          duration-100
+        "
+      >
+        Github
+      </a>
+      
+    </div>
+  </div>
+</header>
+<main>
 
 <div class="prose-wrapper">
-    <article class="prose">
-        <h1>Docs</h1>
-        <br>
-        <p>Harmony is designed to be simple to implement, both for the server and client.</p>
+  <article class="prose">
+    <h1>Docs</h1>
+    <br />
+    <p>Harmony is designed to be simple to implement, both for the server and client.</p>
 <p>It is documented using two styles of documentation: protobuf servce API
 documentation and Markdown documentation elaborating on concepts.</p>
 <h2 id="pages">Pages</h2>
 
-        <ul class="list-disc list-inside">
-            
-            <li>
-                <a class="underline" href="https://harmonyapp.io/docs/faq/">Harmony FAQ</a> <br>
-            </li>
-            
-            <li>
-                <a class="underline" href="https://harmonyapp.io/docs/permissions/">Permissions</a> <br>
-            </li>
-            
-            <li>
-                <a class="underline" href="https://harmonyapp.io/docs/guidelines/">Protocol Guidelines</a> <br>
-            </li>
-            
-            <li>
-                <a class="underline" href="https://harmonyapp.io/docs/google.protobuf/">Reference: google.protobuf</a> <br>
-            </li>
-            
-            <li>
-                <a class="underline" href="https://harmonyapp.io/docs/protocol.auth.v1/">Reference: protocol.auth.v1</a> <br>
-            </li>
-            
-            <li>
-                <a class="underline" href="https://harmonyapp.io/docs/protocol.batch.v1/">Reference: protocol.batch.v1</a> <br>
-            </li>
-            
-            <li>
-                <a class="underline" href="https://harmonyapp.io/docs/protocol.chat.v1/">Reference: protocol.chat.v1</a> <br>
-            </li>
-            
-            <li>
-                <a class="underline" href="https://harmonyapp.io/docs/protocol.harmonytypes.v1/">Reference: protocol.harmonytypes.v1</a> <br>
-            </li>
-            
-            <li>
-                <a class="underline" href="https://harmonyapp.io/docs/protocol.mediaproxy.v1/">Reference: protocol.mediaproxy.v1</a> <br>
-            </li>
-            
-            <li>
-                <a class="underline" href="https://harmonyapp.io/docs/protocol.sync.v1/">Reference: protocol.sync.v1</a> <br>
-            </li>
-            
-            <li>
-                <a class="underline" href="https://harmonyapp.io/docs/protocol.voice.v1/">Reference: protocol.voice.v1</a> <br>
-            </li>
-            
-            <li>
-                <a class="underline" href="https://harmonyapp.io/docs/rest/">RESTful Endpoints</a> <br>
-            </li>
-            
-            <li>
-                <a class="underline" href="https://harmonyapp.io/docs/name-resolution/">Server Name Resolution</a> <br>
-            </li>
-            
-        </ul>
-    </article>
+    <ul class="list-disc list-inside">
+      
+      <li>
+        <a class="underline" href="https://harmonyapp.io/docs/faq/">Harmony FAQ</a> <br />
+      </li>
+      
+      <li>
+        <a class="underline" href="https://harmonyapp.io/docs/permissions/">Permissions</a> <br />
+      </li>
+      
+      <li>
+        <a class="underline" href="https://harmonyapp.io/docs/guidelines/">Protocol Guidelines</a> <br />
+      </li>
+      
+      <li>
+        <a class="underline" href="https://harmonyapp.io/docs/google.protobuf/">Reference: google.protobuf</a> <br />
+      </li>
+      
+      <li>
+        <a class="underline" href="https://harmonyapp.io/docs/protocol.auth.v1/">Reference: protocol.auth.v1</a> <br />
+      </li>
+      
+      <li>
+        <a class="underline" href="https://harmonyapp.io/docs/protocol.batch.v1/">Reference: protocol.batch.v1</a> <br />
+      </li>
+      
+      <li>
+        <a class="underline" href="https://harmonyapp.io/docs/protocol.chat.v1/">Reference: protocol.chat.v1</a> <br />
+      </li>
+      
+      <li>
+        <a class="underline" href="https://harmonyapp.io/docs/protocol.harmonytypes.v1/">Reference: protocol.harmonytypes.v1</a> <br />
+      </li>
+      
+      <li>
+        <a class="underline" href="https://harmonyapp.io/docs/protocol.mediaproxy.v1/">Reference: protocol.mediaproxy.v1</a> <br />
+      </li>
+      
+      <li>
+        <a class="underline" href="https://harmonyapp.io/docs/protocol.sync.v1/">Reference: protocol.sync.v1</a> <br />
+      </li>
+      
+      <li>
+        <a class="underline" href="https://harmonyapp.io/docs/protocol.voice.v1/">Reference: protocol.voice.v1</a> <br />
+      </li>
+      
+      <li>
+        <a class="underline" href="https://harmonyapp.io/docs/rest/">RESTful Endpoints</a> <br />
+      </li>
+      
+      <li>
+        <a class="underline" href="https://harmonyapp.io/docs/name-resolution/">Server Name Resolution</a> <br />
+      </li>
+      
+    </ul>
+  </article>
 </div>
 
-        </main><footer class="py-16">
-
-</footer></body>
+        </main><footer class="py-8 bg-dark-900 flex justify-center">
+  <div class="max-w-prose">Harmony Development</div>
+</footer>
+</body>
 </html>
