@@ -153,7 +153,13 @@
   white-space: pre;
 }
 
-.prose h1 {
+.prose hr {
+  margin-top: 1.25rem;
+  margin-bottom: 1.25rem;
+
+  @apply border-light-700 dark:border-dark-100;
+}
+.prose .h1 {
   font-weight: 800;
   margin-bottom: 1.25rem;
   margin-top: 2.6875rem;
@@ -163,29 +169,33 @@
 
   @apply dark:text-white;
 }
-.prose h2 {
+.prose h1 {
   font-size: 1.875rem;
   margin: 2.6875rem 0 0.9375rem 0;
   border-bottom: 1px solid #676862;
 
   @apply dark:text-white;
 }
-.prose h3 {
+.prose h2 {
   font-weight: 600;
   font-size: 1.3125rem;
   margin: 2rem 0 0.5rem 0;
 
   @apply dark:text-white;
 }
-.prose h4 {
+.prose h3, .prose .h3 {
   font-size: 1.3rem;
 }
+.prose h3, .prose .h3,
 .prose h4,
-.prose h5,
+.prose h5, .prose .h5,
 .prose h6 {
   margin: 1rem 0 0.35rem 0;
 
   @apply dark:text-white;
+}
+.prose .h3, .prose .h5 {
+  display: block;
 }
 .prose td,
 .prose th {

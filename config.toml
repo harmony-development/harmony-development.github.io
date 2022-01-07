@@ -5,8 +5,15 @@ title = "Harmony"
 [params]
     description = "Your place. Your communities. Your friends."
 
-[markup.goldmark.renderer]
-    unsafe = "true"
+
+[markup]
+  [markup.goldmark.renderer]
+      unsafe = "true"
+
+  [markup.tableOfContents]
+    endLevel = 6
+    ordered = false
+    startLevel = 1
 
 [menu]
 
