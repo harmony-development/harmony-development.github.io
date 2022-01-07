@@ -3,37 +3,40 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no">
     <title>Reference: protocol.auth.v1 | Harmony</title>
-    <meta name="description" content="Message Types BeginAuthRequest Fields
-   Name Type    BeginAuthResponse Fields
-   Name Type     auth_id string    Session Fields
-   Name Type     user_id uint64   session_token string    AuthStep Fields
-   Name Type     fallback_url string   can_go_back bool   choice protocol.auth.v1.AuthStep.Choice   form protocol. ">
+    <meta name="description" content="Message Types BeginAuthRequest Used in BeginAuth endpoint.
+This item has no fields.
+BeginAuthResponse BeginAuthResponse The return type of BeginAuth, containing the auth_id that will be used for the authentication section
+Fields auth_id (optional string) auth_id: the ID of this auth session
+Session Session Session contains the information for a new session; the user_id you logged in as and the session_token which should be passed to authorisation
+Fields user_id (optional uint64) user_id: the ID of the user you logged in as ">
     <link rel="canonical" href="https://harmonyapp.io/docs/protocol.auth.v1/" />
 
     
 
     
       
-      <link rel="stylesheet" href="/css/main.min.8e1883f7dd16d57c3348aedb1f5e7ac9e93af3c97a2c19469cf0f09661db5c00.css" integrity="sha256-jhiD990W1XwzSK7bH156yek688l6LBlGnPDwlmHbXAA="/>
+      <link rel="stylesheet" href="/css/main.min.ffa2c263a52247f69e606278e3b3ab33849b5ce18bb062835eece5ca3730b038.css" integrity="sha256-/6LCY6UiR/aeYGJ447OrM4SbXOGLsGKDXuzlyjcwsDg="/>
     
 
     <meta property="og:title" content="Reference: protocol.auth.v1" />
-<meta property="og:description" content="Message Types BeginAuthRequest Fields
-   Name Type    BeginAuthResponse Fields
-   Name Type     auth_id string    Session Fields
-   Name Type     user_id uint64   session_token string    AuthStep Fields
-   Name Type     fallback_url string   can_go_back bool   choice protocol.auth.v1.AuthStep.Choice   form protocol." />
+<meta property="og:description" content="Message Types BeginAuthRequest Used in BeginAuth endpoint.
+This item has no fields.
+BeginAuthResponse BeginAuthResponse The return type of BeginAuth, containing the auth_id that will be used for the authentication section
+Fields auth_id (optional string) auth_id: the ID of this auth session
+Session Session Session contains the information for a new session; the user_id you logged in as and the session_token which should be passed to authorisation
+Fields user_id (optional uint64) user_id: the ID of the user you logged in as" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://harmonyapp.io/docs/protocol.auth.v1/" />
 
 
     <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Reference: protocol.auth.v1"/>
-<meta name="twitter:description" content="Message Types BeginAuthRequest Fields
-   Name Type    BeginAuthResponse Fields
-   Name Type     auth_id string    Session Fields
-   Name Type     user_id uint64   session_token string    AuthStep Fields
-   Name Type     fallback_url string   can_go_back bool   choice protocol.auth.v1.AuthStep.Choice   form protocol."/>
+<meta name="twitter:description" content="Message Types BeginAuthRequest Used in BeginAuth endpoint.
+This item has no fields.
+BeginAuthResponse BeginAuthResponse The return type of BeginAuth, containing the auth_id that will be used for the authentication section
+Fields auth_id (optional string) auth_id: the ID of this auth session
+Session Session Session contains the information for a new session; the user_id you logged in as and the session_token which should be passed to authorisation
+Fields user_id (optional uint64) user_id: the ID of the user you logged in as"/>
 
     <meta name="theme-color" content="#E93D58">
     <meta property="og:image" content="https://harmonyapp.io/img/harmony-embed.png" />
@@ -120,7 +123,14 @@
         <li><a href="#beginauthresponse">BeginAuthResponse</a></li>
         <li><a href="#session">Session</a></li>
         <li><a href="#authstep">AuthStep</a></li>
+        <li><a href="#authstepchoice">AuthStep.Choice</a></li>
+        <li><a href="#authstepform">AuthStep.Form</a></li>
+        <li><a href="#authstepformformfield">AuthStep.Form.FormField</a></li>
+        <li><a href="#authstepwaiting">AuthStep.Waiting</a></li>
         <li><a href="#nextsteprequest">NextStepRequest</a></li>
+        <li><a href="#nextsteprequestchoice">NextStepRequest.Choice</a></li>
+        <li><a href="#nextsteprequestformfields">NextStepRequest.FormFields</a></li>
+        <li><a href="#nextsteprequestform">NextStepRequest.Form</a></li>
         <li><a href="#nextstepresponse">NextStepResponse</a></li>
         <li><a href="#stepbackrequest">StepBackRequest</a></li>
         <li><a href="#stepbackresponse">StepBackResponse</a></li>
@@ -135,13 +145,6 @@
         <li><a href="#tokendata">TokenData</a></li>
         <li><a href="#checkloggedinrequest">CheckLoggedInRequest</a></li>
         <li><a href="#checkloggedinresponse">CheckLoggedInResponse</a></li>
-        <li><a href="#authstepchoice">AuthStep.Choice</a></li>
-        <li><a href="#authstepform">AuthStep.Form</a></li>
-        <li><a href="#authstepwaiting">AuthStep.Waiting</a></li>
-        <li><a href="#authstepformformfield">AuthStep.Form.FormField</a></li>
-        <li><a href="#nextsteprequestchoice">NextStepRequest.Choice</a></li>
-        <li><a href="#nextsteprequestformfields">NextStepRequest.FormFields</a></li>
-        <li><a href="#nextsteprequestform">NextStepRequest.Form</a></li>
       </ul>
     </li>
     <li><a href="#services">Services</a>
@@ -157,528 +160,202 @@
       <h1 class="h1">Reference: protocol.auth.v1</h1>
       <h2 id="message-types">Message Types</h2>
 <h3 id="beginauthrequest">BeginAuthRequest</h3>
-<p>Fields</p>
-<table>
-<thead>
-<tr>
-<th>Name</th>
-<th>Type</th>
-</tr>
-</thead>
-</table>
+<p>Used in <code>BeginAuth</code> endpoint.</p>
+<p>This item has no fields.</p>
 <h3 id="beginauthresponse">BeginAuthResponse</h3>
-<p>Fields</p>
-<table>
-<thead>
-<tr>
-<th>Name</th>
-<th>Type</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>auth_id</td>
-<td><code>string</code></td>
-</tr>
-</tbody>
-</table>
+<p>BeginAuthResponse
+The return type of BeginAuth, containing the
+auth_id that will be used for the authentication
+section</p>
+<h4 id="fields">Fields</h4>
+<h5 id="auth_id-optional--string">auth_id (optional  <code>string</code>)</h5>
+<p>auth_id: the ID of this auth session</p>
 <h3 id="session">Session</h3>
-<p>Fields</p>
-<table>
-<thead>
-<tr>
-<th>Name</th>
-<th>Type</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>user_id</td>
-<td><code>uint64</code></td>
-</tr>
-<tr>
-<td>session_token</td>
-<td><code>string</code></td>
-</tr>
-</tbody>
-</table>
+<p>Session
+Session contains the information for a new session;
+the user_id you logged in as and the session_token
+which should be passed to authorisation</p>
+<h4 id="fields-1">Fields</h4>
+<h5 id="user_id-optional--uint64">user_id (optional  <code>uint64</code>)</h5>
+<p>user_id: the ID of the user you logged in as</p>
+<h5 id="session_token-optional--string">session_token (optional  <code>string</code>)</h5>
+<p>session_token: the session token to use in authorization</p>
 <h3 id="authstep">AuthStep</h3>
-<p>Fields</p>
-<table>
-<thead>
-<tr>
-<th>Name</th>
-<th>Type</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>fallback_url</td>
-<td><code>string</code></td>
-</tr>
-<tr>
-<td>can_go_back</td>
-<td><code>bool</code></td>
-</tr>
-<tr>
-<td>choice</td>
-<td><a href="#authstep-choice">protocol.auth.v1.AuthStep.Choice</a></td>
-</tr>
-<tr>
-<td>form</td>
-<td><a href="#authstep-form">protocol.auth.v1.AuthStep.Form</a></td>
-</tr>
-<tr>
-<td>session</td>
-<td><a href="#session">protocol.auth.v1.Session</a></td>
-</tr>
-<tr>
-<td>waiting</td>
-<td><a href="#authstep-waiting">protocol.auth.v1.AuthStep.Waiting</a></td>
-</tr>
-</tbody>
-</table>
-<h3 id="nextsteprequest">NextStepRequest</h3>
-<p>Fields</p>
-<table>
-<thead>
-<tr>
-<th>Name</th>
-<th>Type</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>auth_id</td>
-<td><code>string</code></td>
-</tr>
-<tr>
-<td>choice</td>
-<td><a href="#nextsteprequest-choice">protocol.auth.v1.NextStepRequest.Choice</a></td>
-</tr>
-<tr>
-<td>form</td>
-<td><a href="#nextsteprequest-form">protocol.auth.v1.NextStepRequest.Form</a></td>
-</tr>
-</tbody>
-</table>
-<h3 id="nextstepresponse">NextStepResponse</h3>
-<p>Fields</p>
-<table>
-<thead>
-<tr>
-<th>Name</th>
-<th>Type</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>step</td>
-<td><a href="#authstep">protocol.auth.v1.AuthStep</a></td>
-</tr>
-</tbody>
-</table>
-<h3 id="stepbackrequest">StepBackRequest</h3>
-<p>Fields</p>
-<table>
-<thead>
-<tr>
-<th>Name</th>
-<th>Type</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>auth_id</td>
-<td><code>string</code></td>
-</tr>
-</tbody>
-</table>
-<h3 id="stepbackresponse">StepBackResponse</h3>
-<p>Fields</p>
-<table>
-<thead>
-<tr>
-<th>Name</th>
-<th>Type</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>step</td>
-<td><a href="#authstep">protocol.auth.v1.AuthStep</a></td>
-</tr>
-</tbody>
-</table>
-<h3 id="streamstepsrequest">StreamStepsRequest</h3>
-<p>Fields</p>
-<table>
-<thead>
-<tr>
-<th>Name</th>
-<th>Type</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>auth_id</td>
-<td><code>string</code></td>
-</tr>
-</tbody>
-</table>
-<h3 id="streamstepsresponse">StreamStepsResponse</h3>
-<p>Fields</p>
-<table>
-<thead>
-<tr>
-<th>Name</th>
-<th>Type</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>step</td>
-<td><a href="#authstep">protocol.auth.v1.AuthStep</a></td>
-</tr>
-</tbody>
-</table>
-<h3 id="federaterequest">FederateRequest</h3>
-<p>Fields</p>
-<table>
-<thead>
-<tr>
-<th>Name</th>
-<th>Type</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>server_id</td>
-<td><code>string</code></td>
-</tr>
-</tbody>
-</table>
-<h3 id="federateresponse">FederateResponse</h3>
-<p>Fields</p>
-<table>
-<thead>
-<tr>
-<th>Name</th>
-<th>Type</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>token</td>
-<td><a href="https://harmonyapp.io/docs/protocol.harmonytypes.v1/#token">protocol.harmonytypes.v1.Token</a></td>
-</tr>
-</tbody>
-</table>
-<h3 id="keyrequest">KeyRequest</h3>
-<p>Fields</p>
-<table>
-<thead>
-<tr>
-<th>Name</th>
-<th>Type</th>
-</tr>
-</thead>
-</table>
-<h3 id="keyresponse">KeyResponse</h3>
-<p>Fields</p>
-<table>
-<thead>
-<tr>
-<th>Name</th>
-<th>Type</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>key</td>
-<td><code>bytes</code></td>
-</tr>
-</tbody>
-</table>
-<h3 id="loginfederatedrequest">LoginFederatedRequest</h3>
-<p>Fields</p>
-<table>
-<thead>
-<tr>
-<th>Name</th>
-<th>Type</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>auth_token</td>
-<td><a href="https://harmonyapp.io/docs/protocol.harmonytypes.v1/#token">protocol.harmonytypes.v1.Token</a></td>
-</tr>
-<tr>
-<td>server_id</td>
-<td><code>string</code></td>
-</tr>
-</tbody>
-</table>
-<h3 id="loginfederatedresponse">LoginFederatedResponse</h3>
-<p>Fields</p>
-<table>
-<thead>
-<tr>
-<th>Name</th>
-<th>Type</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>session</td>
-<td><a href="#session">protocol.auth.v1.Session</a></td>
-</tr>
-</tbody>
-</table>
-<h3 id="tokendata">TokenData</h3>
-<p>Fields</p>
-<table>
-<thead>
-<tr>
-<th>Name</th>
-<th>Type</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>user_id</td>
-<td><code>uint64</code></td>
-</tr>
-<tr>
-<td>server_id</td>
-<td><code>string</code></td>
-</tr>
-<tr>
-<td>username</td>
-<td><code>string</code></td>
-</tr>
-<tr>
-<td>avatar</td>
-<td><code>string</code></td>
-</tr>
-</tbody>
-</table>
-<h3 id="checkloggedinrequest">CheckLoggedInRequest</h3>
-<p>Fields</p>
-<table>
-<thead>
-<tr>
-<th>Name</th>
-<th>Type</th>
-</tr>
-</thead>
-</table>
-<h3 id="checkloggedinresponse">CheckLoggedInResponse</h3>
-<p>Fields</p>
-<table>
-<thead>
-<tr>
-<th>Name</th>
-<th>Type</th>
-</tr>
-</thead>
-</table>
+<p>AuthStep
+A step in the authentication process
+Contains a variety of different types of views
+It is recommended to have a fallback_url specified
+For non-trivial authentication procedures (such as captchas)</p>
+<h4 id="fields-2">Fields</h4>
+<h5 id="fallback_url-optional--string">fallback_url (optional  <code>string</code>)</h5>
+<p>fallback_url: unused</p>
+<h5 id="can_go_back-optional--bool">can_go_back (optional  <code>bool</code>)</h5>
+<p>can_go_back: whether or not the client can request the
+server to send the previous step</p>
+<h5 id="choice-optional--protocolauthv1authstepchoiceauthstepchoice">choice (optional  <a href="#authstepchoice">protocol.auth.v1.AuthStep.Choice</a>)</h5>
+<p>choice: the user must pick a thing out of a list of options</p>
+<h5 id="form-optional--protocolauthv1authstepformauthstepform">form (optional  <a href="#authstepform">protocol.auth.v1.AuthStep.Form</a>)</h5>
+<p>form: the user must complete a form</p>
+<h5 id="session-optional--protocolauthv1sessionsession">session (optional  <a href="#session">protocol.auth.v1.Session</a>)</h5>
+<p>session: you&rsquo;ve completed auth, and have a session</p>
+<h5 id="waiting-optional--protocolauthv1authstepwaitingauthstepwaiting">waiting (optional  <a href="#authstepwaiting">protocol.auth.v1.AuthStep.Waiting</a>)</h5>
+<p>waiting: you&rsquo;re waiting on something</p>
 <h3 id="authstepchoice">AuthStep.Choice</h3>
-<p>Fields</p>
-<table>
-<thead>
-<tr>
-<th>Name</th>
-<th>Type</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>title</td>
-<td><code>string</code></td>
-</tr>
-<tr>
-<td>options</td>
-<td><code>string</code></td>
-</tr>
-</tbody>
-</table>
+<h4 id="fields-3">Fields</h4>
+<h5 id="title-optional--string">title (optional  <code>string</code>)</h5>
+<h5 id="options-repeated--string">options (repeated  <code>string</code>)</h5>
 <h3 id="authstepform">AuthStep.Form</h3>
-<p>Fields</p>
-<table>
-<thead>
-<tr>
-<th>Name</th>
-<th>Type</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>title</td>
-<td><code>string</code></td>
-</tr>
-<tr>
-<td>fields</td>
-<td><a href="#authstep-form-formfield">protocol.auth.v1.AuthStep.Form.FormField</a></td>
-</tr>
-</tbody>
-</table>
-<h3 id="authstepwaiting">AuthStep.Waiting</h3>
-<p>Fields</p>
-<table>
-<thead>
-<tr>
-<th>Name</th>
-<th>Type</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>title</td>
-<td><code>string</code></td>
-</tr>
-<tr>
-<td>description</td>
-<td><code>string</code></td>
-</tr>
-</tbody>
-</table>
+<h4 id="fields-4">Fields</h4>
+<h5 id="title-optional--string-1">title (optional  <code>string</code>)</h5>
+<h5 id="fields-repeated--protocolauthv1authstepformformfieldauthstepformformfield">fields (repeated  <a href="#authstepformformfield">protocol.auth.v1.AuthStep.Form.FormField</a>)</h5>
 <h3 id="authstepformformfield">AuthStep.Form.FormField</h3>
-<p>Fields</p>
-<table>
-<thead>
-<tr>
-<th>Name</th>
-<th>Type</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>name</td>
-<td><code>string</code></td>
-</tr>
-<tr>
-<td>type</td>
-<td><code>string</code></td>
-</tr>
-</tbody>
-</table>
+<h4 id="fields-5">Fields</h4>
+<h5 id="name-optional--string">name (optional  <code>string</code>)</h5>
+<h5 id="type-optional--string">type (optional  <code>string</code>)</h5>
+<h3 id="authstepwaiting">AuthStep.Waiting</h3>
+<h4 id="fields-6">Fields</h4>
+<h5 id="title-optional--string-2">title (optional  <code>string</code>)</h5>
+<h5 id="description-optional--string">description (optional  <code>string</code>)</h5>
+<h3 id="nextsteprequest">NextStepRequest</h3>
+<p>NextStepRequest
+contains the client&rsquo;s response to the server&rsquo;s challenge
+This needs to be called first with no arguments to
+receive the first step</p>
+<h4 id="fields-7">Fields</h4>
+<h5 id="auth_id-optional--string-1">auth_id (optional  <code>string</code>)</h5>
+<p>auth_id: the authentication session you want
+the next step of</p>
+<h5 id="choice-optional--protocolauthv1nextsteprequestchoicenextsteprequestchoice">choice (optional  <a href="#nextsteprequestchoice">protocol.auth.v1.NextStepRequest.Choice</a>)</h5>
+<p>choice: the choice the user picked</p>
+<h5 id="form-optional--protocolauthv1nextsteprequestformnextsteprequestform">form (optional  <a href="#nextsteprequestform">protocol.auth.v1.NextStepRequest.Form</a>)</h5>
+<p>form: the form the user filled out</p>
 <h3 id="nextsteprequestchoice">NextStepRequest.Choice</h3>
-<p>Fields</p>
-<table>
-<thead>
-<tr>
-<th>Name</th>
-<th>Type</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>choice</td>
-<td><code>string</code></td>
-</tr>
-</tbody>
-</table>
+<h4 id="fields-8">Fields</h4>
+<h5 id="choice-optional--string">choice (optional  <code>string</code>)</h5>
 <h3 id="nextsteprequestformfields">NextStepRequest.FormFields</h3>
-<p>Fields</p>
-<table>
-<thead>
-<tr>
-<th>Name</th>
-<th>Type</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>bytes</td>
-<td><code>bytes</code></td>
-</tr>
-<tr>
-<td>string</td>
-<td><code>string</code></td>
-</tr>
-<tr>
-<td>number</td>
-<td><code>int64</code></td>
-</tr>
-</tbody>
-</table>
+<h4 id="fields-9">Fields</h4>
+<h5 id="bytes-optional--bytes">bytes (optional  <code>bytes</code>)</h5>
+<h5 id="string-optional--string">string (optional  <code>string</code>)</h5>
+<h5 id="number-optional--int64">number (optional  <code>int64</code>)</h5>
 <h3 id="nextsteprequestform">NextStepRequest.Form</h3>
-<p>Fields</p>
-<table>
-<thead>
-<tr>
-<th>Name</th>
-<th>Type</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>fields</td>
-<td><a href="#nextsteprequest-formfields">protocol.auth.v1.NextStepRequest.FormFields</a></td>
-</tr>
-</tbody>
-</table>
+<h4 id="fields-10">Fields</h4>
+<h5 id="fields-repeated--protocolauthv1nextsteprequestformfieldsnextsteprequestformfields">fields (repeated  <a href="#nextsteprequestformfields">protocol.auth.v1.NextStepRequest.FormFields</a>)</h5>
+<h3 id="nextstepresponse">NextStepResponse</h3>
+<p>Used in <code>NextStep</code> endpoint.</p>
+<h4 id="fields-11">Fields</h4>
+<h5 id="step-optional--protocolauthv1authstepauthstep">step (optional  <a href="#authstep">protocol.auth.v1.AuthStep</a>)</h5>
+<p>step: the next step in the authentication process</p>
+<h3 id="stepbackrequest">StepBackRequest</h3>
+<p>StepBackRequest
+A request to go back 1 step</p>
+<h4 id="fields-12">Fields</h4>
+<h5 id="auth_id-optional--string-2">auth_id (optional  <code>string</code>)</h5>
+<p>auth_id: the authentication session the user
+wants to go back in</p>
+<h3 id="stepbackresponse">StepBackResponse</h3>
+<p>Used in <code>StepBack</code> endpoint.</p>
+<h4 id="fields-13">Fields</h4>
+<h5 id="step-optional--protocolauthv1authstepauthstep-1">step (optional  <a href="#authstep">protocol.auth.v1.AuthStep</a>)</h5>
+<p>step: the previous step in the authentication process</p>
+<h3 id="streamstepsrequest">StreamStepsRequest</h3>
+<p>StreamStepsRequest
+Required to be initiated by all authenticating clients
+Allows the server to send steps</p>
+<h4 id="fields-14">Fields</h4>
+<h5 id="auth_id-optional--string-3">auth_id (optional  <code>string</code>)</h5>
+<p>auth_id: the authorization session
+who&rsquo;s steps you want to stream</p>
+<h3 id="streamstepsresponse">StreamStepsResponse</h3>
+<p>Used in <code>StreamSteps</code> endpoint.</p>
+<h4 id="fields-15">Fields</h4>
+<h5 id="step-optional--protocolauthv1authstepauthstep-2">step (optional  <a href="#authstep">protocol.auth.v1.AuthStep</a>)</h5>
+<p>step: the next step in the authentication process</p>
+<h3 id="federaterequest">FederateRequest</h3>
+<p>The request to federate with a foreign server.</p>
+<h4 id="fields-16">Fields</h4>
+<h5 id="server_id-optional--string">server_id (optional  <code>string</code>)</h5>
+<p>The server ID foreign server you want to federate with</p>
+<h3 id="federateresponse">FederateResponse</h3>
+<p>The reply to a successful federation request,
+containing the token you need to present to the
+foreign server.</p>
+<h4 id="fields-17">Fields</h4>
+<h5 id="token-optional--protocolharmonytypesv1tokenhahahugoshortcode-s0-hbhbtoken">token (optional  <a href="https://harmonyapp.io/docs/protocol.harmonytypes.v1/#token">protocol.harmonytypes.v1.Token</a>)</h5>
+<p>A <code>harmonytypes.v1.Token</code> whose <code>data</code> field is a serialized <code>TokenData</code> message.
+It is signed with the homeserver&rsquo;s private key.</p>
+<h3 id="keyrequest">KeyRequest</h3>
+<p>Used in <code>Key</code> endpoint.</p>
+<p>This item has no fields.</p>
+<h3 id="keyresponse">KeyResponse</h3>
+<p>Contains a key&rsquo;s bytes.</p>
+<h4 id="fields-18">Fields</h4>
+<h5 id="key-optional--bytes">key (optional  <code>bytes</code>)</h5>
+<p>key: the bytes of the public key.</p>
+<h3 id="loginfederatedrequest">LoginFederatedRequest</h3>
+<p>Log into a foreignserver using a token
+from your homeserver, obtained through a FederateRequest</p>
+<h4 id="fields-19">Fields</h4>
+<h5 id="auth_token-optional--protocolharmonytypesv1tokenhahahugoshortcode-s1-hbhbtoken">auth_token (optional  <a href="https://harmonyapp.io/docs/protocol.harmonytypes.v1/#token">protocol.harmonytypes.v1.Token</a>)</h5>
+<p>A <code>harmonytypes.v1.Token</code> whose <code>data</code> field is a serialized <code>TokenData</code> message.
+It is signed with the homeserver&rsquo;s private key.</p>
+<h5 id="server_id-optional--string-1">server_id (optional  <code>string</code>)</h5>
+<p>The server ID of the homeserver that the auth token is from</p>
+<h3 id="loginfederatedresponse">LoginFederatedResponse</h3>
+<p>Used in <code>LoginFederated</code> endpoint.</p>
+<h4 id="fields-20">Fields</h4>
+<h5 id="session-optional--protocolauthv1sessionsession-1">session (optional  <a href="#session">protocol.auth.v1.Session</a>)</h5>
+<p>The user&rsquo;s session.</p>
+<h3 id="tokendata">TokenData</h3>
+<p>Information sent by a client&rsquo;s homeserver, in a <code>harmonytypes.v1.Token</code>.
+It will be sent to a foreignserver by the client.</p>
+<h4 id="fields-21">Fields</h4>
+<h5 id="user_id-optional--uint64-1">user_id (optional  <code>uint64</code>)</h5>
+<p>The client&rsquo;s user ID on the homeserver.</p>
+<h5 id="server_id-optional--string-2">server_id (optional  <code>string</code>)</h5>
+<p>The foreignserver&rsquo;s server ID.</p>
+<h5 id="username-optional--string">username (optional  <code>string</code>)</h5>
+<p>The username of the client.</p>
+<h5 id="avatar-optional--string">avatar (optional  <code>string</code>)</h5>
+<p>The avatar of the client.</p>
+<h3 id="checkloggedinrequest">CheckLoggedInRequest</h3>
+<p>Used in <code>CheckLoggedIn</code> endpoint.</p>
+<p>This item has no fields.</p>
+<h3 id="checkloggedinresponse">CheckLoggedInResponse</h3>
+<p>Used in <code>CheckLoggedIn</code> endpoint.</p>
+<p>This item has no fields.</p>
 <h2 id="services">Services</h2>
 <h3 id="authservice">AuthService</h3>
-<h4 id="unary-methods">Unary Methods</h4>
-<table>
-<thead>
-<tr>
-<th>Name</th>
-<th>Request</th>
-<th>Response</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Federate</td>
-<td><a href="#federaterequest">protocol.auth.v1.FederateRequest</a></td>
-<td><a href="#federateresponse">protocol.auth.v1.FederateResponse</a></td>
-</tr>
-<tr>
-<td>LoginFederated</td>
-<td><a href="#loginfederatedrequest">protocol.auth.v1.LoginFederatedRequest</a></td>
-<td><a href="#loginfederatedresponse">protocol.auth.v1.LoginFederatedResponse</a></td>
-</tr>
-<tr>
-<td>Key</td>
-<td><a href="#keyrequest">protocol.auth.v1.KeyRequest</a></td>
-<td><a href="#keyresponse">protocol.auth.v1.KeyResponse</a></td>
-</tr>
-<tr>
-<td>BeginAuth</td>
-<td><a href="#beginauthrequest">protocol.auth.v1.BeginAuthRequest</a></td>
-<td><a href="#beginauthresponse">protocol.auth.v1.BeginAuthResponse</a></td>
-</tr>
-<tr>
-<td>NextStep</td>
-<td><a href="#nextsteprequest">protocol.auth.v1.NextStepRequest</a></td>
-<td><a href="#nextstepresponse">protocol.auth.v1.NextStepResponse</a></td>
-</tr>
-<tr>
-<td>StepBack</td>
-<td><a href="#stepbackrequest">protocol.auth.v1.StepBackRequest</a></td>
-<td><a href="#stepbackresponse">protocol.auth.v1.StepBackResponse</a></td>
-</tr>
-<tr>
-<td>CheckLoggedIn</td>
-<td><a href="#checkloggedinrequest">protocol.auth.v1.CheckLoggedInRequest</a></td>
-<td><a href="#checkloggedinresponse">protocol.auth.v1.CheckLoggedInResponse</a></td>
-</tr>
-</tbody>
-</table>
-<h4 id="streaming-methods">Streaming Methods</h4>
-<table>
-<thead>
-<tr>
-<th>Name</th>
-<th>Client Streams</th>
-<th>Server Streams</th>
-</tr>
-</thead>
-</table>
+<p>The service containing authorization/entication methods</p>
+<h4 id="methods">Methods</h4>
+<h5 id="federate">Federate</h5>
+<p><a href="#federaterequest">protocol.auth.v1.FederateRequest</a> -&gt; <a href="#federateresponse">protocol.auth.v1.FederateResponse</a></p>
+<p>Federate with a foreignserver, obtaining a token
+you can use to call LoginFederated on it</p>
+<h5 id="loginfederated">LoginFederated</h5>
+<p><a href="#loginfederatedrequest">protocol.auth.v1.LoginFederatedRequest</a> -&gt; <a href="#loginfederatedresponse">protocol.auth.v1.LoginFederatedResponse</a></p>
+<p>Present a token to a foreignserver from a Federate call
+on your homeserver in order to login</p>
+<h5 id="key">Key</h5>
+<p><a href="#keyrequest">protocol.auth.v1.KeyRequest</a> -&gt; <a href="#keyresponse">protocol.auth.v1.KeyResponse</a></p>
+<p>Returns the public key of this server</p>
+<h5 id="beginauth">BeginAuth</h5>
+<p><a href="#beginauthrequest">protocol.auth.v1.BeginAuthRequest</a> -&gt; <a href="#beginauthresponse">protocol.auth.v1.BeginAuthResponse</a></p>
+<p>Begins an authentication session</p>
+<h5 id="nextstep">NextStep</h5>
+<p><a href="#nextsteprequest">protocol.auth.v1.NextStepRequest</a> -&gt; <a href="#nextstepresponse">protocol.auth.v1.NextStepResponse</a></p>
+<p>Goes to the next step of the authentication session,
+possibly presenting user input</p>
+<h5 id="stepback">StepBack</h5>
+<p><a href="#stepbackrequest">protocol.auth.v1.StepBackRequest</a> -&gt; <a href="#stepbackresponse">protocol.auth.v1.StepBackResponse</a></p>
+<p>Goes to the previous step of the authentication session
+if possible</p>
+<h5 id="streamsteps">StreamSteps</h5>
+<p><a href="#streamstepsrequest">protocol.auth.v1.StreamStepsRequest</a> -&gt; streaming <a href="#streamstepsresponse">protocol.auth.v1.StreamStepsResponse</a></p>
+<p>Consume the steps of an authentication session
+as a stream</p>
+<h5 id="checkloggedin">CheckLoggedIn</h5>
+<p><a href="#checkloggedinrequest">protocol.auth.v1.CheckLoggedInRequest</a> -&gt; <a href="#checkloggedinresponse">protocol.auth.v1.CheckLoggedInResponse</a></p>
+<p>Check whether or not you&rsquo;re logged in and the session is valid</p>
 
     </article>
   </div>

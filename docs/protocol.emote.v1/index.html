@@ -3,37 +3,40 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no">
     <title>Reference: protocol.emote.v1 | Harmony</title>
-    <meta name="description" content="Message Types EmotePack Fields
-   Name Type     pack_id uint64   pack_owner uint64   pack_name string    Emote Fields
-   Name Type     image_id string   name string    CreateEmotePackRequest Fields
-   Name Type     pack_name string    CreateEmotePackResponse Fields
-   Name Type     pack_id uint64    GetEmotePacksRequest Fields ">
+    <meta name="description" content="Message Types EmotePack Data for a single pack of emotes.
+Fields pack_id (optional uint64) The ID of the pack.
+pack_owner (optional uint64) The ID of the user who created the pack.
+pack_name (optional string) The name of the pack.
+Emote Data for a single emote.
+Fields image_id (optional string) The image ID of the emote. This is the ID of the image in the image store (same place attachments are stored). ">
     <link rel="canonical" href="https://harmonyapp.io/docs/protocol.emote.v1/" />
 
     
 
     
       
-      <link rel="stylesheet" href="/css/main.min.8e1883f7dd16d57c3348aedb1f5e7ac9e93af3c97a2c19469cf0f09661db5c00.css" integrity="sha256-jhiD990W1XwzSK7bH156yek688l6LBlGnPDwlmHbXAA="/>
+      <link rel="stylesheet" href="/css/main.min.ffa2c263a52247f69e606278e3b3ab33849b5ce18bb062835eece5ca3730b038.css" integrity="sha256-/6LCY6UiR/aeYGJ447OrM4SbXOGLsGKDXuzlyjcwsDg="/>
     
 
     <meta property="og:title" content="Reference: protocol.emote.v1" />
-<meta property="og:description" content="Message Types EmotePack Fields
-   Name Type     pack_id uint64   pack_owner uint64   pack_name string    Emote Fields
-   Name Type     image_id string   name string    CreateEmotePackRequest Fields
-   Name Type     pack_name string    CreateEmotePackResponse Fields
-   Name Type     pack_id uint64    GetEmotePacksRequest Fields" />
+<meta property="og:description" content="Message Types EmotePack Data for a single pack of emotes.
+Fields pack_id (optional uint64) The ID of the pack.
+pack_owner (optional uint64) The ID of the user who created the pack.
+pack_name (optional string) The name of the pack.
+Emote Data for a single emote.
+Fields image_id (optional string) The image ID of the emote. This is the ID of the image in the image store (same place attachments are stored)." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://harmonyapp.io/docs/protocol.emote.v1/" />
 
 
     <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Reference: protocol.emote.v1"/>
-<meta name="twitter:description" content="Message Types EmotePack Fields
-   Name Type     pack_id uint64   pack_owner uint64   pack_name string    Emote Fields
-   Name Type     image_id string   name string    CreateEmotePackRequest Fields
-   Name Type     pack_name string    CreateEmotePackResponse Fields
-   Name Type     pack_id uint64    GetEmotePacksRequest Fields"/>
+<meta name="twitter:description" content="Message Types EmotePack Data for a single pack of emotes.
+Fields pack_id (optional uint64) The ID of the pack.
+pack_owner (optional uint64) The ID of the user who created the pack.
+pack_name (optional string) The name of the pack.
+Emote Data for a single emote.
+Fields image_id (optional string) The image ID of the emote. This is the ID of the image in the image store (same place attachments are stored)."/>
 
     <meta name="theme-color" content="#E93D58">
     <meta property="og:image" content="https://harmonyapp.io/img/harmony-embed.png" />
@@ -154,445 +157,164 @@
       <h1 class="h1">Reference: protocol.emote.v1</h1>
       <h2 id="message-types">Message Types</h2>
 <h3 id="emotepack">EmotePack</h3>
-<p>Fields</p>
-<table>
-<thead>
-<tr>
-<th>Name</th>
-<th>Type</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>pack_id</td>
-<td><code>uint64</code></td>
-</tr>
-<tr>
-<td>pack_owner</td>
-<td><code>uint64</code></td>
-</tr>
-<tr>
-<td>pack_name</td>
-<td><code>string</code></td>
-</tr>
-</tbody>
-</table>
+<p>Data for a single pack of emotes.</p>
+<h4 id="fields">Fields</h4>
+<h5 id="pack_id-optional--uint64">pack_id (optional  <code>uint64</code>)</h5>
+<p>The ID of the pack.</p>
+<h5 id="pack_owner-optional--uint64">pack_owner (optional  <code>uint64</code>)</h5>
+<p>The ID of the user who created the pack.</p>
+<h5 id="pack_name-optional--string">pack_name (optional  <code>string</code>)</h5>
+<p>The name of the pack.</p>
 <h3 id="emote">Emote</h3>
-<p>Fields</p>
-<table>
-<thead>
-<tr>
-<th>Name</th>
-<th>Type</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>image_id</td>
-<td><code>string</code></td>
-</tr>
-<tr>
-<td>name</td>
-<td><code>string</code></td>
-</tr>
-</tbody>
-</table>
+<p>Data for a single emote.</p>
+<h4 id="fields-1">Fields</h4>
+<h5 id="image_id-optional--string">image_id (optional  <code>string</code>)</h5>
+<p>The image ID of the emote. This is the ID of the image in the image store
+(same place attachments are stored).</p>
+<h5 id="name-optional--string">name (optional  <code>string</code>)</h5>
+<p>The name of the emote.</p>
 <h3 id="createemotepackrequest">CreateEmotePackRequest</h3>
-<p>Fields</p>
-<table>
-<thead>
-<tr>
-<th>Name</th>
-<th>Type</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>pack_name</td>
-<td><code>string</code></td>
-</tr>
-</tbody>
-</table>
+<p>Used in the <code>CreateEmotePack</code> endpoint.</p>
+<h4 id="fields-2">Fields</h4>
+<h5 id="pack_name-optional--string-1">pack_name (optional  <code>string</code>)</h5>
+<p>the name of the pack.</p>
 <h3 id="createemotepackresponse">CreateEmotePackResponse</h3>
-<p>Fields</p>
-<table>
-<thead>
-<tr>
-<th>Name</th>
-<th>Type</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>pack_id</td>
-<td><code>uint64</code></td>
-</tr>
-</tbody>
-</table>
+<p>Used in the <code>CreateEmotePack</code> endpoint.</p>
+<h4 id="fields-3">Fields</h4>
+<h5 id="pack_id-optional--uint64-1">pack_id (optional  <code>uint64</code>)</h5>
+<p>The ID of the pack.</p>
 <h3 id="getemotepacksrequest">GetEmotePacksRequest</h3>
-<p>Fields</p>
-<table>
-<thead>
-<tr>
-<th>Name</th>
-<th>Type</th>
-</tr>
-</thead>
-</table>
+<p>Used in the <code>GetEmotePacks</code> endpoint.</p>
+<p>This item has no fields.</p>
 <h3 id="getemotepacksresponse">GetEmotePacksResponse</h3>
-<p>Fields</p>
-<table>
-<thead>
-<tr>
-<th>Name</th>
-<th>Type</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>packs</td>
-<td><a href="#emotepack">protocol.emote.v1.EmotePack</a></td>
-</tr>
-</tbody>
-</table>
+<p>Used in the <code>GetEmotePacks</code> endpoint.</p>
+<h4 id="fields-4">Fields</h4>
+<h5 id="packs-repeated--protocolemotev1emotepackemotepack">packs (repeated  <a href="#emotepack">protocol.emote.v1.EmotePack</a>)</h5>
+<p>The list of emote packs.</p>
 <h3 id="getemotepackemotesrequest">GetEmotePackEmotesRequest</h3>
-<p>Fields</p>
-<table>
-<thead>
-<tr>
-<th>Name</th>
-<th>Type</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>pack_id</td>
-<td><code>uint64</code></td>
-</tr>
-</tbody>
-</table>
+<p>Used in the <code>GetEmotes</code> endpoint.</p>
+<h4 id="fields-5">Fields</h4>
+<h5 id="pack_id-optional--uint64-2">pack_id (optional  <code>uint64</code>)</h5>
+<p>The ID of the pack.</p>
 <h3 id="getemotepackemotesresponse">GetEmotePackEmotesResponse</h3>
-<p>Fields</p>
-<table>
-<thead>
-<tr>
-<th>Name</th>
-<th>Type</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>emotes</td>
-<td><a href="#emote">protocol.emote.v1.Emote</a></td>
-</tr>
-</tbody>
-</table>
+<p>Used in the <code>GetEmotes</code> endpoint.</p>
+<h4 id="fields-6">Fields</h4>
+<h5 id="emotes-repeated--protocolemotev1emoteemote">emotes (repeated  <a href="#emote">protocol.emote.v1.Emote</a>)</h5>
+<p>The list of emotes in the pack.</p>
 <h3 id="addemotetopackrequest">AddEmoteToPackRequest</h3>
-<p>Fields</p>
-<table>
-<thead>
-<tr>
-<th>Name</th>
-<th>Type</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>pack_id</td>
-<td><code>uint64</code></td>
-</tr>
-<tr>
-<td>emote</td>
-<td><a href="#emote">protocol.emote.v1.Emote</a></td>
-</tr>
-</tbody>
-</table>
+<p>Used in the <code>AddEmoteToPack</code> endpoint.</p>
+<h4 id="fields-7">Fields</h4>
+<h5 id="pack_id-optional--uint64-3">pack_id (optional  <code>uint64</code>)</h5>
+<p>The ID of the pack.</p>
+<h5 id="emote-optional--protocolemotev1emoteemote">emote (optional  <a href="#emote">protocol.emote.v1.Emote</a>)</h5>
+<p>The emote to add.</p>
 <h3 id="addemotetopackresponse">AddEmoteToPackResponse</h3>
-<p>Fields</p>
-<table>
-<thead>
-<tr>
-<th>Name</th>
-<th>Type</th>
-</tr>
-</thead>
-</table>
+<p>Used in the <code>AddEmoteToPack</code> endpoint.</p>
+<p>This item has no fields.</p>
 <h3 id="deleteemotefrompackrequest">DeleteEmoteFromPackRequest</h3>
-<p>Fields</p>
-<table>
-<thead>
-<tr>
-<th>Name</th>
-<th>Type</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>pack_id</td>
-<td><code>uint64</code></td>
-</tr>
-<tr>
-<td>name</td>
-<td><code>string</code></td>
-</tr>
-</tbody>
-</table>
+<p>Used in the <code>DeleteEmoteFromPack</code> endpoint.</p>
+<h4 id="fields-8">Fields</h4>
+<h5 id="pack_id-optional--uint64-4">pack_id (optional  <code>uint64</code>)</h5>
+<p>The ID of the pack.</p>
+<h5 id="name-optional--string-1">name (optional  <code>string</code>)</h5>
+<p>The name of the emote to delete.</p>
 <h3 id="deleteemotefrompackresponse">DeleteEmoteFromPackResponse</h3>
-<p>Fields</p>
-<table>
-<thead>
-<tr>
-<th>Name</th>
-<th>Type</th>
-</tr>
-</thead>
-</table>
+<p>Used in the <code>DeleteEmoteFromPack</code> endpoint.</p>
+<p>This item has no fields.</p>
 <h3 id="deleteemotepackrequest">DeleteEmotePackRequest</h3>
-<p>Fields</p>
-<table>
-<thead>
-<tr>
-<th>Name</th>
-<th>Type</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>pack_id</td>
-<td><code>uint64</code></td>
-</tr>
-</tbody>
-</table>
+<p>Used in the <code>DeleteEmotePack</code> endpoint.</p>
+<h4 id="fields-9">Fields</h4>
+<h5 id="pack_id-optional--uint64-5">pack_id (optional  <code>uint64</code>)</h5>
+<p>The ID of the pack.</p>
 <h3 id="deleteemotepackresponse">DeleteEmotePackResponse</h3>
-<p>Fields</p>
-<table>
-<thead>
-<tr>
-<th>Name</th>
-<th>Type</th>
-</tr>
-</thead>
-</table>
+<p>Used in the <code>DeleteEmotePack</code> endpoint.</p>
+<p>This item has no fields.</p>
 <h3 id="dequipemotepackrequest">DequipEmotePackRequest</h3>
-<p>Fields</p>
-<table>
-<thead>
-<tr>
-<th>Name</th>
-<th>Type</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>pack_id</td>
-<td><code>uint64</code></td>
-</tr>
-</tbody>
-</table>
+<p>Used in the <code>DequipEmotePack</code> endpoint.</p>
+<h4 id="fields-10">Fields</h4>
+<h5 id="pack_id-optional--uint64-6">pack_id (optional  <code>uint64</code>)</h5>
+<p>The ID of the pack.</p>
 <h3 id="dequipemotepackresponse">DequipEmotePackResponse</h3>
-<p>Fields</p>
-<table>
-<thead>
-<tr>
-<th>Name</th>
-<th>Type</th>
-</tr>
-</thead>
-</table>
+<p>Used in the <code>DequipEmotePack</code> endpoint.</p>
+<p>This item has no fields.</p>
 <h3 id="equipemotepackrequest">EquipEmotePackRequest</h3>
-<p>Fields</p>
-<table>
-<thead>
-<tr>
-<th>Name</th>
-<th>Type</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>pack_id</td>
-<td><code>uint64</code></td>
-</tr>
-</tbody>
-</table>
+<p>Used in the <code>EquipEmotePack</code> endpoint.</p>
+<h4 id="fields-11">Fields</h4>
+<h5 id="pack_id-optional--uint64-7">pack_id (optional  <code>uint64</code>)</h5>
+<p>The ID of the pack.</p>
 <h3 id="equipemotepackresponse">EquipEmotePackResponse</h3>
-<p>Fields</p>
-<table>
-<thead>
-<tr>
-<th>Name</th>
-<th>Type</th>
-</tr>
-</thead>
-</table>
+<p>Used in the <code>EquipEmotePack</code> endpoint.</p>
+<p>This item has no fields.</p>
 <h3 id="emotepackupdated">EmotePackUpdated</h3>
-<p>Fields</p>
-<table>
-<thead>
-<tr>
-<th>Name</th>
-<th>Type</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>pack_id</td>
-<td><code>uint64</code></td>
-</tr>
-<tr>
-<td>new_pack_name</td>
-<td><code>string</code></td>
-</tr>
-</tbody>
-</table>
+<p>Event sent when an emote pack&rsquo;s information is changed.</p>
+<p>Should only be sent to users who have the pack equipped.</p>
+<h4 id="fields-12">Fields</h4>
+<h5 id="pack_id-optional--uint64-8">pack_id (optional  <code>uint64</code>)</h5>
+<p>ID of the pack that was updated.</p>
+<h5 id="new_pack_name-optional--string">new_pack_name (optional  <code>string</code>)</h5>
+<p>New pack name of the pack.</p>
 <h3 id="emotepackdeleted">EmotePackDeleted</h3>
-<p>Fields</p>
-<table>
-<thead>
-<tr>
-<th>Name</th>
-<th>Type</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>pack_id</td>
-<td><code>uint64</code></td>
-</tr>
-</tbody>
-</table>
+<p>Event sent when an emote pack is deleted.</p>
+<p>Should only be sent to users who have the pack equipped.
+Should also be sent if a user dequips an emote pack, only to the user that dequipped it.</p>
+<h4 id="fields-13">Fields</h4>
+<h5 id="pack_id-optional--uint64-9">pack_id (optional  <code>uint64</code>)</h5>
+<p>ID of the pack that was deleted.</p>
 <h3 id="emotepackadded">EmotePackAdded</h3>
-<p>Fields</p>
-<table>
-<thead>
-<tr>
-<th>Name</th>
-<th>Type</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>pack</td>
-<td><a href="#emotepack">protocol.emote.v1.EmotePack</a></td>
-</tr>
-</tbody>
-</table>
+<p>Event sent when an emote pack is added.</p>
+<p>Should only be sent to the user who equipped the pack.</p>
+<h4 id="fields-14">Fields</h4>
+<h5 id="pack-optional--protocolemotev1emotepackemotepack">pack (optional  <a href="#emotepack">protocol.emote.v1.EmotePack</a>)</h5>
+<p>Emote pack that was equipped by the user.</p>
 <h3 id="emotepackemotesupdated">EmotePackEmotesUpdated</h3>
-<p>Fields</p>
-<table>
-<thead>
-<tr>
-<th>Name</th>
-<th>Type</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>pack_id</td>
-<td><code>uint64</code></td>
-</tr>
-<tr>
-<td>added_emotes</td>
-<td><a href="#emote">protocol.emote.v1.Emote</a></td>
-</tr>
-<tr>
-<td>deleted_emotes</td>
-<td><code>string</code></td>
-</tr>
-</tbody>
-</table>
+<p>Event sent when an emote pack&rsquo;s emotes were changed.</p>
+<p>Should only be sent to users who have the pack equipped.</p>
+<h4 id="fields-15">Fields</h4>
+<h5 id="pack_id-optional--uint64-10">pack_id (optional  <code>uint64</code>)</h5>
+<p>ID of the pack to update the emotes of.</p>
+<h5 id="added_emotes-repeated--protocolemotev1emoteemote">added_emotes (repeated  <a href="#emote">protocol.emote.v1.Emote</a>)</h5>
+<p>The added emotes.</p>
+<h5 id="deleted_emotes-repeated--string">deleted_emotes (repeated  <code>string</code>)</h5>
+<p>The names of the deleted emotes.</p>
 <h3 id="streamevent">StreamEvent</h3>
-<p>Fields</p>
-<table>
-<thead>
-<tr>
-<th>Name</th>
-<th>Type</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>emote_pack_added</td>
-<td><a href="#emotepackadded">protocol.emote.v1.EmotePackAdded</a></td>
-</tr>
-<tr>
-<td>emote_pack_updated</td>
-<td><a href="#emotepackupdated">protocol.emote.v1.EmotePackUpdated</a></td>
-</tr>
-<tr>
-<td>emote_pack_deleted</td>
-<td><a href="#emotepackdeleted">protocol.emote.v1.EmotePackDeleted</a></td>
-</tr>
-<tr>
-<td>emote_pack_emotes_updated</td>
-<td><a href="#emotepackemotesupdated">protocol.emote.v1.EmotePackEmotesUpdated</a></td>
-</tr>
-</tbody>
-</table>
+<p>Describes an emote service event.</p>
+<h4 id="fields-16">Fields</h4>
+<h5 id="emote_pack_added-optional--protocolemotev1emotepackaddedemotepackadded">emote_pack_added (optional  <a href="#emotepackadded">protocol.emote.v1.EmotePackAdded</a>)</h5>
+<p>Send the emote pack added event.</p>
+<h5 id="emote_pack_updated-optional--protocolemotev1emotepackupdatedemotepackupdated">emote_pack_updated (optional  <a href="#emotepackupdated">protocol.emote.v1.EmotePackUpdated</a>)</h5>
+<p>Send the emote pack updated event.</p>
+<h5 id="emote_pack_deleted-optional--protocolemotev1emotepackdeletedemotepackdeleted">emote_pack_deleted (optional  <a href="#emotepackdeleted">protocol.emote.v1.EmotePackDeleted</a>)</h5>
+<p>Send the emote pack deleted event.</p>
+<h5 id="emote_pack_emotes_updated-optional--protocolemotev1emotepackemotesupdatedemotepackemotesupdated">emote_pack_emotes_updated (optional  <a href="#emotepackemotesupdated">protocol.emote.v1.EmotePackEmotesUpdated</a>)</h5>
+<p>Send the emote pack emotes updated event.</p>
 <h2 id="services">Services</h2>
 <h3 id="emoteservice">EmoteService</h3>
-<h4 id="unary-methods">Unary Methods</h4>
-<table>
-<thead>
-<tr>
-<th>Name</th>
-<th>Request</th>
-<th>Response</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>CreateEmotePack</td>
-<td><a href="#createemotepackrequest">protocol.emote.v1.CreateEmotePackRequest</a></td>
-<td><a href="#createemotepackresponse">protocol.emote.v1.CreateEmotePackResponse</a></td>
-</tr>
-<tr>
-<td>GetEmotePacks</td>
-<td><a href="#getemotepacksrequest">protocol.emote.v1.GetEmotePacksRequest</a></td>
-<td><a href="#getemotepacksresponse">protocol.emote.v1.GetEmotePacksResponse</a></td>
-</tr>
-<tr>
-<td>GetEmotePackEmotes</td>
-<td><a href="#getemotepackemotesrequest">protocol.emote.v1.GetEmotePackEmotesRequest</a></td>
-<td><a href="#getemotepackemotesresponse">protocol.emote.v1.GetEmotePackEmotesResponse</a></td>
-</tr>
-<tr>
-<td>AddEmoteToPack</td>
-<td><a href="#addemotetopackrequest">protocol.emote.v1.AddEmoteToPackRequest</a></td>
-<td><a href="#addemotetopackresponse">protocol.emote.v1.AddEmoteToPackResponse</a></td>
-</tr>
-<tr>
-<td>DeleteEmotePack</td>
-<td><a href="#deleteemotepackrequest">protocol.emote.v1.DeleteEmotePackRequest</a></td>
-<td><a href="#deleteemotepackresponse">protocol.emote.v1.DeleteEmotePackResponse</a></td>
-</tr>
-<tr>
-<td>DeleteEmoteFromPack</td>
-<td><a href="#deleteemotefrompackrequest">protocol.emote.v1.DeleteEmoteFromPackRequest</a></td>
-<td><a href="#deleteemotefrompackresponse">protocol.emote.v1.DeleteEmoteFromPackResponse</a></td>
-</tr>
-<tr>
-<td>DequipEmotePack</td>
-<td><a href="#dequipemotepackrequest">protocol.emote.v1.DequipEmotePackRequest</a></td>
-<td><a href="#dequipemotepackresponse">protocol.emote.v1.DequipEmotePackResponse</a></td>
-</tr>
-<tr>
-<td>EquipEmotePack</td>
-<td><a href="#equipemotepackrequest">protocol.emote.v1.EquipEmotePackRequest</a></td>
-<td><a href="#equipemotepackresponse">protocol.emote.v1.EquipEmotePackResponse</a></td>
-</tr>
-</tbody>
-</table>
-<h4 id="streaming-methods">Streaming Methods</h4>
-<table>
-<thead>
-<tr>
-<th>Name</th>
-<th>Client Streams</th>
-<th>Server Streams</th>
-</tr>
-</thead>
-</table>
+<p>Harmony&rsquo;s Emote service manages the emotes and emote packs.</p>
+<h4 id="methods">Methods</h4>
+<h5 id="createemotepack">CreateEmotePack</h5>
+<p><a href="#createemotepackrequest">protocol.emote.v1.CreateEmotePackRequest</a> -&gt; <a href="#createemotepackresponse">protocol.emote.v1.CreateEmotePackResponse</a></p>
+<p>Endpoint to create an emote pack.</p>
+<h5 id="getemotepacks">GetEmotePacks</h5>
+<p><a href="#getemotepacksrequest">protocol.emote.v1.GetEmotePacksRequest</a> -&gt; <a href="#getemotepacksresponse">protocol.emote.v1.GetEmotePacksResponse</a></p>
+<p>Endpoint to get the emote packs you have equipped.</p>
+<h5 id="getemotepackemotes">GetEmotePackEmotes</h5>
+<p><a href="#getemotepackemotesrequest">protocol.emote.v1.GetEmotePackEmotesRequest</a> -&gt; <a href="#getemotepackemotesresponse">protocol.emote.v1.GetEmotePackEmotesResponse</a></p>
+<p>Endpoint to get the emotes in an emote pack.</p>
+<h5 id="addemotetopack">AddEmoteToPack</h5>
+<p><a href="#addemotetopackrequest">protocol.emote.v1.AddEmoteToPackRequest</a> -&gt; <a href="#addemotetopackresponse">protocol.emote.v1.AddEmoteToPackResponse</a></p>
+<p>Endpoint to add an emote to an emote pack that you own.</p>
+<h5 id="deleteemotepack">DeleteEmotePack</h5>
+<p><a href="#deleteemotepackrequest">protocol.emote.v1.DeleteEmotePackRequest</a> -&gt; <a href="#deleteemotepackresponse">protocol.emote.v1.DeleteEmotePackResponse</a></p>
+<p>Endpoint to delete an emote pack that you own.</p>
+<h5 id="deleteemotefrompack">DeleteEmoteFromPack</h5>
+<p><a href="#deleteemotefrompackrequest">protocol.emote.v1.DeleteEmoteFromPackRequest</a> -&gt; <a href="#deleteemotefrompackresponse">protocol.emote.v1.DeleteEmoteFromPackResponse</a></p>
+<p>Endpoint to delete an emote from an emote pack.</p>
+<h5 id="dequipemotepack">DequipEmotePack</h5>
+<p><a href="#dequipemotepackrequest">protocol.emote.v1.DequipEmotePackRequest</a> -&gt; <a href="#dequipemotepackresponse">protocol.emote.v1.DequipEmotePackResponse</a></p>
+<p>Endpoint to dequip an emote pack that you have equipped.</p>
+<h5 id="equipemotepack">EquipEmotePack</h5>
+<p><a href="#equipemotepackrequest">protocol.emote.v1.EquipEmotePackRequest</a> -&gt; <a href="#equipemotepackresponse">protocol.emote.v1.EquipEmotePackResponse</a></p>
+<p>Endpoint to equip an emote pack.</p>
 
     </article>
   </div>

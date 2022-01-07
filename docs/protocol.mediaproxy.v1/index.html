@@ -3,34 +3,49 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no">
     <title>Reference: protocol.mediaproxy.v1 | Harmony</title>
-    <meta name="description" content="Message Types SiteMetadata Fields
-   Name Type     site_title string   page_title string   kind string   description string   url string   image string    MediaMetadata Fields
-   Name Type     mimetype string   filename string    FetchLinkMetadataRequest Fields
-   Name Type     url string    FetchLinkMetadataResponse Fields ">
+    <meta name="description" content="Message Types SiteMetadata Object representing the metadata of a website.
+Fields site_title (optional string) Title of the website.
+page_title (optional string) Page title of the website page.
+kind (optional string) Kind of the website.
+description (optional string) Description of the website page.
+url (optional string) URL of the website.
+image (optional string) A thumbnail image of the website.
+MediaMetadata Object represeting the metadata of a media.
+Fields mimetype (optional string) Mimetype of the media. ">
     <link rel="canonical" href="https://harmonyapp.io/docs/protocol.mediaproxy.v1/" />
 
     
 
     
       
-      <link rel="stylesheet" href="/css/main.min.8e1883f7dd16d57c3348aedb1f5e7ac9e93af3c97a2c19469cf0f09661db5c00.css" integrity="sha256-jhiD990W1XwzSK7bH156yek688l6LBlGnPDwlmHbXAA="/>
+      <link rel="stylesheet" href="/css/main.min.ffa2c263a52247f69e606278e3b3ab33849b5ce18bb062835eece5ca3730b038.css" integrity="sha256-/6LCY6UiR/aeYGJ447OrM4SbXOGLsGKDXuzlyjcwsDg="/>
     
 
     <meta property="og:title" content="Reference: protocol.mediaproxy.v1" />
-<meta property="og:description" content="Message Types SiteMetadata Fields
-   Name Type     site_title string   page_title string   kind string   description string   url string   image string    MediaMetadata Fields
-   Name Type     mimetype string   filename string    FetchLinkMetadataRequest Fields
-   Name Type     url string    FetchLinkMetadataResponse Fields" />
+<meta property="og:description" content="Message Types SiteMetadata Object representing the metadata of a website.
+Fields site_title (optional string) Title of the website.
+page_title (optional string) Page title of the website page.
+kind (optional string) Kind of the website.
+description (optional string) Description of the website page.
+url (optional string) URL of the website.
+image (optional string) A thumbnail image of the website.
+MediaMetadata Object represeting the metadata of a media.
+Fields mimetype (optional string) Mimetype of the media." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://harmonyapp.io/docs/protocol.mediaproxy.v1/" />
 
 
     <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Reference: protocol.mediaproxy.v1"/>
-<meta name="twitter:description" content="Message Types SiteMetadata Fields
-   Name Type     site_title string   page_title string   kind string   description string   url string   image string    MediaMetadata Fields
-   Name Type     mimetype string   filename string    FetchLinkMetadataRequest Fields
-   Name Type     url string    FetchLinkMetadataResponse Fields"/>
+<meta name="twitter:description" content="Message Types SiteMetadata Object representing the metadata of a website.
+Fields site_title (optional string) Title of the website.
+page_title (optional string) Page title of the website page.
+kind (optional string) Kind of the website.
+description (optional string) Description of the website page.
+url (optional string) URL of the website.
+image (optional string) A thumbnail image of the website.
+MediaMetadata Object represeting the metadata of a media.
+Fields mimetype (optional string) Mimetype of the media."/>
 
     <meta name="theme-color" content="#E93D58">
     <meta property="og:image" content="https://harmonyapp.io/img/harmony-embed.png" />
@@ -136,208 +151,76 @@
       <h1 class="h1">Reference: protocol.mediaproxy.v1</h1>
       <h2 id="message-types">Message Types</h2>
 <h3 id="sitemetadata">SiteMetadata</h3>
-<p>Fields</p>
-<table>
-<thead>
-<tr>
-<th>Name</th>
-<th>Type</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>site_title</td>
-<td><code>string</code></td>
-</tr>
-<tr>
-<td>page_title</td>
-<td><code>string</code></td>
-</tr>
-<tr>
-<td>kind</td>
-<td><code>string</code></td>
-</tr>
-<tr>
-<td>description</td>
-<td><code>string</code></td>
-</tr>
-<tr>
-<td>url</td>
-<td><code>string</code></td>
-</tr>
-<tr>
-<td>image</td>
-<td><code>string</code></td>
-</tr>
-</tbody>
-</table>
+<p>Object representing the metadata of a website.</p>
+<h4 id="fields">Fields</h4>
+<h5 id="site_title-optional--string">site_title (optional  <code>string</code>)</h5>
+<p>Title of the website.</p>
+<h5 id="page_title-optional--string">page_title (optional  <code>string</code>)</h5>
+<p>Page title of the website page.</p>
+<h5 id="kind-optional--string">kind (optional  <code>string</code>)</h5>
+<p>Kind of the website.</p>
+<h5 id="description-optional--string">description (optional  <code>string</code>)</h5>
+<p>Description of the website page.</p>
+<h5 id="url-optional--string">url (optional  <code>string</code>)</h5>
+<p>URL of the website.</p>
+<h5 id="image-optional--string">image (optional  <code>string</code>)</h5>
+<p>A thumbnail image of the website.</p>
 <h3 id="mediametadata">MediaMetadata</h3>
-<p>Fields</p>
-<table>
-<thead>
-<tr>
-<th>Name</th>
-<th>Type</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>mimetype</td>
-<td><code>string</code></td>
-</tr>
-<tr>
-<td>filename</td>
-<td><code>string</code></td>
-</tr>
-</tbody>
-</table>
+<p>Object represeting the metadata of a media.</p>
+<h4 id="fields-1">Fields</h4>
+<h5 id="mimetype-optional--string">mimetype (optional  <code>string</code>)</h5>
+<p>Mimetype of the media.</p>
+<h5 id="filename-optional--string">filename (optional  <code>string</code>)</h5>
+<p>Filename of the media.</p>
 <h3 id="fetchlinkmetadatarequest">FetchLinkMetadataRequest</h3>
-<p>Fields</p>
-<table>
-<thead>
-<tr>
-<th>Name</th>
-<th>Type</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>url</td>
-<td><code>string</code></td>
-</tr>
-</tbody>
-</table>
+<p>Used in the <code>FetchLinkMetadata</code> endpoint.</p>
+<h4 id="fields-2">Fields</h4>
+<h5 id="url-optional--string-1">url (optional  <code>string</code>)</h5>
+<p>URL to fetch metadata from.</p>
 <h3 id="fetchlinkmetadataresponse">FetchLinkMetadataResponse</h3>
-<p>Fields</p>
-<table>
-<thead>
-<tr>
-<th>Name</th>
-<th>Type</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>is_site</td>
-<td><a href="#sitemetadata">protocol.mediaproxy.v1.SiteMetadata</a></td>
-</tr>
-<tr>
-<td>is_media</td>
-<td><a href="#mediametadata">protocol.mediaproxy.v1.MediaMetadata</a></td>
-</tr>
-</tbody>
-</table>
+<p>Used in the <code>FetchLinkMetadata</code> endpoint.</p>
+<h4 id="fields-3">Fields</h4>
+<h5 id="is_site-optional--protocolmediaproxyv1sitemetadatasitemetadata">is_site (optional  <a href="#sitemetadata">protocol.mediaproxy.v1.SiteMetadata</a>)</h5>
+<p>Site metadata for the URL.</p>
+<h5 id="is_media-optional--protocolmediaproxyv1mediametadatamediametadata">is_media (optional  <a href="#mediametadata">protocol.mediaproxy.v1.MediaMetadata</a>)</h5>
+<p>Media metadata for the URL.</p>
 <h3 id="instantviewrequest">InstantViewRequest</h3>
-<p>Fields</p>
-<table>
-<thead>
-<tr>
-<th>Name</th>
-<th>Type</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>url</td>
-<td><code>string</code></td>
-</tr>
-</tbody>
-</table>
+<p>Used in the <code>InstantView</code> endpoint.</p>
+<h4 id="fields-4">Fields</h4>
+<h5 id="url-optional--string-2">url (optional  <code>string</code>)</h5>
+<p>URL to get instant view for.</p>
 <h3 id="instantviewresponse">InstantViewResponse</h3>
-<p>Fields</p>
-<table>
-<thead>
-<tr>
-<th>Name</th>
-<th>Type</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>metadata</td>
-<td><a href="#sitemetadata">protocol.mediaproxy.v1.SiteMetadata</a></td>
-</tr>
-<tr>
-<td>content</td>
-<td><code>string</code></td>
-</tr>
-<tr>
-<td>is_valid</td>
-<td><code>bool</code></td>
-</tr>
-</tbody>
-</table>
+<p>Used in the <code>InstantView</code> endpoint.</p>
+<h4 id="fields-5">Fields</h4>
+<h5 id="metadata-optional--protocolmediaproxyv1sitemetadatasitemetadata">metadata (optional  <a href="#sitemetadata">protocol.mediaproxy.v1.SiteMetadata</a>)</h5>
+<p>Site metadata for the URL.</p>
+<h5 id="content-optional--string">content (optional  <code>string</code>)</h5>
+<p>Instant view content.</p>
+<h5 id="is_valid-optional--bool">is_valid (optional  <code>bool</code>)</h5>
+<p>Whether the instant view is valid.</p>
 <h3 id="caninstantviewrequest">CanInstantViewRequest</h3>
-<p>Fields</p>
-<table>
-<thead>
-<tr>
-<th>Name</th>
-<th>Type</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>url</td>
-<td><code>string</code></td>
-</tr>
-</tbody>
-</table>
+<p>Used in the <code>CanInstantView</code> endpoint.</p>
+<h4 id="fields-6">Fields</h4>
+<h5 id="url-optional--string-3">url (optional  <code>string</code>)</h5>
+<p>URL to query if server can instant view the website.</p>
 <h3 id="caninstantviewresponse">CanInstantViewResponse</h3>
-<p>Fields</p>
-<table>
-<thead>
-<tr>
-<th>Name</th>
-<th>Type</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>can_instant_view</td>
-<td><code>bool</code></td>
-</tr>
-</tbody>
-</table>
+<p>Used in the <code>CanInstantView</code> endpoint.</p>
+<h4 id="fields-7">Fields</h4>
+<h5 id="can_instant_view-optional--bool">can_instant_view (optional  <code>bool</code>)</h5>
+<p>Whether the server generate an instant view for the URL queried.</p>
 <h2 id="services">Services</h2>
 <h3 id="mediaproxyservice">MediaProxyService</h3>
-<h4 id="unary-methods">Unary Methods</h4>
-<table>
-<thead>
-<tr>
-<th>Name</th>
-<th>Request</th>
-<th>Response</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>FetchLinkMetadata</td>
-<td><a href="#fetchlinkmetadatarequest">protocol.mediaproxy.v1.FetchLinkMetadataRequest</a></td>
-<td><a href="#fetchlinkmetadataresponse">protocol.mediaproxy.v1.FetchLinkMetadataResponse</a></td>
-</tr>
-<tr>
-<td>InstantView</td>
-<td><a href="#instantviewrequest">protocol.mediaproxy.v1.InstantViewRequest</a></td>
-<td><a href="#instantviewresponse">protocol.mediaproxy.v1.InstantViewResponse</a></td>
-</tr>
-<tr>
-<td>CanInstantView</td>
-<td><a href="#caninstantviewrequest">protocol.mediaproxy.v1.CanInstantViewRequest</a></td>
-<td><a href="#caninstantviewresponse">protocol.mediaproxy.v1.CanInstantViewResponse</a></td>
-</tr>
-</tbody>
-</table>
-<h4 id="streaming-methods">Streaming Methods</h4>
-<table>
-<thead>
-<tr>
-<th>Name</th>
-<th>Client Streams</th>
-<th>Server Streams</th>
-</tr>
-</thead>
-</table>
+<p>Harmony service for fetching metadata and generating instant view for URLs.</p>
+<h4 id="methods">Methods</h4>
+<h5 id="fetchlinkmetadata">FetchLinkMetadata</h5>
+<p><a href="#fetchlinkmetadatarequest">protocol.mediaproxy.v1.FetchLinkMetadataRequest</a> -&gt; <a href="#fetchlinkmetadataresponse">protocol.mediaproxy.v1.FetchLinkMetadataResponse</a></p>
+<p>Endpoint to fetch metadata for a URL.</p>
+<h5 id="instantview">InstantView</h5>
+<p><a href="#instantviewrequest">protocol.mediaproxy.v1.InstantViewRequest</a> -&gt; <a href="#instantviewresponse">protocol.mediaproxy.v1.InstantViewResponse</a></p>
+<p>Endpoint to instant view a website URL.</p>
+<h5 id="caninstantview">CanInstantView</h5>
+<p><a href="#caninstantviewrequest">protocol.mediaproxy.v1.CanInstantViewRequest</a> -&gt; <a href="#caninstantviewresponse">protocol.mediaproxy.v1.CanInstantViewResponse</a></p>
+<p>Endpoint to query if the server can generate an instant view for a website URL.</p>
 
     </article>
   </div>

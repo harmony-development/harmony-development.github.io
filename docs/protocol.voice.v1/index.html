@@ -3,34 +3,37 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no">
     <title>Reference: protocol.voice.v1 | Harmony</title>
-    <meta name="description" content="Message Types UserConsumerOptions Fields
-   Name Type     user_id uint64   producer_id string   consumer_id string   rtp_parameters string    TransportOptions Fields
-   Name Type     id string   dtls_parameters string   ice_candidates string   ice_parameters string    StreamMessageRequest Fields
-   Name Type     initialize protocol. ">
+    <meta name="description" content="Message Types UserConsumerOptions Data containing all the necessary information to create a consumer for a user in a voice channel
+This corresponds to https://mediasoup.org/documentation/v3/mediasoup-client/api/#ConsumerOptions on client:
+ consumer_id -&gt; id producer_id -&gt; producerId rtp_parameters -&gt; rtpParameters and kind should be set to &ldquo;audio&rdquo;.  Fields user_id (optional uint64) User ID of the user.
+producer_id (optional string) Producer ID of the producer being consumed.
+consumer_id (optional string) Consumer ID for the user&rsquo;s producer consumer. ">
     <link rel="canonical" href="https://harmonyapp.io/docs/protocol.voice.v1/" />
 
     
 
     
       
-      <link rel="stylesheet" href="/css/main.min.8e1883f7dd16d57c3348aedb1f5e7ac9e93af3c97a2c19469cf0f09661db5c00.css" integrity="sha256-jhiD990W1XwzSK7bH156yek688l6LBlGnPDwlmHbXAA="/>
+      <link rel="stylesheet" href="/css/main.min.ffa2c263a52247f69e606278e3b3ab33849b5ce18bb062835eece5ca3730b038.css" integrity="sha256-/6LCY6UiR/aeYGJ447OrM4SbXOGLsGKDXuzlyjcwsDg="/>
     
 
     <meta property="og:title" content="Reference: protocol.voice.v1" />
-<meta property="og:description" content="Message Types UserConsumerOptions Fields
-   Name Type     user_id uint64   producer_id string   consumer_id string   rtp_parameters string    TransportOptions Fields
-   Name Type     id string   dtls_parameters string   ice_candidates string   ice_parameters string    StreamMessageRequest Fields
-   Name Type     initialize protocol." />
+<meta property="og:description" content="Message Types UserConsumerOptions Data containing all the necessary information to create a consumer for a user in a voice channel
+This corresponds to https://mediasoup.org/documentation/v3/mediasoup-client/api/#ConsumerOptions on client:
+ consumer_id -&gt; id producer_id -&gt; producerId rtp_parameters -&gt; rtpParameters and kind should be set to &ldquo;audio&rdquo;.  Fields user_id (optional uint64) User ID of the user.
+producer_id (optional string) Producer ID of the producer being consumed.
+consumer_id (optional string) Consumer ID for the user&rsquo;s producer consumer." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://harmonyapp.io/docs/protocol.voice.v1/" />
 
 
     <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Reference: protocol.voice.v1"/>
-<meta name="twitter:description" content="Message Types UserConsumerOptions Fields
-   Name Type     user_id uint64   producer_id string   consumer_id string   rtp_parameters string    TransportOptions Fields
-   Name Type     id string   dtls_parameters string   ice_candidates string   ice_parameters string    StreamMessageRequest Fields
-   Name Type     initialize protocol."/>
+<meta name="twitter:description" content="Message Types UserConsumerOptions Data containing all the necessary information to create a consumer for a user in a voice channel
+This corresponds to https://mediasoup.org/documentation/v3/mediasoup-client/api/#ConsumerOptions on client:
+ consumer_id -&gt; id producer_id -&gt; producerId rtp_parameters -&gt; rtpParameters and kind should be set to &ldquo;audio&rdquo;.  Fields user_id (optional uint64) User ID of the user.
+producer_id (optional string) Producer ID of the producer being consumed.
+consumer_id (optional string) Consumer ID for the user&rsquo;s producer consumer."/>
 
     <meta name="theme-color" content="#E93D58">
     <meta property="og:image" content="https://harmonyapp.io/img/harmony-embed.png" />
@@ -116,11 +119,11 @@
         <li><a href="#userconsumeroptions">UserConsumerOptions</a></li>
         <li><a href="#transportoptions">TransportOptions</a></li>
         <li><a href="#streammessagerequest">StreamMessageRequest</a></li>
-        <li><a href="#streammessageresponse">StreamMessageResponse</a></li>
         <li><a href="#streammessagerequestinitialize">StreamMessageRequest.Initialize</a></li>
         <li><a href="#streammessagerequestprepareforjoinchannel">StreamMessageRequest.PrepareForJoinChannel</a></li>
         <li><a href="#streammessagerequestjoinchannel">StreamMessageRequest.JoinChannel</a></li>
         <li><a href="#streammessagerequestresumeconsumer">StreamMessageRequest.ResumeConsumer</a></li>
+        <li><a href="#streammessageresponse">StreamMessageResponse</a></li>
         <li><a href="#streammessageresponseinitialized">StreamMessageResponse.Initialized</a></li>
         <li><a href="#streammessageresponsepreparedforjoinchannel">StreamMessageResponse.PreparedForJoinChannel</a></li>
         <li><a href="#streammessageresponsejoinedchannel">StreamMessageResponse.JoinedChannel</a></li>
@@ -134,6 +137,14 @@
       </ul>
     </li>
   </ul>
+
+  <ul>
+    <li><a href="#how-this-looks-for-servers">How this looks for servers</a>
+      <ul>
+        <li></li>
+      </ul>
+    </li>
+  </ul>
 </nav>
   </aside>
   <div class="flex justify-center pb-8 w-full">
@@ -141,310 +152,144 @@
       <h1 class="h1">Reference: protocol.voice.v1</h1>
       <h2 id="message-types">Message Types</h2>
 <h3 id="userconsumeroptions">UserConsumerOptions</h3>
-<p>Fields</p>
-<table>
-<thead>
-<tr>
-<th>Name</th>
-<th>Type</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>user_id</td>
-<td><code>uint64</code></td>
-</tr>
-<tr>
-<td>producer_id</td>
-<td><code>string</code></td>
-</tr>
-<tr>
-<td>consumer_id</td>
-<td><code>string</code></td>
-</tr>
-<tr>
-<td>rtp_parameters</td>
-<td><code>string</code></td>
-</tr>
-</tbody>
-</table>
+<p>Data containing all the necessary information to
+create a consumer for a user in a voice channel</p>
+<p>This corresponds to <a href="https://mediasoup.org/documentation/v3/mediasoup-client/api/#ConsumerOptions">https://mediasoup.org/documentation/v3/mediasoup-client/api/#ConsumerOptions</a> on client:</p>
+<ul>
+<li><code>consumer_id</code> -&gt; <code>id</code></li>
+<li><code>producer_id</code> -&gt; <code>producerId</code></li>
+<li><code>rtp_parameters</code> -&gt; <code>rtpParameters</code></li>
+<li>and <code>kind</code> should be set to &ldquo;audio&rdquo;.</li>
+</ul>
+<h4 id="fields">Fields</h4>
+<h5 id="user_id-optional--uint64">user_id (optional  <code>uint64</code>)</h5>
+<p>User ID of the user.</p>
+<h5 id="producer_id-optional--string">producer_id (optional  <code>string</code>)</h5>
+<p>Producer ID of the producer being consumed.</p>
+<h5 id="consumer_id-optional--string">consumer_id (optional  <code>string</code>)</h5>
+<p>Consumer ID for the user&rsquo;s producer consumer.</p>
+<h5 id="rtp_parameters-optional--string">rtp_parameters (optional  <code>string</code>)</h5>
+<p>RTP paramaters for the user&rsquo;s audio track. Corresponds to <code>RtpParameters</code> in mediasoup&rsquo;s TypeScript API.</p>
 <h3 id="transportoptions">TransportOptions</h3>
-<p>Fields</p>
-<table>
-<thead>
-<tr>
-<th>Name</th>
-<th>Type</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>id</td>
-<td><code>string</code></td>
-</tr>
-<tr>
-<td>dtls_parameters</td>
-<td><code>string</code></td>
-</tr>
-<tr>
-<td>ice_candidates</td>
-<td><code>string</code></td>
-</tr>
-<tr>
-<td>ice_parameters</td>
-<td><code>string</code></td>
-</tr>
-</tbody>
-</table>
+<p>Object containing all the necessary information about transport options required
+from the server to establish transport connection on the client</p>
+<p>This corresponds to <a href="https://mediasoup.org/documentation/v3/mediasoup-client/api/#TransportOptions">https://mediasoup.org/documentation/v3/mediasoup-client/api/#TransportOptions</a> on client:</p>
+<ul>
+<li><code>id</code> -&gt; <code>id</code></li>
+<li><code>ice_parameters</code> -&gt; <code>iceParameters</code></li>
+<li><code>dtls_parameters</code> -&gt; <code>dtlsParameters</code></li>
+<li><code>ice_candidates</code> -&gt; <code>iceCandidates</code></li>
+</ul>
+<h4 id="fields-1">Fields</h4>
+<h5 id="id-optional--string">id (optional  <code>string</code>)</h5>
+<p>The transport ID.</p>
+<h5 id="dtls_parameters-optional--string">dtls_parameters (optional  <code>string</code>)</h5>
+<p>DTLS paramaters in JSON. Corresponds to <code>DtlsParameters</code> in mediasoup&rsquo;s TypeScript API.</p>
+<h5 id="ice_candidates-repeated--string">ice_candidates (repeated  <code>string</code>)</h5>
+<p>ICE candidates in JSON. Corresponds to <code>IceCandidate</code> in mediasoup&rsquo;s TypeScript API.</p>
+<h5 id="ice_parameters-optional--string">ice_parameters (optional  <code>string</code>)</h5>
+<p>ICE paramaters in JSON. Corresponds to <code>IceParameters</code> in mediasoup&rsquo;s TypeScript API.</p>
 <h3 id="streammessagerequest">StreamMessageRequest</h3>
-<p>Fields</p>
-<table>
-<thead>
-<tr>
-<th>Name</th>
-<th>Type</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>initialize</td>
-<td><a href="#streammessagerequest-initialize">protocol.voice.v1.StreamMessageRequest.Initialize</a></td>
-</tr>
-<tr>
-<td>prepare_for_join_channel</td>
-<td><a href="#streammessagerequest-prepareforjoinchannel">protocol.voice.v1.StreamMessageRequest.PrepareForJoinChannel</a></td>
-</tr>
-<tr>
-<td>join_channel</td>
-<td><a href="#streammessagerequest-joinchannel">protocol.voice.v1.StreamMessageRequest.JoinChannel</a></td>
-</tr>
-<tr>
-<td>resume_consumer</td>
-<td><a href="#streammessagerequest-resumeconsumer">protocol.voice.v1.StreamMessageRequest.ResumeConsumer</a></td>
-</tr>
-</tbody>
-</table>
-<h3 id="streammessageresponse">StreamMessageResponse</h3>
-<p>Fields</p>
-<table>
-<thead>
-<tr>
-<th>Name</th>
-<th>Type</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>initialized</td>
-<td><a href="#streammessageresponse-initialized">protocol.voice.v1.StreamMessageResponse.Initialized</a></td>
-</tr>
-<tr>
-<td>prepared_for_join_channel</td>
-<td><a href="#streammessageresponse-preparedforjoinchannel">protocol.voice.v1.StreamMessageResponse.PreparedForJoinChannel</a></td>
-</tr>
-<tr>
-<td>joined_channel</td>
-<td><a href="#streammessageresponse-joinedchannel">protocol.voice.v1.StreamMessageResponse.JoinedChannel</a></td>
-</tr>
-<tr>
-<td>user_joined</td>
-<td><a href="#streammessageresponse-userjoined">protocol.voice.v1.StreamMessageResponse.UserJoined</a></td>
-</tr>
-<tr>
-<td>user_left</td>
-<td><a href="#streammessageresponse-userleft">protocol.voice.v1.StreamMessageResponse.UserLeft</a></td>
-</tr>
-</tbody>
-</table>
+<p>Used in <code>StreamMessage</code> endpoint.</p>
+<h4 id="fields-2">Fields</h4>
+<h5 id="initialize-optional--protocolvoicev1streammessagerequestinitializestreammessagerequestinitialize">initialize (optional  <a href="#streammessagerequestinitialize">protocol.voice.v1.StreamMessageRequest.Initialize</a>)</h5>
+<p>Sent to initialize the WS and receive necessary information</p>
+<h5 id="prepare_for_join_channel-optional--protocolvoicev1streammessagerequestprepareforjoinchannelstreammessagerequestprepareforjoinchannel">prepare_for_join_channel (optional  <a href="#streammessagerequestprepareforjoinchannel">protocol.voice.v1.StreamMessageRequest.PrepareForJoinChannel</a>)</h5>
+<p>Sent to prepare for joining channel</p>
+<h5 id="join_channel-optional--protocolvoicev1streammessagerequestjoinchannelstreammessagerequestjoinchannel">join_channel (optional  <a href="#streammessagerequestjoinchannel">protocol.voice.v1.StreamMessageRequest.JoinChannel</a>)</h5>
+<p>Sent to join a channel</p>
+<h5 id="resume_consumer-optional--protocolvoicev1streammessagerequestresumeconsumerstreammessagerequestresumeconsumer">resume_consumer (optional  <a href="#streammessagerequestresumeconsumer">protocol.voice.v1.StreamMessageRequest.ResumeConsumer</a>)</h5>
+<p>Sent to resume a consumer</p>
 <h3 id="streammessagerequestinitialize">StreamMessageRequest.Initialize</h3>
-<p>Fields</p>
-<table>
-<thead>
-<tr>
-<th>Name</th>
-<th>Type</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>guild_id</td>
-<td><code>uint64</code></td>
-</tr>
-<tr>
-<td>channel_id</td>
-<td><code>uint64</code></td>
-</tr>
-</tbody>
-</table>
+<h4 id="fields-3">Fields</h4>
+<h5 id="guild_id-optional--uint64">guild_id (optional  <code>uint64</code>)</h5>
+<h5 id="channel_id-optional--uint64">channel_id (optional  <code>uint64</code>)</h5>
 <h3 id="streammessagerequestprepareforjoinchannel">StreamMessageRequest.PrepareForJoinChannel</h3>
-<p>Fields</p>
-<table>
-<thead>
-<tr>
-<th>Name</th>
-<th>Type</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>rtp_capabilities</td>
-<td><code>string</code></td>
-</tr>
-</tbody>
-</table>
+<h4 id="fields-4">Fields</h4>
+<h5 id="rtp_capabilities-optional--string">rtp_capabilities (optional  <code>string</code>)</h5>
 <h3 id="streammessagerequestjoinchannel">StreamMessageRequest.JoinChannel</h3>
-<p>Fields</p>
-<table>
-<thead>
-<tr>
-<th>Name</th>
-<th>Type</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>rtp_paramaters</td>
-<td><code>string</code></td>
-</tr>
-<tr>
-<td>producer_dtls_paramaters</td>
-<td><code>string</code></td>
-</tr>
-<tr>
-<td>consumer_dtls_paramaters</td>
-<td><code>string</code></td>
-</tr>
-</tbody>
-</table>
+<h4 id="fields-5">Fields</h4>
+<h5 id="rtp_paramaters-optional--string">rtp_paramaters (optional  <code>string</code>)</h5>
+<h5 id="producer_dtls_paramaters-optional--string">producer_dtls_paramaters (optional  <code>string</code>)</h5>
+<h5 id="consumer_dtls_paramaters-optional--string">consumer_dtls_paramaters (optional  <code>string</code>)</h5>
 <h3 id="streammessagerequestresumeconsumer">StreamMessageRequest.ResumeConsumer</h3>
-<p>Fields</p>
-<table>
-<thead>
-<tr>
-<th>Name</th>
-<th>Type</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>consumer_id</td>
-<td><code>string</code></td>
-</tr>
-</tbody>
-</table>
+<h4 id="fields-6">Fields</h4>
+<h5 id="consumer_id-optional--string-1">consumer_id (optional  <code>string</code>)</h5>
+<h3 id="streammessageresponse">StreamMessageResponse</h3>
+<p>Used in <code>StreamMessage</code> endpoint.</p>
+<h4 id="fields-7">Fields</h4>
+<h5 id="initialized-optional--protocolvoicev1streammessageresponseinitializedstreammessageresponseinitialized">initialized (optional  <a href="#streammessageresponseinitialized">protocol.voice.v1.StreamMessageResponse.Initialized</a>)</h5>
+<p>Sent when connection is started</p>
+<h5 id="prepared_for_join_channel-optional--protocolvoicev1streammessageresponsepreparedforjoinchannelstreammessageresponsepreparedforjoinchannel">prepared_for_join_channel (optional  <a href="#streammessageresponsepreparedforjoinchannel">protocol.voice.v1.StreamMessageResponse.PreparedForJoinChannel</a>)</h5>
+<p>Sent when preparing to join a channel is successful</p>
+<h5 id="joined_channel-optional--protocolvoicev1streammessageresponsejoinedchannelstreammessageresponsejoinedchannel">joined_channel (optional  <a href="#streammessageresponsejoinedchannel">protocol.voice.v1.StreamMessageResponse.JoinedChannel</a>)</h5>
+<p>Sent when joining a channel is successful</p>
+<h5 id="user_joined-optional--protocolvoicev1streammessageresponseuserjoinedstreammessageresponseuserjoined">user_joined (optional  <a href="#streammessageresponseuserjoined">protocol.voice.v1.StreamMessageResponse.UserJoined</a>)</h5>
+<p>Sent when another user joins the channel</p>
+<h5 id="user_left-optional--protocolvoicev1streammessageresponseuserleftstreammessageresponseuserleft">user_left (optional  <a href="#streammessageresponseuserleft">protocol.voice.v1.StreamMessageResponse.UserLeft</a>)</h5>
+<p>Sent when another user leaves the channel</p>
 <h3 id="streammessageresponseinitialized">StreamMessageResponse.Initialized</h3>
-<p>Fields</p>
-<table>
-<thead>
-<tr>
-<th>Name</th>
-<th>Type</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>rtp_capabilities</td>
-<td><code>string</code></td>
-</tr>
-</tbody>
-</table>
+<h4 id="fields-8">Fields</h4>
+<h5 id="rtp_capabilities-optional--string-1">rtp_capabilities (optional  <code>string</code>)</h5>
 <h3 id="streammessageresponsepreparedforjoinchannel">StreamMessageResponse.PreparedForJoinChannel</h3>
-<p>Fields</p>
-<table>
-<thead>
-<tr>
-<th>Name</th>
-<th>Type</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>consumer_transport_options</td>
-<td><a href="#transportoptions">protocol.voice.v1.TransportOptions</a></td>
-</tr>
-<tr>
-<td>producer_transport_options</td>
-<td><a href="#transportoptions">protocol.voice.v1.TransportOptions</a></td>
-</tr>
-</tbody>
-</table>
+<h4 id="fields-9">Fields</h4>
+<h5 id="consumer_transport_options-optional--protocolvoicev1transportoptionstransportoptions">consumer_transport_options (optional  <a href="#transportoptions">protocol.voice.v1.TransportOptions</a>)</h5>
+<h5 id="producer_transport_options-optional--protocolvoicev1transportoptionstransportoptions">producer_transport_options (optional  <a href="#transportoptions">protocol.voice.v1.TransportOptions</a>)</h5>
 <h3 id="streammessageresponsejoinedchannel">StreamMessageResponse.JoinedChannel</h3>
-<p>Fields</p>
-<table>
-<thead>
-<tr>
-<th>Name</th>
-<th>Type</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>other_users</td>
-<td><a href="#userconsumeroptions">protocol.voice.v1.UserConsumerOptions</a></td>
-</tr>
-</tbody>
-</table>
+<h4 id="fields-10">Fields</h4>
+<h5 id="other_users-repeated--protocolvoicev1userconsumeroptionsuserconsumeroptions">other_users (repeated  <a href="#userconsumeroptions">protocol.voice.v1.UserConsumerOptions</a>)</h5>
 <h3 id="streammessageresponseuserjoined">StreamMessageResponse.UserJoined</h3>
-<p>Fields</p>
-<table>
-<thead>
-<tr>
-<th>Name</th>
-<th>Type</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>data</td>
-<td><a href="#userconsumeroptions">protocol.voice.v1.UserConsumerOptions</a></td>
-</tr>
-</tbody>
-</table>
+<h4 id="fields-11">Fields</h4>
+<h5 id="data-optional--protocolvoicev1userconsumeroptionsuserconsumeroptions">data (optional  <a href="#userconsumeroptions">protocol.voice.v1.UserConsumerOptions</a>)</h5>
 <h3 id="streammessageresponseuserleft">StreamMessageResponse.UserLeft</h3>
-<p>Fields</p>
-<table>
-<thead>
-<tr>
-<th>Name</th>
-<th>Type</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>user_id</td>
-<td><code>uint64</code></td>
-</tr>
-</tbody>
-</table>
+<h4 id="fields-12">Fields</h4>
+<h5 id="user_id-optional--uint64-1">user_id (optional  <code>uint64</code>)</h5>
 <h2 id="services">Services</h2>
 <h3 id="voiceservice">VoiceService</h3>
-<h4 id="unary-methods">Unary Methods</h4>
-<table>
-<thead>
-<tr>
-<th>Name</th>
-<th>Request</th>
-<th>Response</th>
-</tr>
-</thead>
-</table>
-<h4 id="streaming-methods">Streaming Methods</h4>
-<table>
-<thead>
-<tr>
-<th>Name</th>
-<th>Client Streams</th>
-<th>Server Streams</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>StreamMessage</td>
-<td><a href="#streammessagerequest">protocol.voice.v1.StreamMessageRequest</a></td>
-<td><a href="#streammessageresponse">protocol.voice.v1.StreamMessageResponse</a></td>
-</tr>
-</tbody>
-</table>
+<p>Harmony service for facilitating voice operations using WebRTC.</p>
+<h1 id="usage-for-client">Usage (for client)</h1>
+<ol start="0">
+<li>Call StreamMessage to be able to send RTC commands to server</li>
+<li>Send Initialize over stream with guild_id and channel_id of the request set to the channel you want to join</li>
+<li>Init device by using the RTP capabilities sent in the response message, which should be Initialized</li>
+<li>Send PrepareForJoinChannel over stream with client rtp capabilities</li>
+<li>Wait for PreparedForJoinChannel, which contains transport options</li>
+<li>Connect both transports using the transport options on client</li>
+<li>Send JoinChannel over stream containing RTP paramaters for your Audio track
+and DTLS paramaters for both consumer and producer</li>
+<li>Wait for JoinedChannel, which confirms you have successfully joined the voice channel;
+handle other_users which will be described in 8 (UserJoined handling)</li>
+<li>Handle UserJoined and UserLeft events appropiately</li>
+</ol>
+<ul>
+<li>For UserJoined; use the received consumer ID, producer ID and RTP parameters on your
+consumer transport to consume the producer, afterwards send ResumeConsumer message
+with the consumer ID, then if that&rsquo;s successful add the track to a <code>user ID -&gt; Track</code> map</li>
+<li>For UserLeft, remove the user track from the <code>user ID -&gt; Track</code> map</li>
+</ul>
+<h2 id="how-this-looks-for-servers">How this looks for servers</h2>
+<ol start="0">
+<li>Receives StreamMessage, starts the socket</li>
+<li>Waits for Initialize</li>
+<li>Sends Initialized over stream with it&rsquo;s RTP capabilities</li>
+<li>Receives PrepareForJoinChannel with client RTP capabilities</li>
+<li>Sends PreparedForJoinChannel over stream with consumer and producer transport options</li>
+<li>Receives JoinChannel, checks for DTLS parameters for consumer and producer transports
+and uses the RTP paramaters to create a producer for the client</li>
+<li>Sends JoinedChannel over stream with the created producer ID and all other users' data (UserData)</li>
+<li>When another user does 1 to 7, sends UserJoined over stream to all other users;
+when a user leaves the channel (when their stream ends), sends UserLeft to all other users</li>
+<li>When receiving a ResumeConsumer message, unpauses the consumer corresponding to the consumer ID</li>
+</ol>
+<h4 id="methods">Methods</h4>
+<h5 id="streammessage">StreamMessage</h5>
+<p>streaming <a href="#streammessagerequest">protocol.voice.v1.StreamMessageRequest</a> -&gt; streaming <a href="#streammessageresponse">protocol.voice.v1.StreamMessageResponse</a></p>
+<p>Endpoint to stream messages between client and server.</p>
+<ul>
+<li>One StreamMessage stream corresponds to being in one voice channel.</li>
+<li>It&rsquo;s recommended that users should not be able to be in more than one voice channel,
+but this limitation is left up to the server implementation.</li>
+</ul>
 
     </article>
   </div>

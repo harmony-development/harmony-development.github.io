@@ -3,37 +3,46 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no">
     <title>Reference: protocol.batch.v1 | Harmony</title>
-    <meta name="description" content="Message Types AnyRequest Fields
-   Name Type     endpoint string   request bytes    BatchRequest Fields
-   Name Type     requests protocol.batch.v1.AnyRequest    BatchResponse Fields
-   Name Type     responses bytes    BatchSameRequest Fields
-   Name Type     endpoint string   requests bytes    BatchSameResponse Fields ">
+    <meta name="description" content="Message Types AnyRequest AnyRequest is a generic message supporting any unary request.
+Fields endpoint (optional string) The endpoint to which the request is being sent.
+request (optional bytes) The request data.
+BatchRequest Used in Batch endpoint.
+Fields requests (repeated protocol.batch.v1.AnyRequest) The list of requests to be executed in the batch.
+BatchResponse Used in Batch endpoint.
+Fields responses (repeated bytes) The list of responses to the requests.
+BatchSameRequest Used in BatchSame endpoint. ">
     <link rel="canonical" href="https://harmonyapp.io/docs/protocol.batch.v1/" />
 
     
 
     
       
-      <link rel="stylesheet" href="/css/main.min.8e1883f7dd16d57c3348aedb1f5e7ac9e93af3c97a2c19469cf0f09661db5c00.css" integrity="sha256-jhiD990W1XwzSK7bH156yek688l6LBlGnPDwlmHbXAA="/>
+      <link rel="stylesheet" href="/css/main.min.ffa2c263a52247f69e606278e3b3ab33849b5ce18bb062835eece5ca3730b038.css" integrity="sha256-/6LCY6UiR/aeYGJ447OrM4SbXOGLsGKDXuzlyjcwsDg="/>
     
 
     <meta property="og:title" content="Reference: protocol.batch.v1" />
-<meta property="og:description" content="Message Types AnyRequest Fields
-   Name Type     endpoint string   request bytes    BatchRequest Fields
-   Name Type     requests protocol.batch.v1.AnyRequest    BatchResponse Fields
-   Name Type     responses bytes    BatchSameRequest Fields
-   Name Type     endpoint string   requests bytes    BatchSameResponse Fields" />
+<meta property="og:description" content="Message Types AnyRequest AnyRequest is a generic message supporting any unary request.
+Fields endpoint (optional string) The endpoint to which the request is being sent.
+request (optional bytes) The request data.
+BatchRequest Used in Batch endpoint.
+Fields requests (repeated protocol.batch.v1.AnyRequest) The list of requests to be executed in the batch.
+BatchResponse Used in Batch endpoint.
+Fields responses (repeated bytes) The list of responses to the requests.
+BatchSameRequest Used in BatchSame endpoint." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://harmonyapp.io/docs/protocol.batch.v1/" />
 
 
     <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Reference: protocol.batch.v1"/>
-<meta name="twitter:description" content="Message Types AnyRequest Fields
-   Name Type     endpoint string   request bytes    BatchRequest Fields
-   Name Type     requests protocol.batch.v1.AnyRequest    BatchResponse Fields
-   Name Type     responses bytes    BatchSameRequest Fields
-   Name Type     endpoint string   requests bytes    BatchSameResponse Fields"/>
+<meta name="twitter:description" content="Message Types AnyRequest AnyRequest is a generic message supporting any unary request.
+Fields endpoint (optional string) The endpoint to which the request is being sent.
+request (optional bytes) The request data.
+BatchRequest Used in Batch endpoint.
+Fields requests (repeated protocol.batch.v1.AnyRequest) The list of requests to be executed in the batch.
+BatchResponse Used in Batch endpoint.
+Fields responses (repeated bytes) The list of responses to the requests.
+BatchSameRequest Used in BatchSame endpoint."/>
 
     <meta name="theme-color" content="#E93D58">
     <meta property="og:image" content="https://harmonyapp.io/img/harmony-embed.png" />
@@ -136,127 +145,49 @@
       <h1 class="h1">Reference: protocol.batch.v1</h1>
       <h2 id="message-types">Message Types</h2>
 <h3 id="anyrequest">AnyRequest</h3>
-<p>Fields</p>
-<table>
-<thead>
-<tr>
-<th>Name</th>
-<th>Type</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>endpoint</td>
-<td><code>string</code></td>
-</tr>
-<tr>
-<td>request</td>
-<td><code>bytes</code></td>
-</tr>
-</tbody>
-</table>
+<p>AnyRequest is a generic message supporting any unary request.</p>
+<h4 id="fields">Fields</h4>
+<h5 id="endpoint-optional--string">endpoint (optional  <code>string</code>)</h5>
+<p>The endpoint to which the request is being sent.</p>
+<h5 id="request-optional--bytes">request (optional  <code>bytes</code>)</h5>
+<p>The request data.</p>
 <h3 id="batchrequest">BatchRequest</h3>
-<p>Fields</p>
-<table>
-<thead>
-<tr>
-<th>Name</th>
-<th>Type</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>requests</td>
-<td><a href="#anyrequest">protocol.batch.v1.AnyRequest</a></td>
-</tr>
-</tbody>
-</table>
+<p>Used in <code>Batch</code> endpoint.</p>
+<h4 id="fields-1">Fields</h4>
+<h5 id="requests-repeated--protocolbatchv1anyrequestanyrequest">requests (repeated  <a href="#anyrequest">protocol.batch.v1.AnyRequest</a>)</h5>
+<p>The list of requests to be executed in the batch.</p>
 <h3 id="batchresponse">BatchResponse</h3>
-<p>Fields</p>
-<table>
-<thead>
-<tr>
-<th>Name</th>
-<th>Type</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>responses</td>
-<td><code>bytes</code></td>
-</tr>
-</tbody>
-</table>
+<p>Used in <code>Batch</code> endpoint.</p>
+<h4 id="fields-2">Fields</h4>
+<h5 id="responses-repeated--bytes">responses (repeated  <code>bytes</code>)</h5>
+<p>The list of responses to the requests.</p>
 <h3 id="batchsamerequest">BatchSameRequest</h3>
-<p>Fields</p>
-<table>
-<thead>
-<tr>
-<th>Name</th>
-<th>Type</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>endpoint</td>
-<td><code>string</code></td>
-</tr>
-<tr>
-<td>requests</td>
-<td><code>bytes</code></td>
-</tr>
-</tbody>
-</table>
+<p>Used in <code>BatchSame</code> endpoint.</p>
+<h4 id="fields-3">Fields</h4>
+<h5 id="endpoint-optional--string-1">endpoint (optional  <code>string</code>)</h5>
+<p>The endpoint to call for all requests.</p>
+<h5 id="requests-repeated--bytes">requests (repeated  <code>bytes</code>)</h5>
+<p>The list of requests to be executed in the batch.</p>
 <h3 id="batchsameresponse">BatchSameResponse</h3>
-<p>Fields</p>
-<table>
-<thead>
-<tr>
-<th>Name</th>
-<th>Type</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>responses</td>
-<td><code>bytes</code></td>
-</tr>
-</tbody>
-</table>
+<p>Used in <code>BatchSame</code> endpoint.</p>
+<h4 id="fields-4">Fields</h4>
+<h5 id="responses-repeated--bytes-1">responses (repeated  <code>bytes</code>)</h5>
+<p>The list of responses to the requests.</p>
 <h2 id="services">Services</h2>
 <h3 id="batchservice">BatchService</h3>
-<h4 id="unary-methods">Unary Methods</h4>
-<table>
-<thead>
-<tr>
-<th>Name</th>
-<th>Request</th>
-<th>Response</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Batch</td>
-<td><a href="#batchrequest">protocol.batch.v1.BatchRequest</a></td>
-<td><a href="#batchresponse">protocol.batch.v1.BatchResponse</a></td>
-</tr>
-<tr>
-<td>BatchSame</td>
-<td><a href="#batchsamerequest">protocol.batch.v1.BatchSameRequest</a></td>
-<td><a href="#batchsameresponse">protocol.batch.v1.BatchSameResponse</a></td>
-</tr>
-</tbody>
-</table>
-<h4 id="streaming-methods">Streaming Methods</h4>
-<table>
-<thead>
-<tr>
-<th>Name</th>
-<th>Client Streams</th>
-<th>Server Streams</th>
-</tr>
-</thead>
-</table>
+<p>Service to batch requests.</p>
+<h4 id="methods">Methods</h4>
+<h5 id="batch">Batch</h5>
+<p><a href="#batchrequest">protocol.batch.v1.BatchRequest</a> -&gt; <a href="#batchresponse">protocol.batch.v1.BatchResponse</a></p>
+<p>Batch requests.
+Does not support batching stream requests.
+Batched requests should be verified and an error should be thrown if they
+are invalid.</p>
+<h5 id="batchsame">BatchSame</h5>
+<p><a href="#batchsamerequest">protocol.batch.v1.BatchSameRequest</a> -&gt; <a href="#batchsameresponse">protocol.batch.v1.BatchSameResponse</a></p>
+<p>BatchSame allows batching for requests using the same endpoint.
+This allows for additional network optimizations since the endpoint doesn&rsquo;t
+have to be sent for every request.</p>
 
     </article>
   </div>

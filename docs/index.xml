@@ -47,9 +47,11 @@ A permission is just a string, such as roles.</description>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://harmonyapp.io/docs/google.protobuf/</guid>
-      <description>Message Types FileDescriptorSet Fields
-   Name Type     file google.protobuf.FileDescriptorProto    FileDescriptorProto Fields
-   Name Type     name string   package string   dependency string   public_dependency int32   weak_dependency int32   message_type google.protobuf.DescriptorProto   enum_type google.protobuf.EnumDescriptorProto   service google.protobuf.ServiceDescriptorProto   extension google.protobuf.FieldDescriptorProto   options google.protobuf.FileOptions   source_code_info google.</description>
+      <description>Message Types FileDescriptorSet The protocol compiler can output a FileDescriptorSet containing the .proto files it parses.
+Fields file (repeated google.protobuf.FileDescriptorProto) FileDescriptorProto Describes a complete .proto file.
+Fields name (optional string) package (optional string) dependency (repeated string) Names of files imported by this file.
+public_dependency (repeated int32) Indexes of the public imported files in the dependency list above.
+weak_dependency (repeated int32) Indexes of the weak imported files in the dependency list. For Google-internal migration only.</description>
     </item>
     
     <item>
@@ -58,11 +60,12 @@ A permission is just a string, such as roles.</description>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://harmonyapp.io/docs/protocol.auth.v1/</guid>
-      <description>Message Types BeginAuthRequest Fields
-   Name Type    BeginAuthResponse Fields
-   Name Type     auth_id string    Session Fields
-   Name Type     user_id uint64   session_token string    AuthStep Fields
-   Name Type     fallback_url string   can_go_back bool   choice protocol.auth.v1.AuthStep.Choice   form protocol.</description>
+      <description>Message Types BeginAuthRequest Used in BeginAuth endpoint.
+This item has no fields.
+BeginAuthResponse BeginAuthResponse The return type of BeginAuth, containing the auth_id that will be used for the authentication section
+Fields auth_id (optional string) auth_id: the ID of this auth session
+Session Session Session contains the information for a new session; the user_id you logged in as and the session_token which should be passed to authorisation
+Fields user_id (optional uint64) user_id: the ID of the user you logged in as</description>
     </item>
     
     <item>
@@ -71,11 +74,14 @@ A permission is just a string, such as roles.</description>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://harmonyapp.io/docs/protocol.batch.v1/</guid>
-      <description>Message Types AnyRequest Fields
-   Name Type     endpoint string   request bytes    BatchRequest Fields
-   Name Type     requests protocol.batch.v1.AnyRequest    BatchResponse Fields
-   Name Type     responses bytes    BatchSameRequest Fields
-   Name Type     endpoint string   requests bytes    BatchSameResponse Fields</description>
+      <description>Message Types AnyRequest AnyRequest is a generic message supporting any unary request.
+Fields endpoint (optional string) The endpoint to which the request is being sent.
+request (optional bytes) The request data.
+BatchRequest Used in Batch endpoint.
+Fields requests (repeated protocol.batch.v1.AnyRequest) The list of requests to be executed in the batch.
+BatchResponse Used in Batch endpoint.
+Fields responses (repeated bytes) The list of responses to the requests.
+BatchSameRequest Used in BatchSame endpoint.</description>
     </item>
     
     <item>
@@ -84,10 +90,12 @@ A permission is just a string, such as roles.</description>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://harmonyapp.io/docs/protocol.chat.v1/</guid>
-      <description>Message Types Channel Fields
-   Name Type     channel_name string   UNHANDLED TYPE   metadata protocol.harmonytypes.v1.Metadata    ChannelWithId Fields
-   Name Type     channel_id uint64   channel protocol.chat.v1.Channel    CreateChannelRequest Fields
-   Name Type     guild_id uint64   channel_name string   UNHANDLED TYPE   metadata protocol.</description>
+      <description>Message Types Channel An object representing a channel, without the ID.
+Fields channel_name (optional string) The name of this channel.
+kind (UNHANDLED | TYPE) The kind of channel this is. Data does not get inherently stored in the Channel type Instead, clients who understand a certain ChannelKind should fetch them from a separate RPC.
+metadata (optional protocol.harmonytypes.v1.Metadata) The metadata of this channel.
+ChannelWithId The channel alongside with an ID.
+Fields channel_id (optional uint64) ID of the channel.</description>
     </item>
     
     <item>
@@ -96,11 +104,12 @@ A permission is just a string, such as roles.</description>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://harmonyapp.io/docs/protocol.emote.v1/</guid>
-      <description>Message Types EmotePack Fields
-   Name Type     pack_id uint64   pack_owner uint64   pack_name string    Emote Fields
-   Name Type     image_id string   name string    CreateEmotePackRequest Fields
-   Name Type     pack_name string    CreateEmotePackResponse Fields
-   Name Type     pack_id uint64    GetEmotePacksRequest Fields</description>
+      <description>Message Types EmotePack Data for a single pack of emotes.
+Fields pack_id (optional uint64) The ID of the pack.
+pack_owner (optional uint64) The ID of the user who created the pack.
+pack_name (optional string) The name of the pack.
+Emote Data for a single emote.
+Fields image_id (optional string) The image ID of the emote. This is the ID of the image in the image store (same place attachments are stored).</description>
     </item>
     
     <item>
@@ -109,10 +118,13 @@ A permission is just a string, such as roles.</description>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://harmonyapp.io/docs/protocol.harmonytypes.v1/</guid>
-      <description>Message Types HarmonyMethodMetadata Fields
-   Name Type     requires_authentication bool   requires_local bool   requires_permission_node string   requires_owner bool    Anything Fields
-   Name Type     kind string   body bytes    Metadata Fields
-   Name Type     kind string   extension protocol.harmonytypes.v1.Metadata.ExtensionEntry    Error Fields</description>
+      <description>Message Types HarmonyMethodMetadata Metadata for methods. These are set in individual RPC endpoints and are typically used by servers.
+Fields requires_authentication (optional bool) whether the method requires authentication.
+requires_local (optional bool) whether the method allows federation or not.
+requires_permission_node (optional string) the permission nodes required to invoke the method.
+requires_owner (optional bool) whether the method requires owner
+Anything Anything holds anything
+Fields kind (optional string) Kind is the kind of the message</description>
     </item>
     
     <item>
@@ -121,10 +133,15 @@ A permission is just a string, such as roles.</description>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://harmonyapp.io/docs/protocol.mediaproxy.v1/</guid>
-      <description>Message Types SiteMetadata Fields
-   Name Type     site_title string   page_title string   kind string   description string   url string   image string    MediaMetadata Fields
-   Name Type     mimetype string   filename string    FetchLinkMetadataRequest Fields
-   Name Type     url string    FetchLinkMetadataResponse Fields</description>
+      <description>Message Types SiteMetadata Object representing the metadata of a website.
+Fields site_title (optional string) Title of the website.
+page_title (optional string) Page title of the website page.
+kind (optional string) Kind of the website.
+description (optional string) Description of the website page.
+url (optional string) URL of the website.
+image (optional string) A thumbnail image of the website.
+MediaMetadata Object represeting the metadata of a media.
+Fields mimetype (optional string) Mimetype of the media.</description>
     </item>
     
     <item>
@@ -133,10 +150,9 @@ A permission is just a string, such as roles.</description>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://harmonyapp.io/docs/protocol.profile.v1/</guid>
-      <description>Message Types OverrideTag Fields
-   Name Type     before string   after string    ProfileOverride Fields
-   Name Type     username string   avatar string   tags protocol.profile.v1.OverrideTag   user_defined string   system_plurality protocol.harmonytypes.v1.Empty    AppDataOverrides Fields
-   Name Type     overrides protocol.profile.v1.ProfileOverride    Profile Fields</description>
+      <description>Message Types OverrideTag A tag for an override. This is used as a standard shorthand for sending a message with an override. If a message starts with before and ends with after, clients should send a message with the override the tag belongs to, stripping the tag indicators.
+Fields before (optional string) The portion of the tag before the messge.
+after (optional string) The portion of the tag after the messge.</description>
     </item>
     
     <item>
@@ -145,11 +161,9 @@ A permission is just a string, such as roles.</description>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://harmonyapp.io/docs/protocol.sync.v1/</guid>
-      <description>Message Types AuthData Fields
-   Name Type     server_id string   time uint64    Event Fields
-   Name Type     user_removed_from_guild protocol.sync.v1.Event.UserRemovedFromGuild   user_added_to_guild protocol.sync.v1.Event.UserAddedToGuild   user_invited protocol.sync.v1.Event.UserInvited   user_rejected_invite protocol.sync.v1.Event.UserRejectedInvite    PullRequest Fields
-   Name Type    PullResponse Fields
-   Name Type     event_queue protocol.</description>
+      <description>Message Types AuthData Authentication data that will be sent in a harmonytypes.v1.Token.
+Fields server_id (optional string) The server ID of the server initiating the transaction. For Pull, this tells the server being connected to which homeservers&#39; events it should send. For Push, this tells the server being connected to which homeservers&#39; events it is receiving.
+time (optional uint64) The UTC UNIX time in seconds of when the request is started. Servers should reject tokens with a time too far from the current time, at their discretion.</description>
     </item>
     
     <item>
@@ -158,10 +172,11 @@ A permission is just a string, such as roles.</description>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://harmonyapp.io/docs/protocol.voice.v1/</guid>
-      <description>Message Types UserConsumerOptions Fields
-   Name Type     user_id uint64   producer_id string   consumer_id string   rtp_parameters string    TransportOptions Fields
-   Name Type     id string   dtls_parameters string   ice_candidates string   ice_parameters string    StreamMessageRequest Fields
-   Name Type     initialize protocol.</description>
+      <description>Message Types UserConsumerOptions Data containing all the necessary information to create a consumer for a user in a voice channel
+This corresponds to https://mediasoup.org/documentation/v3/mediasoup-client/api/#ConsumerOptions on client:
+ consumer_id -&amp;gt; id producer_id -&amp;gt; producerId rtp_parameters -&amp;gt; rtpParameters and kind should be set to &amp;ldquo;audio&amp;rdquo;.  Fields user_id (optional uint64) User ID of the user.
+producer_id (optional string) Producer ID of the producer being consumed.
+consumer_id (optional string) Consumer ID for the user&amp;rsquo;s producer consumer.</description>
     </item>
     
     <item>

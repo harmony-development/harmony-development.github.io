@@ -3,34 +3,43 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no">
     <title>Reference: protocol.harmonytypes.v1 | Harmony</title>
-    <meta name="description" content="Message Types HarmonyMethodMetadata Fields
-   Name Type     requires_authentication bool   requires_local bool   requires_permission_node string   requires_owner bool    Anything Fields
-   Name Type     kind string   body bytes    Metadata Fields
-   Name Type     kind string   extension protocol.harmonytypes.v1.Metadata.ExtensionEntry    Error Fields ">
+    <meta name="description" content="Message Types HarmonyMethodMetadata Metadata for methods. These are set in individual RPC endpoints and are typically used by servers.
+Fields requires_authentication (optional bool) whether the method requires authentication.
+requires_local (optional bool) whether the method allows federation or not.
+requires_permission_node (optional string) the permission nodes required to invoke the method.
+requires_owner (optional bool) whether the method requires owner
+Anything Anything holds anything
+Fields kind (optional string) Kind is the kind of the message ">
     <link rel="canonical" href="https://harmonyapp.io/docs/protocol.harmonytypes.v1/" />
 
     
 
     
       
-      <link rel="stylesheet" href="/css/main.min.8e1883f7dd16d57c3348aedb1f5e7ac9e93af3c97a2c19469cf0f09661db5c00.css" integrity="sha256-jhiD990W1XwzSK7bH156yek688l6LBlGnPDwlmHbXAA="/>
+      <link rel="stylesheet" href="/css/main.min.ffa2c263a52247f69e606278e3b3ab33849b5ce18bb062835eece5ca3730b038.css" integrity="sha256-/6LCY6UiR/aeYGJ447OrM4SbXOGLsGKDXuzlyjcwsDg="/>
     
 
     <meta property="og:title" content="Reference: protocol.harmonytypes.v1" />
-<meta property="og:description" content="Message Types HarmonyMethodMetadata Fields
-   Name Type     requires_authentication bool   requires_local bool   requires_permission_node string   requires_owner bool    Anything Fields
-   Name Type     kind string   body bytes    Metadata Fields
-   Name Type     kind string   extension protocol.harmonytypes.v1.Metadata.ExtensionEntry    Error Fields" />
+<meta property="og:description" content="Message Types HarmonyMethodMetadata Metadata for methods. These are set in individual RPC endpoints and are typically used by servers.
+Fields requires_authentication (optional bool) whether the method requires authentication.
+requires_local (optional bool) whether the method allows federation or not.
+requires_permission_node (optional string) the permission nodes required to invoke the method.
+requires_owner (optional bool) whether the method requires owner
+Anything Anything holds anything
+Fields kind (optional string) Kind is the kind of the message" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://harmonyapp.io/docs/protocol.harmonytypes.v1/" />
 
 
     <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Reference: protocol.harmonytypes.v1"/>
-<meta name="twitter:description" content="Message Types HarmonyMethodMetadata Fields
-   Name Type     requires_authentication bool   requires_local bool   requires_permission_node string   requires_owner bool    Anything Fields
-   Name Type     kind string   body bytes    Metadata Fields
-   Name Type     kind string   extension protocol.harmonytypes.v1.Metadata.ExtensionEntry    Error Fields"/>
+<meta name="twitter:description" content="Message Types HarmonyMethodMetadata Metadata for methods. These are set in individual RPC endpoints and are typically used by servers.
+Fields requires_authentication (optional bool) whether the method requires authentication.
+requires_local (optional bool) whether the method allows federation or not.
+requires_permission_node (optional string) the permission nodes required to invoke the method.
+requires_owner (optional bool) whether the method requires owner
+Anything Anything holds anything
+Fields kind (optional string) Kind is the kind of the message"/>
 
     <meta name="theme-color" content="#E93D58">
     <meta property="og:image" content="https://harmonyapp.io/img/harmony-embed.png" />
@@ -116,14 +125,18 @@
         <li><a href="#harmonymethodmetadata">HarmonyMethodMetadata</a></li>
         <li><a href="#anything">Anything</a></li>
         <li><a href="#metadata">Metadata</a></li>
+        <li><a href="#metadataextensionentry">Metadata.ExtensionEntry</a></li>
         <li><a href="#error">Error</a></li>
         <li><a href="#token">Token</a></li>
         <li><a href="#empty">Empty</a></li>
         <li><a href="#itemposition">ItemPosition</a></li>
-        <li><a href="#metadataextensionentry">Metadata.ExtensionEntry</a></li>
       </ul>
     </li>
-    <li><a href="#services">Services</a></li>
+    <li><a href="#enums">Enums</a>
+      <ul>
+        <li><a href="#position">Position</a></li>
+      </ul>
+    </li>
   </ul>
 </nav>
   </aside>
@@ -132,168 +145,70 @@
       <h1 class="h1">Reference: protocol.harmonytypes.v1</h1>
       <h2 id="message-types">Message Types</h2>
 <h3 id="harmonymethodmetadata">HarmonyMethodMetadata</h3>
-<p>Fields</p>
-<table>
-<thead>
-<tr>
-<th>Name</th>
-<th>Type</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>requires_authentication</td>
-<td><code>bool</code></td>
-</tr>
-<tr>
-<td>requires_local</td>
-<td><code>bool</code></td>
-</tr>
-<tr>
-<td>requires_permission_node</td>
-<td><code>string</code></td>
-</tr>
-<tr>
-<td>requires_owner</td>
-<td><code>bool</code></td>
-</tr>
-</tbody>
-</table>
+<p>Metadata for methods. These are set in individual RPC endpoints and are
+typically used by servers.</p>
+<h4 id="fields">Fields</h4>
+<h5 id="requires_authentication-optional--bool">requires_authentication (optional  <code>bool</code>)</h5>
+<p>whether the method requires authentication.</p>
+<h5 id="requires_local-optional--bool">requires_local (optional  <code>bool</code>)</h5>
+<p>whether the method allows federation or not.</p>
+<h5 id="requires_permission_node-optional--string">requires_permission_node (optional  <code>string</code>)</h5>
+<p>the permission nodes required to invoke the method.</p>
+<h5 id="requires_owner-optional--bool">requires_owner (optional  <code>bool</code>)</h5>
+<p>whether the method requires owner</p>
 <h3 id="anything">Anything</h3>
-<p>Fields</p>
-<table>
-<thead>
-<tr>
-<th>Name</th>
-<th>Type</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>kind</td>
-<td><code>string</code></td>
-</tr>
-<tr>
-<td>body</td>
-<td><code>bytes</code></td>
-</tr>
-</tbody>
-</table>
+<p>Anything holds anything</p>
+<h4 id="fields-1">Fields</h4>
+<h5 id="kind-optional--string">kind (optional  <code>string</code>)</h5>
+<p>Kind is the kind of the message</p>
+<h5 id="body-optional--bytes">body (optional  <code>bytes</code>)</h5>
+<p>Body is the serialised bytes</p>
 <h3 id="metadata">Metadata</h3>
-<p>Fields</p>
-<table>
-<thead>
-<tr>
-<th>Name</th>
-<th>Type</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>kind</td>
-<td><code>string</code></td>
-</tr>
-<tr>
-<td>extension</td>
-<td><a href="#metadata-extensionentry">protocol.harmonytypes.v1.Metadata.ExtensionEntry</a></td>
-</tr>
-</tbody>
-</table>
-<h3 id="error">Error</h3>
-<p>Fields</p>
-<table>
-<thead>
-<tr>
-<th>Name</th>
-<th>Type</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>identifier</td>
-<td><code>string</code></td>
-</tr>
-<tr>
-<td>human_message</td>
-<td><code>string</code></td>
-</tr>
-<tr>
-<td>more_details</td>
-<td><code>bytes</code></td>
-</tr>
-</tbody>
-</table>
-<h3 id="token">Token</h3>
-<p>Fields</p>
-<table>
-<thead>
-<tr>
-<th>Name</th>
-<th>Type</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>sig</td>
-<td><code>bytes</code></td>
-</tr>
-<tr>
-<td>data</td>
-<td><code>bytes</code></td>
-</tr>
-</tbody>
-</table>
-<h3 id="empty">Empty</h3>
-<p>Fields</p>
-<table>
-<thead>
-<tr>
-<th>Name</th>
-<th>Type</th>
-</tr>
-</thead>
-</table>
-<h3 id="itemposition">ItemPosition</h3>
-<p>Fields</p>
-<table>
-<thead>
-<tr>
-<th>Name</th>
-<th>Type</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>item_id</td>
-<td><code>uint64</code></td>
-</tr>
-<tr>
-<td>UNHANDLED</td>
-<td>TYPE</td>
-</tr>
-</tbody>
-</table>
+<p>Metadata type used by many messages.</p>
+<h4 id="fields-2">Fields</h4>
+<h5 id="kind-optional--string-1">kind (optional  <code>string</code>)</h5>
+<p>Kind of this metadata.</p>
+<h5 id="extension-repeated--protocolharmonytypesv1metadataextensionentrymetadataextensionentry">extension (repeated  <a href="#metadataextensionentry">protocol.harmonytypes.v1.Metadata.ExtensionEntry</a>)</h5>
+<p>A map containing information.</p>
 <h3 id="metadataextensionentry">Metadata.ExtensionEntry</h3>
-<p>Fields</p>
-<table>
-<thead>
-<tr>
-<th>Name</th>
-<th>Type</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>key</td>
-<td><code>string</code></td>
-</tr>
-<tr>
-<td>value</td>
-<td><a href="#anything">protocol.harmonytypes.v1.Anything</a></td>
-</tr>
-</tbody>
-</table>
-<h2 id="services">Services</h2>
+<h4 id="fields-3">Fields</h4>
+<h5 id="key-optional--string">key (optional  <code>string</code>)</h5>
+<h5 id="value-optional--protocolharmonytypesv1anythinganything">value (optional  <a href="#anything">protocol.harmonytypes.v1.Anything</a>)</h5>
+<h3 id="error">Error</h3>
+<p>Error type that will be returned by servers.</p>
+<h4 id="fields-4">Fields</h4>
+<h5 id="identifier-optional--string">identifier (optional  <code>string</code>)</h5>
+<p>The identifier of this error, can be used as an i18n key.</p>
+<h5 id="human_message-optional--string">human_message (optional  <code>string</code>)</h5>
+<p>A (usually english) human message for this error.</p>
+<h5 id="more_details-optional--bytes">more_details (optional  <code>bytes</code>)</h5>
+<p>More details about this message. Is dependent on the endpoint.</p>
+<h3 id="token">Token</h3>
+<p>Token that will be used for authentication.</p>
+<h4 id="fields-5">Fields</h4>
+<h5 id="sig-optional--bytes">sig (optional  <code>bytes</code>)</h5>
+<p>Ed25519 signature of the following serialized protobuf data, signed
+with a private key. Which private key used to sign will be described
+in the documentation.</p>
+<p>Has to be 64 bytes long, otherwise it will be rejected.</p>
+<h5 id="data-optional--bytes">data (optional  <code>bytes</code>)</h5>
+<p>Serialized protobuf data.
+The protobuf type of this serialized data is dependent on the API endpoint
+used.</p>
+<h3 id="empty">Empty</h3>
+<p>An empty message</p>
+<p>This item has no fields.</p>
+<h3 id="itemposition">ItemPosition</h3>
+<p>An object representing an item position between two other items.</p>
+<h4 id="fields-6">Fields</h4>
+<h5 id="item_id-optional--uint64">item_id (optional  <code>uint64</code>)</h5>
+<p>The ID of the item the position is relative to</p>
+<h5 id="position-unhandled--type">position (UNHANDLED | TYPE)</h5>
+<p>Whether the position is before or after the given ID</p>
+<h2 id="enums">Enums</h2>
+<h3 id="position">Position</h3>
+<h4 id="position_before_unspecified">POSITION_BEFORE_UNSPECIFIED</h4>
+<h4 id="position_after">POSITION_AFTER</h4>
 
     </article>
   </div>
