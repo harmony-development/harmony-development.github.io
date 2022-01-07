@@ -173,14 +173,17 @@
 .prose h3 {
   font-weight: 600;
   font-size: 1.3125rem;
-  margin: 1rem 0 0.5rem 0;
+  margin: 2rem 0 0.5rem 0;
 
   @apply dark:text-white;
+}
+.prose h4 {
+  font-size: 1.3rem;
 }
 .prose h4,
 .prose h5,
 .prose h6 {
-  margin: 0.75rem 0 0.35rem 0;
+  margin: 1rem 0 0.35rem 0;
 
   @apply dark:text-white;
 }
