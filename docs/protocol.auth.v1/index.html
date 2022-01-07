@@ -11,11 +11,13 @@ Session Session Session contains the information for a new session; the user_id 
 Fields user_id (optional uint64) user_id: the ID of the user you logged in as ">
     <link rel="canonical" href="https://harmonyapp.io/docs/protocol.auth.v1/" />
 
+    <link rel="stylesheet" href="/css/codicon.css" />
+
     
 
     
       
-      <link rel="stylesheet" href="/css/main.min.ffa2c263a52247f69e606278e3b3ab33849b5ce18bb062835eece5ca3730b038.css" integrity="sha256-/6LCY6UiR/aeYGJ447OrM4SbXOGLsGKDXuzlyjcwsDg="/>
+      <link rel="stylesheet" href="/css/main.min.b599a35d8c7b77592a19cf713bdf6cbf7c404435525e62c590c7c61d88977fb3.css" integrity="sha256-tZmjXYx7d1kqGc9xO99sv3xARDVSXmLFkMfGHYiXf7M="/>
     
 
     <meta property="og:title" content="Reference: protocol.auth.v1" />
@@ -119,37 +121,37 @@ Fields user_id (optional uint64) user_id: the ID of the user you logged in as"/>
   <ul>
     <li><a href="#message-types">Message Types</a>
       <ul>
-        <li><a href="#beginauthrequest">BeginAuthRequest</a></li>
-        <li><a href="#beginauthresponse">BeginAuthResponse</a></li>
-        <li><a href="#session">Session</a></li>
-        <li><a href="#authstep">AuthStep</a></li>
-        <li><a href="#authstepchoice">AuthStep.Choice</a></li>
-        <li><a href="#authstepform">AuthStep.Form</a></li>
-        <li><a href="#authstepformformfield">AuthStep.Form.FormField</a></li>
-        <li><a href="#authstepwaiting">AuthStep.Waiting</a></li>
-        <li><a href="#nextsteprequest">NextStepRequest</a></li>
-        <li><a href="#nextsteprequestchoice">NextStepRequest.Choice</a></li>
-        <li><a href="#nextsteprequestformfields">NextStepRequest.FormFields</a></li>
-        <li><a href="#nextsteprequestform">NextStepRequest.Form</a></li>
-        <li><a href="#nextstepresponse">NextStepResponse</a></li>
-        <li><a href="#stepbackrequest">StepBackRequest</a></li>
-        <li><a href="#stepbackresponse">StepBackResponse</a></li>
-        <li><a href="#streamstepsrequest">StreamStepsRequest</a></li>
-        <li><a href="#streamstepsresponse">StreamStepsResponse</a></li>
-        <li><a href="#federaterequest">FederateRequest</a></li>
-        <li><a href="#federateresponse">FederateResponse</a></li>
-        <li><a href="#keyrequest">KeyRequest</a></li>
-        <li><a href="#keyresponse">KeyResponse</a></li>
-        <li><a href="#loginfederatedrequest">LoginFederatedRequest</a></li>
-        <li><a href="#loginfederatedresponse">LoginFederatedResponse</a></li>
-        <li><a href="#tokendata">TokenData</a></li>
-        <li><a href="#checkloggedinrequest">CheckLoggedInRequest</a></li>
-        <li><a href="#checkloggedinresponse">CheckLoggedInResponse</a></li>
+        <li><a href="#span-classcodicon-codicon-symbol-structure-symbol-structurespanbeginauthrequest"><span class="codicon codicon-symbol-structure symbol-structure"></span>BeginAuthRequest</a></li>
+        <li><a href="#span-classcodicon-codicon-symbol-structure-symbol-structurespanbeginauthresponse"><span class="codicon codicon-symbol-structure symbol-structure"></span>BeginAuthResponse</a></li>
+        <li><a href="#span-classcodicon-codicon-symbol-structure-symbol-structurespansession"><span class="codicon codicon-symbol-structure symbol-structure"></span>Session</a></li>
+        <li><a href="#span-classcodicon-codicon-symbol-structure-symbol-structurespanauthstep"><span class="codicon codicon-symbol-structure symbol-structure"></span>AuthStep</a></li>
+        <li><a href="#span-classcodicon-codicon-symbol-structure-symbol-structurespanauthstepchoice"><span class="codicon codicon-symbol-structure symbol-structure"></span>AuthStep.Choice</a></li>
+        <li><a href="#span-classcodicon-codicon-symbol-structure-symbol-structurespanauthstepform"><span class="codicon codicon-symbol-structure symbol-structure"></span>AuthStep.Form</a></li>
+        <li><a href="#span-classcodicon-codicon-symbol-structure-symbol-structurespanauthstepformformfield"><span class="codicon codicon-symbol-structure symbol-structure"></span>AuthStep.Form.FormField</a></li>
+        <li><a href="#span-classcodicon-codicon-symbol-structure-symbol-structurespanauthstepwaiting"><span class="codicon codicon-symbol-structure symbol-structure"></span>AuthStep.Waiting</a></li>
+        <li><a href="#span-classcodicon-codicon-symbol-structure-symbol-structurespannextsteprequest"><span class="codicon codicon-symbol-structure symbol-structure"></span>NextStepRequest</a></li>
+        <li><a href="#span-classcodicon-codicon-symbol-structure-symbol-structurespannextsteprequestchoice"><span class="codicon codicon-symbol-structure symbol-structure"></span>NextStepRequest.Choice</a></li>
+        <li><a href="#span-classcodicon-codicon-symbol-structure-symbol-structurespannextsteprequestformfields"><span class="codicon codicon-symbol-structure symbol-structure"></span>NextStepRequest.FormFields</a></li>
+        <li><a href="#span-classcodicon-codicon-symbol-structure-symbol-structurespannextsteprequestform"><span class="codicon codicon-symbol-structure symbol-structure"></span>NextStepRequest.Form</a></li>
+        <li><a href="#span-classcodicon-codicon-symbol-structure-symbol-structurespannextstepresponse"><span class="codicon codicon-symbol-structure symbol-structure"></span>NextStepResponse</a></li>
+        <li><a href="#span-classcodicon-codicon-symbol-structure-symbol-structurespanstepbackrequest"><span class="codicon codicon-symbol-structure symbol-structure"></span>StepBackRequest</a></li>
+        <li><a href="#span-classcodicon-codicon-symbol-structure-symbol-structurespanstepbackresponse"><span class="codicon codicon-symbol-structure symbol-structure"></span>StepBackResponse</a></li>
+        <li><a href="#span-classcodicon-codicon-symbol-structure-symbol-structurespanstreamstepsrequest"><span class="codicon codicon-symbol-structure symbol-structure"></span>StreamStepsRequest</a></li>
+        <li><a href="#span-classcodicon-codicon-symbol-structure-symbol-structurespanstreamstepsresponse"><span class="codicon codicon-symbol-structure symbol-structure"></span>StreamStepsResponse</a></li>
+        <li><a href="#span-classcodicon-codicon-symbol-structure-symbol-structurespanfederaterequest"><span class="codicon codicon-symbol-structure symbol-structure"></span>FederateRequest</a></li>
+        <li><a href="#span-classcodicon-codicon-symbol-structure-symbol-structurespanfederateresponse"><span class="codicon codicon-symbol-structure symbol-structure"></span>FederateResponse</a></li>
+        <li><a href="#span-classcodicon-codicon-symbol-structure-symbol-structurespankeyrequest"><span class="codicon codicon-symbol-structure symbol-structure"></span>KeyRequest</a></li>
+        <li><a href="#span-classcodicon-codicon-symbol-structure-symbol-structurespankeyresponse"><span class="codicon codicon-symbol-structure symbol-structure"></span>KeyResponse</a></li>
+        <li><a href="#span-classcodicon-codicon-symbol-structure-symbol-structurespanloginfederatedrequest"><span class="codicon codicon-symbol-structure symbol-structure"></span>LoginFederatedRequest</a></li>
+        <li><a href="#span-classcodicon-codicon-symbol-structure-symbol-structurespanloginfederatedresponse"><span class="codicon codicon-symbol-structure symbol-structure"></span>LoginFederatedResponse</a></li>
+        <li><a href="#span-classcodicon-codicon-symbol-structure-symbol-structurespantokendata"><span class="codicon codicon-symbol-structure symbol-structure"></span>TokenData</a></li>
+        <li><a href="#span-classcodicon-codicon-symbol-structure-symbol-structurespancheckloggedinrequest"><span class="codicon codicon-symbol-structure symbol-structure"></span>CheckLoggedInRequest</a></li>
+        <li><a href="#span-classcodicon-codicon-symbol-structure-symbol-structurespancheckloggedinresponse"><span class="codicon codicon-symbol-structure symbol-structure"></span>CheckLoggedInResponse</a></li>
       </ul>
     </li>
     <li><a href="#services">Services</a>
       <ul>
-        <li><a href="#authservice">AuthService</a></li>
+        <li><a href="#span-classcodicon-codicon-symbol-class-symbol-classspanauthservice"><span class="codicon codicon-symbol-class symbol-class"></span>AuthService</a></li>
       </ul>
     </li>
   </ul>
@@ -159,201 +161,201 @@ Fields user_id (optional uint64) user_id: the ID of the user you logged in as"/>
     <article class="prose">
       <h1 class="h1">Reference: protocol.auth.v1</h1>
       <h2 id="message-types">Message Types</h2>
-<h3 id="beginauthrequest">BeginAuthRequest</h3>
+<h3 id="span-classcodicon-codicon-symbol-structure-symbol-structurespanbeginauthrequest"><span class="codicon codicon-symbol-structure symbol-structure"></span>BeginAuthRequest</h3>
 <p>Used in <code>BeginAuth</code> endpoint.</p>
 <p>This item has no fields.</p>
-<h3 id="beginauthresponse">BeginAuthResponse</h3>
+<h3 id="span-classcodicon-codicon-symbol-structure-symbol-structurespanbeginauthresponse"><span class="codicon codicon-symbol-structure symbol-structure"></span>BeginAuthResponse</h3>
 <p>BeginAuthResponse
 The return type of BeginAuth, containing the
 auth_id that will be used for the authentication
 section</p>
 <h4 id="fields">Fields</h4>
-<h5 id="auth_id-optional--string">auth_id (optional  <code>string</code>)</h5>
+<h5 id="span-classcodicon-codicon-symbol-field-symbol-fieldspanauth_id-optional--string"><span class="codicon codicon-symbol-field symbol-field"></span>auth_id (optional  <code>string</code>)</h5>
 <p>auth_id: the ID of this auth session</p>
-<h3 id="session">Session</h3>
+<h3 id="span-classcodicon-codicon-symbol-structure-symbol-structurespansession"><span class="codicon codicon-symbol-structure symbol-structure"></span>Session</h3>
 <p>Session
 Session contains the information for a new session;
 the user_id you logged in as and the session_token
 which should be passed to authorisation</p>
 <h4 id="fields-1">Fields</h4>
-<h5 id="user_id-optional--uint64">user_id (optional  <code>uint64</code>)</h5>
+<h5 id="span-classcodicon-codicon-symbol-field-symbol-fieldspanuser_id-optional--uint64"><span class="codicon codicon-symbol-field symbol-field"></span>user_id (optional  <code>uint64</code>)</h5>
 <p>user_id: the ID of the user you logged in as</p>
-<h5 id="session_token-optional--string">session_token (optional  <code>string</code>)</h5>
+<h5 id="span-classcodicon-codicon-symbol-field-symbol-fieldspansession_token-optional--string"><span class="codicon codicon-symbol-field symbol-field"></span>session_token (optional  <code>string</code>)</h5>
 <p>session_token: the session token to use in authorization</p>
-<h3 id="authstep">AuthStep</h3>
+<h3 id="span-classcodicon-codicon-symbol-structure-symbol-structurespanauthstep"><span class="codicon codicon-symbol-structure symbol-structure"></span>AuthStep</h3>
 <p>AuthStep
 A step in the authentication process
 Contains a variety of different types of views
 It is recommended to have a fallback_url specified
 For non-trivial authentication procedures (such as captchas)</p>
 <h4 id="fields-2">Fields</h4>
-<h5 id="fallback_url-optional--string">fallback_url (optional  <code>string</code>)</h5>
+<h5 id="span-classcodicon-codicon-symbol-field-symbol-fieldspanfallback_url-optional--string"><span class="codicon codicon-symbol-field symbol-field"></span>fallback_url (optional  <code>string</code>)</h5>
 <p>fallback_url: unused</p>
-<h5 id="can_go_back-optional--bool">can_go_back (optional  <code>bool</code>)</h5>
+<h5 id="span-classcodicon-codicon-symbol-field-symbol-fieldspancan_go_back-optional--bool"><span class="codicon codicon-symbol-field symbol-field"></span>can_go_back (optional  <code>bool</code>)</h5>
 <p>can_go_back: whether or not the client can request the
 server to send the previous step</p>
-<h5 id="choice-optional--protocolauthv1authstepchoiceauthstepchoice">choice (optional  <a href="#authstepchoice">protocol.auth.v1.AuthStep.Choice</a>)</h5>
+<h5 id="span-classcodicon-codicon-symbol-field-symbol-fieldspanchoice-optional--protocolauthv1authstepchoiceauthstepchoice"><span class="codicon codicon-symbol-field symbol-field"></span>choice (optional  <a href="#authstepchoice">protocol.auth.v1.AuthStep.Choice</a>)</h5>
 <p>choice: the user must pick a thing out of a list of options</p>
-<h5 id="form-optional--protocolauthv1authstepformauthstepform">form (optional  <a href="#authstepform">protocol.auth.v1.AuthStep.Form</a>)</h5>
+<h5 id="span-classcodicon-codicon-symbol-field-symbol-fieldspanform-optional--protocolauthv1authstepformauthstepform"><span class="codicon codicon-symbol-field symbol-field"></span>form (optional  <a href="#authstepform">protocol.auth.v1.AuthStep.Form</a>)</h5>
 <p>form: the user must complete a form</p>
-<h5 id="session-optional--protocolauthv1sessionsession">session (optional  <a href="#session">protocol.auth.v1.Session</a>)</h5>
+<h5 id="span-classcodicon-codicon-symbol-field-symbol-fieldspansession-optional--protocolauthv1sessionsession"><span class="codicon codicon-symbol-field symbol-field"></span>session (optional  <a href="#session">protocol.auth.v1.Session</a>)</h5>
 <p>session: you&rsquo;ve completed auth, and have a session</p>
-<h5 id="waiting-optional--protocolauthv1authstepwaitingauthstepwaiting">waiting (optional  <a href="#authstepwaiting">protocol.auth.v1.AuthStep.Waiting</a>)</h5>
+<h5 id="span-classcodicon-codicon-symbol-field-symbol-fieldspanwaiting-optional--protocolauthv1authstepwaitingauthstepwaiting"><span class="codicon codicon-symbol-field symbol-field"></span>waiting (optional  <a href="#authstepwaiting">protocol.auth.v1.AuthStep.Waiting</a>)</h5>
 <p>waiting: you&rsquo;re waiting on something</p>
-<h3 id="authstepchoice">AuthStep.Choice</h3>
+<h3 id="span-classcodicon-codicon-symbol-structure-symbol-structurespanauthstepchoice"><span class="codicon codicon-symbol-structure symbol-structure"></span>AuthStep.Choice</h3>
 <h4 id="fields-3">Fields</h4>
-<h5 id="title-optional--string">title (optional  <code>string</code>)</h5>
-<h5 id="options-repeated--string">options (repeated  <code>string</code>)</h5>
-<h3 id="authstepform">AuthStep.Form</h3>
+<h5 id="span-classcodicon-codicon-symbol-field-symbol-fieldspantitle-optional--string"><span class="codicon codicon-symbol-field symbol-field"></span>title (optional  <code>string</code>)</h5>
+<h5 id="span-classcodicon-codicon-symbol-field-symbol-fieldspanoptions-repeated--string"><span class="codicon codicon-symbol-field symbol-field"></span>options (repeated  <code>string</code>)</h5>
+<h3 id="span-classcodicon-codicon-symbol-structure-symbol-structurespanauthstepform"><span class="codicon codicon-symbol-structure symbol-structure"></span>AuthStep.Form</h3>
 <h4 id="fields-4">Fields</h4>
-<h5 id="title-optional--string-1">title (optional  <code>string</code>)</h5>
-<h5 id="fields-repeated--protocolauthv1authstepformformfieldauthstepformformfield">fields (repeated  <a href="#authstepformformfield">protocol.auth.v1.AuthStep.Form.FormField</a>)</h5>
-<h3 id="authstepformformfield">AuthStep.Form.FormField</h3>
+<h5 id="span-classcodicon-codicon-symbol-field-symbol-fieldspantitle-optional--string-1"><span class="codicon codicon-symbol-field symbol-field"></span>title (optional  <code>string</code>)</h5>
+<h5 id="span-classcodicon-codicon-symbol-field-symbol-fieldspanfields-repeated--protocolauthv1authstepformformfieldauthstepformformfield"><span class="codicon codicon-symbol-field symbol-field"></span>fields (repeated  <a href="#authstepformformfield">protocol.auth.v1.AuthStep.Form.FormField</a>)</h5>
+<h3 id="span-classcodicon-codicon-symbol-structure-symbol-structurespanauthstepformformfield"><span class="codicon codicon-symbol-structure symbol-structure"></span>AuthStep.Form.FormField</h3>
 <h4 id="fields-5">Fields</h4>
-<h5 id="name-optional--string">name (optional  <code>string</code>)</h5>
-<h5 id="type-optional--string">type (optional  <code>string</code>)</h5>
-<h3 id="authstepwaiting">AuthStep.Waiting</h3>
+<h5 id="span-classcodicon-codicon-symbol-field-symbol-fieldspanname-optional--string"><span class="codicon codicon-symbol-field symbol-field"></span>name (optional  <code>string</code>)</h5>
+<h5 id="span-classcodicon-codicon-symbol-field-symbol-fieldspantype-optional--string"><span class="codicon codicon-symbol-field symbol-field"></span>type (optional  <code>string</code>)</h5>
+<h3 id="span-classcodicon-codicon-symbol-structure-symbol-structurespanauthstepwaiting"><span class="codicon codicon-symbol-structure symbol-structure"></span>AuthStep.Waiting</h3>
 <h4 id="fields-6">Fields</h4>
-<h5 id="title-optional--string-2">title (optional  <code>string</code>)</h5>
-<h5 id="description-optional--string">description (optional  <code>string</code>)</h5>
-<h3 id="nextsteprequest">NextStepRequest</h3>
+<h5 id="span-classcodicon-codicon-symbol-field-symbol-fieldspantitle-optional--string-2"><span class="codicon codicon-symbol-field symbol-field"></span>title (optional  <code>string</code>)</h5>
+<h5 id="span-classcodicon-codicon-symbol-field-symbol-fieldspandescription-optional--string"><span class="codicon codicon-symbol-field symbol-field"></span>description (optional  <code>string</code>)</h5>
+<h3 id="span-classcodicon-codicon-symbol-structure-symbol-structurespannextsteprequest"><span class="codicon codicon-symbol-structure symbol-structure"></span>NextStepRequest</h3>
 <p>NextStepRequest
 contains the client&rsquo;s response to the server&rsquo;s challenge
 This needs to be called first with no arguments to
 receive the first step</p>
 <h4 id="fields-7">Fields</h4>
-<h5 id="auth_id-optional--string-1">auth_id (optional  <code>string</code>)</h5>
+<h5 id="span-classcodicon-codicon-symbol-field-symbol-fieldspanauth_id-optional--string-1"><span class="codicon codicon-symbol-field symbol-field"></span>auth_id (optional  <code>string</code>)</h5>
 <p>auth_id: the authentication session you want
 the next step of</p>
-<h5 id="choice-optional--protocolauthv1nextsteprequestchoicenextsteprequestchoice">choice (optional  <a href="#nextsteprequestchoice">protocol.auth.v1.NextStepRequest.Choice</a>)</h5>
+<h5 id="span-classcodicon-codicon-symbol-field-symbol-fieldspanchoice-optional--protocolauthv1nextsteprequestchoicenextsteprequestchoice"><span class="codicon codicon-symbol-field symbol-field"></span>choice (optional  <a href="#nextsteprequestchoice">protocol.auth.v1.NextStepRequest.Choice</a>)</h5>
 <p>choice: the choice the user picked</p>
-<h5 id="form-optional--protocolauthv1nextsteprequestformnextsteprequestform">form (optional  <a href="#nextsteprequestform">protocol.auth.v1.NextStepRequest.Form</a>)</h5>
+<h5 id="span-classcodicon-codicon-symbol-field-symbol-fieldspanform-optional--protocolauthv1nextsteprequestformnextsteprequestform"><span class="codicon codicon-symbol-field symbol-field"></span>form (optional  <a href="#nextsteprequestform">protocol.auth.v1.NextStepRequest.Form</a>)</h5>
 <p>form: the form the user filled out</p>
-<h3 id="nextsteprequestchoice">NextStepRequest.Choice</h3>
+<h3 id="span-classcodicon-codicon-symbol-structure-symbol-structurespannextsteprequestchoice"><span class="codicon codicon-symbol-structure symbol-structure"></span>NextStepRequest.Choice</h3>
 <h4 id="fields-8">Fields</h4>
-<h5 id="choice-optional--string">choice (optional  <code>string</code>)</h5>
-<h3 id="nextsteprequestformfields">NextStepRequest.FormFields</h3>
+<h5 id="span-classcodicon-codicon-symbol-field-symbol-fieldspanchoice-optional--string"><span class="codicon codicon-symbol-field symbol-field"></span>choice (optional  <code>string</code>)</h5>
+<h3 id="span-classcodicon-codicon-symbol-structure-symbol-structurespannextsteprequestformfields"><span class="codicon codicon-symbol-structure symbol-structure"></span>NextStepRequest.FormFields</h3>
 <h4 id="fields-9">Fields</h4>
-<h5 id="bytes-optional--bytes">bytes (optional  <code>bytes</code>)</h5>
-<h5 id="string-optional--string">string (optional  <code>string</code>)</h5>
-<h5 id="number-optional--int64">number (optional  <code>int64</code>)</h5>
-<h3 id="nextsteprequestform">NextStepRequest.Form</h3>
+<h5 id="span-classcodicon-codicon-symbol-field-symbol-fieldspanbytes-optional--bytes"><span class="codicon codicon-symbol-field symbol-field"></span>bytes (optional  <code>bytes</code>)</h5>
+<h5 id="span-classcodicon-codicon-symbol-field-symbol-fieldspanstring-optional--string"><span class="codicon codicon-symbol-field symbol-field"></span>string (optional  <code>string</code>)</h5>
+<h5 id="span-classcodicon-codicon-symbol-field-symbol-fieldspannumber-optional--int64"><span class="codicon codicon-symbol-field symbol-field"></span>number (optional  <code>int64</code>)</h5>
+<h3 id="span-classcodicon-codicon-symbol-structure-symbol-structurespannextsteprequestform"><span class="codicon codicon-symbol-structure symbol-structure"></span>NextStepRequest.Form</h3>
 <h4 id="fields-10">Fields</h4>
-<h5 id="fields-repeated--protocolauthv1nextsteprequestformfieldsnextsteprequestformfields">fields (repeated  <a href="#nextsteprequestformfields">protocol.auth.v1.NextStepRequest.FormFields</a>)</h5>
-<h3 id="nextstepresponse">NextStepResponse</h3>
+<h5 id="span-classcodicon-codicon-symbol-field-symbol-fieldspanfields-repeated--protocolauthv1nextsteprequestformfieldsnextsteprequestformfields"><span class="codicon codicon-symbol-field symbol-field"></span>fields (repeated  <a href="#nextsteprequestformfields">protocol.auth.v1.NextStepRequest.FormFields</a>)</h5>
+<h3 id="span-classcodicon-codicon-symbol-structure-symbol-structurespannextstepresponse"><span class="codicon codicon-symbol-structure symbol-structure"></span>NextStepResponse</h3>
 <p>Used in <code>NextStep</code> endpoint.</p>
 <h4 id="fields-11">Fields</h4>
-<h5 id="step-optional--protocolauthv1authstepauthstep">step (optional  <a href="#authstep">protocol.auth.v1.AuthStep</a>)</h5>
+<h5 id="span-classcodicon-codicon-symbol-field-symbol-fieldspanstep-optional--protocolauthv1authstepauthstep"><span class="codicon codicon-symbol-field symbol-field"></span>step (optional  <a href="#authstep">protocol.auth.v1.AuthStep</a>)</h5>
 <p>step: the next step in the authentication process</p>
-<h3 id="stepbackrequest">StepBackRequest</h3>
+<h3 id="span-classcodicon-codicon-symbol-structure-symbol-structurespanstepbackrequest"><span class="codicon codicon-symbol-structure symbol-structure"></span>StepBackRequest</h3>
 <p>StepBackRequest
 A request to go back 1 step</p>
 <h4 id="fields-12">Fields</h4>
-<h5 id="auth_id-optional--string-2">auth_id (optional  <code>string</code>)</h5>
+<h5 id="span-classcodicon-codicon-symbol-field-symbol-fieldspanauth_id-optional--string-2"><span class="codicon codicon-symbol-field symbol-field"></span>auth_id (optional  <code>string</code>)</h5>
 <p>auth_id: the authentication session the user
 wants to go back in</p>
-<h3 id="stepbackresponse">StepBackResponse</h3>
+<h3 id="span-classcodicon-codicon-symbol-structure-symbol-structurespanstepbackresponse"><span class="codicon codicon-symbol-structure symbol-structure"></span>StepBackResponse</h3>
 <p>Used in <code>StepBack</code> endpoint.</p>
 <h4 id="fields-13">Fields</h4>
-<h5 id="step-optional--protocolauthv1authstepauthstep-1">step (optional  <a href="#authstep">protocol.auth.v1.AuthStep</a>)</h5>
+<h5 id="span-classcodicon-codicon-symbol-field-symbol-fieldspanstep-optional--protocolauthv1authstepauthstep-1"><span class="codicon codicon-symbol-field symbol-field"></span>step (optional  <a href="#authstep">protocol.auth.v1.AuthStep</a>)</h5>
 <p>step: the previous step in the authentication process</p>
-<h3 id="streamstepsrequest">StreamStepsRequest</h3>
+<h3 id="span-classcodicon-codicon-symbol-structure-symbol-structurespanstreamstepsrequest"><span class="codicon codicon-symbol-structure symbol-structure"></span>StreamStepsRequest</h3>
 <p>StreamStepsRequest
 Required to be initiated by all authenticating clients
 Allows the server to send steps</p>
 <h4 id="fields-14">Fields</h4>
-<h5 id="auth_id-optional--string-3">auth_id (optional  <code>string</code>)</h5>
+<h5 id="span-classcodicon-codicon-symbol-field-symbol-fieldspanauth_id-optional--string-3"><span class="codicon codicon-symbol-field symbol-field"></span>auth_id (optional  <code>string</code>)</h5>
 <p>auth_id: the authorization session
 who&rsquo;s steps you want to stream</p>
-<h3 id="streamstepsresponse">StreamStepsResponse</h3>
+<h3 id="span-classcodicon-codicon-symbol-structure-symbol-structurespanstreamstepsresponse"><span class="codicon codicon-symbol-structure symbol-structure"></span>StreamStepsResponse</h3>
 <p>Used in <code>StreamSteps</code> endpoint.</p>
 <h4 id="fields-15">Fields</h4>
-<h5 id="step-optional--protocolauthv1authstepauthstep-2">step (optional  <a href="#authstep">protocol.auth.v1.AuthStep</a>)</h5>
+<h5 id="span-classcodicon-codicon-symbol-field-symbol-fieldspanstep-optional--protocolauthv1authstepauthstep-2"><span class="codicon codicon-symbol-field symbol-field"></span>step (optional  <a href="#authstep">protocol.auth.v1.AuthStep</a>)</h5>
 <p>step: the next step in the authentication process</p>
-<h3 id="federaterequest">FederateRequest</h3>
+<h3 id="span-classcodicon-codicon-symbol-structure-symbol-structurespanfederaterequest"><span class="codicon codicon-symbol-structure symbol-structure"></span>FederateRequest</h3>
 <p>The request to federate with a foreign server.</p>
 <h4 id="fields-16">Fields</h4>
-<h5 id="server_id-optional--string">server_id (optional  <code>string</code>)</h5>
+<h5 id="span-classcodicon-codicon-symbol-field-symbol-fieldspanserver_id-optional--string"><span class="codicon codicon-symbol-field symbol-field"></span>server_id (optional  <code>string</code>)</h5>
 <p>The server ID foreign server you want to federate with</p>
-<h3 id="federateresponse">FederateResponse</h3>
+<h3 id="span-classcodicon-codicon-symbol-structure-symbol-structurespanfederateresponse"><span class="codicon codicon-symbol-structure symbol-structure"></span>FederateResponse</h3>
 <p>The reply to a successful federation request,
 containing the token you need to present to the
 foreign server.</p>
 <h4 id="fields-17">Fields</h4>
-<h5 id="token-optional--protocolharmonytypesv1tokenhahahugoshortcode-s0-hbhbtoken">token (optional  <a href="https://harmonyapp.io/docs/protocol.harmonytypes.v1/#token">protocol.harmonytypes.v1.Token</a>)</h5>
+<h5 id="span-classcodicon-codicon-symbol-field-symbol-fieldspantoken-optional--protocolharmonytypesv1tokenhahahugoshortcode-s0-hbhbtoken"><span class="codicon codicon-symbol-field symbol-field"></span>token (optional  <a href="https://harmonyapp.io/docs/protocol.harmonytypes.v1/#token">protocol.harmonytypes.v1.Token</a>)</h5>
 <p>A <code>harmonytypes.v1.Token</code> whose <code>data</code> field is a serialized <code>TokenData</code> message.
 It is signed with the homeserver&rsquo;s private key.</p>
-<h3 id="keyrequest">KeyRequest</h3>
+<h3 id="span-classcodicon-codicon-symbol-structure-symbol-structurespankeyrequest"><span class="codicon codicon-symbol-structure symbol-structure"></span>KeyRequest</h3>
 <p>Used in <code>Key</code> endpoint.</p>
 <p>This item has no fields.</p>
-<h3 id="keyresponse">KeyResponse</h3>
+<h3 id="span-classcodicon-codicon-symbol-structure-symbol-structurespankeyresponse"><span class="codicon codicon-symbol-structure symbol-structure"></span>KeyResponse</h3>
 <p>Contains a key&rsquo;s bytes.</p>
 <h4 id="fields-18">Fields</h4>
-<h5 id="key-optional--bytes">key (optional  <code>bytes</code>)</h5>
+<h5 id="span-classcodicon-codicon-symbol-field-symbol-fieldspankey-optional--bytes"><span class="codicon codicon-symbol-field symbol-field"></span>key (optional  <code>bytes</code>)</h5>
 <p>key: the bytes of the public key.</p>
-<h3 id="loginfederatedrequest">LoginFederatedRequest</h3>
+<h3 id="span-classcodicon-codicon-symbol-structure-symbol-structurespanloginfederatedrequest"><span class="codicon codicon-symbol-structure symbol-structure"></span>LoginFederatedRequest</h3>
 <p>Log into a foreignserver using a token
 from your homeserver, obtained through a FederateRequest</p>
 <h4 id="fields-19">Fields</h4>
-<h5 id="auth_token-optional--protocolharmonytypesv1tokenhahahugoshortcode-s1-hbhbtoken">auth_token (optional  <a href="https://harmonyapp.io/docs/protocol.harmonytypes.v1/#token">protocol.harmonytypes.v1.Token</a>)</h5>
+<h5 id="span-classcodicon-codicon-symbol-field-symbol-fieldspanauth_token-optional--protocolharmonytypesv1tokenhahahugoshortcode-s1-hbhbtoken"><span class="codicon codicon-symbol-field symbol-field"></span>auth_token (optional  <a href="https://harmonyapp.io/docs/protocol.harmonytypes.v1/#token">protocol.harmonytypes.v1.Token</a>)</h5>
 <p>A <code>harmonytypes.v1.Token</code> whose <code>data</code> field is a serialized <code>TokenData</code> message.
 It is signed with the homeserver&rsquo;s private key.</p>
-<h5 id="server_id-optional--string-1">server_id (optional  <code>string</code>)</h5>
+<h5 id="span-classcodicon-codicon-symbol-field-symbol-fieldspanserver_id-optional--string-1"><span class="codicon codicon-symbol-field symbol-field"></span>server_id (optional  <code>string</code>)</h5>
 <p>The server ID of the homeserver that the auth token is from</p>
-<h3 id="loginfederatedresponse">LoginFederatedResponse</h3>
+<h3 id="span-classcodicon-codicon-symbol-structure-symbol-structurespanloginfederatedresponse"><span class="codicon codicon-symbol-structure symbol-structure"></span>LoginFederatedResponse</h3>
 <p>Used in <code>LoginFederated</code> endpoint.</p>
 <h4 id="fields-20">Fields</h4>
-<h5 id="session-optional--protocolauthv1sessionsession-1">session (optional  <a href="#session">protocol.auth.v1.Session</a>)</h5>
+<h5 id="span-classcodicon-codicon-symbol-field-symbol-fieldspansession-optional--protocolauthv1sessionsession-1"><span class="codicon codicon-symbol-field symbol-field"></span>session (optional  <a href="#session">protocol.auth.v1.Session</a>)</h5>
 <p>The user&rsquo;s session.</p>
-<h3 id="tokendata">TokenData</h3>
+<h3 id="span-classcodicon-codicon-symbol-structure-symbol-structurespantokendata"><span class="codicon codicon-symbol-structure symbol-structure"></span>TokenData</h3>
 <p>Information sent by a client&rsquo;s homeserver, in a <code>harmonytypes.v1.Token</code>.
 It will be sent to a foreignserver by the client.</p>
 <h4 id="fields-21">Fields</h4>
-<h5 id="user_id-optional--uint64-1">user_id (optional  <code>uint64</code>)</h5>
+<h5 id="span-classcodicon-codicon-symbol-field-symbol-fieldspanuser_id-optional--uint64-1"><span class="codicon codicon-symbol-field symbol-field"></span>user_id (optional  <code>uint64</code>)</h5>
 <p>The client&rsquo;s user ID on the homeserver.</p>
-<h5 id="server_id-optional--string-2">server_id (optional  <code>string</code>)</h5>
+<h5 id="span-classcodicon-codicon-symbol-field-symbol-fieldspanserver_id-optional--string-2"><span class="codicon codicon-symbol-field symbol-field"></span>server_id (optional  <code>string</code>)</h5>
 <p>The foreignserver&rsquo;s server ID.</p>
-<h5 id="username-optional--string">username (optional  <code>string</code>)</h5>
+<h5 id="span-classcodicon-codicon-symbol-field-symbol-fieldspanusername-optional--string"><span class="codicon codicon-symbol-field symbol-field"></span>username (optional  <code>string</code>)</h5>
 <p>The username of the client.</p>
-<h5 id="avatar-optional--string">avatar (optional  <code>string</code>)</h5>
+<h5 id="span-classcodicon-codicon-symbol-field-symbol-fieldspanavatar-optional--string"><span class="codicon codicon-symbol-field symbol-field"></span>avatar (optional  <code>string</code>)</h5>
 <p>The avatar of the client.</p>
-<h3 id="checkloggedinrequest">CheckLoggedInRequest</h3>
+<h3 id="span-classcodicon-codicon-symbol-structure-symbol-structurespancheckloggedinrequest"><span class="codicon codicon-symbol-structure symbol-structure"></span>CheckLoggedInRequest</h3>
 <p>Used in <code>CheckLoggedIn</code> endpoint.</p>
 <p>This item has no fields.</p>
-<h3 id="checkloggedinresponse">CheckLoggedInResponse</h3>
+<h3 id="span-classcodicon-codicon-symbol-structure-symbol-structurespancheckloggedinresponse"><span class="codicon codicon-symbol-structure symbol-structure"></span>CheckLoggedInResponse</h3>
 <p>Used in <code>CheckLoggedIn</code> endpoint.</p>
 <p>This item has no fields.</p>
 <h2 id="services">Services</h2>
-<h3 id="authservice">AuthService</h3>
+<h3 id="span-classcodicon-codicon-symbol-class-symbol-classspanauthservice"><span class="codicon codicon-symbol-class symbol-class"></span>AuthService</h3>
 <p>The service containing authorization/entication methods</p>
 <h4 id="methods">Methods</h4>
-<h5 id="federate">Federate</h5>
+<h5 id="span-classcodicon-codicon-symbol-method-symbol-methodspanfederate"><span class="codicon codicon-symbol-method symbol-method"></span>Federate</h5>
 <p><a href="#federaterequest">protocol.auth.v1.FederateRequest</a> -&gt; <a href="#federateresponse">protocol.auth.v1.FederateResponse</a></p>
 <p>Federate with a foreignserver, obtaining a token
 you can use to call LoginFederated on it</p>
-<h5 id="loginfederated">LoginFederated</h5>
+<h5 id="span-classcodicon-codicon-symbol-method-symbol-methodspanloginfederated"><span class="codicon codicon-symbol-method symbol-method"></span>LoginFederated</h5>
 <p><a href="#loginfederatedrequest">protocol.auth.v1.LoginFederatedRequest</a> -&gt; <a href="#loginfederatedresponse">protocol.auth.v1.LoginFederatedResponse</a></p>
 <p>Present a token to a foreignserver from a Federate call
 on your homeserver in order to login</p>
-<h5 id="key">Key</h5>
+<h5 id="span-classcodicon-codicon-symbol-method-symbol-methodspankey"><span class="codicon codicon-symbol-method symbol-method"></span>Key</h5>
 <p><a href="#keyrequest">protocol.auth.v1.KeyRequest</a> -&gt; <a href="#keyresponse">protocol.auth.v1.KeyResponse</a></p>
 <p>Returns the public key of this server</p>
-<h5 id="beginauth">BeginAuth</h5>
+<h5 id="span-classcodicon-codicon-symbol-method-symbol-methodspanbeginauth"><span class="codicon codicon-symbol-method symbol-method"></span>BeginAuth</h5>
 <p><a href="#beginauthrequest">protocol.auth.v1.BeginAuthRequest</a> -&gt; <a href="#beginauthresponse">protocol.auth.v1.BeginAuthResponse</a></p>
 <p>Begins an authentication session</p>
-<h5 id="nextstep">NextStep</h5>
+<h5 id="span-classcodicon-codicon-symbol-method-symbol-methodspannextstep"><span class="codicon codicon-symbol-method symbol-method"></span>NextStep</h5>
 <p><a href="#nextsteprequest">protocol.auth.v1.NextStepRequest</a> -&gt; <a href="#nextstepresponse">protocol.auth.v1.NextStepResponse</a></p>
 <p>Goes to the next step of the authentication session,
 possibly presenting user input</p>
-<h5 id="stepback">StepBack</h5>
+<h5 id="span-classcodicon-codicon-symbol-method-symbol-methodspanstepback"><span class="codicon codicon-symbol-method symbol-method"></span>StepBack</h5>
 <p><a href="#stepbackrequest">protocol.auth.v1.StepBackRequest</a> -&gt; <a href="#stepbackresponse">protocol.auth.v1.StepBackResponse</a></p>
 <p>Goes to the previous step of the authentication session
 if possible</p>
-<h5 id="streamsteps">StreamSteps</h5>
+<h5 id="span-classcodicon-codicon-symbol-method-symbol-methodspanstreamsteps"><span class="codicon codicon-symbol-method symbol-method"></span>StreamSteps</h5>
 <p><a href="#streamstepsrequest">protocol.auth.v1.StreamStepsRequest</a> -&gt; streaming <a href="#streamstepsresponse">protocol.auth.v1.StreamStepsResponse</a></p>
 <p>Consume the steps of an authentication session
 as a stream</p>
-<h5 id="checkloggedin">CheckLoggedIn</h5>
+<h5 id="span-classcodicon-codicon-symbol-method-symbol-methodspancheckloggedin"><span class="codicon codicon-symbol-method symbol-method"></span>CheckLoggedIn</h5>
 <p><a href="#checkloggedinrequest">protocol.auth.v1.CheckLoggedInRequest</a> -&gt; <a href="#checkloggedinresponse">protocol.auth.v1.CheckLoggedInResponse</a></p>
 <p>Check whether or not you&rsquo;re logged in and the session is valid</p>
 

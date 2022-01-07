@@ -11,11 +11,13 @@ Emote Data for a single emote.
 Fields image_id (optional string) The image ID of the emote. This is the ID of the image in the image store (same place attachments are stored). ">
     <link rel="canonical" href="https://harmonyapp.io/docs/protocol.emote.v1/" />
 
+    <link rel="stylesheet" href="/css/codicon.css" />
+
     
 
     
       
-      <link rel="stylesheet" href="/css/main.min.ffa2c263a52247f69e606278e3b3ab33849b5ce18bb062835eece5ca3730b038.css" integrity="sha256-/6LCY6UiR/aeYGJ447OrM4SbXOGLsGKDXuzlyjcwsDg="/>
+      <link rel="stylesheet" href="/css/main.min.b599a35d8c7b77592a19cf713bdf6cbf7c404435525e62c590c7c61d88977fb3.css" integrity="sha256-tZmjXYx7d1kqGc9xO99sv3xARDVSXmLFkMfGHYiXf7M="/>
     
 
     <meta property="og:title" content="Reference: protocol.emote.v1" />
@@ -119,34 +121,34 @@ Fields image_id (optional string) The image ID of the emote. This is the ID of t
   <ul>
     <li><a href="#message-types">Message Types</a>
       <ul>
-        <li><a href="#emotepack">EmotePack</a></li>
-        <li><a href="#emote">Emote</a></li>
-        <li><a href="#createemotepackrequest">CreateEmotePackRequest</a></li>
-        <li><a href="#createemotepackresponse">CreateEmotePackResponse</a></li>
-        <li><a href="#getemotepacksrequest">GetEmotePacksRequest</a></li>
-        <li><a href="#getemotepacksresponse">GetEmotePacksResponse</a></li>
-        <li><a href="#getemotepackemotesrequest">GetEmotePackEmotesRequest</a></li>
-        <li><a href="#getemotepackemotesresponse">GetEmotePackEmotesResponse</a></li>
-        <li><a href="#addemotetopackrequest">AddEmoteToPackRequest</a></li>
-        <li><a href="#addemotetopackresponse">AddEmoteToPackResponse</a></li>
-        <li><a href="#deleteemotefrompackrequest">DeleteEmoteFromPackRequest</a></li>
-        <li><a href="#deleteemotefrompackresponse">DeleteEmoteFromPackResponse</a></li>
-        <li><a href="#deleteemotepackrequest">DeleteEmotePackRequest</a></li>
-        <li><a href="#deleteemotepackresponse">DeleteEmotePackResponse</a></li>
-        <li><a href="#dequipemotepackrequest">DequipEmotePackRequest</a></li>
-        <li><a href="#dequipemotepackresponse">DequipEmotePackResponse</a></li>
-        <li><a href="#equipemotepackrequest">EquipEmotePackRequest</a></li>
-        <li><a href="#equipemotepackresponse">EquipEmotePackResponse</a></li>
-        <li><a href="#emotepackupdated">EmotePackUpdated</a></li>
-        <li><a href="#emotepackdeleted">EmotePackDeleted</a></li>
-        <li><a href="#emotepackadded">EmotePackAdded</a></li>
-        <li><a href="#emotepackemotesupdated">EmotePackEmotesUpdated</a></li>
-        <li><a href="#streamevent">StreamEvent</a></li>
+        <li><a href="#span-classcodicon-codicon-symbol-structure-symbol-structurespanemotepack"><span class="codicon codicon-symbol-structure symbol-structure"></span>EmotePack</a></li>
+        <li><a href="#span-classcodicon-codicon-symbol-structure-symbol-structurespanemote"><span class="codicon codicon-symbol-structure symbol-structure"></span>Emote</a></li>
+        <li><a href="#span-classcodicon-codicon-symbol-structure-symbol-structurespancreateemotepackrequest"><span class="codicon codicon-symbol-structure symbol-structure"></span>CreateEmotePackRequest</a></li>
+        <li><a href="#span-classcodicon-codicon-symbol-structure-symbol-structurespancreateemotepackresponse"><span class="codicon codicon-symbol-structure symbol-structure"></span>CreateEmotePackResponse</a></li>
+        <li><a href="#span-classcodicon-codicon-symbol-structure-symbol-structurespangetemotepacksrequest"><span class="codicon codicon-symbol-structure symbol-structure"></span>GetEmotePacksRequest</a></li>
+        <li><a href="#span-classcodicon-codicon-symbol-structure-symbol-structurespangetemotepacksresponse"><span class="codicon codicon-symbol-structure symbol-structure"></span>GetEmotePacksResponse</a></li>
+        <li><a href="#span-classcodicon-codicon-symbol-structure-symbol-structurespangetemotepackemotesrequest"><span class="codicon codicon-symbol-structure symbol-structure"></span>GetEmotePackEmotesRequest</a></li>
+        <li><a href="#span-classcodicon-codicon-symbol-structure-symbol-structurespangetemotepackemotesresponse"><span class="codicon codicon-symbol-structure symbol-structure"></span>GetEmotePackEmotesResponse</a></li>
+        <li><a href="#span-classcodicon-codicon-symbol-structure-symbol-structurespanaddemotetopackrequest"><span class="codicon codicon-symbol-structure symbol-structure"></span>AddEmoteToPackRequest</a></li>
+        <li><a href="#span-classcodicon-codicon-symbol-structure-symbol-structurespanaddemotetopackresponse"><span class="codicon codicon-symbol-structure symbol-structure"></span>AddEmoteToPackResponse</a></li>
+        <li><a href="#span-classcodicon-codicon-symbol-structure-symbol-structurespandeleteemotefrompackrequest"><span class="codicon codicon-symbol-structure symbol-structure"></span>DeleteEmoteFromPackRequest</a></li>
+        <li><a href="#span-classcodicon-codicon-symbol-structure-symbol-structurespandeleteemotefrompackresponse"><span class="codicon codicon-symbol-structure symbol-structure"></span>DeleteEmoteFromPackResponse</a></li>
+        <li><a href="#span-classcodicon-codicon-symbol-structure-symbol-structurespandeleteemotepackrequest"><span class="codicon codicon-symbol-structure symbol-structure"></span>DeleteEmotePackRequest</a></li>
+        <li><a href="#span-classcodicon-codicon-symbol-structure-symbol-structurespandeleteemotepackresponse"><span class="codicon codicon-symbol-structure symbol-structure"></span>DeleteEmotePackResponse</a></li>
+        <li><a href="#span-classcodicon-codicon-symbol-structure-symbol-structurespandequipemotepackrequest"><span class="codicon codicon-symbol-structure symbol-structure"></span>DequipEmotePackRequest</a></li>
+        <li><a href="#span-classcodicon-codicon-symbol-structure-symbol-structurespandequipemotepackresponse"><span class="codicon codicon-symbol-structure symbol-structure"></span>DequipEmotePackResponse</a></li>
+        <li><a href="#span-classcodicon-codicon-symbol-structure-symbol-structurespanequipemotepackrequest"><span class="codicon codicon-symbol-structure symbol-structure"></span>EquipEmotePackRequest</a></li>
+        <li><a href="#span-classcodicon-codicon-symbol-structure-symbol-structurespanequipemotepackresponse"><span class="codicon codicon-symbol-structure symbol-structure"></span>EquipEmotePackResponse</a></li>
+        <li><a href="#span-classcodicon-codicon-symbol-structure-symbol-structurespanemotepackupdated"><span class="codicon codicon-symbol-structure symbol-structure"></span>EmotePackUpdated</a></li>
+        <li><a href="#span-classcodicon-codicon-symbol-structure-symbol-structurespanemotepackdeleted"><span class="codicon codicon-symbol-structure symbol-structure"></span>EmotePackDeleted</a></li>
+        <li><a href="#span-classcodicon-codicon-symbol-structure-symbol-structurespanemotepackadded"><span class="codicon codicon-symbol-structure symbol-structure"></span>EmotePackAdded</a></li>
+        <li><a href="#span-classcodicon-codicon-symbol-structure-symbol-structurespanemotepackemotesupdated"><span class="codicon codicon-symbol-structure symbol-structure"></span>EmotePackEmotesUpdated</a></li>
+        <li><a href="#span-classcodicon-codicon-symbol-structure-symbol-structurespanstreamevent"><span class="codicon codicon-symbol-structure symbol-structure"></span>StreamEvent</a></li>
       </ul>
     </li>
     <li><a href="#services">Services</a>
       <ul>
-        <li><a href="#emoteservice">EmoteService</a></li>
+        <li><a href="#span-classcodicon-codicon-symbol-class-symbol-classspanemoteservice"><span class="codicon codicon-symbol-class symbol-class"></span>EmoteService</a></li>
       </ul>
     </li>
   </ul>
@@ -156,163 +158,163 @@ Fields image_id (optional string) The image ID of the emote. This is the ID of t
     <article class="prose">
       <h1 class="h1">Reference: protocol.emote.v1</h1>
       <h2 id="message-types">Message Types</h2>
-<h3 id="emotepack">EmotePack</h3>
+<h3 id="span-classcodicon-codicon-symbol-structure-symbol-structurespanemotepack"><span class="codicon codicon-symbol-structure symbol-structure"></span>EmotePack</h3>
 <p>Data for a single pack of emotes.</p>
 <h4 id="fields">Fields</h4>
-<h5 id="pack_id-optional--uint64">pack_id (optional  <code>uint64</code>)</h5>
+<h5 id="span-classcodicon-codicon-symbol-field-symbol-fieldspanpack_id-optional--uint64"><span class="codicon codicon-symbol-field symbol-field"></span>pack_id (optional  <code>uint64</code>)</h5>
 <p>The ID of the pack.</p>
-<h5 id="pack_owner-optional--uint64">pack_owner (optional  <code>uint64</code>)</h5>
+<h5 id="span-classcodicon-codicon-symbol-field-symbol-fieldspanpack_owner-optional--uint64"><span class="codicon codicon-symbol-field symbol-field"></span>pack_owner (optional  <code>uint64</code>)</h5>
 <p>The ID of the user who created the pack.</p>
-<h5 id="pack_name-optional--string">pack_name (optional  <code>string</code>)</h5>
+<h5 id="span-classcodicon-codicon-symbol-field-symbol-fieldspanpack_name-optional--string"><span class="codicon codicon-symbol-field symbol-field"></span>pack_name (optional  <code>string</code>)</h5>
 <p>The name of the pack.</p>
-<h3 id="emote">Emote</h3>
+<h3 id="span-classcodicon-codicon-symbol-structure-symbol-structurespanemote"><span class="codicon codicon-symbol-structure symbol-structure"></span>Emote</h3>
 <p>Data for a single emote.</p>
 <h4 id="fields-1">Fields</h4>
-<h5 id="image_id-optional--string">image_id (optional  <code>string</code>)</h5>
+<h5 id="span-classcodicon-codicon-symbol-field-symbol-fieldspanimage_id-optional--string"><span class="codicon codicon-symbol-field symbol-field"></span>image_id (optional  <code>string</code>)</h5>
 <p>The image ID of the emote. This is the ID of the image in the image store
 (same place attachments are stored).</p>
-<h5 id="name-optional--string">name (optional  <code>string</code>)</h5>
+<h5 id="span-classcodicon-codicon-symbol-field-symbol-fieldspanname-optional--string"><span class="codicon codicon-symbol-field symbol-field"></span>name (optional  <code>string</code>)</h5>
 <p>The name of the emote.</p>
-<h3 id="createemotepackrequest">CreateEmotePackRequest</h3>
+<h3 id="span-classcodicon-codicon-symbol-structure-symbol-structurespancreateemotepackrequest"><span class="codicon codicon-symbol-structure symbol-structure"></span>CreateEmotePackRequest</h3>
 <p>Used in the <code>CreateEmotePack</code> endpoint.</p>
 <h4 id="fields-2">Fields</h4>
-<h5 id="pack_name-optional--string-1">pack_name (optional  <code>string</code>)</h5>
+<h5 id="span-classcodicon-codicon-symbol-field-symbol-fieldspanpack_name-optional--string-1"><span class="codicon codicon-symbol-field symbol-field"></span>pack_name (optional  <code>string</code>)</h5>
 <p>the name of the pack.</p>
-<h3 id="createemotepackresponse">CreateEmotePackResponse</h3>
+<h3 id="span-classcodicon-codicon-symbol-structure-symbol-structurespancreateemotepackresponse"><span class="codicon codicon-symbol-structure symbol-structure"></span>CreateEmotePackResponse</h3>
 <p>Used in the <code>CreateEmotePack</code> endpoint.</p>
 <h4 id="fields-3">Fields</h4>
-<h5 id="pack_id-optional--uint64-1">pack_id (optional  <code>uint64</code>)</h5>
+<h5 id="span-classcodicon-codicon-symbol-field-symbol-fieldspanpack_id-optional--uint64-1"><span class="codicon codicon-symbol-field symbol-field"></span>pack_id (optional  <code>uint64</code>)</h5>
 <p>The ID of the pack.</p>
-<h3 id="getemotepacksrequest">GetEmotePacksRequest</h3>
+<h3 id="span-classcodicon-codicon-symbol-structure-symbol-structurespangetemotepacksrequest"><span class="codicon codicon-symbol-structure symbol-structure"></span>GetEmotePacksRequest</h3>
 <p>Used in the <code>GetEmotePacks</code> endpoint.</p>
 <p>This item has no fields.</p>
-<h3 id="getemotepacksresponse">GetEmotePacksResponse</h3>
+<h3 id="span-classcodicon-codicon-symbol-structure-symbol-structurespangetemotepacksresponse"><span class="codicon codicon-symbol-structure symbol-structure"></span>GetEmotePacksResponse</h3>
 <p>Used in the <code>GetEmotePacks</code> endpoint.</p>
 <h4 id="fields-4">Fields</h4>
-<h5 id="packs-repeated--protocolemotev1emotepackemotepack">packs (repeated  <a href="#emotepack">protocol.emote.v1.EmotePack</a>)</h5>
+<h5 id="span-classcodicon-codicon-symbol-field-symbol-fieldspanpacks-repeated--protocolemotev1emotepackemotepack"><span class="codicon codicon-symbol-field symbol-field"></span>packs (repeated  <a href="#emotepack">protocol.emote.v1.EmotePack</a>)</h5>
 <p>The list of emote packs.</p>
-<h3 id="getemotepackemotesrequest">GetEmotePackEmotesRequest</h3>
+<h3 id="span-classcodicon-codicon-symbol-structure-symbol-structurespangetemotepackemotesrequest"><span class="codicon codicon-symbol-structure symbol-structure"></span>GetEmotePackEmotesRequest</h3>
 <p>Used in the <code>GetEmotes</code> endpoint.</p>
 <h4 id="fields-5">Fields</h4>
-<h5 id="pack_id-optional--uint64-2">pack_id (optional  <code>uint64</code>)</h5>
+<h5 id="span-classcodicon-codicon-symbol-field-symbol-fieldspanpack_id-optional--uint64-2"><span class="codicon codicon-symbol-field symbol-field"></span>pack_id (optional  <code>uint64</code>)</h5>
 <p>The ID of the pack.</p>
-<h3 id="getemotepackemotesresponse">GetEmotePackEmotesResponse</h3>
+<h3 id="span-classcodicon-codicon-symbol-structure-symbol-structurespangetemotepackemotesresponse"><span class="codicon codicon-symbol-structure symbol-structure"></span>GetEmotePackEmotesResponse</h3>
 <p>Used in the <code>GetEmotes</code> endpoint.</p>
 <h4 id="fields-6">Fields</h4>
-<h5 id="emotes-repeated--protocolemotev1emoteemote">emotes (repeated  <a href="#emote">protocol.emote.v1.Emote</a>)</h5>
+<h5 id="span-classcodicon-codicon-symbol-field-symbol-fieldspanemotes-repeated--protocolemotev1emoteemote"><span class="codicon codicon-symbol-field symbol-field"></span>emotes (repeated  <a href="#emote">protocol.emote.v1.Emote</a>)</h5>
 <p>The list of emotes in the pack.</p>
-<h3 id="addemotetopackrequest">AddEmoteToPackRequest</h3>
+<h3 id="span-classcodicon-codicon-symbol-structure-symbol-structurespanaddemotetopackrequest"><span class="codicon codicon-symbol-structure symbol-structure"></span>AddEmoteToPackRequest</h3>
 <p>Used in the <code>AddEmoteToPack</code> endpoint.</p>
 <h4 id="fields-7">Fields</h4>
-<h5 id="pack_id-optional--uint64-3">pack_id (optional  <code>uint64</code>)</h5>
+<h5 id="span-classcodicon-codicon-symbol-field-symbol-fieldspanpack_id-optional--uint64-3"><span class="codicon codicon-symbol-field symbol-field"></span>pack_id (optional  <code>uint64</code>)</h5>
 <p>The ID of the pack.</p>
-<h5 id="emote-optional--protocolemotev1emoteemote">emote (optional  <a href="#emote">protocol.emote.v1.Emote</a>)</h5>
+<h5 id="span-classcodicon-codicon-symbol-field-symbol-fieldspanemote-optional--protocolemotev1emoteemote"><span class="codicon codicon-symbol-field symbol-field"></span>emote (optional  <a href="#emote">protocol.emote.v1.Emote</a>)</h5>
 <p>The emote to add.</p>
-<h3 id="addemotetopackresponse">AddEmoteToPackResponse</h3>
+<h3 id="span-classcodicon-codicon-symbol-structure-symbol-structurespanaddemotetopackresponse"><span class="codicon codicon-symbol-structure symbol-structure"></span>AddEmoteToPackResponse</h3>
 <p>Used in the <code>AddEmoteToPack</code> endpoint.</p>
 <p>This item has no fields.</p>
-<h3 id="deleteemotefrompackrequest">DeleteEmoteFromPackRequest</h3>
+<h3 id="span-classcodicon-codicon-symbol-structure-symbol-structurespandeleteemotefrompackrequest"><span class="codicon codicon-symbol-structure symbol-structure"></span>DeleteEmoteFromPackRequest</h3>
 <p>Used in the <code>DeleteEmoteFromPack</code> endpoint.</p>
 <h4 id="fields-8">Fields</h4>
-<h5 id="pack_id-optional--uint64-4">pack_id (optional  <code>uint64</code>)</h5>
+<h5 id="span-classcodicon-codicon-symbol-field-symbol-fieldspanpack_id-optional--uint64-4"><span class="codicon codicon-symbol-field symbol-field"></span>pack_id (optional  <code>uint64</code>)</h5>
 <p>The ID of the pack.</p>
-<h5 id="name-optional--string-1">name (optional  <code>string</code>)</h5>
+<h5 id="span-classcodicon-codicon-symbol-field-symbol-fieldspanname-optional--string-1"><span class="codicon codicon-symbol-field symbol-field"></span>name (optional  <code>string</code>)</h5>
 <p>The name of the emote to delete.</p>
-<h3 id="deleteemotefrompackresponse">DeleteEmoteFromPackResponse</h3>
+<h3 id="span-classcodicon-codicon-symbol-structure-symbol-structurespandeleteemotefrompackresponse"><span class="codicon codicon-symbol-structure symbol-structure"></span>DeleteEmoteFromPackResponse</h3>
 <p>Used in the <code>DeleteEmoteFromPack</code> endpoint.</p>
 <p>This item has no fields.</p>
-<h3 id="deleteemotepackrequest">DeleteEmotePackRequest</h3>
+<h3 id="span-classcodicon-codicon-symbol-structure-symbol-structurespandeleteemotepackrequest"><span class="codicon codicon-symbol-structure symbol-structure"></span>DeleteEmotePackRequest</h3>
 <p>Used in the <code>DeleteEmotePack</code> endpoint.</p>
 <h4 id="fields-9">Fields</h4>
-<h5 id="pack_id-optional--uint64-5">pack_id (optional  <code>uint64</code>)</h5>
+<h5 id="span-classcodicon-codicon-symbol-field-symbol-fieldspanpack_id-optional--uint64-5"><span class="codicon codicon-symbol-field symbol-field"></span>pack_id (optional  <code>uint64</code>)</h5>
 <p>The ID of the pack.</p>
-<h3 id="deleteemotepackresponse">DeleteEmotePackResponse</h3>
+<h3 id="span-classcodicon-codicon-symbol-structure-symbol-structurespandeleteemotepackresponse"><span class="codicon codicon-symbol-structure symbol-structure"></span>DeleteEmotePackResponse</h3>
 <p>Used in the <code>DeleteEmotePack</code> endpoint.</p>
 <p>This item has no fields.</p>
-<h3 id="dequipemotepackrequest">DequipEmotePackRequest</h3>
+<h3 id="span-classcodicon-codicon-symbol-structure-symbol-structurespandequipemotepackrequest"><span class="codicon codicon-symbol-structure symbol-structure"></span>DequipEmotePackRequest</h3>
 <p>Used in the <code>DequipEmotePack</code> endpoint.</p>
 <h4 id="fields-10">Fields</h4>
-<h5 id="pack_id-optional--uint64-6">pack_id (optional  <code>uint64</code>)</h5>
+<h5 id="span-classcodicon-codicon-symbol-field-symbol-fieldspanpack_id-optional--uint64-6"><span class="codicon codicon-symbol-field symbol-field"></span>pack_id (optional  <code>uint64</code>)</h5>
 <p>The ID of the pack.</p>
-<h3 id="dequipemotepackresponse">DequipEmotePackResponse</h3>
+<h3 id="span-classcodicon-codicon-symbol-structure-symbol-structurespandequipemotepackresponse"><span class="codicon codicon-symbol-structure symbol-structure"></span>DequipEmotePackResponse</h3>
 <p>Used in the <code>DequipEmotePack</code> endpoint.</p>
 <p>This item has no fields.</p>
-<h3 id="equipemotepackrequest">EquipEmotePackRequest</h3>
+<h3 id="span-classcodicon-codicon-symbol-structure-symbol-structurespanequipemotepackrequest"><span class="codicon codicon-symbol-structure symbol-structure"></span>EquipEmotePackRequest</h3>
 <p>Used in the <code>EquipEmotePack</code> endpoint.</p>
 <h4 id="fields-11">Fields</h4>
-<h5 id="pack_id-optional--uint64-7">pack_id (optional  <code>uint64</code>)</h5>
+<h5 id="span-classcodicon-codicon-symbol-field-symbol-fieldspanpack_id-optional--uint64-7"><span class="codicon codicon-symbol-field symbol-field"></span>pack_id (optional  <code>uint64</code>)</h5>
 <p>The ID of the pack.</p>
-<h3 id="equipemotepackresponse">EquipEmotePackResponse</h3>
+<h3 id="span-classcodicon-codicon-symbol-structure-symbol-structurespanequipemotepackresponse"><span class="codicon codicon-symbol-structure symbol-structure"></span>EquipEmotePackResponse</h3>
 <p>Used in the <code>EquipEmotePack</code> endpoint.</p>
 <p>This item has no fields.</p>
-<h3 id="emotepackupdated">EmotePackUpdated</h3>
+<h3 id="span-classcodicon-codicon-symbol-structure-symbol-structurespanemotepackupdated"><span class="codicon codicon-symbol-structure symbol-structure"></span>EmotePackUpdated</h3>
 <p>Event sent when an emote pack&rsquo;s information is changed.</p>
 <p>Should only be sent to users who have the pack equipped.</p>
 <h4 id="fields-12">Fields</h4>
-<h5 id="pack_id-optional--uint64-8">pack_id (optional  <code>uint64</code>)</h5>
+<h5 id="span-classcodicon-codicon-symbol-field-symbol-fieldspanpack_id-optional--uint64-8"><span class="codicon codicon-symbol-field symbol-field"></span>pack_id (optional  <code>uint64</code>)</h5>
 <p>ID of the pack that was updated.</p>
-<h5 id="new_pack_name-optional--string">new_pack_name (optional  <code>string</code>)</h5>
+<h5 id="span-classcodicon-codicon-symbol-field-symbol-fieldspannew_pack_name-optional--string"><span class="codicon codicon-symbol-field symbol-field"></span>new_pack_name (optional  <code>string</code>)</h5>
 <p>New pack name of the pack.</p>
-<h3 id="emotepackdeleted">EmotePackDeleted</h3>
+<h3 id="span-classcodicon-codicon-symbol-structure-symbol-structurespanemotepackdeleted"><span class="codicon codicon-symbol-structure symbol-structure"></span>EmotePackDeleted</h3>
 <p>Event sent when an emote pack is deleted.</p>
 <p>Should only be sent to users who have the pack equipped.
 Should also be sent if a user dequips an emote pack, only to the user that dequipped it.</p>
 <h4 id="fields-13">Fields</h4>
-<h5 id="pack_id-optional--uint64-9">pack_id (optional  <code>uint64</code>)</h5>
+<h5 id="span-classcodicon-codicon-symbol-field-symbol-fieldspanpack_id-optional--uint64-9"><span class="codicon codicon-symbol-field symbol-field"></span>pack_id (optional  <code>uint64</code>)</h5>
 <p>ID of the pack that was deleted.</p>
-<h3 id="emotepackadded">EmotePackAdded</h3>
+<h3 id="span-classcodicon-codicon-symbol-structure-symbol-structurespanemotepackadded"><span class="codicon codicon-symbol-structure symbol-structure"></span>EmotePackAdded</h3>
 <p>Event sent when an emote pack is added.</p>
 <p>Should only be sent to the user who equipped the pack.</p>
 <h4 id="fields-14">Fields</h4>
-<h5 id="pack-optional--protocolemotev1emotepackemotepack">pack (optional  <a href="#emotepack">protocol.emote.v1.EmotePack</a>)</h5>
+<h5 id="span-classcodicon-codicon-symbol-field-symbol-fieldspanpack-optional--protocolemotev1emotepackemotepack"><span class="codicon codicon-symbol-field symbol-field"></span>pack (optional  <a href="#emotepack">protocol.emote.v1.EmotePack</a>)</h5>
 <p>Emote pack that was equipped by the user.</p>
-<h3 id="emotepackemotesupdated">EmotePackEmotesUpdated</h3>
+<h3 id="span-classcodicon-codicon-symbol-structure-symbol-structurespanemotepackemotesupdated"><span class="codicon codicon-symbol-structure symbol-structure"></span>EmotePackEmotesUpdated</h3>
 <p>Event sent when an emote pack&rsquo;s emotes were changed.</p>
 <p>Should only be sent to users who have the pack equipped.</p>
 <h4 id="fields-15">Fields</h4>
-<h5 id="pack_id-optional--uint64-10">pack_id (optional  <code>uint64</code>)</h5>
+<h5 id="span-classcodicon-codicon-symbol-field-symbol-fieldspanpack_id-optional--uint64-10"><span class="codicon codicon-symbol-field symbol-field"></span>pack_id (optional  <code>uint64</code>)</h5>
 <p>ID of the pack to update the emotes of.</p>
-<h5 id="added_emotes-repeated--protocolemotev1emoteemote">added_emotes (repeated  <a href="#emote">protocol.emote.v1.Emote</a>)</h5>
+<h5 id="span-classcodicon-codicon-symbol-field-symbol-fieldspanadded_emotes-repeated--protocolemotev1emoteemote"><span class="codicon codicon-symbol-field symbol-field"></span>added_emotes (repeated  <a href="#emote">protocol.emote.v1.Emote</a>)</h5>
 <p>The added emotes.</p>
-<h5 id="deleted_emotes-repeated--string">deleted_emotes (repeated  <code>string</code>)</h5>
+<h5 id="span-classcodicon-codicon-symbol-field-symbol-fieldspandeleted_emotes-repeated--string"><span class="codicon codicon-symbol-field symbol-field"></span>deleted_emotes (repeated  <code>string</code>)</h5>
 <p>The names of the deleted emotes.</p>
-<h3 id="streamevent">StreamEvent</h3>
+<h3 id="span-classcodicon-codicon-symbol-structure-symbol-structurespanstreamevent"><span class="codicon codicon-symbol-structure symbol-structure"></span>StreamEvent</h3>
 <p>Describes an emote service event.</p>
 <h4 id="fields-16">Fields</h4>
-<h5 id="emote_pack_added-optional--protocolemotev1emotepackaddedemotepackadded">emote_pack_added (optional  <a href="#emotepackadded">protocol.emote.v1.EmotePackAdded</a>)</h5>
+<h5 id="span-classcodicon-codicon-symbol-field-symbol-fieldspanemote_pack_added-optional--protocolemotev1emotepackaddedemotepackadded"><span class="codicon codicon-symbol-field symbol-field"></span>emote_pack_added (optional  <a href="#emotepackadded">protocol.emote.v1.EmotePackAdded</a>)</h5>
 <p>Send the emote pack added event.</p>
-<h5 id="emote_pack_updated-optional--protocolemotev1emotepackupdatedemotepackupdated">emote_pack_updated (optional  <a href="#emotepackupdated">protocol.emote.v1.EmotePackUpdated</a>)</h5>
+<h5 id="span-classcodicon-codicon-symbol-field-symbol-fieldspanemote_pack_updated-optional--protocolemotev1emotepackupdatedemotepackupdated"><span class="codicon codicon-symbol-field symbol-field"></span>emote_pack_updated (optional  <a href="#emotepackupdated">protocol.emote.v1.EmotePackUpdated</a>)</h5>
 <p>Send the emote pack updated event.</p>
-<h5 id="emote_pack_deleted-optional--protocolemotev1emotepackdeletedemotepackdeleted">emote_pack_deleted (optional  <a href="#emotepackdeleted">protocol.emote.v1.EmotePackDeleted</a>)</h5>
+<h5 id="span-classcodicon-codicon-symbol-field-symbol-fieldspanemote_pack_deleted-optional--protocolemotev1emotepackdeletedemotepackdeleted"><span class="codicon codicon-symbol-field symbol-field"></span>emote_pack_deleted (optional  <a href="#emotepackdeleted">protocol.emote.v1.EmotePackDeleted</a>)</h5>
 <p>Send the emote pack deleted event.</p>
-<h5 id="emote_pack_emotes_updated-optional--protocolemotev1emotepackemotesupdatedemotepackemotesupdated">emote_pack_emotes_updated (optional  <a href="#emotepackemotesupdated">protocol.emote.v1.EmotePackEmotesUpdated</a>)</h5>
+<h5 id="span-classcodicon-codicon-symbol-field-symbol-fieldspanemote_pack_emotes_updated-optional--protocolemotev1emotepackemotesupdatedemotepackemotesupdated"><span class="codicon codicon-symbol-field symbol-field"></span>emote_pack_emotes_updated (optional  <a href="#emotepackemotesupdated">protocol.emote.v1.EmotePackEmotesUpdated</a>)</h5>
 <p>Send the emote pack emotes updated event.</p>
 <h2 id="services">Services</h2>
-<h3 id="emoteservice">EmoteService</h3>
+<h3 id="span-classcodicon-codicon-symbol-class-symbol-classspanemoteservice"><span class="codicon codicon-symbol-class symbol-class"></span>EmoteService</h3>
 <p>Harmony&rsquo;s Emote service manages the emotes and emote packs.</p>
 <h4 id="methods">Methods</h4>
-<h5 id="createemotepack">CreateEmotePack</h5>
+<h5 id="span-classcodicon-codicon-symbol-method-symbol-methodspancreateemotepack"><span class="codicon codicon-symbol-method symbol-method"></span>CreateEmotePack</h5>
 <p><a href="#createemotepackrequest">protocol.emote.v1.CreateEmotePackRequest</a> -&gt; <a href="#createemotepackresponse">protocol.emote.v1.CreateEmotePackResponse</a></p>
 <p>Endpoint to create an emote pack.</p>
-<h5 id="getemotepacks">GetEmotePacks</h5>
+<h5 id="span-classcodicon-codicon-symbol-method-symbol-methodspangetemotepacks"><span class="codicon codicon-symbol-method symbol-method"></span>GetEmotePacks</h5>
 <p><a href="#getemotepacksrequest">protocol.emote.v1.GetEmotePacksRequest</a> -&gt; <a href="#getemotepacksresponse">protocol.emote.v1.GetEmotePacksResponse</a></p>
 <p>Endpoint to get the emote packs you have equipped.</p>
-<h5 id="getemotepackemotes">GetEmotePackEmotes</h5>
+<h5 id="span-classcodicon-codicon-symbol-method-symbol-methodspangetemotepackemotes"><span class="codicon codicon-symbol-method symbol-method"></span>GetEmotePackEmotes</h5>
 <p><a href="#getemotepackemotesrequest">protocol.emote.v1.GetEmotePackEmotesRequest</a> -&gt; <a href="#getemotepackemotesresponse">protocol.emote.v1.GetEmotePackEmotesResponse</a></p>
 <p>Endpoint to get the emotes in an emote pack.</p>
-<h5 id="addemotetopack">AddEmoteToPack</h5>
+<h5 id="span-classcodicon-codicon-symbol-method-symbol-methodspanaddemotetopack"><span class="codicon codicon-symbol-method symbol-method"></span>AddEmoteToPack</h5>
 <p><a href="#addemotetopackrequest">protocol.emote.v1.AddEmoteToPackRequest</a> -&gt; <a href="#addemotetopackresponse">protocol.emote.v1.AddEmoteToPackResponse</a></p>
 <p>Endpoint to add an emote to an emote pack that you own.</p>
-<h5 id="deleteemotepack">DeleteEmotePack</h5>
+<h5 id="span-classcodicon-codicon-symbol-method-symbol-methodspandeleteemotepack"><span class="codicon codicon-symbol-method symbol-method"></span>DeleteEmotePack</h5>
 <p><a href="#deleteemotepackrequest">protocol.emote.v1.DeleteEmotePackRequest</a> -&gt; <a href="#deleteemotepackresponse">protocol.emote.v1.DeleteEmotePackResponse</a></p>
 <p>Endpoint to delete an emote pack that you own.</p>
-<h5 id="deleteemotefrompack">DeleteEmoteFromPack</h5>
+<h5 id="span-classcodicon-codicon-symbol-method-symbol-methodspandeleteemotefrompack"><span class="codicon codicon-symbol-method symbol-method"></span>DeleteEmoteFromPack</h5>
 <p><a href="#deleteemotefrompackrequest">protocol.emote.v1.DeleteEmoteFromPackRequest</a> -&gt; <a href="#deleteemotefrompackresponse">protocol.emote.v1.DeleteEmoteFromPackResponse</a></p>
 <p>Endpoint to delete an emote from an emote pack.</p>
-<h5 id="dequipemotepack">DequipEmotePack</h5>
+<h5 id="span-classcodicon-codicon-symbol-method-symbol-methodspandequipemotepack"><span class="codicon codicon-symbol-method symbol-method"></span>DequipEmotePack</h5>
 <p><a href="#dequipemotepackrequest">protocol.emote.v1.DequipEmotePackRequest</a> -&gt; <a href="#dequipemotepackresponse">protocol.emote.v1.DequipEmotePackResponse</a></p>
 <p>Endpoint to dequip an emote pack that you have equipped.</p>
-<h5 id="equipemotepack">EquipEmotePack</h5>
+<h5 id="span-classcodicon-codicon-symbol-method-symbol-methodspanequipemotepack"><span class="codicon codicon-symbol-method symbol-method"></span>EquipEmotePack</h5>
 <p><a href="#equipemotepackrequest">protocol.emote.v1.EquipEmotePackRequest</a> -&gt; <a href="#equipemotepackresponse">protocol.emote.v1.EquipEmotePackResponse</a></p>
 <p>Endpoint to equip an emote pack.</p>
 

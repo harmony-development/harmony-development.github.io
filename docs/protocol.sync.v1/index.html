@@ -8,11 +8,13 @@ Fields server_id (optional string) The server ID of the server initiating the tr
 time (optional uint64) The UTC UNIX time in seconds of when the request is started. Servers should reject tokens with a time too far from the current time, at their discretion. ">
     <link rel="canonical" href="https://harmonyapp.io/docs/protocol.sync.v1/" />
 
+    <link rel="stylesheet" href="/css/codicon.css" />
+
     
 
     
       
-      <link rel="stylesheet" href="/css/main.min.ffa2c263a52247f69e606278e3b3ab33849b5ce18bb062835eece5ca3730b038.css" integrity="sha256-/6LCY6UiR/aeYGJ447OrM4SbXOGLsGKDXuzlyjcwsDg="/>
+      <link rel="stylesheet" href="/css/main.min.b599a35d8c7b77592a19cf713bdf6cbf7c404435525e62c590c7c61d88977fb3.css" integrity="sha256-tZmjXYx7d1kqGc9xO99sv3xARDVSXmLFkMfGHYiXf7M="/>
     
 
     <meta property="og:title" content="Reference: protocol.sync.v1" />
@@ -110,23 +112,23 @@ time (optional uint64) The UTC UNIX time in seconds of when the request is start
   <ul>
     <li><a href="#message-types">Message Types</a>
       <ul>
-        <li><a href="#authdata">AuthData</a></li>
-        <li><a href="#event">Event</a></li>
-        <li><a href="#eventuserremovedfromguild">Event.UserRemovedFromGuild</a></li>
-        <li><a href="#eventuseraddedtoguild">Event.UserAddedToGuild</a></li>
-        <li><a href="#eventuserinvited">Event.UserInvited</a></li>
-        <li><a href="#eventuserrejectedinvite">Event.UserRejectedInvite</a></li>
-        <li><a href="#pullrequest">PullRequest</a></li>
-        <li><a href="#pullresponse">PullResponse</a></li>
-        <li><a href="#pushrequest">PushRequest</a></li>
-        <li><a href="#pushresponse">PushResponse</a></li>
-        <li><a href="#notifynewidrequest">NotifyNewIdRequest</a></li>
-        <li><a href="#notifynewidresponse">NotifyNewIdResponse</a></li>
+        <li><a href="#span-classcodicon-codicon-symbol-structure-symbol-structurespanauthdata"><span class="codicon codicon-symbol-structure symbol-structure"></span>AuthData</a></li>
+        <li><a href="#span-classcodicon-codicon-symbol-structure-symbol-structurespanevent"><span class="codicon codicon-symbol-structure symbol-structure"></span>Event</a></li>
+        <li><a href="#span-classcodicon-codicon-symbol-structure-symbol-structurespaneventuserremovedfromguild"><span class="codicon codicon-symbol-structure symbol-structure"></span>Event.UserRemovedFromGuild</a></li>
+        <li><a href="#span-classcodicon-codicon-symbol-structure-symbol-structurespaneventuseraddedtoguild"><span class="codicon codicon-symbol-structure symbol-structure"></span>Event.UserAddedToGuild</a></li>
+        <li><a href="#span-classcodicon-codicon-symbol-structure-symbol-structurespaneventuserinvited"><span class="codicon codicon-symbol-structure symbol-structure"></span>Event.UserInvited</a></li>
+        <li><a href="#span-classcodicon-codicon-symbol-structure-symbol-structurespaneventuserrejectedinvite"><span class="codicon codicon-symbol-structure symbol-structure"></span>Event.UserRejectedInvite</a></li>
+        <li><a href="#span-classcodicon-codicon-symbol-structure-symbol-structurespanpullrequest"><span class="codicon codicon-symbol-structure symbol-structure"></span>PullRequest</a></li>
+        <li><a href="#span-classcodicon-codicon-symbol-structure-symbol-structurespanpullresponse"><span class="codicon codicon-symbol-structure symbol-structure"></span>PullResponse</a></li>
+        <li><a href="#span-classcodicon-codicon-symbol-structure-symbol-structurespanpushrequest"><span class="codicon codicon-symbol-structure symbol-structure"></span>PushRequest</a></li>
+        <li><a href="#span-classcodicon-codicon-symbol-structure-symbol-structurespanpushresponse"><span class="codicon codicon-symbol-structure symbol-structure"></span>PushResponse</a></li>
+        <li><a href="#span-classcodicon-codicon-symbol-structure-symbol-structurespannotifynewidrequest"><span class="codicon codicon-symbol-structure symbol-structure"></span>NotifyNewIdRequest</a></li>
+        <li><a href="#span-classcodicon-codicon-symbol-structure-symbol-structurespannotifynewidresponse"><span class="codicon codicon-symbol-structure symbol-structure"></span>NotifyNewIdResponse</a></li>
       </ul>
     </li>
     <li><a href="#services">Services</a>
       <ul>
-        <li><a href="#postboxservice">PostboxService</a></li>
+        <li><a href="#span-classcodicon-codicon-symbol-class-symbol-classspanpostboxservice"><span class="codicon codicon-symbol-class symbol-class"></span>PostboxService</a></li>
       </ul>
     </li>
   </ul>
@@ -146,73 +148,73 @@ time (optional uint64) The UTC UNIX time in seconds of when the request is start
     <article class="prose">
       <h1 class="h1">Reference: protocol.sync.v1</h1>
       <h2 id="message-types">Message Types</h2>
-<h3 id="authdata">AuthData</h3>
+<h3 id="span-classcodicon-codicon-symbol-structure-symbol-structurespanauthdata"><span class="codicon codicon-symbol-structure symbol-structure"></span>AuthData</h3>
 <p>Authentication data that will be sent in a <code>harmonytypes.v1.Token</code>.</p>
 <h4 id="fields">Fields</h4>
-<h5 id="server_id-optional--string">server_id (optional  <code>string</code>)</h5>
+<h5 id="span-classcodicon-codicon-symbol-field-symbol-fieldspanserver_id-optional--string"><span class="codicon codicon-symbol-field symbol-field"></span>server_id (optional  <code>string</code>)</h5>
 <p>The server ID of the server initiating the transaction. For Pull,
 this tells the server being connected to which homeservers' events it should send.
 For Push, this tells the server being connected to which homeservers' events it is
 receiving.</p>
-<h5 id="time-optional--uint64">time (optional  <code>uint64</code>)</h5>
+<h5 id="span-classcodicon-codicon-symbol-field-symbol-fieldspantime-optional--uint64"><span class="codicon codicon-symbol-field symbol-field"></span>time (optional  <code>uint64</code>)</h5>
 <p>The UTC UNIX time in seconds of when the request is started. Servers should reject
 tokens with a time too far from the current time, at their discretion. A recommended
 variance is 1 minute.</p>
-<h3 id="event">Event</h3>
+<h3 id="span-classcodicon-codicon-symbol-structure-symbol-structurespanevent"><span class="codicon codicon-symbol-structure symbol-structure"></span>Event</h3>
 <p>Object representing a postbox event.</p>
 <h4 id="fields-1">Fields</h4>
-<h5 id="user_removed_from_guild-optional--protocolsyncv1eventuserremovedfromguildeventuserremovedfromguild">user_removed_from_guild (optional  <a href="#eventuserremovedfromguild">protocol.sync.v1.Event.UserRemovedFromGuild</a>)</h5>
+<h5 id="span-classcodicon-codicon-symbol-field-symbol-fieldspanuser_removed_from_guild-optional--protocolsyncv1eventuserremovedfromguildeventuserremovedfromguild"><span class="codicon codicon-symbol-field symbol-field"></span>user_removed_from_guild (optional  <a href="#eventuserremovedfromguild">protocol.sync.v1.Event.UserRemovedFromGuild</a>)</h5>
 <p>User removed from a guild.</p>
-<h5 id="user_added_to_guild-optional--protocolsyncv1eventuseraddedtoguildeventuseraddedtoguild">user_added_to_guild (optional  <a href="#eventuseraddedtoguild">protocol.sync.v1.Event.UserAddedToGuild</a>)</h5>
+<h5 id="span-classcodicon-codicon-symbol-field-symbol-fieldspanuser_added_to_guild-optional--protocolsyncv1eventuseraddedtoguildeventuseraddedtoguild"><span class="codicon codicon-symbol-field symbol-field"></span>user_added_to_guild (optional  <a href="#eventuseraddedtoguild">protocol.sync.v1.Event.UserAddedToGuild</a>)</h5>
 <p>User added to a guild.</p>
-<h5 id="user_invited-optional--protocolsyncv1eventuserinvitedeventuserinvited">user_invited (optional  <a href="#eventuserinvited">protocol.sync.v1.Event.UserInvited</a>)</h5>
+<h5 id="span-classcodicon-codicon-symbol-field-symbol-fieldspanuser_invited-optional--protocolsyncv1eventuserinvitedeventuserinvited"><span class="codicon codicon-symbol-field symbol-field"></span>user_invited (optional  <a href="#eventuserinvited">protocol.sync.v1.Event.UserInvited</a>)</h5>
 <p>User invited to a guild.</p>
-<h5 id="user_rejected_invite-optional--protocolsyncv1eventuserrejectedinviteeventuserrejectedinvite">user_rejected_invite (optional  <a href="#eventuserrejectedinvite">protocol.sync.v1.Event.UserRejectedInvite</a>)</h5>
+<h5 id="span-classcodicon-codicon-symbol-field-symbol-fieldspanuser_rejected_invite-optional--protocolsyncv1eventuserrejectedinviteeventuserrejectedinvite"><span class="codicon codicon-symbol-field symbol-field"></span>user_rejected_invite (optional  <a href="#eventuserrejectedinvite">protocol.sync.v1.Event.UserRejectedInvite</a>)</h5>
 <p>User rejected a guild invitation.</p>
-<h3 id="eventuserremovedfromguild">Event.UserRemovedFromGuild</h3>
+<h3 id="span-classcodicon-codicon-symbol-structure-symbol-structurespaneventuserremovedfromguild"><span class="codicon codicon-symbol-structure symbol-structure"></span>Event.UserRemovedFromGuild</h3>
 <h4 id="fields-2">Fields</h4>
-<h5 id="user_id-optional--uint64">user_id (optional  <code>uint64</code>)</h5>
-<h5 id="guild_id-optional--uint64">guild_id (optional  <code>uint64</code>)</h5>
-<h3 id="eventuseraddedtoguild">Event.UserAddedToGuild</h3>
+<h5 id="span-classcodicon-codicon-symbol-field-symbol-fieldspanuser_id-optional--uint64"><span class="codicon codicon-symbol-field symbol-field"></span>user_id (optional  <code>uint64</code>)</h5>
+<h5 id="span-classcodicon-codicon-symbol-field-symbol-fieldspanguild_id-optional--uint64"><span class="codicon codicon-symbol-field symbol-field"></span>guild_id (optional  <code>uint64</code>)</h5>
+<h3 id="span-classcodicon-codicon-symbol-structure-symbol-structurespaneventuseraddedtoguild"><span class="codicon codicon-symbol-structure symbol-structure"></span>Event.UserAddedToGuild</h3>
 <h4 id="fields-3">Fields</h4>
-<h5 id="user_id-optional--uint64-1">user_id (optional  <code>uint64</code>)</h5>
-<h5 id="guild_id-optional--uint64-1">guild_id (optional  <code>uint64</code>)</h5>
-<h3 id="eventuserinvited">Event.UserInvited</h3>
+<h5 id="span-classcodicon-codicon-symbol-field-symbol-fieldspanuser_id-optional--uint64-1"><span class="codicon codicon-symbol-field symbol-field"></span>user_id (optional  <code>uint64</code>)</h5>
+<h5 id="span-classcodicon-codicon-symbol-field-symbol-fieldspanguild_id-optional--uint64-1"><span class="codicon codicon-symbol-field symbol-field"></span>guild_id (optional  <code>uint64</code>)</h5>
+<h3 id="span-classcodicon-codicon-symbol-structure-symbol-structurespaneventuserinvited"><span class="codicon codicon-symbol-structure symbol-structure"></span>Event.UserInvited</h3>
 <h4 id="fields-4">Fields</h4>
-<h5 id="user_id-optional--uint64-2">user_id (optional  <code>uint64</code>)</h5>
-<h5 id="inviter_id-optional--uint64">inviter_id (optional  <code>uint64</code>)</h5>
-<h5 id="invite_id-optional--string">invite_id (optional  <code>string</code>)</h5>
-<h3 id="eventuserrejectedinvite">Event.UserRejectedInvite</h3>
+<h5 id="span-classcodicon-codicon-symbol-field-symbol-fieldspanuser_id-optional--uint64-2"><span class="codicon codicon-symbol-field symbol-field"></span>user_id (optional  <code>uint64</code>)</h5>
+<h5 id="span-classcodicon-codicon-symbol-field-symbol-fieldspaninviter_id-optional--uint64"><span class="codicon codicon-symbol-field symbol-field"></span>inviter_id (optional  <code>uint64</code>)</h5>
+<h5 id="span-classcodicon-codicon-symbol-field-symbol-fieldspaninvite_id-optional--string"><span class="codicon codicon-symbol-field symbol-field"></span>invite_id (optional  <code>string</code>)</h5>
+<h3 id="span-classcodicon-codicon-symbol-structure-symbol-structurespaneventuserrejectedinvite"><span class="codicon codicon-symbol-structure symbol-structure"></span>Event.UserRejectedInvite</h3>
 <h4 id="fields-5">Fields</h4>
-<h5 id="guild_id-optional--uint64-2">guild_id (optional  <code>uint64</code>)</h5>
-<h5 id="user_id-optional--uint64-3">user_id (optional  <code>uint64</code>)</h5>
-<h5 id="invite_id-optional--string-1">invite_id (optional  <code>string</code>)</h5>
-<h3 id="pullrequest">PullRequest</h3>
+<h5 id="span-classcodicon-codicon-symbol-field-symbol-fieldspanguild_id-optional--uint64-2"><span class="codicon codicon-symbol-field symbol-field"></span>guild_id (optional  <code>uint64</code>)</h5>
+<h5 id="span-classcodicon-codicon-symbol-field-symbol-fieldspanuser_id-optional--uint64-3"><span class="codicon codicon-symbol-field symbol-field"></span>user_id (optional  <code>uint64</code>)</h5>
+<h5 id="span-classcodicon-codicon-symbol-field-symbol-fieldspaninvite_id-optional--string-1"><span class="codicon codicon-symbol-field symbol-field"></span>invite_id (optional  <code>string</code>)</h5>
+<h3 id="span-classcodicon-codicon-symbol-structure-symbol-structurespanpullrequest"><span class="codicon codicon-symbol-structure symbol-structure"></span>PullRequest</h3>
 <p>Used in <code>Pull</code> endpoint.</p>
 <p>This item has no fields.</p>
-<h3 id="pullresponse">PullResponse</h3>
+<h3 id="span-classcodicon-codicon-symbol-structure-symbol-structurespanpullresponse"><span class="codicon codicon-symbol-structure symbol-structure"></span>PullResponse</h3>
 <p>Used in <code>Pull</code> endpoint.</p>
 <h4 id="fields-6">Fields</h4>
-<h5 id="event_queue-repeated--protocolsyncv1eventevent">event_queue (repeated  <a href="#event">protocol.sync.v1.Event</a>)</h5>
+<h5 id="span-classcodicon-codicon-symbol-field-symbol-fieldspanevent_queue-repeated--protocolsyncv1eventevent"><span class="codicon codicon-symbol-field symbol-field"></span>event_queue (repeated  <a href="#event">protocol.sync.v1.Event</a>)</h5>
 <p>The events that were not processed yet.</p>
-<h3 id="pushrequest">PushRequest</h3>
+<h3 id="span-classcodicon-codicon-symbol-structure-symbol-structurespanpushrequest"><span class="codicon codicon-symbol-structure symbol-structure"></span>PushRequest</h3>
 <p>Used in <code>Push</code> endpoint.</p>
 <h4 id="fields-7">Fields</h4>
-<h5 id="event-optional--protocolsyncv1eventevent">event (optional  <a href="#event">protocol.sync.v1.Event</a>)</h5>
+<h5 id="span-classcodicon-codicon-symbol-field-symbol-fieldspanevent-optional--protocolsyncv1eventevent"><span class="codicon codicon-symbol-field symbol-field"></span>event (optional  <a href="#event">protocol.sync.v1.Event</a>)</h5>
 <p>The event to push to the server.</p>
-<h3 id="pushresponse">PushResponse</h3>
+<h3 id="span-classcodicon-codicon-symbol-structure-symbol-structurespanpushresponse"><span class="codicon codicon-symbol-structure symbol-structure"></span>PushResponse</h3>
 <p>Used in <code>Push</code> endpoint.</p>
 <p>This item has no fields.</p>
-<h3 id="notifynewidrequest">NotifyNewIdRequest</h3>
+<h3 id="span-classcodicon-codicon-symbol-structure-symbol-structurespannotifynewidrequest"><span class="codicon codicon-symbol-structure symbol-structure"></span>NotifyNewIdRequest</h3>
 <p>Used in <code>NotifyNewId</code> endpoint.</p>
 <h4 id="fields-8">Fields</h4>
-<h5 id="new_server_id-optional--string">new_server_id (optional  <code>string</code>)</h5>
+<h5 id="span-classcodicon-codicon-symbol-field-symbol-fieldspannew_server_id-optional--string"><span class="codicon codicon-symbol-field symbol-field"></span>new_server_id (optional  <code>string</code>)</h5>
 <p>The new server ID of the server.</p>
-<h3 id="notifynewidresponse">NotifyNewIdResponse</h3>
+<h3 id="span-classcodicon-codicon-symbol-structure-symbol-structurespannotifynewidresponse"><span class="codicon codicon-symbol-structure symbol-structure"></span>NotifyNewIdResponse</h3>
 <p>Used in <code>NotifyNewId</code> endpoint.</p>
 <p>This item has no fields.</p>
 <h2 id="services">Services</h2>
-<h3 id="postboxservice">PostboxService</h3>
+<h3 id="span-classcodicon-codicon-symbol-class-symbol-classspanpostboxservice"><span class="codicon codicon-symbol-class symbol-class"></span>PostboxService</h3>
 <h1 id="postbox">Postbox</h1>
 <p>The postbox service forms the core of Harmony&rsquo;s server &lt;-&gt; server communications.</p>
 <p>It concerns the transfer of Events between servers, as well as ensuring reliable
@@ -243,13 +245,13 @@ right order.</p>
 <p>It is recommended that receivers try pulling periodically, for example, every
 1 minute after the last Push RPC by the sender. This ensures that events are recieved.</p>
 <h4 id="methods">Methods</h4>
-<h5 id="pull">Pull</h5>
+<h5 id="span-classcodicon-codicon-symbol-method-symbol-methodspanpull"><span class="codicon codicon-symbol-method symbol-method"></span>Pull</h5>
 <p><a href="#pullrequest">protocol.sync.v1.PullRequest</a> -&gt; <a href="#pullresponse">protocol.sync.v1.PullResponse</a></p>
 <p>Endpoint to pull events.</p>
-<h5 id="push">Push</h5>
+<h5 id="span-classcodicon-codicon-symbol-method-symbol-methodspanpush"><span class="codicon codicon-symbol-method symbol-method"></span>Push</h5>
 <p><a href="#pushrequest">protocol.sync.v1.PushRequest</a> -&gt; <a href="#pushresponse">protocol.sync.v1.PushResponse</a></p>
 <p>Endpoint to push events.</p>
-<h5 id="notifynewid">NotifyNewId</h5>
+<h5 id="span-classcodicon-codicon-symbol-method-symbol-methodspannotifynewid"><span class="codicon codicon-symbol-method symbol-method"></span>NotifyNewId</h5>
 <p><a href="#notifynewidrequest">protocol.sync.v1.NotifyNewIdRequest</a> -&gt; <a href="#notifynewidresponse">protocol.sync.v1.NotifyNewIdResponse</a></p>
 <p>Endpoint to notify a server of a server ID change. It is called by the server
 that had it&rsquo;s server ID changed for all servers it has federated with.</p>

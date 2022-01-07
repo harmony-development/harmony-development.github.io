@@ -8,4 +8,4 @@ plugins:
     out: docs
     opt:
       - paths=source_relative
-      - markdown,reference.md
+      - codicon=yes

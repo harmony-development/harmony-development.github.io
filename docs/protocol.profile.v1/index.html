@@ -8,11 +8,13 @@ Fields before (optional string) The portion of the tag before the messge.
 after (optional string) The portion of the tag after the messge. ">
     <link rel="canonical" href="https://harmonyapp.io/docs/protocol.profile.v1/" />
 
+    <link rel="stylesheet" href="/css/codicon.css" />
+
     
 
     
       
-      <link rel="stylesheet" href="/css/main.min.ffa2c263a52247f69e606278e3b3ab33849b5ce18bb062835eece5ca3730b038.css" integrity="sha256-/6LCY6UiR/aeYGJ447OrM4SbXOGLsGKDXuzlyjcwsDg="/>
+      <link rel="stylesheet" href="/css/main.min.b599a35d8c7b77592a19cf713bdf6cbf7c404435525e62c590c7c61d88977fb3.css" integrity="sha256-tZmjXYx7d1kqGc9xO99sv3xARDVSXmLFkMfGHYiXf7M="/>
     
 
     <meta property="og:title" content="Reference: protocol.profile.v1" />
@@ -110,30 +112,30 @@ after (optional string) The portion of the tag after the messge."/>
   <ul>
     <li><a href="#message-types">Message Types</a>
       <ul>
-        <li><a href="#overridetag">OverrideTag</a></li>
-        <li><a href="#profileoverride">ProfileOverride</a></li>
-        <li><a href="#appdataoverrides">AppDataOverrides</a></li>
-        <li><a href="#profile">Profile</a></li>
-        <li><a href="#getprofilerequest">GetProfileRequest</a></li>
-        <li><a href="#getprofileresponse">GetProfileResponse</a></li>
-        <li><a href="#updateprofilerequest">UpdateProfileRequest</a></li>
-        <li><a href="#updateprofileresponse">UpdateProfileResponse</a></li>
-        <li><a href="#getappdatarequest">GetAppDataRequest</a></li>
-        <li><a href="#getappdataresponse">GetAppDataResponse</a></li>
-        <li><a href="#setappdatarequest">SetAppDataRequest</a></li>
-        <li><a href="#setappdataresponse">SetAppDataResponse</a></li>
-        <li><a href="#profileupdated">ProfileUpdated</a></li>
-        <li><a href="#streamevent">StreamEvent</a></li>
+        <li><a href="#span-classcodicon-codicon-symbol-structure-symbol-structurespanoverridetag"><span class="codicon codicon-symbol-structure symbol-structure"></span>OverrideTag</a></li>
+        <li><a href="#span-classcodicon-codicon-symbol-structure-symbol-structurespanprofileoverride"><span class="codicon codicon-symbol-structure symbol-structure"></span>ProfileOverride</a></li>
+        <li><a href="#span-classcodicon-codicon-symbol-structure-symbol-structurespanappdataoverrides"><span class="codicon codicon-symbol-structure symbol-structure"></span>AppDataOverrides</a></li>
+        <li><a href="#span-classcodicon-codicon-symbol-structure-symbol-structurespanprofile"><span class="codicon codicon-symbol-structure symbol-structure"></span>Profile</a></li>
+        <li><a href="#span-classcodicon-codicon-symbol-structure-symbol-structurespangetprofilerequest"><span class="codicon codicon-symbol-structure symbol-structure"></span>GetProfileRequest</a></li>
+        <li><a href="#span-classcodicon-codicon-symbol-structure-symbol-structurespangetprofileresponse"><span class="codicon codicon-symbol-structure symbol-structure"></span>GetProfileResponse</a></li>
+        <li><a href="#span-classcodicon-codicon-symbol-structure-symbol-structurespanupdateprofilerequest"><span class="codicon codicon-symbol-structure symbol-structure"></span>UpdateProfileRequest</a></li>
+        <li><a href="#span-classcodicon-codicon-symbol-structure-symbol-structurespanupdateprofileresponse"><span class="codicon codicon-symbol-structure symbol-structure"></span>UpdateProfileResponse</a></li>
+        <li><a href="#span-classcodicon-codicon-symbol-structure-symbol-structurespangetappdatarequest"><span class="codicon codicon-symbol-structure symbol-structure"></span>GetAppDataRequest</a></li>
+        <li><a href="#span-classcodicon-codicon-symbol-structure-symbol-structurespangetappdataresponse"><span class="codicon codicon-symbol-structure symbol-structure"></span>GetAppDataResponse</a></li>
+        <li><a href="#span-classcodicon-codicon-symbol-structure-symbol-structurespansetappdatarequest"><span class="codicon codicon-symbol-structure symbol-structure"></span>SetAppDataRequest</a></li>
+        <li><a href="#span-classcodicon-codicon-symbol-structure-symbol-structurespansetappdataresponse"><span class="codicon codicon-symbol-structure symbol-structure"></span>SetAppDataResponse</a></li>
+        <li><a href="#span-classcodicon-codicon-symbol-structure-symbol-structurespanprofileupdated"><span class="codicon codicon-symbol-structure symbol-structure"></span>ProfileUpdated</a></li>
+        <li><a href="#span-classcodicon-codicon-symbol-structure-symbol-structurespanstreamevent"><span class="codicon codicon-symbol-structure symbol-structure"></span>StreamEvent</a></li>
       </ul>
     </li>
     <li><a href="#enums">Enums</a>
       <ul>
-        <li><a href="#userstatus">UserStatus</a></li>
+        <li><a href="#span-classcodicon-codicon-symbol-enum-symbol-enumspanuserstatus"><span class="codicon codicon-symbol-enum symbol-enum"></span>UserStatus</a></li>
       </ul>
     </li>
     <li><a href="#services">Services</a>
       <ul>
-        <li><a href="#profileservice">ProfileService</a></li>
+        <li><a href="#span-classcodicon-codicon-symbol-class-symbol-classspanprofileservice"><span class="codicon codicon-symbol-class symbol-class"></span>ProfileService</a></li>
       </ul>
     </li>
   </ul>
@@ -143,7 +145,7 @@ after (optional string) The portion of the tag after the messge."/>
     <article class="prose">
       <h1 class="h1">Reference: protocol.profile.v1</h1>
       <h2 id="message-types">Message Types</h2>
-<h3 id="overridetag">OverrideTag</h3>
+<h3 id="span-classcodicon-codicon-symbol-structure-symbol-structurespanoverridetag"><span class="codicon codicon-symbol-structure symbol-structure"></span>OverrideTag</h3>
 <p>A tag for an override. This is used as a
 standard shorthand for sending a message with
 an override. If a message starts with before and
@@ -151,134 +153,134 @@ ends with after, clients should send a message
 with the override the tag belongs to, stripping
 the tag indicators.</p>
 <h4 id="fields">Fields</h4>
-<h5 id="before-optional--string">before (optional  <code>string</code>)</h5>
+<h5 id="span-classcodicon-codicon-symbol-field-symbol-fieldspanbefore-optional--string"><span class="codicon codicon-symbol-field symbol-field"></span>before (optional  <code>string</code>)</h5>
 <p>The portion of the tag before the messge.</p>
-<h5 id="after-optional--string">after (optional  <code>string</code>)</h5>
+<h5 id="span-classcodicon-codicon-symbol-field-symbol-fieldspanafter-optional--string"><span class="codicon codicon-symbol-field symbol-field"></span>after (optional  <code>string</code>)</h5>
 <p>The portion of the tag after the messge.</p>
-<h3 id="profileoverride">ProfileOverride</h3>
+<h3 id="span-classcodicon-codicon-symbol-structure-symbol-structurespanprofileoverride"><span class="codicon codicon-symbol-structure symbol-structure"></span>ProfileOverride</h3>
 <p>An individual override</p>
 <h4 id="fields-1">Fields</h4>
-<h5 id="username-optional--string">username (optional  <code>string</code>)</h5>
+<h5 id="span-classcodicon-codicon-symbol-field-symbol-fieldspanusername-optional--string"><span class="codicon codicon-symbol-field symbol-field"></span>username (optional  <code>string</code>)</h5>
 <p>The username for this override</p>
-<h5 id="avatar-optional--string">avatar (optional  <code>string</code>)</h5>
+<h5 id="span-classcodicon-codicon-symbol-field-symbol-fieldspanavatar-optional--string"><span class="codicon codicon-symbol-field symbol-field"></span>avatar (optional  <code>string</code>)</h5>
 <p>The avatar for this override</p>
-<h5 id="tags-repeated--protocolprofilev1overridetagoverridetag">tags (repeated  <a href="#overridetag">protocol.profile.v1.OverrideTag</a>)</h5>
+<h5 id="span-classcodicon-codicon-symbol-field-symbol-fieldspantags-repeated--protocolprofilev1overridetagoverridetag"><span class="codicon codicon-symbol-field symbol-field"></span>tags (repeated  <a href="#overridetag">protocol.profile.v1.OverrideTag</a>)</h5>
 <p>The tags for this override.</p>
-<h5 id="user_defined-optional--string">user_defined (optional  <code>string</code>)</h5>
+<h5 id="span-classcodicon-codicon-symbol-field-symbol-fieldspanuser_defined-optional--string"><span class="codicon codicon-symbol-field symbol-field"></span>user_defined (optional  <code>string</code>)</h5>
 <p>a custom reason in case the builtin ones don&rsquo;t fit</p>
-<h5 id="system_plurality-optional--protocolharmonytypesv1emptyhahahugoshortcode-s0-hbhbempty">system_plurality (optional  <a href="https://harmonyapp.io/docs/protocol.harmonytypes.v1/#empty">protocol.harmonytypes.v1.Empty</a>)</h5>
+<h5 id="span-classcodicon-codicon-symbol-field-symbol-fieldspansystem_plurality-optional--protocolharmonytypesv1emptyhahahugoshortcode-s0-hbhbempty"><span class="codicon codicon-symbol-field symbol-field"></span>system_plurality (optional  <a href="https://harmonyapp.io/docs/protocol.harmonytypes.v1/#empty">protocol.harmonytypes.v1.Empty</a>)</h5>
 <p>plurality, not system as in computer</p>
-<h3 id="appdataoverrides">AppDataOverrides</h3>
+<h3 id="span-classcodicon-codicon-symbol-structure-symbol-structurespanappdataoverrides"><span class="codicon codicon-symbol-structure symbol-structure"></span>AppDataOverrides</h3>
 <p>The message used for the &lsquo;h.overrides&rsquo; key
 of appdata.</p>
 <h4 id="fields-2">Fields</h4>
-<h5 id="overrides-repeated--protocolprofilev1profileoverrideprofileoverride">overrides (repeated  <a href="#profileoverride">protocol.profile.v1.ProfileOverride</a>)</h5>
+<h5 id="span-classcodicon-codicon-symbol-field-symbol-fieldspanoverrides-repeated--protocolprofilev1profileoverrideprofileoverride"><span class="codicon codicon-symbol-field symbol-field"></span>overrides (repeated  <a href="#profileoverride">protocol.profile.v1.ProfileOverride</a>)</h5>
 <p>The list of overrides.</p>
-<h3 id="profile">Profile</h3>
+<h3 id="span-classcodicon-codicon-symbol-structure-symbol-structurespanprofile"><span class="codicon codicon-symbol-structure symbol-structure"></span>Profile</h3>
 <p>Data for a single profile, without the user&rsquo;s ID.</p>
 <h4 id="fields-3">Fields</h4>
-<h5 id="user_name-optional--string">user_name (optional  <code>string</code>)</h5>
+<h5 id="span-classcodicon-codicon-symbol-field-symbol-fieldspanuser_name-optional--string"><span class="codicon codicon-symbol-field symbol-field"></span>user_name (optional  <code>string</code>)</h5>
 <p>the name of the user.</p>
-<h5 id="user_avatar-optional--string">user_avatar (optional  <code>string</code>)</h5>
+<h5 id="span-classcodicon-codicon-symbol-field-symbol-fieldspanuser_avatar-optional--string"><span class="codicon codicon-symbol-field symbol-field"></span>user_avatar (optional  <code>string</code>)</h5>
 <p>the user&rsquo;s avatar.</p>
-<h5 id="user_status-unhandled--type">user_status (UNHANDLED | TYPE)</h5>
+<h5 id="span-classcodicon-codicon-symbol-field-symbol-fieldspanuser_status-unhandled--type"><span class="codicon codicon-symbol-field symbol-field"></span>user_status (UNHANDLED | TYPE)</h5>
 <p>the status of the user.</p>
-<h5 id="is_bot-optional--bool">is_bot (optional  <code>bool</code>)</h5>
+<h5 id="span-classcodicon-codicon-symbol-field-symbol-fieldspanis_bot-optional--bool"><span class="codicon codicon-symbol-field symbol-field"></span>is_bot (optional  <code>bool</code>)</h5>
 <p>whether the user is a bot or not.</p>
-<h3 id="getprofilerequest">GetProfileRequest</h3>
+<h3 id="span-classcodicon-codicon-symbol-structure-symbol-structurespangetprofilerequest"><span class="codicon codicon-symbol-structure symbol-structure"></span>GetProfileRequest</h3>
 <p>Used in <code>GetProfile</code> endpoint.</p>
 <h4 id="fields-4">Fields</h4>
-<h5 id="user_id-optional--uint64">user_id (optional  <code>uint64</code>)</h5>
+<h5 id="span-classcodicon-codicon-symbol-field-symbol-fieldspanuser_id-optional--uint64"><span class="codicon codicon-symbol-field symbol-field"></span>user_id (optional  <code>uint64</code>)</h5>
 <p>The id of the user to get.</p>
-<h3 id="getprofileresponse">GetProfileResponse</h3>
+<h3 id="span-classcodicon-codicon-symbol-structure-symbol-structurespangetprofileresponse"><span class="codicon codicon-symbol-structure symbol-structure"></span>GetProfileResponse</h3>
 <p>Used in <code>GetProfile</code> endpoint.</p>
 <h4 id="fields-5">Fields</h4>
-<h5 id="profile-optional--protocolprofilev1profileprofile">profile (optional  <a href="#profile">protocol.profile.v1.Profile</a>)</h5>
+<h5 id="span-classcodicon-codicon-symbol-field-symbol-fieldspanprofile-optional--protocolprofilev1profileprofile"><span class="codicon codicon-symbol-field symbol-field"></span>profile (optional  <a href="#profile">protocol.profile.v1.Profile</a>)</h5>
 <p>The user&rsquo;s profile</p>
-<h3 id="updateprofilerequest">UpdateProfileRequest</h3>
+<h3 id="span-classcodicon-codicon-symbol-structure-symbol-structurespanupdateprofilerequest"><span class="codicon codicon-symbol-structure symbol-structure"></span>UpdateProfileRequest</h3>
 <p>Used in <code>UpdateProfile</code> endpoint.</p>
 <h4 id="fields-6">Fields</h4>
-<h5 id="new_user_name-optional--string">new_user_name (optional  <code>string</code>)</h5>
+<h5 id="span-classcodicon-codicon-symbol-field-symbol-fieldspannew_user_name-optional--string"><span class="codicon codicon-symbol-field symbol-field"></span>new_user_name (optional  <code>string</code>)</h5>
 <p>new name of the user.</p>
-<h5 id="new_user_avatar-optional--string">new_user_avatar (optional  <code>string</code>)</h5>
+<h5 id="span-classcodicon-codicon-symbol-field-symbol-fieldspannew_user_avatar-optional--string"><span class="codicon codicon-symbol-field symbol-field"></span>new_user_avatar (optional  <code>string</code>)</h5>
 <p>new user avatar. The avatar will be removed if the string is empty.</p>
-<h5 id="new_user_status-unhandled--type">new_user_status (UNHANDLED | TYPE)</h5>
+<h5 id="span-classcodicon-codicon-symbol-field-symbol-fieldspannew_user_status-unhandled--type"><span class="codicon codicon-symbol-field symbol-field"></span>new_user_status (UNHANDLED | TYPE)</h5>
 <p>new status of the user.</p>
-<h5 id="new_is_bot-optional--bool">new_is_bot (optional  <code>bool</code>)</h5>
+<h5 id="span-classcodicon-codicon-symbol-field-symbol-fieldspannew_is_bot-optional--bool"><span class="codicon codicon-symbol-field symbol-field"></span>new_is_bot (optional  <code>bool</code>)</h5>
 <p>new whether the user is a bot or not.</p>
-<h3 id="updateprofileresponse">UpdateProfileResponse</h3>
+<h3 id="span-classcodicon-codicon-symbol-structure-symbol-structurespanupdateprofileresponse"><span class="codicon codicon-symbol-structure symbol-structure"></span>UpdateProfileResponse</h3>
 <p>Used in <code>UpdateProfile</code> endpoint.</p>
 <p>This item has no fields.</p>
-<h3 id="getappdatarequest">GetAppDataRequest</h3>
+<h3 id="span-classcodicon-codicon-symbol-structure-symbol-structurespangetappdatarequest"><span class="codicon codicon-symbol-structure symbol-structure"></span>GetAppDataRequest</h3>
 <p>Used in <code>GetAppData</code> endpoint.</p>
 <h4 id="fields-7">Fields</h4>
-<h5 id="app_id-optional--string">app_id (optional  <code>string</code>)</h5>
+<h5 id="span-classcodicon-codicon-symbol-field-symbol-fieldspanapp_id-optional--string"><span class="codicon codicon-symbol-field symbol-field"></span>app_id (optional  <code>string</code>)</h5>
 <p>the app id.</p>
-<h3 id="getappdataresponse">GetAppDataResponse</h3>
+<h3 id="span-classcodicon-codicon-symbol-structure-symbol-structurespangetappdataresponse"><span class="codicon codicon-symbol-structure symbol-structure"></span>GetAppDataResponse</h3>
 <p>Used in <code>GetAppData</code> endpoint.</p>
 <h4 id="fields-8">Fields</h4>
-<h5 id="app_data-optional--bytes">app_data (optional  <code>bytes</code>)</h5>
+<h5 id="span-classcodicon-codicon-symbol-field-symbol-fieldspanapp_data-optional--bytes"><span class="codicon codicon-symbol-field symbol-field"></span>app_data (optional  <code>bytes</code>)</h5>
 <p>the app data.</p>
-<h3 id="setappdatarequest">SetAppDataRequest</h3>
+<h3 id="span-classcodicon-codicon-symbol-structure-symbol-structurespansetappdatarequest"><span class="codicon codicon-symbol-structure symbol-structure"></span>SetAppDataRequest</h3>
 <p>Used in <code>SetAppData</code> endpoint.</p>
 <h4 id="fields-9">Fields</h4>
-<h5 id="app_id-optional--string-1">app_id (optional  <code>string</code>)</h5>
+<h5 id="span-classcodicon-codicon-symbol-field-symbol-fieldspanapp_id-optional--string-1"><span class="codicon codicon-symbol-field symbol-field"></span>app_id (optional  <code>string</code>)</h5>
 <p>the app id.</p>
-<h5 id="app_data-optional--bytes-1">app_data (optional  <code>bytes</code>)</h5>
+<h5 id="span-classcodicon-codicon-symbol-field-symbol-fieldspanapp_data-optional--bytes-1"><span class="codicon codicon-symbol-field symbol-field"></span>app_data (optional  <code>bytes</code>)</h5>
 <p>the app data.</p>
-<h3 id="setappdataresponse">SetAppDataResponse</h3>
+<h3 id="span-classcodicon-codicon-symbol-structure-symbol-structurespansetappdataresponse"><span class="codicon codicon-symbol-structure symbol-structure"></span>SetAppDataResponse</h3>
 <p>Used in <code>SetAppData</code> endpoint.</p>
 <p>This item has no fields.</p>
-<h3 id="profileupdated">ProfileUpdated</h3>
+<h3 id="span-classcodicon-codicon-symbol-structure-symbol-structurespanprofileupdated"><span class="codicon codicon-symbol-structure symbol-structure"></span>ProfileUpdated</h3>
 <p>Event sent when a user&rsquo;s profile is updated.</p>
 <p>Servers should sent this event only to users that can &ldquo;see&rdquo; (eg. they are
 in the same guild) the user this event was triggered by.</p>
 <h4 id="fields-10">Fields</h4>
-<h5 id="user_id-optional--uint64-1">user_id (optional  <code>uint64</code>)</h5>
+<h5 id="span-classcodicon-codicon-symbol-field-symbol-fieldspanuser_id-optional--uint64-1"><span class="codicon codicon-symbol-field symbol-field"></span>user_id (optional  <code>uint64</code>)</h5>
 <p>User ID of the user that had it&rsquo;s profile updated.</p>
-<h5 id="new_username-optional--string">new_username (optional  <code>string</code>)</h5>
+<h5 id="span-classcodicon-codicon-symbol-field-symbol-fieldspannew_username-optional--string"><span class="codicon codicon-symbol-field symbol-field"></span>new_username (optional  <code>string</code>)</h5>
 <p>New username for this user.</p>
-<h5 id="new_avatar-optional--string">new_avatar (optional  <code>string</code>)</h5>
+<h5 id="span-classcodicon-codicon-symbol-field-symbol-fieldspannew_avatar-optional--string"><span class="codicon codicon-symbol-field symbol-field"></span>new_avatar (optional  <code>string</code>)</h5>
 <p>New avatar for this user.</p>
-<h5 id="new_status-unhandled--type">new_status (UNHANDLED | TYPE)</h5>
+<h5 id="span-classcodicon-codicon-symbol-field-symbol-fieldspannew_status-unhandled--type"><span class="codicon codicon-symbol-field symbol-field"></span>new_status (UNHANDLED | TYPE)</h5>
 <p>New status for this user.</p>
-<h5 id="new_is_bot-optional--bool-1">new_is_bot (optional  <code>bool</code>)</h5>
+<h5 id="span-classcodicon-codicon-symbol-field-symbol-fieldspannew_is_bot-optional--bool-1"><span class="codicon codicon-symbol-field symbol-field"></span>new_is_bot (optional  <code>bool</code>)</h5>
 <p>New is bot or not for this user.</p>
-<h3 id="streamevent">StreamEvent</h3>
+<h3 id="span-classcodicon-codicon-symbol-structure-symbol-structurespanstreamevent"><span class="codicon codicon-symbol-structure symbol-structure"></span>StreamEvent</h3>
 <p>Describes an emote service event.</p>
 <h4 id="fields-11">Fields</h4>
-<h5 id="profile_updated-optional--protocolprofilev1profileupdatedprofileupdated">profile_updated (optional  <a href="#profileupdated">protocol.profile.v1.ProfileUpdated</a>)</h5>
+<h5 id="span-classcodicon-codicon-symbol-field-symbol-fieldspanprofile_updated-optional--protocolprofilev1profileupdatedprofileupdated"><span class="codicon codicon-symbol-field symbol-field"></span>profile_updated (optional  <a href="#profileupdated">protocol.profile.v1.ProfileUpdated</a>)</h5>
 <p>Send the profile updated event.</p>
 <h2 id="enums">Enums</h2>
-<h3 id="userstatus">UserStatus</h3>
+<h3 id="span-classcodicon-codicon-symbol-enum-symbol-enumspanuserstatus"><span class="codicon codicon-symbol-enum symbol-enum"></span>UserStatus</h3>
 <p>The possible statuses a user can have.</p>
-<h4 id="user_status_offline_unspecified">USER_STATUS_OFFLINE_UNSPECIFIED</h4>
+<h4 id="span-classcodicon-codicon-symbol-enum-member-symbol-enum-memberspanuser_status_offline_unspecified"><span class="codicon codicon-symbol-enum-member symbol-enum-member"></span>USER_STATUS_OFFLINE_UNSPECIFIED</h4>
 <p>User is offline (not connected to the server).</p>
-<h4 id="user_status_online">USER_STATUS_ONLINE</h4>
+<h4 id="span-classcodicon-codicon-symbol-enum-member-symbol-enum-memberspanuser_status_online"><span class="codicon codicon-symbol-enum-member symbol-enum-member"></span>USER_STATUS_ONLINE</h4>
 <p>User is online (this is the default value if ommitted).</p>
-<h4 id="user_status_idle">USER_STATUS_IDLE</h4>
+<h4 id="span-classcodicon-codicon-symbol-enum-member-symbol-enum-memberspanuser_status_idle"><span class="codicon codicon-symbol-enum-member symbol-enum-member"></span>USER_STATUS_IDLE</h4>
 <p>User is away.</p>
-<h4 id="user_status_do_not_disturb">USER_STATUS_DO_NOT_DISTURB</h4>
+<h4 id="span-classcodicon-codicon-symbol-enum-member-symbol-enum-memberspanuser_status_do_not_disturb"><span class="codicon codicon-symbol-enum-member symbol-enum-member"></span>USER_STATUS_DO_NOT_DISTURB</h4>
 <p>User does not want to be disturbed.</p>
-<h4 id="user_status_mobile">USER_STATUS_MOBILE</h4>
+<h4 id="span-classcodicon-codicon-symbol-enum-member-symbol-enum-memberspanuser_status_mobile"><span class="codicon codicon-symbol-enum-member symbol-enum-member"></span>USER_STATUS_MOBILE</h4>
 <p>User is on mobile.</p>
-<h4 id="user_status_streaming">USER_STATUS_STREAMING</h4>
+<h4 id="span-classcodicon-codicon-symbol-enum-member-symbol-enum-memberspanuser_status_streaming"><span class="codicon codicon-symbol-enum-member symbol-enum-member"></span>USER_STATUS_STREAMING</h4>
 <p>User is streaming</p>
 <h2 id="services">Services</h2>
-<h3 id="profileservice">ProfileService</h3>
+<h3 id="span-classcodicon-codicon-symbol-class-symbol-classspanprofileservice"><span class="codicon codicon-symbol-class symbol-class"></span>ProfileService</h3>
 <p>Harmony&rsquo;s Profile service manages the profiles of the users.</p>
 <h4 id="methods">Methods</h4>
-<h5 id="getprofile">GetProfile</h5>
+<h5 id="span-classcodicon-codicon-symbol-method-symbol-methodspangetprofile"><span class="codicon codicon-symbol-method symbol-method"></span>GetProfile</h5>
 <p><a href="#getprofilerequest">protocol.profile.v1.GetProfileRequest</a> -&gt; <a href="#getprofileresponse">protocol.profile.v1.GetProfileResponse</a></p>
 <p>Gets a user&rsquo;s profile.</p>
-<h5 id="updateprofile">UpdateProfile</h5>
+<h5 id="span-classcodicon-codicon-symbol-method-symbol-methodspanupdateprofile"><span class="codicon codicon-symbol-method symbol-method"></span>UpdateProfile</h5>
 <p><a href="#updateprofilerequest">protocol.profile.v1.UpdateProfileRequest</a> -&gt; <a href="#updateprofileresponse">protocol.profile.v1.UpdateProfileResponse</a></p>
 <p>Updates the user&rsquo;s profile.</p>
-<h5 id="getappdata">GetAppData</h5>
+<h5 id="span-classcodicon-codicon-symbol-method-symbol-methodspangetappdata"><span class="codicon codicon-symbol-method symbol-method"></span>GetAppData</h5>
 <p><a href="#getappdatarequest">protocol.profile.v1.GetAppDataRequest</a> -&gt; <a href="#getappdataresponse">protocol.profile.v1.GetAppDataResponse</a></p>
 <p>Gets app data for a user (this can be used to store user preferences which
 is synchronized across devices).</p>
-<h5 id="setappdata">SetAppData</h5>
+<h5 id="span-classcodicon-codicon-symbol-method-symbol-methodspansetappdata"><span class="codicon codicon-symbol-method symbol-method"></span>SetAppData</h5>
 <p><a href="#setappdatarequest">protocol.profile.v1.SetAppDataRequest</a> -&gt; <a href="#setappdataresponse">protocol.profile.v1.SetAppDataResponse</a></p>
 <p>Sets the app data for a user.</p>
 

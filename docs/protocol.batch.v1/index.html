@@ -13,11 +13,13 @@ Fields responses (repeated bytes) The list of responses to the requests.
 BatchSameRequest Used in BatchSame endpoint. ">
     <link rel="canonical" href="https://harmonyapp.io/docs/protocol.batch.v1/" />
 
+    <link rel="stylesheet" href="/css/codicon.css" />
+
     
 
     
       
-      <link rel="stylesheet" href="/css/main.min.ffa2c263a52247f69e606278e3b3ab33849b5ce18bb062835eece5ca3730b038.css" integrity="sha256-/6LCY6UiR/aeYGJ447OrM4SbXOGLsGKDXuzlyjcwsDg="/>
+      <link rel="stylesheet" href="/css/main.min.b599a35d8c7b77592a19cf713bdf6cbf7c404435525e62c590c7c61d88977fb3.css" integrity="sha256-tZmjXYx7d1kqGc9xO99sv3xARDVSXmLFkMfGHYiXf7M="/>
     
 
     <meta property="og:title" content="Reference: protocol.batch.v1" />
@@ -125,16 +127,16 @@ BatchSameRequest Used in BatchSame endpoint."/>
   <ul>
     <li><a href="#message-types">Message Types</a>
       <ul>
-        <li><a href="#anyrequest">AnyRequest</a></li>
-        <li><a href="#batchrequest">BatchRequest</a></li>
-        <li><a href="#batchresponse">BatchResponse</a></li>
-        <li><a href="#batchsamerequest">BatchSameRequest</a></li>
-        <li><a href="#batchsameresponse">BatchSameResponse</a></li>
+        <li><a href="#span-classcodicon-codicon-symbol-structure-symbol-structurespananyrequest"><span class="codicon codicon-symbol-structure symbol-structure"></span>AnyRequest</a></li>
+        <li><a href="#span-classcodicon-codicon-symbol-structure-symbol-structurespanbatchrequest"><span class="codicon codicon-symbol-structure symbol-structure"></span>BatchRequest</a></li>
+        <li><a href="#span-classcodicon-codicon-symbol-structure-symbol-structurespanbatchresponse"><span class="codicon codicon-symbol-structure symbol-structure"></span>BatchResponse</a></li>
+        <li><a href="#span-classcodicon-codicon-symbol-structure-symbol-structurespanbatchsamerequest"><span class="codicon codicon-symbol-structure symbol-structure"></span>BatchSameRequest</a></li>
+        <li><a href="#span-classcodicon-codicon-symbol-structure-symbol-structurespanbatchsameresponse"><span class="codicon codicon-symbol-structure symbol-structure"></span>BatchSameResponse</a></li>
       </ul>
     </li>
     <li><a href="#services">Services</a>
       <ul>
-        <li><a href="#batchservice">BatchService</a></li>
+        <li><a href="#span-classcodicon-codicon-symbol-class-symbol-classspanbatchservice"><span class="codicon codicon-symbol-class symbol-class"></span>BatchService</a></li>
       </ul>
     </li>
   </ul>
@@ -144,46 +146,46 @@ BatchSameRequest Used in BatchSame endpoint."/>
     <article class="prose">
       <h1 class="h1">Reference: protocol.batch.v1</h1>
       <h2 id="message-types">Message Types</h2>
-<h3 id="anyrequest">AnyRequest</h3>
+<h3 id="span-classcodicon-codicon-symbol-structure-symbol-structurespananyrequest"><span class="codicon codicon-symbol-structure symbol-structure"></span>AnyRequest</h3>
 <p>AnyRequest is a generic message supporting any unary request.</p>
 <h4 id="fields">Fields</h4>
-<h5 id="endpoint-optional--string">endpoint (optional  <code>string</code>)</h5>
+<h5 id="span-classcodicon-codicon-symbol-field-symbol-fieldspanendpoint-optional--string"><span class="codicon codicon-symbol-field symbol-field"></span>endpoint (optional  <code>string</code>)</h5>
 <p>The endpoint to which the request is being sent.</p>
-<h5 id="request-optional--bytes">request (optional  <code>bytes</code>)</h5>
+<h5 id="span-classcodicon-codicon-symbol-field-symbol-fieldspanrequest-optional--bytes"><span class="codicon codicon-symbol-field symbol-field"></span>request (optional  <code>bytes</code>)</h5>
 <p>The request data.</p>
-<h3 id="batchrequest">BatchRequest</h3>
+<h3 id="span-classcodicon-codicon-symbol-structure-symbol-structurespanbatchrequest"><span class="codicon codicon-symbol-structure symbol-structure"></span>BatchRequest</h3>
 <p>Used in <code>Batch</code> endpoint.</p>
 <h4 id="fields-1">Fields</h4>
-<h5 id="requests-repeated--protocolbatchv1anyrequestanyrequest">requests (repeated  <a href="#anyrequest">protocol.batch.v1.AnyRequest</a>)</h5>
+<h5 id="span-classcodicon-codicon-symbol-field-symbol-fieldspanrequests-repeated--protocolbatchv1anyrequestanyrequest"><span class="codicon codicon-symbol-field symbol-field"></span>requests (repeated  <a href="#anyrequest">protocol.batch.v1.AnyRequest</a>)</h5>
 <p>The list of requests to be executed in the batch.</p>
-<h3 id="batchresponse">BatchResponse</h3>
+<h3 id="span-classcodicon-codicon-symbol-structure-symbol-structurespanbatchresponse"><span class="codicon codicon-symbol-structure symbol-structure"></span>BatchResponse</h3>
 <p>Used in <code>Batch</code> endpoint.</p>
 <h4 id="fields-2">Fields</h4>
-<h5 id="responses-repeated--bytes">responses (repeated  <code>bytes</code>)</h5>
+<h5 id="span-classcodicon-codicon-symbol-field-symbol-fieldspanresponses-repeated--bytes"><span class="codicon codicon-symbol-field symbol-field"></span>responses (repeated  <code>bytes</code>)</h5>
 <p>The list of responses to the requests.</p>
-<h3 id="batchsamerequest">BatchSameRequest</h3>
+<h3 id="span-classcodicon-codicon-symbol-structure-symbol-structurespanbatchsamerequest"><span class="codicon codicon-symbol-structure symbol-structure"></span>BatchSameRequest</h3>
 <p>Used in <code>BatchSame</code> endpoint.</p>
 <h4 id="fields-3">Fields</h4>
-<h5 id="endpoint-optional--string-1">endpoint (optional  <code>string</code>)</h5>
+<h5 id="span-classcodicon-codicon-symbol-field-symbol-fieldspanendpoint-optional--string-1"><span class="codicon codicon-symbol-field symbol-field"></span>endpoint (optional  <code>string</code>)</h5>
 <p>The endpoint to call for all requests.</p>
-<h5 id="requests-repeated--bytes">requests (repeated  <code>bytes</code>)</h5>
+<h5 id="span-classcodicon-codicon-symbol-field-symbol-fieldspanrequests-repeated--bytes"><span class="codicon codicon-symbol-field symbol-field"></span>requests (repeated  <code>bytes</code>)</h5>
 <p>The list of requests to be executed in the batch.</p>
-<h3 id="batchsameresponse">BatchSameResponse</h3>
+<h3 id="span-classcodicon-codicon-symbol-structure-symbol-structurespanbatchsameresponse"><span class="codicon codicon-symbol-structure symbol-structure"></span>BatchSameResponse</h3>
 <p>Used in <code>BatchSame</code> endpoint.</p>
 <h4 id="fields-4">Fields</h4>
-<h5 id="responses-repeated--bytes-1">responses (repeated  <code>bytes</code>)</h5>
+<h5 id="span-classcodicon-codicon-symbol-field-symbol-fieldspanresponses-repeated--bytes-1"><span class="codicon codicon-symbol-field symbol-field"></span>responses (repeated  <code>bytes</code>)</h5>
 <p>The list of responses to the requests.</p>
 <h2 id="services">Services</h2>
-<h3 id="batchservice">BatchService</h3>
+<h3 id="span-classcodicon-codicon-symbol-class-symbol-classspanbatchservice"><span class="codicon codicon-symbol-class symbol-class"></span>BatchService</h3>
 <p>Service to batch requests.</p>
 <h4 id="methods">Methods</h4>
-<h5 id="batch">Batch</h5>
+<h5 id="span-classcodicon-codicon-symbol-method-symbol-methodspanbatch"><span class="codicon codicon-symbol-method symbol-method"></span>Batch</h5>
 <p><a href="#batchrequest">protocol.batch.v1.BatchRequest</a> -&gt; <a href="#batchresponse">protocol.batch.v1.BatchResponse</a></p>
 <p>Batch requests.
 Does not support batching stream requests.
 Batched requests should be verified and an error should be thrown if they
 are invalid.</p>
-<h5 id="batchsame">BatchSame</h5>
+<h5 id="span-classcodicon-codicon-symbol-method-symbol-methodspanbatchsame"><span class="codicon codicon-symbol-method symbol-method"></span>BatchSame</h5>
 <p><a href="#batchsamerequest">protocol.batch.v1.BatchSameRequest</a> -&gt; <a href="#batchsameresponse">protocol.batch.v1.BatchSameResponse</a></p>
 <p>BatchSame allows batching for requests using the same endpoint.
 This allows for additional network optimizations since the endpoint doesn&rsquo;t
