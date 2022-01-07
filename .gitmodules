@@ -1,0 +1,3 @@
+[submodule "content/protocol"]
+	path = content/protocol
+	url = https://github.com/harmony-development/protocol.git

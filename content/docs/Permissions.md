@@ -1,1 +1,1 @@
-../protocol/chat/v1/Permissions.md
+../protocol/stable/chat/v1/Permissions.md

@@ -1,1 +1,1 @@
-../protocol/name-resolution/name-resolution.md
+../protocol/stable/name-resolution/name-resolution.md
