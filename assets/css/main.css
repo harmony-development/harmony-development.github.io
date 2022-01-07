@@ -115,6 +115,8 @@
 .prose {
   max-width: 80ch;
   width: 100%;
+
+  @apply px-4;
 }
 
 .prose {
