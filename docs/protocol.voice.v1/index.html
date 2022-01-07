@@ -3,11 +3,14 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no">
     <title>Reference: protocol.voice.v1 | Harmony</title>
-    <meta name="description" content="Message Types UserConsumerOptions Data containing all the necessary information to create a consumer for a user in a voice channel
+    <meta name="description" content="Standalone Message Types UserConsumerOptions Data containing all the necessary information to create a consumer for a user in a voice channel
 This corresponds to https://mediasoup.org/documentation/v3/mediasoup-client/api/#ConsumerOptions on client:
- consumer_id -&gt; id producer_id -&gt; producerId rtp_parameters -&gt; rtpParameters and kind should be set to &ldquo;audio&rdquo;.  Fields user_id (optional uint64) User ID of the user.
-producer_id (optional string) Producer ID of the producer being consumed.
-consumer_id (optional string) Consumer ID for the user&rsquo;s producer consumer. ">
+ consumer_id -&gt; id producer_id -&gt; producerId rtp_parameters -&gt; rtpParameters and kind should be set to &ldquo;audio&rdquo;.  Fields
+user_id Type: optional uint64
+User ID of the user.
+producer_id Type: optional string
+Producer ID of the producer being consumed.
+consumer_id Type: optional string ">
     <link rel="canonical" href="https://harmonyapp.io/docs/protocol.voice.v1/" />
 
     <link rel="stylesheet" href="/css/codicon.css" />
@@ -16,26 +19,32 @@ consumer_id (optional string) Consumer ID for the user&rsquo;s producer consumer
 
     
       
-      <link rel="stylesheet" href="/css/main.min.b599a35d8c7b77592a19cf713bdf6cbf7c404435525e62c590c7c61d88977fb3.css" integrity="sha256-tZmjXYx7d1kqGc9xO99sv3xARDVSXmLFkMfGHYiXf7M="/>
+      <link rel="stylesheet" href="/css/main.min.43ed3940f4fe2c2c0e39dc5b25b6738799dd574c50927c0b3de5236dc7f59adc.css" integrity="sha256-Q+05QPT+LCwOOdxbJbZzh5ndV0xQknwLPeUjbcf1mtw="/>
     
 
     <meta property="og:title" content="Reference: protocol.voice.v1" />
-<meta property="og:description" content="Message Types UserConsumerOptions Data containing all the necessary information to create a consumer for a user in a voice channel
+<meta property="og:description" content="Standalone Message Types UserConsumerOptions Data containing all the necessary information to create a consumer for a user in a voice channel
 This corresponds to https://mediasoup.org/documentation/v3/mediasoup-client/api/#ConsumerOptions on client:
- consumer_id -&gt; id producer_id -&gt; producerId rtp_parameters -&gt; rtpParameters and kind should be set to &ldquo;audio&rdquo;.  Fields user_id (optional uint64) User ID of the user.
-producer_id (optional string) Producer ID of the producer being consumed.
-consumer_id (optional string) Consumer ID for the user&rsquo;s producer consumer." />
+ consumer_id -&gt; id producer_id -&gt; producerId rtp_parameters -&gt; rtpParameters and kind should be set to &ldquo;audio&rdquo;.  Fields
+user_id Type: optional uint64
+User ID of the user.
+producer_id Type: optional string
+Producer ID of the producer being consumed.
+consumer_id Type: optional string" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://harmonyapp.io/docs/protocol.voice.v1/" />
 
 
     <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Reference: protocol.voice.v1"/>
-<meta name="twitter:description" content="Message Types UserConsumerOptions Data containing all the necessary information to create a consumer for a user in a voice channel
+<meta name="twitter:description" content="Standalone Message Types UserConsumerOptions Data containing all the necessary information to create a consumer for a user in a voice channel
 This corresponds to https://mediasoup.org/documentation/v3/mediasoup-client/api/#ConsumerOptions on client:
- consumer_id -&gt; id producer_id -&gt; producerId rtp_parameters -&gt; rtpParameters and kind should be set to &ldquo;audio&rdquo;.  Fields user_id (optional uint64) User ID of the user.
-producer_id (optional string) Producer ID of the producer being consumed.
-consumer_id (optional string) Consumer ID for the user&rsquo;s producer consumer."/>
+ consumer_id -&gt; id producer_id -&gt; producerId rtp_parameters -&gt; rtpParameters and kind should be set to &ldquo;audio&rdquo;.  Fields
+user_id Type: optional uint64
+User ID of the user.
+producer_id Type: optional string
+Producer ID of the producer being consumed.
+consumer_id Type: optional string"/>
 
     <meta name="theme-color" content="#E93D58">
     <meta property="og:image" content="https://harmonyapp.io/img/harmony-embed.png" />
@@ -116,21 +125,90 @@ consumer_id (optional string) Consumer ID for the user&rsquo;s producer consumer
     <h4><strong>Table Of Contents</strong></h4>
     <nav id="TableOfContents">
   <ul>
-    <li><a href="#message-types">Message Types</a>
+    <li><a href="#standalone-message-types">Standalone Message Types</a>
       <ul>
-        <li><a href="#span-classcodicon-codicon-symbol-structure-symbol-structurespanuserconsumeroptions"><span class="codicon codicon-symbol-structure symbol-structure"></span>UserConsumerOptions</a></li>
-        <li><a href="#span-classcodicon-codicon-symbol-structure-symbol-structurespantransportoptions"><span class="codicon codicon-symbol-structure symbol-structure"></span>TransportOptions</a></li>
-        <li><a href="#span-classcodicon-codicon-symbol-structure-symbol-structurespanstreammessagerequest"><span class="codicon codicon-symbol-structure symbol-structure"></span>StreamMessageRequest</a></li>
-        <li><a href="#span-classcodicon-codicon-symbol-structure-symbol-structurespanstreammessagerequestinitialize"><span class="codicon codicon-symbol-structure symbol-structure"></span>StreamMessageRequest.Initialize</a></li>
-        <li><a href="#span-classcodicon-codicon-symbol-structure-symbol-structurespanstreammessagerequestprepareforjoinchannel"><span class="codicon codicon-symbol-structure symbol-structure"></span>StreamMessageRequest.PrepareForJoinChannel</a></li>
-        <li><a href="#span-classcodicon-codicon-symbol-structure-symbol-structurespanstreammessagerequestjoinchannel"><span class="codicon codicon-symbol-structure symbol-structure"></span>StreamMessageRequest.JoinChannel</a></li>
-        <li><a href="#span-classcodicon-codicon-symbol-structure-symbol-structurespanstreammessagerequestresumeconsumer"><span class="codicon codicon-symbol-structure symbol-structure"></span>StreamMessageRequest.ResumeConsumer</a></li>
-        <li><a href="#span-classcodicon-codicon-symbol-structure-symbol-structurespanstreammessageresponse"><span class="codicon codicon-symbol-structure symbol-structure"></span>StreamMessageResponse</a></li>
-        <li><a href="#span-classcodicon-codicon-symbol-structure-symbol-structurespanstreammessageresponseinitialized"><span class="codicon codicon-symbol-structure symbol-structure"></span>StreamMessageResponse.Initialized</a></li>
-        <li><a href="#span-classcodicon-codicon-symbol-structure-symbol-structurespanstreammessageresponsepreparedforjoinchannel"><span class="codicon codicon-symbol-structure symbol-structure"></span>StreamMessageResponse.PreparedForJoinChannel</a></li>
-        <li><a href="#span-classcodicon-codicon-symbol-structure-symbol-structurespanstreammessageresponsejoinedchannel"><span class="codicon codicon-symbol-structure symbol-structure"></span>StreamMessageResponse.JoinedChannel</a></li>
-        <li><a href="#span-classcodicon-codicon-symbol-structure-symbol-structurespanstreammessageresponseuserjoined"><span class="codicon codicon-symbol-structure symbol-structure"></span>StreamMessageResponse.UserJoined</a></li>
-        <li><a href="#span-classcodicon-codicon-symbol-structure-symbol-structurespanstreammessageresponseuserleft"><span class="codicon codicon-symbol-structure symbol-structure"></span>StreamMessageResponse.UserLeft</a></li>
+        <li><a href="#span-classcodicon-codicon-symbol-structure-symbol-structurespanuserconsumeroptions"><span class="codicon codicon-symbol-structure symbol-structure"></span>UserConsumerOptions</a>
+          <ul>
+            <li><a href="#span-classcodicon-codicon-symbol-field-symbol-fieldspanuser_id"><span class="codicon codicon-symbol-field symbol-field"></span>user_id</a></li>
+            <li><a href="#span-classcodicon-codicon-symbol-field-symbol-fieldspanproducer_id"><span class="codicon codicon-symbol-field symbol-field"></span>producer_id</a></li>
+            <li><a href="#span-classcodicon-codicon-symbol-field-symbol-fieldspanconsumer_id"><span class="codicon codicon-symbol-field symbol-field"></span>consumer_id</a></li>
+            <li><a href="#span-classcodicon-codicon-symbol-field-symbol-fieldspanrtp_parameters"><span class="codicon codicon-symbol-field symbol-field"></span>rtp_parameters</a></li>
+          </ul>
+        </li>
+        <li><a href="#span-classcodicon-codicon-symbol-structure-symbol-structurespantransportoptions"><span class="codicon codicon-symbol-structure symbol-structure"></span>TransportOptions</a>
+          <ul>
+            <li><a href="#span-classcodicon-codicon-symbol-field-symbol-fieldspanid"><span class="codicon codicon-symbol-field symbol-field"></span>id</a></li>
+            <li><a href="#span-classcodicon-codicon-symbol-field-symbol-fieldspandtls_parameters"><span class="codicon codicon-symbol-field symbol-field"></span>dtls_parameters</a></li>
+            <li><a href="#span-classcodicon-codicon-symbol-field-symbol-fieldspanice_candidates"><span class="codicon codicon-symbol-field symbol-field"></span>ice_candidates</a></li>
+            <li><a href="#span-classcodicon-codicon-symbol-field-symbol-fieldspanice_parameters"><span class="codicon codicon-symbol-field symbol-field"></span>ice_parameters</a></li>
+          </ul>
+        </li>
+        <li><a href="#span-classcodicon-codicon-symbol-structure-symbol-structurespanstreammessagerequest"><span class="codicon codicon-symbol-structure symbol-structure"></span>StreamMessageRequest</a>
+          <ul>
+            <li><a href="#span-classcodicon-codicon-symbol-field-symbol-fieldspaninitialize"><span class="codicon codicon-symbol-field symbol-field"></span>initialize</a></li>
+            <li><a href="#span-classcodicon-codicon-symbol-field-symbol-fieldspanprepare_for_join_channel"><span class="codicon codicon-symbol-field symbol-field"></span>prepare_for_join_channel</a></li>
+            <li><a href="#span-classcodicon-codicon-symbol-field-symbol-fieldspanjoin_channel"><span class="codicon codicon-symbol-field symbol-field"></span>join_channel</a></li>
+            <li><a href="#span-classcodicon-codicon-symbol-field-symbol-fieldspanresume_consumer"><span class="codicon codicon-symbol-field symbol-field"></span>resume_consumer</a></li>
+          </ul>
+        </li>
+        <li><a href="#span-classcodicon-codicon-symbol-structure-symbol-structurespanstreammessagerequestinitialize"><span class="codicon codicon-symbol-structure symbol-structure"></span>StreamMessageRequest.Initialize</a>
+          <ul>
+            <li><a href="#span-classcodicon-codicon-symbol-field-symbol-fieldspanguild_id"><span class="codicon codicon-symbol-field symbol-field"></span>guild_id</a></li>
+            <li><a href="#span-classcodicon-codicon-symbol-field-symbol-fieldspanchannel_id"><span class="codicon codicon-symbol-field symbol-field"></span>channel_id</a></li>
+          </ul>
+        </li>
+        <li><a href="#span-classcodicon-codicon-symbol-structure-symbol-structurespanstreammessagerequestprepareforjoinchannel"><span class="codicon codicon-symbol-structure symbol-structure"></span>StreamMessageRequest.PrepareForJoinChannel</a>
+          <ul>
+            <li><a href="#span-classcodicon-codicon-symbol-field-symbol-fieldspanrtp_capabilities"><span class="codicon codicon-symbol-field symbol-field"></span>rtp_capabilities</a></li>
+          </ul>
+        </li>
+        <li><a href="#span-classcodicon-codicon-symbol-structure-symbol-structurespanstreammessagerequestjoinchannel"><span class="codicon codicon-symbol-structure symbol-structure"></span>StreamMessageRequest.JoinChannel</a>
+          <ul>
+            <li><a href="#span-classcodicon-codicon-symbol-field-symbol-fieldspanrtp_paramaters"><span class="codicon codicon-symbol-field symbol-field"></span>rtp_paramaters</a></li>
+            <li><a href="#span-classcodicon-codicon-symbol-field-symbol-fieldspanproducer_dtls_paramaters"><span class="codicon codicon-symbol-field symbol-field"></span>producer_dtls_paramaters</a></li>
+            <li><a href="#span-classcodicon-codicon-symbol-field-symbol-fieldspanconsumer_dtls_paramaters"><span class="codicon codicon-symbol-field symbol-field"></span>consumer_dtls_paramaters</a></li>
+          </ul>
+        </li>
+        <li><a href="#span-classcodicon-codicon-symbol-structure-symbol-structurespanstreammessagerequestresumeconsumer"><span class="codicon codicon-symbol-structure symbol-structure"></span>StreamMessageRequest.ResumeConsumer</a>
+          <ul>
+            <li><a href="#span-classcodicon-codicon-symbol-field-symbol-fieldspanconsumer_id-1"><span class="codicon codicon-symbol-field symbol-field"></span>consumer_id</a></li>
+          </ul>
+        </li>
+        <li><a href="#span-classcodicon-codicon-symbol-structure-symbol-structurespanstreammessageresponse"><span class="codicon codicon-symbol-structure symbol-structure"></span>StreamMessageResponse</a>
+          <ul>
+            <li><a href="#span-classcodicon-codicon-symbol-field-symbol-fieldspaninitialized"><span class="codicon codicon-symbol-field symbol-field"></span>initialized</a></li>
+            <li><a href="#span-classcodicon-codicon-symbol-field-symbol-fieldspanprepared_for_join_channel"><span class="codicon codicon-symbol-field symbol-field"></span>prepared_for_join_channel</a></li>
+            <li><a href="#span-classcodicon-codicon-symbol-field-symbol-fieldspanjoined_channel"><span class="codicon codicon-symbol-field symbol-field"></span>joined_channel</a></li>
+            <li><a href="#span-classcodicon-codicon-symbol-field-symbol-fieldspanuser_joined"><span class="codicon codicon-symbol-field symbol-field"></span>user_joined</a></li>
+            <li><a href="#span-classcodicon-codicon-symbol-field-symbol-fieldspanuser_left"><span class="codicon codicon-symbol-field symbol-field"></span>user_left</a></li>
+          </ul>
+        </li>
+        <li><a href="#span-classcodicon-codicon-symbol-structure-symbol-structurespanstreammessageresponseinitialized"><span class="codicon codicon-symbol-structure symbol-structure"></span>StreamMessageResponse.Initialized</a>
+          <ul>
+            <li><a href="#span-classcodicon-codicon-symbol-field-symbol-fieldspanrtp_capabilities-1"><span class="codicon codicon-symbol-field symbol-field"></span>rtp_capabilities</a></li>
+          </ul>
+        </li>
+        <li><a href="#span-classcodicon-codicon-symbol-structure-symbol-structurespanstreammessageresponsepreparedforjoinchannel"><span class="codicon codicon-symbol-structure symbol-structure"></span>StreamMessageResponse.PreparedForJoinChannel</a>
+          <ul>
+            <li><a href="#span-classcodicon-codicon-symbol-field-symbol-fieldspanconsumer_transport_options"><span class="codicon codicon-symbol-field symbol-field"></span>consumer_transport_options</a></li>
+            <li><a href="#span-classcodicon-codicon-symbol-field-symbol-fieldspanproducer_transport_options"><span class="codicon codicon-symbol-field symbol-field"></span>producer_transport_options</a></li>
+          </ul>
+        </li>
+        <li><a href="#span-classcodicon-codicon-symbol-structure-symbol-structurespanstreammessageresponsejoinedchannel"><span class="codicon codicon-symbol-structure symbol-structure"></span>StreamMessageResponse.JoinedChannel</a>
+          <ul>
+            <li><a href="#span-classcodicon-codicon-symbol-field-symbol-fieldspanother_users"><span class="codicon codicon-symbol-field symbol-field"></span>other_users</a></li>
+          </ul>
+        </li>
+        <li><a href="#span-classcodicon-codicon-symbol-structure-symbol-structurespanstreammessageresponseuserjoined"><span class="codicon codicon-symbol-structure symbol-structure"></span>StreamMessageResponse.UserJoined</a>
+          <ul>
+            <li><a href="#span-classcodicon-codicon-symbol-field-symbol-fieldspandata"><span class="codicon codicon-symbol-field symbol-field"></span>data</a></li>
+          </ul>
+        </li>
+        <li><a href="#span-classcodicon-codicon-symbol-structure-symbol-structurespanstreammessageresponseuserleft"><span class="codicon codicon-symbol-structure symbol-structure"></span>StreamMessageResponse.UserLeft</a>
+          <ul>
+            <li><a href="#span-classcodicon-codicon-symbol-field-symbol-fieldspanuser_id-1"><span class="codicon codicon-symbol-field symbol-field"></span>user_id</a></li>
+          </ul>
+        </li>
       </ul>
     </li>
     <li><a href="#services">Services</a>
@@ -138,12 +216,17 @@ consumer_id (optional string) Consumer ID for the user&rsquo;s producer consumer
         <li><a href="#span-classcodicon-codicon-symbol-class-symbol-classspanvoiceservice"><span class="codicon codicon-symbol-class symbol-class"></span>VoiceService</a></li>
       </ul>
     </li>
-  </ul>
-
-  <ul>
-    <li><a href="#how-this-looks-for-servers">How this looks for servers</a>
+    <li><a href="#usage-for-client">Usage (for client)</a>
       <ul>
-        <li></li>
+        <li><a href="#how-this-looks-for-servers">How this looks for servers</a>
+          <ul>
+            <li><a href="#methods">Methods</a>
+              <ul>
+                <li><a href="#span-classcodicon-codicon-symbol-method-symbol-methodspanstreammessage"><span class="codicon codicon-symbol-method symbol-method"></span>StreamMessage</a></li>
+              </ul>
+            </li>
+          </ul>
+        </li>
       </ul>
     </li>
   </ul>
@@ -152,8 +235,8 @@ consumer_id (optional string) Consumer ID for the user&rsquo;s producer consumer
   <div class="flex justify-center pb-8 w-full">
     <article class="prose">
       <h1 class="h1">Reference: protocol.voice.v1</h1>
-      <h2 id="message-types">Message Types</h2>
-<h3 id="span-classcodicon-codicon-symbol-structure-symbol-structurespanuserconsumeroptions"><span class="codicon codicon-symbol-structure symbol-structure"></span>UserConsumerOptions</h3>
+      <h1 id="standalone-message-types">Standalone Message Types</h1>
+<h2 id="span-classcodicon-codicon-symbol-structure-symbol-structurespanuserconsumeroptions"><span class="codicon codicon-symbol-structure symbol-structure"></span>UserConsumerOptions</h2>
 <p>Data containing all the necessary information to
 create a consumer for a user in a voice channel</p>
 <p>This corresponds to <a href="https://mediasoup.org/documentation/v3/mediasoup-client/api/#ConsumerOptions">https://mediasoup.org/documentation/v3/mediasoup-client/api/#ConsumerOptions</a> on client:</p>
@@ -163,16 +246,21 @@ create a consumer for a user in a voice channel</p>
 <li><code>rtp_parameters</code> -&gt; <code>rtpParameters</code></li>
 <li>and <code>kind</code> should be set to &ldquo;audio&rdquo;.</li>
 </ul>
-<h4 id="fields">Fields</h4>
-<h5 id="span-classcodicon-codicon-symbol-field-symbol-fieldspanuser_id-optional--uint64"><span class="codicon codicon-symbol-field symbol-field"></span>user_id (optional  <code>uint64</code>)</h5>
+<p><span class="h3" aria-level="3">Fields</span></p>
+<h3 id="span-classcodicon-codicon-symbol-field-symbol-fieldspanuser_id"><span class="codicon codicon-symbol-field symbol-field"></span>user_id</h3>
+<p>Type: optional <code>uint64</code></p>
 <p>User ID of the user.</p>
-<h5 id="span-classcodicon-codicon-symbol-field-symbol-fieldspanproducer_id-optional--string"><span class="codicon codicon-symbol-field symbol-field"></span>producer_id (optional  <code>string</code>)</h5>
+<h3 id="span-classcodicon-codicon-symbol-field-symbol-fieldspanproducer_id"><span class="codicon codicon-symbol-field symbol-field"></span>producer_id</h3>
+<p>Type: optional <code>string</code></p>
 <p>Producer ID of the producer being consumed.</p>
-<h5 id="span-classcodicon-codicon-symbol-field-symbol-fieldspanconsumer_id-optional--string"><span class="codicon codicon-symbol-field symbol-field"></span>consumer_id (optional  <code>string</code>)</h5>
+<h3 id="span-classcodicon-codicon-symbol-field-symbol-fieldspanconsumer_id"><span class="codicon codicon-symbol-field symbol-field"></span>consumer_id</h3>
+<p>Type: optional <code>string</code></p>
 <p>Consumer ID for the user&rsquo;s producer consumer.</p>
-<h5 id="span-classcodicon-codicon-symbol-field-symbol-fieldspanrtp_parameters-optional--string"><span class="codicon codicon-symbol-field symbol-field"></span>rtp_parameters (optional  <code>string</code>)</h5>
+<h3 id="span-classcodicon-codicon-symbol-field-symbol-fieldspanrtp_parameters"><span class="codicon codicon-symbol-field symbol-field"></span>rtp_parameters</h3>
+<p>Type: optional <code>string</code></p>
 <p>RTP paramaters for the user&rsquo;s audio track. Corresponds to <code>RtpParameters</code> in mediasoup&rsquo;s TypeScript API.</p>
-<h3 id="span-classcodicon-codicon-symbol-structure-symbol-structurespantransportoptions"><span class="codicon codicon-symbol-structure symbol-structure"></span>TransportOptions</h3>
+<hr>
+<h2 id="span-classcodicon-codicon-symbol-structure-symbol-structurespantransportoptions"><span class="codicon codicon-symbol-structure symbol-structure"></span>TransportOptions</h2>
 <p>Object containing all the necessary information about transport options required
 from the server to establish transport connection on the client</p>
 <p>This corresponds to <a href="https://mediasoup.org/documentation/v3/mediasoup-client/api/#TransportOptions">https://mediasoup.org/documentation/v3/mediasoup-client/api/#TransportOptions</a> on client:</p>
@@ -182,72 +270,109 @@ from the server to establish transport connection on the client</p>
 <li><code>dtls_parameters</code> -&gt; <code>dtlsParameters</code></li>
 <li><code>ice_candidates</code> -&gt; <code>iceCandidates</code></li>
 </ul>
-<h4 id="fields-1">Fields</h4>
-<h5 id="span-classcodicon-codicon-symbol-field-symbol-fieldspanid-optional--string"><span class="codicon codicon-symbol-field symbol-field"></span>id (optional  <code>string</code>)</h5>
+<p><span class="h3" aria-level="3">Fields</span></p>
+<h3 id="span-classcodicon-codicon-symbol-field-symbol-fieldspanid"><span class="codicon codicon-symbol-field symbol-field"></span>id</h3>
+<p>Type: optional <code>string</code></p>
 <p>The transport ID.</p>
-<h5 id="span-classcodicon-codicon-symbol-field-symbol-fieldspandtls_parameters-optional--string"><span class="codicon codicon-symbol-field symbol-field"></span>dtls_parameters (optional  <code>string</code>)</h5>
+<h3 id="span-classcodicon-codicon-symbol-field-symbol-fieldspandtls_parameters"><span class="codicon codicon-symbol-field symbol-field"></span>dtls_parameters</h3>
+<p>Type: optional <code>string</code></p>
 <p>DTLS paramaters in JSON. Corresponds to <code>DtlsParameters</code> in mediasoup&rsquo;s TypeScript API.</p>
-<h5 id="span-classcodicon-codicon-symbol-field-symbol-fieldspanice_candidates-repeated--string"><span class="codicon codicon-symbol-field symbol-field"></span>ice_candidates (repeated  <code>string</code>)</h5>
+<h3 id="span-classcodicon-codicon-symbol-field-symbol-fieldspanice_candidates"><span class="codicon codicon-symbol-field symbol-field"></span>ice_candidates</h3>
+<p>Type: repeated <code>string</code></p>
 <p>ICE candidates in JSON. Corresponds to <code>IceCandidate</code> in mediasoup&rsquo;s TypeScript API.</p>
-<h5 id="span-classcodicon-codicon-symbol-field-symbol-fieldspanice_parameters-optional--string"><span class="codicon codicon-symbol-field symbol-field"></span>ice_parameters (optional  <code>string</code>)</h5>
+<h3 id="span-classcodicon-codicon-symbol-field-symbol-fieldspanice_parameters"><span class="codicon codicon-symbol-field symbol-field"></span>ice_parameters</h3>
+<p>Type: optional <code>string</code></p>
 <p>ICE paramaters in JSON. Corresponds to <code>IceParameters</code> in mediasoup&rsquo;s TypeScript API.</p>
-<h3 id="span-classcodicon-codicon-symbol-structure-symbol-structurespanstreammessagerequest"><span class="codicon codicon-symbol-structure symbol-structure"></span>StreamMessageRequest</h3>
+<hr>
+<h2 id="span-classcodicon-codicon-symbol-structure-symbol-structurespanstreammessagerequest"><span class="codicon codicon-symbol-structure symbol-structure"></span>StreamMessageRequest</h2>
 <p>Used in <code>StreamMessage</code> endpoint.</p>
-<h4 id="fields-2">Fields</h4>
-<h5 id="span-classcodicon-codicon-symbol-field-symbol-fieldspaninitialize-optional--protocolvoicev1streammessagerequestinitializestreammessagerequestinitialize"><span class="codicon codicon-symbol-field symbol-field"></span>initialize (optional  <a href="#streammessagerequestinitialize">protocol.voice.v1.StreamMessageRequest.Initialize</a>)</h5>
+<p><span class="h3" aria-level="3">Fields</span></p>
+<h3 id="span-classcodicon-codicon-symbol-field-symbol-fieldspaninitialize"><span class="codicon codicon-symbol-field symbol-field"></span>initialize</h3>
+<p>Type: optional <a href="#streammessagerequestinitialize">protocol.voice.v1.StreamMessageRequest.Initialize</a></p>
 <p>Sent to initialize the WS and receive necessary information</p>
-<h5 id="span-classcodicon-codicon-symbol-field-symbol-fieldspanprepare_for_join_channel-optional--protocolvoicev1streammessagerequestprepareforjoinchannelstreammessagerequestprepareforjoinchannel"><span class="codicon codicon-symbol-field symbol-field"></span>prepare_for_join_channel (optional  <a href="#streammessagerequestprepareforjoinchannel">protocol.voice.v1.StreamMessageRequest.PrepareForJoinChannel</a>)</h5>
+<h3 id="span-classcodicon-codicon-symbol-field-symbol-fieldspanprepare_for_join_channel"><span class="codicon codicon-symbol-field symbol-field"></span>prepare_for_join_channel</h3>
+<p>Type: optional <a href="#streammessagerequestprepareforjoinchannel">protocol.voice.v1.StreamMessageRequest.PrepareForJoinChannel</a></p>
 <p>Sent to prepare for joining channel</p>
-<h5 id="span-classcodicon-codicon-symbol-field-symbol-fieldspanjoin_channel-optional--protocolvoicev1streammessagerequestjoinchannelstreammessagerequestjoinchannel"><span class="codicon codicon-symbol-field symbol-field"></span>join_channel (optional  <a href="#streammessagerequestjoinchannel">protocol.voice.v1.StreamMessageRequest.JoinChannel</a>)</h5>
+<h3 id="span-classcodicon-codicon-symbol-field-symbol-fieldspanjoin_channel"><span class="codicon codicon-symbol-field symbol-field"></span>join_channel</h3>
+<p>Type: optional <a href="#streammessagerequestjoinchannel">protocol.voice.v1.StreamMessageRequest.JoinChannel</a></p>
 <p>Sent to join a channel</p>
-<h5 id="span-classcodicon-codicon-symbol-field-symbol-fieldspanresume_consumer-optional--protocolvoicev1streammessagerequestresumeconsumerstreammessagerequestresumeconsumer"><span class="codicon codicon-symbol-field symbol-field"></span>resume_consumer (optional  <a href="#streammessagerequestresumeconsumer">protocol.voice.v1.StreamMessageRequest.ResumeConsumer</a>)</h5>
+<h3 id="span-classcodicon-codicon-symbol-field-symbol-fieldspanresume_consumer"><span class="codicon codicon-symbol-field symbol-field"></span>resume_consumer</h3>
+<p>Type: optional <a href="#streammessagerequestresumeconsumer">protocol.voice.v1.StreamMessageRequest.ResumeConsumer</a></p>
 <p>Sent to resume a consumer</p>
-<h3 id="span-classcodicon-codicon-symbol-structure-symbol-structurespanstreammessagerequestinitialize"><span class="codicon codicon-symbol-structure symbol-structure"></span>StreamMessageRequest.Initialize</h3>
-<h4 id="fields-3">Fields</h4>
-<h5 id="span-classcodicon-codicon-symbol-field-symbol-fieldspanguild_id-optional--uint64"><span class="codicon codicon-symbol-field symbol-field"></span>guild_id (optional  <code>uint64</code>)</h5>
-<h5 id="span-classcodicon-codicon-symbol-field-symbol-fieldspanchannel_id-optional--uint64"><span class="codicon codicon-symbol-field symbol-field"></span>channel_id (optional  <code>uint64</code>)</h5>
-<h3 id="span-classcodicon-codicon-symbol-structure-symbol-structurespanstreammessagerequestprepareforjoinchannel"><span class="codicon codicon-symbol-structure symbol-structure"></span>StreamMessageRequest.PrepareForJoinChannel</h3>
-<h4 id="fields-4">Fields</h4>
-<h5 id="span-classcodicon-codicon-symbol-field-symbol-fieldspanrtp_capabilities-optional--string"><span class="codicon codicon-symbol-field symbol-field"></span>rtp_capabilities (optional  <code>string</code>)</h5>
-<h3 id="span-classcodicon-codicon-symbol-structure-symbol-structurespanstreammessagerequestjoinchannel"><span class="codicon codicon-symbol-structure symbol-structure"></span>StreamMessageRequest.JoinChannel</h3>
-<h4 id="fields-5">Fields</h4>
-<h5 id="span-classcodicon-codicon-symbol-field-symbol-fieldspanrtp_paramaters-optional--string"><span class="codicon codicon-symbol-field symbol-field"></span>rtp_paramaters (optional  <code>string</code>)</h5>
-<h5 id="span-classcodicon-codicon-symbol-field-symbol-fieldspanproducer_dtls_paramaters-optional--string"><span class="codicon codicon-symbol-field symbol-field"></span>producer_dtls_paramaters (optional  <code>string</code>)</h5>
-<h5 id="span-classcodicon-codicon-symbol-field-symbol-fieldspanconsumer_dtls_paramaters-optional--string"><span class="codicon codicon-symbol-field symbol-field"></span>consumer_dtls_paramaters (optional  <code>string</code>)</h5>
-<h3 id="span-classcodicon-codicon-symbol-structure-symbol-structurespanstreammessagerequestresumeconsumer"><span class="codicon codicon-symbol-structure symbol-structure"></span>StreamMessageRequest.ResumeConsumer</h3>
-<h4 id="fields-6">Fields</h4>
-<h5 id="span-classcodicon-codicon-symbol-field-symbol-fieldspanconsumer_id-optional--string-1"><span class="codicon codicon-symbol-field symbol-field"></span>consumer_id (optional  <code>string</code>)</h5>
-<h3 id="span-classcodicon-codicon-symbol-structure-symbol-structurespanstreammessageresponse"><span class="codicon codicon-symbol-structure symbol-structure"></span>StreamMessageResponse</h3>
+<hr>
+<h2 id="span-classcodicon-codicon-symbol-structure-symbol-structurespanstreammessagerequestinitialize"><span class="codicon codicon-symbol-structure symbol-structure"></span>StreamMessageRequest.Initialize</h2>
+<p><span class="h3" aria-level="3">Fields</span></p>
+<h3 id="span-classcodicon-codicon-symbol-field-symbol-fieldspanguild_id"><span class="codicon codicon-symbol-field symbol-field"></span>guild_id</h3>
+<p>Type: optional <code>uint64</code></p>
+<h3 id="span-classcodicon-codicon-symbol-field-symbol-fieldspanchannel_id"><span class="codicon codicon-symbol-field symbol-field"></span>channel_id</h3>
+<p>Type: optional <code>uint64</code></p>
+<hr>
+<h2 id="span-classcodicon-codicon-symbol-structure-symbol-structurespanstreammessagerequestprepareforjoinchannel"><span class="codicon codicon-symbol-structure symbol-structure"></span>StreamMessageRequest.PrepareForJoinChannel</h2>
+<p><span class="h3" aria-level="3">Fields</span></p>
+<h3 id="span-classcodicon-codicon-symbol-field-symbol-fieldspanrtp_capabilities"><span class="codicon codicon-symbol-field symbol-field"></span>rtp_capabilities</h3>
+<p>Type: optional <code>string</code></p>
+<hr>
+<h2 id="span-classcodicon-codicon-symbol-structure-symbol-structurespanstreammessagerequestjoinchannel"><span class="codicon codicon-symbol-structure symbol-structure"></span>StreamMessageRequest.JoinChannel</h2>
+<p><span class="h3" aria-level="3">Fields</span></p>
+<h3 id="span-classcodicon-codicon-symbol-field-symbol-fieldspanrtp_paramaters"><span class="codicon codicon-symbol-field symbol-field"></span>rtp_paramaters</h3>
+<p>Type: optional <code>string</code></p>
+<h3 id="span-classcodicon-codicon-symbol-field-symbol-fieldspanproducer_dtls_paramaters"><span class="codicon codicon-symbol-field symbol-field"></span>producer_dtls_paramaters</h3>
+<p>Type: optional <code>string</code></p>
+<h3 id="span-classcodicon-codicon-symbol-field-symbol-fieldspanconsumer_dtls_paramaters"><span class="codicon codicon-symbol-field symbol-field"></span>consumer_dtls_paramaters</h3>
+<p>Type: optional <code>string</code></p>
+<hr>
+<h2 id="span-classcodicon-codicon-symbol-structure-symbol-structurespanstreammessagerequestresumeconsumer"><span class="codicon codicon-symbol-structure symbol-structure"></span>StreamMessageRequest.ResumeConsumer</h2>
+<p><span class="h3" aria-level="3">Fields</span></p>
+<h3 id="span-classcodicon-codicon-symbol-field-symbol-fieldspanconsumer_id-1"><span class="codicon codicon-symbol-field symbol-field"></span>consumer_id</h3>
+<p>Type: optional <code>string</code></p>
+<hr>
+<h2 id="span-classcodicon-codicon-symbol-structure-symbol-structurespanstreammessageresponse"><span class="codicon codicon-symbol-structure symbol-structure"></span>StreamMessageResponse</h2>
 <p>Used in <code>StreamMessage</code> endpoint.</p>
-<h4 id="fields-7">Fields</h4>
-<h5 id="span-classcodicon-codicon-symbol-field-symbol-fieldspaninitialized-optional--protocolvoicev1streammessageresponseinitializedstreammessageresponseinitialized"><span class="codicon codicon-symbol-field symbol-field"></span>initialized (optional  <a href="#streammessageresponseinitialized">protocol.voice.v1.StreamMessageResponse.Initialized</a>)</h5>
+<p><span class="h3" aria-level="3">Fields</span></p>
+<h3 id="span-classcodicon-codicon-symbol-field-symbol-fieldspaninitialized"><span class="codicon codicon-symbol-field symbol-field"></span>initialized</h3>
+<p>Type: optional <a href="#streammessageresponseinitialized">protocol.voice.v1.StreamMessageResponse.Initialized</a></p>
 <p>Sent when connection is started</p>
-<h5 id="span-classcodicon-codicon-symbol-field-symbol-fieldspanprepared_for_join_channel-optional--protocolvoicev1streammessageresponsepreparedforjoinchannelstreammessageresponsepreparedforjoinchannel"><span class="codicon codicon-symbol-field symbol-field"></span>prepared_for_join_channel (optional  <a href="#streammessageresponsepreparedforjoinchannel">protocol.voice.v1.StreamMessageResponse.PreparedForJoinChannel</a>)</h5>
+<h3 id="span-classcodicon-codicon-symbol-field-symbol-fieldspanprepared_for_join_channel"><span class="codicon codicon-symbol-field symbol-field"></span>prepared_for_join_channel</h3>
+<p>Type: optional <a href="#streammessageresponsepreparedforjoinchannel">protocol.voice.v1.StreamMessageResponse.PreparedForJoinChannel</a></p>
 <p>Sent when preparing to join a channel is successful</p>
-<h5 id="span-classcodicon-codicon-symbol-field-symbol-fieldspanjoined_channel-optional--protocolvoicev1streammessageresponsejoinedchannelstreammessageresponsejoinedchannel"><span class="codicon codicon-symbol-field symbol-field"></span>joined_channel (optional  <a href="#streammessageresponsejoinedchannel">protocol.voice.v1.StreamMessageResponse.JoinedChannel</a>)</h5>
+<h3 id="span-classcodicon-codicon-symbol-field-symbol-fieldspanjoined_channel"><span class="codicon codicon-symbol-field symbol-field"></span>joined_channel</h3>
+<p>Type: optional <a href="#streammessageresponsejoinedchannel">protocol.voice.v1.StreamMessageResponse.JoinedChannel</a></p>
 <p>Sent when joining a channel is successful</p>
-<h5 id="span-classcodicon-codicon-symbol-field-symbol-fieldspanuser_joined-optional--protocolvoicev1streammessageresponseuserjoinedstreammessageresponseuserjoined"><span class="codicon codicon-symbol-field symbol-field"></span>user_joined (optional  <a href="#streammessageresponseuserjoined">protocol.voice.v1.StreamMessageResponse.UserJoined</a>)</h5>
+<h3 id="span-classcodicon-codicon-symbol-field-symbol-fieldspanuser_joined"><span class="codicon codicon-symbol-field symbol-field"></span>user_joined</h3>
+<p>Type: optional <a href="#streammessageresponseuserjoined">protocol.voice.v1.StreamMessageResponse.UserJoined</a></p>
 <p>Sent when another user joins the channel</p>
-<h5 id="span-classcodicon-codicon-symbol-field-symbol-fieldspanuser_left-optional--protocolvoicev1streammessageresponseuserleftstreammessageresponseuserleft"><span class="codicon codicon-symbol-field symbol-field"></span>user_left (optional  <a href="#streammessageresponseuserleft">protocol.voice.v1.StreamMessageResponse.UserLeft</a>)</h5>
+<h3 id="span-classcodicon-codicon-symbol-field-symbol-fieldspanuser_left"><span class="codicon codicon-symbol-field symbol-field"></span>user_left</h3>
+<p>Type: optional <a href="#streammessageresponseuserleft">protocol.voice.v1.StreamMessageResponse.UserLeft</a></p>
 <p>Sent when another user leaves the channel</p>
-<h3 id="span-classcodicon-codicon-symbol-structure-symbol-structurespanstreammessageresponseinitialized"><span class="codicon codicon-symbol-structure symbol-structure"></span>StreamMessageResponse.Initialized</h3>
-<h4 id="fields-8">Fields</h4>
-<h5 id="span-classcodicon-codicon-symbol-field-symbol-fieldspanrtp_capabilities-optional--string-1"><span class="codicon codicon-symbol-field symbol-field"></span>rtp_capabilities (optional  <code>string</code>)</h5>
-<h3 id="span-classcodicon-codicon-symbol-structure-symbol-structurespanstreammessageresponsepreparedforjoinchannel"><span class="codicon codicon-symbol-structure symbol-structure"></span>StreamMessageResponse.PreparedForJoinChannel</h3>
-<h4 id="fields-9">Fields</h4>
-<h5 id="span-classcodicon-codicon-symbol-field-symbol-fieldspanconsumer_transport_options-optional--protocolvoicev1transportoptionstransportoptions"><span class="codicon codicon-symbol-field symbol-field"></span>consumer_transport_options (optional  <a href="#transportoptions">protocol.voice.v1.TransportOptions</a>)</h5>
-<h5 id="span-classcodicon-codicon-symbol-field-symbol-fieldspanproducer_transport_options-optional--protocolvoicev1transportoptionstransportoptions"><span class="codicon codicon-symbol-field symbol-field"></span>producer_transport_options (optional  <a href="#transportoptions">protocol.voice.v1.TransportOptions</a>)</h5>
-<h3 id="span-classcodicon-codicon-symbol-structure-symbol-structurespanstreammessageresponsejoinedchannel"><span class="codicon codicon-symbol-structure symbol-structure"></span>StreamMessageResponse.JoinedChannel</h3>
-<h4 id="fields-10">Fields</h4>
-<h5 id="span-classcodicon-codicon-symbol-field-symbol-fieldspanother_users-repeated--protocolvoicev1userconsumeroptionsuserconsumeroptions"><span class="codicon codicon-symbol-field symbol-field"></span>other_users (repeated  <a href="#userconsumeroptions">protocol.voice.v1.UserConsumerOptions</a>)</h5>
-<h3 id="span-classcodicon-codicon-symbol-structure-symbol-structurespanstreammessageresponseuserjoined"><span class="codicon codicon-symbol-structure symbol-structure"></span>StreamMessageResponse.UserJoined</h3>
-<h4 id="fields-11">Fields</h4>
-<h5 id="span-classcodicon-codicon-symbol-field-symbol-fieldspandata-optional--protocolvoicev1userconsumeroptionsuserconsumeroptions"><span class="codicon codicon-symbol-field symbol-field"></span>data (optional  <a href="#userconsumeroptions">protocol.voice.v1.UserConsumerOptions</a>)</h5>
-<h3 id="span-classcodicon-codicon-symbol-structure-symbol-structurespanstreammessageresponseuserleft"><span class="codicon codicon-symbol-structure symbol-structure"></span>StreamMessageResponse.UserLeft</h3>
-<h4 id="fields-12">Fields</h4>
-<h5 id="span-classcodicon-codicon-symbol-field-symbol-fieldspanuser_id-optional--uint64-1"><span class="codicon codicon-symbol-field symbol-field"></span>user_id (optional  <code>uint64</code>)</h5>
-<h2 id="services">Services</h2>
-<h3 id="span-classcodicon-codicon-symbol-class-symbol-classspanvoiceservice"><span class="codicon codicon-symbol-class symbol-class"></span>VoiceService</h3>
+<hr>
+<h2 id="span-classcodicon-codicon-symbol-structure-symbol-structurespanstreammessageresponseinitialized"><span class="codicon codicon-symbol-structure symbol-structure"></span>StreamMessageResponse.Initialized</h2>
+<p><span class="h3" aria-level="3">Fields</span></p>
+<h3 id="span-classcodicon-codicon-symbol-field-symbol-fieldspanrtp_capabilities-1"><span class="codicon codicon-symbol-field symbol-field"></span>rtp_capabilities</h3>
+<p>Type: optional <code>string</code></p>
+<hr>
+<h2 id="span-classcodicon-codicon-symbol-structure-symbol-structurespanstreammessageresponsepreparedforjoinchannel"><span class="codicon codicon-symbol-structure symbol-structure"></span>StreamMessageResponse.PreparedForJoinChannel</h2>
+<p><span class="h3" aria-level="3">Fields</span></p>
+<h3 id="span-classcodicon-codicon-symbol-field-symbol-fieldspanconsumer_transport_options"><span class="codicon codicon-symbol-field symbol-field"></span>consumer_transport_options</h3>
+<p>Type: optional <a href="#transportoptions">protocol.voice.v1.TransportOptions</a></p>
+<h3 id="span-classcodicon-codicon-symbol-field-symbol-fieldspanproducer_transport_options"><span class="codicon codicon-symbol-field symbol-field"></span>producer_transport_options</h3>
+<p>Type: optional <a href="#transportoptions">protocol.voice.v1.TransportOptions</a></p>
+<hr>
+<h2 id="span-classcodicon-codicon-symbol-structure-symbol-structurespanstreammessageresponsejoinedchannel"><span class="codicon codicon-symbol-structure symbol-structure"></span>StreamMessageResponse.JoinedChannel</h2>
+<p><span class="h3" aria-level="3">Fields</span></p>
+<h3 id="span-classcodicon-codicon-symbol-field-symbol-fieldspanother_users"><span class="codicon codicon-symbol-field symbol-field"></span>other_users</h3>
+<p>Type: repeated <a href="#userconsumeroptions">protocol.voice.v1.UserConsumerOptions</a></p>
+<hr>
+<h2 id="span-classcodicon-codicon-symbol-structure-symbol-structurespanstreammessageresponseuserjoined"><span class="codicon codicon-symbol-structure symbol-structure"></span>StreamMessageResponse.UserJoined</h2>
+<p><span class="h3" aria-level="3">Fields</span></p>
+<h3 id="span-classcodicon-codicon-symbol-field-symbol-fieldspandata"><span class="codicon codicon-symbol-field symbol-field"></span>data</h3>
+<p>Type: optional <a href="#userconsumeroptions">protocol.voice.v1.UserConsumerOptions</a></p>
+<hr>
+<h2 id="span-classcodicon-codicon-symbol-structure-symbol-structurespanstreammessageresponseuserleft"><span class="codicon codicon-symbol-structure symbol-structure"></span>StreamMessageResponse.UserLeft</h2>
+<p><span class="h3" aria-level="3">Fields</span></p>
+<h3 id="span-classcodicon-codicon-symbol-field-symbol-fieldspanuser_id-1"><span class="codicon codicon-symbol-field symbol-field"></span>user_id</h3>
+<p>Type: optional <code>uint64</code></p>
+<h1 id="services">Services</h1>
+<h2 id="span-classcodicon-codicon-symbol-class-symbol-classspanvoiceservice"><span class="codicon codicon-symbol-class symbol-class"></span>VoiceService</h2>
 <p>Harmony service for facilitating voice operations using WebRTC.</p>
 <h1 id="usage-for-client">Usage (for client)</h1>
 <ol start="0">
@@ -283,8 +408,8 @@ and uses the RTP paramaters to create a producer for the client</li>
 when a user leaves the channel (when their stream ends), sends UserLeft to all other users</li>
 <li>When receiving a ResumeConsumer message, unpauses the consumer corresponding to the consumer ID</li>
 </ol>
-<h4 id="methods">Methods</h4>
-<h5 id="span-classcodicon-codicon-symbol-method-symbol-methodspanstreammessage"><span class="codicon codicon-symbol-method symbol-method"></span>StreamMessage</h5>
+<h3 id="methods">Methods</h3>
+<h4 id="span-classcodicon-codicon-symbol-method-symbol-methodspanstreammessage"><span class="codicon codicon-symbol-method symbol-method"></span>StreamMessage</h4>
 <p>streaming <a href="#streammessagerequest">protocol.voice.v1.StreamMessageRequest</a> -&gt; streaming <a href="#streammessageresponse">protocol.voice.v1.StreamMessageResponse</a></p>
 <p>Endpoint to stream messages between client and server.</p>
 <ul>

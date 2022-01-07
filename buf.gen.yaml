@@ -9,3 +9,4 @@ plugins:
     opt:
       - paths=source_relative
       - codicon=yes
+      - usehtml=yes

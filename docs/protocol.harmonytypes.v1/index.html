@@ -3,13 +3,19 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no">
     <title>Reference: protocol.harmonytypes.v1 | Harmony</title>
-    <meta name="description" content="Message Types HarmonyMethodMetadata Metadata for methods. These are set in individual RPC endpoints and are typically used by servers.
-Fields requires_authentication (optional bool) whether the method requires authentication.
-requires_local (optional bool) whether the method allows federation or not.
-requires_permission_node (optional string) the permission nodes required to invoke the method.
-requires_owner (optional bool) whether the method requires owner
-Anything Anything holds anything
-Fields kind (optional string) Kind is the kind of the message ">
+    <meta name="description" content="Standalone Message Types HarmonyMethodMetadata Metadata for methods. These are set in individual RPC endpoints and are typically used by servers.
+Fields
+requires_authentication Type: optional bool
+whether the method requires authentication.
+requires_local Type: optional bool
+whether the method allows federation or not.
+requires_permission_node Type: optional string
+the permission nodes required to invoke the method.
+requires_owner Type: optional bool
+whether the method requires owner
+ Anything Anything holds anything
+Fields
+kind Type: optional string ">
     <link rel="canonical" href="https://harmonyapp.io/docs/protocol.harmonytypes.v1/" />
 
     <link rel="stylesheet" href="/css/codicon.css" />
@@ -18,30 +24,42 @@ Fields kind (optional string) Kind is the kind of the message ">
 
     
       
-      <link rel="stylesheet" href="/css/main.min.b599a35d8c7b77592a19cf713bdf6cbf7c404435525e62c590c7c61d88977fb3.css" integrity="sha256-tZmjXYx7d1kqGc9xO99sv3xARDVSXmLFkMfGHYiXf7M="/>
+      <link rel="stylesheet" href="/css/main.min.43ed3940f4fe2c2c0e39dc5b25b6738799dd574c50927c0b3de5236dc7f59adc.css" integrity="sha256-Q+05QPT+LCwOOdxbJbZzh5ndV0xQknwLPeUjbcf1mtw="/>
     
 
     <meta property="og:title" content="Reference: protocol.harmonytypes.v1" />
-<meta property="og:description" content="Message Types HarmonyMethodMetadata Metadata for methods. These are set in individual RPC endpoints and are typically used by servers.
-Fields requires_authentication (optional bool) whether the method requires authentication.
-requires_local (optional bool) whether the method allows federation or not.
-requires_permission_node (optional string) the permission nodes required to invoke the method.
-requires_owner (optional bool) whether the method requires owner
-Anything Anything holds anything
-Fields kind (optional string) Kind is the kind of the message" />
+<meta property="og:description" content="Standalone Message Types HarmonyMethodMetadata Metadata for methods. These are set in individual RPC endpoints and are typically used by servers.
+Fields
+requires_authentication Type: optional bool
+whether the method requires authentication.
+requires_local Type: optional bool
+whether the method allows federation or not.
+requires_permission_node Type: optional string
+the permission nodes required to invoke the method.
+requires_owner Type: optional bool
+whether the method requires owner
+ Anything Anything holds anything
+Fields
+kind Type: optional string" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://harmonyapp.io/docs/protocol.harmonytypes.v1/" />
 
 
     <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Reference: protocol.harmonytypes.v1"/>
-<meta name="twitter:description" content="Message Types HarmonyMethodMetadata Metadata for methods. These are set in individual RPC endpoints and are typically used by servers.
-Fields requires_authentication (optional bool) whether the method requires authentication.
-requires_local (optional bool) whether the method allows federation or not.
-requires_permission_node (optional string) the permission nodes required to invoke the method.
-requires_owner (optional bool) whether the method requires owner
-Anything Anything holds anything
-Fields kind (optional string) Kind is the kind of the message"/>
+<meta name="twitter:description" content="Standalone Message Types HarmonyMethodMetadata Metadata for methods. These are set in individual RPC endpoints and are typically used by servers.
+Fields
+requires_authentication Type: optional bool
+whether the method requires authentication.
+requires_local Type: optional bool
+whether the method allows federation or not.
+requires_permission_node Type: optional string
+the permission nodes required to invoke the method.
+requires_owner Type: optional bool
+whether the method requires owner
+ Anything Anything holds anything
+Fields
+kind Type: optional string"/>
 
     <meta name="theme-color" content="#E93D58">
     <meta property="og:image" content="https://harmonyapp.io/img/harmony-embed.png" />
@@ -122,21 +140,64 @@ Fields kind (optional string) Kind is the kind of the message"/>
     <h4><strong>Table Of Contents</strong></h4>
     <nav id="TableOfContents">
   <ul>
-    <li><a href="#message-types">Message Types</a>
+    <li><a href="#standalone-message-types">Standalone Message Types</a>
       <ul>
-        <li><a href="#span-classcodicon-codicon-symbol-structure-symbol-structurespanharmonymethodmetadata"><span class="codicon codicon-symbol-structure symbol-structure"></span>HarmonyMethodMetadata</a></li>
-        <li><a href="#span-classcodicon-codicon-symbol-structure-symbol-structurespananything"><span class="codicon codicon-symbol-structure symbol-structure"></span>Anything</a></li>
-        <li><a href="#span-classcodicon-codicon-symbol-structure-symbol-structurespanmetadata"><span class="codicon codicon-symbol-structure symbol-structure"></span>Metadata</a></li>
-        <li><a href="#span-classcodicon-codicon-symbol-structure-symbol-structurespanmetadataextensionentry"><span class="codicon codicon-symbol-structure symbol-structure"></span>Metadata.ExtensionEntry</a></li>
-        <li><a href="#span-classcodicon-codicon-symbol-structure-symbol-structurespanerror"><span class="codicon codicon-symbol-structure symbol-structure"></span>Error</a></li>
-        <li><a href="#span-classcodicon-codicon-symbol-structure-symbol-structurespantoken"><span class="codicon codicon-symbol-structure symbol-structure"></span>Token</a></li>
+        <li><a href="#span-classcodicon-codicon-symbol-structure-symbol-structurespanharmonymethodmetadata"><span class="codicon codicon-symbol-structure symbol-structure"></span>HarmonyMethodMetadata</a>
+          <ul>
+            <li><a href="#span-classcodicon-codicon-symbol-field-symbol-fieldspanrequires_authentication"><span class="codicon codicon-symbol-field symbol-field"></span>requires_authentication</a></li>
+            <li><a href="#span-classcodicon-codicon-symbol-field-symbol-fieldspanrequires_local"><span class="codicon codicon-symbol-field symbol-field"></span>requires_local</a></li>
+            <li><a href="#span-classcodicon-codicon-symbol-field-symbol-fieldspanrequires_permission_node"><span class="codicon codicon-symbol-field symbol-field"></span>requires_permission_node</a></li>
+            <li><a href="#span-classcodicon-codicon-symbol-field-symbol-fieldspanrequires_owner"><span class="codicon codicon-symbol-field symbol-field"></span>requires_owner</a></li>
+          </ul>
+        </li>
+        <li><a href="#span-classcodicon-codicon-symbol-structure-symbol-structurespananything"><span class="codicon codicon-symbol-structure symbol-structure"></span>Anything</a>
+          <ul>
+            <li><a href="#span-classcodicon-codicon-symbol-field-symbol-fieldspankind"><span class="codicon codicon-symbol-field symbol-field"></span>kind</a></li>
+            <li><a href="#span-classcodicon-codicon-symbol-field-symbol-fieldspanbody"><span class="codicon codicon-symbol-field symbol-field"></span>body</a></li>
+          </ul>
+        </li>
+        <li><a href="#span-classcodicon-codicon-symbol-structure-symbol-structurespanmetadata"><span class="codicon codicon-symbol-structure symbol-structure"></span>Metadata</a>
+          <ul>
+            <li><a href="#span-classcodicon-codicon-symbol-field-symbol-fieldspankind-1"><span class="codicon codicon-symbol-field symbol-field"></span>kind</a></li>
+            <li><a href="#span-classcodicon-codicon-symbol-field-symbol-fieldspanextension"><span class="codicon codicon-symbol-field symbol-field"></span>extension</a></li>
+          </ul>
+        </li>
+        <li><a href="#span-classcodicon-codicon-symbol-structure-symbol-structurespanmetadataextensionentry"><span class="codicon codicon-symbol-structure symbol-structure"></span>Metadata.ExtensionEntry</a>
+          <ul>
+            <li><a href="#span-classcodicon-codicon-symbol-field-symbol-fieldspankey"><span class="codicon codicon-symbol-field symbol-field"></span>key</a></li>
+            <li><a href="#span-classcodicon-codicon-symbol-field-symbol-fieldspanvalue"><span class="codicon codicon-symbol-field symbol-field"></span>value</a></li>
+          </ul>
+        </li>
+        <li><a href="#span-classcodicon-codicon-symbol-structure-symbol-structurespanerror"><span class="codicon codicon-symbol-structure symbol-structure"></span>Error</a>
+          <ul>
+            <li><a href="#span-classcodicon-codicon-symbol-field-symbol-fieldspanidentifier"><span class="codicon codicon-symbol-field symbol-field"></span>identifier</a></li>
+            <li><a href="#span-classcodicon-codicon-symbol-field-symbol-fieldspanhuman_message"><span class="codicon codicon-symbol-field symbol-field"></span>human_message</a></li>
+            <li><a href="#span-classcodicon-codicon-symbol-field-symbol-fieldspanmore_details"><span class="codicon codicon-symbol-field symbol-field"></span>more_details</a></li>
+          </ul>
+        </li>
+        <li><a href="#span-classcodicon-codicon-symbol-structure-symbol-structurespantoken"><span class="codicon codicon-symbol-structure symbol-structure"></span>Token</a>
+          <ul>
+            <li><a href="#span-classcodicon-codicon-symbol-field-symbol-fieldspansig"><span class="codicon codicon-symbol-field symbol-field"></span>sig</a></li>
+            <li><a href="#span-classcodicon-codicon-symbol-field-symbol-fieldspandata"><span class="codicon codicon-symbol-field symbol-field"></span>data</a></li>
+          </ul>
+        </li>
         <li><a href="#span-classcodicon-codicon-symbol-structure-symbol-structurespanempty"><span class="codicon codicon-symbol-structure symbol-structure"></span>Empty</a></li>
-        <li><a href="#span-classcodicon-codicon-symbol-structure-symbol-structurespanitemposition"><span class="codicon codicon-symbol-structure symbol-structure"></span>ItemPosition</a></li>
+        <li><a href="#span-classcodicon-codicon-symbol-structure-symbol-structurespanitemposition"><span class="codicon codicon-symbol-structure symbol-structure"></span>ItemPosition</a>
+          <ul>
+            <li><a href="#span-classcodicon-codicon-symbol-field-symbol-fieldspanitem_id"><span class="codicon codicon-symbol-field symbol-field"></span>item_id</a></li>
+            <li><a href="#span-classcodicon-codicon-symbol-field-symbol-fieldspanposition"><span class="codicon codicon-symbol-field symbol-field"></span>position</a></li>
+          </ul>
+        </li>
       </ul>
     </li>
     <li><a href="#enums">Enums</a>
       <ul>
-        <li><a href="#span-classcodicon-codicon-symbol-enum-symbol-enumspanposition"><span class="codicon codicon-symbol-enum symbol-enum"></span>Position</a></li>
+        <li><a href="#span-classcodicon-codicon-symbol-enum-symbol-enumspanposition"><span class="codicon codicon-symbol-enum symbol-enum"></span>Position</a>
+          <ul>
+            <li><a href="#span-classcodicon-codicon-symbol-enum-member-symbol-enum-memberspanposition_before_unspecified"><span class="codicon codicon-symbol-enum-member symbol-enum-member"></span>POSITION_BEFORE_UNSPECIFIED</a></li>
+            <li><a href="#span-classcodicon-codicon-symbol-enum-member-symbol-enum-memberspanposition_after"><span class="codicon codicon-symbol-enum-member symbol-enum-member"></span>POSITION_AFTER</a></li>
+          </ul>
+        </li>
       </ul>
     </li>
   </ul>
@@ -145,72 +206,96 @@ Fields kind (optional string) Kind is the kind of the message"/>
   <div class="flex justify-center pb-8 w-full">
     <article class="prose">
       <h1 class="h1">Reference: protocol.harmonytypes.v1</h1>
-      <h2 id="message-types">Message Types</h2>
-<h3 id="span-classcodicon-codicon-symbol-structure-symbol-structurespanharmonymethodmetadata"><span class="codicon codicon-symbol-structure symbol-structure"></span>HarmonyMethodMetadata</h3>
+      <h1 id="standalone-message-types">Standalone Message Types</h1>
+<h2 id="span-classcodicon-codicon-symbol-structure-symbol-structurespanharmonymethodmetadata"><span class="codicon codicon-symbol-structure symbol-structure"></span>HarmonyMethodMetadata</h2>
 <p>Metadata for methods. These are set in individual RPC endpoints and are
 typically used by servers.</p>
-<h4 id="fields">Fields</h4>
-<h5 id="span-classcodicon-codicon-symbol-field-symbol-fieldspanrequires_authentication-optional--bool"><span class="codicon codicon-symbol-field symbol-field"></span>requires_authentication (optional  <code>bool</code>)</h5>
+<p><span class="h3" aria-level="3">Fields</span></p>
+<h3 id="span-classcodicon-codicon-symbol-field-symbol-fieldspanrequires_authentication"><span class="codicon codicon-symbol-field symbol-field"></span>requires_authentication</h3>
+<p>Type: optional <code>bool</code></p>
 <p>whether the method requires authentication.</p>
-<h5 id="span-classcodicon-codicon-symbol-field-symbol-fieldspanrequires_local-optional--bool"><span class="codicon codicon-symbol-field symbol-field"></span>requires_local (optional  <code>bool</code>)</h5>
+<h3 id="span-classcodicon-codicon-symbol-field-symbol-fieldspanrequires_local"><span class="codicon codicon-symbol-field symbol-field"></span>requires_local</h3>
+<p>Type: optional <code>bool</code></p>
 <p>whether the method allows federation or not.</p>
-<h5 id="span-classcodicon-codicon-symbol-field-symbol-fieldspanrequires_permission_node-optional--string"><span class="codicon codicon-symbol-field symbol-field"></span>requires_permission_node (optional  <code>string</code>)</h5>
+<h3 id="span-classcodicon-codicon-symbol-field-symbol-fieldspanrequires_permission_node"><span class="codicon codicon-symbol-field symbol-field"></span>requires_permission_node</h3>
+<p>Type: optional <code>string</code></p>
 <p>the permission nodes required to invoke the method.</p>
-<h5 id="span-classcodicon-codicon-symbol-field-symbol-fieldspanrequires_owner-optional--bool"><span class="codicon codicon-symbol-field symbol-field"></span>requires_owner (optional  <code>bool</code>)</h5>
+<h3 id="span-classcodicon-codicon-symbol-field-symbol-fieldspanrequires_owner"><span class="codicon codicon-symbol-field symbol-field"></span>requires_owner</h3>
+<p>Type: optional <code>bool</code></p>
 <p>whether the method requires owner</p>
-<h3 id="span-classcodicon-codicon-symbol-structure-symbol-structurespananything"><span class="codicon codicon-symbol-structure symbol-structure"></span>Anything</h3>
+<hr>
+<h2 id="span-classcodicon-codicon-symbol-structure-symbol-structurespananything"><span class="codicon codicon-symbol-structure symbol-structure"></span>Anything</h2>
 <p>Anything holds anything</p>
-<h4 id="fields-1">Fields</h4>
-<h5 id="span-classcodicon-codicon-symbol-field-symbol-fieldspankind-optional--string"><span class="codicon codicon-symbol-field symbol-field"></span>kind (optional  <code>string</code>)</h5>
+<p><span class="h3" aria-level="3">Fields</span></p>
+<h3 id="span-classcodicon-codicon-symbol-field-symbol-fieldspankind"><span class="codicon codicon-symbol-field symbol-field"></span>kind</h3>
+<p>Type: optional <code>string</code></p>
 <p>Kind is the kind of the message</p>
-<h5 id="span-classcodicon-codicon-symbol-field-symbol-fieldspanbody-optional--bytes"><span class="codicon codicon-symbol-field symbol-field"></span>body (optional  <code>bytes</code>)</h5>
+<h3 id="span-classcodicon-codicon-symbol-field-symbol-fieldspanbody"><span class="codicon codicon-symbol-field symbol-field"></span>body</h3>
+<p>Type: optional <code>bytes</code></p>
 <p>Body is the serialised bytes</p>
-<h3 id="span-classcodicon-codicon-symbol-structure-symbol-structurespanmetadata"><span class="codicon codicon-symbol-structure symbol-structure"></span>Metadata</h3>
+<hr>
+<h2 id="span-classcodicon-codicon-symbol-structure-symbol-structurespanmetadata"><span class="codicon codicon-symbol-structure symbol-structure"></span>Metadata</h2>
 <p>Metadata type used by many messages.</p>
-<h4 id="fields-2">Fields</h4>
-<h5 id="span-classcodicon-codicon-symbol-field-symbol-fieldspankind-optional--string-1"><span class="codicon codicon-symbol-field symbol-field"></span>kind (optional  <code>string</code>)</h5>
+<p><span class="h3" aria-level="3">Fields</span></p>
+<h3 id="span-classcodicon-codicon-symbol-field-symbol-fieldspankind-1"><span class="codicon codicon-symbol-field symbol-field"></span>kind</h3>
+<p>Type: optional <code>string</code></p>
 <p>Kind of this metadata.</p>
-<h5 id="span-classcodicon-codicon-symbol-field-symbol-fieldspanextension-repeated--protocolharmonytypesv1metadataextensionentrymetadataextensionentry"><span class="codicon codicon-symbol-field symbol-field"></span>extension (repeated  <a href="#metadataextensionentry">protocol.harmonytypes.v1.Metadata.ExtensionEntry</a>)</h5>
+<h3 id="span-classcodicon-codicon-symbol-field-symbol-fieldspanextension"><span class="codicon codicon-symbol-field symbol-field"></span>extension</h3>
+<p>Type: repeated <a href="#metadataextensionentry">protocol.harmonytypes.v1.Metadata.ExtensionEntry</a></p>
 <p>A map containing information.</p>
-<h3 id="span-classcodicon-codicon-symbol-structure-symbol-structurespanmetadataextensionentry"><span class="codicon codicon-symbol-structure symbol-structure"></span>Metadata.ExtensionEntry</h3>
-<h4 id="fields-3">Fields</h4>
-<h5 id="span-classcodicon-codicon-symbol-field-symbol-fieldspankey-optional--string"><span class="codicon codicon-symbol-field symbol-field"></span>key (optional  <code>string</code>)</h5>
-<h5 id="span-classcodicon-codicon-symbol-field-symbol-fieldspanvalue-optional--protocolharmonytypesv1anythinganything"><span class="codicon codicon-symbol-field symbol-field"></span>value (optional  <a href="#anything">protocol.harmonytypes.v1.Anything</a>)</h5>
-<h3 id="span-classcodicon-codicon-symbol-structure-symbol-structurespanerror"><span class="codicon codicon-symbol-structure symbol-structure"></span>Error</h3>
+<hr>
+<h2 id="span-classcodicon-codicon-symbol-structure-symbol-structurespanmetadataextensionentry"><span class="codicon codicon-symbol-structure symbol-structure"></span>Metadata.ExtensionEntry</h2>
+<p><span class="h3" aria-level="3">Fields</span></p>
+<h3 id="span-classcodicon-codicon-symbol-field-symbol-fieldspankey"><span class="codicon codicon-symbol-field symbol-field"></span>key</h3>
+<p>Type: optional <code>string</code></p>
+<h3 id="span-classcodicon-codicon-symbol-field-symbol-fieldspanvalue"><span class="codicon codicon-symbol-field symbol-field"></span>value</h3>
+<p>Type: optional <a href="#anything">protocol.harmonytypes.v1.Anything</a></p>
+<hr>
+<h2 id="span-classcodicon-codicon-symbol-structure-symbol-structurespanerror"><span class="codicon codicon-symbol-structure symbol-structure"></span>Error</h2>
 <p>Error type that will be returned by servers.</p>
-<h4 id="fields-4">Fields</h4>
-<h5 id="span-classcodicon-codicon-symbol-field-symbol-fieldspanidentifier-optional--string"><span class="codicon codicon-symbol-field symbol-field"></span>identifier (optional  <code>string</code>)</h5>
+<p><span class="h3" aria-level="3">Fields</span></p>
+<h3 id="span-classcodicon-codicon-symbol-field-symbol-fieldspanidentifier"><span class="codicon codicon-symbol-field symbol-field"></span>identifier</h3>
+<p>Type: optional <code>string</code></p>
 <p>The identifier of this error, can be used as an i18n key.</p>
-<h5 id="span-classcodicon-codicon-symbol-field-symbol-fieldspanhuman_message-optional--string"><span class="codicon codicon-symbol-field symbol-field"></span>human_message (optional  <code>string</code>)</h5>
+<h3 id="span-classcodicon-codicon-symbol-field-symbol-fieldspanhuman_message"><span class="codicon codicon-symbol-field symbol-field"></span>human_message</h3>
+<p>Type: optional <code>string</code></p>
 <p>A (usually english) human message for this error.</p>
-<h5 id="span-classcodicon-codicon-symbol-field-symbol-fieldspanmore_details-optional--bytes"><span class="codicon codicon-symbol-field symbol-field"></span>more_details (optional  <code>bytes</code>)</h5>
+<h3 id="span-classcodicon-codicon-symbol-field-symbol-fieldspanmore_details"><span class="codicon codicon-symbol-field symbol-field"></span>more_details</h3>
+<p>Type: optional <code>bytes</code></p>
 <p>More details about this message. Is dependent on the endpoint.</p>
-<h3 id="span-classcodicon-codicon-symbol-structure-symbol-structurespantoken"><span class="codicon codicon-symbol-structure symbol-structure"></span>Token</h3>
+<hr>
+<h2 id="span-classcodicon-codicon-symbol-structure-symbol-structurespantoken"><span class="codicon codicon-symbol-structure symbol-structure"></span>Token</h2>
 <p>Token that will be used for authentication.</p>
-<h4 id="fields-5">Fields</h4>
-<h5 id="span-classcodicon-codicon-symbol-field-symbol-fieldspansig-optional--bytes"><span class="codicon codicon-symbol-field symbol-field"></span>sig (optional  <code>bytes</code>)</h5>
+<p><span class="h3" aria-level="3">Fields</span></p>
+<h3 id="span-classcodicon-codicon-symbol-field-symbol-fieldspansig"><span class="codicon codicon-symbol-field symbol-field"></span>sig</h3>
+<p>Type: optional <code>bytes</code></p>
 <p>Ed25519 signature of the following serialized protobuf data, signed
 with a private key. Which private key used to sign will be described
 in the documentation.</p>
 <p>Has to be 64 bytes long, otherwise it will be rejected.</p>
-<h5 id="span-classcodicon-codicon-symbol-field-symbol-fieldspandata-optional--bytes"><span class="codicon codicon-symbol-field symbol-field"></span>data (optional  <code>bytes</code>)</h5>
+<h3 id="span-classcodicon-codicon-symbol-field-symbol-fieldspandata"><span class="codicon codicon-symbol-field symbol-field"></span>data</h3>
+<p>Type: optional <code>bytes</code></p>
 <p>Serialized protobuf data.
 The protobuf type of this serialized data is dependent on the API endpoint
 used.</p>
-<h3 id="span-classcodicon-codicon-symbol-structure-symbol-structurespanempty"><span class="codicon codicon-symbol-structure symbol-structure"></span>Empty</h3>
+<hr>
+<h2 id="span-classcodicon-codicon-symbol-structure-symbol-structurespanempty"><span class="codicon codicon-symbol-structure symbol-structure"></span>Empty</h2>
 <p>An empty message</p>
 <p>This item has no fields.</p>
-<h3 id="span-classcodicon-codicon-symbol-structure-symbol-structurespanitemposition"><span class="codicon codicon-symbol-structure symbol-structure"></span>ItemPosition</h3>
+<hr>
+<h2 id="span-classcodicon-codicon-symbol-structure-symbol-structurespanitemposition"><span class="codicon codicon-symbol-structure symbol-structure"></span>ItemPosition</h2>
 <p>An object representing an item position between two other items.</p>
-<h4 id="fields-6">Fields</h4>
-<h5 id="span-classcodicon-codicon-symbol-field-symbol-fieldspanitem_id-optional--uint64"><span class="codicon codicon-symbol-field symbol-field"></span>item_id (optional  <code>uint64</code>)</h5>
+<p><span class="h3" aria-level="3">Fields</span></p>
+<h3 id="span-classcodicon-codicon-symbol-field-symbol-fieldspanitem_id"><span class="codicon codicon-symbol-field symbol-field"></span>item_id</h3>
+<p>Type: optional <code>uint64</code></p>
 <p>The ID of the item the position is relative to</p>
-<h5 id="span-classcodicon-codicon-symbol-field-symbol-fieldspanposition-unhandled--type"><span class="codicon codicon-symbol-field symbol-field"></span>position (UNHANDLED | TYPE)</h5>
+<h3 id="span-classcodicon-codicon-symbol-field-symbol-fieldspanposition"><span class="codicon codicon-symbol-field symbol-field"></span>position</h3>
+<p>Type: UNHANDLED | TYPE</p>
 <p>Whether the position is before or after the given ID</p>
-<h2 id="enums">Enums</h2>
-<h3 id="span-classcodicon-codicon-symbol-enum-symbol-enumspanposition"><span class="codicon codicon-symbol-enum symbol-enum"></span>Position</h3>
-<h4 id="span-classcodicon-codicon-symbol-enum-member-symbol-enum-memberspanposition_before_unspecified"><span class="codicon codicon-symbol-enum-member symbol-enum-member"></span>POSITION_BEFORE_UNSPECIFIED</h4>
-<h4 id="span-classcodicon-codicon-symbol-enum-member-symbol-enum-memberspanposition_after"><span class="codicon codicon-symbol-enum-member symbol-enum-member"></span>POSITION_AFTER</h4>
+<h1 id="enums">Enums</h1>
+<h2 id="span-classcodicon-codicon-symbol-enum-symbol-enumspanposition"><span class="codicon codicon-symbol-enum symbol-enum"></span>Position</h2>
+<h3 id="span-classcodicon-codicon-symbol-enum-member-symbol-enum-memberspanposition_before_unspecified"><span class="codicon codicon-symbol-enum-member symbol-enum-member"></span>POSITION_BEFORE_UNSPECIFIED</h3>
+<h3 id="span-classcodicon-codicon-symbol-enum-member-symbol-enum-memberspanposition_after"><span class="codicon codicon-symbol-enum-member symbol-enum-member"></span>POSITION_AFTER</h3>
 
     </article>
   </div>

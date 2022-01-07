@@ -3,11 +3,19 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no">
     <title>Reference: google.protobuf | Harmony</title>
-    <meta name="description" content="Message Types FileDescriptorSet The protocol compiler can output a FileDescriptorSet containing the .proto files it parses.
-Fields file (repeated google.protobuf.FileDescriptorProto) FileDescriptorProto Describes a complete .proto file.
-Fields name (optional string) package (optional string) dependency (repeated string) Names of files imported by this file.
-public_dependency (repeated int32) Indexes of the public imported files in the dependency list above.
-weak_dependency (repeated int32) Indexes of the weak imported files in the dependency list. For Google-internal migration only. ">
+    <meta name="description" content="Standalone Message Types FileDescriptorSet The protocol compiler can output a FileDescriptorSet containing the .proto files it parses.
+Fields
+file Type: repeated google.protobuf.FileDescriptorProto
+ FileDescriptorProto Describes a complete .proto file.
+Fields
+name Type: optional string
+package Type: optional string
+dependency Type: repeated string
+Names of files imported by this file.
+public_dependency Type: repeated int32
+Indexes of the public imported files in the dependency list above.
+weak_dependency Type: repeated int32
+Indexes of the weak imported files in the dependency list. ">
     <link rel="canonical" href="https://harmonyapp.io/docs/google.protobuf/" />
 
     <link rel="stylesheet" href="/css/codicon.css" />
@@ -16,26 +24,42 @@ weak_dependency (repeated int32) Indexes of the weak imported files in the depen
 
     
       
-      <link rel="stylesheet" href="/css/main.min.b599a35d8c7b77592a19cf713bdf6cbf7c404435525e62c590c7c61d88977fb3.css" integrity="sha256-tZmjXYx7d1kqGc9xO99sv3xARDVSXmLFkMfGHYiXf7M="/>
+      <link rel="stylesheet" href="/css/main.min.43ed3940f4fe2c2c0e39dc5b25b6738799dd574c50927c0b3de5236dc7f59adc.css" integrity="sha256-Q+05QPT+LCwOOdxbJbZzh5ndV0xQknwLPeUjbcf1mtw="/>
     
 
     <meta property="og:title" content="Reference: google.protobuf" />
-<meta property="og:description" content="Message Types FileDescriptorSet The protocol compiler can output a FileDescriptorSet containing the .proto files it parses.
-Fields file (repeated google.protobuf.FileDescriptorProto) FileDescriptorProto Describes a complete .proto file.
-Fields name (optional string) package (optional string) dependency (repeated string) Names of files imported by this file.
-public_dependency (repeated int32) Indexes of the public imported files in the dependency list above.
-weak_dependency (repeated int32) Indexes of the weak imported files in the dependency list. For Google-internal migration only." />
+<meta property="og:description" content="Standalone Message Types FileDescriptorSet The protocol compiler can output a FileDescriptorSet containing the .proto files it parses.
+Fields
+file Type: repeated google.protobuf.FileDescriptorProto
+ FileDescriptorProto Describes a complete .proto file.
+Fields
+name Type: optional string
+package Type: optional string
+dependency Type: repeated string
+Names of files imported by this file.
+public_dependency Type: repeated int32
+Indexes of the public imported files in the dependency list above.
+weak_dependency Type: repeated int32
+Indexes of the weak imported files in the dependency list." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://harmonyapp.io/docs/google.protobuf/" />
 
 
     <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Reference: google.protobuf"/>
-<meta name="twitter:description" content="Message Types FileDescriptorSet The protocol compiler can output a FileDescriptorSet containing the .proto files it parses.
-Fields file (repeated google.protobuf.FileDescriptorProto) FileDescriptorProto Describes a complete .proto file.
-Fields name (optional string) package (optional string) dependency (repeated string) Names of files imported by this file.
-public_dependency (repeated int32) Indexes of the public imported files in the dependency list above.
-weak_dependency (repeated int32) Indexes of the weak imported files in the dependency list. For Google-internal migration only."/>
+<meta name="twitter:description" content="Standalone Message Types FileDescriptorSet The protocol compiler can output a FileDescriptorSet containing the .proto files it parses.
+Fields
+file Type: repeated google.protobuf.FileDescriptorProto
+ FileDescriptorProto Describes a complete .proto file.
+Fields
+name Type: optional string
+package Type: optional string
+dependency Type: repeated string
+Names of files imported by this file.
+public_dependency Type: repeated int32
+Indexes of the public imported files in the dependency list above.
+weak_dependency Type: repeated int32
+Indexes of the weak imported files in the dependency list."/>
 
     <meta name="theme-color" content="#E93D58">
     <meta property="og:image" content="https://harmonyapp.io/img/harmony-embed.png" />
@@ -116,45 +140,302 @@ weak_dependency (repeated int32) Indexes of the weak imported files in the depen
     <h4><strong>Table Of Contents</strong></h4>
     <nav id="TableOfContents">
   <ul>
-    <li><a href="#message-types">Message Types</a>
+    <li><a href="#standalone-message-types">Standalone Message Types</a>
       <ul>
-        <li><a href="#span-classcodicon-codicon-symbol-structure-symbol-structurespanfiledescriptorset"><span class="codicon codicon-symbol-structure symbol-structure"></span>FileDescriptorSet</a></li>
-        <li><a href="#span-classcodicon-codicon-symbol-structure-symbol-structurespanfiledescriptorproto"><span class="codicon codicon-symbol-structure symbol-structure"></span>FileDescriptorProto</a></li>
-        <li><a href="#span-classcodicon-codicon-symbol-structure-symbol-structurespandescriptorproto"><span class="codicon codicon-symbol-structure symbol-structure"></span>DescriptorProto</a></li>
-        <li><a href="#span-classcodicon-codicon-symbol-structure-symbol-structurespandescriptorprotoextensionrange"><span class="codicon codicon-symbol-structure symbol-structure"></span>DescriptorProto.ExtensionRange</a></li>
-        <li><a href="#span-classcodicon-codicon-symbol-structure-symbol-structurespandescriptorprotoreservedrange"><span class="codicon codicon-symbol-structure symbol-structure"></span>DescriptorProto.ReservedRange</a></li>
-        <li><a href="#span-classcodicon-codicon-symbol-structure-symbol-structurespanextensionrangeoptions"><span class="codicon codicon-symbol-structure symbol-structure"></span>ExtensionRangeOptions</a></li>
-        <li><a href="#span-classcodicon-codicon-symbol-structure-symbol-structurespanfielddescriptorproto"><span class="codicon codicon-symbol-structure symbol-structure"></span>FieldDescriptorProto</a></li>
-        <li><a href="#span-classcodicon-codicon-symbol-structure-symbol-structurespanoneofdescriptorproto"><span class="codicon codicon-symbol-structure symbol-structure"></span>OneofDescriptorProto</a></li>
-        <li><a href="#span-classcodicon-codicon-symbol-structure-symbol-structurespanenumdescriptorproto"><span class="codicon codicon-symbol-structure symbol-structure"></span>EnumDescriptorProto</a></li>
-        <li><a href="#span-classcodicon-codicon-symbol-structure-symbol-structurespanenumdescriptorprotoenumreservedrange"><span class="codicon codicon-symbol-structure symbol-structure"></span>EnumDescriptorProto.EnumReservedRange</a></li>
-        <li><a href="#span-classcodicon-codicon-symbol-structure-symbol-structurespanenumvaluedescriptorproto"><span class="codicon codicon-symbol-structure symbol-structure"></span>EnumValueDescriptorProto</a></li>
-        <li><a href="#span-classcodicon-codicon-symbol-structure-symbol-structurespanservicedescriptorproto"><span class="codicon codicon-symbol-structure symbol-structure"></span>ServiceDescriptorProto</a></li>
-        <li><a href="#span-classcodicon-codicon-symbol-structure-symbol-structurespanmethoddescriptorproto"><span class="codicon codicon-symbol-structure symbol-structure"></span>MethodDescriptorProto</a></li>
-        <li><a href="#span-classcodicon-codicon-symbol-structure-symbol-structurespanfileoptions"><span class="codicon codicon-symbol-structure symbol-structure"></span>FileOptions</a></li>
-        <li><a href="#span-classcodicon-codicon-symbol-structure-symbol-structurespanmessageoptions"><span class="codicon codicon-symbol-structure symbol-structure"></span>MessageOptions</a></li>
-        <li><a href="#span-classcodicon-codicon-symbol-structure-symbol-structurespanfieldoptions"><span class="codicon codicon-symbol-structure symbol-structure"></span>FieldOptions</a></li>
-        <li><a href="#span-classcodicon-codicon-symbol-structure-symbol-structurespanoneofoptions"><span class="codicon codicon-symbol-structure symbol-structure"></span>OneofOptions</a></li>
-        <li><a href="#span-classcodicon-codicon-symbol-structure-symbol-structurespanenumoptions"><span class="codicon codicon-symbol-structure symbol-structure"></span>EnumOptions</a></li>
-        <li><a href="#span-classcodicon-codicon-symbol-structure-symbol-structurespanenumvalueoptions"><span class="codicon codicon-symbol-structure symbol-structure"></span>EnumValueOptions</a></li>
-        <li><a href="#span-classcodicon-codicon-symbol-structure-symbol-structurespanserviceoptions"><span class="codicon codicon-symbol-structure symbol-structure"></span>ServiceOptions</a></li>
-        <li><a href="#span-classcodicon-codicon-symbol-structure-symbol-structurespanmethodoptions"><span class="codicon codicon-symbol-structure symbol-structure"></span>MethodOptions</a></li>
-        <li><a href="#span-classcodicon-codicon-symbol-structure-symbol-structurespanuninterpretedoption"><span class="codicon codicon-symbol-structure symbol-structure"></span>UninterpretedOption</a></li>
-        <li><a href="#span-classcodicon-codicon-symbol-structure-symbol-structurespanuninterpretedoptionnamepart"><span class="codicon codicon-symbol-structure symbol-structure"></span>UninterpretedOption.NamePart</a></li>
-        <li><a href="#span-classcodicon-codicon-symbol-structure-symbol-structurespansourcecodeinfo"><span class="codicon codicon-symbol-structure symbol-structure"></span>SourceCodeInfo</a></li>
-        <li><a href="#span-classcodicon-codicon-symbol-structure-symbol-structurespansourcecodeinfolocation"><span class="codicon codicon-symbol-structure symbol-structure"></span>SourceCodeInfo.Location</a></li>
-        <li><a href="#span-classcodicon-codicon-symbol-structure-symbol-structurespangeneratedcodeinfo"><span class="codicon codicon-symbol-structure symbol-structure"></span>GeneratedCodeInfo</a></li>
-        <li><a href="#span-classcodicon-codicon-symbol-structure-symbol-structurespangeneratedcodeinfoannotation"><span class="codicon codicon-symbol-structure symbol-structure"></span>GeneratedCodeInfo.Annotation</a></li>
+        <li><a href="#span-classcodicon-codicon-symbol-structure-symbol-structurespanfiledescriptorset"><span class="codicon codicon-symbol-structure symbol-structure"></span>FileDescriptorSet</a>
+          <ul>
+            <li><a href="#span-classcodicon-codicon-symbol-field-symbol-fieldspanfile"><span class="codicon codicon-symbol-field symbol-field"></span>file</a></li>
+          </ul>
+        </li>
+        <li><a href="#span-classcodicon-codicon-symbol-structure-symbol-structurespanfiledescriptorproto"><span class="codicon codicon-symbol-structure symbol-structure"></span>FileDescriptorProto</a>
+          <ul>
+            <li><a href="#span-classcodicon-codicon-symbol-field-symbol-fieldspanname"><span class="codicon codicon-symbol-field symbol-field"></span>name</a></li>
+            <li><a href="#span-classcodicon-codicon-symbol-field-symbol-fieldspanpackage"><span class="codicon codicon-symbol-field symbol-field"></span>package</a></li>
+            <li><a href="#span-classcodicon-codicon-symbol-field-symbol-fieldspandependency"><span class="codicon codicon-symbol-field symbol-field"></span>dependency</a></li>
+            <li><a href="#span-classcodicon-codicon-symbol-field-symbol-fieldspanpublic_dependency"><span class="codicon codicon-symbol-field symbol-field"></span>public_dependency</a></li>
+            <li><a href="#span-classcodicon-codicon-symbol-field-symbol-fieldspanweak_dependency"><span class="codicon codicon-symbol-field symbol-field"></span>weak_dependency</a></li>
+            <li><a href="#span-classcodicon-codicon-symbol-field-symbol-fieldspanmessage_type"><span class="codicon codicon-symbol-field symbol-field"></span>message_type</a></li>
+            <li><a href="#span-classcodicon-codicon-symbol-field-symbol-fieldspanenum_type"><span class="codicon codicon-symbol-field symbol-field"></span>enum_type</a></li>
+            <li><a href="#span-classcodicon-codicon-symbol-field-symbol-fieldspanservice"><span class="codicon codicon-symbol-field symbol-field"></span>service</a></li>
+            <li><a href="#span-classcodicon-codicon-symbol-field-symbol-fieldspanextension"><span class="codicon codicon-symbol-field symbol-field"></span>extension</a></li>
+            <li><a href="#span-classcodicon-codicon-symbol-field-symbol-fieldspanoptions"><span class="codicon codicon-symbol-field symbol-field"></span>options</a></li>
+            <li><a href="#span-classcodicon-codicon-symbol-field-symbol-fieldspansource_code_info"><span class="codicon codicon-symbol-field symbol-field"></span>source_code_info</a></li>
+            <li><a href="#span-classcodicon-codicon-symbol-field-symbol-fieldspansyntax"><span class="codicon codicon-symbol-field symbol-field"></span>syntax</a></li>
+          </ul>
+        </li>
+        <li><a href="#span-classcodicon-codicon-symbol-structure-symbol-structurespandescriptorproto"><span class="codicon codicon-symbol-structure symbol-structure"></span>DescriptorProto</a>
+          <ul>
+            <li><a href="#span-classcodicon-codicon-symbol-field-symbol-fieldspanname-1"><span class="codicon codicon-symbol-field symbol-field"></span>name</a></li>
+            <li><a href="#span-classcodicon-codicon-symbol-field-symbol-fieldspanfield"><span class="codicon codicon-symbol-field symbol-field"></span>field</a></li>
+            <li><a href="#span-classcodicon-codicon-symbol-field-symbol-fieldspanextension-1"><span class="codicon codicon-symbol-field symbol-field"></span>extension</a></li>
+            <li><a href="#span-classcodicon-codicon-symbol-field-symbol-fieldspannested_type"><span class="codicon codicon-symbol-field symbol-field"></span>nested_type</a></li>
+            <li><a href="#span-classcodicon-codicon-symbol-field-symbol-fieldspanenum_type-1"><span class="codicon codicon-symbol-field symbol-field"></span>enum_type</a></li>
+            <li><a href="#span-classcodicon-codicon-symbol-field-symbol-fieldspanextension_range"><span class="codicon codicon-symbol-field symbol-field"></span>extension_range</a></li>
+            <li><a href="#span-classcodicon-codicon-symbol-field-symbol-fieldspanoneof_decl"><span class="codicon codicon-symbol-field symbol-field"></span>oneof_decl</a></li>
+            <li><a href="#span-classcodicon-codicon-symbol-field-symbol-fieldspanoptions-1"><span class="codicon codicon-symbol-field symbol-field"></span>options</a></li>
+            <li><a href="#span-classcodicon-codicon-symbol-field-symbol-fieldspanreserved_range"><span class="codicon codicon-symbol-field symbol-field"></span>reserved_range</a></li>
+            <li><a href="#span-classcodicon-codicon-symbol-field-symbol-fieldspanreserved_name"><span class="codicon codicon-symbol-field symbol-field"></span>reserved_name</a></li>
+          </ul>
+        </li>
+        <li><a href="#span-classcodicon-codicon-symbol-structure-symbol-structurespandescriptorprotoextensionrange"><span class="codicon codicon-symbol-structure symbol-structure"></span>DescriptorProto.ExtensionRange</a>
+          <ul>
+            <li><a href="#span-classcodicon-codicon-symbol-field-symbol-fieldspanstart"><span class="codicon codicon-symbol-field symbol-field"></span>start</a></li>
+            <li><a href="#span-classcodicon-codicon-symbol-field-symbol-fieldspanend"><span class="codicon codicon-symbol-field symbol-field"></span>end</a></li>
+            <li><a href="#span-classcodicon-codicon-symbol-field-symbol-fieldspanoptions-2"><span class="codicon codicon-symbol-field symbol-field"></span>options</a></li>
+          </ul>
+        </li>
+        <li><a href="#span-classcodicon-codicon-symbol-structure-symbol-structurespandescriptorprotoreservedrange"><span class="codicon codicon-symbol-structure symbol-structure"></span>DescriptorProto.ReservedRange</a>
+          <ul>
+            <li><a href="#span-classcodicon-codicon-symbol-field-symbol-fieldspanstart-1"><span class="codicon codicon-symbol-field symbol-field"></span>start</a></li>
+            <li><a href="#span-classcodicon-codicon-symbol-field-symbol-fieldspanend-1"><span class="codicon codicon-symbol-field symbol-field"></span>end</a></li>
+          </ul>
+        </li>
+        <li><a href="#span-classcodicon-codicon-symbol-structure-symbol-structurespanextensionrangeoptions"><span class="codicon codicon-symbol-structure symbol-structure"></span>ExtensionRangeOptions</a>
+          <ul>
+            <li><a href="#span-classcodicon-codicon-symbol-field-symbol-fieldspanuninterpreted_option"><span class="codicon codicon-symbol-field symbol-field"></span>uninterpreted_option</a></li>
+          </ul>
+        </li>
+        <li><a href="#span-classcodicon-codicon-symbol-structure-symbol-structurespanfielddescriptorproto"><span class="codicon codicon-symbol-structure symbol-structure"></span>FieldDescriptorProto</a>
+          <ul>
+            <li><a href="#span-classcodicon-codicon-symbol-field-symbol-fieldspanname-2"><span class="codicon codicon-symbol-field symbol-field"></span>name</a></li>
+            <li><a href="#span-classcodicon-codicon-symbol-field-symbol-fieldspannumber"><span class="codicon codicon-symbol-field symbol-field"></span>number</a></li>
+            <li><a href="#span-classcodicon-codicon-symbol-field-symbol-fieldspanlabel"><span class="codicon codicon-symbol-field symbol-field"></span>label</a></li>
+            <li><a href="#span-classcodicon-codicon-symbol-field-symbol-fieldspantype"><span class="codicon codicon-symbol-field symbol-field"></span>type</a></li>
+            <li><a href="#span-classcodicon-codicon-symbol-field-symbol-fieldspantype_name"><span class="codicon codicon-symbol-field symbol-field"></span>type_name</a></li>
+            <li><a href="#span-classcodicon-codicon-symbol-field-symbol-fieldspanextendee"><span class="codicon codicon-symbol-field symbol-field"></span>extendee</a></li>
+            <li><a href="#span-classcodicon-codicon-symbol-field-symbol-fieldspandefault_value"><span class="codicon codicon-symbol-field symbol-field"></span>default_value</a></li>
+            <li><a href="#span-classcodicon-codicon-symbol-field-symbol-fieldspanoneof_index"><span class="codicon codicon-symbol-field symbol-field"></span>oneof_index</a></li>
+            <li><a href="#span-classcodicon-codicon-symbol-field-symbol-fieldspanjson_name"><span class="codicon codicon-symbol-field symbol-field"></span>json_name</a></li>
+            <li><a href="#span-classcodicon-codicon-symbol-field-symbol-fieldspanoptions-3"><span class="codicon codicon-symbol-field symbol-field"></span>options</a></li>
+            <li><a href="#span-classcodicon-codicon-symbol-field-symbol-fieldspanproto3_optional"><span class="codicon codicon-symbol-field symbol-field"></span>proto3_optional</a></li>
+          </ul>
+        </li>
+        <li><a href="#span-classcodicon-codicon-symbol-structure-symbol-structurespanoneofdescriptorproto"><span class="codicon codicon-symbol-structure symbol-structure"></span>OneofDescriptorProto</a>
+          <ul>
+            <li><a href="#span-classcodicon-codicon-symbol-field-symbol-fieldspanname-3"><span class="codicon codicon-symbol-field symbol-field"></span>name</a></li>
+            <li><a href="#span-classcodicon-codicon-symbol-field-symbol-fieldspanoptions-4"><span class="codicon codicon-symbol-field symbol-field"></span>options</a></li>
+          </ul>
+        </li>
+        <li><a href="#span-classcodicon-codicon-symbol-structure-symbol-structurespanenumdescriptorproto"><span class="codicon codicon-symbol-structure symbol-structure"></span>EnumDescriptorProto</a>
+          <ul>
+            <li><a href="#span-classcodicon-codicon-symbol-field-symbol-fieldspanname-4"><span class="codicon codicon-symbol-field symbol-field"></span>name</a></li>
+            <li><a href="#span-classcodicon-codicon-symbol-field-symbol-fieldspanvalue"><span class="codicon codicon-symbol-field symbol-field"></span>value</a></li>
+            <li><a href="#span-classcodicon-codicon-symbol-field-symbol-fieldspanoptions-5"><span class="codicon codicon-symbol-field symbol-field"></span>options</a></li>
+            <li><a href="#span-classcodicon-codicon-symbol-field-symbol-fieldspanreserved_range-1"><span class="codicon codicon-symbol-field symbol-field"></span>reserved_range</a></li>
+            <li><a href="#span-classcodicon-codicon-symbol-field-symbol-fieldspanreserved_name-1"><span class="codicon codicon-symbol-field symbol-field"></span>reserved_name</a></li>
+          </ul>
+        </li>
+        <li><a href="#span-classcodicon-codicon-symbol-structure-symbol-structurespanenumdescriptorprotoenumreservedrange"><span class="codicon codicon-symbol-structure symbol-structure"></span>EnumDescriptorProto.EnumReservedRange</a>
+          <ul>
+            <li><a href="#span-classcodicon-codicon-symbol-field-symbol-fieldspanstart-2"><span class="codicon codicon-symbol-field symbol-field"></span>start</a></li>
+            <li><a href="#span-classcodicon-codicon-symbol-field-symbol-fieldspanend-2"><span class="codicon codicon-symbol-field symbol-field"></span>end</a></li>
+          </ul>
+        </li>
+        <li><a href="#span-classcodicon-codicon-symbol-structure-symbol-structurespanenumvaluedescriptorproto"><span class="codicon codicon-symbol-structure symbol-structure"></span>EnumValueDescriptorProto</a>
+          <ul>
+            <li><a href="#span-classcodicon-codicon-symbol-field-symbol-fieldspanname-5"><span class="codicon codicon-symbol-field symbol-field"></span>name</a></li>
+            <li><a href="#span-classcodicon-codicon-symbol-field-symbol-fieldspannumber-1"><span class="codicon codicon-symbol-field symbol-field"></span>number</a></li>
+            <li><a href="#span-classcodicon-codicon-symbol-field-symbol-fieldspanoptions-6"><span class="codicon codicon-symbol-field symbol-field"></span>options</a></li>
+          </ul>
+        </li>
+        <li><a href="#span-classcodicon-codicon-symbol-structure-symbol-structurespanservicedescriptorproto"><span class="codicon codicon-symbol-structure symbol-structure"></span>ServiceDescriptorProto</a>
+          <ul>
+            <li><a href="#span-classcodicon-codicon-symbol-field-symbol-fieldspanname-6"><span class="codicon codicon-symbol-field symbol-field"></span>name</a></li>
+            <li><a href="#span-classcodicon-codicon-symbol-field-symbol-fieldspanmethod"><span class="codicon codicon-symbol-field symbol-field"></span>method</a></li>
+            <li><a href="#span-classcodicon-codicon-symbol-field-symbol-fieldspanoptions-7"><span class="codicon codicon-symbol-field symbol-field"></span>options</a></li>
+          </ul>
+        </li>
+        <li><a href="#span-classcodicon-codicon-symbol-structure-symbol-structurespanmethoddescriptorproto"><span class="codicon codicon-symbol-structure symbol-structure"></span>MethodDescriptorProto</a>
+          <ul>
+            <li><a href="#span-classcodicon-codicon-symbol-field-symbol-fieldspanname-7"><span class="codicon codicon-symbol-field symbol-field"></span>name</a></li>
+            <li><a href="#span-classcodicon-codicon-symbol-field-symbol-fieldspaninput_type"><span class="codicon codicon-symbol-field symbol-field"></span>input_type</a></li>
+            <li><a href="#span-classcodicon-codicon-symbol-field-symbol-fieldspanoutput_type"><span class="codicon codicon-symbol-field symbol-field"></span>output_type</a></li>
+            <li><a href="#span-classcodicon-codicon-symbol-field-symbol-fieldspanoptions-8"><span class="codicon codicon-symbol-field symbol-field"></span>options</a></li>
+            <li><a href="#span-classcodicon-codicon-symbol-field-symbol-fieldspanclient_streaming"><span class="codicon codicon-symbol-field symbol-field"></span>client_streaming</a></li>
+            <li><a href="#span-classcodicon-codicon-symbol-field-symbol-fieldspanserver_streaming"><span class="codicon codicon-symbol-field symbol-field"></span>server_streaming</a></li>
+          </ul>
+        </li>
+        <li><a href="#span-classcodicon-codicon-symbol-structure-symbol-structurespanfileoptions"><span class="codicon codicon-symbol-structure symbol-structure"></span>FileOptions</a>
+          <ul>
+            <li><a href="#span-classcodicon-codicon-symbol-field-symbol-fieldspanjava_package"><span class="codicon codicon-symbol-field symbol-field"></span>java_package</a></li>
+            <li><a href="#span-classcodicon-codicon-symbol-field-symbol-fieldspanjava_outer_classname"><span class="codicon codicon-symbol-field symbol-field"></span>java_outer_classname</a></li>
+            <li><a href="#span-classcodicon-codicon-symbol-field-symbol-fieldspanjava_multiple_files"><span class="codicon codicon-symbol-field symbol-field"></span>java_multiple_files</a></li>
+            <li><a href="#span-classcodicon-codicon-symbol-field-symbol-fieldspanjava_generate_equals_and_hash"><span class="codicon codicon-symbol-field symbol-field"></span>java_generate_equals_and_hash</a></li>
+            <li><a href="#span-classcodicon-codicon-symbol-field-symbol-fieldspanjava_string_check_utf8"><span class="codicon codicon-symbol-field symbol-field"></span>java_string_check_utf8</a></li>
+            <li><a href="#span-classcodicon-codicon-symbol-field-symbol-fieldspanoptimize_for"><span class="codicon codicon-symbol-field symbol-field"></span>optimize_for</a></li>
+            <li><a href="#span-classcodicon-codicon-symbol-field-symbol-fieldspango_package"><span class="codicon codicon-symbol-field symbol-field"></span>go_package</a></li>
+            <li><a href="#span-classcodicon-codicon-symbol-field-symbol-fieldspancc_generic_services"><span class="codicon codicon-symbol-field symbol-field"></span>cc_generic_services</a></li>
+            <li><a href="#span-classcodicon-codicon-symbol-field-symbol-fieldspanjava_generic_services"><span class="codicon codicon-symbol-field symbol-field"></span>java_generic_services</a></li>
+            <li><a href="#span-classcodicon-codicon-symbol-field-symbol-fieldspanpy_generic_services"><span class="codicon codicon-symbol-field symbol-field"></span>py_generic_services</a></li>
+            <li><a href="#span-classcodicon-codicon-symbol-field-symbol-fieldspanphp_generic_services"><span class="codicon codicon-symbol-field symbol-field"></span>php_generic_services</a></li>
+            <li><a href="#span-classcodicon-codicon-symbol-field-symbol-fieldspandeprecated"><span class="codicon codicon-symbol-field symbol-field"></span>deprecated</a></li>
+            <li><a href="#span-classcodicon-codicon-symbol-field-symbol-fieldspancc_enable_arenas"><span class="codicon codicon-symbol-field symbol-field"></span>cc_enable_arenas</a></li>
+            <li><a href="#span-classcodicon-codicon-symbol-field-symbol-fieldspanobjc_class_prefix"><span class="codicon codicon-symbol-field symbol-field"></span>objc_class_prefix</a></li>
+            <li><a href="#span-classcodicon-codicon-symbol-field-symbol-fieldspancsharp_namespace"><span class="codicon codicon-symbol-field symbol-field"></span>csharp_namespace</a></li>
+            <li><a href="#span-classcodicon-codicon-symbol-field-symbol-fieldspanswift_prefix"><span class="codicon codicon-symbol-field symbol-field"></span>swift_prefix</a></li>
+            <li><a href="#span-classcodicon-codicon-symbol-field-symbol-fieldspanphp_class_prefix"><span class="codicon codicon-symbol-field symbol-field"></span>php_class_prefix</a></li>
+            <li><a href="#span-classcodicon-codicon-symbol-field-symbol-fieldspanphp_namespace"><span class="codicon codicon-symbol-field symbol-field"></span>php_namespace</a></li>
+            <li><a href="#span-classcodicon-codicon-symbol-field-symbol-fieldspanphp_metadata_namespace"><span class="codicon codicon-symbol-field symbol-field"></span>php_metadata_namespace</a></li>
+            <li><a href="#span-classcodicon-codicon-symbol-field-symbol-fieldspanruby_package"><span class="codicon codicon-symbol-field symbol-field"></span>ruby_package</a></li>
+            <li><a href="#span-classcodicon-codicon-symbol-field-symbol-fieldspanuninterpreted_option-1"><span class="codicon codicon-symbol-field symbol-field"></span>uninterpreted_option</a></li>
+          </ul>
+        </li>
+        <li><a href="#span-classcodicon-codicon-symbol-structure-symbol-structurespanmessageoptions"><span class="codicon codicon-symbol-structure symbol-structure"></span>MessageOptions</a>
+          <ul>
+            <li><a href="#span-classcodicon-codicon-symbol-field-symbol-fieldspanmessage_set_wire_format"><span class="codicon codicon-symbol-field symbol-field"></span>message_set_wire_format</a></li>
+            <li><a href="#span-classcodicon-codicon-symbol-field-symbol-fieldspanno_standard_descriptor_accessor"><span class="codicon codicon-symbol-field symbol-field"></span>no_standard_descriptor_accessor</a></li>
+            <li><a href="#span-classcodicon-codicon-symbol-field-symbol-fieldspandeprecated-1"><span class="codicon codicon-symbol-field symbol-field"></span>deprecated</a></li>
+            <li><a href="#span-classcodicon-codicon-symbol-field-symbol-fieldspanmap_entry"><span class="codicon codicon-symbol-field symbol-field"></span>map_entry</a></li>
+            <li><a href="#span-classcodicon-codicon-symbol-field-symbol-fieldspanuninterpreted_option-2"><span class="codicon codicon-symbol-field symbol-field"></span>uninterpreted_option</a></li>
+          </ul>
+        </li>
+        <li><a href="#span-classcodicon-codicon-symbol-structure-symbol-structurespanfieldoptions"><span class="codicon codicon-symbol-structure symbol-structure"></span>FieldOptions</a>
+          <ul>
+            <li><a href="#span-classcodicon-codicon-symbol-field-symbol-fieldspanctype"><span class="codicon codicon-symbol-field symbol-field"></span>ctype</a></li>
+            <li><a href="#span-classcodicon-codicon-symbol-field-symbol-fieldspanpacked"><span class="codicon codicon-symbol-field symbol-field"></span>packed</a></li>
+            <li><a href="#span-classcodicon-codicon-symbol-field-symbol-fieldspanjstype"><span class="codicon codicon-symbol-field symbol-field"></span>jstype</a></li>
+            <li><a href="#span-classcodicon-codicon-symbol-field-symbol-fieldspanlazy"><span class="codicon codicon-symbol-field symbol-field"></span>lazy</a></li>
+            <li><a href="#span-classcodicon-codicon-symbol-field-symbol-fieldspandeprecated-2"><span class="codicon codicon-symbol-field symbol-field"></span>deprecated</a></li>
+            <li><a href="#span-classcodicon-codicon-symbol-field-symbol-fieldspanweak"><span class="codicon codicon-symbol-field symbol-field"></span>weak</a></li>
+            <li><a href="#span-classcodicon-codicon-symbol-field-symbol-fieldspanuninterpreted_option-3"><span class="codicon codicon-symbol-field symbol-field"></span>uninterpreted_option</a></li>
+          </ul>
+        </li>
+        <li><a href="#span-classcodicon-codicon-symbol-structure-symbol-structurespanoneofoptions"><span class="codicon codicon-symbol-structure symbol-structure"></span>OneofOptions</a>
+          <ul>
+            <li><a href="#span-classcodicon-codicon-symbol-field-symbol-fieldspanuninterpreted_option-4"><span class="codicon codicon-symbol-field symbol-field"></span>uninterpreted_option</a></li>
+          </ul>
+        </li>
+        <li><a href="#span-classcodicon-codicon-symbol-structure-symbol-structurespanenumoptions"><span class="codicon codicon-symbol-structure symbol-structure"></span>EnumOptions</a>
+          <ul>
+            <li><a href="#span-classcodicon-codicon-symbol-field-symbol-fieldspanallow_alias"><span class="codicon codicon-symbol-field symbol-field"></span>allow_alias</a></li>
+            <li><a href="#span-classcodicon-codicon-symbol-field-symbol-fieldspandeprecated-3"><span class="codicon codicon-symbol-field symbol-field"></span>deprecated</a></li>
+            <li><a href="#span-classcodicon-codicon-symbol-field-symbol-fieldspanuninterpreted_option-5"><span class="codicon codicon-symbol-field symbol-field"></span>uninterpreted_option</a></li>
+          </ul>
+        </li>
+        <li><a href="#span-classcodicon-codicon-symbol-structure-symbol-structurespanenumvalueoptions"><span class="codicon codicon-symbol-structure symbol-structure"></span>EnumValueOptions</a>
+          <ul>
+            <li><a href="#span-classcodicon-codicon-symbol-field-symbol-fieldspandeprecated-4"><span class="codicon codicon-symbol-field symbol-field"></span>deprecated</a></li>
+            <li><a href="#span-classcodicon-codicon-symbol-field-symbol-fieldspanuninterpreted_option-6"><span class="codicon codicon-symbol-field symbol-field"></span>uninterpreted_option</a></li>
+          </ul>
+        </li>
+        <li><a href="#span-classcodicon-codicon-symbol-structure-symbol-structurespanserviceoptions"><span class="codicon codicon-symbol-structure symbol-structure"></span>ServiceOptions</a>
+          <ul>
+            <li><a href="#span-classcodicon-codicon-symbol-field-symbol-fieldspandeprecated-5"><span class="codicon codicon-symbol-field symbol-field"></span>deprecated</a></li>
+            <li><a href="#span-classcodicon-codicon-symbol-field-symbol-fieldspanuninterpreted_option-7"><span class="codicon codicon-symbol-field symbol-field"></span>uninterpreted_option</a></li>
+          </ul>
+        </li>
+        <li><a href="#span-classcodicon-codicon-symbol-structure-symbol-structurespanmethodoptions"><span class="codicon codicon-symbol-structure symbol-structure"></span>MethodOptions</a>
+          <ul>
+            <li><a href="#span-classcodicon-codicon-symbol-field-symbol-fieldspandeprecated-6"><span class="codicon codicon-symbol-field symbol-field"></span>deprecated</a></li>
+            <li><a href="#span-classcodicon-codicon-symbol-field-symbol-fieldspanidempotency_level"><span class="codicon codicon-symbol-field symbol-field"></span>idempotency_level</a></li>
+            <li><a href="#span-classcodicon-codicon-symbol-field-symbol-fieldspanuninterpreted_option-8"><span class="codicon codicon-symbol-field symbol-field"></span>uninterpreted_option</a></li>
+          </ul>
+        </li>
+        <li><a href="#span-classcodicon-codicon-symbol-structure-symbol-structurespanuninterpretedoption"><span class="codicon codicon-symbol-structure symbol-structure"></span>UninterpretedOption</a>
+          <ul>
+            <li><a href="#span-classcodicon-codicon-symbol-field-symbol-fieldspanname-8"><span class="codicon codicon-symbol-field symbol-field"></span>name</a></li>
+            <li><a href="#span-classcodicon-codicon-symbol-field-symbol-fieldspanidentifier_value"><span class="codicon codicon-symbol-field symbol-field"></span>identifier_value</a></li>
+            <li><a href="#span-classcodicon-codicon-symbol-field-symbol-fieldspanpositive_int_value"><span class="codicon codicon-symbol-field symbol-field"></span>positive_int_value</a></li>
+            <li><a href="#span-classcodicon-codicon-symbol-field-symbol-fieldspannegative_int_value"><span class="codicon codicon-symbol-field symbol-field"></span>negative_int_value</a></li>
+            <li><a href="#span-classcodicon-codicon-symbol-field-symbol-fieldspandouble_value"><span class="codicon codicon-symbol-field symbol-field"></span>double_value</a></li>
+            <li><a href="#span-classcodicon-codicon-symbol-field-symbol-fieldspanstring_value"><span class="codicon codicon-symbol-field symbol-field"></span>string_value</a></li>
+            <li><a href="#span-classcodicon-codicon-symbol-field-symbol-fieldspanaggregate_value"><span class="codicon codicon-symbol-field symbol-field"></span>aggregate_value</a></li>
+          </ul>
+        </li>
+        <li><a href="#span-classcodicon-codicon-symbol-structure-symbol-structurespanuninterpretedoptionnamepart"><span class="codicon codicon-symbol-structure symbol-structure"></span>UninterpretedOption.NamePart</a>
+          <ul>
+            <li><a href="#span-classcodicon-codicon-symbol-field-symbol-fieldspanname_part"><span class="codicon codicon-symbol-field symbol-field"></span>name_part</a></li>
+            <li><a href="#span-classcodicon-codicon-symbol-field-symbol-fieldspanis_extension"><span class="codicon codicon-symbol-field symbol-field"></span>is_extension</a></li>
+          </ul>
+        </li>
+        <li><a href="#span-classcodicon-codicon-symbol-structure-symbol-structurespansourcecodeinfo"><span class="codicon codicon-symbol-structure symbol-structure"></span>SourceCodeInfo</a>
+          <ul>
+            <li><a href="#span-classcodicon-codicon-symbol-field-symbol-fieldspanlocation"><span class="codicon codicon-symbol-field symbol-field"></span>location</a></li>
+          </ul>
+        </li>
+        <li><a href="#span-classcodicon-codicon-symbol-structure-symbol-structurespansourcecodeinfolocation"><span class="codicon codicon-symbol-structure symbol-structure"></span>SourceCodeInfo.Location</a>
+          <ul>
+            <li><a href="#span-classcodicon-codicon-symbol-field-symbol-fieldspanpath"><span class="codicon codicon-symbol-field symbol-field"></span>path</a></li>
+            <li><a href="#span-classcodicon-codicon-symbol-field-symbol-fieldspanspan"><span class="codicon codicon-symbol-field symbol-field"></span>span</a></li>
+            <li><a href="#span-classcodicon-codicon-symbol-field-symbol-fieldspanleading_comments"><span class="codicon codicon-symbol-field symbol-field"></span>leading_comments</a></li>
+            <li><a href="#span-classcodicon-codicon-symbol-field-symbol-fieldspantrailing_comments"><span class="codicon codicon-symbol-field symbol-field"></span>trailing_comments</a></li>
+            <li><a href="#span-classcodicon-codicon-symbol-field-symbol-fieldspanleading_detached_comments"><span class="codicon codicon-symbol-field symbol-field"></span>leading_detached_comments</a></li>
+          </ul>
+        </li>
+        <li><a href="#span-classcodicon-codicon-symbol-structure-symbol-structurespangeneratedcodeinfo"><span class="codicon codicon-symbol-structure symbol-structure"></span>GeneratedCodeInfo</a>
+          <ul>
+            <li><a href="#span-classcodicon-codicon-symbol-field-symbol-fieldspanannotation"><span class="codicon codicon-symbol-field symbol-field"></span>annotation</a></li>
+          </ul>
+        </li>
+        <li><a href="#span-classcodicon-codicon-symbol-structure-symbol-structurespangeneratedcodeinfoannotation"><span class="codicon codicon-symbol-structure symbol-structure"></span>GeneratedCodeInfo.Annotation</a>
+          <ul>
+            <li><a href="#span-classcodicon-codicon-symbol-field-symbol-fieldspanpath-1"><span class="codicon codicon-symbol-field symbol-field"></span>path</a></li>
+            <li><a href="#span-classcodicon-codicon-symbol-field-symbol-fieldspansource_file"><span class="codicon codicon-symbol-field symbol-field"></span>source_file</a></li>
+            <li><a href="#span-classcodicon-codicon-symbol-field-symbol-fieldspanbegin"><span class="codicon codicon-symbol-field symbol-field"></span>begin</a></li>
+            <li><a href="#span-classcodicon-codicon-symbol-field-symbol-fieldspanend-3"><span class="codicon codicon-symbol-field symbol-field"></span>end</a></li>
+          </ul>
+        </li>
       </ul>
     </li>
     <li><a href="#enums">Enums</a>
       <ul>
-        <li><a href="#span-classcodicon-codicon-symbol-enum-symbol-enumspantype"><span class="codicon codicon-symbol-enum symbol-enum"></span>Type</a></li>
-        <li><a href="#span-classcodicon-codicon-symbol-enum-symbol-enumspanlabel"><span class="codicon codicon-symbol-enum symbol-enum"></span>Label</a></li>
-        <li><a href="#span-classcodicon-codicon-symbol-enum-symbol-enumspanoptimizemode"><span class="codicon codicon-symbol-enum symbol-enum"></span>OptimizeMode</a></li>
-        <li><a href="#span-classcodicon-codicon-symbol-enum-symbol-enumspanctype"><span class="codicon codicon-symbol-enum symbol-enum"></span>CType</a></li>
-        <li><a href="#span-classcodicon-codicon-symbol-enum-symbol-enumspanjstype"><span class="codicon codicon-symbol-enum symbol-enum"></span>JSType</a></li>
-        <li><a href="#span-classcodicon-codicon-symbol-enum-symbol-enumspanidempotencylevel"><span class="codicon codicon-symbol-enum symbol-enum"></span>IdempotencyLevel</a></li>
+        <li><a href="#span-classcodicon-codicon-symbol-enum-symbol-enumspantype"><span class="codicon codicon-symbol-enum symbol-enum"></span>Type</a>
+          <ul>
+            <li><a href="#span-classcodicon-codicon-symbol-enum-member-symbol-enum-memberspantype_double"><span class="codicon codicon-symbol-enum-member symbol-enum-member"></span>TYPE_DOUBLE</a></li>
+            <li><a href="#span-classcodicon-codicon-symbol-enum-member-symbol-enum-memberspantype_float"><span class="codicon codicon-symbol-enum-member symbol-enum-member"></span>TYPE_FLOAT</a></li>
+            <li><a href="#span-classcodicon-codicon-symbol-enum-member-symbol-enum-memberspantype_int64"><span class="codicon codicon-symbol-enum-member symbol-enum-member"></span>TYPE_INT64</a></li>
+            <li><a href="#span-classcodicon-codicon-symbol-enum-member-symbol-enum-memberspantype_uint64"><span class="codicon codicon-symbol-enum-member symbol-enum-member"></span>TYPE_UINT64</a></li>
+            <li><a href="#span-classcodicon-codicon-symbol-enum-member-symbol-enum-memberspantype_int32"><span class="codicon codicon-symbol-enum-member symbol-enum-member"></span>TYPE_INT32</a></li>
+            <li><a href="#span-classcodicon-codicon-symbol-enum-member-symbol-enum-memberspantype_fixed64"><span class="codicon codicon-symbol-enum-member symbol-enum-member"></span>TYPE_FIXED64</a></li>
+            <li><a href="#span-classcodicon-codicon-symbol-enum-member-symbol-enum-memberspantype_fixed32"><span class="codicon codicon-symbol-enum-member symbol-enum-member"></span>TYPE_FIXED32</a></li>
+            <li><a href="#span-classcodicon-codicon-symbol-enum-member-symbol-enum-memberspantype_bool"><span class="codicon codicon-symbol-enum-member symbol-enum-member"></span>TYPE_BOOL</a></li>
+            <li><a href="#span-classcodicon-codicon-symbol-enum-member-symbol-enum-memberspantype_string"><span class="codicon codicon-symbol-enum-member symbol-enum-member"></span>TYPE_STRING</a></li>
+            <li><a href="#span-classcodicon-codicon-symbol-enum-member-symbol-enum-memberspantype_group"><span class="codicon codicon-symbol-enum-member symbol-enum-member"></span>TYPE_GROUP</a></li>
+            <li><a href="#span-classcodicon-codicon-symbol-enum-member-symbol-enum-memberspantype_message"><span class="codicon codicon-symbol-enum-member symbol-enum-member"></span>TYPE_MESSAGE</a></li>
+            <li><a href="#span-classcodicon-codicon-symbol-enum-member-symbol-enum-memberspantype_bytes"><span class="codicon codicon-symbol-enum-member symbol-enum-member"></span>TYPE_BYTES</a></li>
+            <li><a href="#span-classcodicon-codicon-symbol-enum-member-symbol-enum-memberspantype_uint32"><span class="codicon codicon-symbol-enum-member symbol-enum-member"></span>TYPE_UINT32</a></li>
+            <li><a href="#span-classcodicon-codicon-symbol-enum-member-symbol-enum-memberspantype_enum"><span class="codicon codicon-symbol-enum-member symbol-enum-member"></span>TYPE_ENUM</a></li>
+            <li><a href="#span-classcodicon-codicon-symbol-enum-member-symbol-enum-memberspantype_sfixed32"><span class="codicon codicon-symbol-enum-member symbol-enum-member"></span>TYPE_SFIXED32</a></li>
+            <li><a href="#span-classcodicon-codicon-symbol-enum-member-symbol-enum-memberspantype_sfixed64"><span class="codicon codicon-symbol-enum-member symbol-enum-member"></span>TYPE_SFIXED64</a></li>
+            <li><a href="#span-classcodicon-codicon-symbol-enum-member-symbol-enum-memberspantype_sint32"><span class="codicon codicon-symbol-enum-member symbol-enum-member"></span>TYPE_SINT32</a></li>
+            <li><a href="#span-classcodicon-codicon-symbol-enum-member-symbol-enum-memberspantype_sint64"><span class="codicon codicon-symbol-enum-member symbol-enum-member"></span>TYPE_SINT64</a></li>
+          </ul>
+        </li>
+        <li><a href="#span-classcodicon-codicon-symbol-enum-symbol-enumspanlabel"><span class="codicon codicon-symbol-enum symbol-enum"></span>Label</a>
+          <ul>
+            <li><a href="#span-classcodicon-codicon-symbol-enum-member-symbol-enum-memberspanlabel_optional"><span class="codicon codicon-symbol-enum-member symbol-enum-member"></span>LABEL_OPTIONAL</a></li>
+            <li><a href="#span-classcodicon-codicon-symbol-enum-member-symbol-enum-memberspanlabel_required"><span class="codicon codicon-symbol-enum-member symbol-enum-member"></span>LABEL_REQUIRED</a></li>
+            <li><a href="#span-classcodicon-codicon-symbol-enum-member-symbol-enum-memberspanlabel_repeated"><span class="codicon codicon-symbol-enum-member symbol-enum-member"></span>LABEL_REPEATED</a></li>
+          </ul>
+        </li>
+        <li><a href="#span-classcodicon-codicon-symbol-enum-symbol-enumspanoptimizemode"><span class="codicon codicon-symbol-enum symbol-enum"></span>OptimizeMode</a>
+          <ul>
+            <li><a href="#span-classcodicon-codicon-symbol-enum-member-symbol-enum-memberspanspeed"><span class="codicon codicon-symbol-enum-member symbol-enum-member"></span>SPEED</a></li>
+            <li><a href="#span-classcodicon-codicon-symbol-enum-member-symbol-enum-memberspancode_size"><span class="codicon codicon-symbol-enum-member symbol-enum-member"></span>CODE_SIZE</a></li>
+            <li><a href="#span-classcodicon-codicon-symbol-enum-member-symbol-enum-memberspanlite_runtime"><span class="codicon codicon-symbol-enum-member symbol-enum-member"></span>LITE_RUNTIME</a></li>
+          </ul>
+        </li>
+        <li><a href="#span-classcodicon-codicon-symbol-enum-symbol-enumspanctype"><span class="codicon codicon-symbol-enum symbol-enum"></span>CType</a>
+          <ul>
+            <li><a href="#span-classcodicon-codicon-symbol-enum-member-symbol-enum-memberspanstring"><span class="codicon codicon-symbol-enum-member symbol-enum-member"></span>STRING</a></li>
+            <li><a href="#span-classcodicon-codicon-symbol-enum-member-symbol-enum-memberspancord"><span class="codicon codicon-symbol-enum-member symbol-enum-member"></span>CORD</a></li>
+            <li><a href="#span-classcodicon-codicon-symbol-enum-member-symbol-enum-memberspanstring_piece"><span class="codicon codicon-symbol-enum-member symbol-enum-member"></span>STRING_PIECE</a></li>
+          </ul>
+        </li>
+        <li><a href="#span-classcodicon-codicon-symbol-enum-symbol-enumspanjstype"><span class="codicon codicon-symbol-enum symbol-enum"></span>JSType</a>
+          <ul>
+            <li><a href="#span-classcodicon-codicon-symbol-enum-member-symbol-enum-memberspanjs_normal"><span class="codicon codicon-symbol-enum-member symbol-enum-member"></span>JS_NORMAL</a></li>
+            <li><a href="#span-classcodicon-codicon-symbol-enum-member-symbol-enum-memberspanjs_string"><span class="codicon codicon-symbol-enum-member symbol-enum-member"></span>JS_STRING</a></li>
+            <li><a href="#span-classcodicon-codicon-symbol-enum-member-symbol-enum-memberspanjs_number"><span class="codicon codicon-symbol-enum-member symbol-enum-member"></span>JS_NUMBER</a></li>
+          </ul>
+        </li>
+        <li><a href="#span-classcodicon-codicon-symbol-enum-symbol-enumspanidempotencylevel"><span class="codicon codicon-symbol-enum symbol-enum"></span>IdempotencyLevel</a>
+          <ul>
+            <li><a href="#span-classcodicon-codicon-symbol-enum-member-symbol-enum-memberspanidempotency_unknown"><span class="codicon codicon-symbol-enum-member symbol-enum-member"></span>IDEMPOTENCY_UNKNOWN</a></li>
+            <li><a href="#span-classcodicon-codicon-symbol-enum-member-symbol-enum-memberspanno_side_effects"><span class="codicon codicon-symbol-enum-member symbol-enum-member"></span>NO_SIDE_EFFECTS</a></li>
+            <li><a href="#span-classcodicon-codicon-symbol-enum-member-symbol-enum-memberspanidempotent"><span class="codicon codicon-symbol-enum-member symbol-enum-member"></span>IDEMPOTENT</a></li>
+          </ul>
+        </li>
       </ul>
     </li>
   </ul>
@@ -163,100 +444,146 @@ weak_dependency (repeated int32) Indexes of the weak imported files in the depen
   <div class="flex justify-center pb-8 w-full">
     <article class="prose">
       <h1 class="h1">Reference: google.protobuf</h1>
-      <h2 id="message-types">Message Types</h2>
-<h3 id="span-classcodicon-codicon-symbol-structure-symbol-structurespanfiledescriptorset"><span class="codicon codicon-symbol-structure symbol-structure"></span>FileDescriptorSet</h3>
+      <h1 id="standalone-message-types">Standalone Message Types</h1>
+<h2 id="span-classcodicon-codicon-symbol-structure-symbol-structurespanfiledescriptorset"><span class="codicon codicon-symbol-structure symbol-structure"></span>FileDescriptorSet</h2>
 <p>The protocol compiler can output a FileDescriptorSet containing the .proto
 files it parses.</p>
-<h4 id="fields">Fields</h4>
-<h5 id="span-classcodicon-codicon-symbol-field-symbol-fieldspanfile-repeated--googleprotobuffiledescriptorprotofiledescriptorproto"><span class="codicon codicon-symbol-field symbol-field"></span>file (repeated  <a href="#filedescriptorproto">google.protobuf.FileDescriptorProto</a>)</h5>
-<h3 id="span-classcodicon-codicon-symbol-structure-symbol-structurespanfiledescriptorproto"><span class="codicon codicon-symbol-structure symbol-structure"></span>FileDescriptorProto</h3>
+<p><span class="h3" aria-level="3">Fields</span></p>
+<h3 id="span-classcodicon-codicon-symbol-field-symbol-fieldspanfile"><span class="codicon codicon-symbol-field symbol-field"></span>file</h3>
+<p>Type: repeated <a href="#filedescriptorproto">google.protobuf.FileDescriptorProto</a></p>
+<hr>
+<h2 id="span-classcodicon-codicon-symbol-structure-symbol-structurespanfiledescriptorproto"><span class="codicon codicon-symbol-structure symbol-structure"></span>FileDescriptorProto</h2>
 <p>Describes a complete .proto file.</p>
-<h4 id="fields-1">Fields</h4>
-<h5 id="span-classcodicon-codicon-symbol-field-symbol-fieldspanname-optional--string"><span class="codicon codicon-symbol-field symbol-field"></span>name (optional  <code>string</code>)</h5>
-<h5 id="span-classcodicon-codicon-symbol-field-symbol-fieldspanpackage-optional--string"><span class="codicon codicon-symbol-field symbol-field"></span>package (optional  <code>string</code>)</h5>
-<h5 id="span-classcodicon-codicon-symbol-field-symbol-fieldspandependency-repeated--string"><span class="codicon codicon-symbol-field symbol-field"></span>dependency (repeated  <code>string</code>)</h5>
+<p><span class="h3" aria-level="3">Fields</span></p>
+<h3 id="span-classcodicon-codicon-symbol-field-symbol-fieldspanname"><span class="codicon codicon-symbol-field symbol-field"></span>name</h3>
+<p>Type: optional <code>string</code></p>
+<h3 id="span-classcodicon-codicon-symbol-field-symbol-fieldspanpackage"><span class="codicon codicon-symbol-field symbol-field"></span>package</h3>
+<p>Type: optional <code>string</code></p>
+<h3 id="span-classcodicon-codicon-symbol-field-symbol-fieldspandependency"><span class="codicon codicon-symbol-field symbol-field"></span>dependency</h3>
+<p>Type: repeated <code>string</code></p>
 <p>Names of files imported by this file.</p>
-<h5 id="span-classcodicon-codicon-symbol-field-symbol-fieldspanpublic_dependency-repeated--int32"><span class="codicon codicon-symbol-field symbol-field"></span>public_dependency (repeated  <code>int32</code>)</h5>
+<h3 id="span-classcodicon-codicon-symbol-field-symbol-fieldspanpublic_dependency"><span class="codicon codicon-symbol-field symbol-field"></span>public_dependency</h3>
+<p>Type: repeated <code>int32</code></p>
 <p>Indexes of the public imported files in the dependency list above.</p>
-<h5 id="span-classcodicon-codicon-symbol-field-symbol-fieldspanweak_dependency-repeated--int32"><span class="codicon codicon-symbol-field symbol-field"></span>weak_dependency (repeated  <code>int32</code>)</h5>
+<h3 id="span-classcodicon-codicon-symbol-field-symbol-fieldspanweak_dependency"><span class="codicon codicon-symbol-field symbol-field"></span>weak_dependency</h3>
+<p>Type: repeated <code>int32</code></p>
 <p>Indexes of the weak imported files in the dependency list.
 For Google-internal migration only. Do not use.</p>
-<h5 id="span-classcodicon-codicon-symbol-field-symbol-fieldspanmessage_type-repeated--googleprotobufdescriptorprotodescriptorproto"><span class="codicon codicon-symbol-field symbol-field"></span>message_type (repeated  <a href="#descriptorproto">google.protobuf.DescriptorProto</a>)</h5>
+<h3 id="span-classcodicon-codicon-symbol-field-symbol-fieldspanmessage_type"><span class="codicon codicon-symbol-field symbol-field"></span>message_type</h3>
+<p>Type: repeated <a href="#descriptorproto">google.protobuf.DescriptorProto</a></p>
 <p>All top-level definitions in this file.</p>
-<h5 id="span-classcodicon-codicon-symbol-field-symbol-fieldspanenum_type-repeated--googleprotobufenumdescriptorprotoenumdescriptorproto"><span class="codicon codicon-symbol-field symbol-field"></span>enum_type (repeated  <a href="#enumdescriptorproto">google.protobuf.EnumDescriptorProto</a>)</h5>
-<h5 id="span-classcodicon-codicon-symbol-field-symbol-fieldspanservice-repeated--googleprotobufservicedescriptorprotoservicedescriptorproto"><span class="codicon codicon-symbol-field symbol-field"></span>service (repeated  <a href="#servicedescriptorproto">google.protobuf.ServiceDescriptorProto</a>)</h5>
-<h5 id="span-classcodicon-codicon-symbol-field-symbol-fieldspanextension-repeated--googleprotobuffielddescriptorprotofielddescriptorproto"><span class="codicon codicon-symbol-field symbol-field"></span>extension (repeated  <a href="#fielddescriptorproto">google.protobuf.FieldDescriptorProto</a>)</h5>
-<h5 id="span-classcodicon-codicon-symbol-field-symbol-fieldspanoptions-optional--googleprotobuffileoptionsfileoptions"><span class="codicon codicon-symbol-field symbol-field"></span>options (optional  <a href="#fileoptions">google.protobuf.FileOptions</a>)</h5>
-<h5 id="span-classcodicon-codicon-symbol-field-symbol-fieldspansource_code_info-optional--googleprotobufsourcecodeinfosourcecodeinfo"><span class="codicon codicon-symbol-field symbol-field"></span>source_code_info (optional  <a href="#sourcecodeinfo">google.protobuf.SourceCodeInfo</a>)</h5>
+<h3 id="span-classcodicon-codicon-symbol-field-symbol-fieldspanenum_type"><span class="codicon codicon-symbol-field symbol-field"></span>enum_type</h3>
+<p>Type: repeated <a href="#enumdescriptorproto">google.protobuf.EnumDescriptorProto</a></p>
+<h3 id="span-classcodicon-codicon-symbol-field-symbol-fieldspanservice"><span class="codicon codicon-symbol-field symbol-field"></span>service</h3>
+<p>Type: repeated <a href="#servicedescriptorproto">google.protobuf.ServiceDescriptorProto</a></p>
+<h3 id="span-classcodicon-codicon-symbol-field-symbol-fieldspanextension"><span class="codicon codicon-symbol-field symbol-field"></span>extension</h3>
+<p>Type: repeated <a href="#fielddescriptorproto">google.protobuf.FieldDescriptorProto</a></p>
+<h3 id="span-classcodicon-codicon-symbol-field-symbol-fieldspanoptions"><span class="codicon codicon-symbol-field symbol-field"></span>options</h3>
+<p>Type: optional <a href="#fileoptions">google.protobuf.FileOptions</a></p>
+<h3 id="span-classcodicon-codicon-symbol-field-symbol-fieldspansource_code_info"><span class="codicon codicon-symbol-field symbol-field"></span>source_code_info</h3>
+<p>Type: optional <a href="#sourcecodeinfo">google.protobuf.SourceCodeInfo</a></p>
 <p>This field contains optional information about the original source code.
 You may safely remove this entire field without harming runtime
 functionality of the descriptors &ndash; the information is needed only by
 development tools.</p>
-<h5 id="span-classcodicon-codicon-symbol-field-symbol-fieldspansyntax-optional--string"><span class="codicon codicon-symbol-field symbol-field"></span>syntax (optional  <code>string</code>)</h5>
+<h3 id="span-classcodicon-codicon-symbol-field-symbol-fieldspansyntax"><span class="codicon codicon-symbol-field symbol-field"></span>syntax</h3>
+<p>Type: optional <code>string</code></p>
 <p>The syntax of the proto file.
 The supported values are &ldquo;proto2&rdquo; and &ldquo;proto3&rdquo;.</p>
-<h3 id="span-classcodicon-codicon-symbol-structure-symbol-structurespandescriptorproto"><span class="codicon codicon-symbol-structure symbol-structure"></span>DescriptorProto</h3>
+<hr>
+<h2 id="span-classcodicon-codicon-symbol-structure-symbol-structurespandescriptorproto"><span class="codicon codicon-symbol-structure symbol-structure"></span>DescriptorProto</h2>
 <p>Describes a message type.</p>
-<h4 id="fields-2">Fields</h4>
-<h5 id="span-classcodicon-codicon-symbol-field-symbol-fieldspanname-optional--string-1"><span class="codicon codicon-symbol-field symbol-field"></span>name (optional  <code>string</code>)</h5>
-<h5 id="span-classcodicon-codicon-symbol-field-symbol-fieldspanfield-repeated--googleprotobuffielddescriptorprotofielddescriptorproto"><span class="codicon codicon-symbol-field symbol-field"></span>field (repeated  <a href="#fielddescriptorproto">google.protobuf.FieldDescriptorProto</a>)</h5>
-<h5 id="span-classcodicon-codicon-symbol-field-symbol-fieldspanextension-repeated--googleprotobuffielddescriptorprotofielddescriptorproto-1"><span class="codicon codicon-symbol-field symbol-field"></span>extension (repeated  <a href="#fielddescriptorproto">google.protobuf.FieldDescriptorProto</a>)</h5>
-<h5 id="span-classcodicon-codicon-symbol-field-symbol-fieldspannested_type-repeated--googleprotobufdescriptorprotodescriptorproto"><span class="codicon codicon-symbol-field symbol-field"></span>nested_type (repeated  <a href="#descriptorproto">google.protobuf.DescriptorProto</a>)</h5>
-<h5 id="span-classcodicon-codicon-symbol-field-symbol-fieldspanenum_type-repeated--googleprotobufenumdescriptorprotoenumdescriptorproto-1"><span class="codicon codicon-symbol-field symbol-field"></span>enum_type (repeated  <a href="#enumdescriptorproto">google.protobuf.EnumDescriptorProto</a>)</h5>
-<h5 id="span-classcodicon-codicon-symbol-field-symbol-fieldspanextension_range-repeated--googleprotobufdescriptorprotoextensionrangedescriptorprotoextensionrange"><span class="codicon codicon-symbol-field symbol-field"></span>extension_range (repeated  <a href="#descriptorprotoextensionrange">google.protobuf.DescriptorProto.ExtensionRange</a>)</h5>
-<h5 id="span-classcodicon-codicon-symbol-field-symbol-fieldspanoneof_decl-repeated--googleprotobufoneofdescriptorprotooneofdescriptorproto"><span class="codicon codicon-symbol-field symbol-field"></span>oneof_decl (repeated  <a href="#oneofdescriptorproto">google.protobuf.OneofDescriptorProto</a>)</h5>
-<h5 id="span-classcodicon-codicon-symbol-field-symbol-fieldspanoptions-optional--googleprotobufmessageoptionsmessageoptions"><span class="codicon codicon-symbol-field symbol-field"></span>options (optional  <a href="#messageoptions">google.protobuf.MessageOptions</a>)</h5>
-<h5 id="span-classcodicon-codicon-symbol-field-symbol-fieldspanreserved_range-repeated--googleprotobufdescriptorprotoreservedrangedescriptorprotoreservedrange"><span class="codicon codicon-symbol-field symbol-field"></span>reserved_range (repeated  <a href="#descriptorprotoreservedrange">google.protobuf.DescriptorProto.ReservedRange</a>)</h5>
-<h5 id="span-classcodicon-codicon-symbol-field-symbol-fieldspanreserved_name-repeated--string"><span class="codicon codicon-symbol-field symbol-field"></span>reserved_name (repeated  <code>string</code>)</h5>
+<p><span class="h3" aria-level="3">Fields</span></p>
+<h3 id="span-classcodicon-codicon-symbol-field-symbol-fieldspanname-1"><span class="codicon codicon-symbol-field symbol-field"></span>name</h3>
+<p>Type: optional <code>string</code></p>
+<h3 id="span-classcodicon-codicon-symbol-field-symbol-fieldspanfield"><span class="codicon codicon-symbol-field symbol-field"></span>field</h3>
+<p>Type: repeated <a href="#fielddescriptorproto">google.protobuf.FieldDescriptorProto</a></p>
+<h3 id="span-classcodicon-codicon-symbol-field-symbol-fieldspanextension-1"><span class="codicon codicon-symbol-field symbol-field"></span>extension</h3>
+<p>Type: repeated <a href="#fielddescriptorproto">google.protobuf.FieldDescriptorProto</a></p>
+<h3 id="span-classcodicon-codicon-symbol-field-symbol-fieldspannested_type"><span class="codicon codicon-symbol-field symbol-field"></span>nested_type</h3>
+<p>Type: repeated <a href="#descriptorproto">google.protobuf.DescriptorProto</a></p>
+<h3 id="span-classcodicon-codicon-symbol-field-symbol-fieldspanenum_type-1"><span class="codicon codicon-symbol-field symbol-field"></span>enum_type</h3>
+<p>Type: repeated <a href="#enumdescriptorproto">google.protobuf.EnumDescriptorProto</a></p>
+<h3 id="span-classcodicon-codicon-symbol-field-symbol-fieldspanextension_range"><span class="codicon codicon-symbol-field symbol-field"></span>extension_range</h3>
+<p>Type: repeated <a href="#descriptorprotoextensionrange">google.protobuf.DescriptorProto.ExtensionRange</a></p>
+<h3 id="span-classcodicon-codicon-symbol-field-symbol-fieldspanoneof_decl"><span class="codicon codicon-symbol-field symbol-field"></span>oneof_decl</h3>
+<p>Type: repeated <a href="#oneofdescriptorproto">google.protobuf.OneofDescriptorProto</a></p>
+<h3 id="span-classcodicon-codicon-symbol-field-symbol-fieldspanoptions-1"><span class="codicon codicon-symbol-field symbol-field"></span>options</h3>
+<p>Type: optional <a href="#messageoptions">google.protobuf.MessageOptions</a></p>
+<h3 id="span-classcodicon-codicon-symbol-field-symbol-fieldspanreserved_range"><span class="codicon codicon-symbol-field symbol-field"></span>reserved_range</h3>
+<p>Type: repeated <a href="#descriptorprotoreservedrange">google.protobuf.DescriptorProto.ReservedRange</a></p>
+<h3 id="span-classcodicon-codicon-symbol-field-symbol-fieldspanreserved_name"><span class="codicon codicon-symbol-field symbol-field"></span>reserved_name</h3>
+<p>Type: repeated <code>string</code></p>
 <p>Reserved field names, which may not be used by fields in the same message.
 A given name may only be reserved once.</p>
-<h3 id="span-classcodicon-codicon-symbol-structure-symbol-structurespandescriptorprotoextensionrange"><span class="codicon codicon-symbol-structure symbol-structure"></span>DescriptorProto.ExtensionRange</h3>
-<h4 id="fields-3">Fields</h4>
-<h5 id="span-classcodicon-codicon-symbol-field-symbol-fieldspanstart-optional--int32"><span class="codicon codicon-symbol-field symbol-field"></span>start (optional  <code>int32</code>)</h5>
-<h5 id="span-classcodicon-codicon-symbol-field-symbol-fieldspanend-optional--int32"><span class="codicon codicon-symbol-field symbol-field"></span>end (optional  <code>int32</code>)</h5>
-<h5 id="span-classcodicon-codicon-symbol-field-symbol-fieldspanoptions-optional--googleprotobufextensionrangeoptionsextensionrangeoptions"><span class="codicon codicon-symbol-field symbol-field"></span>options (optional  <a href="#extensionrangeoptions">google.protobuf.ExtensionRangeOptions</a>)</h5>
-<h3 id="span-classcodicon-codicon-symbol-structure-symbol-structurespandescriptorprotoreservedrange"><span class="codicon codicon-symbol-structure symbol-structure"></span>DescriptorProto.ReservedRange</h3>
-<h4 id="fields-4">Fields</h4>
-<h5 id="span-classcodicon-codicon-symbol-field-symbol-fieldspanstart-optional--int32-1"><span class="codicon codicon-symbol-field symbol-field"></span>start (optional  <code>int32</code>)</h5>
-<h5 id="span-classcodicon-codicon-symbol-field-symbol-fieldspanend-optional--int32-1"><span class="codicon codicon-symbol-field symbol-field"></span>end (optional  <code>int32</code>)</h5>
-<h3 id="span-classcodicon-codicon-symbol-structure-symbol-structurespanextensionrangeoptions"><span class="codicon codicon-symbol-structure symbol-structure"></span>ExtensionRangeOptions</h3>
-<h4 id="fields-5">Fields</h4>
-<h5 id="span-classcodicon-codicon-symbol-field-symbol-fieldspanuninterpreted_option-repeated--googleprotobufuninterpretedoptionuninterpretedoption"><span class="codicon codicon-symbol-field symbol-field"></span>uninterpreted_option (repeated  <a href="#uninterpretedoption">google.protobuf.UninterpretedOption</a>)</h5>
+<hr>
+<h2 id="span-classcodicon-codicon-symbol-structure-symbol-structurespandescriptorprotoextensionrange"><span class="codicon codicon-symbol-structure symbol-structure"></span>DescriptorProto.ExtensionRange</h2>
+<p><span class="h3" aria-level="3">Fields</span></p>
+<h3 id="span-classcodicon-codicon-symbol-field-symbol-fieldspanstart"><span class="codicon codicon-symbol-field symbol-field"></span>start</h3>
+<p>Type: optional <code>int32</code></p>
+<h3 id="span-classcodicon-codicon-symbol-field-symbol-fieldspanend"><span class="codicon codicon-symbol-field symbol-field"></span>end</h3>
+<p>Type: optional <code>int32</code></p>
+<h3 id="span-classcodicon-codicon-symbol-field-symbol-fieldspanoptions-2"><span class="codicon codicon-symbol-field symbol-field"></span>options</h3>
+<p>Type: optional <a href="#extensionrangeoptions">google.protobuf.ExtensionRangeOptions</a></p>
+<hr>
+<h2 id="span-classcodicon-codicon-symbol-structure-symbol-structurespandescriptorprotoreservedrange"><span class="codicon codicon-symbol-structure symbol-structure"></span>DescriptorProto.ReservedRange</h2>
+<p><span class="h3" aria-level="3">Fields</span></p>
+<h3 id="span-classcodicon-codicon-symbol-field-symbol-fieldspanstart-1"><span class="codicon codicon-symbol-field symbol-field"></span>start</h3>
+<p>Type: optional <code>int32</code></p>
+<h3 id="span-classcodicon-codicon-symbol-field-symbol-fieldspanend-1"><span class="codicon codicon-symbol-field symbol-field"></span>end</h3>
+<p>Type: optional <code>int32</code></p>
+<hr>
+<h2 id="span-classcodicon-codicon-symbol-structure-symbol-structurespanextensionrangeoptions"><span class="codicon codicon-symbol-structure symbol-structure"></span>ExtensionRangeOptions</h2>
+<p><span class="h3" aria-level="3">Fields</span></p>
+<h3 id="span-classcodicon-codicon-symbol-field-symbol-fieldspanuninterpreted_option"><span class="codicon codicon-symbol-field symbol-field"></span>uninterpreted_option</h3>
+<p>Type: repeated <a href="#uninterpretedoption">google.protobuf.UninterpretedOption</a></p>
 <p>The parser stores options it doesn&rsquo;t recognize here. See above.</p>
-<h3 id="span-classcodicon-codicon-symbol-structure-symbol-structurespanfielddescriptorproto"><span class="codicon codicon-symbol-structure symbol-structure"></span>FieldDescriptorProto</h3>
+<hr>
+<h2 id="span-classcodicon-codicon-symbol-structure-symbol-structurespanfielddescriptorproto"><span class="codicon codicon-symbol-structure symbol-structure"></span>FieldDescriptorProto</h2>
 <p>Describes a field within a message.</p>
-<h4 id="fields-6">Fields</h4>
-<h5 id="span-classcodicon-codicon-symbol-field-symbol-fieldspanname-optional--string-2"><span class="codicon codicon-symbol-field symbol-field"></span>name (optional  <code>string</code>)</h5>
-<h5 id="span-classcodicon-codicon-symbol-field-symbol-fieldspannumber-optional--int32"><span class="codicon codicon-symbol-field symbol-field"></span>number (optional  <code>int32</code>)</h5>
-<h5 id="span-classcodicon-codicon-symbol-field-symbol-fieldspanlabel-unhandled--type"><span class="codicon codicon-symbol-field symbol-field"></span>label (UNHANDLED | TYPE)</h5>
-<h5 id="span-classcodicon-codicon-symbol-field-symbol-fieldspantype-unhandled--type"><span class="codicon codicon-symbol-field symbol-field"></span>type (UNHANDLED | TYPE)</h5>
+<p><span class="h3" aria-level="3">Fields</span></p>
+<h3 id="span-classcodicon-codicon-symbol-field-symbol-fieldspanname-2"><span class="codicon codicon-symbol-field symbol-field"></span>name</h3>
+<p>Type: optional <code>string</code></p>
+<h3 id="span-classcodicon-codicon-symbol-field-symbol-fieldspannumber"><span class="codicon codicon-symbol-field symbol-field"></span>number</h3>
+<p>Type: optional <code>int32</code></p>
+<h3 id="span-classcodicon-codicon-symbol-field-symbol-fieldspanlabel"><span class="codicon codicon-symbol-field symbol-field"></span>label</h3>
+<p>Type: UNHANDLED | TYPE</p>
+<h3 id="span-classcodicon-codicon-symbol-field-symbol-fieldspantype"><span class="codicon codicon-symbol-field symbol-field"></span>type</h3>
+<p>Type: UNHANDLED | TYPE</p>
 <p>If type_name is set, this need not be set.  If both this and type_name
 are set, this must be one of TYPE_ENUM, TYPE_MESSAGE or TYPE_GROUP.</p>
-<h5 id="span-classcodicon-codicon-symbol-field-symbol-fieldspantype_name-optional--string"><span class="codicon codicon-symbol-field symbol-field"></span>type_name (optional  <code>string</code>)</h5>
+<h3 id="span-classcodicon-codicon-symbol-field-symbol-fieldspantype_name"><span class="codicon codicon-symbol-field symbol-field"></span>type_name</h3>
+<p>Type: optional <code>string</code></p>
 <p>For message and enum types, this is the name of the type.  If the name
 starts with a &lsquo;.&rsquo;, it is fully-qualified.  Otherwise, C++-like scoping
 rules are used to find the type (i.e. first the nested types within this
 message are searched, then within the parent, on up to the root
 namespace).</p>
-<h5 id="span-classcodicon-codicon-symbol-field-symbol-fieldspanextendee-optional--string"><span class="codicon codicon-symbol-field symbol-field"></span>extendee (optional  <code>string</code>)</h5>
+<h3 id="span-classcodicon-codicon-symbol-field-symbol-fieldspanextendee"><span class="codicon codicon-symbol-field symbol-field"></span>extendee</h3>
+<p>Type: optional <code>string</code></p>
 <p>For extensions, this is the name of the type being extended.  It is
 resolved in the same manner as type_name.</p>
-<h5 id="span-classcodicon-codicon-symbol-field-symbol-fieldspandefault_value-optional--string"><span class="codicon codicon-symbol-field symbol-field"></span>default_value (optional  <code>string</code>)</h5>
+<h3 id="span-classcodicon-codicon-symbol-field-symbol-fieldspandefault_value"><span class="codicon codicon-symbol-field symbol-field"></span>default_value</h3>
+<p>Type: optional <code>string</code></p>
 <p>For numeric types, contains the original text representation of the value.
 For booleans, &ldquo;true&rdquo; or &ldquo;false&rdquo;.
 For strings, contains the default text contents (not escaped in any way).
 For bytes, contains the C escaped value.  All bytes &gt;= 128 are escaped.
 TODO(kenton):  Base-64 encode?</p>
-<h5 id="span-classcodicon-codicon-symbol-field-symbol-fieldspanoneof_index-optional--int32"><span class="codicon codicon-symbol-field symbol-field"></span>oneof_index (optional  <code>int32</code>)</h5>
+<h3 id="span-classcodicon-codicon-symbol-field-symbol-fieldspanoneof_index"><span class="codicon codicon-symbol-field symbol-field"></span>oneof_index</h3>
+<p>Type: optional <code>int32</code></p>
 <p>If set, gives the index of a oneof in the containing type&rsquo;s oneof_decl
 list.  This field is a member of that oneof.</p>
-<h5 id="span-classcodicon-codicon-symbol-field-symbol-fieldspanjson_name-optional--string"><span class="codicon codicon-symbol-field symbol-field"></span>json_name (optional  <code>string</code>)</h5>
+<h3 id="span-classcodicon-codicon-symbol-field-symbol-fieldspanjson_name"><span class="codicon codicon-symbol-field symbol-field"></span>json_name</h3>
+<p>Type: optional <code>string</code></p>
 <p>JSON name of this field. The value is set by protocol compiler. If the
 user has set a &ldquo;json_name&rdquo; option on this field, that option&rsquo;s value
 will be used. Otherwise, it&rsquo;s deduced from the field&rsquo;s name by converting
 it to camelCase.</p>
-<h5 id="span-classcodicon-codicon-symbol-field-symbol-fieldspanoptions-optional--googleprotobuffieldoptionsfieldoptions"><span class="codicon codicon-symbol-field symbol-field"></span>options (optional  <a href="#fieldoptions">google.protobuf.FieldOptions</a>)</h5>
-<h5 id="span-classcodicon-codicon-symbol-field-symbol-fieldspanproto3_optional-optional--bool"><span class="codicon codicon-symbol-field symbol-field"></span>proto3_optional (optional  <code>bool</code>)</h5>
+<h3 id="span-classcodicon-codicon-symbol-field-symbol-fieldspanoptions-3"><span class="codicon codicon-symbol-field symbol-field"></span>options</h3>
+<p>Type: optional <a href="#fieldoptions">google.protobuf.FieldOptions</a></p>
+<h3 id="span-classcodicon-codicon-symbol-field-symbol-fieldspanproto3_optional"><span class="codicon codicon-symbol-field symbol-field"></span>proto3_optional</h3>
+<p>Type: optional <code>bool</code></p>
 <p>If true, this is a proto3 &ldquo;optional&rdquo;. When a proto3 field is optional, it
 tracks presence regardless of field type.</p>
 <p>When proto3_optional is true, this field must be belong to a oneof to
@@ -275,84 +602,119 @@ tell if a field is a message or an enum, so it must always create a
 synthetic oneof.</p>
 <p>Proto2 optional fields do not set this flag, because they already indicate
 optional with <code>LABEL_OPTIONAL</code>.</p>
-<h3 id="span-classcodicon-codicon-symbol-structure-symbol-structurespanoneofdescriptorproto"><span class="codicon codicon-symbol-structure symbol-structure"></span>OneofDescriptorProto</h3>
+<hr>
+<h2 id="span-classcodicon-codicon-symbol-structure-symbol-structurespanoneofdescriptorproto"><span class="codicon codicon-symbol-structure symbol-structure"></span>OneofDescriptorProto</h2>
 <p>Describes a oneof.</p>
-<h4 id="fields-7">Fields</h4>
-<h5 id="span-classcodicon-codicon-symbol-field-symbol-fieldspanname-optional--string-3"><span class="codicon codicon-symbol-field symbol-field"></span>name (optional  <code>string</code>)</h5>
-<h5 id="span-classcodicon-codicon-symbol-field-symbol-fieldspanoptions-optional--googleprotobufoneofoptionsoneofoptions"><span class="codicon codicon-symbol-field symbol-field"></span>options (optional  <a href="#oneofoptions">google.protobuf.OneofOptions</a>)</h5>
-<h3 id="span-classcodicon-codicon-symbol-structure-symbol-structurespanenumdescriptorproto"><span class="codicon codicon-symbol-structure symbol-structure"></span>EnumDescriptorProto</h3>
+<p><span class="h3" aria-level="3">Fields</span></p>
+<h3 id="span-classcodicon-codicon-symbol-field-symbol-fieldspanname-3"><span class="codicon codicon-symbol-field symbol-field"></span>name</h3>
+<p>Type: optional <code>string</code></p>
+<h3 id="span-classcodicon-codicon-symbol-field-symbol-fieldspanoptions-4"><span class="codicon codicon-symbol-field symbol-field"></span>options</h3>
+<p>Type: optional <a href="#oneofoptions">google.protobuf.OneofOptions</a></p>
+<hr>
+<h2 id="span-classcodicon-codicon-symbol-structure-symbol-structurespanenumdescriptorproto"><span class="codicon codicon-symbol-structure symbol-structure"></span>EnumDescriptorProto</h2>
 <p>Describes an enum type.</p>
-<h4 id="fields-8">Fields</h4>
-<h5 id="span-classcodicon-codicon-symbol-field-symbol-fieldspanname-optional--string-4"><span class="codicon codicon-symbol-field symbol-field"></span>name (optional  <code>string</code>)</h5>
-<h5 id="span-classcodicon-codicon-symbol-field-symbol-fieldspanvalue-repeated--googleprotobufenumvaluedescriptorprotoenumvaluedescriptorproto"><span class="codicon codicon-symbol-field symbol-field"></span>value (repeated  <a href="#enumvaluedescriptorproto">google.protobuf.EnumValueDescriptorProto</a>)</h5>
-<h5 id="span-classcodicon-codicon-symbol-field-symbol-fieldspanoptions-optional--googleprotobufenumoptionsenumoptions"><span class="codicon codicon-symbol-field symbol-field"></span>options (optional  <a href="#enumoptions">google.protobuf.EnumOptions</a>)</h5>
-<h5 id="span-classcodicon-codicon-symbol-field-symbol-fieldspanreserved_range-repeated--googleprotobufenumdescriptorprotoenumreservedrangeenumdescriptorprotoenumreservedrange"><span class="codicon codicon-symbol-field symbol-field"></span>reserved_range (repeated  <a href="#enumdescriptorprotoenumreservedrange">google.protobuf.EnumDescriptorProto.EnumReservedRange</a>)</h5>
+<p><span class="h3" aria-level="3">Fields</span></p>
+<h3 id="span-classcodicon-codicon-symbol-field-symbol-fieldspanname-4"><span class="codicon codicon-symbol-field symbol-field"></span>name</h3>
+<p>Type: optional <code>string</code></p>
+<h3 id="span-classcodicon-codicon-symbol-field-symbol-fieldspanvalue"><span class="codicon codicon-symbol-field symbol-field"></span>value</h3>
+<p>Type: repeated <a href="#enumvaluedescriptorproto">google.protobuf.EnumValueDescriptorProto</a></p>
+<h3 id="span-classcodicon-codicon-symbol-field-symbol-fieldspanoptions-5"><span class="codicon codicon-symbol-field symbol-field"></span>options</h3>
+<p>Type: optional <a href="#enumoptions">google.protobuf.EnumOptions</a></p>
+<h3 id="span-classcodicon-codicon-symbol-field-symbol-fieldspanreserved_range-1"><span class="codicon codicon-symbol-field symbol-field"></span>reserved_range</h3>
+<p>Type: repeated <a href="#enumdescriptorprotoenumreservedrange">google.protobuf.EnumDescriptorProto.EnumReservedRange</a></p>
 <p>Range of reserved numeric values. Reserved numeric values may not be used
 by enum values in the same enum declaration. Reserved ranges may not
 overlap.</p>
-<h5 id="span-classcodicon-codicon-symbol-field-symbol-fieldspanreserved_name-repeated--string-1"><span class="codicon codicon-symbol-field symbol-field"></span>reserved_name (repeated  <code>string</code>)</h5>
+<h3 id="span-classcodicon-codicon-symbol-field-symbol-fieldspanreserved_name-1"><span class="codicon codicon-symbol-field symbol-field"></span>reserved_name</h3>
+<p>Type: repeated <code>string</code></p>
 <p>Reserved enum value names, which may not be reused. A given name may only
 be reserved once.</p>
-<h3 id="span-classcodicon-codicon-symbol-structure-symbol-structurespanenumdescriptorprotoenumreservedrange"><span class="codicon codicon-symbol-structure symbol-structure"></span>EnumDescriptorProto.EnumReservedRange</h3>
-<h4 id="fields-9">Fields</h4>
-<h5 id="span-classcodicon-codicon-symbol-field-symbol-fieldspanstart-optional--int32-2"><span class="codicon codicon-symbol-field symbol-field"></span>start (optional  <code>int32</code>)</h5>
-<h5 id="span-classcodicon-codicon-symbol-field-symbol-fieldspanend-optional--int32-2"><span class="codicon codicon-symbol-field symbol-field"></span>end (optional  <code>int32</code>)</h5>
-<h3 id="span-classcodicon-codicon-symbol-structure-symbol-structurespanenumvaluedescriptorproto"><span class="codicon codicon-symbol-structure symbol-structure"></span>EnumValueDescriptorProto</h3>
+<hr>
+<h2 id="span-classcodicon-codicon-symbol-structure-symbol-structurespanenumdescriptorprotoenumreservedrange"><span class="codicon codicon-symbol-structure symbol-structure"></span>EnumDescriptorProto.EnumReservedRange</h2>
+<p><span class="h3" aria-level="3">Fields</span></p>
+<h3 id="span-classcodicon-codicon-symbol-field-symbol-fieldspanstart-2"><span class="codicon codicon-symbol-field symbol-field"></span>start</h3>
+<p>Type: optional <code>int32</code></p>
+<h3 id="span-classcodicon-codicon-symbol-field-symbol-fieldspanend-2"><span class="codicon codicon-symbol-field symbol-field"></span>end</h3>
+<p>Type: optional <code>int32</code></p>
+<hr>
+<h2 id="span-classcodicon-codicon-symbol-structure-symbol-structurespanenumvaluedescriptorproto"><span class="codicon codicon-symbol-structure symbol-structure"></span>EnumValueDescriptorProto</h2>
 <p>Describes a value within an enum.</p>
-<h4 id="fields-10">Fields</h4>
-<h5 id="span-classcodicon-codicon-symbol-field-symbol-fieldspanname-optional--string-5"><span class="codicon codicon-symbol-field symbol-field"></span>name (optional  <code>string</code>)</h5>
-<h5 id="span-classcodicon-codicon-symbol-field-symbol-fieldspannumber-optional--int32-1"><span class="codicon codicon-symbol-field symbol-field"></span>number (optional  <code>int32</code>)</h5>
-<h5 id="span-classcodicon-codicon-symbol-field-symbol-fieldspanoptions-optional--googleprotobufenumvalueoptionsenumvalueoptions"><span class="codicon codicon-symbol-field symbol-field"></span>options (optional  <a href="#enumvalueoptions">google.protobuf.EnumValueOptions</a>)</h5>
-<h3 id="span-classcodicon-codicon-symbol-structure-symbol-structurespanservicedescriptorproto"><span class="codicon codicon-symbol-structure symbol-structure"></span>ServiceDescriptorProto</h3>
+<p><span class="h3" aria-level="3">Fields</span></p>
+<h3 id="span-classcodicon-codicon-symbol-field-symbol-fieldspanname-5"><span class="codicon codicon-symbol-field symbol-field"></span>name</h3>
+<p>Type: optional <code>string</code></p>
+<h3 id="span-classcodicon-codicon-symbol-field-symbol-fieldspannumber-1"><span class="codicon codicon-symbol-field symbol-field"></span>number</h3>
+<p>Type: optional <code>int32</code></p>
+<h3 id="span-classcodicon-codicon-symbol-field-symbol-fieldspanoptions-6"><span class="codicon codicon-symbol-field symbol-field"></span>options</h3>
+<p>Type: optional <a href="#enumvalueoptions">google.protobuf.EnumValueOptions</a></p>
+<hr>
+<h2 id="span-classcodicon-codicon-symbol-structure-symbol-structurespanservicedescriptorproto"><span class="codicon codicon-symbol-structure symbol-structure"></span>ServiceDescriptorProto</h2>
 <p>Describes a service.</p>
-<h4 id="fields-11">Fields</h4>
-<h5 id="span-classcodicon-codicon-symbol-field-symbol-fieldspanname-optional--string-6"><span class="codicon codicon-symbol-field symbol-field"></span>name (optional  <code>string</code>)</h5>
-<h5 id="span-classcodicon-codicon-symbol-field-symbol-fieldspanmethod-repeated--googleprotobufmethoddescriptorprotomethoddescriptorproto"><span class="codicon codicon-symbol-field symbol-field"></span>method (repeated  <a href="#methoddescriptorproto">google.protobuf.MethodDescriptorProto</a>)</h5>
-<h5 id="span-classcodicon-codicon-symbol-field-symbol-fieldspanoptions-optional--googleprotobufserviceoptionsserviceoptions"><span class="codicon codicon-symbol-field symbol-field"></span>options (optional  <a href="#serviceoptions">google.protobuf.ServiceOptions</a>)</h5>
-<h3 id="span-classcodicon-codicon-symbol-structure-symbol-structurespanmethoddescriptorproto"><span class="codicon codicon-symbol-structure symbol-structure"></span>MethodDescriptorProto</h3>
+<p><span class="h3" aria-level="3">Fields</span></p>
+<h3 id="span-classcodicon-codicon-symbol-field-symbol-fieldspanname-6"><span class="codicon codicon-symbol-field symbol-field"></span>name</h3>
+<p>Type: optional <code>string</code></p>
+<h3 id="span-classcodicon-codicon-symbol-field-symbol-fieldspanmethod"><span class="codicon codicon-symbol-field symbol-field"></span>method</h3>
+<p>Type: repeated <a href="#methoddescriptorproto">google.protobuf.MethodDescriptorProto</a></p>
+<h3 id="span-classcodicon-codicon-symbol-field-symbol-fieldspanoptions-7"><span class="codicon codicon-symbol-field symbol-field"></span>options</h3>
+<p>Type: optional <a href="#serviceoptions">google.protobuf.ServiceOptions</a></p>
+<hr>
+<h2 id="span-classcodicon-codicon-symbol-structure-symbol-structurespanmethoddescriptorproto"><span class="codicon codicon-symbol-structure symbol-structure"></span>MethodDescriptorProto</h2>
 <p>Describes a method of a service.</p>
-<h4 id="fields-12">Fields</h4>
-<h5 id="span-classcodicon-codicon-symbol-field-symbol-fieldspanname-optional--string-7"><span class="codicon codicon-symbol-field symbol-field"></span>name (optional  <code>string</code>)</h5>
-<h5 id="span-classcodicon-codicon-symbol-field-symbol-fieldspaninput_type-optional--string"><span class="codicon codicon-symbol-field symbol-field"></span>input_type (optional  <code>string</code>)</h5>
+<p><span class="h3" aria-level="3">Fields</span></p>
+<h3 id="span-classcodicon-codicon-symbol-field-symbol-fieldspanname-7"><span class="codicon codicon-symbol-field symbol-field"></span>name</h3>
+<p>Type: optional <code>string</code></p>
+<h3 id="span-classcodicon-codicon-symbol-field-symbol-fieldspaninput_type"><span class="codicon codicon-symbol-field symbol-field"></span>input_type</h3>
+<p>Type: optional <code>string</code></p>
 <p>Input and output type names.  These are resolved in the same way as
 FieldDescriptorProto.type_name, but must refer to a message type.</p>
-<h5 id="span-classcodicon-codicon-symbol-field-symbol-fieldspanoutput_type-optional--string"><span class="codicon codicon-symbol-field symbol-field"></span>output_type (optional  <code>string</code>)</h5>
-<h5 id="span-classcodicon-codicon-symbol-field-symbol-fieldspanoptions-optional--googleprotobufmethodoptionsmethodoptions"><span class="codicon codicon-symbol-field symbol-field"></span>options (optional  <a href="#methodoptions">google.protobuf.MethodOptions</a>)</h5>
-<h5 id="span-classcodicon-codicon-symbol-field-symbol-fieldspanclient_streaming-optional--bool"><span class="codicon codicon-symbol-field symbol-field"></span>client_streaming (optional  <code>bool</code>)</h5>
+<h3 id="span-classcodicon-codicon-symbol-field-symbol-fieldspanoutput_type"><span class="codicon codicon-symbol-field symbol-field"></span>output_type</h3>
+<p>Type: optional <code>string</code></p>
+<h3 id="span-classcodicon-codicon-symbol-field-symbol-fieldspanoptions-8"><span class="codicon codicon-symbol-field symbol-field"></span>options</h3>
+<p>Type: optional <a href="#methodoptions">google.protobuf.MethodOptions</a></p>
+<h3 id="span-classcodicon-codicon-symbol-field-symbol-fieldspanclient_streaming"><span class="codicon codicon-symbol-field symbol-field"></span>client_streaming</h3>
+<p>Type: optional <code>bool</code></p>
 <p>Identifies if client streams multiple client messages</p>
-<h5 id="span-classcodicon-codicon-symbol-field-symbol-fieldspanserver_streaming-optional--bool"><span class="codicon codicon-symbol-field symbol-field"></span>server_streaming (optional  <code>bool</code>)</h5>
+<h3 id="span-classcodicon-codicon-symbol-field-symbol-fieldspanserver_streaming"><span class="codicon codicon-symbol-field symbol-field"></span>server_streaming</h3>
+<p>Type: optional <code>bool</code></p>
 <p>Identifies if server streams multiple server messages</p>
-<h3 id="span-classcodicon-codicon-symbol-structure-symbol-structurespanfileoptions"><span class="codicon codicon-symbol-structure symbol-structure"></span>FileOptions</h3>
-<h4 id="fields-13">Fields</h4>
-<h5 id="span-classcodicon-codicon-symbol-field-symbol-fieldspanjava_package-optional--string"><span class="codicon codicon-symbol-field symbol-field"></span>java_package (optional  <code>string</code>)</h5>
+<hr>
+<h2 id="span-classcodicon-codicon-symbol-structure-symbol-structurespanfileoptions"><span class="codicon codicon-symbol-structure symbol-structure"></span>FileOptions</h2>
+<p><span class="h3" aria-level="3">Fields</span></p>
+<h3 id="span-classcodicon-codicon-symbol-field-symbol-fieldspanjava_package"><span class="codicon codicon-symbol-field symbol-field"></span>java_package</h3>
+<p>Type: optional <code>string</code></p>
 <p>Sets the Java package where classes generated from this .proto will be
 placed.  By default, the proto package is used, but this is often
 inappropriate because proto packages do not normally start with backwards
 domain names.</p>
-<h5 id="span-classcodicon-codicon-symbol-field-symbol-fieldspanjava_outer_classname-optional--string"><span class="codicon codicon-symbol-field symbol-field"></span>java_outer_classname (optional  <code>string</code>)</h5>
+<h3 id="span-classcodicon-codicon-symbol-field-symbol-fieldspanjava_outer_classname"><span class="codicon codicon-symbol-field symbol-field"></span>java_outer_classname</h3>
+<p>Type: optional <code>string</code></p>
 <p>Controls the name of the wrapper Java class generated for the .proto file.
 That class will always contain the .proto file&rsquo;s getDescriptor() method as
 well as any top-level extensions defined in the .proto file.
 If java_multiple_files is disabled, then all the other classes from the
 .proto file will be nested inside the single wrapper outer class.</p>
-<h5 id="span-classcodicon-codicon-symbol-field-symbol-fieldspanjava_multiple_files-optional--bool"><span class="codicon codicon-symbol-field symbol-field"></span>java_multiple_files (optional  <code>bool</code>)</h5>
+<h3 id="span-classcodicon-codicon-symbol-field-symbol-fieldspanjava_multiple_files"><span class="codicon codicon-symbol-field symbol-field"></span>java_multiple_files</h3>
+<p>Type: optional <code>bool</code></p>
 <p>If enabled, then the Java code generator will generate a separate .java
 file for each top-level message, enum, and service defined in the .proto
 file.  Thus, these types will <em>not</em> be nested inside the wrapper class
 named by java_outer_classname.  However, the wrapper class will still be
 generated to contain the file&rsquo;s getDescriptor() method as well as any
 top-level extensions defined in the file.</p>
-<h5 id="span-classcodicon-codicon-symbol-field-symbol-fieldspanjava_generate_equals_and_hash-optional--bool"><span class="codicon codicon-symbol-field symbol-field"></span>java_generate_equals_and_hash (optional  <code>bool</code>)</h5>
+<h3 id="span-classcodicon-codicon-symbol-field-symbol-fieldspanjava_generate_equals_and_hash"><span class="codicon codicon-symbol-field symbol-field"></span>java_generate_equals_and_hash</h3>
+<p>Type: optional <code>bool</code></p>
 <p>This option does nothing.</p>
-<h5 id="span-classcodicon-codicon-symbol-field-symbol-fieldspanjava_string_check_utf8-optional--bool"><span class="codicon codicon-symbol-field symbol-field"></span>java_string_check_utf8 (optional  <code>bool</code>)</h5>
+<h3 id="span-classcodicon-codicon-symbol-field-symbol-fieldspanjava_string_check_utf8"><span class="codicon codicon-symbol-field symbol-field"></span>java_string_check_utf8</h3>
+<p>Type: optional <code>bool</code></p>
 <p>If set true, then the Java2 code generator will generate code that
 throws an exception whenever an attempt is made to assign a non-UTF-8
 byte sequence to a string field.
 Message reflection will do the same.
 However, an extension field still accepts non-UTF-8 byte sequences.
 This option has no effect on when used with the lite runtime.</p>
-<h5 id="span-classcodicon-codicon-symbol-field-symbol-fieldspanoptimize_for-unhandled--type"><span class="codicon codicon-symbol-field symbol-field"></span>optimize_for (UNHANDLED | TYPE)</h5>
-<h5 id="span-classcodicon-codicon-symbol-field-symbol-fieldspango_package-optional--string"><span class="codicon codicon-symbol-field symbol-field"></span>go_package (optional  <code>string</code>)</h5>
+<h3 id="span-classcodicon-codicon-symbol-field-symbol-fieldspanoptimize_for"><span class="codicon codicon-symbol-field symbol-field"></span>optimize_for</h3>
+<p>Type: UNHANDLED | TYPE</p>
+<h3 id="span-classcodicon-codicon-symbol-field-symbol-fieldspango_package"><span class="codicon codicon-symbol-field symbol-field"></span>go_package</h3>
+<p>Type: optional <code>string</code></p>
 <p>Sets the Go package where structs generated from this .proto will be
 placed. If omitted, the Go package will be derived from the following:</p>
 <ul>
@@ -360,7 +722,8 @@ placed. If omitted, the Go package will be derived from the following:</p>
 <li>Otherwise, the package statement in the .proto file, if present.</li>
 <li>Otherwise, the basename of the .proto file, without extension.</li>
 </ul>
-<h5 id="span-classcodicon-codicon-symbol-field-symbol-fieldspancc_generic_services-optional--bool"><span class="codicon codicon-symbol-field symbol-field"></span>cc_generic_services (optional  <code>bool</code>)</h5>
+<h3 id="span-classcodicon-codicon-symbol-field-symbol-fieldspancc_generic_services"><span class="codicon codicon-symbol-field symbol-field"></span>cc_generic_services</h3>
+<p>Type: optional <code>bool</code></p>
 <p>Should generic services be generated in each language?  &ldquo;Generic&rdquo; services
 are not specific to any particular RPC system.  They are generated by the
 main code generators in each language (without additional plugins).
@@ -370,48 +733,63 @@ early versions of google.protobuf.</p>
 that generate code specific to your particular RPC system.  Therefore,
 these default to false.  Old code which depends on generic services should
 explicitly set them to true.</p>
-<h5 id="span-classcodicon-codicon-symbol-field-symbol-fieldspanjava_generic_services-optional--bool"><span class="codicon codicon-symbol-field symbol-field"></span>java_generic_services (optional  <code>bool</code>)</h5>
-<h5 id="span-classcodicon-codicon-symbol-field-symbol-fieldspanpy_generic_services-optional--bool"><span class="codicon codicon-symbol-field symbol-field"></span>py_generic_services (optional  <code>bool</code>)</h5>
-<h5 id="span-classcodicon-codicon-symbol-field-symbol-fieldspanphp_generic_services-optional--bool"><span class="codicon codicon-symbol-field symbol-field"></span>php_generic_services (optional  <code>bool</code>)</h5>
-<h5 id="span-classcodicon-codicon-symbol-field-symbol-fieldspandeprecated-optional--bool"><span class="codicon codicon-symbol-field symbol-field"></span>deprecated (optional  <code>bool</code>)</h5>
+<h3 id="span-classcodicon-codicon-symbol-field-symbol-fieldspanjava_generic_services"><span class="codicon codicon-symbol-field symbol-field"></span>java_generic_services</h3>
+<p>Type: optional <code>bool</code></p>
+<h3 id="span-classcodicon-codicon-symbol-field-symbol-fieldspanpy_generic_services"><span class="codicon codicon-symbol-field symbol-field"></span>py_generic_services</h3>
+<p>Type: optional <code>bool</code></p>
+<h3 id="span-classcodicon-codicon-symbol-field-symbol-fieldspanphp_generic_services"><span class="codicon codicon-symbol-field symbol-field"></span>php_generic_services</h3>
+<p>Type: optional <code>bool</code></p>
+<h3 id="span-classcodicon-codicon-symbol-field-symbol-fieldspandeprecated"><span class="codicon codicon-symbol-field symbol-field"></span>deprecated</h3>
+<p>Type: optional <code>bool</code></p>
 <p>Is this file deprecated?
 Depending on the target platform, this can emit Deprecated annotations
 for everything in the file, or it will be completely ignored; in the very
 least, this is a formalization for deprecating files.</p>
-<h5 id="span-classcodicon-codicon-symbol-field-symbol-fieldspancc_enable_arenas-optional--bool"><span class="codicon codicon-symbol-field symbol-field"></span>cc_enable_arenas (optional  <code>bool</code>)</h5>
+<h3 id="span-classcodicon-codicon-symbol-field-symbol-fieldspancc_enable_arenas"><span class="codicon codicon-symbol-field symbol-field"></span>cc_enable_arenas</h3>
+<p>Type: optional <code>bool</code></p>
 <p>Enables the use of arenas for the proto messages in this file. This applies
 only to generated classes for C++.</p>
-<h5 id="span-classcodicon-codicon-symbol-field-symbol-fieldspanobjc_class_prefix-optional--string"><span class="codicon codicon-symbol-field symbol-field"></span>objc_class_prefix (optional  <code>string</code>)</h5>
+<h3 id="span-classcodicon-codicon-symbol-field-symbol-fieldspanobjc_class_prefix"><span class="codicon codicon-symbol-field symbol-field"></span>objc_class_prefix</h3>
+<p>Type: optional <code>string</code></p>
 <p>Sets the objective c class prefix which is prepended to all objective c
 generated classes from this .proto. There is no default.</p>
-<h5 id="span-classcodicon-codicon-symbol-field-symbol-fieldspancsharp_namespace-optional--string"><span class="codicon codicon-symbol-field symbol-field"></span>csharp_namespace (optional  <code>string</code>)</h5>
+<h3 id="span-classcodicon-codicon-symbol-field-symbol-fieldspancsharp_namespace"><span class="codicon codicon-symbol-field symbol-field"></span>csharp_namespace</h3>
+<p>Type: optional <code>string</code></p>
 <p>Namespace for generated classes; defaults to the package.</p>
-<h5 id="span-classcodicon-codicon-symbol-field-symbol-fieldspanswift_prefix-optional--string"><span class="codicon codicon-symbol-field symbol-field"></span>swift_prefix (optional  <code>string</code>)</h5>
+<h3 id="span-classcodicon-codicon-symbol-field-symbol-fieldspanswift_prefix"><span class="codicon codicon-symbol-field symbol-field"></span>swift_prefix</h3>
+<p>Type: optional <code>string</code></p>
 <p>By default Swift generators will take the proto package and CamelCase it
 replacing &lsquo;.&rsquo; with underscore and use that to prefix the types/symbols
 defined. When this options is provided, they will use this value instead
 to prefix the types/symbols defined.</p>
-<h5 id="span-classcodicon-codicon-symbol-field-symbol-fieldspanphp_class_prefix-optional--string"><span class="codicon codicon-symbol-field symbol-field"></span>php_class_prefix (optional  <code>string</code>)</h5>
+<h3 id="span-classcodicon-codicon-symbol-field-symbol-fieldspanphp_class_prefix"><span class="codicon codicon-symbol-field symbol-field"></span>php_class_prefix</h3>
+<p>Type: optional <code>string</code></p>
 <p>Sets the php class prefix which is prepended to all php generated classes
 from this .proto. Default is empty.</p>
-<h5 id="span-classcodicon-codicon-symbol-field-symbol-fieldspanphp_namespace-optional--string"><span class="codicon codicon-symbol-field symbol-field"></span>php_namespace (optional  <code>string</code>)</h5>
+<h3 id="span-classcodicon-codicon-symbol-field-symbol-fieldspanphp_namespace"><span class="codicon codicon-symbol-field symbol-field"></span>php_namespace</h3>
+<p>Type: optional <code>string</code></p>
 <p>Use this option to change the namespace of php generated classes. Default
 is empty. When this option is empty, the package name will be used for
 determining the namespace.</p>
-<h5 id="span-classcodicon-codicon-symbol-field-symbol-fieldspanphp_metadata_namespace-optional--string"><span class="codicon codicon-symbol-field symbol-field"></span>php_metadata_namespace (optional  <code>string</code>)</h5>
+<h3 id="span-classcodicon-codicon-symbol-field-symbol-fieldspanphp_metadata_namespace"><span class="codicon codicon-symbol-field symbol-field"></span>php_metadata_namespace</h3>
+<p>Type: optional <code>string</code></p>
 <p>Use this option to change the namespace of php generated metadata classes.
 Default is empty. When this option is empty, the proto file name will be
 used for determining the namespace.</p>
-<h5 id="span-classcodicon-codicon-symbol-field-symbol-fieldspanruby_package-optional--string"><span class="codicon codicon-symbol-field symbol-field"></span>ruby_package (optional  <code>string</code>)</h5>
+<h3 id="span-classcodicon-codicon-symbol-field-symbol-fieldspanruby_package"><span class="codicon codicon-symbol-field symbol-field"></span>ruby_package</h3>
+<p>Type: optional <code>string</code></p>
 <p>Use this option to change the package of ruby generated classes. Default
 is empty. When this option is not set, the package name will be used for
 determining the ruby package.</p>
-<h5 id="span-classcodicon-codicon-symbol-field-symbol-fieldspanuninterpreted_option-repeated--googleprotobufuninterpretedoptionuninterpretedoption-1"><span class="codicon codicon-symbol-field symbol-field"></span>uninterpreted_option (repeated  <a href="#uninterpretedoption">google.protobuf.UninterpretedOption</a>)</h5>
+<h3 id="span-classcodicon-codicon-symbol-field-symbol-fieldspanuninterpreted_option-1"><span class="codicon codicon-symbol-field symbol-field"></span>uninterpreted_option</h3>
+<p>Type: repeated <a href="#uninterpretedoption">google.protobuf.UninterpretedOption</a></p>
 <p>The parser stores options it doesn&rsquo;t recognize here.
 See the documentation for the &ldquo;Options&rdquo; section above.</p>
-<h3 id="span-classcodicon-codicon-symbol-structure-symbol-structurespanmessageoptions"><span class="codicon codicon-symbol-structure symbol-structure"></span>MessageOptions</h3>
-<h4 id="fields-14">Fields</h4>
-<h5 id="span-classcodicon-codicon-symbol-field-symbol-fieldspanmessage_set_wire_format-optional--bool"><span class="codicon codicon-symbol-field symbol-field"></span>message_set_wire_format (optional  <code>bool</code>)</h5>
+<hr>
+<h2 id="span-classcodicon-codicon-symbol-structure-symbol-structurespanmessageoptions"><span class="codicon codicon-symbol-structure symbol-structure"></span>MessageOptions</h2>
+<p><span class="h3" aria-level="3">Fields</span></p>
+<h3 id="span-classcodicon-codicon-symbol-field-symbol-fieldspanmessage_set_wire_format"><span class="codicon codicon-symbol-field symbol-field"></span>message_set_wire_format</h3>
+<p>Type: optional <code>bool</code></p>
 <p>Set true to use the old proto1 MessageSet wire format for extensions.
 This is provided for backwards-compatibility with the MessageSet wire
 format.  You should not use this for any other reason:  It&rsquo;s less
@@ -427,16 +805,19 @@ have extensions.</p>
 be int32s, enums, or repeated messages.</p>
 <p>Because this is an option, the above two restrictions are not enforced by
 the protocol compiler.</p>
-<h5 id="span-classcodicon-codicon-symbol-field-symbol-fieldspanno_standard_descriptor_accessor-optional--bool"><span class="codicon codicon-symbol-field symbol-field"></span>no_standard_descriptor_accessor (optional  <code>bool</code>)</h5>
+<h3 id="span-classcodicon-codicon-symbol-field-symbol-fieldspanno_standard_descriptor_accessor"><span class="codicon codicon-symbol-field symbol-field"></span>no_standard_descriptor_accessor</h3>
+<p>Type: optional <code>bool</code></p>
 <p>Disables the generation of the standard &ldquo;descriptor()&rdquo; accessor, which can
 conflict with a field of the same name.  This is meant to make migration
 from proto1 easier; new code should avoid fields named &ldquo;descriptor&rdquo;.</p>
-<h5 id="span-classcodicon-codicon-symbol-field-symbol-fieldspandeprecated-optional--bool-1"><span class="codicon codicon-symbol-field symbol-field"></span>deprecated (optional  <code>bool</code>)</h5>
+<h3 id="span-classcodicon-codicon-symbol-field-symbol-fieldspandeprecated-1"><span class="codicon codicon-symbol-field symbol-field"></span>deprecated</h3>
+<p>Type: optional <code>bool</code></p>
 <p>Is this message deprecated?
 Depending on the target platform, this can emit Deprecated annotations
 for the message, or it will be completely ignored; in the very least,
 this is a formalization for deprecating messages.</p>
-<h5 id="span-classcodicon-codicon-symbol-field-symbol-fieldspanmap_entry-optional--bool"><span class="codicon codicon-symbol-field symbol-field"></span>map_entry (optional  <code>bool</code>)</h5>
+<h3 id="span-classcodicon-codicon-symbol-field-symbol-fieldspanmap_entry"><span class="codicon codicon-symbol-field symbol-field"></span>map_entry</h3>
+<p>Type: optional <code>bool</code></p>
 <p>Whether the message is an automatically generated map entry type for the
 maps field.</p>
 <p>For maps fields:
@@ -455,22 +836,27 @@ if the field is a repeated message field.</p>
 <p>NOTE: Do not set the option in .proto files. Always use the maps syntax
 instead. The option should only be implicitly set by the proto compiler
 parser.</p>
-<h5 id="span-classcodicon-codicon-symbol-field-symbol-fieldspanuninterpreted_option-repeated--googleprotobufuninterpretedoptionuninterpretedoption-2"><span class="codicon codicon-symbol-field symbol-field"></span>uninterpreted_option (repeated  <a href="#uninterpretedoption">google.protobuf.UninterpretedOption</a>)</h5>
+<h3 id="span-classcodicon-codicon-symbol-field-symbol-fieldspanuninterpreted_option-2"><span class="codicon codicon-symbol-field symbol-field"></span>uninterpreted_option</h3>
+<p>Type: repeated <a href="#uninterpretedoption">google.protobuf.UninterpretedOption</a></p>
 <p>The parser stores options it doesn&rsquo;t recognize here. See above.</p>
-<h3 id="span-classcodicon-codicon-symbol-structure-symbol-structurespanfieldoptions"><span class="codicon codicon-symbol-structure symbol-structure"></span>FieldOptions</h3>
-<h4 id="fields-15">Fields</h4>
-<h5 id="span-classcodicon-codicon-symbol-field-symbol-fieldspanctype-unhandled--type"><span class="codicon codicon-symbol-field symbol-field"></span>ctype (UNHANDLED | TYPE)</h5>
+<hr>
+<h2 id="span-classcodicon-codicon-symbol-structure-symbol-structurespanfieldoptions"><span class="codicon codicon-symbol-structure symbol-structure"></span>FieldOptions</h2>
+<p><span class="h3" aria-level="3">Fields</span></p>
+<h3 id="span-classcodicon-codicon-symbol-field-symbol-fieldspanctype"><span class="codicon codicon-symbol-field symbol-field"></span>ctype</h3>
+<p>Type: UNHANDLED | TYPE</p>
 <p>The ctype option instructs the C++ code generator to use a different
 representation of the field than it normally would.  See the specific
 options below.  This option is not yet implemented in the open source
 release &ndash; sorry, we&rsquo;ll try to include it in a future version!</p>
-<h5 id="span-classcodicon-codicon-symbol-field-symbol-fieldspanpacked-optional--bool"><span class="codicon codicon-symbol-field symbol-field"></span>packed (optional  <code>bool</code>)</h5>
+<h3 id="span-classcodicon-codicon-symbol-field-symbol-fieldspanpacked"><span class="codicon codicon-symbol-field symbol-field"></span>packed</h3>
+<p>Type: optional <code>bool</code></p>
 <p>The packed option can be enabled for repeated primitive fields to enable
 a more efficient representation on the wire. Rather than repeatedly
 writing the tag and type for each element, the entire array is encoded as
 a single length-delimited blob. In proto3, only explicit setting it to
 false will avoid using packed encoding.</p>
-<h5 id="span-classcodicon-codicon-symbol-field-symbol-fieldspanjstype-unhandled--type"><span class="codicon codicon-symbol-field symbol-field"></span>jstype (UNHANDLED | TYPE)</h5>
+<h3 id="span-classcodicon-codicon-symbol-field-symbol-fieldspanjstype"><span class="codicon codicon-symbol-field symbol-field"></span>jstype</h3>
+<p>Type: UNHANDLED | TYPE</p>
 <p>The jstype option determines the JavaScript type used for values of the
 field.  The option is permitted only for 64 bit integral and fixed types
 (int64, uint64, sint64, fixed64, sfixed64).  A field with jstype JS_STRING
@@ -481,7 +867,8 @@ use the JavaScript &ldquo;number&rdquo; type.  The behavior of the default optio
 JS_NORMAL is implementation dependent.</p>
 <p>This option is an enum to permit additional types to be added, e.g.
 goog.math.Integer.</p>
-<h5 id="span-classcodicon-codicon-symbol-field-symbol-fieldspanlazy-optional--bool"><span class="codicon codicon-symbol-field symbol-field"></span>lazy (optional  <code>bool</code>)</h5>
+<h3 id="span-classcodicon-codicon-symbol-field-symbol-fieldspanlazy"><span class="codicon codicon-symbol-field symbol-field"></span>lazy</h3>
+<p>Type: optional <code>bool</code></p>
 <p>Should this field be parsed lazily?  Lazy applies only to message-type
 fields.  It means that when the outer message is initially parsed, the
 inner message&rsquo;s contents will not be parsed but instead stored in encoded
@@ -506,85 +893,117 @@ must be consistent about it.  That is, for any particular sub-message, the
 implementation must either <em>always</em> check its required fields, or <em>never</em>
 check its required fields, regardless of whether or not the message has
 been parsed.</p>
-<h5 id="span-classcodicon-codicon-symbol-field-symbol-fieldspandeprecated-optional--bool-2"><span class="codicon codicon-symbol-field symbol-field"></span>deprecated (optional  <code>bool</code>)</h5>
+<h3 id="span-classcodicon-codicon-symbol-field-symbol-fieldspandeprecated-2"><span class="codicon codicon-symbol-field symbol-field"></span>deprecated</h3>
+<p>Type: optional <code>bool</code></p>
 <p>Is this field deprecated?
 Depending on the target platform, this can emit Deprecated annotations
 for accessors, or it will be completely ignored; in the very least, this
 is a formalization for deprecating fields.</p>
-<h5 id="span-classcodicon-codicon-symbol-field-symbol-fieldspanweak-optional--bool"><span class="codicon codicon-symbol-field symbol-field"></span>weak (optional  <code>bool</code>)</h5>
+<h3 id="span-classcodicon-codicon-symbol-field-symbol-fieldspanweak"><span class="codicon codicon-symbol-field symbol-field"></span>weak</h3>
+<p>Type: optional <code>bool</code></p>
 <p>For Google-internal migration only. Do not use.</p>
-<h5 id="span-classcodicon-codicon-symbol-field-symbol-fieldspanuninterpreted_option-repeated--googleprotobufuninterpretedoptionuninterpretedoption-3"><span class="codicon codicon-symbol-field symbol-field"></span>uninterpreted_option (repeated  <a href="#uninterpretedoption">google.protobuf.UninterpretedOption</a>)</h5>
+<h3 id="span-classcodicon-codicon-symbol-field-symbol-fieldspanuninterpreted_option-3"><span class="codicon codicon-symbol-field symbol-field"></span>uninterpreted_option</h3>
+<p>Type: repeated <a href="#uninterpretedoption">google.protobuf.UninterpretedOption</a></p>
 <p>The parser stores options it doesn&rsquo;t recognize here. See above.</p>
-<h3 id="span-classcodicon-codicon-symbol-structure-symbol-structurespanoneofoptions"><span class="codicon codicon-symbol-structure symbol-structure"></span>OneofOptions</h3>
-<h4 id="fields-16">Fields</h4>
-<h5 id="span-classcodicon-codicon-symbol-field-symbol-fieldspanuninterpreted_option-repeated--googleprotobufuninterpretedoptionuninterpretedoption-4"><span class="codicon codicon-symbol-field symbol-field"></span>uninterpreted_option (repeated  <a href="#uninterpretedoption">google.protobuf.UninterpretedOption</a>)</h5>
+<hr>
+<h2 id="span-classcodicon-codicon-symbol-structure-symbol-structurespanoneofoptions"><span class="codicon codicon-symbol-structure symbol-structure"></span>OneofOptions</h2>
+<p><span class="h3" aria-level="3">Fields</span></p>
+<h3 id="span-classcodicon-codicon-symbol-field-symbol-fieldspanuninterpreted_option-4"><span class="codicon codicon-symbol-field symbol-field"></span>uninterpreted_option</h3>
+<p>Type: repeated <a href="#uninterpretedoption">google.protobuf.UninterpretedOption</a></p>
 <p>The parser stores options it doesn&rsquo;t recognize here. See above.</p>
-<h3 id="span-classcodicon-codicon-symbol-structure-symbol-structurespanenumoptions"><span class="codicon codicon-symbol-structure symbol-structure"></span>EnumOptions</h3>
-<h4 id="fields-17">Fields</h4>
-<h5 id="span-classcodicon-codicon-symbol-field-symbol-fieldspanallow_alias-optional--bool"><span class="codicon codicon-symbol-field symbol-field"></span>allow_alias (optional  <code>bool</code>)</h5>
+<hr>
+<h2 id="span-classcodicon-codicon-symbol-structure-symbol-structurespanenumoptions"><span class="codicon codicon-symbol-structure symbol-structure"></span>EnumOptions</h2>
+<p><span class="h3" aria-level="3">Fields</span></p>
+<h3 id="span-classcodicon-codicon-symbol-field-symbol-fieldspanallow_alias"><span class="codicon codicon-symbol-field symbol-field"></span>allow_alias</h3>
+<p>Type: optional <code>bool</code></p>
 <p>Set this option to true to allow mapping different tag names to the same
 value.</p>
-<h5 id="span-classcodicon-codicon-symbol-field-symbol-fieldspandeprecated-optional--bool-3"><span class="codicon codicon-symbol-field symbol-field"></span>deprecated (optional  <code>bool</code>)</h5>
+<h3 id="span-classcodicon-codicon-symbol-field-symbol-fieldspandeprecated-3"><span class="codicon codicon-symbol-field symbol-field"></span>deprecated</h3>
+<p>Type: optional <code>bool</code></p>
 <p>Is this enum deprecated?
 Depending on the target platform, this can emit Deprecated annotations
 for the enum, or it will be completely ignored; in the very least, this
 is a formalization for deprecating enums.</p>
-<h5 id="span-classcodicon-codicon-symbol-field-symbol-fieldspanuninterpreted_option-repeated--googleprotobufuninterpretedoptionuninterpretedoption-5"><span class="codicon codicon-symbol-field symbol-field"></span>uninterpreted_option (repeated  <a href="#uninterpretedoption">google.protobuf.UninterpretedOption</a>)</h5>
+<h3 id="span-classcodicon-codicon-symbol-field-symbol-fieldspanuninterpreted_option-5"><span class="codicon codicon-symbol-field symbol-field"></span>uninterpreted_option</h3>
+<p>Type: repeated <a href="#uninterpretedoption">google.protobuf.UninterpretedOption</a></p>
 <p>The parser stores options it doesn&rsquo;t recognize here. See above.</p>
-<h3 id="span-classcodicon-codicon-symbol-structure-symbol-structurespanenumvalueoptions"><span class="codicon codicon-symbol-structure symbol-structure"></span>EnumValueOptions</h3>
-<h4 id="fields-18">Fields</h4>
-<h5 id="span-classcodicon-codicon-symbol-field-symbol-fieldspandeprecated-optional--bool-4"><span class="codicon codicon-symbol-field symbol-field"></span>deprecated (optional  <code>bool</code>)</h5>
+<hr>
+<h2 id="span-classcodicon-codicon-symbol-structure-symbol-structurespanenumvalueoptions"><span class="codicon codicon-symbol-structure symbol-structure"></span>EnumValueOptions</h2>
+<p><span class="h3" aria-level="3">Fields</span></p>
+<h3 id="span-classcodicon-codicon-symbol-field-symbol-fieldspandeprecated-4"><span class="codicon codicon-symbol-field symbol-field"></span>deprecated</h3>
+<p>Type: optional <code>bool</code></p>
 <p>Is this enum value deprecated?
 Depending on the target platform, this can emit Deprecated annotations
 for the enum value, or it will be completely ignored; in the very least,
 this is a formalization for deprecating enum values.</p>
-<h5 id="span-classcodicon-codicon-symbol-field-symbol-fieldspanuninterpreted_option-repeated--googleprotobufuninterpretedoptionuninterpretedoption-6"><span class="codicon codicon-symbol-field symbol-field"></span>uninterpreted_option (repeated  <a href="#uninterpretedoption">google.protobuf.UninterpretedOption</a>)</h5>
+<h3 id="span-classcodicon-codicon-symbol-field-symbol-fieldspanuninterpreted_option-6"><span class="codicon codicon-symbol-field symbol-field"></span>uninterpreted_option</h3>
+<p>Type: repeated <a href="#uninterpretedoption">google.protobuf.UninterpretedOption</a></p>
 <p>The parser stores options it doesn&rsquo;t recognize here. See above.</p>
-<h3 id="span-classcodicon-codicon-symbol-structure-symbol-structurespanserviceoptions"><span class="codicon codicon-symbol-structure symbol-structure"></span>ServiceOptions</h3>
-<h4 id="fields-19">Fields</h4>
-<h5 id="span-classcodicon-codicon-symbol-field-symbol-fieldspandeprecated-optional--bool-5"><span class="codicon codicon-symbol-field symbol-field"></span>deprecated (optional  <code>bool</code>)</h5>
+<hr>
+<h2 id="span-classcodicon-codicon-symbol-structure-symbol-structurespanserviceoptions"><span class="codicon codicon-symbol-structure symbol-structure"></span>ServiceOptions</h2>
+<p><span class="h3" aria-level="3">Fields</span></p>
+<h3 id="span-classcodicon-codicon-symbol-field-symbol-fieldspandeprecated-5"><span class="codicon codicon-symbol-field symbol-field"></span>deprecated</h3>
+<p>Type: optional <code>bool</code></p>
 <p>Is this service deprecated?
 Depending on the target platform, this can emit Deprecated annotations
 for the service, or it will be completely ignored; in the very least,
 this is a formalization for deprecating services.</p>
-<h5 id="span-classcodicon-codicon-symbol-field-symbol-fieldspanuninterpreted_option-repeated--googleprotobufuninterpretedoptionuninterpretedoption-7"><span class="codicon codicon-symbol-field symbol-field"></span>uninterpreted_option (repeated  <a href="#uninterpretedoption">google.protobuf.UninterpretedOption</a>)</h5>
+<h3 id="span-classcodicon-codicon-symbol-field-symbol-fieldspanuninterpreted_option-7"><span class="codicon codicon-symbol-field symbol-field"></span>uninterpreted_option</h3>
+<p>Type: repeated <a href="#uninterpretedoption">google.protobuf.UninterpretedOption</a></p>
 <p>The parser stores options it doesn&rsquo;t recognize here. See above.</p>
-<h3 id="span-classcodicon-codicon-symbol-structure-symbol-structurespanmethodoptions"><span class="codicon codicon-symbol-structure symbol-structure"></span>MethodOptions</h3>
-<h4 id="fields-20">Fields</h4>
-<h5 id="span-classcodicon-codicon-symbol-field-symbol-fieldspandeprecated-optional--bool-6"><span class="codicon codicon-symbol-field symbol-field"></span>deprecated (optional  <code>bool</code>)</h5>
+<hr>
+<h2 id="span-classcodicon-codicon-symbol-structure-symbol-structurespanmethodoptions"><span class="codicon codicon-symbol-structure symbol-structure"></span>MethodOptions</h2>
+<p><span class="h3" aria-level="3">Fields</span></p>
+<h3 id="span-classcodicon-codicon-symbol-field-symbol-fieldspandeprecated-6"><span class="codicon codicon-symbol-field symbol-field"></span>deprecated</h3>
+<p>Type: optional <code>bool</code></p>
 <p>Is this method deprecated?
 Depending on the target platform, this can emit Deprecated annotations
 for the method, or it will be completely ignored; in the very least,
 this is a formalization for deprecating methods.</p>
-<h5 id="span-classcodicon-codicon-symbol-field-symbol-fieldspanidempotency_level-unhandled--type"><span class="codicon codicon-symbol-field symbol-field"></span>idempotency_level (UNHANDLED | TYPE)</h5>
-<h5 id="span-classcodicon-codicon-symbol-field-symbol-fieldspanuninterpreted_option-repeated--googleprotobufuninterpretedoptionuninterpretedoption-8"><span class="codicon codicon-symbol-field symbol-field"></span>uninterpreted_option (repeated  <a href="#uninterpretedoption">google.protobuf.UninterpretedOption</a>)</h5>
+<h3 id="span-classcodicon-codicon-symbol-field-symbol-fieldspanidempotency_level"><span class="codicon codicon-symbol-field symbol-field"></span>idempotency_level</h3>
+<p>Type: UNHANDLED | TYPE</p>
+<h3 id="span-classcodicon-codicon-symbol-field-symbol-fieldspanuninterpreted_option-8"><span class="codicon codicon-symbol-field symbol-field"></span>uninterpreted_option</h3>
+<p>Type: repeated <a href="#uninterpretedoption">google.protobuf.UninterpretedOption</a></p>
 <p>The parser stores options it doesn&rsquo;t recognize here. See above.</p>
-<h3 id="span-classcodicon-codicon-symbol-structure-symbol-structurespanuninterpretedoption"><span class="codicon codicon-symbol-structure symbol-structure"></span>UninterpretedOption</h3>
+<hr>
+<h2 id="span-classcodicon-codicon-symbol-structure-symbol-structurespanuninterpretedoption"><span class="codicon codicon-symbol-structure symbol-structure"></span>UninterpretedOption</h2>
 <p>A message representing a option the parser does not recognize. This only
 appears in options protos created by the compiler::Parser class.
 DescriptorPool resolves these when building Descriptor objects. Therefore,
 options protos in descriptor objects (e.g. returned by Descriptor::options(),
 or produced by Descriptor::CopyTo()) will never have UninterpretedOptions
 in them.</p>
-<h4 id="fields-21">Fields</h4>
-<h5 id="span-classcodicon-codicon-symbol-field-symbol-fieldspanname-repeated--googleprotobufuninterpretedoptionnamepartuninterpretedoptionnamepart"><span class="codicon codicon-symbol-field symbol-field"></span>name (repeated  <a href="#uninterpretedoptionnamepart">google.protobuf.UninterpretedOption.NamePart</a>)</h5>
-<h5 id="span-classcodicon-codicon-symbol-field-symbol-fieldspanidentifier_value-optional--string"><span class="codicon codicon-symbol-field symbol-field"></span>identifier_value (optional  <code>string</code>)</h5>
+<p><span class="h3" aria-level="3">Fields</span></p>
+<h3 id="span-classcodicon-codicon-symbol-field-symbol-fieldspanname-8"><span class="codicon codicon-symbol-field symbol-field"></span>name</h3>
+<p>Type: repeated <a href="#uninterpretedoptionnamepart">google.protobuf.UninterpretedOption.NamePart</a></p>
+<h3 id="span-classcodicon-codicon-symbol-field-symbol-fieldspanidentifier_value"><span class="codicon codicon-symbol-field symbol-field"></span>identifier_value</h3>
+<p>Type: optional <code>string</code></p>
 <p>The value of the uninterpreted option, in whatever type the tokenizer
 identified it as during parsing. Exactly one of these should be set.</p>
-<h5 id="span-classcodicon-codicon-symbol-field-symbol-fieldspanpositive_int_value-optional--uint64"><span class="codicon codicon-symbol-field symbol-field"></span>positive_int_value (optional  <code>uint64</code>)</h5>
-<h5 id="span-classcodicon-codicon-symbol-field-symbol-fieldspannegative_int_value-optional--int64"><span class="codicon codicon-symbol-field symbol-field"></span>negative_int_value (optional  <code>int64</code>)</h5>
-<h5 id="span-classcodicon-codicon-symbol-field-symbol-fieldspandouble_value-optional--double"><span class="codicon codicon-symbol-field symbol-field"></span>double_value (optional  <code>double</code>)</h5>
-<h5 id="span-classcodicon-codicon-symbol-field-symbol-fieldspanstring_value-optional--bytes"><span class="codicon codicon-symbol-field symbol-field"></span>string_value (optional  <code>bytes</code>)</h5>
-<h5 id="span-classcodicon-codicon-symbol-field-symbol-fieldspanaggregate_value-optional--string"><span class="codicon codicon-symbol-field symbol-field"></span>aggregate_value (optional  <code>string</code>)</h5>
-<h3 id="span-classcodicon-codicon-symbol-structure-symbol-structurespanuninterpretedoptionnamepart"><span class="codicon codicon-symbol-structure symbol-structure"></span>UninterpretedOption.NamePart</h3>
-<h4 id="fields-22">Fields</h4>
-<h5 id="span-classcodicon-codicon-symbol-field-symbol-fieldspanname_part--string"><span class="codicon codicon-symbol-field symbol-field"></span>name_part ( <code>string</code>)</h5>
-<h5 id="span-classcodicon-codicon-symbol-field-symbol-fieldspanis_extension--bool"><span class="codicon codicon-symbol-field symbol-field"></span>is_extension ( <code>bool</code>)</h5>
-<h3 id="span-classcodicon-codicon-symbol-structure-symbol-structurespansourcecodeinfo"><span class="codicon codicon-symbol-structure symbol-structure"></span>SourceCodeInfo</h3>
+<h3 id="span-classcodicon-codicon-symbol-field-symbol-fieldspanpositive_int_value"><span class="codicon codicon-symbol-field symbol-field"></span>positive_int_value</h3>
+<p>Type: optional <code>uint64</code></p>
+<h3 id="span-classcodicon-codicon-symbol-field-symbol-fieldspannegative_int_value"><span class="codicon codicon-symbol-field symbol-field"></span>negative_int_value</h3>
+<p>Type: optional <code>int64</code></p>
+<h3 id="span-classcodicon-codicon-symbol-field-symbol-fieldspandouble_value"><span class="codicon codicon-symbol-field symbol-field"></span>double_value</h3>
+<p>Type: optional <code>double</code></p>
+<h3 id="span-classcodicon-codicon-symbol-field-symbol-fieldspanstring_value"><span class="codicon codicon-symbol-field symbol-field"></span>string_value</h3>
+<p>Type: optional <code>bytes</code></p>
+<h3 id="span-classcodicon-codicon-symbol-field-symbol-fieldspanaggregate_value"><span class="codicon codicon-symbol-field symbol-field"></span>aggregate_value</h3>
+<p>Type: optional <code>string</code></p>
+<hr>
+<h2 id="span-classcodicon-codicon-symbol-structure-symbol-structurespanuninterpretedoptionnamepart"><span class="codicon codicon-symbol-structure symbol-structure"></span>UninterpretedOption.NamePart</h2>
+<p><span class="h3" aria-level="3">Fields</span></p>
+<h3 id="span-classcodicon-codicon-symbol-field-symbol-fieldspanname_part"><span class="codicon codicon-symbol-field symbol-field"></span>name_part</h3>
+<p>Type: <code>string</code></p>
+<h3 id="span-classcodicon-codicon-symbol-field-symbol-fieldspanis_extension"><span class="codicon codicon-symbol-field symbol-field"></span>is_extension</h3>
+<p>Type: <code>bool</code></p>
+<hr>
+<h2 id="span-classcodicon-codicon-symbol-structure-symbol-structurespansourcecodeinfo"><span class="codicon codicon-symbol-structure symbol-structure"></span>SourceCodeInfo</h2>
 <p>Encapsulates information about the original source file from which a
 FileDescriptorProto was generated.</p>
-<h4 id="fields-23">Fields</h4>
-<h5 id="span-classcodicon-codicon-symbol-field-symbol-fieldspanlocation-repeated--googleprotobufsourcecodeinfolocationsourcecodeinfolocation"><span class="codicon codicon-symbol-field symbol-field"></span>location (repeated  <a href="#sourcecodeinfolocation">google.protobuf.SourceCodeInfo.Location</a>)</h5>
+<p><span class="h3" aria-level="3">Fields</span></p>
+<h3 id="span-classcodicon-codicon-symbol-field-symbol-fieldspanlocation"><span class="codicon codicon-symbol-field symbol-field"></span>location</h3>
+<p>Type: repeated <a href="#sourcecodeinfolocation">google.protobuf.SourceCodeInfo.Location</a></p>
 <p>A Location identifies a piece of source code in a .proto file which
 corresponds to a particular definition.  This information is intended
 to be useful to IDEs, code indexers, documentation generators, and similar
@@ -628,67 +1047,85 @@ corresponding to the type and field and their components will overlap.</li>
 ignore those that it doesn&rsquo;t understand, as more types of locations could
 be recorded in the future.</li>
 </ul>
-<h3 id="span-classcodicon-codicon-symbol-structure-symbol-structurespansourcecodeinfolocation"><span class="codicon codicon-symbol-structure symbol-structure"></span>SourceCodeInfo.Location</h3>
-<h4 id="fields-24">Fields</h4>
-<h5 id="span-classcodicon-codicon-symbol-field-symbol-fieldspanpath-repeated--int32"><span class="codicon codicon-symbol-field symbol-field"></span>path (repeated  <code>int32</code>)</h5>
-<h5 id="span-classcodicon-codicon-symbol-field-symbol-fieldspanspan-repeated--int32"><span class="codicon codicon-symbol-field symbol-field"></span>span (repeated  <code>int32</code>)</h5>
-<h5 id="span-classcodicon-codicon-symbol-field-symbol-fieldspanleading_comments-optional--string"><span class="codicon codicon-symbol-field symbol-field"></span>leading_comments (optional  <code>string</code>)</h5>
-<h5 id="span-classcodicon-codicon-symbol-field-symbol-fieldspantrailing_comments-optional--string"><span class="codicon codicon-symbol-field symbol-field"></span>trailing_comments (optional  <code>string</code>)</h5>
-<h5 id="span-classcodicon-codicon-symbol-field-symbol-fieldspanleading_detached_comments-repeated--string"><span class="codicon codicon-symbol-field symbol-field"></span>leading_detached_comments (repeated  <code>string</code>)</h5>
-<h3 id="span-classcodicon-codicon-symbol-structure-symbol-structurespangeneratedcodeinfo"><span class="codicon codicon-symbol-structure symbol-structure"></span>GeneratedCodeInfo</h3>
+<hr>
+<h2 id="span-classcodicon-codicon-symbol-structure-symbol-structurespansourcecodeinfolocation"><span class="codicon codicon-symbol-structure symbol-structure"></span>SourceCodeInfo.Location</h2>
+<p><span class="h3" aria-level="3">Fields</span></p>
+<h3 id="span-classcodicon-codicon-symbol-field-symbol-fieldspanpath"><span class="codicon codicon-symbol-field symbol-field"></span>path</h3>
+<p>Type: repeated <code>int32</code></p>
+<h3 id="span-classcodicon-codicon-symbol-field-symbol-fieldspanspan"><span class="codicon codicon-symbol-field symbol-field"></span>span</h3>
+<p>Type: repeated <code>int32</code></p>
+<h3 id="span-classcodicon-codicon-symbol-field-symbol-fieldspanleading_comments"><span class="codicon codicon-symbol-field symbol-field"></span>leading_comments</h3>
+<p>Type: optional <code>string</code></p>
+<h3 id="span-classcodicon-codicon-symbol-field-symbol-fieldspantrailing_comments"><span class="codicon codicon-symbol-field symbol-field"></span>trailing_comments</h3>
+<p>Type: optional <code>string</code></p>
+<h3 id="span-classcodicon-codicon-symbol-field-symbol-fieldspanleading_detached_comments"><span class="codicon codicon-symbol-field symbol-field"></span>leading_detached_comments</h3>
+<p>Type: repeated <code>string</code></p>
+<hr>
+<h2 id="span-classcodicon-codicon-symbol-structure-symbol-structurespangeneratedcodeinfo"><span class="codicon codicon-symbol-structure symbol-structure"></span>GeneratedCodeInfo</h2>
 <p>Describes the relationship between generated code and its original source
 file. A GeneratedCodeInfo message is associated with only one generated
 source file, but may contain references to different source .proto files.</p>
-<h4 id="fields-25">Fields</h4>
-<h5 id="span-classcodicon-codicon-symbol-field-symbol-fieldspanannotation-repeated--googleprotobufgeneratedcodeinfoannotationgeneratedcodeinfoannotation"><span class="codicon codicon-symbol-field symbol-field"></span>annotation (repeated  <a href="#generatedcodeinfoannotation">google.protobuf.GeneratedCodeInfo.Annotation</a>)</h5>
+<p><span class="h3" aria-level="3">Fields</span></p>
+<h3 id="span-classcodicon-codicon-symbol-field-symbol-fieldspanannotation"><span class="codicon codicon-symbol-field symbol-field"></span>annotation</h3>
+<p>Type: repeated <a href="#generatedcodeinfoannotation">google.protobuf.GeneratedCodeInfo.Annotation</a></p>
 <p>An Annotation connects some span of text in generated code to an element
 of its generating .proto file.</p>
-<h3 id="span-classcodicon-codicon-symbol-structure-symbol-structurespangeneratedcodeinfoannotation"><span class="codicon codicon-symbol-structure symbol-structure"></span>GeneratedCodeInfo.Annotation</h3>
-<h4 id="fields-26">Fields</h4>
-<h5 id="span-classcodicon-codicon-symbol-field-symbol-fieldspanpath-repeated--int32-1"><span class="codicon codicon-symbol-field symbol-field"></span>path (repeated  <code>int32</code>)</h5>
-<h5 id="span-classcodicon-codicon-symbol-field-symbol-fieldspansource_file-optional--string"><span class="codicon codicon-symbol-field symbol-field"></span>source_file (optional  <code>string</code>)</h5>
-<h5 id="span-classcodicon-codicon-symbol-field-symbol-fieldspanbegin-optional--int32"><span class="codicon codicon-symbol-field symbol-field"></span>begin (optional  <code>int32</code>)</h5>
-<h5 id="span-classcodicon-codicon-symbol-field-symbol-fieldspanend-optional--int32-3"><span class="codicon codicon-symbol-field symbol-field"></span>end (optional  <code>int32</code>)</h5>
-<h2 id="enums">Enums</h2>
-<h3 id="span-classcodicon-codicon-symbol-enum-symbol-enumspantype"><span class="codicon codicon-symbol-enum symbol-enum"></span>Type</h3>
-<h4 id="span-classcodicon-codicon-symbol-enum-member-symbol-enum-memberspantype_double"><span class="codicon codicon-symbol-enum-member symbol-enum-member"></span>TYPE_DOUBLE</h4>
-<h4 id="span-classcodicon-codicon-symbol-enum-member-symbol-enum-memberspantype_float"><span class="codicon codicon-symbol-enum-member symbol-enum-member"></span>TYPE_FLOAT</h4>
-<h4 id="span-classcodicon-codicon-symbol-enum-member-symbol-enum-memberspantype_int64"><span class="codicon codicon-symbol-enum-member symbol-enum-member"></span>TYPE_INT64</h4>
-<h4 id="span-classcodicon-codicon-symbol-enum-member-symbol-enum-memberspantype_uint64"><span class="codicon codicon-symbol-enum-member symbol-enum-member"></span>TYPE_UINT64</h4>
-<h4 id="span-classcodicon-codicon-symbol-enum-member-symbol-enum-memberspantype_int32"><span class="codicon codicon-symbol-enum-member symbol-enum-member"></span>TYPE_INT32</h4>
-<h4 id="span-classcodicon-codicon-symbol-enum-member-symbol-enum-memberspantype_fixed64"><span class="codicon codicon-symbol-enum-member symbol-enum-member"></span>TYPE_FIXED64</h4>
-<h4 id="span-classcodicon-codicon-symbol-enum-member-symbol-enum-memberspantype_fixed32"><span class="codicon codicon-symbol-enum-member symbol-enum-member"></span>TYPE_FIXED32</h4>
-<h4 id="span-classcodicon-codicon-symbol-enum-member-symbol-enum-memberspantype_bool"><span class="codicon codicon-symbol-enum-member symbol-enum-member"></span>TYPE_BOOL</h4>
-<h4 id="span-classcodicon-codicon-symbol-enum-member-symbol-enum-memberspantype_string"><span class="codicon codicon-symbol-enum-member symbol-enum-member"></span>TYPE_STRING</h4>
-<h4 id="span-classcodicon-codicon-symbol-enum-member-symbol-enum-memberspantype_group"><span class="codicon codicon-symbol-enum-member symbol-enum-member"></span>TYPE_GROUP</h4>
-<h4 id="span-classcodicon-codicon-symbol-enum-member-symbol-enum-memberspantype_message"><span class="codicon codicon-symbol-enum-member symbol-enum-member"></span>TYPE_MESSAGE</h4>
-<h4 id="span-classcodicon-codicon-symbol-enum-member-symbol-enum-memberspantype_bytes"><span class="codicon codicon-symbol-enum-member symbol-enum-member"></span>TYPE_BYTES</h4>
-<h4 id="span-classcodicon-codicon-symbol-enum-member-symbol-enum-memberspantype_uint32"><span class="codicon codicon-symbol-enum-member symbol-enum-member"></span>TYPE_UINT32</h4>
-<h4 id="span-classcodicon-codicon-symbol-enum-member-symbol-enum-memberspantype_enum"><span class="codicon codicon-symbol-enum-member symbol-enum-member"></span>TYPE_ENUM</h4>
-<h4 id="span-classcodicon-codicon-symbol-enum-member-symbol-enum-memberspantype_sfixed32"><span class="codicon codicon-symbol-enum-member symbol-enum-member"></span>TYPE_SFIXED32</h4>
-<h4 id="span-classcodicon-codicon-symbol-enum-member-symbol-enum-memberspantype_sfixed64"><span class="codicon codicon-symbol-enum-member symbol-enum-member"></span>TYPE_SFIXED64</h4>
-<h4 id="span-classcodicon-codicon-symbol-enum-member-symbol-enum-memberspantype_sint32"><span class="codicon codicon-symbol-enum-member symbol-enum-member"></span>TYPE_SINT32</h4>
-<h4 id="span-classcodicon-codicon-symbol-enum-member-symbol-enum-memberspantype_sint64"><span class="codicon codicon-symbol-enum-member symbol-enum-member"></span>TYPE_SINT64</h4>
-<h3 id="span-classcodicon-codicon-symbol-enum-symbol-enumspanlabel"><span class="codicon codicon-symbol-enum symbol-enum"></span>Label</h3>
-<h4 id="span-classcodicon-codicon-symbol-enum-member-symbol-enum-memberspanlabel_optional"><span class="codicon codicon-symbol-enum-member symbol-enum-member"></span>LABEL_OPTIONAL</h4>
-<h4 id="span-classcodicon-codicon-symbol-enum-member-symbol-enum-memberspanlabel_required"><span class="codicon codicon-symbol-enum-member symbol-enum-member"></span>LABEL_REQUIRED</h4>
-<h4 id="span-classcodicon-codicon-symbol-enum-member-symbol-enum-memberspanlabel_repeated"><span class="codicon codicon-symbol-enum-member symbol-enum-member"></span>LABEL_REPEATED</h4>
-<h3 id="span-classcodicon-codicon-symbol-enum-symbol-enumspanoptimizemode"><span class="codicon codicon-symbol-enum symbol-enum"></span>OptimizeMode</h3>
-<h4 id="span-classcodicon-codicon-symbol-enum-member-symbol-enum-memberspanspeed"><span class="codicon codicon-symbol-enum-member symbol-enum-member"></span>SPEED</h4>
-<h4 id="span-classcodicon-codicon-symbol-enum-member-symbol-enum-memberspancode_size"><span class="codicon codicon-symbol-enum-member symbol-enum-member"></span>CODE_SIZE</h4>
-<h4 id="span-classcodicon-codicon-symbol-enum-member-symbol-enum-memberspanlite_runtime"><span class="codicon codicon-symbol-enum-member symbol-enum-member"></span>LITE_RUNTIME</h4>
-<h3 id="span-classcodicon-codicon-symbol-enum-symbol-enumspanctype"><span class="codicon codicon-symbol-enum symbol-enum"></span>CType</h3>
-<h4 id="span-classcodicon-codicon-symbol-enum-member-symbol-enum-memberspanstring"><span class="codicon codicon-symbol-enum-member symbol-enum-member"></span>STRING</h4>
-<h4 id="span-classcodicon-codicon-symbol-enum-member-symbol-enum-memberspancord"><span class="codicon codicon-symbol-enum-member symbol-enum-member"></span>CORD</h4>
-<h4 id="span-classcodicon-codicon-symbol-enum-member-symbol-enum-memberspanstring_piece"><span class="codicon codicon-symbol-enum-member symbol-enum-member"></span>STRING_PIECE</h4>
-<h3 id="span-classcodicon-codicon-symbol-enum-symbol-enumspanjstype"><span class="codicon codicon-symbol-enum symbol-enum"></span>JSType</h3>
-<h4 id="span-classcodicon-codicon-symbol-enum-member-symbol-enum-memberspanjs_normal"><span class="codicon codicon-symbol-enum-member symbol-enum-member"></span>JS_NORMAL</h4>
-<h4 id="span-classcodicon-codicon-symbol-enum-member-symbol-enum-memberspanjs_string"><span class="codicon codicon-symbol-enum-member symbol-enum-member"></span>JS_STRING</h4>
-<h4 id="span-classcodicon-codicon-symbol-enum-member-symbol-enum-memberspanjs_number"><span class="codicon codicon-symbol-enum-member symbol-enum-member"></span>JS_NUMBER</h4>
-<h3 id="span-classcodicon-codicon-symbol-enum-symbol-enumspanidempotencylevel"><span class="codicon codicon-symbol-enum symbol-enum"></span>IdempotencyLevel</h3>
-<h4 id="span-classcodicon-codicon-symbol-enum-member-symbol-enum-memberspanidempotency_unknown"><span class="codicon codicon-symbol-enum-member symbol-enum-member"></span>IDEMPOTENCY_UNKNOWN</h4>
-<h4 id="span-classcodicon-codicon-symbol-enum-member-symbol-enum-memberspanno_side_effects"><span class="codicon codicon-symbol-enum-member symbol-enum-member"></span>NO_SIDE_EFFECTS</h4>
-<h4 id="span-classcodicon-codicon-symbol-enum-member-symbol-enum-memberspanidempotent"><span class="codicon codicon-symbol-enum-member symbol-enum-member"></span>IDEMPOTENT</h4>
+<hr>
+<h2 id="span-classcodicon-codicon-symbol-structure-symbol-structurespangeneratedcodeinfoannotation"><span class="codicon codicon-symbol-structure symbol-structure"></span>GeneratedCodeInfo.Annotation</h2>
+<p><span class="h3" aria-level="3">Fields</span></p>
+<h3 id="span-classcodicon-codicon-symbol-field-symbol-fieldspanpath-1"><span class="codicon codicon-symbol-field symbol-field"></span>path</h3>
+<p>Type: repeated <code>int32</code></p>
+<h3 id="span-classcodicon-codicon-symbol-field-symbol-fieldspansource_file"><span class="codicon codicon-symbol-field symbol-field"></span>source_file</h3>
+<p>Type: optional <code>string</code></p>
+<h3 id="span-classcodicon-codicon-symbol-field-symbol-fieldspanbegin"><span class="codicon codicon-symbol-field symbol-field"></span>begin</h3>
+<p>Type: optional <code>int32</code></p>
+<h3 id="span-classcodicon-codicon-symbol-field-symbol-fieldspanend-3"><span class="codicon codicon-symbol-field symbol-field"></span>end</h3>
+<p>Type: optional <code>int32</code></p>
+<h1 id="enums">Enums</h1>
+<h2 id="span-classcodicon-codicon-symbol-enum-symbol-enumspantype"><span class="codicon codicon-symbol-enum symbol-enum"></span>Type</h2>
+<h3 id="span-classcodicon-codicon-symbol-enum-member-symbol-enum-memberspantype_double"><span class="codicon codicon-symbol-enum-member symbol-enum-member"></span>TYPE_DOUBLE</h3>
+<h3 id="span-classcodicon-codicon-symbol-enum-member-symbol-enum-memberspantype_float"><span class="codicon codicon-symbol-enum-member symbol-enum-member"></span>TYPE_FLOAT</h3>
+<h3 id="span-classcodicon-codicon-symbol-enum-member-symbol-enum-memberspantype_int64"><span class="codicon codicon-symbol-enum-member symbol-enum-member"></span>TYPE_INT64</h3>
+<h3 id="span-classcodicon-codicon-symbol-enum-member-symbol-enum-memberspantype_uint64"><span class="codicon codicon-symbol-enum-member symbol-enum-member"></span>TYPE_UINT64</h3>
+<h3 id="span-classcodicon-codicon-symbol-enum-member-symbol-enum-memberspantype_int32"><span class="codicon codicon-symbol-enum-member symbol-enum-member"></span>TYPE_INT32</h3>
+<h3 id="span-classcodicon-codicon-symbol-enum-member-symbol-enum-memberspantype_fixed64"><span class="codicon codicon-symbol-enum-member symbol-enum-member"></span>TYPE_FIXED64</h3>
+<h3 id="span-classcodicon-codicon-symbol-enum-member-symbol-enum-memberspantype_fixed32"><span class="codicon codicon-symbol-enum-member symbol-enum-member"></span>TYPE_FIXED32</h3>
+<h3 id="span-classcodicon-codicon-symbol-enum-member-symbol-enum-memberspantype_bool"><span class="codicon codicon-symbol-enum-member symbol-enum-member"></span>TYPE_BOOL</h3>
+<h3 id="span-classcodicon-codicon-symbol-enum-member-symbol-enum-memberspantype_string"><span class="codicon codicon-symbol-enum-member symbol-enum-member"></span>TYPE_STRING</h3>
+<h3 id="span-classcodicon-codicon-symbol-enum-member-symbol-enum-memberspantype_group"><span class="codicon codicon-symbol-enum-member symbol-enum-member"></span>TYPE_GROUP</h3>
+<h3 id="span-classcodicon-codicon-symbol-enum-member-symbol-enum-memberspantype_message"><span class="codicon codicon-symbol-enum-member symbol-enum-member"></span>TYPE_MESSAGE</h3>
+<h3 id="span-classcodicon-codicon-symbol-enum-member-symbol-enum-memberspantype_bytes"><span class="codicon codicon-symbol-enum-member symbol-enum-member"></span>TYPE_BYTES</h3>
+<h3 id="span-classcodicon-codicon-symbol-enum-member-symbol-enum-memberspantype_uint32"><span class="codicon codicon-symbol-enum-member symbol-enum-member"></span>TYPE_UINT32</h3>
+<h3 id="span-classcodicon-codicon-symbol-enum-member-symbol-enum-memberspantype_enum"><span class="codicon codicon-symbol-enum-member symbol-enum-member"></span>TYPE_ENUM</h3>
+<h3 id="span-classcodicon-codicon-symbol-enum-member-symbol-enum-memberspantype_sfixed32"><span class="codicon codicon-symbol-enum-member symbol-enum-member"></span>TYPE_SFIXED32</h3>
+<h3 id="span-classcodicon-codicon-symbol-enum-member-symbol-enum-memberspantype_sfixed64"><span class="codicon codicon-symbol-enum-member symbol-enum-member"></span>TYPE_SFIXED64</h3>
+<h3 id="span-classcodicon-codicon-symbol-enum-member-symbol-enum-memberspantype_sint32"><span class="codicon codicon-symbol-enum-member symbol-enum-member"></span>TYPE_SINT32</h3>
+<h3 id="span-classcodicon-codicon-symbol-enum-member-symbol-enum-memberspantype_sint64"><span class="codicon codicon-symbol-enum-member symbol-enum-member"></span>TYPE_SINT64</h3>
+<hr>
+<h2 id="span-classcodicon-codicon-symbol-enum-symbol-enumspanlabel"><span class="codicon codicon-symbol-enum symbol-enum"></span>Label</h2>
+<h3 id="span-classcodicon-codicon-symbol-enum-member-symbol-enum-memberspanlabel_optional"><span class="codicon codicon-symbol-enum-member symbol-enum-member"></span>LABEL_OPTIONAL</h3>
+<h3 id="span-classcodicon-codicon-symbol-enum-member-symbol-enum-memberspanlabel_required"><span class="codicon codicon-symbol-enum-member symbol-enum-member"></span>LABEL_REQUIRED</h3>
+<h3 id="span-classcodicon-codicon-symbol-enum-member-symbol-enum-memberspanlabel_repeated"><span class="codicon codicon-symbol-enum-member symbol-enum-member"></span>LABEL_REPEATED</h3>
+<hr>
+<h2 id="span-classcodicon-codicon-symbol-enum-symbol-enumspanoptimizemode"><span class="codicon codicon-symbol-enum symbol-enum"></span>OptimizeMode</h2>
+<h3 id="span-classcodicon-codicon-symbol-enum-member-symbol-enum-memberspanspeed"><span class="codicon codicon-symbol-enum-member symbol-enum-member"></span>SPEED</h3>
+<h3 id="span-classcodicon-codicon-symbol-enum-member-symbol-enum-memberspancode_size"><span class="codicon codicon-symbol-enum-member symbol-enum-member"></span>CODE_SIZE</h3>
+<h3 id="span-classcodicon-codicon-symbol-enum-member-symbol-enum-memberspanlite_runtime"><span class="codicon codicon-symbol-enum-member symbol-enum-member"></span>LITE_RUNTIME</h3>
+<hr>
+<h2 id="span-classcodicon-codicon-symbol-enum-symbol-enumspanctype"><span class="codicon codicon-symbol-enum symbol-enum"></span>CType</h2>
+<h3 id="span-classcodicon-codicon-symbol-enum-member-symbol-enum-memberspanstring"><span class="codicon codicon-symbol-enum-member symbol-enum-member"></span>STRING</h3>
+<h3 id="span-classcodicon-codicon-symbol-enum-member-symbol-enum-memberspancord"><span class="codicon codicon-symbol-enum-member symbol-enum-member"></span>CORD</h3>
+<h3 id="span-classcodicon-codicon-symbol-enum-member-symbol-enum-memberspanstring_piece"><span class="codicon codicon-symbol-enum-member symbol-enum-member"></span>STRING_PIECE</h3>
+<hr>
+<h2 id="span-classcodicon-codicon-symbol-enum-symbol-enumspanjstype"><span class="codicon codicon-symbol-enum symbol-enum"></span>JSType</h2>
+<h3 id="span-classcodicon-codicon-symbol-enum-member-symbol-enum-memberspanjs_normal"><span class="codicon codicon-symbol-enum-member symbol-enum-member"></span>JS_NORMAL</h3>
+<h3 id="span-classcodicon-codicon-symbol-enum-member-symbol-enum-memberspanjs_string"><span class="codicon codicon-symbol-enum-member symbol-enum-member"></span>JS_STRING</h3>
+<h3 id="span-classcodicon-codicon-symbol-enum-member-symbol-enum-memberspanjs_number"><span class="codicon codicon-symbol-enum-member symbol-enum-member"></span>JS_NUMBER</h3>
+<hr>
+<h2 id="span-classcodicon-codicon-symbol-enum-symbol-enumspanidempotencylevel"><span class="codicon codicon-symbol-enum symbol-enum"></span>IdempotencyLevel</h2>
+<h3 id="span-classcodicon-codicon-symbol-enum-member-symbol-enum-memberspanidempotency_unknown"><span class="codicon codicon-symbol-enum-member symbol-enum-member"></span>IDEMPOTENCY_UNKNOWN</h3>
+<h3 id="span-classcodicon-codicon-symbol-enum-member-symbol-enum-memberspanno_side_effects"><span class="codicon codicon-symbol-enum-member symbol-enum-member"></span>NO_SIDE_EFFECTS</h3>
+<h3 id="span-classcodicon-codicon-symbol-enum-member-symbol-enum-memberspanidempotent"><span class="codicon codicon-symbol-enum-member symbol-enum-member"></span>IDEMPOTENT</h3>
 
     </article>
   </div>
