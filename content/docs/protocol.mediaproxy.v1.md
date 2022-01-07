@@ -3,112 +3,112 @@ title: "Reference: protocol.mediaproxy.v1"
 ---
 ## Message Types 
 
-### SiteMetadata
+### <span class="codicon codicon-symbol-structure symbol-structure"></span>SiteMetadata
 Object representing the metadata of a website.
 
 #### Fields
 
 
-##### site_title (optional  `string`)
+##### <span class="codicon codicon-symbol-field symbol-field"></span>site_title (optional  `string`)
 Title of the website.
-##### page_title (optional  `string`)
+##### <span class="codicon codicon-symbol-field symbol-field"></span>page_title (optional  `string`)
 Page title of the website page.
-##### kind (optional  `string`)
+##### <span class="codicon codicon-symbol-field symbol-field"></span>kind (optional  `string`)
 Kind of the website.
-##### description (optional  `string`)
+##### <span class="codicon codicon-symbol-field symbol-field"></span>description (optional  `string`)
 Description of the website page.
-##### url (optional  `string`)
+##### <span class="codicon codicon-symbol-field symbol-field"></span>url (optional  `string`)
 URL of the website.
-##### image (optional  `string`)
+##### <span class="codicon codicon-symbol-field symbol-field"></span>image (optional  `string`)
 A thumbnail image of the website.
 
-### MediaMetadata
+### <span class="codicon codicon-symbol-structure symbol-structure"></span>MediaMetadata
 Object represeting the metadata of a media.
 
 #### Fields
 
 
-##### mimetype (optional  `string`)
+##### <span class="codicon codicon-symbol-field symbol-field"></span>mimetype (optional  `string`)
 Mimetype of the media.
-##### filename (optional  `string`)
+##### <span class="codicon codicon-symbol-field symbol-field"></span>filename (optional  `string`)
 Filename of the media.
 
-### FetchLinkMetadataRequest
+### <span class="codicon codicon-symbol-structure symbol-structure"></span>FetchLinkMetadataRequest
 Used in the `FetchLinkMetadata` endpoint.
 
 #### Fields
 
 
-##### url (optional  `string`)
+##### <span class="codicon codicon-symbol-field symbol-field"></span>url (optional  `string`)
 URL to fetch metadata from.
 
-### FetchLinkMetadataResponse
+### <span class="codicon codicon-symbol-structure symbol-structure"></span>FetchLinkMetadataResponse
 Used in the `FetchLinkMetadata` endpoint.
 
 #### Fields
 
 
-##### is_site (optional  [protocol.mediaproxy.v1.SiteMetadata](#sitemetadata))
+##### <span class="codicon codicon-symbol-field symbol-field"></span>is_site (optional  [protocol.mediaproxy.v1.SiteMetadata](#sitemetadata))
 Site metadata for the URL.
-##### is_media (optional  [protocol.mediaproxy.v1.MediaMetadata](#mediametadata))
+##### <span class="codicon codicon-symbol-field symbol-field"></span>is_media (optional  [protocol.mediaproxy.v1.MediaMetadata](#mediametadata))
 Media metadata for the URL.
 
-### InstantViewRequest
+### <span class="codicon codicon-symbol-structure symbol-structure"></span>InstantViewRequest
 Used in the `InstantView` endpoint.
 
 #### Fields
 
 
-##### url (optional  `string`)
+##### <span class="codicon codicon-symbol-field symbol-field"></span>url (optional  `string`)
 URL to get instant view for.
 
-### InstantViewResponse
+### <span class="codicon codicon-symbol-structure symbol-structure"></span>InstantViewResponse
 Used in the `InstantView` endpoint.
 
 #### Fields
 
 
-##### metadata (optional  [protocol.mediaproxy.v1.SiteMetadata](#sitemetadata))
+##### <span class="codicon codicon-symbol-field symbol-field"></span>metadata (optional  [protocol.mediaproxy.v1.SiteMetadata](#sitemetadata))
 Site metadata for the URL.
-##### content (optional  `string`)
+##### <span class="codicon codicon-symbol-field symbol-field"></span>content (optional  `string`)
 Instant view content.
-##### is_valid (optional  `bool`)
+##### <span class="codicon codicon-symbol-field symbol-field"></span>is_valid (optional  `bool`)
 Whether the instant view is valid.
 
-### CanInstantViewRequest
+### <span class="codicon codicon-symbol-structure symbol-structure"></span>CanInstantViewRequest
 Used in the `CanInstantView` endpoint.
 
 #### Fields
 
 
-##### url (optional  `string`)
+##### <span class="codicon codicon-symbol-field symbol-field"></span>url (optional  `string`)
 URL to query if server can instant view the website.
 
-### CanInstantViewResponse
+### <span class="codicon codicon-symbol-structure symbol-structure"></span>CanInstantViewResponse
 Used in the `CanInstantView` endpoint.
 
 #### Fields
 
 
-##### can_instant_view (optional  `bool`)
+##### <span class="codicon codicon-symbol-field symbol-field"></span>can_instant_view (optional  `bool`)
 Whether the server generate an instant view for the URL queried.
 
 ## Services 
 
-### MediaProxyService
+### <span class="codicon codicon-symbol-class symbol-class"></span>MediaProxyService
 
 Harmony service for fetching metadata and generating instant view for URLs.
 #### Methods
 
-##### FetchLinkMetadata
+##### <span class="codicon codicon-symbol-method symbol-method"></span>FetchLinkMetadata
 [protocol.mediaproxy.v1.FetchLinkMetadataRequest](#fetchlinkmetadatarequest) -> [protocol.mediaproxy.v1.FetchLinkMetadataResponse](#fetchlinkmetadataresponse)
 
 Endpoint to fetch metadata for a URL.
-##### InstantView
+##### <span class="codicon codicon-symbol-method symbol-method"></span>InstantView
 [protocol.mediaproxy.v1.InstantViewRequest](#instantviewrequest) -> [protocol.mediaproxy.v1.InstantViewResponse](#instantviewresponse)
 
 Endpoint to instant view a website URL.
-##### CanInstantView
+##### <span class="codicon codicon-symbol-method symbol-method"></span>CanInstantView
 [protocol.mediaproxy.v1.CanInstantViewRequest](#caninstantviewrequest) -> [protocol.mediaproxy.v1.CanInstantViewResponse](#caninstantviewresponse)
 
 Endpoint to query if the server can generate an instant view for a website URL.

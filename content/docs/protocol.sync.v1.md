@@ -3,130 +3,130 @@ title: "Reference: protocol.sync.v1"
 ---
 ## Message Types 
 
-### AuthData
+### <span class="codicon codicon-symbol-structure symbol-structure"></span>AuthData
 Authentication data that will be sent in a `harmonytypes.v1.Token`.
 
 #### Fields
 
 
-##### server_id (optional  `string`)
+##### <span class="codicon codicon-symbol-field symbol-field"></span>server_id (optional  `string`)
 The server ID of the server initiating the transaction. For Pull,
 this tells the server being connected to which homeservers' events it should send.
 For Push, this tells the server being connected to which homeservers' events it is
 receiving.
-##### time (optional  `uint64`)
+##### <span class="codicon codicon-symbol-field symbol-field"></span>time (optional  `uint64`)
 The UTC UNIX time in seconds of when the request is started. Servers should reject
 tokens with a time too far from the current time, at their discretion. A recommended
 variance is 1 minute.
 
-### Event
+### <span class="codicon codicon-symbol-structure symbol-structure"></span>Event
 Object representing a postbox event.
 
 #### Fields
 
 
-##### user_removed_from_guild (optional  [protocol.sync.v1.Event.UserRemovedFromGuild](#eventuserremovedfromguild))
+##### <span class="codicon codicon-symbol-field symbol-field"></span>user_removed_from_guild (optional  [protocol.sync.v1.Event.UserRemovedFromGuild](#eventuserremovedfromguild))
 User removed from a guild.
-##### user_added_to_guild (optional  [protocol.sync.v1.Event.UserAddedToGuild](#eventuseraddedtoguild))
+##### <span class="codicon codicon-symbol-field symbol-field"></span>user_added_to_guild (optional  [protocol.sync.v1.Event.UserAddedToGuild](#eventuseraddedtoguild))
 User added to a guild.
-##### user_invited (optional  [protocol.sync.v1.Event.UserInvited](#eventuserinvited))
+##### <span class="codicon codicon-symbol-field symbol-field"></span>user_invited (optional  [protocol.sync.v1.Event.UserInvited](#eventuserinvited))
 User invited to a guild.
-##### user_rejected_invite (optional  [protocol.sync.v1.Event.UserRejectedInvite](#eventuserrejectedinvite))
+##### <span class="codicon codicon-symbol-field symbol-field"></span>user_rejected_invite (optional  [protocol.sync.v1.Event.UserRejectedInvite](#eventuserrejectedinvite))
 User rejected a guild invitation.
 
-### Event.UserRemovedFromGuild
+### <span class="codicon codicon-symbol-structure symbol-structure"></span>Event.UserRemovedFromGuild
 
 
 #### Fields
 
 
-##### user_id (optional  `uint64`)
+##### <span class="codicon codicon-symbol-field symbol-field"></span>user_id (optional  `uint64`)
 
-##### guild_id (optional  `uint64`)
-
-
-### Event.UserAddedToGuild
+##### <span class="codicon codicon-symbol-field symbol-field"></span>guild_id (optional  `uint64`)
 
 
-#### Fields
-
-
-##### user_id (optional  `uint64`)
-
-##### guild_id (optional  `uint64`)
-
-
-### Event.UserInvited
+### <span class="codicon codicon-symbol-structure symbol-structure"></span>Event.UserAddedToGuild
 
 
 #### Fields
 
 
-##### user_id (optional  `uint64`)
+##### <span class="codicon codicon-symbol-field symbol-field"></span>user_id (optional  `uint64`)
 
-##### inviter_id (optional  `uint64`)
-
-##### invite_id (optional  `string`)
+##### <span class="codicon codicon-symbol-field symbol-field"></span>guild_id (optional  `uint64`)
 
 
-### Event.UserRejectedInvite
+### <span class="codicon codicon-symbol-structure symbol-structure"></span>Event.UserInvited
 
 
 #### Fields
 
 
-##### guild_id (optional  `uint64`)
+##### <span class="codicon codicon-symbol-field symbol-field"></span>user_id (optional  `uint64`)
 
-##### user_id (optional  `uint64`)
+##### <span class="codicon codicon-symbol-field symbol-field"></span>inviter_id (optional  `uint64`)
 
-##### invite_id (optional  `string`)
+##### <span class="codicon codicon-symbol-field symbol-field"></span>invite_id (optional  `string`)
 
 
-### PullRequest
+### <span class="codicon codicon-symbol-structure symbol-structure"></span>Event.UserRejectedInvite
+
+
+#### Fields
+
+
+##### <span class="codicon codicon-symbol-field symbol-field"></span>guild_id (optional  `uint64`)
+
+##### <span class="codicon codicon-symbol-field symbol-field"></span>user_id (optional  `uint64`)
+
+##### <span class="codicon codicon-symbol-field symbol-field"></span>invite_id (optional  `string`)
+
+
+### <span class="codicon codicon-symbol-structure symbol-structure"></span>PullRequest
 Used in `Pull` endpoint.
 
 This item has no fields.
 
-### PullResponse
+### <span class="codicon codicon-symbol-structure symbol-structure"></span>PullResponse
 Used in `Pull` endpoint.
 
 #### Fields
 
 
-##### event_queue (repeated  [protocol.sync.v1.Event](#event))
+##### <span class="codicon codicon-symbol-field symbol-field"></span>event_queue (repeated  [protocol.sync.v1.Event](#event))
 The events that were not processed yet.
 
-### PushRequest
+### <span class="codicon codicon-symbol-structure symbol-structure"></span>PushRequest
 Used in `Push` endpoint.
 
 #### Fields
 
 
-##### event (optional  [protocol.sync.v1.Event](#event))
+##### <span class="codicon codicon-symbol-field symbol-field"></span>event (optional  [protocol.sync.v1.Event](#event))
 The event to push to the server.
 
-### PushResponse
+### <span class="codicon codicon-symbol-structure symbol-structure"></span>PushResponse
 Used in `Push` endpoint.
 
 This item has no fields.
 
-### NotifyNewIdRequest
+### <span class="codicon codicon-symbol-structure symbol-structure"></span>NotifyNewIdRequest
 Used in `NotifyNewId` endpoint.
 
 #### Fields
 
 
-##### new_server_id (optional  `string`)
+##### <span class="codicon codicon-symbol-field symbol-field"></span>new_server_id (optional  `string`)
 The new server ID of the server.
 
-### NotifyNewIdResponse
+### <span class="codicon codicon-symbol-structure symbol-structure"></span>NotifyNewIdResponse
 Used in `NotifyNewId` endpoint.
 
 This item has no fields.
 
 ## Services 
 
-### PostboxService
+### <span class="codicon codicon-symbol-class symbol-class"></span>PostboxService
 
 # Postbox
 
@@ -171,15 +171,15 @@ It is recommended that receivers try pulling periodically, for example, every
 1 minute after the last Push RPC by the sender. This ensures that events are recieved.
 #### Methods
 
-##### Pull
+##### <span class="codicon codicon-symbol-method symbol-method"></span>Pull
 [protocol.sync.v1.PullRequest](#pullrequest) -> [protocol.sync.v1.PullResponse](#pullresponse)
 
 Endpoint to pull events.
-##### Push
+##### <span class="codicon codicon-symbol-method symbol-method"></span>Push
 [protocol.sync.v1.PushRequest](#pushrequest) -> [protocol.sync.v1.PushResponse](#pushresponse)
 
 Endpoint to push events.
-##### NotifyNewId
+##### <span class="codicon codicon-symbol-method symbol-method"></span>NotifyNewId
 [protocol.sync.v1.NotifyNewIdRequest](#notifynewidrequest) -> [protocol.sync.v1.NotifyNewIdResponse](#notifynewidresponse)
 
 Endpoint to notify a server of a server ID change. It is called by the server

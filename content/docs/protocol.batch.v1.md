@@ -3,70 +3,70 @@ title: "Reference: protocol.batch.v1"
 ---
 ## Message Types 
 
-### AnyRequest
+### <span class="codicon codicon-symbol-structure symbol-structure"></span>AnyRequest
 AnyRequest is a generic message supporting any unary request.
 
 #### Fields
 
 
-##### endpoint (optional  `string`)
+##### <span class="codicon codicon-symbol-field symbol-field"></span>endpoint (optional  `string`)
 The endpoint to which the request is being sent.
-##### request (optional  `bytes`)
+##### <span class="codicon codicon-symbol-field symbol-field"></span>request (optional  `bytes`)
 The request data.
 
-### BatchRequest
+### <span class="codicon codicon-symbol-structure symbol-structure"></span>BatchRequest
 Used in `Batch` endpoint.
 
 #### Fields
 
 
-##### requests (repeated  [protocol.batch.v1.AnyRequest](#anyrequest))
+##### <span class="codicon codicon-symbol-field symbol-field"></span>requests (repeated  [protocol.batch.v1.AnyRequest](#anyrequest))
 The list of requests to be executed in the batch.
 
-### BatchResponse
+### <span class="codicon codicon-symbol-structure symbol-structure"></span>BatchResponse
 Used in `Batch` endpoint.
 
 #### Fields
 
 
-##### responses (repeated  `bytes`)
+##### <span class="codicon codicon-symbol-field symbol-field"></span>responses (repeated  `bytes`)
 The list of responses to the requests.
 
-### BatchSameRequest
+### <span class="codicon codicon-symbol-structure symbol-structure"></span>BatchSameRequest
 Used in `BatchSame` endpoint.
 
 #### Fields
 
 
-##### endpoint (optional  `string`)
+##### <span class="codicon codicon-symbol-field symbol-field"></span>endpoint (optional  `string`)
 The endpoint to call for all requests.
-##### requests (repeated  `bytes`)
+##### <span class="codicon codicon-symbol-field symbol-field"></span>requests (repeated  `bytes`)
 The list of requests to be executed in the batch.
 
-### BatchSameResponse
+### <span class="codicon codicon-symbol-structure symbol-structure"></span>BatchSameResponse
 Used in `BatchSame` endpoint.
 
 #### Fields
 
 
-##### responses (repeated  `bytes`)
+##### <span class="codicon codicon-symbol-field symbol-field"></span>responses (repeated  `bytes`)
 The list of responses to the requests.
 
 ## Services 
 
-### BatchService
+### <span class="codicon codicon-symbol-class symbol-class"></span>BatchService
 
 Service to batch requests.
 #### Methods
 
-##### Batch
+##### <span class="codicon codicon-symbol-method symbol-method"></span>Batch
 [protocol.batch.v1.BatchRequest](#batchrequest) -> [protocol.batch.v1.BatchResponse](#batchresponse)
 
 Batch requests.
 Does not support batching stream requests.
 Batched requests should be verified and an error should be thrown if they
 are invalid.
-##### BatchSame
+##### <span class="codicon codicon-symbol-method symbol-method"></span>BatchSame
 [protocol.batch.v1.BatchSameRequest](#batchsamerequest) -> [protocol.batch.v1.BatchSameResponse](#batchsameresponse)
 
 BatchSame allows batching for requests using the same endpoint.

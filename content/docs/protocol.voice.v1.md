@@ -3,7 +3,7 @@ title: "Reference: protocol.voice.v1"
 ---
 ## Message Types 
 
-### UserConsumerOptions
+### <span class="codicon codicon-symbol-structure symbol-structure"></span>UserConsumerOptions
 Data containing all the necessary information to
 create a consumer for a user in a voice channel
 
@@ -16,16 +16,16 @@ This corresponds to https://mediasoup.org/documentation/v3/mediasoup-client/api/
 #### Fields
 
 
-##### user_id (optional  `uint64`)
+##### <span class="codicon codicon-symbol-field symbol-field"></span>user_id (optional  `uint64`)
 User ID of the user.
-##### producer_id (optional  `string`)
+##### <span class="codicon codicon-symbol-field symbol-field"></span>producer_id (optional  `string`)
 Producer ID of the producer being consumed.
-##### consumer_id (optional  `string`)
+##### <span class="codicon codicon-symbol-field symbol-field"></span>consumer_id (optional  `string`)
 Consumer ID for the user's producer consumer.
-##### rtp_parameters (optional  `string`)
+##### <span class="codicon codicon-symbol-field symbol-field"></span>rtp_parameters (optional  `string`)
 RTP paramaters for the user's audio track. Corresponds to `RtpParameters` in mediasoup's TypeScript API.
 
-### TransportOptions
+### <span class="codicon codicon-symbol-structure symbol-structure"></span>TransportOptions
 Object containing all the necessary information about transport options required
 from the server to establish transport connection on the client
 
@@ -38,139 +38,139 @@ This corresponds to https://mediasoup.org/documentation/v3/mediasoup-client/api/
 #### Fields
 
 
-##### id (optional  `string`)
+##### <span class="codicon codicon-symbol-field symbol-field"></span>id (optional  `string`)
 The transport ID.
-##### dtls_parameters (optional  `string`)
+##### <span class="codicon codicon-symbol-field symbol-field"></span>dtls_parameters (optional  `string`)
 DTLS paramaters in JSON. Corresponds to `DtlsParameters` in mediasoup's TypeScript API.
-##### ice_candidates (repeated  `string`)
+##### <span class="codicon codicon-symbol-field symbol-field"></span>ice_candidates (repeated  `string`)
 ICE candidates in JSON. Corresponds to `IceCandidate` in mediasoup's TypeScript API.
-##### ice_parameters (optional  `string`)
+##### <span class="codicon codicon-symbol-field symbol-field"></span>ice_parameters (optional  `string`)
 ICE paramaters in JSON. Corresponds to `IceParameters` in mediasoup's TypeScript API.
 
-### StreamMessageRequest
+### <span class="codicon codicon-symbol-structure symbol-structure"></span>StreamMessageRequest
 Used in `StreamMessage` endpoint.
 
 #### Fields
 
 
-##### initialize (optional  [protocol.voice.v1.StreamMessageRequest.Initialize](#streammessagerequestinitialize))
+##### <span class="codicon codicon-symbol-field symbol-field"></span>initialize (optional  [protocol.voice.v1.StreamMessageRequest.Initialize](#streammessagerequestinitialize))
 Sent to initialize the WS and receive necessary information
-##### prepare_for_join_channel (optional  [protocol.voice.v1.StreamMessageRequest.PrepareForJoinChannel](#streammessagerequestprepareforjoinchannel))
+##### <span class="codicon codicon-symbol-field symbol-field"></span>prepare_for_join_channel (optional  [protocol.voice.v1.StreamMessageRequest.PrepareForJoinChannel](#streammessagerequestprepareforjoinchannel))
 Sent to prepare for joining channel
-##### join_channel (optional  [protocol.voice.v1.StreamMessageRequest.JoinChannel](#streammessagerequestjoinchannel))
+##### <span class="codicon codicon-symbol-field symbol-field"></span>join_channel (optional  [protocol.voice.v1.StreamMessageRequest.JoinChannel](#streammessagerequestjoinchannel))
 Sent to join a channel
-##### resume_consumer (optional  [protocol.voice.v1.StreamMessageRequest.ResumeConsumer](#streammessagerequestresumeconsumer))
+##### <span class="codicon codicon-symbol-field symbol-field"></span>resume_consumer (optional  [protocol.voice.v1.StreamMessageRequest.ResumeConsumer](#streammessagerequestresumeconsumer))
 Sent to resume a consumer
 
-### StreamMessageRequest.Initialize
+### <span class="codicon codicon-symbol-structure symbol-structure"></span>StreamMessageRequest.Initialize
 
 
 #### Fields
 
 
-##### guild_id (optional  `uint64`)
+##### <span class="codicon codicon-symbol-field symbol-field"></span>guild_id (optional  `uint64`)
 
-##### channel_id (optional  `uint64`)
-
-
-### StreamMessageRequest.PrepareForJoinChannel
+##### <span class="codicon codicon-symbol-field symbol-field"></span>channel_id (optional  `uint64`)
 
 
-#### Fields
-
-
-##### rtp_capabilities (optional  `string`)
-
-
-### StreamMessageRequest.JoinChannel
+### <span class="codicon codicon-symbol-structure symbol-structure"></span>StreamMessageRequest.PrepareForJoinChannel
 
 
 #### Fields
 
 
-##### rtp_paramaters (optional  `string`)
-
-##### producer_dtls_paramaters (optional  `string`)
-
-##### consumer_dtls_paramaters (optional  `string`)
+##### <span class="codicon codicon-symbol-field symbol-field"></span>rtp_capabilities (optional  `string`)
 
 
-### StreamMessageRequest.ResumeConsumer
+### <span class="codicon codicon-symbol-structure symbol-structure"></span>StreamMessageRequest.JoinChannel
 
 
 #### Fields
 
 
-##### consumer_id (optional  `string`)
+##### <span class="codicon codicon-symbol-field symbol-field"></span>rtp_paramaters (optional  `string`)
+
+##### <span class="codicon codicon-symbol-field symbol-field"></span>producer_dtls_paramaters (optional  `string`)
+
+##### <span class="codicon codicon-symbol-field symbol-field"></span>consumer_dtls_paramaters (optional  `string`)
 
 
-### StreamMessageResponse
+### <span class="codicon codicon-symbol-structure symbol-structure"></span>StreamMessageRequest.ResumeConsumer
+
+
+#### Fields
+
+
+##### <span class="codicon codicon-symbol-field symbol-field"></span>consumer_id (optional  `string`)
+
+
+### <span class="codicon codicon-symbol-structure symbol-structure"></span>StreamMessageResponse
 Used in `StreamMessage` endpoint.
 
 #### Fields
 
 
-##### initialized (optional  [protocol.voice.v1.StreamMessageResponse.Initialized](#streammessageresponseinitialized))
+##### <span class="codicon codicon-symbol-field symbol-field"></span>initialized (optional  [protocol.voice.v1.StreamMessageResponse.Initialized](#streammessageresponseinitialized))
 Sent when connection is started
-##### prepared_for_join_channel (optional  [protocol.voice.v1.StreamMessageResponse.PreparedForJoinChannel](#streammessageresponsepreparedforjoinchannel))
+##### <span class="codicon codicon-symbol-field symbol-field"></span>prepared_for_join_channel (optional  [protocol.voice.v1.StreamMessageResponse.PreparedForJoinChannel](#streammessageresponsepreparedforjoinchannel))
 Sent when preparing to join a channel is successful
-##### joined_channel (optional  [protocol.voice.v1.StreamMessageResponse.JoinedChannel](#streammessageresponsejoinedchannel))
+##### <span class="codicon codicon-symbol-field symbol-field"></span>joined_channel (optional  [protocol.voice.v1.StreamMessageResponse.JoinedChannel](#streammessageresponsejoinedchannel))
 Sent when joining a channel is successful
-##### user_joined (optional  [protocol.voice.v1.StreamMessageResponse.UserJoined](#streammessageresponseuserjoined))
+##### <span class="codicon codicon-symbol-field symbol-field"></span>user_joined (optional  [protocol.voice.v1.StreamMessageResponse.UserJoined](#streammessageresponseuserjoined))
 Sent when another user joins the channel
-##### user_left (optional  [protocol.voice.v1.StreamMessageResponse.UserLeft](#streammessageresponseuserleft))
+##### <span class="codicon codicon-symbol-field symbol-field"></span>user_left (optional  [protocol.voice.v1.StreamMessageResponse.UserLeft](#streammessageresponseuserleft))
 Sent when another user leaves the channel
 
-### StreamMessageResponse.Initialized
+### <span class="codicon codicon-symbol-structure symbol-structure"></span>StreamMessageResponse.Initialized
 
 
 #### Fields
 
 
-##### rtp_capabilities (optional  `string`)
+##### <span class="codicon codicon-symbol-field symbol-field"></span>rtp_capabilities (optional  `string`)
 
 
-### StreamMessageResponse.PreparedForJoinChannel
-
-
-#### Fields
-
-
-##### consumer_transport_options (optional  [protocol.voice.v1.TransportOptions](#transportoptions))
-
-##### producer_transport_options (optional  [protocol.voice.v1.TransportOptions](#transportoptions))
-
-
-### StreamMessageResponse.JoinedChannel
+### <span class="codicon codicon-symbol-structure symbol-structure"></span>StreamMessageResponse.PreparedForJoinChannel
 
 
 #### Fields
 
 
-##### other_users (repeated  [protocol.voice.v1.UserConsumerOptions](#userconsumeroptions))
+##### <span class="codicon codicon-symbol-field symbol-field"></span>consumer_transport_options (optional  [protocol.voice.v1.TransportOptions](#transportoptions))
+
+##### <span class="codicon codicon-symbol-field symbol-field"></span>producer_transport_options (optional  [protocol.voice.v1.TransportOptions](#transportoptions))
 
 
-### StreamMessageResponse.UserJoined
-
-
-#### Fields
-
-
-##### data (optional  [protocol.voice.v1.UserConsumerOptions](#userconsumeroptions))
-
-
-### StreamMessageResponse.UserLeft
+### <span class="codicon codicon-symbol-structure symbol-structure"></span>StreamMessageResponse.JoinedChannel
 
 
 #### Fields
 
 
-##### user_id (optional  `uint64`)
+##### <span class="codicon codicon-symbol-field symbol-field"></span>other_users (repeated  [protocol.voice.v1.UserConsumerOptions](#userconsumeroptions))
+
+
+### <span class="codicon codicon-symbol-structure symbol-structure"></span>StreamMessageResponse.UserJoined
+
+
+#### Fields
+
+
+##### <span class="codicon codicon-symbol-field symbol-field"></span>data (optional  [protocol.voice.v1.UserConsumerOptions](#userconsumeroptions))
+
+
+### <span class="codicon codicon-symbol-structure symbol-structure"></span>StreamMessageResponse.UserLeft
+
+
+#### Fields
+
+
+##### <span class="codicon codicon-symbol-field symbol-field"></span>user_id (optional  `uint64`)
 
 
 ## Services 
 
-### VoiceService
+### <span class="codicon codicon-symbol-class symbol-class"></span>VoiceService
 
 Harmony service for facilitating voice operations using WebRTC.
 
@@ -207,7 +207,7 @@ when a user leaves the channel (when their stream ends), sends UserLeft to all o
 8. When receiving a ResumeConsumer message, unpauses the consumer corresponding to the consumer ID
 #### Methods
 
-##### StreamMessage
+##### <span class="codicon codicon-symbol-method symbol-method"></span>StreamMessage
 streaming [protocol.voice.v1.StreamMessageRequest](#streammessagerequest) -> streaming [protocol.voice.v1.StreamMessageResponse](#streammessageresponse)
 
 Endpoint to stream messages between client and server.

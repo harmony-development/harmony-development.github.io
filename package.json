@@ -4,6 +4,7 @@
     "description": "the harmony website",
     "main": "index.js",
     "dependencies": {
+        "@vscode/codicons": "^0.0.27",
         "autoprefixer": "^10.4.0",
         "postcss": "^8.3.11",
         "postcss-cli": "^8.3.1",

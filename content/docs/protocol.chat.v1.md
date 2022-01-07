@@ -3,34 +3,34 @@ title: "Reference: protocol.chat.v1"
 ---
 ## Message Types 
 
-### Channel
+### <span class="codicon codicon-symbol-structure symbol-structure"></span>Channel
 An object representing a channel, without the ID.
 
 #### Fields
 
 
-##### channel_name (optional  `string`)
+##### <span class="codicon codicon-symbol-field symbol-field"></span>channel_name (optional  `string`)
 The name of this channel.
-##### kind (UNHANDLED | TYPE)
+##### <span class="codicon codicon-symbol-field symbol-field"></span>kind (UNHANDLED | TYPE)
 The kind of channel this is.
 Data does not get inherently stored in the Channel type
 Instead, clients who understand a certain ChannelKind should
 fetch them from a separate RPC.
-##### metadata (optional  [protocol.harmonytypes.v1.Metadata]({{< ref "protocol.harmonytypes.v1.md" >}}#metadata))
+##### <span class="codicon codicon-symbol-field symbol-field"></span>metadata (optional  [protocol.harmonytypes.v1.Metadata]({{< ref "protocol.harmonytypes.v1.md" >}}#metadata))
 The metadata of this channel.
 
-### ChannelWithId
+### <span class="codicon codicon-symbol-structure symbol-structure"></span>ChannelWithId
 The channel alongside with an ID.
 
 #### Fields
 
 
-##### channel_id (optional  `uint64`)
+##### <span class="codicon codicon-symbol-field symbol-field"></span>channel_id (optional  `uint64`)
 ID of the channel.
-##### channel (optional  [protocol.chat.v1.Channel](#channel))
+##### <span class="codicon codicon-symbol-field symbol-field"></span>channel (optional  [protocol.chat.v1.Channel](#channel))
 The channel data.
 
-### CreateChannelRequest
+### <span class="codicon codicon-symbol-structure symbol-structure"></span>CreateChannelRequest
 Channel Kinds:
 
 Channel kinds specified in an official Harmony protocol will start with a
@@ -46,861 +46,861 @@ Used in the `CreateChannel` endpoint.
 #### Fields
 
 
-##### guild_id (optional  `uint64`)
+##### <span class="codicon codicon-symbol-field symbol-field"></span>guild_id (optional  `uint64`)
 Guild ID of the guild to create a channel in.
-##### channel_name (optional  `string`)
+##### <span class="codicon codicon-symbol-field symbol-field"></span>channel_name (optional  `string`)
 The name of this channel.
-##### kind (UNHANDLED | TYPE)
+##### <span class="codicon codicon-symbol-field symbol-field"></span>kind (UNHANDLED | TYPE)
 The kind of this channel.
-##### metadata (optional  [protocol.harmonytypes.v1.Metadata]({{< ref "protocol.harmonytypes.v1.md" >}}#metadata))
+##### <span class="codicon codicon-symbol-field symbol-field"></span>metadata (optional  [protocol.harmonytypes.v1.Metadata]({{< ref "protocol.harmonytypes.v1.md" >}}#metadata))
 The metadata of this channel.
-##### position (optional  [protocol.harmonytypes.v1.ItemPosition]({{< ref "protocol.harmonytypes.v1.md" >}}#itemposition))
+##### <span class="codicon codicon-symbol-field symbol-field"></span>position (optional  [protocol.harmonytypes.v1.ItemPosition]({{< ref "protocol.harmonytypes.v1.md" >}}#itemposition))
 The position of your new channel in the channel list.
 
 If not specified, it will be put at the bottom of the channel list.
 
-### CreateChannelResponse
+### <span class="codicon codicon-symbol-structure symbol-structure"></span>CreateChannelResponse
 Used in the `CreateChannel` endpoint.
 
 #### Fields
 
 
-##### channel_id (optional  `uint64`)
+##### <span class="codicon codicon-symbol-field symbol-field"></span>channel_id (optional  `uint64`)
 ID of the channel that was created.
 
-### GetGuildChannelsRequest
+### <span class="codicon codicon-symbol-structure symbol-structure"></span>GetGuildChannelsRequest
 Used in the `GetGuildChannels` endpoint.
 
 #### Fields
 
 
-##### guild_id (optional  `uint64`)
+##### <span class="codicon codicon-symbol-field symbol-field"></span>guild_id (optional  `uint64`)
 Guild ID of the guild you want to get channels from.
 
-### GetGuildChannelsResponse
+### <span class="codicon codicon-symbol-structure symbol-structure"></span>GetGuildChannelsResponse
 Used in the `GetGuildChannels` endpoint.
 
 #### Fields
 
 
-##### channels (repeated  [protocol.chat.v1.ChannelWithId](#channelwithid))
+##### <span class="codicon codicon-symbol-field symbol-field"></span>channels (repeated  [protocol.chat.v1.ChannelWithId](#channelwithid))
 Channels' data and ID the server responded with.
 
-### UpdateChannelInformationRequest
+### <span class="codicon codicon-symbol-structure symbol-structure"></span>UpdateChannelInformationRequest
 Used in the `UpdateChannelInformation` endpoint.
 
 #### Fields
 
 
-##### guild_id (optional  `uint64`)
+##### <span class="codicon codicon-symbol-field symbol-field"></span>guild_id (optional  `uint64`)
 Guild ID of the guild where the channel is.
-##### channel_id (optional  `uint64`)
+##### <span class="codicon codicon-symbol-field symbol-field"></span>channel_id (optional  `uint64`)
 Channel ID of the channel you want to change the information of.
-##### new_name (optional  `string`)
+##### <span class="codicon codicon-symbol-field symbol-field"></span>new_name (optional  `string`)
 New name to set for this channel.
-##### new_metadata (optional  [protocol.harmonytypes.v1.Metadata]({{< ref "protocol.harmonytypes.v1.md" >}}#metadata))
+##### <span class="codicon codicon-symbol-field symbol-field"></span>new_metadata (optional  [protocol.harmonytypes.v1.Metadata]({{< ref "protocol.harmonytypes.v1.md" >}}#metadata))
 New metadata to set for this channel.
 
-### UpdateChannelInformationResponse
+### <span class="codicon codicon-symbol-structure symbol-structure"></span>UpdateChannelInformationResponse
 Used in the `UpdateChannelInformation` endpoint.
 
 This item has no fields.
 
-### UpdateChannelOrderRequest
+### <span class="codicon codicon-symbol-structure symbol-structure"></span>UpdateChannelOrderRequest
 Used in the `UpdateChannelOrder` endpoint.
 
 #### Fields
 
 
-##### guild_id (optional  `uint64`)
+##### <span class="codicon codicon-symbol-field symbol-field"></span>guild_id (optional  `uint64`)
 Guild ID of the guild that has the channel.
-##### channel_id (optional  `uint64`)
+##### <span class="codicon codicon-symbol-field symbol-field"></span>channel_id (optional  `uint64`)
 Channel ID of the channel that you want to move.
-##### new_position (optional  [protocol.harmonytypes.v1.ItemPosition]({{< ref "protocol.harmonytypes.v1.md" >}}#itemposition))
+##### <span class="codicon codicon-symbol-field symbol-field"></span>new_position (optional  [protocol.harmonytypes.v1.ItemPosition]({{< ref "protocol.harmonytypes.v1.md" >}}#itemposition))
 The new position of this channel.
 
-### UpdateChannelOrderResponse
+### <span class="codicon codicon-symbol-structure symbol-structure"></span>UpdateChannelOrderResponse
 Used in the `UpdateChannelOrder` endpoint.
 
 This item has no fields.
 
-### UpdateAllChannelOrderRequest
+### <span class="codicon codicon-symbol-structure symbol-structure"></span>UpdateAllChannelOrderRequest
 Request specifiying the order of all channels in a guild at once
 
 #### Fields
 
 
-##### guild_id (optional  `uint64`)
+##### <span class="codicon codicon-symbol-field symbol-field"></span>guild_id (optional  `uint64`)
 guild_id: the guild to specify the new channel order for
-##### channel_ids (repeated  `uint64`)
+##### <span class="codicon codicon-symbol-field symbol-field"></span>channel_ids (repeated  `uint64`)
 channel_ids: the new order of channel ids
 
-### UpdateAllChannelOrderResponse
+### <span class="codicon codicon-symbol-structure symbol-structure"></span>UpdateAllChannelOrderResponse
 Used in the `UpdateAllChannelOrder` endpoint.
 
 This item has no fields.
 
-### DeleteChannelRequest
+### <span class="codicon codicon-symbol-structure symbol-structure"></span>DeleteChannelRequest
 Used in the `DeleteChannel` endpoint.
 
 #### Fields
 
 
-##### guild_id (optional  `uint64`)
+##### <span class="codicon codicon-symbol-field symbol-field"></span>guild_id (optional  `uint64`)
 Guild ID of the guild that has the channel.
-##### channel_id (optional  `uint64`)
+##### <span class="codicon codicon-symbol-field symbol-field"></span>channel_id (optional  `uint64`)
 Channel ID of the channel you want to delete.
 
-### DeleteChannelResponse
+### <span class="codicon codicon-symbol-structure symbol-structure"></span>DeleteChannelResponse
 Used in the `DeleteChannel` endpoint.
 
 This item has no fields.
 
-### TypingRequest
+### <span class="codicon codicon-symbol-structure symbol-structure"></span>TypingRequest
 Used in `Typing` endpoint.
 
 #### Fields
 
 
-##### guild_id (optional  `uint64`)
+##### <span class="codicon codicon-symbol-field symbol-field"></span>guild_id (optional  `uint64`)
 The guild id of the channel the user is typing in.
-##### channel_id (optional  `uint64`)
+##### <span class="codicon codicon-symbol-field symbol-field"></span>channel_id (optional  `uint64`)
 The channel id of the channel the user is typing in.
 
-### TypingResponse
+### <span class="codicon codicon-symbol-structure symbol-structure"></span>TypingResponse
 Used in `Typing` endpoint.
 
 This item has no fields.
 
-### GuildKind
+### <span class="codicon codicon-symbol-structure symbol-structure"></span>GuildKind
 The kind of a guild.
 
 #### Fields
 
 
-##### normal (optional  [protocol.chat.v1.GuildKind.Normal](#guildkindnormal))
+##### <span class="codicon codicon-symbol-field symbol-field"></span>normal (optional  [protocol.chat.v1.GuildKind.Normal](#guildkindnormal))
 A "normal" guild.
-##### room (optional  [protocol.chat.v1.GuildKind.Room](#guildkindroom))
+##### <span class="codicon codicon-symbol-field symbol-field"></span>room (optional  [protocol.chat.v1.GuildKind.Room](#guildkindroom))
 A "room" guild.
-##### direct_message (optional  [protocol.chat.v1.GuildKind.DirectMessage](#guildkinddirectmessage))
+##### <span class="codicon codicon-symbol-field symbol-field"></span>direct_message (optional  [protocol.chat.v1.GuildKind.DirectMessage](#guildkinddirectmessage))
 A "direct message" guild.
 
-### GuildKind.Normal
+### <span class="codicon codicon-symbol-structure symbol-structure"></span>GuildKind.Normal
 
 
 This item has no fields.
 
-### GuildKind.Room
+### <span class="codicon codicon-symbol-structure symbol-structure"></span>GuildKind.Room
 
 
 This item has no fields.
 
-### GuildKind.DirectMessage
+### <span class="codicon codicon-symbol-structure symbol-structure"></span>GuildKind.DirectMessage
 
 
 #### Fields
 
 
-##### rejected (optional  `bool`)
+##### <span class="codicon codicon-symbol-field symbol-field"></span>rejected (optional  `bool`)
 
 
-### Guild
+### <span class="codicon codicon-symbol-structure symbol-structure"></span>Guild
 Object representing a guild without the ID part.
 
 #### Fields
 
 
-##### name (optional  `string`)
+##### <span class="codicon codicon-symbol-field symbol-field"></span>name (optional  `string`)
 The name of the guild.
 
 This will be empty if the guild kind is "direct message". See
 the documentation of "direct message" guild kind on how to display
 a name for those guilds.
-##### picture (optional  `string`)
+##### <span class="codicon codicon-symbol-field symbol-field"></span>picture (optional  `string`)
 The picture HMC of the guild.
-##### owner_ids (repeated  `uint64`)
+##### <span class="codicon codicon-symbol-field symbol-field"></span>owner_ids (repeated  `uint64`)
 User ID of the owners of the guild.
-##### kind (optional  [protocol.chat.v1.GuildKind](#guildkind))
+##### <span class="codicon codicon-symbol-field symbol-field"></span>kind (optional  [protocol.chat.v1.GuildKind](#guildkind))
 The kind of this guild.
-##### metadata (optional  [protocol.harmonytypes.v1.Metadata]({{< ref "protocol.harmonytypes.v1.md" >}}#metadata))
+##### <span class="codicon codicon-symbol-field symbol-field"></span>metadata (optional  [protocol.harmonytypes.v1.Metadata]({{< ref "protocol.harmonytypes.v1.md" >}}#metadata))
 Metadata of the guild.
 
-### GuildWithId
+### <span class="codicon codicon-symbol-structure symbol-structure"></span>GuildWithId
 Object representing a guild with the ID part.
 
 #### Fields
 
 
-##### guild_id (optional  `uint64`)
+##### <span class="codicon codicon-symbol-field symbol-field"></span>guild_id (optional  `uint64`)
 The ID of the guild.
-##### guild (optional  [protocol.chat.v1.Guild](#guild))
+##### <span class="codicon codicon-symbol-field symbol-field"></span>guild (optional  [protocol.chat.v1.Guild](#guild))
 The guild.
 
-### Invite
+### <span class="codicon codicon-symbol-structure symbol-structure"></span>Invite
 Object representing an invite without the ID part.
 
 #### Fields
 
 
-##### possible_uses (optional  `uint32`)
+##### <span class="codicon codicon-symbol-field symbol-field"></span>possible_uses (optional  `uint32`)
 Possible uses of this invite. A use of `0` means infinite uses.
-##### use_count (optional  `uint32`)
+##### <span class="codicon codicon-symbol-field symbol-field"></span>use_count (optional  `uint32`)
 Total use count of this invite.
 
-### InviteWithId
+### <span class="codicon codicon-symbol-structure symbol-structure"></span>InviteWithId
 Invite with ID.
 
 #### Fields
 
 
-##### invite_id (optional  `string`)
+##### <span class="codicon codicon-symbol-field symbol-field"></span>invite_id (optional  `string`)
 ID of the invite.
-##### invite (optional  [protocol.chat.v1.Invite](#invite))
+##### <span class="codicon codicon-symbol-field symbol-field"></span>invite (optional  [protocol.chat.v1.Invite](#invite))
 The invite data.
 
-### PendingInvite
+### <span class="codicon codicon-symbol-structure symbol-structure"></span>PendingInvite
 A pending invite.
 
 #### Fields
 
 
-##### invite_id (optional  `string`)
+##### <span class="codicon codicon-symbol-field symbol-field"></span>invite_id (optional  `string`)
 Invite ID of the invite.
-##### server_id (optional  `string`)
+##### <span class="codicon codicon-symbol-field symbol-field"></span>server_id (optional  `string`)
 Server ID of the server the inviter is on.
-##### inviter_id (optional  `uint64`)
+##### <span class="codicon codicon-symbol-field symbol-field"></span>inviter_id (optional  `uint64`)
 User ID of the inviter.
 
-### GuildListEntry
+### <span class="codicon codicon-symbol-structure symbol-structure"></span>GuildListEntry
 Object representing a guild list entry.
 
 #### Fields
 
 
-##### guild_id (optional  `uint64`)
+##### <span class="codicon codicon-symbol-field symbol-field"></span>guild_id (optional  `uint64`)
 Guild ID of this guild entry.
-##### server_id (optional  `string`)
+##### <span class="codicon codicon-symbol-field symbol-field"></span>server_id (optional  `string`)
 Server ID of the homeserver of this guild.
 
-### CreateGuildRequest
+### <span class="codicon codicon-symbol-structure symbol-structure"></span>CreateGuildRequest
 Request type used in `CreateGuild` endpoint.
 
 #### Fields
 
 
-##### name (optional  `string`)
+##### <span class="codicon codicon-symbol-field symbol-field"></span>name (optional  `string`)
 The name of the guild.
-##### picture (optional  `string`)
+##### <span class="codicon codicon-symbol-field symbol-field"></span>picture (optional  `string`)
 The picture HMC of the guild.
-##### metadata (optional  [protocol.harmonytypes.v1.Metadata]({{< ref "protocol.harmonytypes.v1.md" >}}#metadata))
+##### <span class="codicon codicon-symbol-field symbol-field"></span>metadata (optional  [protocol.harmonytypes.v1.Metadata]({{< ref "protocol.harmonytypes.v1.md" >}}#metadata))
 Metadata of the guild.
 
-### CreateGuildResponse
+### <span class="codicon codicon-symbol-structure symbol-structure"></span>CreateGuildResponse
 Used in the `CreateGuild` endpoint.
 
 #### Fields
 
 
-##### guild_id (optional  `uint64`)
+##### <span class="codicon codicon-symbol-field symbol-field"></span>guild_id (optional  `uint64`)
 Guild ID of the guild that was created.
 
-### CreateRoomRequest
+### <span class="codicon codicon-symbol-structure symbol-structure"></span>CreateRoomRequest
 Request type used in `CreateRoom` endpoint.
 
 #### Fields
 
 
-##### name (optional  `string`)
+##### <span class="codicon codicon-symbol-field symbol-field"></span>name (optional  `string`)
 The name of the guild.
-##### picture (optional  `string`)
+##### <span class="codicon codicon-symbol-field symbol-field"></span>picture (optional  `string`)
 The picture HMC of the guild.
-##### metadata (optional  [protocol.harmonytypes.v1.Metadata]({{< ref "protocol.harmonytypes.v1.md" >}}#metadata))
+##### <span class="codicon codicon-symbol-field symbol-field"></span>metadata (optional  [protocol.harmonytypes.v1.Metadata]({{< ref "protocol.harmonytypes.v1.md" >}}#metadata))
 Metadata of the guild.
 
-### CreateRoomResponse
+### <span class="codicon codicon-symbol-structure symbol-structure"></span>CreateRoomResponse
 Used in the `CreateRoom` endpoint.
 
 #### Fields
 
 
-##### guild_id (optional  `uint64`)
+##### <span class="codicon codicon-symbol-field symbol-field"></span>guild_id (optional  `uint64`)
 Guild ID of the guild that was created.
 
-### CreateDirectMessageRequest
+### <span class="codicon codicon-symbol-structure symbol-structure"></span>CreateDirectMessageRequest
 Used in the `CreateDirectMessage` endpoint.
 
 #### Fields
 
 
-##### user_name (optional  `string`)
+##### <span class="codicon codicon-symbol-field symbol-field"></span>user_name (optional  `string`)
 The user name of the user to DM with.
-##### server_id (optional  `string`)
+##### <span class="codicon codicon-symbol-field symbol-field"></span>server_id (optional  `string`)
 The server ID of the server the user is on.
 
 Should be left unspecified if it's a user on the homeserver.
 
-### CreateDirectMessageResponse
+### <span class="codicon codicon-symbol-structure symbol-structure"></span>CreateDirectMessageResponse
 Used in the `CreateDirectMessage` endpoint.
 
 #### Fields
 
 
-##### guild_id (optional  `uint64`)
+##### <span class="codicon codicon-symbol-field symbol-field"></span>guild_id (optional  `uint64`)
 Guild ID of the just created "direct message" guild.
 
-### CreateInviteRequest
+### <span class="codicon codicon-symbol-structure symbol-structure"></span>CreateInviteRequest
 Used in the `CreateInvite` endpoint.
 
 #### Fields
 
 
-##### guild_id (optional  `uint64`)
+##### <span class="codicon codicon-symbol-field symbol-field"></span>guild_id (optional  `uint64`)
 Guild ID of the guild to create an invite in.
-##### name (optional  `string`)
+##### <span class="codicon codicon-symbol-field symbol-field"></span>name (optional  `string`)
 The name of the invite.
-##### possible_uses (optional  `uint32`)
+##### <span class="codicon codicon-symbol-field symbol-field"></span>possible_uses (optional  `uint32`)
 The possible uses of the invite.
 
 A possible use of `0` means that the invite can be used infinitely many times.
 
-### CreateInviteResponse
+### <span class="codicon codicon-symbol-structure symbol-structure"></span>CreateInviteResponse
 Used in the `CreateInvite` endpoint.
 
 #### Fields
 
 
-##### invite_id (optional  `string`)
+##### <span class="codicon codicon-symbol-field symbol-field"></span>invite_id (optional  `string`)
 The invite ID of the invite that was created.
 
-### GetGuildListRequest
+### <span class="codicon codicon-symbol-structure symbol-structure"></span>GetGuildListRequest
 Used in the `GetGuildList` endpoint.
 
 This item has no fields.
 
-### GetGuildListResponse
+### <span class="codicon codicon-symbol-structure symbol-structure"></span>GetGuildListResponse
 Used in the `GetGuildList` endpoint.
 
 #### Fields
 
 
-##### guilds (repeated  [protocol.chat.v1.GuildListEntry](#guildlistentry))
+##### <span class="codicon codicon-symbol-field symbol-field"></span>guilds (repeated  [protocol.chat.v1.GuildListEntry](#guildlistentry))
 Guild list returned by the server.
 
-### GetGuildRequest
+### <span class="codicon codicon-symbol-structure symbol-structure"></span>GetGuildRequest
 Used in the `GetGuild` endpoint.
 
 #### Fields
 
 
-##### guild_id (optional  `uint64`)
+##### <span class="codicon codicon-symbol-field symbol-field"></span>guild_id (optional  `uint64`)
 Guild ID of the guild to get information about.
 
-### GetGuildResponse
+### <span class="codicon codicon-symbol-structure symbol-structure"></span>GetGuildResponse
 Used in the `GetGuild` endpoint.
 
 #### Fields
 
 
-##### guild (optional  [protocol.chat.v1.Guild](#guild))
+##### <span class="codicon codicon-symbol-field symbol-field"></span>guild (optional  [protocol.chat.v1.Guild](#guild))
 The information of the guild requested.
 
-### GetGuildInvitesRequest
+### <span class="codicon codicon-symbol-structure symbol-structure"></span>GetGuildInvitesRequest
 Used in the `GetGuildInvites` endpoint.
 
 #### Fields
 
 
-##### guild_id (optional  `uint64`)
+##### <span class="codicon codicon-symbol-field symbol-field"></span>guild_id (optional  `uint64`)
 Guild ID of the guild you want to get invites of.
 
-### GetGuildInvitesResponse
+### <span class="codicon codicon-symbol-structure symbol-structure"></span>GetGuildInvitesResponse
 Used in the `GetGuildInvites` endpoint.
 
 #### Fields
 
 
-##### invites (repeated  [protocol.chat.v1.InviteWithId](#invitewithid))
+##### <span class="codicon codicon-symbol-field symbol-field"></span>invites (repeated  [protocol.chat.v1.InviteWithId](#invitewithid))
 The invites of the guild, with IDs.
 
-### GetGuildMembersRequest
+### <span class="codicon codicon-symbol-structure symbol-structure"></span>GetGuildMembersRequest
 Used in the `GetGuildMembers` endpoint.
 
 #### Fields
 
 
-##### guild_id (optional  `uint64`)
+##### <span class="codicon codicon-symbol-field symbol-field"></span>guild_id (optional  `uint64`)
 Guild ID of the guild you want to get members of.
 
-### GetGuildMembersResponse
+### <span class="codicon codicon-symbol-structure symbol-structure"></span>GetGuildMembersResponse
 Used in the `GetGuildMembers` endpoint.
 
 #### Fields
 
 
-##### members (repeated  `uint64`)
+##### <span class="codicon codicon-symbol-field symbol-field"></span>members (repeated  `uint64`)
 User IDs of all the guild members.
 
-### UpdateGuildInformationRequest
+### <span class="codicon codicon-symbol-structure symbol-structure"></span>UpdateGuildInformationRequest
 Used in the `UpdateGuildInformation` endpoint.
 
 #### Fields
 
 
-##### guild_id (optional  `uint64`)
+##### <span class="codicon codicon-symbol-field symbol-field"></span>guild_id (optional  `uint64`)
 Guild ID of the guild you want to update the information of.
-##### new_name (optional  `string`)
+##### <span class="codicon codicon-symbol-field symbol-field"></span>new_name (optional  `string`)
 New name for the guild.
-##### new_picture (optional  `string`)
+##### <span class="codicon codicon-symbol-field symbol-field"></span>new_picture (optional  `string`)
 New picture for the guild.
-##### new_metadata (optional  [protocol.harmonytypes.v1.Metadata]({{< ref "protocol.harmonytypes.v1.md" >}}#metadata))
+##### <span class="codicon codicon-symbol-field symbol-field"></span>new_metadata (optional  [protocol.harmonytypes.v1.Metadata]({{< ref "protocol.harmonytypes.v1.md" >}}#metadata))
 New metadata for the guild.
 
-### UpdateGuildInformationResponse
+### <span class="codicon codicon-symbol-structure symbol-structure"></span>UpdateGuildInformationResponse
 Used in the `UpdateGuildInformation` endpoint.
 
 This item has no fields.
 
-### UpgradeRoomToGuildRequest
+### <span class="codicon codicon-symbol-structure symbol-structure"></span>UpgradeRoomToGuildRequest
 Used in the `UpgradeRoomToGuild` endpoint.
 
 #### Fields
 
 
-##### guild_id (optional  `uint64`)
+##### <span class="codicon codicon-symbol-field symbol-field"></span>guild_id (optional  `uint64`)
 Guild ID of the "room" guild to upgrade to a "normal" guild.
 
-### UpgradeRoomToGuildResponse
+### <span class="codicon codicon-symbol-structure symbol-structure"></span>UpgradeRoomToGuildResponse
 Used in the `UpgradeRoomToGuild` endpoint.
 
 This item has no fields.
 
-### DeleteGuildRequest
+### <span class="codicon codicon-symbol-structure symbol-structure"></span>DeleteGuildRequest
 Used in the `DeleteGuild` endpoint.
 
 #### Fields
 
 
-##### guild_id (optional  `uint64`)
+##### <span class="codicon codicon-symbol-field symbol-field"></span>guild_id (optional  `uint64`)
 Guild ID of the guild you want to delete.
 
-### DeleteGuildResponse
+### <span class="codicon codicon-symbol-structure symbol-structure"></span>DeleteGuildResponse
 Used in the `DeleteGuild` endpoint.
 
 This item has no fields.
 
-### DeleteInviteRequest
+### <span class="codicon codicon-symbol-structure symbol-structure"></span>DeleteInviteRequest
 Used in the `DeleteInvite` endpoint.
 
 #### Fields
 
 
-##### guild_id (optional  `uint64`)
+##### <span class="codicon codicon-symbol-field symbol-field"></span>guild_id (optional  `uint64`)
 Guild ID of the guild where the invite is located.
-##### invite_id (optional  `string`)
+##### <span class="codicon codicon-symbol-field symbol-field"></span>invite_id (optional  `string`)
 Invite ID of the invite you want to delete.
 
-### DeleteInviteResponse
+### <span class="codicon codicon-symbol-structure symbol-structure"></span>DeleteInviteResponse
 Used in the `DeleteInvite` endpoint.
 
 This item has no fields.
 
-### JoinGuildRequest
+### <span class="codicon codicon-symbol-structure symbol-structure"></span>JoinGuildRequest
 Used in the `JoinGuild` endpoint.
 
 #### Fields
 
 
-##### invite_id (optional  `string`)
+##### <span class="codicon codicon-symbol-field symbol-field"></span>invite_id (optional  `string`)
 Invite ID of the guild you want to join.
 
-### JoinGuildResponse
+### <span class="codicon codicon-symbol-structure symbol-structure"></span>JoinGuildResponse
 Used in the `JoinGuild` endpoint.
 
 #### Fields
 
 
-##### guild_id (optional  `uint64`)
+##### <span class="codicon codicon-symbol-field symbol-field"></span>guild_id (optional  `uint64`)
 Guild ID of the guild you joined.
 
-### PreviewGuildRequest
+### <span class="codicon codicon-symbol-structure symbol-structure"></span>PreviewGuildRequest
 Used in the `PreviewGuild` endpoint.
 
 #### Fields
 
 
-##### invite_id (optional  `string`)
+##### <span class="codicon codicon-symbol-field symbol-field"></span>invite_id (optional  `string`)
 Invite ID of the guild you want to get information from.
 
-### PreviewGuildResponse
+### <span class="codicon codicon-symbol-structure symbol-structure"></span>PreviewGuildResponse
 Used in the `PreviewGuild` endpoint.
 
 #### Fields
 
 
-##### name (optional  `string`)
+##### <span class="codicon codicon-symbol-field symbol-field"></span>name (optional  `string`)
 Name of the guild requested.
-##### picture (optional  `string`)
+##### <span class="codicon codicon-symbol-field symbol-field"></span>picture (optional  `string`)
 Picture of the guild requested.
-##### member_count (optional  `uint64`)
+##### <span class="codicon codicon-symbol-field symbol-field"></span>member_count (optional  `uint64`)
 Member count of the guild requested.
 
-### LeaveGuildRequest
+### <span class="codicon codicon-symbol-structure symbol-structure"></span>LeaveGuildRequest
 Used in the `LeaveGuild` endpoint.
 
 #### Fields
 
 
-##### guild_id (optional  `uint64`)
+##### <span class="codicon codicon-symbol-field symbol-field"></span>guild_id (optional  `uint64`)
 Guild ID of the guild you want to leave.
 
-### LeaveGuildResponse
+### <span class="codicon codicon-symbol-structure symbol-structure"></span>LeaveGuildResponse
 Used in the `LeaveGuild` endpoint.
 
 This item has no fields.
 
-### BanUserRequest
+### <span class="codicon codicon-symbol-structure symbol-structure"></span>BanUserRequest
 Used in `BanUser` endpoint.
 
 #### Fields
 
 
-##### guild_id (optional  `uint64`)
+##### <span class="codicon codicon-symbol-field symbol-field"></span>guild_id (optional  `uint64`)
 The guild ID of the guild to ban the user from.
-##### user_id (optional  `uint64`)
+##### <span class="codicon codicon-symbol-field symbol-field"></span>user_id (optional  `uint64`)
 The ID of the user to ban.
 
-### BanUserResponse
+### <span class="codicon codicon-symbol-structure symbol-structure"></span>BanUserResponse
 Used in `BanUser` endpoint.
 
 This item has no fields.
 
-### KickUserRequest
+### <span class="codicon codicon-symbol-structure symbol-structure"></span>KickUserRequest
 Used in `KickUser` endpoint.
 
 #### Fields
 
 
-##### guild_id (optional  `uint64`)
+##### <span class="codicon codicon-symbol-field symbol-field"></span>guild_id (optional  `uint64`)
 The guild ID of the guild to kick the user from.
-##### user_id (optional  `uint64`)
+##### <span class="codicon codicon-symbol-field symbol-field"></span>user_id (optional  `uint64`)
 The user ID of the user to kick.
 
-### KickUserResponse
+### <span class="codicon codicon-symbol-structure symbol-structure"></span>KickUserResponse
 Used in `KickUser` endpoint.
 
 This item has no fields.
 
-### UnbanUserRequest
+### <span class="codicon codicon-symbol-structure symbol-structure"></span>UnbanUserRequest
 Used in `UnbanUser` endpoint.
 
 #### Fields
 
 
-##### guild_id (optional  `uint64`)
+##### <span class="codicon codicon-symbol-field symbol-field"></span>guild_id (optional  `uint64`)
 The guild ID of the guild to unban the user from.
-##### user_id (optional  `uint64`)
+##### <span class="codicon codicon-symbol-field symbol-field"></span>user_id (optional  `uint64`)
 The user ID of the user to unban.
 
-### UnbanUserResponse
+### <span class="codicon codicon-symbol-structure symbol-structure"></span>UnbanUserResponse
 Used in `UnbanUser` endpoint.
 
 This item has no fields.
 
-### GetBannedUsersRequest
+### <span class="codicon codicon-symbol-structure symbol-structure"></span>GetBannedUsersRequest
 Used in `GetBannedUsers` endpoint.
 
 #### Fields
 
 
-##### guild_id (optional  `uint64`)
+##### <span class="codicon codicon-symbol-field symbol-field"></span>guild_id (optional  `uint64`)
 Guild ID to get banned users for.
 
-### GetBannedUsersResponse
+### <span class="codicon codicon-symbol-structure symbol-structure"></span>GetBannedUsersResponse
 Used in `GetBannedUsers` endpoint.
 
 #### Fields
 
 
-##### banned_users (repeated  `uint64`)
+##### <span class="codicon codicon-symbol-field symbol-field"></span>banned_users (repeated  `uint64`)
 The user IDs of banned users.
 
-### GrantOwnershipRequest
+### <span class="codicon codicon-symbol-structure symbol-structure"></span>GrantOwnershipRequest
 Request for GrantOwnership
 
 #### Fields
 
 
-##### guild_id (optional  `uint64`)
+##### <span class="codicon codicon-symbol-field symbol-field"></span>guild_id (optional  `uint64`)
 Guild ID of the guild to give a user ownership on.
-##### new_owner_id (optional  `uint64`)
+##### <span class="codicon codicon-symbol-field symbol-field"></span>new_owner_id (optional  `uint64`)
 The ID of the new owner to add.
 
-### GrantOwnershipResponse
+### <span class="codicon codicon-symbol-structure symbol-structure"></span>GrantOwnershipResponse
 Response for GrantOwnership
 
 This item has no fields.
 
-### GiveUpOwnershipRequest
+### <span class="codicon codicon-symbol-structure symbol-structure"></span>GiveUpOwnershipRequest
 Request for GiveUpOwnership
 
 #### Fields
 
 
-##### guild_id (optional  `uint64`)
+##### <span class="codicon codicon-symbol-field symbol-field"></span>guild_id (optional  `uint64`)
 Guild ID to give up your ownership on.
 
-### GiveUpOwnershipResponse
+### <span class="codicon codicon-symbol-structure symbol-structure"></span>GiveUpOwnershipResponse
 Response for GiveUpOwnership
 
 This item has no fields.
 
-### GetPendingInvitesRequest
+### <span class="codicon codicon-symbol-structure symbol-structure"></span>GetPendingInvitesRequest
 Used in `GetPendingInvites` endpoint.
 
 This item has no fields.
 
-### GetPendingInvitesResponse
+### <span class="codicon codicon-symbol-structure symbol-structure"></span>GetPendingInvitesResponse
 Used in `GetPendingInvites` endpoint.
 
 #### Fields
 
 
-##### pending_invites (repeated  [protocol.chat.v1.PendingInvite](#pendinginvite))
+##### <span class="codicon codicon-symbol-field symbol-field"></span>pending_invites (repeated  [protocol.chat.v1.PendingInvite](#pendinginvite))
 The pending invite(s).
 
-### RejectPendingInviteRequest
+### <span class="codicon codicon-symbol-structure symbol-structure"></span>RejectPendingInviteRequest
 Used in `RejectPendingInvite` endpoint.
 
 #### Fields
 
 
-##### invite_id (optional  `string`)
+##### <span class="codicon codicon-symbol-field symbol-field"></span>invite_id (optional  `string`)
 Invite ID of the pending invite to reject.
-##### server_id (optional  `string`)
+##### <span class="codicon codicon-symbol-field symbol-field"></span>server_id (optional  `string`)
 Server ID of the pending invite to reject.
 
-### RejectPendingInviteResponse
+### <span class="codicon codicon-symbol-structure symbol-structure"></span>RejectPendingInviteResponse
 Used in `RejectPendingInvite` endpoint.
 
 This item has no fields.
 
-### IgnorePendingInviteRequest
+### <span class="codicon codicon-symbol-structure symbol-structure"></span>IgnorePendingInviteRequest
 Used in `IgnorePendingInvite` endpoint.
 
 #### Fields
 
 
-##### invite_id (optional  `string`)
+##### <span class="codicon codicon-symbol-field symbol-field"></span>invite_id (optional  `string`)
 ID of the pending invite to ignore.
-##### server_id (optional  `string`)
+##### <span class="codicon codicon-symbol-field symbol-field"></span>server_id (optional  `string`)
 Server ID of the pending invite to reject.
 
-### IgnorePendingInviteResponse
+### <span class="codicon codicon-symbol-structure symbol-structure"></span>IgnorePendingInviteResponse
 Used in `IgnorePendingInvite` endpoint.
 
 This item has no fields.
 
-### InviteUserToGuildRequest
+### <span class="codicon codicon-symbol-structure symbol-structure"></span>InviteUserToGuildRequest
 Used in `InviteUserToGuild` endpoint.
 
 #### Fields
 
 
-##### user_name (optional  `string`)
+##### <span class="codicon codicon-symbol-field symbol-field"></span>user_name (optional  `string`)
 User name of the user to invite.
-##### server_id (optional  `string`)
+##### <span class="codicon codicon-symbol-field symbol-field"></span>server_id (optional  `string`)
 Server ID of the user if they are on another server.
-##### guild_id (optional  `uint64`)
+##### <span class="codicon codicon-symbol-field symbol-field"></span>guild_id (optional  `uint64`)
 Guild ID of the guild to invite to.
 
-### InviteUserToGuildResponse
+### <span class="codicon codicon-symbol-structure symbol-structure"></span>InviteUserToGuildResponse
 Used in `InviteUserToGuild` endpoint.
 
 This item has no fields.
 
-### Overrides
+### <span class="codicon codicon-symbol-structure symbol-structure"></span>Overrides
 Overrides provide a way to override the name and avatar of a message.
 
 #### Fields
 
 
-##### username (optional  `string`)
+##### <span class="codicon codicon-symbol-field symbol-field"></span>username (optional  `string`)
 the overridden username.
-##### avatar (optional  `string`)
+##### <span class="codicon codicon-symbol-field symbol-field"></span>avatar (optional  `string`)
 the overridden avatar.
-##### user_defined (optional  `string`)
+##### <span class="codicon codicon-symbol-field symbol-field"></span>user_defined (optional  `string`)
 a custom reason in case the builtin ones don't fit
-##### webhook (optional  [protocol.harmonytypes.v1.Empty]({{< ref "protocol.harmonytypes.v1.md" >}}#empty))
+##### <span class="codicon codicon-symbol-field symbol-field"></span>webhook (optional  [protocol.harmonytypes.v1.Empty]({{< ref "protocol.harmonytypes.v1.md" >}}#empty))
 the override occured because of a webhook
-##### system_plurality (optional  [protocol.harmonytypes.v1.Empty]({{< ref "protocol.harmonytypes.v1.md" >}}#empty))
+##### <span class="codicon codicon-symbol-field symbol-field"></span>system_plurality (optional  [protocol.harmonytypes.v1.Empty]({{< ref "protocol.harmonytypes.v1.md" >}}#empty))
 plurality, not system as in computer
-##### system_message (optional  [protocol.harmonytypes.v1.Empty]({{< ref "protocol.harmonytypes.v1.md" >}}#empty))
+##### <span class="codicon codicon-symbol-field symbol-field"></span>system_message (optional  [protocol.harmonytypes.v1.Empty]({{< ref "protocol.harmonytypes.v1.md" >}}#empty))
 the override occured because it was made by the server
 
 Servers should reject messages sent by users with this override.
-##### bridge (optional  [protocol.harmonytypes.v1.Empty]({{< ref "protocol.harmonytypes.v1.md" >}}#empty))
+##### <span class="codicon codicon-symbol-field symbol-field"></span>bridge (optional  [protocol.harmonytypes.v1.Empty]({{< ref "protocol.harmonytypes.v1.md" >}}#empty))
 the override occured because of bridging
 
-### ActionPayload
+### <span class="codicon codicon-symbol-structure symbol-structure"></span>ActionPayload
 The payload sent to the bot when an action is triggered.
 
 #### Fields
 
 
-##### button (optional  [protocol.chat.v1.ActionPayload.Button](#actionpayloadbutton))
+##### <span class="codicon codicon-symbol-field symbol-field"></span>button (optional  [protocol.chat.v1.ActionPayload.Button](#actionpayloadbutton))
 Payload for a button
-##### dropdown (optional  [protocol.chat.v1.ActionPayload.Dropdown](#actionpayloaddropdown))
+##### <span class="codicon codicon-symbol-field symbol-field"></span>dropdown (optional  [protocol.chat.v1.ActionPayload.Dropdown](#actionpayloaddropdown))
 Payload for a dropdown
-##### input (optional  [protocol.chat.v1.ActionPayload.Input](#actionpayloadinput))
+##### <span class="codicon codicon-symbol-field symbol-field"></span>input (optional  [protocol.chat.v1.ActionPayload.Input](#actionpayloadinput))
 Payload for a text input
 
-### ActionPayload.Button
+### <span class="codicon codicon-symbol-structure symbol-structure"></span>ActionPayload.Button
 
 
 #### Fields
 
 
-##### data (optional  `bytes`)
+##### <span class="codicon codicon-symbol-field symbol-field"></span>data (optional  `bytes`)
 
 
-### ActionPayload.Dropdown
-
-
-#### Fields
-
-
-##### choice (optional  `bytes`)
-
-
-### ActionPayload.Input
+### <span class="codicon codicon-symbol-structure symbol-structure"></span>ActionPayload.Dropdown
 
 
 #### Fields
 
 
-##### input (optional  `string`)
-
-##### data (optional  `bytes`)
+##### <span class="codicon codicon-symbol-field symbol-field"></span>choice (optional  `bytes`)
 
 
-### Action
+### <span class="codicon codicon-symbol-structure symbol-structure"></span>ActionPayload.Input
+
+
+#### Fields
+
+
+##### <span class="codicon codicon-symbol-field symbol-field"></span>input (optional  `string`)
+
+##### <span class="codicon codicon-symbol-field symbol-field"></span>data (optional  `bytes`)
+
+
+### <span class="codicon codicon-symbol-structure symbol-structure"></span>Action
 Actions are interactive elements that can exist within an embed.
 
 #### Fields
 
 
-##### action_type (UNHANDLED | TYPE)
+##### <span class="codicon codicon-symbol-field symbol-field"></span>action_type (UNHANDLED | TYPE)
 Type of the action.
-##### button (optional  [protocol.chat.v1.Action.Button](#actionbutton))
+##### <span class="codicon codicon-symbol-field symbol-field"></span>button (optional  [protocol.chat.v1.Action.Button](#actionbutton))
 Button action.
-##### dropdown (optional  [protocol.chat.v1.Action.Dropdown](#actiondropdown))
+##### <span class="codicon codicon-symbol-field symbol-field"></span>dropdown (optional  [protocol.chat.v1.Action.Dropdown](#actiondropdown))
 Dropdown action.
-##### input (optional  [protocol.chat.v1.Action.Input](#actioninput))
+##### <span class="codicon codicon-symbol-field symbol-field"></span>input (optional  [protocol.chat.v1.Action.Input](#actioninput))
 Input action.
 
-### Action.Button
+### <span class="codicon codicon-symbol-structure symbol-structure"></span>Action.Button
 The action type. This is primarily used to change the look of the action to
 the user (example: Destructive actions will have a red background).
 
 #### Fields
 
 
-##### text (optional  `string`)
+##### <span class="codicon codicon-symbol-field symbol-field"></span>text (optional  `string`)
 a normal action.
-##### data (optional  `bytes`)
+##### <span class="codicon codicon-symbol-field symbol-field"></span>data (optional  `bytes`)
 a primary action.
-##### url (optional  `string`)
+##### <span class="codicon codicon-symbol-field symbol-field"></span>url (optional  `string`)
 A destructive / dangerous action.
 
-### Action.Dropdown
+### <span class="codicon codicon-symbol-structure symbol-structure"></span>Action.Dropdown
 
 
 #### Fields
 
 
-##### label (optional  `string`)
+##### <span class="codicon codicon-symbol-field symbol-field"></span>label (optional  `string`)
 
-##### entries (repeated  [protocol.chat.v1.Action.Dropdown.Entry](#actiondropdownentry))
-
-
-### Action.Dropdown.Entry
+##### <span class="codicon codicon-symbol-field symbol-field"></span>entries (repeated  [protocol.chat.v1.Action.Dropdown.Entry](#actiondropdownentry))
 
 
-#### Fields
-
-
-##### label (optional  `string`)
-
-##### data (optional  `bytes`)
-
-
-### Action.Input
+### <span class="codicon codicon-symbol-structure symbol-structure"></span>Action.Dropdown.Entry
 
 
 #### Fields
 
 
-##### label (optional  `string`)
+##### <span class="codicon codicon-symbol-field symbol-field"></span>label (optional  `string`)
 
-##### multiline (optional  `bool`)
-
-##### data (optional  `bytes`)
+##### <span class="codicon codicon-symbol-field symbol-field"></span>data (optional  `bytes`)
 
 
-### Embed
+### <span class="codicon codicon-symbol-structure symbol-structure"></span>Action.Input
+
+
+#### Fields
+
+
+##### <span class="codicon codicon-symbol-field symbol-field"></span>label (optional  `string`)
+
+##### <span class="codicon codicon-symbol-field symbol-field"></span>multiline (optional  `bool`)
+
+##### <span class="codicon codicon-symbol-field symbol-field"></span>data (optional  `bytes`)
+
+
+### <span class="codicon codicon-symbol-structure symbol-structure"></span>Embed
 Object representing a message embed.
 
 #### Fields
 
 
-##### title (optional  `string`)
+##### <span class="codicon codicon-symbol-field symbol-field"></span>title (optional  `string`)
 Title of this embed.
-##### body (optional  [protocol.chat.v1.FormattedText](#formattedtext))
+##### <span class="codicon codicon-symbol-field symbol-field"></span>body (optional  [protocol.chat.v1.FormattedText](#formattedtext))
 Body text of this embed.
-##### color (optional  `int32`)
+##### <span class="codicon codicon-symbol-field symbol-field"></span>color (optional  `int32`)
 Color of this embed.
-##### header (optional  [protocol.chat.v1.Embed.EmbedHeading](#embedembedheading))
+##### <span class="codicon codicon-symbol-field symbol-field"></span>header (optional  [protocol.chat.v1.Embed.EmbedHeading](#embedembedheading))
 Embed heading for the header.
-##### footer (optional  [protocol.chat.v1.Embed.EmbedHeading](#embedembedheading))
+##### <span class="codicon codicon-symbol-field symbol-field"></span>footer (optional  [protocol.chat.v1.Embed.EmbedHeading](#embedembedheading))
 Embed heading for the footer.
-##### fields (repeated  [protocol.chat.v1.Embed.EmbedField](#embedembedfield))
+##### <span class="codicon codicon-symbol-field symbol-field"></span>fields (repeated  [protocol.chat.v1.Embed.EmbedField](#embedembedfield))
 Fields of this embed.
 
-### Embed.EmbedHeading
+### <span class="codicon codicon-symbol-structure symbol-structure"></span>Embed.EmbedHeading
 
 
 #### Fields
 
 
-##### text (optional  `string`)
+##### <span class="codicon codicon-symbol-field symbol-field"></span>text (optional  `string`)
 
-##### subtext (optional  `string`)
+##### <span class="codicon codicon-symbol-field symbol-field"></span>subtext (optional  `string`)
 
-##### url (optional  `string`)
+##### <span class="codicon codicon-symbol-field symbol-field"></span>url (optional  `string`)
 
-##### icon (optional  `string`)
+##### <span class="codicon codicon-symbol-field symbol-field"></span>icon (optional  `string`)
 
 
-### Embed.EmbedField
+### <span class="codicon codicon-symbol-structure symbol-structure"></span>Embed.EmbedField
 
 
 #### Fields
 
 
-##### title (optional  `string`)
+##### <span class="codicon codicon-symbol-field symbol-field"></span>title (optional  `string`)
 
-##### subtitle (optional  `string`)
+##### <span class="codicon codicon-symbol-field symbol-field"></span>subtitle (optional  `string`)
 
-##### body (optional  [protocol.chat.v1.FormattedText](#formattedtext))
+##### <span class="codicon codicon-symbol-field symbol-field"></span>body (optional  [protocol.chat.v1.FormattedText](#formattedtext))
 
-##### image_url (optional  `string`)
+##### <span class="codicon codicon-symbol-field symbol-field"></span>image_url (optional  `string`)
 
-##### presentation (UNHANDLED | TYPE)
+##### <span class="codicon codicon-symbol-field symbol-field"></span>presentation (UNHANDLED | TYPE)
 
-##### actions (repeated  [protocol.chat.v1.Action](#action))
+##### <span class="codicon codicon-symbol-field symbol-field"></span>actions (repeated  [protocol.chat.v1.Action](#action))
 
 
-### Minithumbnail
+### <span class="codicon codicon-symbol-structure symbol-structure"></span>Minithumbnail
 Minithumbnail is an extremely low-quality JPEG thumbnail.
 
 The resolution is usually no larger than 64x64.
@@ -908,14 +908,14 @@ The resolution is usually no larger than 64x64.
 #### Fields
 
 
-##### width (optional  `uint32`)
+##### <span class="codicon codicon-symbol-field symbol-field"></span>width (optional  `uint32`)
 The width of the minithumbnail
-##### height (optional  `uint32`)
+##### <span class="codicon codicon-symbol-field symbol-field"></span>height (optional  `uint32`)
 The height of the minithumbnail
-##### data (optional  `bytes`)
+##### <span class="codicon codicon-symbol-field symbol-field"></span>data (optional  `bytes`)
 The JPEG data of the minithumbnail
 
-### Photo
+### <span class="codicon codicon-symbol-structure symbol-structure"></span>Photo
 Photo contains data about a photo.
 
 Photo are always JPEG, and are
@@ -931,347 +931,347 @@ in size, and servers may compress as necessary.
 #### Fields
 
 
-##### hmc (optional  `string`)
+##### <span class="codicon codicon-symbol-field symbol-field"></span>hmc (optional  `string`)
 The HMC URL of the photo.
-##### name (optional  `string`)
+##### <span class="codicon codicon-symbol-field symbol-field"></span>name (optional  `string`)
 The filename of the photo.
-##### file_size (optional  `uint32`)
+##### <span class="codicon codicon-symbol-field symbol-field"></span>file_size (optional  `uint32`)
 The size of the photo.
-##### height (optional  `uint32`)
+##### <span class="codicon codicon-symbol-field symbol-field"></span>height (optional  `uint32`)
 The height of the photo, in pixels.
-##### width (optional  `uint32`)
+##### <span class="codicon codicon-symbol-field symbol-field"></span>width (optional  `uint32`)
 The width of the photo, in pixels.
-##### caption (optional  [protocol.chat.v1.FormattedText](#formattedtext))
+##### <span class="codicon codicon-symbol-field symbol-field"></span>caption (optional  [protocol.chat.v1.FormattedText](#formattedtext))
 The photo's caption.
-##### minithumbnail (optional  [protocol.chat.v1.Minithumbnail](#minithumbnail))
+##### <span class="codicon codicon-symbol-field symbol-field"></span>minithumbnail (optional  [protocol.chat.v1.Minithumbnail](#minithumbnail))
 A thumbnail representing the photo.
 
-### Attachment
+### <span class="codicon codicon-symbol-structure symbol-structure"></span>Attachment
 Object representing a generic message attachment.
 
 #### Fields
 
 
-##### id (optional  `string`)
+##### <span class="codicon codicon-symbol-field symbol-field"></span>id (optional  `string`)
 File ID of this attachment.
-##### name (optional  `string`)
+##### <span class="codicon codicon-symbol-field symbol-field"></span>name (optional  `string`)
 Filename of this attachment.
-##### mimetype (optional  `string`)
+##### <span class="codicon codicon-symbol-field symbol-field"></span>mimetype (optional  `string`)
 Mimetype of this attachment.
-##### size (optional  `uint32`)
+##### <span class="codicon codicon-symbol-field symbol-field"></span>size (optional  `uint32`)
 Size of this attachment.
-##### caption (optional  [protocol.chat.v1.FormattedText](#formattedtext))
+##### <span class="codicon codicon-symbol-field symbol-field"></span>caption (optional  [protocol.chat.v1.FormattedText](#formattedtext))
 Caption of this attachment.
 
-### Content
+### <span class="codicon codicon-symbol-structure symbol-structure"></span>Content
 Object representing a message's content.
 
 #### Fields
 
 
-##### text_message (optional  [protocol.chat.v1.Content.TextContent](#contenttextcontent))
+##### <span class="codicon codicon-symbol-field symbol-field"></span>text_message (optional  [protocol.chat.v1.Content.TextContent](#contenttextcontent))
 Text content.
-##### embed_message (optional  [protocol.chat.v1.Content.EmbedContent](#contentembedcontent))
+##### <span class="codicon codicon-symbol-field symbol-field"></span>embed_message (optional  [protocol.chat.v1.Content.EmbedContent](#contentembedcontent))
 Embed content.
-##### attachment_message (optional  [protocol.chat.v1.Content.AttachmentContent](#contentattachmentcontent))
+##### <span class="codicon codicon-symbol-field symbol-field"></span>attachment_message (optional  [protocol.chat.v1.Content.AttachmentContent](#contentattachmentcontent))
 Attachment content.
-##### photo_message (optional  [protocol.chat.v1.Content.PhotoContent](#contentphotocontent))
+##### <span class="codicon codicon-symbol-field symbol-field"></span>photo_message (optional  [protocol.chat.v1.Content.PhotoContent](#contentphotocontent))
 Photo content.
-##### invite_rejected (optional  [protocol.chat.v1.Content.InviteRejected](#contentinviterejected))
+##### <span class="codicon codicon-symbol-field symbol-field"></span>invite_rejected (optional  [protocol.chat.v1.Content.InviteRejected](#contentinviterejected))
 A user rejected an invite.
-##### invite_accepted (optional  [protocol.chat.v1.Content.InviteAccepted](#contentinviteaccepted))
+##### <span class="codicon codicon-symbol-field symbol-field"></span>invite_accepted (optional  [protocol.chat.v1.Content.InviteAccepted](#contentinviteaccepted))
 A user accepted an invite.
-##### room_upgraded_to_guild (optional  [protocol.chat.v1.Content.RoomUpgradedToGuild](#contentroomupgradedtoguild))
+##### <span class="codicon codicon-symbol-field symbol-field"></span>room_upgraded_to_guild (optional  [protocol.chat.v1.Content.RoomUpgradedToGuild](#contentroomupgradedtoguild))
 A user upgraded a guild from "room" to "normal".
 
-### Content.TextContent
+### <span class="codicon codicon-symbol-structure symbol-structure"></span>Content.TextContent
 
 
 #### Fields
 
 
-##### content (optional  [protocol.chat.v1.FormattedText](#formattedtext))
+##### <span class="codicon codicon-symbol-field symbol-field"></span>content (optional  [protocol.chat.v1.FormattedText](#formattedtext))
 
 
-### Content.EmbedContent
-
-
-#### Fields
-
-
-##### embeds (repeated  [protocol.chat.v1.Embed](#embed))
-
-
-### Content.AttachmentContent
+### <span class="codicon codicon-symbol-structure symbol-structure"></span>Content.EmbedContent
 
 
 #### Fields
 
 
-##### files (repeated  [protocol.chat.v1.Attachment](#attachment))
+##### <span class="codicon codicon-symbol-field symbol-field"></span>embeds (repeated  [protocol.chat.v1.Embed](#embed))
 
 
-### Content.PhotoContent
-
-
-#### Fields
-
-
-##### photos (repeated  [protocol.chat.v1.Photo](#photo))
-
-
-### Content.InviteRejected
+### <span class="codicon codicon-symbol-structure symbol-structure"></span>Content.AttachmentContent
 
 
 #### Fields
 
 
-##### invitee_id (optional  `uint64`)
-
-##### inviter_id (optional  `uint64`)
+##### <span class="codicon codicon-symbol-field symbol-field"></span>files (repeated  [protocol.chat.v1.Attachment](#attachment))
 
 
-### Content.InviteAccepted
+### <span class="codicon codicon-symbol-structure symbol-structure"></span>Content.PhotoContent
 
 
 #### Fields
 
 
-##### invitee_id (optional  `uint64`)
-
-##### inviter_id (optional  `uint64`)
+##### <span class="codicon codicon-symbol-field symbol-field"></span>photos (repeated  [protocol.chat.v1.Photo](#photo))
 
 
-### Content.RoomUpgradedToGuild
+### <span class="codicon codicon-symbol-structure symbol-structure"></span>Content.InviteRejected
 
 
 #### Fields
 
 
-##### upgraded_by (optional  `uint64`)
+##### <span class="codicon codicon-symbol-field symbol-field"></span>invitee_id (optional  `uint64`)
+
+##### <span class="codicon codicon-symbol-field symbol-field"></span>inviter_id (optional  `uint64`)
 
 
-### Reaction
+### <span class="codicon codicon-symbol-structure symbol-structure"></span>Content.InviteAccepted
+
+
+#### Fields
+
+
+##### <span class="codicon codicon-symbol-field symbol-field"></span>invitee_id (optional  `uint64`)
+
+##### <span class="codicon codicon-symbol-field symbol-field"></span>inviter_id (optional  `uint64`)
+
+
+### <span class="codicon codicon-symbol-structure symbol-structure"></span>Content.RoomUpgradedToGuild
+
+
+#### Fields
+
+
+##### <span class="codicon codicon-symbol-field symbol-field"></span>upgraded_by (optional  `uint64`)
+
+
+### <span class="codicon codicon-symbol-structure symbol-structure"></span>Reaction
 Object representing a reaction.
 
 #### Fields
 
 
-##### emote (optional  [protocol.emote.v1.Emote]({{< ref "protocol.emote.v1.md" >}}#emote))
+##### <span class="codicon codicon-symbol-field symbol-field"></span>emote (optional  [protocol.emote.v1.Emote]({{< ref "protocol.emote.v1.md" >}}#emote))
 Emote data for this reaction.
 
 Emote's image ID is used as an identifier for unique reactions.
 Emotes with the same names should be "deduplicated" by a client, by suffixing
 their names with `~1`, `~2` and so on.
-##### count (optional  `uint32`)
+##### <span class="codicon codicon-symbol-field symbol-field"></span>count (optional  `uint32`)
 How many reactions this reaction has.
 
-### Format
+### <span class="codicon codicon-symbol-structure symbol-structure"></span>Format
 A format for text
 
 #### Fields
 
 
-##### start (optional  `uint32`)
+##### <span class="codicon codicon-symbol-field symbol-field"></span>start (optional  `uint32`)
 where the format begins to apply to
-##### length (optional  `uint32`)
+##### <span class="codicon codicon-symbol-field symbol-field"></span>length (optional  `uint32`)
 how many characters the format is
-##### bold (optional  [protocol.chat.v1.Format.Bold](#formatbold))
+##### <span class="codicon codicon-symbol-field symbol-field"></span>bold (optional  [protocol.chat.v1.Format.Bold](#formatbold))
 a text format for bold text
-##### italic (optional  [protocol.chat.v1.Format.Italic](#formatitalic))
+##### <span class="codicon codicon-symbol-field symbol-field"></span>italic (optional  [protocol.chat.v1.Format.Italic](#formatitalic))
 a text format for italic text
-##### underline (optional  [protocol.chat.v1.Format.Underline](#formatunderline))
+##### <span class="codicon codicon-symbol-field symbol-field"></span>underline (optional  [protocol.chat.v1.Format.Underline](#formatunderline))
 a text format for underline text
-##### monospace (optional  [protocol.chat.v1.Format.Monospace](#formatmonospace))
+##### <span class="codicon codicon-symbol-field symbol-field"></span>monospace (optional  [protocol.chat.v1.Format.Monospace](#formatmonospace))
 a text format for monospace text
-##### superscript (optional  [protocol.chat.v1.Format.Superscript](#formatsuperscript))
+##### <span class="codicon codicon-symbol-field symbol-field"></span>superscript (optional  [protocol.chat.v1.Format.Superscript](#formatsuperscript))
 a text format for superscript text
-##### subscript (optional  [protocol.chat.v1.Format.Subscript](#formatsubscript))
+##### <span class="codicon codicon-symbol-field symbol-field"></span>subscript (optional  [protocol.chat.v1.Format.Subscript](#formatsubscript))
 a text format for subscript text
-##### code_block (optional  [protocol.chat.v1.Format.CodeBlock](#formatcodeblock))
+##### <span class="codicon codicon-symbol-field symbol-field"></span>code_block (optional  [protocol.chat.v1.Format.CodeBlock](#formatcodeblock))
 a text format for a codeblock
-##### user_mention (optional  [protocol.chat.v1.Format.UserMention](#formatusermention))
+##### <span class="codicon codicon-symbol-field symbol-field"></span>user_mention (optional  [protocol.chat.v1.Format.UserMention](#formatusermention))
 a text format for a user mention
-##### role_mention (optional  [protocol.chat.v1.Format.RoleMention](#formatrolemention))
+##### <span class="codicon codicon-symbol-field symbol-field"></span>role_mention (optional  [protocol.chat.v1.Format.RoleMention](#formatrolemention))
 a text format for a role mention
-##### channel_mention (optional  [protocol.chat.v1.Format.ChannelMention](#formatchannelmention))
+##### <span class="codicon codicon-symbol-field symbol-field"></span>channel_mention (optional  [protocol.chat.v1.Format.ChannelMention](#formatchannelmention))
 a text format for a channel mention
-##### guild_mention (optional  [protocol.chat.v1.Format.GuildMention](#formatguildmention))
+##### <span class="codicon codicon-symbol-field symbol-field"></span>guild_mention (optional  [protocol.chat.v1.Format.GuildMention](#formatguildmention))
 a text format for a guild mention
-##### emoji (optional  [protocol.chat.v1.Format.Emoji](#formatemoji))
+##### <span class="codicon codicon-symbol-field symbol-field"></span>emoji (optional  [protocol.chat.v1.Format.Emoji](#formatemoji))
 a text format for an emoji
-##### color (optional  [protocol.chat.v1.Format.Color](#formatcolor))
+##### <span class="codicon codicon-symbol-field symbol-field"></span>color (optional  [protocol.chat.v1.Format.Color](#formatcolor))
 a text format for coloured text
-##### localization (optional  [protocol.chat.v1.Format.Localization](#formatlocalization))
+##### <span class="codicon codicon-symbol-field symbol-field"></span>localization (optional  [protocol.chat.v1.Format.Localization](#formatlocalization))
 a text format for localization
 
-### Format.Bold
+### <span class="codicon codicon-symbol-structure symbol-structure"></span>Format.Bold
 
 
 This item has no fields.
 
-### Format.Italic
+### <span class="codicon codicon-symbol-structure symbol-structure"></span>Format.Italic
 
 
 This item has no fields.
 
-### Format.Underline
+### <span class="codicon codicon-symbol-structure symbol-structure"></span>Format.Underline
 
 
 This item has no fields.
 
-### Format.Monospace
+### <span class="codicon codicon-symbol-structure symbol-structure"></span>Format.Monospace
 
 
 This item has no fields.
 
-### Format.Superscript
+### <span class="codicon codicon-symbol-structure symbol-structure"></span>Format.Superscript
 
 
 This item has no fields.
 
-### Format.Subscript
+### <span class="codicon codicon-symbol-structure symbol-structure"></span>Format.Subscript
 
 
 This item has no fields.
 
-### Format.CodeBlock
+### <span class="codicon codicon-symbol-structure symbol-structure"></span>Format.CodeBlock
 
 
 #### Fields
 
 
-##### language (optional  `string`)
+##### <span class="codicon codicon-symbol-field symbol-field"></span>language (optional  `string`)
 
 
-### Format.UserMention
-
-
-#### Fields
-
-
-##### user_id (optional  `uint64`)
-
-
-### Format.RoleMention
+### <span class="codicon codicon-symbol-structure symbol-structure"></span>Format.UserMention
 
 
 #### Fields
 
 
-##### role_id (optional  `uint64`)
+##### <span class="codicon codicon-symbol-field symbol-field"></span>user_id (optional  `uint64`)
 
 
-### Format.ChannelMention
-
-
-#### Fields
-
-
-##### channel_id (optional  `uint64`)
-
-
-### Format.GuildMention
+### <span class="codicon codicon-symbol-structure symbol-structure"></span>Format.RoleMention
 
 
 #### Fields
 
 
-##### guild_id (optional  `uint64`)
-
-##### homeserver (optional  `string`)
+##### <span class="codicon codicon-symbol-field symbol-field"></span>role_id (optional  `uint64`)
 
 
-### Format.Emoji
+### <span class="codicon codicon-symbol-structure symbol-structure"></span>Format.ChannelMention
 
 
 #### Fields
 
 
-##### image_hmc (optional  `string`)
-
-##### pack_id (optional  `uint64`)
+##### <span class="codicon codicon-symbol-field symbol-field"></span>channel_id (optional  `uint64`)
 
 
-### Format.Color
+### <span class="codicon codicon-symbol-structure symbol-structure"></span>Format.GuildMention
 
 
 #### Fields
 
 
-##### kind (UNHANDLED | TYPE)
+##### <span class="codicon codicon-symbol-field symbol-field"></span>guild_id (optional  `uint64`)
+
+##### <span class="codicon codicon-symbol-field symbol-field"></span>homeserver (optional  `string`)
 
 
-### Format.Localization
+### <span class="codicon codicon-symbol-structure symbol-structure"></span>Format.Emoji
 
 
 #### Fields
 
 
-##### i18n_code (optional  `string`)
+##### <span class="codicon codicon-symbol-field symbol-field"></span>image_hmc (optional  `string`)
+
+##### <span class="codicon codicon-symbol-field symbol-field"></span>pack_id (optional  `uint64`)
 
 
-### FormattedText
+### <span class="codicon codicon-symbol-structure symbol-structure"></span>Format.Color
+
+
+#### Fields
+
+
+##### <span class="codicon codicon-symbol-field symbol-field"></span>kind (UNHANDLED | TYPE)
+
+
+### <span class="codicon codicon-symbol-structure symbol-structure"></span>Format.Localization
+
+
+#### Fields
+
+
+##### <span class="codicon codicon-symbol-field symbol-field"></span>i18n_code (optional  `string`)
+
+
+### <span class="codicon codicon-symbol-structure symbol-structure"></span>FormattedText
 Formatted text
 
 #### Fields
 
 
-##### text (optional  `string`)
+##### <span class="codicon codicon-symbol-field symbol-field"></span>text (optional  `string`)
 The textual content of a message
-##### format (repeated  [protocol.chat.v1.Format](#format))
+##### <span class="codicon codicon-symbol-field symbol-field"></span>format (repeated  [protocol.chat.v1.Format](#format))
 The formats for a message
 
-### Message
+### <span class="codicon codicon-symbol-structure symbol-structure"></span>Message
 Object representing a message without the ID part.
 
 #### Fields
 
 
-##### metadata (optional  [protocol.harmonytypes.v1.Metadata]({{< ref "protocol.harmonytypes.v1.md" >}}#metadata))
+##### <span class="codicon codicon-symbol-field symbol-field"></span>metadata (optional  [protocol.harmonytypes.v1.Metadata]({{< ref "protocol.harmonytypes.v1.md" >}}#metadata))
 Metadata of this message.
-##### overrides (optional  [protocol.chat.v1.Overrides](#overrides))
+##### <span class="codicon codicon-symbol-field symbol-field"></span>overrides (optional  [protocol.chat.v1.Overrides](#overrides))
 Overrides of this message.
-##### author_id (optional  `uint64`)
+##### <span class="codicon codicon-symbol-field symbol-field"></span>author_id (optional  `uint64`)
 User ID of the user who sent this message.
-##### created_at (optional  `uint64`)
+##### <span class="codicon codicon-symbol-field symbol-field"></span>created_at (optional  `uint64`)
 When this message was created, in miliseconds since unix epoch
-##### edited_at (optional  `uint64`)
+##### <span class="codicon codicon-symbol-field symbol-field"></span>edited_at (optional  `uint64`)
 The most recent time this message was edited, in milliseconds since unix epoch
-##### in_reply_to (optional  `uint64`)
+##### <span class="codicon codicon-symbol-field symbol-field"></span>in_reply_to (optional  `uint64`)
 The message this message is a reply to.
-##### content (optional  [protocol.chat.v1.Content](#content))
+##### <span class="codicon codicon-symbol-field symbol-field"></span>content (optional  [protocol.chat.v1.Content](#content))
 The content of the message.
-##### reactions (repeated  [protocol.chat.v1.Reaction](#reaction))
+##### <span class="codicon codicon-symbol-field symbol-field"></span>reactions (repeated  [protocol.chat.v1.Reaction](#reaction))
 The reactions of the message.
 
-### MessageWithId
+### <span class="codicon codicon-symbol-structure symbol-structure"></span>MessageWithId
 Object representing a message with it's ID.
 
 #### Fields
 
 
-##### message_id (optional  `uint64`)
+##### <span class="codicon codicon-symbol-field symbol-field"></span>message_id (optional  `uint64`)
 ID of the message.
-##### message (optional  [protocol.chat.v1.Message](#message))
+##### <span class="codicon codicon-symbol-field symbol-field"></span>message (optional  [protocol.chat.v1.Message](#message))
 The message data.
 
-### GetChannelMessagesRequest
+### <span class="codicon codicon-symbol-structure symbol-structure"></span>GetChannelMessagesRequest
 Used in the `GetChannelMessages` endpoint.
 
 #### Fields
 
 
-##### guild_id (optional  `uint64`)
+##### <span class="codicon codicon-symbol-field symbol-field"></span>guild_id (optional  `uint64`)
 Guild ID of the guild that has the channel.
-##### channel_id (optional  `uint64`)
+##### <span class="codicon codicon-symbol-field symbol-field"></span>channel_id (optional  `uint64`)
 Channel ID of the channel to get messages from.
-##### message_id (optional  `uint64`)
+##### <span class="codicon codicon-symbol-field symbol-field"></span>message_id (optional  `uint64`)
 The ID of the message that will be used as an "anchor" point to figure out
 where to get the messages.
 If not specified, the `direction` will be ignored and the newest messages
 will be returned.
-##### direction (UNHANDLED | TYPE)
+##### <span class="codicon codicon-symbol-field symbol-field"></span>direction (UNHANDLED | TYPE)
 On which direction to get the messages.
 
 - By default, it is "before", which means you will get messages before the
@@ -1281,7 +1281,7 @@ message. This will include the `message_id` message itself, as the middle
 item of the list returned.
 - If it is "after", you will get the messages after the `message_id`
 message.
-##### count (optional  `uint32`)
+##### <span class="codicon codicon-symbol-field symbol-field"></span>count (optional  `uint32`)
 How many messages to get.
 
 - If `0`, a recommended message count to return is 25. If the direction is
@@ -1292,253 +1292,253 @@ to return *for each direction*, before and after.
 - Servers should enforce their own maximum limit, and clamp this value to
 the limit.
 
-### GetChannelMessagesResponse
+### <span class="codicon codicon-symbol-structure symbol-structure"></span>GetChannelMessagesResponse
 Used in the `GetChannelMessages` endpoint.
 
 #### Fields
 
 
-##### reached_top (optional  `bool`)
+##### <span class="codicon codicon-symbol-field symbol-field"></span>reached_top (optional  `bool`)
 Has reached the top (first message) of the message history.
-##### reached_bottom (optional  `bool`)
+##### <span class="codicon codicon-symbol-field symbol-field"></span>reached_bottom (optional  `bool`)
 Has reached the bottom (last message) of the message history.
-##### messages (repeated  [protocol.chat.v1.MessageWithId](#messagewithid))
+##### <span class="codicon codicon-symbol-field symbol-field"></span>messages (repeated  [protocol.chat.v1.MessageWithId](#messagewithid))
 The messages requested.
 
-### GetMessageRequest
+### <span class="codicon codicon-symbol-structure symbol-structure"></span>GetMessageRequest
 Used in the `GetMessage` endpoint.
 
 #### Fields
 
 
-##### guild_id (optional  `uint64`)
+##### <span class="codicon codicon-symbol-field symbol-field"></span>guild_id (optional  `uint64`)
 Guild ID of the guild where the channel is.
-##### channel_id (optional  `uint64`)
+##### <span class="codicon codicon-symbol-field symbol-field"></span>channel_id (optional  `uint64`)
 Channel ID of the channel where the message is.
-##### message_id (optional  `uint64`)
+##### <span class="codicon codicon-symbol-field symbol-field"></span>message_id (optional  `uint64`)
 Message ID of the message you want to get.
 
-### GetMessageResponse
+### <span class="codicon codicon-symbol-structure symbol-structure"></span>GetMessageResponse
 Used in the `GetMessage` endpoint.
 
 #### Fields
 
 
-##### message (optional  [protocol.chat.v1.Message](#message))
+##### <span class="codicon codicon-symbol-field symbol-field"></span>message (optional  [protocol.chat.v1.Message](#message))
 The message requested.
 
-### DeleteMessageRequest
+### <span class="codicon codicon-symbol-structure symbol-structure"></span>DeleteMessageRequest
 Used in the `DeleteMessage` endpoint.
 
 #### Fields
 
 
-##### guild_id (optional  `uint64`)
+##### <span class="codicon codicon-symbol-field symbol-field"></span>guild_id (optional  `uint64`)
 Guild ID of the guild where the channel is.
-##### channel_id (optional  `uint64`)
+##### <span class="codicon codicon-symbol-field symbol-field"></span>channel_id (optional  `uint64`)
 Channel ID of the channel where the message is.
-##### message_id (optional  `uint64`)
+##### <span class="codicon codicon-symbol-field symbol-field"></span>message_id (optional  `uint64`)
 Message ID of the message you want to delete.
 
-### DeleteMessageResponse
+### <span class="codicon codicon-symbol-structure symbol-structure"></span>DeleteMessageResponse
 Used in the `DeleteMessage` endpoint.
 
 This item has no fields.
 
-### TriggerActionRequest
+### <span class="codicon codicon-symbol-structure symbol-structure"></span>TriggerActionRequest
 Used in the `TriggerAction` endpoint.
 
 #### Fields
 
 
-##### guild_id (optional  `uint64`)
+##### <span class="codicon codicon-symbol-field symbol-field"></span>guild_id (optional  `uint64`)
 Guild ID of the guild where the channel is.
-##### channel_id (optional  `uint64`)
+##### <span class="codicon codicon-symbol-field symbol-field"></span>channel_id (optional  `uint64`)
 Channel ID of the channel where the message is.
-##### message_id (optional  `uint64`)
+##### <span class="codicon codicon-symbol-field symbol-field"></span>message_id (optional  `uint64`)
 Message ID of the message you want to trigger an action in.
-##### payload (optional  [protocol.chat.v1.ActionPayload](#actionpayload))
+##### <span class="codicon codicon-symbol-field symbol-field"></span>payload (optional  [protocol.chat.v1.ActionPayload](#actionpayload))
 Payload of action data.
 
-### TriggerActionResponse
+### <span class="codicon codicon-symbol-structure symbol-structure"></span>TriggerActionResponse
 Used in the `TriggerAction` endpoint.
 
 This item has no fields.
 
-### SendMessageRequest
+### <span class="codicon codicon-symbol-structure symbol-structure"></span>SendMessageRequest
 Used in the `SendMessage` endpoint.
 
 #### Fields
 
 
-##### guild_id (optional  `uint64`)
+##### <span class="codicon codicon-symbol-field symbol-field"></span>guild_id (optional  `uint64`)
 Guild ID of the guild where the channel is.
-##### channel_id (optional  `uint64`)
+##### <span class="codicon codicon-symbol-field symbol-field"></span>channel_id (optional  `uint64`)
 Channel ID of the channel you want to send a message in.
-##### content (optional  [protocol.chat.v1.Content](#content))
+##### <span class="codicon codicon-symbol-field symbol-field"></span>content (optional  [protocol.chat.v1.Content](#content))
 Content of the new message.
-##### echo_id (optional  `uint64`)
+##### <span class="codicon codicon-symbol-field symbol-field"></span>echo_id (optional  `uint64`)
 Echo ID of the new message. This can be used by clients to
 determine whether a message is sent.
-##### overrides (optional  [protocol.chat.v1.Overrides](#overrides))
+##### <span class="codicon codicon-symbol-field symbol-field"></span>overrides (optional  [protocol.chat.v1.Overrides](#overrides))
 The overrides of this new message.
-##### in_reply_to (optional  `uint64`)
+##### <span class="codicon codicon-symbol-field symbol-field"></span>in_reply_to (optional  `uint64`)
 The message this new message is a reply to.
-##### metadata (optional  [protocol.harmonytypes.v1.Metadata]({{< ref "protocol.harmonytypes.v1.md" >}}#metadata))
+##### <span class="codicon codicon-symbol-field symbol-field"></span>metadata (optional  [protocol.harmonytypes.v1.Metadata]({{< ref "protocol.harmonytypes.v1.md" >}}#metadata))
 The metadata of this new message.
 
-### SendMessageResponse
+### <span class="codicon codicon-symbol-structure symbol-structure"></span>SendMessageResponse
 Used in the `SendMessage` endpoint.
 
 #### Fields
 
 
-##### message_id (optional  `uint64`)
+##### <span class="codicon codicon-symbol-field symbol-field"></span>message_id (optional  `uint64`)
 Message ID of the message sent.
 
-### UpdateMessageTextRequest
+### <span class="codicon codicon-symbol-structure symbol-structure"></span>UpdateMessageTextRequest
 Used in the `UpdateMessageText` endpoint.
 
 #### Fields
 
 
-##### guild_id (optional  `uint64`)
+##### <span class="codicon codicon-symbol-field symbol-field"></span>guild_id (optional  `uint64`)
 Guild ID of the guild where the channel is.
-##### channel_id (optional  `uint64`)
+##### <span class="codicon codicon-symbol-field symbol-field"></span>channel_id (optional  `uint64`)
 Channel ID of the channel where the message is.
-##### message_id (optional  `uint64`)
+##### <span class="codicon codicon-symbol-field symbol-field"></span>message_id (optional  `uint64`)
 Message ID of the message you want to edit the text of.
-##### new_content (optional  [protocol.chat.v1.FormattedText](#formattedtext))
+##### <span class="codicon codicon-symbol-field symbol-field"></span>new_content (optional  [protocol.chat.v1.FormattedText](#formattedtext))
 New content for this message.
 
-### UpdateMessageTextResponse
+### <span class="codicon codicon-symbol-structure symbol-structure"></span>UpdateMessageTextResponse
 Used in the `UpdateMessageText` endpoint.
 
 This item has no fields.
 
-### PinMessageRequest
+### <span class="codicon codicon-symbol-structure symbol-structure"></span>PinMessageRequest
 Used in the `PinMessage` endpoint.
 
 #### Fields
 
 
-##### guild_id (optional  `uint64`)
+##### <span class="codicon codicon-symbol-field symbol-field"></span>guild_id (optional  `uint64`)
 Guild ID of the guild where the channel is.
-##### channel_id (optional  `uint64`)
+##### <span class="codicon codicon-symbol-field symbol-field"></span>channel_id (optional  `uint64`)
 Channel ID of the channel where the message is.
-##### message_id (optional  `uint64`)
+##### <span class="codicon codicon-symbol-field symbol-field"></span>message_id (optional  `uint64`)
 Message ID of the message we want to pin.
 
-### PinMessageResponse
+### <span class="codicon codicon-symbol-structure symbol-structure"></span>PinMessageResponse
 Used in the `UnpinMessage` endpoint.
 
 This item has no fields.
 
-### UnpinMessageRequest
+### <span class="codicon codicon-symbol-structure symbol-structure"></span>UnpinMessageRequest
 Used in the `UnpinMessage` endpoint.
 
 #### Fields
 
 
-##### guild_id (optional  `uint64`)
+##### <span class="codicon codicon-symbol-field symbol-field"></span>guild_id (optional  `uint64`)
 Guild ID of the guild where the channel is.
-##### channel_id (optional  `uint64`)
+##### <span class="codicon codicon-symbol-field symbol-field"></span>channel_id (optional  `uint64`)
 Channel ID of the channel where the message is.
-##### message_id (optional  `uint64`)
+##### <span class="codicon codicon-symbol-field symbol-field"></span>message_id (optional  `uint64`)
 Message ID of the message we want to unpin.
 
-### UnpinMessageResponse
+### <span class="codicon codicon-symbol-structure symbol-structure"></span>UnpinMessageResponse
 Used in the `UnpinMessage` endpoint.
 
 This item has no fields.
 
-### GetPinnedMessagesRequest
+### <span class="codicon codicon-symbol-structure symbol-structure"></span>GetPinnedMessagesRequest
 Used in the `GetPinnedMessages` endpoint.
 
 #### Fields
 
 
-##### guild_id (optional  `uint64`)
+##### <span class="codicon codicon-symbol-field symbol-field"></span>guild_id (optional  `uint64`)
 Guild ID of the guild where the channel is.
-##### channel_id (optional  `uint64`)
+##### <span class="codicon codicon-symbol-field symbol-field"></span>channel_id (optional  `uint64`)
 Channel ID of the channel we want to get pins of.
 
-### GetPinnedMessagesResponse
+### <span class="codicon codicon-symbol-structure symbol-structure"></span>GetPinnedMessagesResponse
 Used in the `GetPinnedMessages` endpoint.
 
 #### Fields
 
 
-##### pinned_message_ids (repeated  `uint64`)
+##### <span class="codicon codicon-symbol-field symbol-field"></span>pinned_message_ids (repeated  `uint64`)
 The IDs of the pinned messages.
 
-### AddReactionRequest
+### <span class="codicon codicon-symbol-structure symbol-structure"></span>AddReactionRequest
 Used in `AddReaction` endpoint.
 
 #### Fields
 
 
-##### guild_id (optional  `uint64`)
+##### <span class="codicon codicon-symbol-field symbol-field"></span>guild_id (optional  `uint64`)
 Guild ID of the guild where the channel is.
-##### channel_id (optional  `uint64`)
+##### <span class="codicon codicon-symbol-field symbol-field"></span>channel_id (optional  `uint64`)
 Channel ID of the channel where the message is.
-##### message_id (optional  `uint64`)
+##### <span class="codicon codicon-symbol-field symbol-field"></span>message_id (optional  `uint64`)
 Message ID of the message we want to add a reaction to.
-##### emote (optional  [protocol.emote.v1.Emote]({{< ref "protocol.emote.v1.md" >}}#emote))
+##### <span class="codicon codicon-symbol-field symbol-field"></span>emote (optional  [protocol.emote.v1.Emote]({{< ref "protocol.emote.v1.md" >}}#emote))
 The emote we want to react with.
 
-### AddReactionResponse
+### <span class="codicon codicon-symbol-structure symbol-structure"></span>AddReactionResponse
 Used in `AddReaction` endpoint.
 
 This item has no fields.
 
-### RemoveReactionRequest
+### <span class="codicon codicon-symbol-structure symbol-structure"></span>RemoveReactionRequest
 Used in `RemoveReaction` endpoint.
 
 #### Fields
 
 
-##### guild_id (optional  `uint64`)
+##### <span class="codicon codicon-symbol-field symbol-field"></span>guild_id (optional  `uint64`)
 Guild ID of the guild where the channel is.
-##### channel_id (optional  `uint64`)
+##### <span class="codicon codicon-symbol-field symbol-field"></span>channel_id (optional  `uint64`)
 Channel ID of the channel where the message is.
-##### message_id (optional  `uint64`)
+##### <span class="codicon codicon-symbol-field symbol-field"></span>message_id (optional  `uint64`)
 Message ID of the message we want to remove a reaction.
-##### emote (optional  [protocol.emote.v1.Emote]({{< ref "protocol.emote.v1.md" >}}#emote))
+##### <span class="codicon codicon-symbol-field symbol-field"></span>emote (optional  [protocol.emote.v1.Emote]({{< ref "protocol.emote.v1.md" >}}#emote))
 The emote we want to remove the react of.
 
-### RemoveReactionResponse
+### <span class="codicon codicon-symbol-structure symbol-structure"></span>RemoveReactionResponse
 Used in `RemoveReaction` endpoint.
 
 This item has no fields.
 
-### Permission
+### <span class="codicon codicon-symbol-structure symbol-structure"></span>Permission
 Object representing a single permission node.
 
 #### Fields
 
 
-##### matches (optional  `string`)
+##### <span class="codicon codicon-symbol-field symbol-field"></span>matches (optional  `string`)
 the permission matcher. (example: roles.manage)
-##### ok (optional  `bool`)
+##### <span class="codicon codicon-symbol-field symbol-field"></span>ok (optional  `bool`)
 whether the permission is allowed or not.
 
-### Role
+### <span class="codicon codicon-symbol-structure symbol-structure"></span>Role
 Object representing a role without the ID.
 
 #### Fields
 
 
-##### name (optional  `string`)
+##### <span class="codicon codicon-symbol-field symbol-field"></span>name (optional  `string`)
 the role name.
-##### color (optional  `int32`)
+##### <span class="codicon codicon-symbol-field symbol-field"></span>color (optional  `int32`)
 the role color.
-##### hoist (optional  `bool`)
+##### <span class="codicon codicon-symbol-field symbol-field"></span>hoist (optional  `bool`)
 whether the role is hoisted or not.
-##### pingable (optional  `bool`)
+##### <span class="codicon codicon-symbol-field symbol-field"></span>pingable (optional  `bool`)
 whether the role is mentionable or not.
 
-### RoleWithId
+### <span class="codicon codicon-symbol-structure symbol-structure"></span>RoleWithId
 Object representing a role with it's ID.
 
 The role ID for the default role in a guild should always be 0.
@@ -1546,227 +1546,227 @@ The role ID for the default role in a guild should always be 0.
 #### Fields
 
 
-##### role_id (optional  `uint64`)
+##### <span class="codicon codicon-symbol-field symbol-field"></span>role_id (optional  `uint64`)
 ID of the role.
-##### role (optional  [protocol.chat.v1.Role](#role))
+##### <span class="codicon codicon-symbol-field symbol-field"></span>role (optional  [protocol.chat.v1.Role](#role))
 The role data.
 
-### QueryHasPermissionRequest
+### <span class="codicon codicon-symbol-structure symbol-structure"></span>QueryHasPermissionRequest
 Used in the `QueryHasPermission` endpoint.
 
 #### Fields
 
 
-##### guild_id (optional  `uint64`)
+##### <span class="codicon codicon-symbol-field symbol-field"></span>guild_id (optional  `uint64`)
 the guild ID to query permissions for
-##### channel_id (optional  `uint64`)
+##### <span class="codicon codicon-symbol-field symbol-field"></span>channel_id (optional  `uint64`)
 the channel ID to query permissions for. If not set, it will query
 permissions for the guild.
-##### as (optional  `uint64`)
+##### <span class="codicon codicon-symbol-field symbol-field"></span>as (optional  `uint64`)
 the user ID to query permissions for (if not provided, the current user is
 assumed).
-##### check_for (optional  `string`)
+##### <span class="codicon codicon-symbol-field symbol-field"></span>check_for (optional  `string`)
 the permission node to check for.
 
-### QueryHasPermissionResponse
+### <span class="codicon codicon-symbol-structure symbol-structure"></span>QueryHasPermissionResponse
 Used in the `QueryHasPermission` endpoint.
 
 #### Fields
 
 
-##### ok (optional  `bool`)
+##### <span class="codicon codicon-symbol-field symbol-field"></span>ok (optional  `bool`)
 the permissions for the given node.
 
-### SetPermissionsRequest
+### <span class="codicon codicon-symbol-structure symbol-structure"></span>SetPermissionsRequest
 Used in the `SetPermissions` endpoint.
 
 #### Fields
 
 
-##### guild_id (optional  `uint64`)
+##### <span class="codicon codicon-symbol-field symbol-field"></span>guild_id (optional  `uint64`)
 the guild ID to set permissions for.
-##### channel_id (optional  `uint64`)
+##### <span class="codicon codicon-symbol-field symbol-field"></span>channel_id (optional  `uint64`)
 the channel ID to set permissions for. Only set if the role is for a
 channel.
-##### role_id (optional  `uint64`)
+##### <span class="codicon codicon-symbol-field symbol-field"></span>role_id (optional  `uint64`)
 the role ID to set permissions for.
-##### perms_to_give (repeated  [protocol.chat.v1.Permission](#permission))
+##### <span class="codicon codicon-symbol-field symbol-field"></span>perms_to_give (repeated  [protocol.chat.v1.Permission](#permission))
 the permission list to give.
 
 There is no "perms_to_take" because not given permissions are by
 default not allowed.
 
-### SetPermissionsResponse
+### <span class="codicon codicon-symbol-structure symbol-structure"></span>SetPermissionsResponse
 Used in the `SetPermissions` endpoint.
 
 This item has no fields.
 
-### GetPermissionsRequest
+### <span class="codicon codicon-symbol-structure symbol-structure"></span>GetPermissionsRequest
 Used in the `GetPermissions` endpoint.
 
 #### Fields
 
 
-##### guild_id (optional  `uint64`)
+##### <span class="codicon codicon-symbol-field symbol-field"></span>guild_id (optional  `uint64`)
 the guild ID to get permissions for.
-##### channel_id (optional  `uint64`)
+##### <span class="codicon codicon-symbol-field symbol-field"></span>channel_id (optional  `uint64`)
 the channel ID to get permissions for. Only applicable for roles in a
 channel.
-##### role_id (optional  `uint64`)
+##### <span class="codicon codicon-symbol-field symbol-field"></span>role_id (optional  `uint64`)
 the role ID to get permissions for.
 
-### GetPermissionsResponse
+### <span class="codicon codicon-symbol-structure symbol-structure"></span>GetPermissionsResponse
 Used in the `GetPermissions` endpoint.
 
 #### Fields
 
 
-##### perms (repeated  [protocol.chat.v1.Permission](#permission))
+##### <span class="codicon codicon-symbol-field symbol-field"></span>perms (repeated  [protocol.chat.v1.Permission](#permission))
 the permissions list for the given role.
 
-### MoveRoleRequest
+### <span class="codicon codicon-symbol-structure symbol-structure"></span>MoveRoleRequest
 Used in the `MoveRole` endpoint.
 
 #### Fields
 
 
-##### guild_id (optional  `uint64`)
+##### <span class="codicon codicon-symbol-field symbol-field"></span>guild_id (optional  `uint64`)
 the guild ID to move the role in.
-##### role_id (optional  `uint64`)
+##### <span class="codicon codicon-symbol-field symbol-field"></span>role_id (optional  `uint64`)
 the role ID to move.
-##### new_position (optional  [protocol.harmonytypes.v1.ItemPosition]({{< ref "protocol.harmonytypes.v1.md" >}}#itemposition))
+##### <span class="codicon codicon-symbol-field symbol-field"></span>new_position (optional  [protocol.harmonytypes.v1.ItemPosition]({{< ref "protocol.harmonytypes.v1.md" >}}#itemposition))
 the new position of the role.
 
-### MoveRoleResponse
+### <span class="codicon codicon-symbol-structure symbol-structure"></span>MoveRoleResponse
 Used in the `MoveRole` endpoint.
 
 This item has no fields.
 
-### GetGuildRolesRequest
+### <span class="codicon codicon-symbol-structure symbol-structure"></span>GetGuildRolesRequest
 Used in the `GetGuildRoles` endpoint.
 
 #### Fields
 
 
-##### guild_id (optional  `uint64`)
+##### <span class="codicon codicon-symbol-field symbol-field"></span>guild_id (optional  `uint64`)
 the guild ID to get roles for.
 
-### GetGuildRolesResponse
+### <span class="codicon codicon-symbol-structure symbol-structure"></span>GetGuildRolesResponse
 Used in the `GetGuildRoles` endpoint.
 
 #### Fields
 
 
-##### roles (repeated  [protocol.chat.v1.RoleWithId](#rolewithid))
+##### <span class="codicon codicon-symbol-field symbol-field"></span>roles (repeated  [protocol.chat.v1.RoleWithId](#rolewithid))
 the list of roles in the guild.
 
-### AddGuildRoleRequest
+### <span class="codicon codicon-symbol-structure symbol-structure"></span>AddGuildRoleRequest
 Used in the `AddGuildRole` endpoint.
 
 #### Fields
 
 
-##### guild_id (optional  `uint64`)
+##### <span class="codicon codicon-symbol-field symbol-field"></span>guild_id (optional  `uint64`)
 the guild ID to add the role to.
-##### name (optional  `string`)
+##### <span class="codicon codicon-symbol-field symbol-field"></span>name (optional  `string`)
 the role name.
-##### color (optional  `int32`)
+##### <span class="codicon codicon-symbol-field symbol-field"></span>color (optional  `int32`)
 the role color.
-##### hoist (optional  `bool`)
+##### <span class="codicon codicon-symbol-field symbol-field"></span>hoist (optional  `bool`)
 whether the role is hoisted or not.
-##### pingable (optional  `bool`)
+##### <span class="codicon codicon-symbol-field symbol-field"></span>pingable (optional  `bool`)
 whether the role is mentionable or not.
 
-### AddGuildRoleResponse
+### <span class="codicon codicon-symbol-structure symbol-structure"></span>AddGuildRoleResponse
 Used in the `AddGuildRole` endpoint.
 
 #### Fields
 
 
-##### role_id (optional  `uint64`)
+##### <span class="codicon codicon-symbol-field symbol-field"></span>role_id (optional  `uint64`)
 the ID of the newly created role.
 
-### DeleteGuildRoleRequest
+### <span class="codicon codicon-symbol-structure symbol-structure"></span>DeleteGuildRoleRequest
 Used in the `DeleteGuildRole` endpoint.
 
 #### Fields
 
 
-##### guild_id (optional  `uint64`)
+##### <span class="codicon codicon-symbol-field symbol-field"></span>guild_id (optional  `uint64`)
 the guild ID to delete the role from.
-##### role_id (optional  `uint64`)
+##### <span class="codicon codicon-symbol-field symbol-field"></span>role_id (optional  `uint64`)
 the role ID to delete.
 
-### DeleteGuildRoleResponse
+### <span class="codicon codicon-symbol-structure symbol-structure"></span>DeleteGuildRoleResponse
 Used in the `DeleteGuildRole` endpoint.
 
 This item has no fields.
 
-### ModifyGuildRoleRequest
+### <span class="codicon codicon-symbol-structure symbol-structure"></span>ModifyGuildRoleRequest
 Used in the `ModifyGuildRole` endpoint.
 
 #### Fields
 
 
-##### guild_id (optional  `uint64`)
+##### <span class="codicon codicon-symbol-field symbol-field"></span>guild_id (optional  `uint64`)
 the ID of the guild where the role is located
-##### role_id (optional  `uint64`)
+##### <span class="codicon codicon-symbol-field symbol-field"></span>role_id (optional  `uint64`)
 the ID of the role to modify
-##### new_name (optional  `string`)
+##### <span class="codicon codicon-symbol-field symbol-field"></span>new_name (optional  `string`)
 the new name of the role
-##### new_color (optional  `int32`)
+##### <span class="codicon codicon-symbol-field symbol-field"></span>new_color (optional  `int32`)
 the new color of the role
-##### new_hoist (optional  `bool`)
+##### <span class="codicon codicon-symbol-field symbol-field"></span>new_hoist (optional  `bool`)
 the new hoist status of the role
-##### new_pingable (optional  `bool`)
+##### <span class="codicon codicon-symbol-field symbol-field"></span>new_pingable (optional  `bool`)
 the new pingable status of the role
 
-### ModifyGuildRoleResponse
+### <span class="codicon codicon-symbol-structure symbol-structure"></span>ModifyGuildRoleResponse
 Used in the `ModifyGuildRole` endpoint.
 
 This item has no fields.
 
-### ManageUserRolesRequest
+### <span class="codicon codicon-symbol-structure symbol-structure"></span>ManageUserRolesRequest
 Used in the `ManageUserRoles` endpoint.
 
 #### Fields
 
 
-##### guild_id (optional  `uint64`)
+##### <span class="codicon codicon-symbol-field symbol-field"></span>guild_id (optional  `uint64`)
 the ID of the guild where the user is being managed
-##### user_id (optional  `uint64`)
+##### <span class="codicon codicon-symbol-field symbol-field"></span>user_id (optional  `uint64`)
 the ID of the user to modify
-##### give_role_ids (repeated  `uint64`)
+##### <span class="codicon codicon-symbol-field symbol-field"></span>give_role_ids (repeated  `uint64`)
 the IDs of the roles to add
-##### take_role_ids (repeated  `uint64`)
+##### <span class="codicon codicon-symbol-field symbol-field"></span>take_role_ids (repeated  `uint64`)
 the IDs of the roles to remove
 
-### ManageUserRolesResponse
+### <span class="codicon codicon-symbol-structure symbol-structure"></span>ManageUserRolesResponse
 Used in the `ManageUserRoles` endpoint.
 
 This item has no fields.
 
-### GetUserRolesRequest
+### <span class="codicon codicon-symbol-structure symbol-structure"></span>GetUserRolesRequest
 Used in the `GetUserRoles` endpoint.
 
 #### Fields
 
 
-##### guild_id (optional  `uint64`)
+##### <span class="codicon codicon-symbol-field symbol-field"></span>guild_id (optional  `uint64`)
 the ID of the guild where the user is located
-##### user_id (optional  `uint64`)
+##### <span class="codicon codicon-symbol-field symbol-field"></span>user_id (optional  `uint64`)
 the ID of the user to get roles for
 
-### GetUserRolesResponse
+### <span class="codicon codicon-symbol-structure symbol-structure"></span>GetUserRolesResponse
 Used in the `GetUserRoles` endpoint.
 
 #### Fields
 
 
-##### roles (repeated  `uint64`)
+##### <span class="codicon codicon-symbol-field symbol-field"></span>roles (repeated  `uint64`)
 a list of IDs of the roles the user has
 
-### StreamEventsRequest
+### <span class="codicon codicon-symbol-structure symbol-structure"></span>StreamEventsRequest
 Request type for use in the `StreamEvents` endpoint.
 By default, this endpoint will subscribe to all events.
 Any guilds joined in the future will be added to the subscription as well.
@@ -1775,625 +1775,625 @@ Use the UnsubscribeFromAll event for unsubscribing from all current subscription
 #### Fields
 
 
-##### subscribe_to_guild (optional  [protocol.chat.v1.StreamEventsRequest.SubscribeToGuild](#streameventsrequestsubscribetoguild))
+##### <span class="codicon codicon-symbol-field symbol-field"></span>subscribe_to_guild (optional  [protocol.chat.v1.StreamEventsRequest.SubscribeToGuild](#streameventsrequestsubscribetoguild))
 Subscribe to the guild event source.
-##### subscribe_to_actions (optional  [protocol.chat.v1.StreamEventsRequest.SubscribeToActions](#streameventsrequestsubscribetoactions))
+##### <span class="codicon codicon-symbol-field symbol-field"></span>subscribe_to_actions (optional  [protocol.chat.v1.StreamEventsRequest.SubscribeToActions](#streameventsrequestsubscribetoactions))
 Subscribe to the action event source.
-##### subscribe_to_homeserver_events (optional  [protocol.chat.v1.StreamEventsRequest.SubscribeToHomeserverEvents](#streameventsrequestsubscribetohomeserverevents))
+##### <span class="codicon codicon-symbol-field symbol-field"></span>subscribe_to_homeserver_events (optional  [protocol.chat.v1.StreamEventsRequest.SubscribeToHomeserverEvents](#streameventsrequestsubscribetohomeserverevents))
 Subscribe to the homeserver event source.
-##### unsubscribe_from_all (optional  [protocol.chat.v1.StreamEventsRequest.UnsubscribeFromAll](#streameventsrequestunsubscribefromall))
+##### <span class="codicon codicon-symbol-field symbol-field"></span>unsubscribe_from_all (optional  [protocol.chat.v1.StreamEventsRequest.UnsubscribeFromAll](#streameventsrequestunsubscribefromall))
 Unsubscribe from all events.
 
-### StreamEventsRequest.SubscribeToGuild
+### <span class="codicon codicon-symbol-structure symbol-structure"></span>StreamEventsRequest.SubscribeToGuild
 
 
 #### Fields
 
 
-##### guild_id (optional  `uint64`)
+##### <span class="codicon codicon-symbol-field symbol-field"></span>guild_id (optional  `uint64`)
 
 
-### StreamEventsRequest.SubscribeToActions
-
-
-This item has no fields.
-
-### StreamEventsRequest.SubscribeToHomeserverEvents
+### <span class="codicon codicon-symbol-structure symbol-structure"></span>StreamEventsRequest.SubscribeToActions
 
 
 This item has no fields.
 
-### StreamEventsRequest.UnsubscribeFromAll
+### <span class="codicon codicon-symbol-structure symbol-structure"></span>StreamEventsRequest.SubscribeToHomeserverEvents
 
 
 This item has no fields.
 
-### StreamEventsResponse
+### <span class="codicon codicon-symbol-structure symbol-structure"></span>StreamEventsRequest.UnsubscribeFromAll
+
+
+This item has no fields.
+
+### <span class="codicon codicon-symbol-structure symbol-structure"></span>StreamEventsResponse
 Used in the `StreamEvents` endpoint.
 
 #### Fields
 
 
-##### chat (optional  [protocol.chat.v1.StreamEvent](#streamevent))
+##### <span class="codicon codicon-symbol-field symbol-field"></span>chat (optional  [protocol.chat.v1.StreamEvent](#streamevent))
 A chat event.
-##### emote (optional  [protocol.emote.v1.StreamEvent]({{< ref "protocol.emote.v1.md" >}}#streamevent))
+##### <span class="codicon codicon-symbol-field symbol-field"></span>emote (optional  [protocol.emote.v1.StreamEvent]({{< ref "protocol.emote.v1.md" >}}#streamevent))
 A emote event.
-##### profile (optional  [protocol.profile.v1.StreamEvent]({{< ref "protocol.profile.v1.md" >}}#streamevent))
+##### <span class="codicon codicon-symbol-field symbol-field"></span>profile (optional  [protocol.profile.v1.StreamEvent]({{< ref "protocol.profile.v1.md" >}}#streamevent))
 A profile event.
 
-### StreamEvent
+### <span class="codicon codicon-symbol-structure symbol-structure"></span>StreamEvent
 Describes an event.
 
 #### Fields
 
 
-##### guild_added_to_list (optional  [protocol.chat.v1.StreamEvent.GuildAddedToList](#streameventguildaddedtolist))
+##### <span class="codicon codicon-symbol-field symbol-field"></span>guild_added_to_list (optional  [protocol.chat.v1.StreamEvent.GuildAddedToList](#streameventguildaddedtolist))
 Send the guild added to list event.
-##### guild_removed_from_list (optional  [protocol.chat.v1.StreamEvent.GuildRemovedFromList](#streameventguildremovedfromlist))
+##### <span class="codicon codicon-symbol-field symbol-field"></span>guild_removed_from_list (optional  [protocol.chat.v1.StreamEvent.GuildRemovedFromList](#streameventguildremovedfromlist))
 Send the guild removed from list event.
-##### action_performed (optional  [protocol.chat.v1.StreamEvent.ActionPerformed](#streameventactionperformed))
+##### <span class="codicon codicon-symbol-field symbol-field"></span>action_performed (optional  [protocol.chat.v1.StreamEvent.ActionPerformed](#streameventactionperformed))
 Send the action performed event.
-##### sent_message (optional  [protocol.chat.v1.StreamEvent.MessageSent](#streameventmessagesent))
+##### <span class="codicon codicon-symbol-field symbol-field"></span>sent_message (optional  [protocol.chat.v1.StreamEvent.MessageSent](#streameventmessagesent))
 Send the message sent event.
-##### edited_message (optional  [protocol.chat.v1.StreamEvent.MessageUpdated](#streameventmessageupdated))
+##### <span class="codicon codicon-symbol-field symbol-field"></span>edited_message (optional  [protocol.chat.v1.StreamEvent.MessageUpdated](#streameventmessageupdated))
 Send the message updated event.
-##### deleted_message (optional  [protocol.chat.v1.StreamEvent.MessageDeleted](#streameventmessagedeleted))
+##### <span class="codicon codicon-symbol-field symbol-field"></span>deleted_message (optional  [protocol.chat.v1.StreamEvent.MessageDeleted](#streameventmessagedeleted))
 Send the message deleted event.
-##### created_channel (optional  [protocol.chat.v1.StreamEvent.ChannelCreated](#streameventchannelcreated))
+##### <span class="codicon codicon-symbol-field symbol-field"></span>created_channel (optional  [protocol.chat.v1.StreamEvent.ChannelCreated](#streameventchannelcreated))
 Send the channel created event.
-##### edited_channel (optional  [protocol.chat.v1.StreamEvent.ChannelUpdated](#streameventchannelupdated))
+##### <span class="codicon codicon-symbol-field symbol-field"></span>edited_channel (optional  [protocol.chat.v1.StreamEvent.ChannelUpdated](#streameventchannelupdated))
 Send the channel updated event.
-##### deleted_channel (optional  [protocol.chat.v1.StreamEvent.ChannelDeleted](#streameventchanneldeleted))
+##### <span class="codicon codicon-symbol-field symbol-field"></span>deleted_channel (optional  [protocol.chat.v1.StreamEvent.ChannelDeleted](#streameventchanneldeleted))
 Send the channel deleted event.
-##### edited_guild (optional  [protocol.chat.v1.StreamEvent.GuildUpdated](#streameventguildupdated))
+##### <span class="codicon codicon-symbol-field symbol-field"></span>edited_guild (optional  [protocol.chat.v1.StreamEvent.GuildUpdated](#streameventguildupdated))
 Send the guild updated event.
-##### deleted_guild (optional  [protocol.chat.v1.StreamEvent.GuildDeleted](#streameventguilddeleted))
+##### <span class="codicon codicon-symbol-field symbol-field"></span>deleted_guild (optional  [protocol.chat.v1.StreamEvent.GuildDeleted](#streameventguilddeleted))
 Send the guild deleted event.
-##### joined_member (optional  [protocol.chat.v1.StreamEvent.MemberJoined](#streameventmemberjoined))
+##### <span class="codicon codicon-symbol-field symbol-field"></span>joined_member (optional  [protocol.chat.v1.StreamEvent.MemberJoined](#streameventmemberjoined))
 Send the member joined event.
-##### left_member (optional  [protocol.chat.v1.StreamEvent.MemberLeft](#streameventmemberleft))
+##### <span class="codicon codicon-symbol-field symbol-field"></span>left_member (optional  [protocol.chat.v1.StreamEvent.MemberLeft](#streameventmemberleft))
 Send the member left event.
-##### typing (optional  [protocol.chat.v1.StreamEvent.Typing](#streameventtyping))
+##### <span class="codicon codicon-symbol-field symbol-field"></span>typing (optional  [protocol.chat.v1.StreamEvent.Typing](#streameventtyping))
 Send the typing event.
-##### role_created (optional  [protocol.chat.v1.StreamEvent.RoleCreated](#streameventrolecreated))
+##### <span class="codicon codicon-symbol-field symbol-field"></span>role_created (optional  [protocol.chat.v1.StreamEvent.RoleCreated](#streameventrolecreated))
 Send the role created event.
-##### role_deleted (optional  [protocol.chat.v1.StreamEvent.RoleDeleted](#streameventroledeleted))
+##### <span class="codicon codicon-symbol-field symbol-field"></span>role_deleted (optional  [protocol.chat.v1.StreamEvent.RoleDeleted](#streameventroledeleted))
 Send the role deleted event.
-##### role_moved (optional  [protocol.chat.v1.StreamEvent.RoleMoved](#streameventrolemoved))
+##### <span class="codicon codicon-symbol-field symbol-field"></span>role_moved (optional  [protocol.chat.v1.StreamEvent.RoleMoved](#streameventrolemoved))
 Send the role moved event.
-##### role_updated (optional  [protocol.chat.v1.StreamEvent.RoleUpdated](#streameventroleupdated))
+##### <span class="codicon codicon-symbol-field symbol-field"></span>role_updated (optional  [protocol.chat.v1.StreamEvent.RoleUpdated](#streameventroleupdated))
 Send the role updated event.
-##### role_perms_updated (optional  [protocol.chat.v1.StreamEvent.RolePermissionsUpdated](#streameventrolepermissionsupdated))
+##### <span class="codicon codicon-symbol-field symbol-field"></span>role_perms_updated (optional  [protocol.chat.v1.StreamEvent.RolePermissionsUpdated](#streameventrolepermissionsupdated))
 Send the role perms updated event.
-##### user_roles_updated (optional  [protocol.chat.v1.StreamEvent.UserRolesUpdated](#streameventuserrolesupdated))
+##### <span class="codicon codicon-symbol-field symbol-field"></span>user_roles_updated (optional  [protocol.chat.v1.StreamEvent.UserRolesUpdated](#streameventuserrolesupdated))
 Send the user roles updated event.
-##### permission_updated (optional  [protocol.chat.v1.StreamEvent.PermissionUpdated](#streameventpermissionupdated))
+##### <span class="codicon codicon-symbol-field symbol-field"></span>permission_updated (optional  [protocol.chat.v1.StreamEvent.PermissionUpdated](#streameventpermissionupdated))
 Send the permission updated event.
-##### channels_reordered (optional  [protocol.chat.v1.StreamEvent.ChannelsReordered](#streameventchannelsreordered))
+##### <span class="codicon codicon-symbol-field symbol-field"></span>channels_reordered (optional  [protocol.chat.v1.StreamEvent.ChannelsReordered](#streameventchannelsreordered))
 The channels have been completely reordered.
-##### edited_channel_position (optional  [protocol.chat.v1.StreamEvent.ChannelPositionUpdated](#streameventchannelpositionupdated))
+##### <span class="codicon codicon-symbol-field symbol-field"></span>edited_channel_position (optional  [protocol.chat.v1.StreamEvent.ChannelPositionUpdated](#streameventchannelpositionupdated))
 Send the channel position updated event.
-##### message_pinned (optional  [protocol.chat.v1.StreamEvent.MessagePinned](#streameventmessagepinned))
+##### <span class="codicon codicon-symbol-field symbol-field"></span>message_pinned (optional  [protocol.chat.v1.StreamEvent.MessagePinned](#streameventmessagepinned))
 Send the message pinned event.
-##### message_unpinned (optional  [protocol.chat.v1.StreamEvent.MessageUnpinned](#streameventmessageunpinned))
+##### <span class="codicon codicon-symbol-field symbol-field"></span>message_unpinned (optional  [protocol.chat.v1.StreamEvent.MessageUnpinned](#streameventmessageunpinned))
 Send the message unpinned event.
-##### reaction_updated (optional  [protocol.chat.v1.StreamEvent.ReactionUpdated](#streameventreactionupdated))
+##### <span class="codicon codicon-symbol-field symbol-field"></span>reaction_updated (optional  [protocol.chat.v1.StreamEvent.ReactionUpdated](#streameventreactionupdated))
 Send the reaction updated event.
-##### owner_added (optional  [protocol.chat.v1.StreamEvent.OwnerAdded](#streameventowneradded))
+##### <span class="codicon codicon-symbol-field symbol-field"></span>owner_added (optional  [protocol.chat.v1.StreamEvent.OwnerAdded](#streameventowneradded))
 Send the owner added event.
-##### owner_removed (optional  [protocol.chat.v1.StreamEvent.OwnerRemoved](#streameventownerremoved))
+##### <span class="codicon codicon-symbol-field symbol-field"></span>owner_removed (optional  [protocol.chat.v1.StreamEvent.OwnerRemoved](#streameventownerremoved))
 Send the owner removed event.
-##### invite_received (optional  [protocol.chat.v1.StreamEvent.InviteReceived](#streameventinvitereceived))
+##### <span class="codicon codicon-symbol-field symbol-field"></span>invite_received (optional  [protocol.chat.v1.StreamEvent.InviteReceived](#streameventinvitereceived))
 Send the guild invite received event.
-##### invite_rejected (optional  [protocol.chat.v1.StreamEvent.InviteRejected](#streameventinviterejected))
+##### <span class="codicon codicon-symbol-field symbol-field"></span>invite_rejected (optional  [protocol.chat.v1.StreamEvent.InviteRejected](#streameventinviterejected))
 Send the guild invite rejected event.
 
-### StreamEvent.MessageSent
+### <span class="codicon codicon-symbol-structure symbol-structure"></span>StreamEvent.MessageSent
 
 
 #### Fields
 
 
-##### echo_id (optional  `uint64`)
+##### <span class="codicon codicon-symbol-field symbol-field"></span>echo_id (optional  `uint64`)
 
-##### guild_id (optional  `uint64`)
+##### <span class="codicon codicon-symbol-field symbol-field"></span>guild_id (optional  `uint64`)
 
-##### channel_id (optional  `uint64`)
+##### <span class="codicon codicon-symbol-field symbol-field"></span>channel_id (optional  `uint64`)
 
-##### message_id (optional  `uint64`)
+##### <span class="codicon codicon-symbol-field symbol-field"></span>message_id (optional  `uint64`)
 
-##### message (optional  [protocol.chat.v1.Message](#message))
-
-
-### StreamEvent.MessageUpdated
+##### <span class="codicon codicon-symbol-field symbol-field"></span>message (optional  [protocol.chat.v1.Message](#message))
 
 
-#### Fields
-
-
-##### guild_id (optional  `uint64`)
-
-##### channel_id (optional  `uint64`)
-
-##### message_id (optional  `uint64`)
-
-##### edited_at (optional  `uint64`)
-
-##### new_content (optional  [protocol.chat.v1.FormattedText](#formattedtext))
-
-
-### StreamEvent.MessageDeleted
+### <span class="codicon codicon-symbol-structure symbol-structure"></span>StreamEvent.MessageUpdated
 
 
 #### Fields
 
 
-##### guild_id (optional  `uint64`)
+##### <span class="codicon codicon-symbol-field symbol-field"></span>guild_id (optional  `uint64`)
 
-##### channel_id (optional  `uint64`)
+##### <span class="codicon codicon-symbol-field symbol-field"></span>channel_id (optional  `uint64`)
 
-##### message_id (optional  `uint64`)
+##### <span class="codicon codicon-symbol-field symbol-field"></span>message_id (optional  `uint64`)
 
+##### <span class="codicon codicon-symbol-field symbol-field"></span>edited_at (optional  `uint64`)
 
-### StreamEvent.ChannelCreated
-
-
-#### Fields
+##### <span class="codicon codicon-symbol-field symbol-field"></span>new_content (optional  [protocol.chat.v1.FormattedText](#formattedtext))
 
 
-##### guild_id (optional  `uint64`)
-
-##### channel_id (optional  `uint64`)
-
-##### name (optional  `string`)
-
-##### position (optional  [protocol.harmonytypes.v1.ItemPosition]({{< ref "protocol.harmonytypes.v1.md" >}}#itemposition))
-
-##### kind (UNHANDLED | TYPE)
-
-##### metadata (optional  [protocol.harmonytypes.v1.Metadata]({{< ref "protocol.harmonytypes.v1.md" >}}#metadata))
-
-
-### StreamEvent.ChannelUpdated
+### <span class="codicon codicon-symbol-structure symbol-structure"></span>StreamEvent.MessageDeleted
 
 
 #### Fields
 
 
-##### guild_id (optional  `uint64`)
+##### <span class="codicon codicon-symbol-field symbol-field"></span>guild_id (optional  `uint64`)
 
-##### channel_id (optional  `uint64`)
+##### <span class="codicon codicon-symbol-field symbol-field"></span>channel_id (optional  `uint64`)
 
-##### new_name (optional  `string`)
-
-##### new_metadata (optional  [protocol.harmonytypes.v1.Metadata]({{< ref "protocol.harmonytypes.v1.md" >}}#metadata))
+##### <span class="codicon codicon-symbol-field symbol-field"></span>message_id (optional  `uint64`)
 
 
-### StreamEvent.ChannelPositionUpdated
+### <span class="codicon codicon-symbol-structure symbol-structure"></span>StreamEvent.ChannelCreated
 
 
 #### Fields
 
 
-##### guild_id (optional  `uint64`)
+##### <span class="codicon codicon-symbol-field symbol-field"></span>guild_id (optional  `uint64`)
 
-##### channel_id (optional  `uint64`)
+##### <span class="codicon codicon-symbol-field symbol-field"></span>channel_id (optional  `uint64`)
 
-##### new_position (optional  [protocol.harmonytypes.v1.ItemPosition]({{< ref "protocol.harmonytypes.v1.md" >}}#itemposition))
+##### <span class="codicon codicon-symbol-field symbol-field"></span>name (optional  `string`)
 
+##### <span class="codicon codicon-symbol-field symbol-field"></span>position (optional  [protocol.harmonytypes.v1.ItemPosition]({{< ref "protocol.harmonytypes.v1.md" >}}#itemposition))
 
-### StreamEvent.ChannelsReordered
+##### <span class="codicon codicon-symbol-field symbol-field"></span>kind (UNHANDLED | TYPE)
 
-
-#### Fields
-
-
-##### guild_id (optional  `uint64`)
-
-##### channel_ids (repeated  `uint64`)
+##### <span class="codicon codicon-symbol-field symbol-field"></span>metadata (optional  [protocol.harmonytypes.v1.Metadata]({{< ref "protocol.harmonytypes.v1.md" >}}#metadata))
 
 
-### StreamEvent.ChannelDeleted
+### <span class="codicon codicon-symbol-structure symbol-structure"></span>StreamEvent.ChannelUpdated
 
 
 #### Fields
 
 
-##### guild_id (optional  `uint64`)
+##### <span class="codicon codicon-symbol-field symbol-field"></span>guild_id (optional  `uint64`)
 
-##### channel_id (optional  `uint64`)
+##### <span class="codicon codicon-symbol-field symbol-field"></span>channel_id (optional  `uint64`)
 
+##### <span class="codicon codicon-symbol-field symbol-field"></span>new_name (optional  `string`)
 
-### StreamEvent.GuildUpdated
-
-
-#### Fields
+##### <span class="codicon codicon-symbol-field symbol-field"></span>new_metadata (optional  [protocol.harmonytypes.v1.Metadata]({{< ref "protocol.harmonytypes.v1.md" >}}#metadata))
 
 
-##### guild_id (optional  `uint64`)
-
-##### new_name (optional  `string`)
-
-##### new_picture (optional  `string`)
-
-##### new_metadata (optional  [protocol.harmonytypes.v1.Metadata]({{< ref "protocol.harmonytypes.v1.md" >}}#metadata))
-
-
-### StreamEvent.GuildDeleted
+### <span class="codicon codicon-symbol-structure symbol-structure"></span>StreamEvent.ChannelPositionUpdated
 
 
 #### Fields
 
 
-##### guild_id (optional  `uint64`)
+##### <span class="codicon codicon-symbol-field symbol-field"></span>guild_id (optional  `uint64`)
+
+##### <span class="codicon codicon-symbol-field symbol-field"></span>channel_id (optional  `uint64`)
+
+##### <span class="codicon codicon-symbol-field symbol-field"></span>new_position (optional  [protocol.harmonytypes.v1.ItemPosition]({{< ref "protocol.harmonytypes.v1.md" >}}#itemposition))
 
 
-### StreamEvent.MemberJoined
-
-
-#### Fields
-
-
-##### member_id (optional  `uint64`)
-
-##### guild_id (optional  `uint64`)
-
-
-### StreamEvent.MemberLeft
+### <span class="codicon codicon-symbol-structure symbol-structure"></span>StreamEvent.ChannelsReordered
 
 
 #### Fields
 
 
-##### member_id (optional  `uint64`)
+##### <span class="codicon codicon-symbol-field symbol-field"></span>guild_id (optional  `uint64`)
 
-##### guild_id (optional  `uint64`)
-
-##### leave_reason (UNHANDLED | TYPE)
+##### <span class="codicon codicon-symbol-field symbol-field"></span>channel_ids (repeated  `uint64`)
 
 
-### StreamEvent.GuildAddedToList
+### <span class="codicon codicon-symbol-structure symbol-structure"></span>StreamEvent.ChannelDeleted
 
 
 #### Fields
 
 
-##### guild_id (optional  `uint64`)
+##### <span class="codicon codicon-symbol-field symbol-field"></span>guild_id (optional  `uint64`)
 
-##### homeserver (optional  `string`)
-
-
-### StreamEvent.GuildRemovedFromList
+##### <span class="codicon codicon-symbol-field symbol-field"></span>channel_id (optional  `uint64`)
 
 
-#### Fields
-
-
-##### guild_id (optional  `uint64`)
-
-##### homeserver (optional  `string`)
-
-
-### StreamEvent.ActionPerformed
+### <span class="codicon codicon-symbol-structure symbol-structure"></span>StreamEvent.GuildUpdated
 
 
 #### Fields
 
 
-##### guild_id (optional  `uint64`)
+##### <span class="codicon codicon-symbol-field symbol-field"></span>guild_id (optional  `uint64`)
 
-##### channel_id (optional  `uint64`)
+##### <span class="codicon codicon-symbol-field symbol-field"></span>new_name (optional  `string`)
 
-##### message_id (optional  `uint64`)
+##### <span class="codicon codicon-symbol-field symbol-field"></span>new_picture (optional  `string`)
 
-##### user_id (optional  `uint64`)
-
-##### payload (optional  [protocol.chat.v1.ActionPayload](#actionpayload))
+##### <span class="codicon codicon-symbol-field symbol-field"></span>new_metadata (optional  [protocol.harmonytypes.v1.Metadata]({{< ref "protocol.harmonytypes.v1.md" >}}#metadata))
 
 
-### StreamEvent.RoleMoved
+### <span class="codicon codicon-symbol-structure symbol-structure"></span>StreamEvent.GuildDeleted
 
 
 #### Fields
 
 
-##### guild_id (optional  `uint64`)
-
-##### role_id (optional  `uint64`)
-
-##### new_position (optional  [protocol.harmonytypes.v1.ItemPosition]({{< ref "protocol.harmonytypes.v1.md" >}}#itemposition))
+##### <span class="codicon codicon-symbol-field symbol-field"></span>guild_id (optional  `uint64`)
 
 
-### StreamEvent.RoleDeleted
+### <span class="codicon codicon-symbol-structure symbol-structure"></span>StreamEvent.MemberJoined
 
 
 #### Fields
 
 
-##### guild_id (optional  `uint64`)
+##### <span class="codicon codicon-symbol-field symbol-field"></span>member_id (optional  `uint64`)
 
-##### role_id (optional  `uint64`)
-
-
-### StreamEvent.RoleCreated
+##### <span class="codicon codicon-symbol-field symbol-field"></span>guild_id (optional  `uint64`)
 
 
-#### Fields
-
-
-##### guild_id (optional  `uint64`)
-
-##### role_id (optional  `uint64`)
-
-##### name (optional  `string`)
-
-##### color (optional  `int32`)
-
-##### hoist (optional  `bool`)
-
-##### pingable (optional  `bool`)
-
-
-### StreamEvent.RoleUpdated
+### <span class="codicon codicon-symbol-structure symbol-structure"></span>StreamEvent.MemberLeft
 
 
 #### Fields
 
 
-##### guild_id (optional  `uint64`)
+##### <span class="codicon codicon-symbol-field symbol-field"></span>member_id (optional  `uint64`)
 
-##### role_id (optional  `uint64`)
+##### <span class="codicon codicon-symbol-field symbol-field"></span>guild_id (optional  `uint64`)
 
-##### new_name (optional  `string`)
-
-##### new_color (optional  `int32`)
-
-##### new_hoist (optional  `bool`)
-
-##### new_pingable (optional  `bool`)
+##### <span class="codicon codicon-symbol-field symbol-field"></span>leave_reason (UNHANDLED | TYPE)
 
 
-### StreamEvent.RolePermissionsUpdated
+### <span class="codicon codicon-symbol-structure symbol-structure"></span>StreamEvent.GuildAddedToList
 
 
 #### Fields
 
 
-##### guild_id (optional  `uint64`)
+##### <span class="codicon codicon-symbol-field symbol-field"></span>guild_id (optional  `uint64`)
 
-##### channel_id (optional  `uint64`)
-
-##### role_id (optional  `uint64`)
-
-##### new_perms (repeated  [protocol.chat.v1.Permission](#permission))
+##### <span class="codicon codicon-symbol-field symbol-field"></span>homeserver (optional  `string`)
 
 
-### StreamEvent.UserRolesUpdated
+### <span class="codicon codicon-symbol-structure symbol-structure"></span>StreamEvent.GuildRemovedFromList
 
 
 #### Fields
 
 
-##### guild_id (optional  `uint64`)
+##### <span class="codicon codicon-symbol-field symbol-field"></span>guild_id (optional  `uint64`)
 
-##### user_id (optional  `uint64`)
-
-##### new_role_ids (repeated  `uint64`)
+##### <span class="codicon codicon-symbol-field symbol-field"></span>homeserver (optional  `string`)
 
 
-### StreamEvent.Typing
+### <span class="codicon codicon-symbol-structure symbol-structure"></span>StreamEvent.ActionPerformed
 
 
 #### Fields
 
 
-##### user_id (optional  `uint64`)
+##### <span class="codicon codicon-symbol-field symbol-field"></span>guild_id (optional  `uint64`)
 
-##### guild_id (optional  `uint64`)
+##### <span class="codicon codicon-symbol-field symbol-field"></span>channel_id (optional  `uint64`)
 
-##### channel_id (optional  `uint64`)
+##### <span class="codicon codicon-symbol-field symbol-field"></span>message_id (optional  `uint64`)
 
+##### <span class="codicon codicon-symbol-field symbol-field"></span>user_id (optional  `uint64`)
 
-### StreamEvent.PermissionUpdated
-
-
-#### Fields
+##### <span class="codicon codicon-symbol-field symbol-field"></span>payload (optional  [protocol.chat.v1.ActionPayload](#actionpayload))
 
 
-##### guild_id (optional  `uint64`)
-
-##### channel_id (optional  `uint64`)
-
-##### query (optional  `string`)
-
-##### ok (optional  `bool`)
-
-
-### StreamEvent.MessagePinned
+### <span class="codicon codicon-symbol-structure symbol-structure"></span>StreamEvent.RoleMoved
 
 
 #### Fields
 
 
-##### guild_id (optional  `uint64`)
+##### <span class="codicon codicon-symbol-field symbol-field"></span>guild_id (optional  `uint64`)
 
-##### channel_id (optional  `uint64`)
+##### <span class="codicon codicon-symbol-field symbol-field"></span>role_id (optional  `uint64`)
 
-##### message_id (optional  `uint64`)
-
-
-### StreamEvent.MessageUnpinned
+##### <span class="codicon codicon-symbol-field symbol-field"></span>new_position (optional  [protocol.harmonytypes.v1.ItemPosition]({{< ref "protocol.harmonytypes.v1.md" >}}#itemposition))
 
 
-#### Fields
-
-
-##### guild_id (optional  `uint64`)
-
-##### channel_id (optional  `uint64`)
-
-##### message_id (optional  `uint64`)
-
-
-### StreamEvent.ReactionUpdated
+### <span class="codicon codicon-symbol-structure symbol-structure"></span>StreamEvent.RoleDeleted
 
 
 #### Fields
 
 
-##### guild_id (optional  `uint64`)
+##### <span class="codicon codicon-symbol-field symbol-field"></span>guild_id (optional  `uint64`)
 
-##### channel_id (optional  `uint64`)
-
-##### message_id (optional  `uint64`)
-
-##### reaction (optional  [protocol.chat.v1.Reaction](#reaction))
+##### <span class="codicon codicon-symbol-field symbol-field"></span>role_id (optional  `uint64`)
 
 
-### StreamEvent.OwnerAdded
+### <span class="codicon codicon-symbol-structure symbol-structure"></span>StreamEvent.RoleCreated
 
 
 #### Fields
 
 
-##### user_id (optional  `uint64`)
+##### <span class="codicon codicon-symbol-field symbol-field"></span>guild_id (optional  `uint64`)
+
+##### <span class="codicon codicon-symbol-field symbol-field"></span>role_id (optional  `uint64`)
+
+##### <span class="codicon codicon-symbol-field symbol-field"></span>name (optional  `string`)
+
+##### <span class="codicon codicon-symbol-field symbol-field"></span>color (optional  `int32`)
+
+##### <span class="codicon codicon-symbol-field symbol-field"></span>hoist (optional  `bool`)
+
+##### <span class="codicon codicon-symbol-field symbol-field"></span>pingable (optional  `bool`)
 
 
-### StreamEvent.OwnerRemoved
-
-
-#### Fields
-
-
-##### user_id (optional  `uint64`)
-
-
-### StreamEvent.InviteReceived
-
-
-#### Fields
-
-
-##### invite_id (optional  `string`)
-
-##### server_id (optional  `string`)
-
-##### inviter_id (optional  `uint64`)
-
-
-### StreamEvent.InviteRejected
+### <span class="codicon codicon-symbol-structure symbol-structure"></span>StreamEvent.RoleUpdated
 
 
 #### Fields
 
 
-##### guild_id (optional  `uint64`)
+##### <span class="codicon codicon-symbol-field symbol-field"></span>guild_id (optional  `uint64`)
 
-##### invite_id (optional  `string`)
+##### <span class="codicon codicon-symbol-field symbol-field"></span>role_id (optional  `uint64`)
 
-##### user_id (optional  `uint64`)
+##### <span class="codicon codicon-symbol-field symbol-field"></span>new_name (optional  `string`)
+
+##### <span class="codicon codicon-symbol-field symbol-field"></span>new_color (optional  `int32`)
+
+##### <span class="codicon codicon-symbol-field symbol-field"></span>new_hoist (optional  `bool`)
+
+##### <span class="codicon codicon-symbol-field symbol-field"></span>new_pingable (optional  `bool`)
+
+
+### <span class="codicon codicon-symbol-structure symbol-structure"></span>StreamEvent.RolePermissionsUpdated
+
+
+#### Fields
+
+
+##### <span class="codicon codicon-symbol-field symbol-field"></span>guild_id (optional  `uint64`)
+
+##### <span class="codicon codicon-symbol-field symbol-field"></span>channel_id (optional  `uint64`)
+
+##### <span class="codicon codicon-symbol-field symbol-field"></span>role_id (optional  `uint64`)
+
+##### <span class="codicon codicon-symbol-field symbol-field"></span>new_perms (repeated  [protocol.chat.v1.Permission](#permission))
+
+
+### <span class="codicon codicon-symbol-structure symbol-structure"></span>StreamEvent.UserRolesUpdated
+
+
+#### Fields
+
+
+##### <span class="codicon codicon-symbol-field symbol-field"></span>guild_id (optional  `uint64`)
+
+##### <span class="codicon codicon-symbol-field symbol-field"></span>user_id (optional  `uint64`)
+
+##### <span class="codicon codicon-symbol-field symbol-field"></span>new_role_ids (repeated  `uint64`)
+
+
+### <span class="codicon codicon-symbol-structure symbol-structure"></span>StreamEvent.Typing
+
+
+#### Fields
+
+
+##### <span class="codicon codicon-symbol-field symbol-field"></span>user_id (optional  `uint64`)
+
+##### <span class="codicon codicon-symbol-field symbol-field"></span>guild_id (optional  `uint64`)
+
+##### <span class="codicon codicon-symbol-field symbol-field"></span>channel_id (optional  `uint64`)
+
+
+### <span class="codicon codicon-symbol-structure symbol-structure"></span>StreamEvent.PermissionUpdated
+
+
+#### Fields
+
+
+##### <span class="codicon codicon-symbol-field symbol-field"></span>guild_id (optional  `uint64`)
+
+##### <span class="codicon codicon-symbol-field symbol-field"></span>channel_id (optional  `uint64`)
+
+##### <span class="codicon codicon-symbol-field symbol-field"></span>query (optional  `string`)
+
+##### <span class="codicon codicon-symbol-field symbol-field"></span>ok (optional  `bool`)
+
+
+### <span class="codicon codicon-symbol-structure symbol-structure"></span>StreamEvent.MessagePinned
+
+
+#### Fields
+
+
+##### <span class="codicon codicon-symbol-field symbol-field"></span>guild_id (optional  `uint64`)
+
+##### <span class="codicon codicon-symbol-field symbol-field"></span>channel_id (optional  `uint64`)
+
+##### <span class="codicon codicon-symbol-field symbol-field"></span>message_id (optional  `uint64`)
+
+
+### <span class="codicon codicon-symbol-structure symbol-structure"></span>StreamEvent.MessageUnpinned
+
+
+#### Fields
+
+
+##### <span class="codicon codicon-symbol-field symbol-field"></span>guild_id (optional  `uint64`)
+
+##### <span class="codicon codicon-symbol-field symbol-field"></span>channel_id (optional  `uint64`)
+
+##### <span class="codicon codicon-symbol-field symbol-field"></span>message_id (optional  `uint64`)
+
+
+### <span class="codicon codicon-symbol-structure symbol-structure"></span>StreamEvent.ReactionUpdated
+
+
+#### Fields
+
+
+##### <span class="codicon codicon-symbol-field symbol-field"></span>guild_id (optional  `uint64`)
+
+##### <span class="codicon codicon-symbol-field symbol-field"></span>channel_id (optional  `uint64`)
+
+##### <span class="codicon codicon-symbol-field symbol-field"></span>message_id (optional  `uint64`)
+
+##### <span class="codicon codicon-symbol-field symbol-field"></span>reaction (optional  [protocol.chat.v1.Reaction](#reaction))
+
+
+### <span class="codicon codicon-symbol-structure symbol-structure"></span>StreamEvent.OwnerAdded
+
+
+#### Fields
+
+
+##### <span class="codicon codicon-symbol-field symbol-field"></span>user_id (optional  `uint64`)
+
+
+### <span class="codicon codicon-symbol-structure symbol-structure"></span>StreamEvent.OwnerRemoved
+
+
+#### Fields
+
+
+##### <span class="codicon codicon-symbol-field symbol-field"></span>user_id (optional  `uint64`)
+
+
+### <span class="codicon codicon-symbol-structure symbol-structure"></span>StreamEvent.InviteReceived
+
+
+#### Fields
+
+
+##### <span class="codicon codicon-symbol-field symbol-field"></span>invite_id (optional  `string`)
+
+##### <span class="codicon codicon-symbol-field symbol-field"></span>server_id (optional  `string`)
+
+##### <span class="codicon codicon-symbol-field symbol-field"></span>inviter_id (optional  `uint64`)
+
+
+### <span class="codicon codicon-symbol-structure symbol-structure"></span>StreamEvent.InviteRejected
+
+
+#### Fields
+
+
+##### <span class="codicon codicon-symbol-field symbol-field"></span>guild_id (optional  `uint64`)
+
+##### <span class="codicon codicon-symbol-field symbol-field"></span>invite_id (optional  `string`)
+
+##### <span class="codicon codicon-symbol-field symbol-field"></span>user_id (optional  `uint64`)
 
 
 ## Enums 
 
-### ChannelKind
+### <span class="codicon codicon-symbol-enum symbol-enum"></span>ChannelKind
 
 What kind the channel is.
-#### CHANNEL_KIND_TEXT_UNSPECIFIED
+#### <span class="codicon codicon-symbol-enum-member symbol-enum-member"></span>CHANNEL_KIND_TEXT_UNSPECIFIED
 A text channel. Allows you to simply send messages to a group of people.
 
-#### CHANNEL_KIND_VOICE_MEDIA
+#### <span class="codicon codicon-symbol-enum-member symbol-enum-member"></span>CHANNEL_KIND_VOICE_MEDIA
 A voice channel. Allows you to talk to other people with voice.
 
-#### CHANNEL_KIND_CATEGORY
+#### <span class="codicon codicon-symbol-enum-member symbol-enum-member"></span>CHANNEL_KIND_CATEGORY
 A category channel. All channels under this channel down to another
 category channel belongs to this category channel.
 
-### LeaveReason
+### <span class="codicon codicon-symbol-enum symbol-enum"></span>LeaveReason
 
 A reason for why a user has left a guild.
-#### LEAVE_REASON_WILLINGLY_UNSPECIFIED
+#### <span class="codicon codicon-symbol-enum-member symbol-enum-member"></span>LEAVE_REASON_WILLINGLY_UNSPECIFIED
 The user left the guild willingly.
 
-#### LEAVE_REASON_BANNED
+#### <span class="codicon codicon-symbol-enum-member symbol-enum-member"></span>LEAVE_REASON_BANNED
 The user was banned from the guild.
 
-#### LEAVE_REASON_KICKED
+#### <span class="codicon codicon-symbol-enum-member symbol-enum-member"></span>LEAVE_REASON_KICKED
 The user was kicked from the guild.
 
-### Type
+### <span class="codicon codicon-symbol-enum symbol-enum"></span>Type
 
 
-#### TYPE_NORMAL_UNSPECIFIED
+#### <span class="codicon codicon-symbol-enum-member symbol-enum-member"></span>TYPE_NORMAL_UNSPECIFIED
 
 
-#### TYPE_PRIMARY
+#### <span class="codicon codicon-symbol-enum-member symbol-enum-member"></span>TYPE_PRIMARY
 
 
-#### TYPE_DESTRUCTIVE
+#### <span class="codicon codicon-symbol-enum-member symbol-enum-member"></span>TYPE_DESTRUCTIVE
 
 
-### Direction
+### <span class="codicon codicon-symbol-enum symbol-enum"></span>Direction
 
 
-#### DIRECTION_BEFORE_UNSPECIFIED
+#### <span class="codicon codicon-symbol-enum-member symbol-enum-member"></span>DIRECTION_BEFORE_UNSPECIFIED
 
 
-#### DIRECTION_AROUND
+#### <span class="codicon codicon-symbol-enum-member symbol-enum-member"></span>DIRECTION_AROUND
 
 
-#### DIRECTION_AFTER
+#### <span class="codicon codicon-symbol-enum-member symbol-enum-member"></span>DIRECTION_AFTER
 
 
-### Embed.Presentation
+### <span class="codicon codicon-symbol-enum symbol-enum"></span>Embed.Presentation
 
 
-#### PRESENTATION_DATA_UNSPECIFIED
+#### <span class="codicon codicon-symbol-enum-member symbol-enum-member"></span>PRESENTATION_DATA_UNSPECIFIED
 
 
-#### PRESENTATION_CAPTIONED_IMAGE
+#### <span class="codicon codicon-symbol-enum-member symbol-enum-member"></span>PRESENTATION_CAPTIONED_IMAGE
 
 
-#### PRESENTATION_ROW
+#### <span class="codicon codicon-symbol-enum-member symbol-enum-member"></span>PRESENTATION_ROW
 
 
-### Format.Kind
+### <span class="codicon codicon-symbol-enum symbol-enum"></span>Format.Kind
 
 
-#### KIND_DIM_UNSPECIFIED
+#### <span class="codicon codicon-symbol-enum-member symbol-enum-member"></span>KIND_DIM_UNSPECIFIED
 
 
-#### KIND_BRIGHT
+#### <span class="codicon codicon-symbol-enum-member symbol-enum-member"></span>KIND_BRIGHT
 
 
-#### KIND_NEGATIVE
+#### <span class="codicon codicon-symbol-enum-member symbol-enum-member"></span>KIND_NEGATIVE
 
 
-#### KIND_POSITIVE
+#### <span class="codicon codicon-symbol-enum-member symbol-enum-member"></span>KIND_POSITIVE
 
 
-#### KIND_INFO
+#### <span class="codicon codicon-symbol-enum-member symbol-enum-member"></span>KIND_INFO
 
 
-#### KIND_WARNING
+#### <span class="codicon codicon-symbol-enum-member symbol-enum-member"></span>KIND_WARNING
 
 
 ## Services 
 
-### ChatService
+### <span class="codicon codicon-symbol-class symbol-class"></span>ChatService
 
 The core of Harmony's chat operations.
 #### Methods
 
-##### CreateGuild
+##### <span class="codicon codicon-symbol-method symbol-method"></span>CreateGuild
 [protocol.chat.v1.CreateGuildRequest](#createguildrequest) -> [protocol.chat.v1.CreateGuildResponse](#createguildresponse)
 
 Endpoint to create a guild.
-##### CreateRoom
+##### <span class="codicon codicon-symbol-method symbol-method"></span>CreateRoom
 [protocol.chat.v1.CreateRoomRequest](#createroomrequest) -> [protocol.chat.v1.CreateRoomResponse](#createroomresponse)
 
 Endpoint to create a "room" guild.
-##### CreateDirectMessage
+##### <span class="codicon codicon-symbol-method symbol-method"></span>CreateDirectMessage
 [protocol.chat.v1.CreateDirectMessageRequest](#createdirectmessagerequest) -> [protocol.chat.v1.CreateDirectMessageResponse](#createdirectmessageresponse)
 
 Endpoint to create a "direct message" guild.
@@ -2407,31 +2407,31 @@ otherwise see the below item.
 invite list and sending an `InviteReceived` event over their event stream if
 the invitee is on this server.
 - The invitee may or may not use the invite. Only the invitee may use the invite.
-##### UpgradeRoomToGuild
+##### <span class="codicon codicon-symbol-method symbol-method"></span>UpgradeRoomToGuild
 [protocol.chat.v1.UpgradeRoomToGuildRequest](#upgraderoomtoguildrequest) -> [protocol.chat.v1.UpgradeRoomToGuildResponse](#upgraderoomtoguildresponse)
 
 Endpoint to upgrade a "room" guild to a "normal" guild.
-##### CreateInvite
+##### <span class="codicon codicon-symbol-method symbol-method"></span>CreateInvite
 [protocol.chat.v1.CreateInviteRequest](#createinviterequest) -> [protocol.chat.v1.CreateInviteResponse](#createinviteresponse)
 
 Endpoint to create an invite.
-##### CreateChannel
+##### <span class="codicon codicon-symbol-method symbol-method"></span>CreateChannel
 [protocol.chat.v1.CreateChannelRequest](#createchannelrequest) -> [protocol.chat.v1.CreateChannelResponse](#createchannelresponse)
 
 Endpoint to create a channel.
-##### GetGuildList
+##### <span class="codicon codicon-symbol-method symbol-method"></span>GetGuildList
 [protocol.chat.v1.GetGuildListRequest](#getguildlistrequest) -> [protocol.chat.v1.GetGuildListResponse](#getguildlistresponse)
 
 Endpoint to get your guild list.
-##### InviteUserToGuild
+##### <span class="codicon codicon-symbol-method symbol-method"></span>InviteUserToGuild
 [protocol.chat.v1.InviteUserToGuildRequest](#inviteusertoguildrequest) -> [protocol.chat.v1.InviteUserToGuildResponse](#inviteusertoguildresponse)
 
 Endpoint to invite a user to a guild.
-##### GetPendingInvites
+##### <span class="codicon codicon-symbol-method symbol-method"></span>GetPendingInvites
 [protocol.chat.v1.GetPendingInvitesRequest](#getpendinginvitesrequest) -> [protocol.chat.v1.GetPendingInvitesResponse](#getpendinginvitesresponse)
 
 Endpoint to get your pending invites.
-##### RejectPendingInvite
+##### <span class="codicon codicon-symbol-method symbol-method"></span>RejectPendingInvite
 [protocol.chat.v1.RejectPendingInviteRequest](#rejectpendinginviterequest) -> [protocol.chat.v1.RejectPendingInviteResponse](#rejectpendinginviteresponse)
 
 Endpoint to reject (delete with notification to the inviter) an invite
@@ -2444,89 +2444,89 @@ server.
 The "notification" is sending a `InviteRejected` stream event to the
 inviter. If the guild's kind is `DirectMessage`, the server should also
 set the `rejected` field of the guild's kind to `true`.
-##### IgnorePendingInvite
+##### <span class="codicon codicon-symbol-method symbol-method"></span>IgnorePendingInvite
 [protocol.chat.v1.IgnorePendingInviteRequest](#ignorependinginviterequest) -> [protocol.chat.v1.IgnorePendingInviteResponse](#ignorependinginviteresponse)
 
 Endpoint to ignore (delete without notification to the inviter) an
 invite from your pending invite list.
-##### GetGuild
+##### <span class="codicon codicon-symbol-method symbol-method"></span>GetGuild
 [protocol.chat.v1.GetGuildRequest](#getguildrequest) -> [protocol.chat.v1.GetGuildResponse](#getguildresponse)
 
 Endpoint to get information about a guild.
-##### GetGuildInvites
+##### <span class="codicon codicon-symbol-method symbol-method"></span>GetGuildInvites
 [protocol.chat.v1.GetGuildInvitesRequest](#getguildinvitesrequest) -> [protocol.chat.v1.GetGuildInvitesResponse](#getguildinvitesresponse)
 
 Endpoint to get the invites of a guild.
 
 This requires the "invites.view" permission.
-##### GetGuildMembers
+##### <span class="codicon codicon-symbol-method symbol-method"></span>GetGuildMembers
 [protocol.chat.v1.GetGuildMembersRequest](#getguildmembersrequest) -> [protocol.chat.v1.GetGuildMembersResponse](#getguildmembersresponse)
 
 Endpoint to get the members of a guild.
-##### GetGuildChannels
+##### <span class="codicon codicon-symbol-method symbol-method"></span>GetGuildChannels
 [protocol.chat.v1.GetGuildChannelsRequest](#getguildchannelsrequest) -> [protocol.chat.v1.GetGuildChannelsResponse](#getguildchannelsresponse)
 
 Endpoint to get the channels of a guild.
 
 You will only be informed of channels you have the "messages.view"
 permission for.
-##### GetChannelMessages
+##### <span class="codicon codicon-symbol-method symbol-method"></span>GetChannelMessages
 [protocol.chat.v1.GetChannelMessagesRequest](#getchannelmessagesrequest) -> [protocol.chat.v1.GetChannelMessagesResponse](#getchannelmessagesresponse)
 
 Endpoint to get the messages from a guild channel.
-##### GetMessage
+##### <span class="codicon codicon-symbol-method symbol-method"></span>GetMessage
 [protocol.chat.v1.GetMessageRequest](#getmessagerequest) -> [protocol.chat.v1.GetMessageResponse](#getmessageresponse)
 
 Endpoint to get a single message from a guild channel.
-##### UpdateGuildInformation
+##### <span class="codicon codicon-symbol-method symbol-method"></span>UpdateGuildInformation
 [protocol.chat.v1.UpdateGuildInformationRequest](#updateguildinformationrequest) -> [protocol.chat.v1.UpdateGuildInformationResponse](#updateguildinformationresponse)
 
 Endpoint to update a guild's information.
-##### UpdateChannelInformation
+##### <span class="codicon codicon-symbol-method symbol-method"></span>UpdateChannelInformation
 [protocol.chat.v1.UpdateChannelInformationRequest](#updatechannelinformationrequest) -> [protocol.chat.v1.UpdateChannelInformationResponse](#updatechannelinformationresponse)
 
 Endpoint to update a channel's information.
-##### UpdateChannelOrder
+##### <span class="codicon codicon-symbol-method symbol-method"></span>UpdateChannelOrder
 [protocol.chat.v1.UpdateChannelOrderRequest](#updatechannelorderrequest) -> [protocol.chat.v1.UpdateChannelOrderResponse](#updatechannelorderresponse)
 
 Endpoint to change the position of a channel in the channel list.
-##### UpdateAllChannelOrder
+##### <span class="codicon codicon-symbol-method symbol-method"></span>UpdateAllChannelOrder
 [protocol.chat.v1.UpdateAllChannelOrderRequest](#updateallchannelorderrequest) -> [protocol.chat.v1.UpdateAllChannelOrderResponse](#updateallchannelorderresponse)
 
 Endpoint to change the position of all channels in the guild;
 must specifcy all channels or fails
-##### UpdateMessageText
+##### <span class="codicon codicon-symbol-method symbol-method"></span>UpdateMessageText
 [protocol.chat.v1.UpdateMessageTextRequest](#updatemessagetextrequest) -> [protocol.chat.v1.UpdateMessageTextResponse](#updatemessagetextresponse)
 
 Endpoint to change the text of a message.
-##### DeleteGuild
+##### <span class="codicon codicon-symbol-method symbol-method"></span>DeleteGuild
 [protocol.chat.v1.DeleteGuildRequest](#deleteguildrequest) -> [protocol.chat.v1.DeleteGuildResponse](#deleteguildresponse)
 
 Endpoint to delete a guild.
 Can only be invoked if there's one owner.
-##### DeleteInvite
+##### <span class="codicon codicon-symbol-method symbol-method"></span>DeleteInvite
 [protocol.chat.v1.DeleteInviteRequest](#deleteinviterequest) -> [protocol.chat.v1.DeleteInviteResponse](#deleteinviteresponse)
 
 Endpoint to delete an invite.
-##### DeleteChannel
+##### <span class="codicon codicon-symbol-method symbol-method"></span>DeleteChannel
 [protocol.chat.v1.DeleteChannelRequest](#deletechannelrequest) -> [protocol.chat.v1.DeleteChannelResponse](#deletechannelresponse)
 
 Endpoint to delete a channel.
-##### DeleteMessage
+##### <span class="codicon codicon-symbol-method symbol-method"></span>DeleteMessage
 [protocol.chat.v1.DeleteMessageRequest](#deletemessagerequest) -> [protocol.chat.v1.DeleteMessageResponse](#deletemessageresponse)
 
 Endpoint to delete a message.
 
 This requires the "messages.manage.delete" permission if you are not the
 message author.
-##### JoinGuild
+##### <span class="codicon codicon-symbol-method symbol-method"></span>JoinGuild
 [protocol.chat.v1.JoinGuildRequest](#joinguildrequest) -> [protocol.chat.v1.JoinGuildResponse](#joinguildresponse)
 
 Endpoint to join a guild.
 
 - If the invite used is in a user's "pending invites" list, it should be
 removed from there.
-##### LeaveGuild
+##### <span class="codicon codicon-symbol-method symbol-method"></span>LeaveGuild
 [protocol.chat.v1.LeaveGuildRequest](#leaveguildrequest) -> [protocol.chat.v1.LeaveGuildResponse](#leaveguildresponse)
 
 Endpoint to leave a guild.
@@ -2535,59 +2535,59 @@ Endpoint to leave a guild.
 rule are "direct message" guilds.
 - When the last member in a "direct message" guild leaves it, that guild
 should be deleted.
-##### TriggerAction
+##### <span class="codicon codicon-symbol-method symbol-method"></span>TriggerAction
 [protocol.chat.v1.TriggerActionRequest](#triggeractionrequest) -> [protocol.chat.v1.TriggerActionResponse](#triggeractionresponse)
 
 Endpont to trigger an action.
-##### SendMessage
+##### <span class="codicon codicon-symbol-method symbol-method"></span>SendMessage
 [protocol.chat.v1.SendMessageRequest](#sendmessagerequest) -> [protocol.chat.v1.SendMessageResponse](#sendmessageresponse)
 
 Endpoint to send a message.
-##### QueryHasPermission
+##### <span class="codicon codicon-symbol-method symbol-method"></span>QueryHasPermission
 [protocol.chat.v1.QueryHasPermissionRequest](#queryhaspermissionrequest) -> [protocol.chat.v1.QueryHasPermissionResponse](#queryhaspermissionresponse)
 
 Endpoint to query if a user has a permission.
-##### SetPermissions
+##### <span class="codicon codicon-symbol-method symbol-method"></span>SetPermissions
 [protocol.chat.v1.SetPermissionsRequest](#setpermissionsrequest) -> [protocol.chat.v1.SetPermissionsResponse](#setpermissionsresponse)
 
 Endpoint to set permissions for a role in a guild.
-##### GetPermissions
+##### <span class="codicon codicon-symbol-method symbol-method"></span>GetPermissions
 [protocol.chat.v1.GetPermissionsRequest](#getpermissionsrequest) -> [protocol.chat.v1.GetPermissionsResponse](#getpermissionsresponse)
 
 Endpoint to get permissions for a role in a guild.
-##### MoveRole
+##### <span class="codicon codicon-symbol-method symbol-method"></span>MoveRole
 [protocol.chat.v1.MoveRoleRequest](#moverolerequest) -> [protocol.chat.v1.MoveRoleResponse](#moveroleresponse)
 
 Endpoint to change the position of a role in the role list in a guild.
-##### GetGuildRoles
+##### <span class="codicon codicon-symbol-method symbol-method"></span>GetGuildRoles
 [protocol.chat.v1.GetGuildRolesRequest](#getguildrolesrequest) -> [protocol.chat.v1.GetGuildRolesResponse](#getguildrolesresponse)
 
 Endpoint to get the roles from a guild.
-##### AddGuildRole
+##### <span class="codicon codicon-symbol-method symbol-method"></span>AddGuildRole
 [protocol.chat.v1.AddGuildRoleRequest](#addguildrolerequest) -> [protocol.chat.v1.AddGuildRoleResponse](#addguildroleresponse)
 
 Endpoint to add a role to a guild.
-##### ModifyGuildRole
+##### <span class="codicon codicon-symbol-method symbol-method"></span>ModifyGuildRole
 [protocol.chat.v1.ModifyGuildRoleRequest](#modifyguildrolerequest) -> [protocol.chat.v1.ModifyGuildRoleResponse](#modifyguildroleresponse)
 
 Endpoint to a modify a role from a guild.
-##### DeleteGuildRole
+##### <span class="codicon codicon-symbol-method symbol-method"></span>DeleteGuildRole
 [protocol.chat.v1.DeleteGuildRoleRequest](#deleteguildrolerequest) -> [protocol.chat.v1.DeleteGuildRoleResponse](#deleteguildroleresponse)
 
 Endpoint to delete a role from a guild.
-##### ManageUserRoles
+##### <span class="codicon codicon-symbol-method symbol-method"></span>ManageUserRoles
 [protocol.chat.v1.ManageUserRolesRequest](#manageuserrolesrequest) -> [protocol.chat.v1.ManageUserRolesResponse](#manageuserrolesresponse)
 
 Endpoint to manage the roles of a guild member.
-##### GetUserRoles
+##### <span class="codicon codicon-symbol-method symbol-method"></span>GetUserRoles
 [protocol.chat.v1.GetUserRolesRequest](#getuserrolesrequest) -> [protocol.chat.v1.GetUserRolesResponse](#getuserrolesresponse)
 
 Endpoint to get the roles a guild member has.
-##### Typing
+##### <span class="codicon codicon-symbol-method symbol-method"></span>Typing
 [protocol.chat.v1.TypingRequest](#typingrequest) -> [protocol.chat.v1.TypingResponse](#typingresponse)
 
 Endpoint to send a typing notification in a guild channel.
-##### PreviewGuild
+##### <span class="codicon codicon-symbol-method symbol-method"></span>PreviewGuild
 [protocol.chat.v1.PreviewGuildRequest](#previewguildrequest) -> [protocol.chat.v1.PreviewGuildResponse](#previewguildresponse)
 
 Endpoint to "preview" a guild, which returns some information about a
@@ -2595,54 +2595,54 @@ guild.
 
 - Guilds with the "direct message" kind can only be previewed
 by the user who is invited to the guild.
-##### GetBannedUsers
+##### <span class="codicon codicon-symbol-method symbol-method"></span>GetBannedUsers
 [protocol.chat.v1.GetBannedUsersRequest](#getbannedusersrequest) -> [protocol.chat.v1.GetBannedUsersResponse](#getbannedusersresponse)
 
 Endpoint to get banned users in a guild.
-##### BanUser
+##### <span class="codicon codicon-symbol-method symbol-method"></span>BanUser
 [protocol.chat.v1.BanUserRequest](#banuserrequest) -> [protocol.chat.v1.BanUserResponse](#banuserresponse)
 
 Endpoint to ban a user from a guild.
-##### KickUser
+##### <span class="codicon codicon-symbol-method symbol-method"></span>KickUser
 [protocol.chat.v1.KickUserRequest](#kickuserrequest) -> [protocol.chat.v1.KickUserResponse](#kickuserresponse)
 
 Endpoint to kick a user from a guild.
-##### UnbanUser
+##### <span class="codicon codicon-symbol-method symbol-method"></span>UnbanUser
 [protocol.chat.v1.UnbanUserRequest](#unbanuserrequest) -> [protocol.chat.v1.UnbanUserResponse](#unbanuserresponse)
 
 Endpoint to unban a user from a guild.
-##### GetPinnedMessages
+##### <span class="codicon codicon-symbol-method symbol-method"></span>GetPinnedMessages
 [protocol.chat.v1.GetPinnedMessagesRequest](#getpinnedmessagesrequest) -> [protocol.chat.v1.GetPinnedMessagesResponse](#getpinnedmessagesresponse)
 
 Endpoint to get all pinned messages in a guild channel.
-##### PinMessage
+##### <span class="codicon codicon-symbol-method symbol-method"></span>PinMessage
 [protocol.chat.v1.PinMessageRequest](#pinmessagerequest) -> [protocol.chat.v1.PinMessageResponse](#pinmessageresponse)
 
 Endpoint to pin a message in a guild channel.
-##### UnpinMessage
+##### <span class="codicon codicon-symbol-method symbol-method"></span>UnpinMessage
 [protocol.chat.v1.UnpinMessageRequest](#unpinmessagerequest) -> [protocol.chat.v1.UnpinMessageResponse](#unpinmessageresponse)
 
 Endpoint to unpin a message in a guild channel.
-##### StreamEvents
+##### <span class="codicon codicon-symbol-method symbol-method"></span>StreamEvents
 streaming [protocol.chat.v1.StreamEventsRequest](#streameventsrequest) -> streaming [protocol.chat.v1.StreamEventsResponse](#streameventsresponse)
 
 Endpoint to stream events from the homeserver.
 By default, this endpoint will subscribe to all events.
 Any guilds joined in the future will be added to the subscription as well.
 Use the UnsubscribeFromAll event for unsubscribing from all current subscriptions and disable the automatic guild subscriptions
-##### AddReaction
+##### <span class="codicon codicon-symbol-method symbol-method"></span>AddReaction
 [protocol.chat.v1.AddReactionRequest](#addreactionrequest) -> [protocol.chat.v1.AddReactionResponse](#addreactionresponse)
 
 Endpoint to add a reaction to a message.
-##### RemoveReaction
+##### <span class="codicon codicon-symbol-method symbol-method"></span>RemoveReaction
 [protocol.chat.v1.RemoveReactionRequest](#removereactionrequest) -> [protocol.chat.v1.RemoveReactionResponse](#removereactionresponse)
 
 Endpoint to remove a reaction from a message.
-##### GrantOwnership
+##### <span class="codicon codicon-symbol-method symbol-method"></span>GrantOwnership
 [protocol.chat.v1.GrantOwnershipRequest](#grantownershiprequest) -> [protocol.chat.v1.GrantOwnershipResponse](#grantownershipresponse)
 
 Endpoint to give ownership to someone else.
-##### GiveUpOwnership
+##### <span class="codicon codicon-symbol-method symbol-method"></span>GiveUpOwnership
 [protocol.chat.v1.GiveUpOwnershipRequest](#giveupownershiprequest) -> [protocol.chat.v1.GiveUpOwnershipResponse](#giveupownershipresponse)
 
 Endpoint to give up your own ownership.
