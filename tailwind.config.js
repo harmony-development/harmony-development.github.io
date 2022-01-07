@@ -16,6 +16,7 @@ module.exports = {
         blueish: "#3DAEE9",
         tealish: "#00D485",
         dark: colors.dark,
+        light: colors.light,
       },
     },
   },
