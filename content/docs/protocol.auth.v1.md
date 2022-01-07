@@ -199,8 +199,7 @@ The avatar of the client.
 ## <span class="codicon codicon-symbol-class symbol-class"></span>AuthService
 
 The service containing authorization/entication methods
-### Methods
-
+<span class="h3" aria-level="3">Fields</span>
 #### <span class="codicon codicon-symbol-method symbol-method"></span>Federate
 [protocol.auth.v1.FederateRequest](#federaterequest) -> [protocol.auth.v1.FederateResponse](#federateresponse)
 

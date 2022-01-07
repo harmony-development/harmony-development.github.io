@@ -147,8 +147,7 @@ User is streaming
 ## <span class="codicon codicon-symbol-class symbol-class"></span>ProfileService
 
 Harmony's Profile service manages the profiles of the users.
-### Methods
-
+<span class="h3" aria-level="3">Fields</span>
 #### <span class="codicon codicon-symbol-method symbol-method"></span>GetProfile
 [protocol.profile.v1.GetProfileRequest](#getprofilerequest) -> [protocol.profile.v1.GetProfileResponse](#getprofileresponse)
 

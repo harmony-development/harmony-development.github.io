@@ -153,8 +153,7 @@ right order.
 
 It is recommended that receivers try pulling periodically, for example, every
 1 minute after the last Push RPC by the sender. This ensures that events are recieved.
-### Methods
-
+<span class="h3" aria-level="3">Fields</span>
 #### <span class="codicon codicon-symbol-method symbol-method"></span>Pull
 [protocol.sync.v1.PullRequest](#pullrequest) -> [protocol.sync.v1.PullResponse](#pullresponse)
 

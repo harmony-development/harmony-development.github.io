@@ -251,8 +251,7 @@ and uses the RTP paramaters to create a producer for the client
 7. When another user does 1 to 7, sends UserJoined over stream to all other users;
 when a user leaves the channel (when their stream ends), sends UserLeft to all other users
 8. When receiving a ResumeConsumer message, unpauses the consumer corresponding to the consumer ID
-### Methods
-
+<span class="h3" aria-level="3">Fields</span>
 #### <span class="codicon codicon-symbol-method symbol-method"></span>StreamMessage
 streaming [protocol.voice.v1.StreamMessageRequest](#streammessagerequest) -> streaming [protocol.voice.v1.StreamMessageResponse](#streammessageresponse)
 

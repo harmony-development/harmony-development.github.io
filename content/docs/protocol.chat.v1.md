@@ -1815,8 +1815,7 @@ The user was kicked from the guild.
 ## <span class="codicon codicon-symbol-class symbol-class"></span>ChatService
 
 The core of Harmony's chat operations.
-### Methods
-
+<span class="h3" aria-level="3">Fields</span>
 #### <span class="codicon codicon-symbol-method symbol-method"></span>CreateGuild
 [protocol.chat.v1.CreateGuildRequest](#createguildrequest) -> [protocol.chat.v1.CreateGuildResponse](#createguildresponse)
 

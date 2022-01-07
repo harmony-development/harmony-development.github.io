@@ -8,8 +8,7 @@ title: "Reference: protocol.batch.v1"
 ## <span class="codicon codicon-symbol-class symbol-class"></span>BatchService
 
 Service to batch requests.
-### Methods
-
+<span class="h3" aria-level="3">Fields</span>
 #### <span class="codicon codicon-symbol-method symbol-method"></span>Batch
 [protocol.batch.v1.BatchRequest](#batchrequest) -> [protocol.batch.v1.BatchResponse](#batchresponse)
 

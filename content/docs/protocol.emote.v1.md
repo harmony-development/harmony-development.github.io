@@ -123,8 +123,7 @@ Send the emote pack emotes updated event.
 ## <span class="codicon codicon-symbol-class symbol-class"></span>EmoteService
 
 Harmony's Emote service manages the emotes and emote packs.
-### Methods
-
+<span class="h3" aria-level="3">Fields</span>
 #### <span class="codicon codicon-symbol-method symbol-method"></span>CreateEmotePack
 [protocol.emote.v1.CreateEmotePackRequest](#createemotepackrequest) -> [protocol.emote.v1.CreateEmotePackResponse](#createemotepackresponse)
 

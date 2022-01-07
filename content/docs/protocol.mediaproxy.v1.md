@@ -52,8 +52,7 @@ Filename of the media.
 ## <span class="codicon codicon-symbol-class symbol-class"></span>MediaProxyService
 
 Harmony service for fetching metadata and generating instant view for URLs.
-### Methods
-
+<span class="h3" aria-level="3">Fields</span>
 #### <span class="codicon codicon-symbol-method symbol-method"></span>FetchLinkMetadata
 [protocol.mediaproxy.v1.FetchLinkMetadataRequest](#fetchlinkmetadatarequest) -> [protocol.mediaproxy.v1.FetchLinkMetadataResponse](#fetchlinkmetadataresponse)
 
