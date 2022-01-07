@@ -1,3 +1,6 @@
 [submodule "content/protocol"]
 	path = content/protocol
 	url = https://github.com/harmony-development/protocol.git
+[submodule "projects-listing"]
+	path = projects-listing
+	url = https://github.com/harmony-development/projects-listing.git

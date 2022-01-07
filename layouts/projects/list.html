@@ -1,0 +1,64 @@
+{{ define "item" }}
+
+<h3> {{ .name }} </h3>
+
+<p>
+    {{ .description }}
+</p>
+
+<p>
+    <a href="{{ .repo }}">Repository link</a> | License: <a href="https://spdx.org/licenses/{{ .license }}.html">{{ .license }}</a> | Maturity: {{ .maturity }} | Maintained: {{ .maintained }}
+</p>
+
+{{ end }}
+
+{{ define "main" }}
+
+<div class="prose-wrapper">
+    <div class="flex justify-center pb-8 w-full">
+        <article class="prose">
+            <h1>{{ .Title }}</h1>
+
+            <p>
+                This is a collection of user-submitted projects that use Harmony. A project being in that list does not mean that it is "official", but we don't
+                like to make that distinction anyways.
+            </p>
+
+            <p>
+                You can submit new projects on our <a href="https://github.com/harmony-development/projects-listing">GitHub repo</a>.
+            </p>
+
+            <h2>Bots</h2>
+
+            {{ range $.Site.Data.bots }}
+            {{ template "item" . }}
+            {{ end }}
+
+            <h2>Clients</h2>
+
+            {{ range $.Site.Data.clients }}
+            {{ template "item" . }}
+            {{ end }}
+
+            <h2>Servers</h2>
+
+            {{ range $.Site.Data.servers }}
+            {{ template "item" . }}
+            {{ end }}
+
+            <h2>Bridges</h2>
+
+            {{ range $.Site.Data.bridges }}
+            {{ template "item" . }}
+            {{ end }}
+
+            <h2>Libraries</h2>
+
+            {{ range $.Site.Data.libraries }}
+            {{ template "item" . }}
+            {{ end }}
+        </article>
+    </div>
+</div>
+
+{{ end }}
