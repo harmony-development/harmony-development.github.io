@@ -1,1815 +1,6 @@
 ---
 title: "Reference: protocol.chat.v1"
 ---
-# Standalone Message Types 
-
-## <span class="codicon codicon-symbol-structure symbol-structure"></span>Channel
-An object representing a channel, without the ID.
-
-<span class="h3" aria-level="3">Fields</span>
-### <span class="codicon codicon-symbol-field symbol-field"></span>channel_name
-Type: optional `string`
-
-The name of this channel.
-### <span class="codicon codicon-symbol-field symbol-field"></span>kind
-Type: UNHANDLED | TYPE
-
-The kind of channel this is.
-Data does not get inherently stored in the Channel type
-Instead, clients who understand a certain ChannelKind should
-fetch them from a separate RPC.
-### <span class="codicon codicon-symbol-field symbol-field"></span>metadata
-Type: optional [protocol.harmonytypes.v1.Metadata]({{< ref "protocol.harmonytypes.v1.md" >}}#metadata)
-
-The metadata of this channel.
-
-------
-## <span class="codicon codicon-symbol-structure symbol-structure"></span>ChannelWithId
-The channel alongside with an ID.
-
-<span class="h3" aria-level="3">Fields</span>
-### <span class="codicon codicon-symbol-field symbol-field"></span>channel_id
-Type: optional `uint64`
-
-ID of the channel.
-### <span class="codicon codicon-symbol-field symbol-field"></span>channel
-Type: optional [protocol.chat.v1.Channel](#channel)
-
-The channel data.
-
-------
-## <span class="codicon codicon-symbol-structure symbol-structure"></span>GuildKind
-The kind of a guild.
-
-<span class="h3" aria-level="3">Fields</span>
-### <span class="codicon codicon-symbol-field symbol-field"></span>normal
-Type: optional [protocol.chat.v1.GuildKind.Normal](#guildkindnormal)
-
-A "normal" guild.
-### <span class="codicon codicon-symbol-field symbol-field"></span>room
-Type: optional [protocol.chat.v1.GuildKind.Room](#guildkindroom)
-
-A "room" guild.
-### <span class="codicon codicon-symbol-field symbol-field"></span>direct_message
-Type: optional [protocol.chat.v1.GuildKind.DirectMessage](#guildkinddirectmessage)
-
-A "direct message" guild.
-
-------
-## <span class="codicon codicon-symbol-structure symbol-structure"></span>GuildKind.Normal
-
-
-This item has no fields.
-
-------
-## <span class="codicon codicon-symbol-structure symbol-structure"></span>GuildKind.Room
-
-
-This item has no fields.
-
-------
-## <span class="codicon codicon-symbol-structure symbol-structure"></span>GuildKind.DirectMessage
-
-
-<span class="h3" aria-level="3">Fields</span>
-### <span class="codicon codicon-symbol-field symbol-field"></span>rejected
-Type: optional `bool`
-
-
-
-------
-## <span class="codicon codicon-symbol-structure symbol-structure"></span>Guild
-Object representing a guild without the ID part.
-
-<span class="h3" aria-level="3">Fields</span>
-### <span class="codicon codicon-symbol-field symbol-field"></span>name
-Type: optional `string`
-
-The name of the guild.
-
-This will be empty if the guild kind is "direct message". See
-the documentation of "direct message" guild kind on how to display
-a name for those guilds.
-### <span class="codicon codicon-symbol-field symbol-field"></span>picture
-Type: optional `string`
-
-The picture HMC of the guild.
-### <span class="codicon codicon-symbol-field symbol-field"></span>owner_ids
-Type: repeated `uint64`
-
-User ID of the owners of the guild.
-### <span class="codicon codicon-symbol-field symbol-field"></span>kind
-Type: optional [protocol.chat.v1.GuildKind](#guildkind)
-
-The kind of this guild.
-### <span class="codicon codicon-symbol-field symbol-field"></span>metadata
-Type: optional [protocol.harmonytypes.v1.Metadata]({{< ref "protocol.harmonytypes.v1.md" >}}#metadata)
-
-Metadata of the guild.
-
-------
-## <span class="codicon codicon-symbol-structure symbol-structure"></span>GuildWithId
-Object representing a guild with the ID part.
-
-<span class="h3" aria-level="3">Fields</span>
-### <span class="codicon codicon-symbol-field symbol-field"></span>guild_id
-Type: optional `uint64`
-
-The ID of the guild.
-### <span class="codicon codicon-symbol-field symbol-field"></span>guild
-Type: optional [protocol.chat.v1.Guild](#guild)
-
-The guild.
-
-------
-## <span class="codicon codicon-symbol-structure symbol-structure"></span>Invite
-Object representing an invite without the ID part.
-
-<span class="h3" aria-level="3">Fields</span>
-### <span class="codicon codicon-symbol-field symbol-field"></span>possible_uses
-Type: optional `uint32`
-
-Possible uses of this invite. A use of `0` means infinite uses.
-### <span class="codicon codicon-symbol-field symbol-field"></span>use_count
-Type: optional `uint32`
-
-Total use count of this invite.
-
-------
-## <span class="codicon codicon-symbol-structure symbol-structure"></span>InviteWithId
-Invite with ID.
-
-<span class="h3" aria-level="3">Fields</span>
-### <span class="codicon codicon-symbol-field symbol-field"></span>invite_id
-Type: optional `string`
-
-ID of the invite.
-### <span class="codicon codicon-symbol-field symbol-field"></span>invite
-Type: optional [protocol.chat.v1.Invite](#invite)
-
-The invite data.
-
-------
-## <span class="codicon codicon-symbol-structure symbol-structure"></span>PendingInvite
-A pending invite.
-
-<span class="h3" aria-level="3">Fields</span>
-### <span class="codicon codicon-symbol-field symbol-field"></span>invite_id
-Type: optional `string`
-
-Invite ID of the invite.
-### <span class="codicon codicon-symbol-field symbol-field"></span>server_id
-Type: optional `string`
-
-Server ID of the server the inviter is on.
-### <span class="codicon codicon-symbol-field symbol-field"></span>inviter_id
-Type: optional `uint64`
-
-User ID of the inviter.
-
-------
-## <span class="codicon codicon-symbol-structure symbol-structure"></span>GuildListEntry
-Object representing a guild list entry.
-
-<span class="h3" aria-level="3">Fields</span>
-### <span class="codicon codicon-symbol-field symbol-field"></span>guild_id
-Type: optional `uint64`
-
-Guild ID of this guild entry.
-### <span class="codicon codicon-symbol-field symbol-field"></span>server_id
-Type: optional `string`
-
-Server ID of the homeserver of this guild.
-
-------
-## <span class="codicon codicon-symbol-structure symbol-structure"></span>Overrides
-Overrides provide a way to override the name and avatar of a message.
-
-<span class="h3" aria-level="3">Fields</span>
-### <span class="codicon codicon-symbol-field symbol-field"></span>username
-Type: optional `string`
-
-the overridden username.
-### <span class="codicon codicon-symbol-field symbol-field"></span>avatar
-Type: optional `string`
-
-the overridden avatar.
-### <span class="codicon codicon-symbol-field symbol-field"></span>user_defined
-Type: optional `string`
-
-a custom reason in case the builtin ones don't fit
-### <span class="codicon codicon-symbol-field symbol-field"></span>webhook
-Type: optional [protocol.harmonytypes.v1.Empty]({{< ref "protocol.harmonytypes.v1.md" >}}#empty)
-
-the override occured because of a webhook
-### <span class="codicon codicon-symbol-field symbol-field"></span>system_plurality
-Type: optional [protocol.harmonytypes.v1.Empty]({{< ref "protocol.harmonytypes.v1.md" >}}#empty)
-
-plurality, not system as in computer
-### <span class="codicon codicon-symbol-field symbol-field"></span>system_message
-Type: optional [protocol.harmonytypes.v1.Empty]({{< ref "protocol.harmonytypes.v1.md" >}}#empty)
-
-the override occured because it was made by the server
-
-Servers should reject messages sent by users with this override.
-### <span class="codicon codicon-symbol-field symbol-field"></span>bridge
-Type: optional [protocol.harmonytypes.v1.Empty]({{< ref "protocol.harmonytypes.v1.md" >}}#empty)
-
-the override occured because of bridging
-
-------
-## <span class="codicon codicon-symbol-structure symbol-structure"></span>ActionPayload
-The payload sent to the bot when an action is triggered.
-
-<span class="h3" aria-level="3">Fields</span>
-### <span class="codicon codicon-symbol-field symbol-field"></span>button
-Type: optional [protocol.chat.v1.ActionPayload.Button](#actionpayloadbutton)
-
-Payload for a button
-### <span class="codicon codicon-symbol-field symbol-field"></span>dropdown
-Type: optional [protocol.chat.v1.ActionPayload.Dropdown](#actionpayloaddropdown)
-
-Payload for a dropdown
-### <span class="codicon codicon-symbol-field symbol-field"></span>input
-Type: optional [protocol.chat.v1.ActionPayload.Input](#actionpayloadinput)
-
-Payload for a text input
-
-------
-## <span class="codicon codicon-symbol-structure symbol-structure"></span>ActionPayload.Button
-
-
-<span class="h3" aria-level="3">Fields</span>
-### <span class="codicon codicon-symbol-field symbol-field"></span>data
-Type: optional `bytes`
-
-
-
-------
-## <span class="codicon codicon-symbol-structure symbol-structure"></span>ActionPayload.Dropdown
-
-
-<span class="h3" aria-level="3">Fields</span>
-### <span class="codicon codicon-symbol-field symbol-field"></span>choice
-Type: optional `bytes`
-
-
-
-------
-## <span class="codicon codicon-symbol-structure symbol-structure"></span>ActionPayload.Input
-
-
-<span class="h3" aria-level="3">Fields</span>
-### <span class="codicon codicon-symbol-field symbol-field"></span>input
-Type: optional `string`
-
-
-### <span class="codicon codicon-symbol-field symbol-field"></span>data
-Type: optional `bytes`
-
-
-
-------
-## <span class="codicon codicon-symbol-structure symbol-structure"></span>Action
-Actions are interactive elements that can exist within an embed.
-
-<span class="h3" aria-level="3">Fields</span>
-### <span class="codicon codicon-symbol-field symbol-field"></span>action_type
-Type: UNHANDLED | TYPE
-
-Type of the action.
-### <span class="codicon codicon-symbol-field symbol-field"></span>button
-Type: optional [protocol.chat.v1.Action.Button](#actionbutton)
-
-Button action.
-### <span class="codicon codicon-symbol-field symbol-field"></span>dropdown
-Type: optional [protocol.chat.v1.Action.Dropdown](#actiondropdown)
-
-Dropdown action.
-### <span class="codicon codicon-symbol-field symbol-field"></span>input
-Type: optional [protocol.chat.v1.Action.Input](#actioninput)
-
-Input action.
-
-------
-## <span class="codicon codicon-symbol-structure symbol-structure"></span>Action.Button
-The action type. This is primarily used to change the look of the action to
-the user (example: Destructive actions will have a red background).
-
-<span class="h3" aria-level="3">Fields</span>
-### <span class="codicon codicon-symbol-field symbol-field"></span>text
-Type: optional `string`
-
-a normal action.
-### <span class="codicon codicon-symbol-field symbol-field"></span>data
-Type: optional `bytes`
-
-a primary action.
-### <span class="codicon codicon-symbol-field symbol-field"></span>url
-Type: optional `string`
-
-A destructive / dangerous action.
-
-------
-## <span class="codicon codicon-symbol-structure symbol-structure"></span>Action.Dropdown
-
-
-<span class="h3" aria-level="3">Fields</span>
-### <span class="codicon codicon-symbol-field symbol-field"></span>label
-Type: optional `string`
-
-
-### <span class="codicon codicon-symbol-field symbol-field"></span>entries
-Type: repeated [protocol.chat.v1.Action.Dropdown.Entry](#actiondropdownentry)
-
-
-
-------
-## <span class="codicon codicon-symbol-structure symbol-structure"></span>Action.Dropdown.Entry
-
-
-<span class="h3" aria-level="3">Fields</span>
-### <span class="codicon codicon-symbol-field symbol-field"></span>label
-Type: optional `string`
-
-
-### <span class="codicon codicon-symbol-field symbol-field"></span>data
-Type: optional `bytes`
-
-
-
-------
-## <span class="codicon codicon-symbol-structure symbol-structure"></span>Action.Input
-
-
-<span class="h3" aria-level="3">Fields</span>
-### <span class="codicon codicon-symbol-field symbol-field"></span>label
-Type: optional `string`
-
-
-### <span class="codicon codicon-symbol-field symbol-field"></span>multiline
-Type: optional `bool`
-
-
-### <span class="codicon codicon-symbol-field symbol-field"></span>data
-Type: optional `bytes`
-
-
-
-------
-## <span class="codicon codicon-symbol-structure symbol-structure"></span>Embed
-Object representing a message embed.
-
-<span class="h3" aria-level="3">Fields</span>
-### <span class="codicon codicon-symbol-field symbol-field"></span>title
-Type: optional `string`
-
-Title of this embed.
-### <span class="codicon codicon-symbol-field symbol-field"></span>body
-Type: optional [protocol.chat.v1.FormattedText](#formattedtext)
-
-Body text of this embed.
-### <span class="codicon codicon-symbol-field symbol-field"></span>color
-Type: optional `int32`
-
-Color of this embed.
-### <span class="codicon codicon-symbol-field symbol-field"></span>header
-Type: optional [protocol.chat.v1.Embed.EmbedHeading](#embedembedheading)
-
-Embed heading for the header.
-### <span class="codicon codicon-symbol-field symbol-field"></span>footer
-Type: optional [protocol.chat.v1.Embed.EmbedHeading](#embedembedheading)
-
-Embed heading for the footer.
-### <span class="codicon codicon-symbol-field symbol-field"></span>fields
-Type: repeated [protocol.chat.v1.Embed.EmbedField](#embedembedfield)
-
-Fields of this embed.
-
-------
-## <span class="codicon codicon-symbol-structure symbol-structure"></span>Embed.EmbedHeading
-
-
-<span class="h3" aria-level="3">Fields</span>
-### <span class="codicon codicon-symbol-field symbol-field"></span>text
-Type: optional `string`
-
-
-### <span class="codicon codicon-symbol-field symbol-field"></span>subtext
-Type: optional `string`
-
-
-### <span class="codicon codicon-symbol-field symbol-field"></span>url
-Type: optional `string`
-
-
-### <span class="codicon codicon-symbol-field symbol-field"></span>icon
-Type: optional `string`
-
-
-
-------
-## <span class="codicon codicon-symbol-structure symbol-structure"></span>Embed.EmbedField
-
-
-<span class="h3" aria-level="3">Fields</span>
-### <span class="codicon codicon-symbol-field symbol-field"></span>title
-Type: optional `string`
-
-
-### <span class="codicon codicon-symbol-field symbol-field"></span>subtitle
-Type: optional `string`
-
-
-### <span class="codicon codicon-symbol-field symbol-field"></span>body
-Type: optional [protocol.chat.v1.FormattedText](#formattedtext)
-
-
-### <span class="codicon codicon-symbol-field symbol-field"></span>image_url
-Type: optional `string`
-
-
-### <span class="codicon codicon-symbol-field symbol-field"></span>presentation
-Type: UNHANDLED | TYPE
-
-
-### <span class="codicon codicon-symbol-field symbol-field"></span>actions
-Type: repeated [protocol.chat.v1.Action](#action)
-
-
-
-------
-## <span class="codicon codicon-symbol-structure symbol-structure"></span>Minithumbnail
-Minithumbnail is an extremely low-quality JPEG thumbnail.
-
-The resolution is usually no larger than 64x64.
-
-<span class="h3" aria-level="3">Fields</span>
-### <span class="codicon codicon-symbol-field symbol-field"></span>width
-Type: optional `uint32`
-
-The width of the minithumbnail
-### <span class="codicon codicon-symbol-field symbol-field"></span>height
-Type: optional `uint32`
-
-The height of the minithumbnail
-### <span class="codicon codicon-symbol-field symbol-field"></span>data
-Type: optional `bytes`
-
-The JPEG data of the minithumbnail
-
-------
-## <span class="codicon codicon-symbol-structure symbol-structure"></span>Photo
-Photo contains data about a photo.
-
-Photo are always JPEG, and are
-constrained to the following rules:
-
-- width+height <= 10_000
-- width <= height*20
-- height <= width*20
-
-Photos are preferably no more than 10MB
-in size, and servers may compress as necessary.
-
-<span class="h3" aria-level="3">Fields</span>
-### <span class="codicon codicon-symbol-field symbol-field"></span>hmc
-Type: optional `string`
-
-The HMC URL of the photo.
-### <span class="codicon codicon-symbol-field symbol-field"></span>name
-Type: optional `string`
-
-The filename of the photo.
-### <span class="codicon codicon-symbol-field symbol-field"></span>file_size
-Type: optional `uint32`
-
-The size of the photo.
-### <span class="codicon codicon-symbol-field symbol-field"></span>height
-Type: optional `uint32`
-
-The height of the photo, in pixels.
-### <span class="codicon codicon-symbol-field symbol-field"></span>width
-Type: optional `uint32`
-
-The width of the photo, in pixels.
-### <span class="codicon codicon-symbol-field symbol-field"></span>caption
-Type: optional [protocol.chat.v1.FormattedText](#formattedtext)
-
-The photo's caption.
-### <span class="codicon codicon-symbol-field symbol-field"></span>minithumbnail
-Type: optional [protocol.chat.v1.Minithumbnail](#minithumbnail)
-
-A thumbnail representing the photo.
-
-------
-## <span class="codicon codicon-symbol-structure symbol-structure"></span>Attachment
-Object representing a generic message attachment.
-
-<span class="h3" aria-level="3">Fields</span>
-### <span class="codicon codicon-symbol-field symbol-field"></span>id
-Type: optional `string`
-
-File ID of this attachment.
-### <span class="codicon codicon-symbol-field symbol-field"></span>name
-Type: optional `string`
-
-Filename of this attachment.
-### <span class="codicon codicon-symbol-field symbol-field"></span>mimetype
-Type: optional `string`
-
-Mimetype of this attachment.
-### <span class="codicon codicon-symbol-field symbol-field"></span>size
-Type: optional `uint32`
-
-Size of this attachment.
-### <span class="codicon codicon-symbol-field symbol-field"></span>caption
-Type: optional [protocol.chat.v1.FormattedText](#formattedtext)
-
-Caption of this attachment.
-
-------
-## <span class="codicon codicon-symbol-structure symbol-structure"></span>Content
-Object representing a message's content.
-
-<span class="h3" aria-level="3">Fields</span>
-### <span class="codicon codicon-symbol-field symbol-field"></span>text_message
-Type: optional [protocol.chat.v1.Content.TextContent](#contenttextcontent)
-
-Text content.
-### <span class="codicon codicon-symbol-field symbol-field"></span>embed_message
-Type: optional [protocol.chat.v1.Content.EmbedContent](#contentembedcontent)
-
-Embed content.
-### <span class="codicon codicon-symbol-field symbol-field"></span>attachment_message
-Type: optional [protocol.chat.v1.Content.AttachmentContent](#contentattachmentcontent)
-
-Attachment content.
-### <span class="codicon codicon-symbol-field symbol-field"></span>photo_message
-Type: optional [protocol.chat.v1.Content.PhotoContent](#contentphotocontent)
-
-Photo content.
-### <span class="codicon codicon-symbol-field symbol-field"></span>invite_rejected
-Type: optional [protocol.chat.v1.Content.InviteRejected](#contentinviterejected)
-
-A user rejected an invite.
-### <span class="codicon codicon-symbol-field symbol-field"></span>invite_accepted
-Type: optional [protocol.chat.v1.Content.InviteAccepted](#contentinviteaccepted)
-
-A user accepted an invite.
-### <span class="codicon codicon-symbol-field symbol-field"></span>room_upgraded_to_guild
-Type: optional [protocol.chat.v1.Content.RoomUpgradedToGuild](#contentroomupgradedtoguild)
-
-A user upgraded a guild from "room" to "normal".
-
-------
-## <span class="codicon codicon-symbol-structure symbol-structure"></span>Content.TextContent
-
-
-<span class="h3" aria-level="3">Fields</span>
-### <span class="codicon codicon-symbol-field symbol-field"></span>content
-Type: optional [protocol.chat.v1.FormattedText](#formattedtext)
-
-
-
-------
-## <span class="codicon codicon-symbol-structure symbol-structure"></span>Content.EmbedContent
-
-
-<span class="h3" aria-level="3">Fields</span>
-### <span class="codicon codicon-symbol-field symbol-field"></span>embeds
-Type: repeated [protocol.chat.v1.Embed](#embed)
-
-
-
-------
-## <span class="codicon codicon-symbol-structure symbol-structure"></span>Content.AttachmentContent
-
-
-<span class="h3" aria-level="3">Fields</span>
-### <span class="codicon codicon-symbol-field symbol-field"></span>files
-Type: repeated [protocol.chat.v1.Attachment](#attachment)
-
-
-
-------
-## <span class="codicon codicon-symbol-structure symbol-structure"></span>Content.PhotoContent
-
-
-<span class="h3" aria-level="3">Fields</span>
-### <span class="codicon codicon-symbol-field symbol-field"></span>photos
-Type: repeated [protocol.chat.v1.Photo](#photo)
-
-
-
-------
-## <span class="codicon codicon-symbol-structure symbol-structure"></span>Content.InviteRejected
-
-
-<span class="h3" aria-level="3">Fields</span>
-### <span class="codicon codicon-symbol-field symbol-field"></span>invitee_id
-Type: optional `uint64`
-
-
-### <span class="codicon codicon-symbol-field symbol-field"></span>inviter_id
-Type: optional `uint64`
-
-
-
-------
-## <span class="codicon codicon-symbol-structure symbol-structure"></span>Content.InviteAccepted
-
-
-<span class="h3" aria-level="3">Fields</span>
-### <span class="codicon codicon-symbol-field symbol-field"></span>invitee_id
-Type: optional `uint64`
-
-
-### <span class="codicon codicon-symbol-field symbol-field"></span>inviter_id
-Type: optional `uint64`
-
-
-
-------
-## <span class="codicon codicon-symbol-structure symbol-structure"></span>Content.RoomUpgradedToGuild
-
-
-<span class="h3" aria-level="3">Fields</span>
-### <span class="codicon codicon-symbol-field symbol-field"></span>upgraded_by
-Type: optional `uint64`
-
-
-
-------
-## <span class="codicon codicon-symbol-structure symbol-structure"></span>Reaction
-Object representing a reaction.
-
-<span class="h3" aria-level="3">Fields</span>
-### <span class="codicon codicon-symbol-field symbol-field"></span>emote
-Type: optional [protocol.emote.v1.Emote]({{< ref "protocol.emote.v1.md" >}}#emote)
-
-Emote data for this reaction.
-
-Emote's image ID is used as an identifier for unique reactions.
-Emotes with the same names should be "deduplicated" by a client, by suffixing
-their names with `~1`, `~2` and so on.
-### <span class="codicon codicon-symbol-field symbol-field"></span>count
-Type: optional `uint32`
-
-How many reactions this reaction has.
-
-------
-## <span class="codicon codicon-symbol-structure symbol-structure"></span>Format
-A format for text
-
-<span class="h3" aria-level="3">Fields</span>
-### <span class="codicon codicon-symbol-field symbol-field"></span>start
-Type: optional `uint32`
-
-where the format begins to apply to
-### <span class="codicon codicon-symbol-field symbol-field"></span>length
-Type: optional `uint32`
-
-how many characters the format is
-### <span class="codicon codicon-symbol-field symbol-field"></span>bold
-Type: optional [protocol.chat.v1.Format.Bold](#formatbold)
-
-a text format for bold text
-### <span class="codicon codicon-symbol-field symbol-field"></span>italic
-Type: optional [protocol.chat.v1.Format.Italic](#formatitalic)
-
-a text format for italic text
-### <span class="codicon codicon-symbol-field symbol-field"></span>underline
-Type: optional [protocol.chat.v1.Format.Underline](#formatunderline)
-
-a text format for underline text
-### <span class="codicon codicon-symbol-field symbol-field"></span>monospace
-Type: optional [protocol.chat.v1.Format.Monospace](#formatmonospace)
-
-a text format for monospace text
-### <span class="codicon codicon-symbol-field symbol-field"></span>superscript
-Type: optional [protocol.chat.v1.Format.Superscript](#formatsuperscript)
-
-a text format for superscript text
-### <span class="codicon codicon-symbol-field symbol-field"></span>subscript
-Type: optional [protocol.chat.v1.Format.Subscript](#formatsubscript)
-
-a text format for subscript text
-### <span class="codicon codicon-symbol-field symbol-field"></span>code_block
-Type: optional [protocol.chat.v1.Format.CodeBlock](#formatcodeblock)
-
-a text format for a codeblock
-### <span class="codicon codicon-symbol-field symbol-field"></span>user_mention
-Type: optional [protocol.chat.v1.Format.UserMention](#formatusermention)
-
-a text format for a user mention
-### <span class="codicon codicon-symbol-field symbol-field"></span>role_mention
-Type: optional [protocol.chat.v1.Format.RoleMention](#formatrolemention)
-
-a text format for a role mention
-### <span class="codicon codicon-symbol-field symbol-field"></span>channel_mention
-Type: optional [protocol.chat.v1.Format.ChannelMention](#formatchannelmention)
-
-a text format for a channel mention
-### <span class="codicon codicon-symbol-field symbol-field"></span>guild_mention
-Type: optional [protocol.chat.v1.Format.GuildMention](#formatguildmention)
-
-a text format for a guild mention
-### <span class="codicon codicon-symbol-field symbol-field"></span>emoji
-Type: optional [protocol.chat.v1.Format.Emoji](#formatemoji)
-
-a text format for an emoji
-### <span class="codicon codicon-symbol-field symbol-field"></span>color
-Type: optional [protocol.chat.v1.Format.Color](#formatcolor)
-
-a text format for coloured text
-### <span class="codicon codicon-symbol-field symbol-field"></span>localization
-Type: optional [protocol.chat.v1.Format.Localization](#formatlocalization)
-
-a text format for localization
-
-------
-## <span class="codicon codicon-symbol-structure symbol-structure"></span>Format.Bold
-
-
-This item has no fields.
-
-------
-## <span class="codicon codicon-symbol-structure symbol-structure"></span>Format.Italic
-
-
-This item has no fields.
-
-------
-## <span class="codicon codicon-symbol-structure symbol-structure"></span>Format.Underline
-
-
-This item has no fields.
-
-------
-## <span class="codicon codicon-symbol-structure symbol-structure"></span>Format.Monospace
-
-
-This item has no fields.
-
-------
-## <span class="codicon codicon-symbol-structure symbol-structure"></span>Format.Superscript
-
-
-This item has no fields.
-
-------
-## <span class="codicon codicon-symbol-structure symbol-structure"></span>Format.Subscript
-
-
-This item has no fields.
-
-------
-## <span class="codicon codicon-symbol-structure symbol-structure"></span>Format.CodeBlock
-
-
-<span class="h3" aria-level="3">Fields</span>
-### <span class="codicon codicon-symbol-field symbol-field"></span>language
-Type: optional `string`
-
-
-
-------
-## <span class="codicon codicon-symbol-structure symbol-structure"></span>Format.UserMention
-
-
-<span class="h3" aria-level="3">Fields</span>
-### <span class="codicon codicon-symbol-field symbol-field"></span>user_id
-Type: optional `uint64`
-
-
-
-------
-## <span class="codicon codicon-symbol-structure symbol-structure"></span>Format.RoleMention
-
-
-<span class="h3" aria-level="3">Fields</span>
-### <span class="codicon codicon-symbol-field symbol-field"></span>role_id
-Type: optional `uint64`
-
-
-
-------
-## <span class="codicon codicon-symbol-structure symbol-structure"></span>Format.ChannelMention
-
-
-<span class="h3" aria-level="3">Fields</span>
-### <span class="codicon codicon-symbol-field symbol-field"></span>channel_id
-Type: optional `uint64`
-
-
-
-------
-## <span class="codicon codicon-symbol-structure symbol-structure"></span>Format.GuildMention
-
-
-<span class="h3" aria-level="3">Fields</span>
-### <span class="codicon codicon-symbol-field symbol-field"></span>guild_id
-Type: optional `uint64`
-
-
-### <span class="codicon codicon-symbol-field symbol-field"></span>homeserver
-Type: optional `string`
-
-
-
-------
-## <span class="codicon codicon-symbol-structure symbol-structure"></span>Format.Emoji
-
-
-<span class="h3" aria-level="3">Fields</span>
-### <span class="codicon codicon-symbol-field symbol-field"></span>image_hmc
-Type: optional `string`
-
-
-### <span class="codicon codicon-symbol-field symbol-field"></span>pack_id
-Type: optional `uint64`
-
-
-
-------
-## <span class="codicon codicon-symbol-structure symbol-structure"></span>Format.Color
-
-
-<span class="h3" aria-level="3">Fields</span>
-### <span class="codicon codicon-symbol-field symbol-field"></span>kind
-Type: UNHANDLED | TYPE
-
-
-
-------
-## <span class="codicon codicon-symbol-structure symbol-structure"></span>Format.Localization
-
-
-<span class="h3" aria-level="3">Fields</span>
-### <span class="codicon codicon-symbol-field symbol-field"></span>i18n_code
-Type: optional `string`
-
-
-
-------
-## <span class="codicon codicon-symbol-structure symbol-structure"></span>FormattedText
-Formatted text
-
-<span class="h3" aria-level="3">Fields</span>
-### <span class="codicon codicon-symbol-field symbol-field"></span>text
-Type: optional `string`
-
-The textual content of a message
-### <span class="codicon codicon-symbol-field symbol-field"></span>format
-Type: repeated [protocol.chat.v1.Format](#format)
-
-The formats for a message
-
-------
-## <span class="codicon codicon-symbol-structure symbol-structure"></span>Message
-Object representing a message without the ID part.
-
-<span class="h3" aria-level="3">Fields</span>
-### <span class="codicon codicon-symbol-field symbol-field"></span>metadata
-Type: optional [protocol.harmonytypes.v1.Metadata]({{< ref "protocol.harmonytypes.v1.md" >}}#metadata)
-
-Metadata of this message.
-### <span class="codicon codicon-symbol-field symbol-field"></span>overrides
-Type: optional [protocol.chat.v1.Overrides](#overrides)
-
-Overrides of this message.
-### <span class="codicon codicon-symbol-field symbol-field"></span>author_id
-Type: optional `uint64`
-
-User ID of the user who sent this message.
-### <span class="codicon codicon-symbol-field symbol-field"></span>created_at
-Type: optional `uint64`
-
-When this message was created, in miliseconds since unix epoch
-### <span class="codicon codicon-symbol-field symbol-field"></span>edited_at
-Type: optional `uint64`
-
-The most recent time this message was edited, in milliseconds since unix epoch
-### <span class="codicon codicon-symbol-field symbol-field"></span>in_reply_to
-Type: optional `uint64`
-
-The message this message is a reply to.
-### <span class="codicon codicon-symbol-field symbol-field"></span>content
-Type: optional [protocol.chat.v1.Content](#content)
-
-The content of the message.
-### <span class="codicon codicon-symbol-field symbol-field"></span>reactions
-Type: repeated [protocol.chat.v1.Reaction](#reaction)
-
-The reactions of the message.
-
-------
-## <span class="codicon codicon-symbol-structure symbol-structure"></span>MessageWithId
-Object representing a message with it's ID.
-
-<span class="h3" aria-level="3">Fields</span>
-### <span class="codicon codicon-symbol-field symbol-field"></span>message_id
-Type: optional `uint64`
-
-ID of the message.
-### <span class="codicon codicon-symbol-field symbol-field"></span>message
-Type: optional [protocol.chat.v1.Message](#message)
-
-The message data.
-
-------
-## <span class="codicon codicon-symbol-structure symbol-structure"></span>Permission
-Object representing a single permission node.
-
-<span class="h3" aria-level="3">Fields</span>
-### <span class="codicon codicon-symbol-field symbol-field"></span>matches
-Type: optional `string`
-
-the permission matcher. (example: roles.manage)
-### <span class="codicon codicon-symbol-field symbol-field"></span>ok
-Type: optional `bool`
-
-whether the permission is allowed or not.
-
-------
-## <span class="codicon codicon-symbol-structure symbol-structure"></span>Role
-Object representing a role without the ID.
-
-<span class="h3" aria-level="3">Fields</span>
-### <span class="codicon codicon-symbol-field symbol-field"></span>name
-Type: optional `string`
-
-the role name.
-### <span class="codicon codicon-symbol-field symbol-field"></span>color
-Type: optional `int32`
-
-the role color.
-### <span class="codicon codicon-symbol-field symbol-field"></span>hoist
-Type: optional `bool`
-
-whether the role is hoisted or not.
-### <span class="codicon codicon-symbol-field symbol-field"></span>pingable
-Type: optional `bool`
-
-whether the role is mentionable or not.
-
-------
-## <span class="codicon codicon-symbol-structure symbol-structure"></span>RoleWithId
-Object representing a role with it's ID.
-
-The role ID for the default role in a guild should always be 0.
-
-<span class="h3" aria-level="3">Fields</span>
-### <span class="codicon codicon-symbol-field symbol-field"></span>role_id
-Type: optional `uint64`
-
-ID of the role.
-### <span class="codicon codicon-symbol-field symbol-field"></span>role
-Type: optional [protocol.chat.v1.Role](#role)
-
-The role data.
-
-------
-## <span class="codicon codicon-symbol-structure symbol-structure"></span>StreamEventsRequest
-Request type for use in the `StreamEvents` endpoint.
-By default, this endpoint will subscribe to all events.
-Any guilds joined in the future will be added to the subscription as well.
-Use the UnsubscribeFromAll event for unsubscribing from all current subscriptions and disable the automatic guild subscriptions
-
-<span class="h3" aria-level="3">Fields</span>
-### <span class="codicon codicon-symbol-field symbol-field"></span>subscribe_to_guild
-Type: optional [protocol.chat.v1.StreamEventsRequest.SubscribeToGuild](#streameventsrequestsubscribetoguild)
-
-Subscribe to the guild event source.
-### <span class="codicon codicon-symbol-field symbol-field"></span>subscribe_to_actions
-Type: optional [protocol.chat.v1.StreamEventsRequest.SubscribeToActions](#streameventsrequestsubscribetoactions)
-
-Subscribe to the action event source.
-### <span class="codicon codicon-symbol-field symbol-field"></span>subscribe_to_homeserver_events
-Type: optional [protocol.chat.v1.StreamEventsRequest.SubscribeToHomeserverEvents](#streameventsrequestsubscribetohomeserverevents)
-
-Subscribe to the homeserver event source.
-### <span class="codicon codicon-symbol-field symbol-field"></span>unsubscribe_from_all
-Type: optional [protocol.chat.v1.StreamEventsRequest.UnsubscribeFromAll](#streameventsrequestunsubscribefromall)
-
-Unsubscribe from all events.
-
-------
-## <span class="codicon codicon-symbol-structure symbol-structure"></span>StreamEventsRequest.SubscribeToGuild
-
-
-<span class="h3" aria-level="3">Fields</span>
-### <span class="codicon codicon-symbol-field symbol-field"></span>guild_id
-Type: optional `uint64`
-
-
-
-------
-## <span class="codicon codicon-symbol-structure symbol-structure"></span>StreamEventsRequest.SubscribeToActions
-
-
-This item has no fields.
-
-------
-## <span class="codicon codicon-symbol-structure symbol-structure"></span>StreamEventsRequest.SubscribeToHomeserverEvents
-
-
-This item has no fields.
-
-------
-## <span class="codicon codicon-symbol-structure symbol-structure"></span>StreamEventsRequest.UnsubscribeFromAll
-
-
-This item has no fields.
-
-------
-## <span class="codicon codicon-symbol-structure symbol-structure"></span>StreamEvent
-Describes an event.
-
-<span class="h3" aria-level="3">Fields</span>
-### <span class="codicon codicon-symbol-field symbol-field"></span>guild_added_to_list
-Type: optional [protocol.chat.v1.StreamEvent.GuildAddedToList](#streameventguildaddedtolist)
-
-Send the guild added to list event.
-### <span class="codicon codicon-symbol-field symbol-field"></span>guild_removed_from_list
-Type: optional [protocol.chat.v1.StreamEvent.GuildRemovedFromList](#streameventguildremovedfromlist)
-
-Send the guild removed from list event.
-### <span class="codicon codicon-symbol-field symbol-field"></span>action_performed
-Type: optional [protocol.chat.v1.StreamEvent.ActionPerformed](#streameventactionperformed)
-
-Send the action performed event.
-### <span class="codicon codicon-symbol-field symbol-field"></span>sent_message
-Type: optional [protocol.chat.v1.StreamEvent.MessageSent](#streameventmessagesent)
-
-Send the message sent event.
-### <span class="codicon codicon-symbol-field symbol-field"></span>edited_message
-Type: optional [protocol.chat.v1.StreamEvent.MessageUpdated](#streameventmessageupdated)
-
-Send the message updated event.
-### <span class="codicon codicon-symbol-field symbol-field"></span>deleted_message
-Type: optional [protocol.chat.v1.StreamEvent.MessageDeleted](#streameventmessagedeleted)
-
-Send the message deleted event.
-### <span class="codicon codicon-symbol-field symbol-field"></span>created_channel
-Type: optional [protocol.chat.v1.StreamEvent.ChannelCreated](#streameventchannelcreated)
-
-Send the channel created event.
-### <span class="codicon codicon-symbol-field symbol-field"></span>edited_channel
-Type: optional [protocol.chat.v1.StreamEvent.ChannelUpdated](#streameventchannelupdated)
-
-Send the channel updated event.
-### <span class="codicon codicon-symbol-field symbol-field"></span>deleted_channel
-Type: optional [protocol.chat.v1.StreamEvent.ChannelDeleted](#streameventchanneldeleted)
-
-Send the channel deleted event.
-### <span class="codicon codicon-symbol-field symbol-field"></span>edited_guild
-Type: optional [protocol.chat.v1.StreamEvent.GuildUpdated](#streameventguildupdated)
-
-Send the guild updated event.
-### <span class="codicon codicon-symbol-field symbol-field"></span>deleted_guild
-Type: optional [protocol.chat.v1.StreamEvent.GuildDeleted](#streameventguilddeleted)
-
-Send the guild deleted event.
-### <span class="codicon codicon-symbol-field symbol-field"></span>joined_member
-Type: optional [protocol.chat.v1.StreamEvent.MemberJoined](#streameventmemberjoined)
-
-Send the member joined event.
-### <span class="codicon codicon-symbol-field symbol-field"></span>left_member
-Type: optional [protocol.chat.v1.StreamEvent.MemberLeft](#streameventmemberleft)
-
-Send the member left event.
-### <span class="codicon codicon-symbol-field symbol-field"></span>typing
-Type: optional [protocol.chat.v1.StreamEvent.Typing](#streameventtyping)
-
-Send the typing event.
-### <span class="codicon codicon-symbol-field symbol-field"></span>role_created
-Type: optional [protocol.chat.v1.StreamEvent.RoleCreated](#streameventrolecreated)
-
-Send the role created event.
-### <span class="codicon codicon-symbol-field symbol-field"></span>role_deleted
-Type: optional [protocol.chat.v1.StreamEvent.RoleDeleted](#streameventroledeleted)
-
-Send the role deleted event.
-### <span class="codicon codicon-symbol-field symbol-field"></span>role_moved
-Type: optional [protocol.chat.v1.StreamEvent.RoleMoved](#streameventrolemoved)
-
-Send the role moved event.
-### <span class="codicon codicon-symbol-field symbol-field"></span>role_updated
-Type: optional [protocol.chat.v1.StreamEvent.RoleUpdated](#streameventroleupdated)
-
-Send the role updated event.
-### <span class="codicon codicon-symbol-field symbol-field"></span>role_perms_updated
-Type: optional [protocol.chat.v1.StreamEvent.RolePermissionsUpdated](#streameventrolepermissionsupdated)
-
-Send the role perms updated event.
-### <span class="codicon codicon-symbol-field symbol-field"></span>user_roles_updated
-Type: optional [protocol.chat.v1.StreamEvent.UserRolesUpdated](#streameventuserrolesupdated)
-
-Send the user roles updated event.
-### <span class="codicon codicon-symbol-field symbol-field"></span>permission_updated
-Type: optional [protocol.chat.v1.StreamEvent.PermissionUpdated](#streameventpermissionupdated)
-
-Send the permission updated event.
-### <span class="codicon codicon-symbol-field symbol-field"></span>channels_reordered
-Type: optional [protocol.chat.v1.StreamEvent.ChannelsReordered](#streameventchannelsreordered)
-
-The channels have been completely reordered.
-### <span class="codicon codicon-symbol-field symbol-field"></span>edited_channel_position
-Type: optional [protocol.chat.v1.StreamEvent.ChannelPositionUpdated](#streameventchannelpositionupdated)
-
-Send the channel position updated event.
-### <span class="codicon codicon-symbol-field symbol-field"></span>message_pinned
-Type: optional [protocol.chat.v1.StreamEvent.MessagePinned](#streameventmessagepinned)
-
-Send the message pinned event.
-### <span class="codicon codicon-symbol-field symbol-field"></span>message_unpinned
-Type: optional [protocol.chat.v1.StreamEvent.MessageUnpinned](#streameventmessageunpinned)
-
-Send the message unpinned event.
-### <span class="codicon codicon-symbol-field symbol-field"></span>reaction_updated
-Type: optional [protocol.chat.v1.StreamEvent.ReactionUpdated](#streameventreactionupdated)
-
-Send the reaction updated event.
-### <span class="codicon codicon-symbol-field symbol-field"></span>owner_added
-Type: optional [protocol.chat.v1.StreamEvent.OwnerAdded](#streameventowneradded)
-
-Send the owner added event.
-### <span class="codicon codicon-symbol-field symbol-field"></span>owner_removed
-Type: optional [protocol.chat.v1.StreamEvent.OwnerRemoved](#streameventownerremoved)
-
-Send the owner removed event.
-### <span class="codicon codicon-symbol-field symbol-field"></span>invite_received
-Type: optional [protocol.chat.v1.StreamEvent.InviteReceived](#streameventinvitereceived)
-
-Send the guild invite received event.
-### <span class="codicon codicon-symbol-field symbol-field"></span>invite_rejected
-Type: optional [protocol.chat.v1.StreamEvent.InviteRejected](#streameventinviterejected)
-
-Send the guild invite rejected event.
-
-------
-## <span class="codicon codicon-symbol-structure symbol-structure"></span>StreamEvent.MessageSent
-
-
-<span class="h3" aria-level="3">Fields</span>
-### <span class="codicon codicon-symbol-field symbol-field"></span>echo_id
-Type: optional `uint64`
-
-
-### <span class="codicon codicon-symbol-field symbol-field"></span>guild_id
-Type: optional `uint64`
-
-
-### <span class="codicon codicon-symbol-field symbol-field"></span>channel_id
-Type: optional `uint64`
-
-
-### <span class="codicon codicon-symbol-field symbol-field"></span>message_id
-Type: optional `uint64`
-
-
-### <span class="codicon codicon-symbol-field symbol-field"></span>message
-Type: optional [protocol.chat.v1.Message](#message)
-
-
-
-------
-## <span class="codicon codicon-symbol-structure symbol-structure"></span>StreamEvent.MessageUpdated
-
-
-<span class="h3" aria-level="3">Fields</span>
-### <span class="codicon codicon-symbol-field symbol-field"></span>guild_id
-Type: optional `uint64`
-
-
-### <span class="codicon codicon-symbol-field symbol-field"></span>channel_id
-Type: optional `uint64`
-
-
-### <span class="codicon codicon-symbol-field symbol-field"></span>message_id
-Type: optional `uint64`
-
-
-### <span class="codicon codicon-symbol-field symbol-field"></span>edited_at
-Type: optional `uint64`
-
-
-### <span class="codicon codicon-symbol-field symbol-field"></span>new_content
-Type: optional [protocol.chat.v1.FormattedText](#formattedtext)
-
-
-
-------
-## <span class="codicon codicon-symbol-structure symbol-structure"></span>StreamEvent.MessageDeleted
-
-
-<span class="h3" aria-level="3">Fields</span>
-### <span class="codicon codicon-symbol-field symbol-field"></span>guild_id
-Type: optional `uint64`
-
-
-### <span class="codicon codicon-symbol-field symbol-field"></span>channel_id
-Type: optional `uint64`
-
-
-### <span class="codicon codicon-symbol-field symbol-field"></span>message_id
-Type: optional `uint64`
-
-
-
-------
-## <span class="codicon codicon-symbol-structure symbol-structure"></span>StreamEvent.ChannelCreated
-
-
-<span class="h3" aria-level="3">Fields</span>
-### <span class="codicon codicon-symbol-field symbol-field"></span>guild_id
-Type: optional `uint64`
-
-
-### <span class="codicon codicon-symbol-field symbol-field"></span>channel_id
-Type: optional `uint64`
-
-
-### <span class="codicon codicon-symbol-field symbol-field"></span>name
-Type: optional `string`
-
-
-### <span class="codicon codicon-symbol-field symbol-field"></span>position
-Type: optional [protocol.harmonytypes.v1.ItemPosition]({{< ref "protocol.harmonytypes.v1.md" >}}#itemposition)
-
-
-### <span class="codicon codicon-symbol-field symbol-field"></span>kind
-Type: UNHANDLED | TYPE
-
-
-### <span class="codicon codicon-symbol-field symbol-field"></span>metadata
-Type: optional [protocol.harmonytypes.v1.Metadata]({{< ref "protocol.harmonytypes.v1.md" >}}#metadata)
-
-
-
-------
-## <span class="codicon codicon-symbol-structure symbol-structure"></span>StreamEvent.ChannelUpdated
-
-
-<span class="h3" aria-level="3">Fields</span>
-### <span class="codicon codicon-symbol-field symbol-field"></span>guild_id
-Type: optional `uint64`
-
-
-### <span class="codicon codicon-symbol-field symbol-field"></span>channel_id
-Type: optional `uint64`
-
-
-### <span class="codicon codicon-symbol-field symbol-field"></span>new_name
-Type: optional `string`
-
-
-### <span class="codicon codicon-symbol-field symbol-field"></span>new_metadata
-Type: optional [protocol.harmonytypes.v1.Metadata]({{< ref "protocol.harmonytypes.v1.md" >}}#metadata)
-
-
-
-------
-## <span class="codicon codicon-symbol-structure symbol-structure"></span>StreamEvent.ChannelPositionUpdated
-
-
-<span class="h3" aria-level="3">Fields</span>
-### <span class="codicon codicon-symbol-field symbol-field"></span>guild_id
-Type: optional `uint64`
-
-
-### <span class="codicon codicon-symbol-field symbol-field"></span>channel_id
-Type: optional `uint64`
-
-
-### <span class="codicon codicon-symbol-field symbol-field"></span>new_position
-Type: optional [protocol.harmonytypes.v1.ItemPosition]({{< ref "protocol.harmonytypes.v1.md" >}}#itemposition)
-
-
-
-------
-## <span class="codicon codicon-symbol-structure symbol-structure"></span>StreamEvent.ChannelsReordered
-
-
-<span class="h3" aria-level="3">Fields</span>
-### <span class="codicon codicon-symbol-field symbol-field"></span>guild_id
-Type: optional `uint64`
-
-
-### <span class="codicon codicon-symbol-field symbol-field"></span>channel_ids
-Type: repeated `uint64`
-
-
-
-------
-## <span class="codicon codicon-symbol-structure symbol-structure"></span>StreamEvent.ChannelDeleted
-
-
-<span class="h3" aria-level="3">Fields</span>
-### <span class="codicon codicon-symbol-field symbol-field"></span>guild_id
-Type: optional `uint64`
-
-
-### <span class="codicon codicon-symbol-field symbol-field"></span>channel_id
-Type: optional `uint64`
-
-
-
-------
-## <span class="codicon codicon-symbol-structure symbol-structure"></span>StreamEvent.GuildUpdated
-
-
-<span class="h3" aria-level="3">Fields</span>
-### <span class="codicon codicon-symbol-field symbol-field"></span>guild_id
-Type: optional `uint64`
-
-
-### <span class="codicon codicon-symbol-field symbol-field"></span>new_name
-Type: optional `string`
-
-
-### <span class="codicon codicon-symbol-field symbol-field"></span>new_picture
-Type: optional `string`
-
-
-### <span class="codicon codicon-symbol-field symbol-field"></span>new_metadata
-Type: optional [protocol.harmonytypes.v1.Metadata]({{< ref "protocol.harmonytypes.v1.md" >}}#metadata)
-
-
-
-------
-## <span class="codicon codicon-symbol-structure symbol-structure"></span>StreamEvent.GuildDeleted
-
-
-<span class="h3" aria-level="3">Fields</span>
-### <span class="codicon codicon-symbol-field symbol-field"></span>guild_id
-Type: optional `uint64`
-
-
-
-------
-## <span class="codicon codicon-symbol-structure symbol-structure"></span>StreamEvent.MemberJoined
-
-
-<span class="h3" aria-level="3">Fields</span>
-### <span class="codicon codicon-symbol-field symbol-field"></span>member_id
-Type: optional `uint64`
-
-
-### <span class="codicon codicon-symbol-field symbol-field"></span>guild_id
-Type: optional `uint64`
-
-
-
-------
-## <span class="codicon codicon-symbol-structure symbol-structure"></span>StreamEvent.MemberLeft
-
-
-<span class="h3" aria-level="3">Fields</span>
-### <span class="codicon codicon-symbol-field symbol-field"></span>member_id
-Type: optional `uint64`
-
-
-### <span class="codicon codicon-symbol-field symbol-field"></span>guild_id
-Type: optional `uint64`
-
-
-### <span class="codicon codicon-symbol-field symbol-field"></span>leave_reason
-Type: UNHANDLED | TYPE
-
-
-
-------
-## <span class="codicon codicon-symbol-structure symbol-structure"></span>StreamEvent.GuildAddedToList
-
-
-<span class="h3" aria-level="3">Fields</span>
-### <span class="codicon codicon-symbol-field symbol-field"></span>guild_id
-Type: optional `uint64`
-
-
-### <span class="codicon codicon-symbol-field symbol-field"></span>homeserver
-Type: optional `string`
-
-
-
-------
-## <span class="codicon codicon-symbol-structure symbol-structure"></span>StreamEvent.GuildRemovedFromList
-
-
-<span class="h3" aria-level="3">Fields</span>
-### <span class="codicon codicon-symbol-field symbol-field"></span>guild_id
-Type: optional `uint64`
-
-
-### <span class="codicon codicon-symbol-field symbol-field"></span>homeserver
-Type: optional `string`
-
-
-
-------
-## <span class="codicon codicon-symbol-structure symbol-structure"></span>StreamEvent.ActionPerformed
-
-
-<span class="h3" aria-level="3">Fields</span>
-### <span class="codicon codicon-symbol-field symbol-field"></span>guild_id
-Type: optional `uint64`
-
-
-### <span class="codicon codicon-symbol-field symbol-field"></span>channel_id
-Type: optional `uint64`
-
-
-### <span class="codicon codicon-symbol-field symbol-field"></span>message_id
-Type: optional `uint64`
-
-
-### <span class="codicon codicon-symbol-field symbol-field"></span>user_id
-Type: optional `uint64`
-
-
-### <span class="codicon codicon-symbol-field symbol-field"></span>payload
-Type: optional [protocol.chat.v1.ActionPayload](#actionpayload)
-
-
-
-------
-## <span class="codicon codicon-symbol-structure symbol-structure"></span>StreamEvent.RoleMoved
-
-
-<span class="h3" aria-level="3">Fields</span>
-### <span class="codicon codicon-symbol-field symbol-field"></span>guild_id
-Type: optional `uint64`
-
-
-### <span class="codicon codicon-symbol-field symbol-field"></span>role_id
-Type: optional `uint64`
-
-
-### <span class="codicon codicon-symbol-field symbol-field"></span>new_position
-Type: optional [protocol.harmonytypes.v1.ItemPosition]({{< ref "protocol.harmonytypes.v1.md" >}}#itemposition)
-
-
-
-------
-## <span class="codicon codicon-symbol-structure symbol-structure"></span>StreamEvent.RoleDeleted
-
-
-<span class="h3" aria-level="3">Fields</span>
-### <span class="codicon codicon-symbol-field symbol-field"></span>guild_id
-Type: optional `uint64`
-
-
-### <span class="codicon codicon-symbol-field symbol-field"></span>role_id
-Type: optional `uint64`
-
-
-
-------
-## <span class="codicon codicon-symbol-structure symbol-structure"></span>StreamEvent.RoleCreated
-
-
-<span class="h3" aria-level="3">Fields</span>
-### <span class="codicon codicon-symbol-field symbol-field"></span>guild_id
-Type: optional `uint64`
-
-
-### <span class="codicon codicon-symbol-field symbol-field"></span>role_id
-Type: optional `uint64`
-
-
-### <span class="codicon codicon-symbol-field symbol-field"></span>name
-Type: optional `string`
-
-
-### <span class="codicon codicon-symbol-field symbol-field"></span>color
-Type: optional `int32`
-
-
-### <span class="codicon codicon-symbol-field symbol-field"></span>hoist
-Type: optional `bool`
-
-
-### <span class="codicon codicon-symbol-field symbol-field"></span>pingable
-Type: optional `bool`
-
-
-
-------
-## <span class="codicon codicon-symbol-structure symbol-structure"></span>StreamEvent.RoleUpdated
-
-
-<span class="h3" aria-level="3">Fields</span>
-### <span class="codicon codicon-symbol-field symbol-field"></span>guild_id
-Type: optional `uint64`
-
-
-### <span class="codicon codicon-symbol-field symbol-field"></span>role_id
-Type: optional `uint64`
-
-
-### <span class="codicon codicon-symbol-field symbol-field"></span>new_name
-Type: optional `string`
-
-
-### <span class="codicon codicon-symbol-field symbol-field"></span>new_color
-Type: optional `int32`
-
-
-### <span class="codicon codicon-symbol-field symbol-field"></span>new_hoist
-Type: optional `bool`
-
-
-### <span class="codicon codicon-symbol-field symbol-field"></span>new_pingable
-Type: optional `bool`
-
-
-
-------
-## <span class="codicon codicon-symbol-structure symbol-structure"></span>StreamEvent.RolePermissionsUpdated
-
-
-<span class="h3" aria-level="3">Fields</span>
-### <span class="codicon codicon-symbol-field symbol-field"></span>guild_id
-Type: optional `uint64`
-
-
-### <span class="codicon codicon-symbol-field symbol-field"></span>channel_id
-Type: optional `uint64`
-
-
-### <span class="codicon codicon-symbol-field symbol-field"></span>role_id
-Type: optional `uint64`
-
-
-### <span class="codicon codicon-symbol-field symbol-field"></span>new_perms
-Type: repeated [protocol.chat.v1.Permission](#permission)
-
-
-
-------
-## <span class="codicon codicon-symbol-structure symbol-structure"></span>StreamEvent.UserRolesUpdated
-
-
-<span class="h3" aria-level="3">Fields</span>
-### <span class="codicon codicon-symbol-field symbol-field"></span>guild_id
-Type: optional `uint64`
-
-
-### <span class="codicon codicon-symbol-field symbol-field"></span>user_id
-Type: optional `uint64`
-
-
-### <span class="codicon codicon-symbol-field symbol-field"></span>new_role_ids
-Type: repeated `uint64`
-
-
-
-------
-## <span class="codicon codicon-symbol-structure symbol-structure"></span>StreamEvent.Typing
-
-
-<span class="h3" aria-level="3">Fields</span>
-### <span class="codicon codicon-symbol-field symbol-field"></span>user_id
-Type: optional `uint64`
-
-
-### <span class="codicon codicon-symbol-field symbol-field"></span>guild_id
-Type: optional `uint64`
-
-
-### <span class="codicon codicon-symbol-field symbol-field"></span>channel_id
-Type: optional `uint64`
-
-
-
-------
-## <span class="codicon codicon-symbol-structure symbol-structure"></span>StreamEvent.PermissionUpdated
-
-
-<span class="h3" aria-level="3">Fields</span>
-### <span class="codicon codicon-symbol-field symbol-field"></span>guild_id
-Type: optional `uint64`
-
-
-### <span class="codicon codicon-symbol-field symbol-field"></span>channel_id
-Type: optional `uint64`
-
-
-### <span class="codicon codicon-symbol-field symbol-field"></span>query
-Type: optional `string`
-
-
-### <span class="codicon codicon-symbol-field symbol-field"></span>ok
-Type: optional `bool`
-
-
-
-------
-## <span class="codicon codicon-symbol-structure symbol-structure"></span>StreamEvent.MessagePinned
-
-
-<span class="h3" aria-level="3">Fields</span>
-### <span class="codicon codicon-symbol-field symbol-field"></span>guild_id
-Type: optional `uint64`
-
-
-### <span class="codicon codicon-symbol-field symbol-field"></span>channel_id
-Type: optional `uint64`
-
-
-### <span class="codicon codicon-symbol-field symbol-field"></span>message_id
-Type: optional `uint64`
-
-
-
-------
-## <span class="codicon codicon-symbol-structure symbol-structure"></span>StreamEvent.MessageUnpinned
-
-
-<span class="h3" aria-level="3">Fields</span>
-### <span class="codicon codicon-symbol-field symbol-field"></span>guild_id
-Type: optional `uint64`
-
-
-### <span class="codicon codicon-symbol-field symbol-field"></span>channel_id
-Type: optional `uint64`
-
-
-### <span class="codicon codicon-symbol-field symbol-field"></span>message_id
-Type: optional `uint64`
-
-
-
-------
-## <span class="codicon codicon-symbol-structure symbol-structure"></span>StreamEvent.ReactionUpdated
-
-
-<span class="h3" aria-level="3">Fields</span>
-### <span class="codicon codicon-symbol-field symbol-field"></span>guild_id
-Type: optional `uint64`
-
-
-### <span class="codicon codicon-symbol-field symbol-field"></span>channel_id
-Type: optional `uint64`
-
-
-### <span class="codicon codicon-symbol-field symbol-field"></span>message_id
-Type: optional `uint64`
-
-
-### <span class="codicon codicon-symbol-field symbol-field"></span>reaction
-Type: optional [protocol.chat.v1.Reaction](#reaction)
-
-
-
-------
-## <span class="codicon codicon-symbol-structure symbol-structure"></span>StreamEvent.OwnerAdded
-
-
-<span class="h3" aria-level="3">Fields</span>
-### <span class="codicon codicon-symbol-field symbol-field"></span>user_id
-Type: optional `uint64`
-
-
-
-------
-## <span class="codicon codicon-symbol-structure symbol-structure"></span>StreamEvent.OwnerRemoved
-
-
-<span class="h3" aria-level="3">Fields</span>
-### <span class="codicon codicon-symbol-field symbol-field"></span>user_id
-Type: optional `uint64`
-
-
-
-------
-## <span class="codicon codicon-symbol-structure symbol-structure"></span>StreamEvent.InviteReceived
-
-
-<span class="h3" aria-level="3">Fields</span>
-### <span class="codicon codicon-symbol-field symbol-field"></span>invite_id
-Type: optional `string`
-
-
-### <span class="codicon codicon-symbol-field symbol-field"></span>server_id
-Type: optional `string`
-
-
-### <span class="codicon codicon-symbol-field symbol-field"></span>inviter_id
-Type: optional `uint64`
-
-
-
-------
-## <span class="codicon codicon-symbol-structure symbol-structure"></span>StreamEvent.InviteRejected
-
-
-<span class="h3" aria-level="3">Fields</span>
-### <span class="codicon codicon-symbol-field symbol-field"></span>guild_id
-Type: optional `uint64`
-
-
-### <span class="codicon codicon-symbol-field symbol-field"></span>invite_id
-Type: optional `string`
-
-
-### <span class="codicon codicon-symbol-field symbol-field"></span>user_id
-Type: optional `uint64`
-
-
-
-# Enums 
-
-## <span class="codicon codicon-symbol-enum symbol-enum"></span>ChannelKind
-
-What kind the channel is.
-### <span class="codicon codicon-symbol-enum-member symbol-enum-member"></span>CHANNEL_KIND_TEXT_UNSPECIFIED
-A text channel. Allows you to simply send messages to a group of people.
-
-### <span class="codicon codicon-symbol-enum-member symbol-enum-member"></span>CHANNEL_KIND_VOICE_MEDIA
-A voice channel. Allows you to talk to other people with voice.
-
-### <span class="codicon codicon-symbol-enum-member symbol-enum-member"></span>CHANNEL_KIND_CATEGORY
-A category channel. All channels under this channel down to another
-category channel belongs to this category channel.
-
-------
-## <span class="codicon codicon-symbol-enum symbol-enum"></span>LeaveReason
-
-A reason for why a user has left a guild.
-### <span class="codicon codicon-symbol-enum-member symbol-enum-member"></span>LEAVE_REASON_WILLINGLY_UNSPECIFIED
-The user left the guild willingly.
-
-### <span class="codicon codicon-symbol-enum-member symbol-enum-member"></span>LEAVE_REASON_BANNED
-The user was banned from the guild.
-
-### <span class="codicon codicon-symbol-enum-member symbol-enum-member"></span>LEAVE_REASON_KICKED
-The user was kicked from the guild.
-
-------
-## <span class="codicon codicon-symbol-enum symbol-enum"></span>Type
-
-
-### <span class="codicon codicon-symbol-enum-member symbol-enum-member"></span>TYPE_NORMAL_UNSPECIFIED
-
-
-### <span class="codicon codicon-symbol-enum-member symbol-enum-member"></span>TYPE_PRIMARY
-
-
-### <span class="codicon codicon-symbol-enum-member symbol-enum-member"></span>TYPE_DESTRUCTIVE
-
-
-------
-## <span class="codicon codicon-symbol-enum symbol-enum"></span>Direction
-
-
-### <span class="codicon codicon-symbol-enum-member symbol-enum-member"></span>DIRECTION_BEFORE_UNSPECIFIED
-
-
-### <span class="codicon codicon-symbol-enum-member symbol-enum-member"></span>DIRECTION_AROUND
-
-
-### <span class="codicon codicon-symbol-enum-member symbol-enum-member"></span>DIRECTION_AFTER
-
-
-------
-## <span class="codicon codicon-symbol-enum symbol-enum"></span>Embed.Presentation
-
-
-### <span class="codicon codicon-symbol-enum-member symbol-enum-member"></span>PRESENTATION_DATA_UNSPECIFIED
-
-
-### <span class="codicon codicon-symbol-enum-member symbol-enum-member"></span>PRESENTATION_CAPTIONED_IMAGE
-
-
-### <span class="codicon codicon-symbol-enum-member symbol-enum-member"></span>PRESENTATION_ROW
-
-
-------
-## <span class="codicon codicon-symbol-enum symbol-enum"></span>Format.Kind
-
-
-### <span class="codicon codicon-symbol-enum-member symbol-enum-member"></span>KIND_DIM_UNSPECIFIED
-
-
-### <span class="codicon codicon-symbol-enum-member symbol-enum-member"></span>KIND_BRIGHT
-
-
-### <span class="codicon codicon-symbol-enum-member symbol-enum-member"></span>KIND_NEGATIVE
-
-
-### <span class="codicon codicon-symbol-enum-member symbol-enum-member"></span>KIND_POSITIVE
-
-
-### <span class="codicon codicon-symbol-enum-member symbol-enum-member"></span>KIND_INFO
-
-
-### <span class="codicon codicon-symbol-enum-member symbol-enum-member"></span>KIND_WARNING
-
-
 # Services 
 
 ## <span class="codicon codicon-symbol-class symbol-class"></span>ChatService
@@ -3694,4 +1885,1813 @@ Guild ID to give up your ownership on.
 Response for GiveUpOwnership
 
 This item has no fields.
+
+# Standalone Message Types 
+
+## <span class="codicon codicon-symbol-structure symbol-structure"></span>Channel
+An object representing a channel, without the ID.
+
+<span class="h3" aria-level="3">Fields</span>
+### <span class="codicon codicon-symbol-field symbol-field"></span>channel_name
+Type: optional `string`
+
+The name of this channel.
+### <span class="codicon codicon-symbol-field symbol-field"></span>kind
+Type: UNHANDLED | TYPE
+
+The kind of channel this is.
+Data does not get inherently stored in the Channel type
+Instead, clients who understand a certain ChannelKind should
+fetch them from a separate RPC.
+### <span class="codicon codicon-symbol-field symbol-field"></span>metadata
+Type: optional [protocol.harmonytypes.v1.Metadata]({{< ref "protocol.harmonytypes.v1.md" >}}#metadata)
+
+The metadata of this channel.
+
+------
+## <span class="codicon codicon-symbol-structure symbol-structure"></span>ChannelWithId
+The channel alongside with an ID.
+
+<span class="h3" aria-level="3">Fields</span>
+### <span class="codicon codicon-symbol-field symbol-field"></span>channel_id
+Type: optional `uint64`
+
+ID of the channel.
+### <span class="codicon codicon-symbol-field symbol-field"></span>channel
+Type: optional [protocol.chat.v1.Channel](#channel)
+
+The channel data.
+
+------
+## <span class="codicon codicon-symbol-structure symbol-structure"></span>GuildKind
+The kind of a guild.
+
+<span class="h3" aria-level="3">Fields</span>
+### <span class="codicon codicon-symbol-field symbol-field"></span>normal
+Type: optional [protocol.chat.v1.GuildKind.Normal](#guildkindnormal)
+
+A "normal" guild.
+### <span class="codicon codicon-symbol-field symbol-field"></span>room
+Type: optional [protocol.chat.v1.GuildKind.Room](#guildkindroom)
+
+A "room" guild.
+### <span class="codicon codicon-symbol-field symbol-field"></span>direct_message
+Type: optional [protocol.chat.v1.GuildKind.DirectMessage](#guildkinddirectmessage)
+
+A "direct message" guild.
+
+------
+## <span class="codicon codicon-symbol-structure symbol-structure"></span>GuildKind.Normal
+
+
+This item has no fields.
+
+------
+## <span class="codicon codicon-symbol-structure symbol-structure"></span>GuildKind.Room
+
+
+This item has no fields.
+
+------
+## <span class="codicon codicon-symbol-structure symbol-structure"></span>GuildKind.DirectMessage
+
+
+<span class="h3" aria-level="3">Fields</span>
+### <span class="codicon codicon-symbol-field symbol-field"></span>rejected
+Type: optional `bool`
+
+
+
+------
+## <span class="codicon codicon-symbol-structure symbol-structure"></span>Guild
+Object representing a guild without the ID part.
+
+<span class="h3" aria-level="3">Fields</span>
+### <span class="codicon codicon-symbol-field symbol-field"></span>name
+Type: optional `string`
+
+The name of the guild.
+
+This will be empty if the guild kind is "direct message". See
+the documentation of "direct message" guild kind on how to display
+a name for those guilds.
+### <span class="codicon codicon-symbol-field symbol-field"></span>picture
+Type: optional `string`
+
+The picture HMC of the guild.
+### <span class="codicon codicon-symbol-field symbol-field"></span>owner_ids
+Type: repeated `uint64`
+
+User ID of the owners of the guild.
+### <span class="codicon codicon-symbol-field symbol-field"></span>kind
+Type: optional [protocol.chat.v1.GuildKind](#guildkind)
+
+The kind of this guild.
+### <span class="codicon codicon-symbol-field symbol-field"></span>metadata
+Type: optional [protocol.harmonytypes.v1.Metadata]({{< ref "protocol.harmonytypes.v1.md" >}}#metadata)
+
+Metadata of the guild.
+
+------
+## <span class="codicon codicon-symbol-structure symbol-structure"></span>GuildWithId
+Object representing a guild with the ID part.
+
+<span class="h3" aria-level="3">Fields</span>
+### <span class="codicon codicon-symbol-field symbol-field"></span>guild_id
+Type: optional `uint64`
+
+The ID of the guild.
+### <span class="codicon codicon-symbol-field symbol-field"></span>guild
+Type: optional [protocol.chat.v1.Guild](#guild)
+
+The guild.
+
+------
+## <span class="codicon codicon-symbol-structure symbol-structure"></span>Invite
+Object representing an invite without the ID part.
+
+<span class="h3" aria-level="3">Fields</span>
+### <span class="codicon codicon-symbol-field symbol-field"></span>possible_uses
+Type: optional `uint32`
+
+Possible uses of this invite. A use of `0` means infinite uses.
+### <span class="codicon codicon-symbol-field symbol-field"></span>use_count
+Type: optional `uint32`
+
+Total use count of this invite.
+
+------
+## <span class="codicon codicon-symbol-structure symbol-structure"></span>InviteWithId
+Invite with ID.
+
+<span class="h3" aria-level="3">Fields</span>
+### <span class="codicon codicon-symbol-field symbol-field"></span>invite_id
+Type: optional `string`
+
+ID of the invite.
+### <span class="codicon codicon-symbol-field symbol-field"></span>invite
+Type: optional [protocol.chat.v1.Invite](#invite)
+
+The invite data.
+
+------
+## <span class="codicon codicon-symbol-structure symbol-structure"></span>PendingInvite
+A pending invite.
+
+<span class="h3" aria-level="3">Fields</span>
+### <span class="codicon codicon-symbol-field symbol-field"></span>invite_id
+Type: optional `string`
+
+Invite ID of the invite.
+### <span class="codicon codicon-symbol-field symbol-field"></span>server_id
+Type: optional `string`
+
+Server ID of the server the inviter is on.
+### <span class="codicon codicon-symbol-field symbol-field"></span>inviter_id
+Type: optional `uint64`
+
+User ID of the inviter.
+
+------
+## <span class="codicon codicon-symbol-structure symbol-structure"></span>GuildListEntry
+Object representing a guild list entry.
+
+<span class="h3" aria-level="3">Fields</span>
+### <span class="codicon codicon-symbol-field symbol-field"></span>guild_id
+Type: optional `uint64`
+
+Guild ID of this guild entry.
+### <span class="codicon codicon-symbol-field symbol-field"></span>server_id
+Type: optional `string`
+
+Server ID of the homeserver of this guild.
+
+------
+## <span class="codicon codicon-symbol-structure symbol-structure"></span>Overrides
+Overrides provide a way to override the name and avatar of a message.
+
+<span class="h3" aria-level="3">Fields</span>
+### <span class="codicon codicon-symbol-field symbol-field"></span>username
+Type: optional `string`
+
+the overridden username.
+### <span class="codicon codicon-symbol-field symbol-field"></span>avatar
+Type: optional `string`
+
+the overridden avatar.
+### <span class="codicon codicon-symbol-field symbol-field"></span>user_defined
+Type: optional `string`
+
+a custom reason in case the builtin ones don't fit
+### <span class="codicon codicon-symbol-field symbol-field"></span>webhook
+Type: optional [protocol.harmonytypes.v1.Empty]({{< ref "protocol.harmonytypes.v1.md" >}}#empty)
+
+the override occured because of a webhook
+### <span class="codicon codicon-symbol-field symbol-field"></span>system_plurality
+Type: optional [protocol.harmonytypes.v1.Empty]({{< ref "protocol.harmonytypes.v1.md" >}}#empty)
+
+plurality, not system as in computer
+### <span class="codicon codicon-symbol-field symbol-field"></span>system_message
+Type: optional [protocol.harmonytypes.v1.Empty]({{< ref "protocol.harmonytypes.v1.md" >}}#empty)
+
+the override occured because it was made by the server
+
+Servers should reject messages sent by users with this override.
+### <span class="codicon codicon-symbol-field symbol-field"></span>bridge
+Type: optional [protocol.harmonytypes.v1.Empty]({{< ref "protocol.harmonytypes.v1.md" >}}#empty)
+
+the override occured because of bridging
+
+------
+## <span class="codicon codicon-symbol-structure symbol-structure"></span>ActionPayload
+The payload sent to the bot when an action is triggered.
+
+<span class="h3" aria-level="3">Fields</span>
+### <span class="codicon codicon-symbol-field symbol-field"></span>button
+Type: optional [protocol.chat.v1.ActionPayload.Button](#actionpayloadbutton)
+
+Payload for a button
+### <span class="codicon codicon-symbol-field symbol-field"></span>dropdown
+Type: optional [protocol.chat.v1.ActionPayload.Dropdown](#actionpayloaddropdown)
+
+Payload for a dropdown
+### <span class="codicon codicon-symbol-field symbol-field"></span>input
+Type: optional [protocol.chat.v1.ActionPayload.Input](#actionpayloadinput)
+
+Payload for a text input
+
+------
+## <span class="codicon codicon-symbol-structure symbol-structure"></span>ActionPayload.Button
+
+
+<span class="h3" aria-level="3">Fields</span>
+### <span class="codicon codicon-symbol-field symbol-field"></span>data
+Type: optional `bytes`
+
+
+
+------
+## <span class="codicon codicon-symbol-structure symbol-structure"></span>ActionPayload.Dropdown
+
+
+<span class="h3" aria-level="3">Fields</span>
+### <span class="codicon codicon-symbol-field symbol-field"></span>choice
+Type: optional `bytes`
+
+
+
+------
+## <span class="codicon codicon-symbol-structure symbol-structure"></span>ActionPayload.Input
+
+
+<span class="h3" aria-level="3">Fields</span>
+### <span class="codicon codicon-symbol-field symbol-field"></span>input
+Type: optional `string`
+
+
+### <span class="codicon codicon-symbol-field symbol-field"></span>data
+Type: optional `bytes`
+
+
+
+------
+## <span class="codicon codicon-symbol-structure symbol-structure"></span>Action
+Actions are interactive elements that can exist within an embed.
+
+<span class="h3" aria-level="3">Fields</span>
+### <span class="codicon codicon-symbol-field symbol-field"></span>action_type
+Type: UNHANDLED | TYPE
+
+Type of the action.
+### <span class="codicon codicon-symbol-field symbol-field"></span>button
+Type: optional [protocol.chat.v1.Action.Button](#actionbutton)
+
+Button action.
+### <span class="codicon codicon-symbol-field symbol-field"></span>dropdown
+Type: optional [protocol.chat.v1.Action.Dropdown](#actiondropdown)
+
+Dropdown action.
+### <span class="codicon codicon-symbol-field symbol-field"></span>input
+Type: optional [protocol.chat.v1.Action.Input](#actioninput)
+
+Input action.
+
+------
+## <span class="codicon codicon-symbol-structure symbol-structure"></span>Action.Button
+The action type. This is primarily used to change the look of the action to
+the user (example: Destructive actions will have a red background).
+
+<span class="h3" aria-level="3">Fields</span>
+### <span class="codicon codicon-symbol-field symbol-field"></span>text
+Type: optional `string`
+
+a normal action.
+### <span class="codicon codicon-symbol-field symbol-field"></span>data
+Type: optional `bytes`
+
+a primary action.
+### <span class="codicon codicon-symbol-field symbol-field"></span>url
+Type: optional `string`
+
+A destructive / dangerous action.
+
+------
+## <span class="codicon codicon-symbol-structure symbol-structure"></span>Action.Dropdown
+
+
+<span class="h3" aria-level="3">Fields</span>
+### <span class="codicon codicon-symbol-field symbol-field"></span>label
+Type: optional `string`
+
+
+### <span class="codicon codicon-symbol-field symbol-field"></span>entries
+Type: repeated [protocol.chat.v1.Action.Dropdown.Entry](#actiondropdownentry)
+
+
+
+------
+## <span class="codicon codicon-symbol-structure symbol-structure"></span>Action.Dropdown.Entry
+
+
+<span class="h3" aria-level="3">Fields</span>
+### <span class="codicon codicon-symbol-field symbol-field"></span>label
+Type: optional `string`
+
+
+### <span class="codicon codicon-symbol-field symbol-field"></span>data
+Type: optional `bytes`
+
+
+
+------
+## <span class="codicon codicon-symbol-structure symbol-structure"></span>Action.Input
+
+
+<span class="h3" aria-level="3">Fields</span>
+### <span class="codicon codicon-symbol-field symbol-field"></span>label
+Type: optional `string`
+
+
+### <span class="codicon codicon-symbol-field symbol-field"></span>multiline
+Type: optional `bool`
+
+
+### <span class="codicon codicon-symbol-field symbol-field"></span>data
+Type: optional `bytes`
+
+
+
+------
+## <span class="codicon codicon-symbol-structure symbol-structure"></span>Embed
+Object representing a message embed.
+
+<span class="h3" aria-level="3">Fields</span>
+### <span class="codicon codicon-symbol-field symbol-field"></span>title
+Type: optional `string`
+
+Title of this embed.
+### <span class="codicon codicon-symbol-field symbol-field"></span>body
+Type: optional [protocol.chat.v1.FormattedText](#formattedtext)
+
+Body text of this embed.
+### <span class="codicon codicon-symbol-field symbol-field"></span>color
+Type: optional `int32`
+
+Color of this embed.
+### <span class="codicon codicon-symbol-field symbol-field"></span>header
+Type: optional [protocol.chat.v1.Embed.EmbedHeading](#embedembedheading)
+
+Embed heading for the header.
+### <span class="codicon codicon-symbol-field symbol-field"></span>footer
+Type: optional [protocol.chat.v1.Embed.EmbedHeading](#embedembedheading)
+
+Embed heading for the footer.
+### <span class="codicon codicon-symbol-field symbol-field"></span>fields
+Type: repeated [protocol.chat.v1.Embed.EmbedField](#embedembedfield)
+
+Fields of this embed.
+
+------
+## <span class="codicon codicon-symbol-structure symbol-structure"></span>Embed.EmbedHeading
+
+
+<span class="h3" aria-level="3">Fields</span>
+### <span class="codicon codicon-symbol-field symbol-field"></span>text
+Type: optional `string`
+
+
+### <span class="codicon codicon-symbol-field symbol-field"></span>subtext
+Type: optional `string`
+
+
+### <span class="codicon codicon-symbol-field symbol-field"></span>url
+Type: optional `string`
+
+
+### <span class="codicon codicon-symbol-field symbol-field"></span>icon
+Type: optional `string`
+
+
+
+------
+## <span class="codicon codicon-symbol-structure symbol-structure"></span>Embed.EmbedField
+
+
+<span class="h3" aria-level="3">Fields</span>
+### <span class="codicon codicon-symbol-field symbol-field"></span>title
+Type: optional `string`
+
+
+### <span class="codicon codicon-symbol-field symbol-field"></span>subtitle
+Type: optional `string`
+
+
+### <span class="codicon codicon-symbol-field symbol-field"></span>body
+Type: optional [protocol.chat.v1.FormattedText](#formattedtext)
+
+
+### <span class="codicon codicon-symbol-field symbol-field"></span>image_url
+Type: optional `string`
+
+
+### <span class="codicon codicon-symbol-field symbol-field"></span>presentation
+Type: UNHANDLED | TYPE
+
+
+### <span class="codicon codicon-symbol-field symbol-field"></span>actions
+Type: repeated [protocol.chat.v1.Action](#action)
+
+
+
+------
+## <span class="codicon codicon-symbol-structure symbol-structure"></span>Minithumbnail
+Minithumbnail is an extremely low-quality JPEG thumbnail.
+
+The resolution is usually no larger than 64x64.
+
+<span class="h3" aria-level="3">Fields</span>
+### <span class="codicon codicon-symbol-field symbol-field"></span>width
+Type: optional `uint32`
+
+The width of the minithumbnail
+### <span class="codicon codicon-symbol-field symbol-field"></span>height
+Type: optional `uint32`
+
+The height of the minithumbnail
+### <span class="codicon codicon-symbol-field symbol-field"></span>data
+Type: optional `bytes`
+
+The JPEG data of the minithumbnail
+
+------
+## <span class="codicon codicon-symbol-structure symbol-structure"></span>Photo
+Photo contains data about a photo.
+
+Photo are always JPEG, and are
+constrained to the following rules:
+
+- width+height <= 10_000
+- width <= height*20
+- height <= width*20
+
+Photos are preferably no more than 10MB
+in size, and servers may compress as necessary.
+
+<span class="h3" aria-level="3">Fields</span>
+### <span class="codicon codicon-symbol-field symbol-field"></span>hmc
+Type: optional `string`
+
+The HMC URL of the photo.
+### <span class="codicon codicon-symbol-field symbol-field"></span>name
+Type: optional `string`
+
+The filename of the photo.
+### <span class="codicon codicon-symbol-field symbol-field"></span>file_size
+Type: optional `uint32`
+
+The size of the photo.
+### <span class="codicon codicon-symbol-field symbol-field"></span>height
+Type: optional `uint32`
+
+The height of the photo, in pixels.
+### <span class="codicon codicon-symbol-field symbol-field"></span>width
+Type: optional `uint32`
+
+The width of the photo, in pixels.
+### <span class="codicon codicon-symbol-field symbol-field"></span>caption
+Type: optional [protocol.chat.v1.FormattedText](#formattedtext)
+
+The photo's caption.
+### <span class="codicon codicon-symbol-field symbol-field"></span>minithumbnail
+Type: optional [protocol.chat.v1.Minithumbnail](#minithumbnail)
+
+A thumbnail representing the photo.
+
+------
+## <span class="codicon codicon-symbol-structure symbol-structure"></span>Attachment
+Object representing a generic message attachment.
+
+<span class="h3" aria-level="3">Fields</span>
+### <span class="codicon codicon-symbol-field symbol-field"></span>id
+Type: optional `string`
+
+File ID of this attachment.
+### <span class="codicon codicon-symbol-field symbol-field"></span>name
+Type: optional `string`
+
+Filename of this attachment.
+### <span class="codicon codicon-symbol-field symbol-field"></span>mimetype
+Type: optional `string`
+
+Mimetype of this attachment.
+### <span class="codicon codicon-symbol-field symbol-field"></span>size
+Type: optional `uint32`
+
+Size of this attachment.
+### <span class="codicon codicon-symbol-field symbol-field"></span>caption
+Type: optional [protocol.chat.v1.FormattedText](#formattedtext)
+
+Caption of this attachment.
+
+------
+## <span class="codicon codicon-symbol-structure symbol-structure"></span>Content
+Object representing a message's content.
+
+<span class="h3" aria-level="3">Fields</span>
+### <span class="codicon codicon-symbol-field symbol-field"></span>text_message
+Type: optional [protocol.chat.v1.Content.TextContent](#contenttextcontent)
+
+Text content.
+### <span class="codicon codicon-symbol-field symbol-field"></span>embed_message
+Type: optional [protocol.chat.v1.Content.EmbedContent](#contentembedcontent)
+
+Embed content.
+### <span class="codicon codicon-symbol-field symbol-field"></span>attachment_message
+Type: optional [protocol.chat.v1.Content.AttachmentContent](#contentattachmentcontent)
+
+Attachment content.
+### <span class="codicon codicon-symbol-field symbol-field"></span>photo_message
+Type: optional [protocol.chat.v1.Content.PhotoContent](#contentphotocontent)
+
+Photo content.
+### <span class="codicon codicon-symbol-field symbol-field"></span>invite_rejected
+Type: optional [protocol.chat.v1.Content.InviteRejected](#contentinviterejected)
+
+A user rejected an invite.
+### <span class="codicon codicon-symbol-field symbol-field"></span>invite_accepted
+Type: optional [protocol.chat.v1.Content.InviteAccepted](#contentinviteaccepted)
+
+A user accepted an invite.
+### <span class="codicon codicon-symbol-field symbol-field"></span>room_upgraded_to_guild
+Type: optional [protocol.chat.v1.Content.RoomUpgradedToGuild](#contentroomupgradedtoguild)
+
+A user upgraded a guild from "room" to "normal".
+
+------
+## <span class="codicon codicon-symbol-structure symbol-structure"></span>Content.TextContent
+
+
+<span class="h3" aria-level="3">Fields</span>
+### <span class="codicon codicon-symbol-field symbol-field"></span>content
+Type: optional [protocol.chat.v1.FormattedText](#formattedtext)
+
+
+
+------
+## <span class="codicon codicon-symbol-structure symbol-structure"></span>Content.EmbedContent
+
+
+<span class="h3" aria-level="3">Fields</span>
+### <span class="codicon codicon-symbol-field symbol-field"></span>embeds
+Type: repeated [protocol.chat.v1.Embed](#embed)
+
+
+
+------
+## <span class="codicon codicon-symbol-structure symbol-structure"></span>Content.AttachmentContent
+
+
+<span class="h3" aria-level="3">Fields</span>
+### <span class="codicon codicon-symbol-field symbol-field"></span>files
+Type: repeated [protocol.chat.v1.Attachment](#attachment)
+
+
+
+------
+## <span class="codicon codicon-symbol-structure symbol-structure"></span>Content.PhotoContent
+
+
+<span class="h3" aria-level="3">Fields</span>
+### <span class="codicon codicon-symbol-field symbol-field"></span>photos
+Type: repeated [protocol.chat.v1.Photo](#photo)
+
+
+
+------
+## <span class="codicon codicon-symbol-structure symbol-structure"></span>Content.InviteRejected
+
+
+<span class="h3" aria-level="3">Fields</span>
+### <span class="codicon codicon-symbol-field symbol-field"></span>invitee_id
+Type: optional `uint64`
+
+
+### <span class="codicon codicon-symbol-field symbol-field"></span>inviter_id
+Type: optional `uint64`
+
+
+
+------
+## <span class="codicon codicon-symbol-structure symbol-structure"></span>Content.InviteAccepted
+
+
+<span class="h3" aria-level="3">Fields</span>
+### <span class="codicon codicon-symbol-field symbol-field"></span>invitee_id
+Type: optional `uint64`
+
+
+### <span class="codicon codicon-symbol-field symbol-field"></span>inviter_id
+Type: optional `uint64`
+
+
+
+------
+## <span class="codicon codicon-symbol-structure symbol-structure"></span>Content.RoomUpgradedToGuild
+
+
+<span class="h3" aria-level="3">Fields</span>
+### <span class="codicon codicon-symbol-field symbol-field"></span>upgraded_by
+Type: optional `uint64`
+
+
+
+------
+## <span class="codicon codicon-symbol-structure symbol-structure"></span>Reaction
+Object representing a reaction.
+
+<span class="h3" aria-level="3">Fields</span>
+### <span class="codicon codicon-symbol-field symbol-field"></span>emote
+Type: optional [protocol.emote.v1.Emote]({{< ref "protocol.emote.v1.md" >}}#emote)
+
+Emote data for this reaction.
+
+Emote's image ID is used as an identifier for unique reactions.
+Emotes with the same names should be "deduplicated" by a client, by suffixing
+their names with `~1`, `~2` and so on.
+### <span class="codicon codicon-symbol-field symbol-field"></span>count
+Type: optional `uint32`
+
+How many reactions this reaction has.
+
+------
+## <span class="codicon codicon-symbol-structure symbol-structure"></span>Format
+A format for text
+
+<span class="h3" aria-level="3">Fields</span>
+### <span class="codicon codicon-symbol-field symbol-field"></span>start
+Type: optional `uint32`
+
+where the format begins to apply to
+### <span class="codicon codicon-symbol-field symbol-field"></span>length
+Type: optional `uint32`
+
+how many characters the format is
+### <span class="codicon codicon-symbol-field symbol-field"></span>bold
+Type: optional [protocol.chat.v1.Format.Bold](#formatbold)
+
+a text format for bold text
+### <span class="codicon codicon-symbol-field symbol-field"></span>italic
+Type: optional [protocol.chat.v1.Format.Italic](#formatitalic)
+
+a text format for italic text
+### <span class="codicon codicon-symbol-field symbol-field"></span>underline
+Type: optional [protocol.chat.v1.Format.Underline](#formatunderline)
+
+a text format for underline text
+### <span class="codicon codicon-symbol-field symbol-field"></span>monospace
+Type: optional [protocol.chat.v1.Format.Monospace](#formatmonospace)
+
+a text format for monospace text
+### <span class="codicon codicon-symbol-field symbol-field"></span>superscript
+Type: optional [protocol.chat.v1.Format.Superscript](#formatsuperscript)
+
+a text format for superscript text
+### <span class="codicon codicon-symbol-field symbol-field"></span>subscript
+Type: optional [protocol.chat.v1.Format.Subscript](#formatsubscript)
+
+a text format for subscript text
+### <span class="codicon codicon-symbol-field symbol-field"></span>code_block
+Type: optional [protocol.chat.v1.Format.CodeBlock](#formatcodeblock)
+
+a text format for a codeblock
+### <span class="codicon codicon-symbol-field symbol-field"></span>user_mention
+Type: optional [protocol.chat.v1.Format.UserMention](#formatusermention)
+
+a text format for a user mention
+### <span class="codicon codicon-symbol-field symbol-field"></span>role_mention
+Type: optional [protocol.chat.v1.Format.RoleMention](#formatrolemention)
+
+a text format for a role mention
+### <span class="codicon codicon-symbol-field symbol-field"></span>channel_mention
+Type: optional [protocol.chat.v1.Format.ChannelMention](#formatchannelmention)
+
+a text format for a channel mention
+### <span class="codicon codicon-symbol-field symbol-field"></span>guild_mention
+Type: optional [protocol.chat.v1.Format.GuildMention](#formatguildmention)
+
+a text format for a guild mention
+### <span class="codicon codicon-symbol-field symbol-field"></span>emoji
+Type: optional [protocol.chat.v1.Format.Emoji](#formatemoji)
+
+a text format for an emoji
+### <span class="codicon codicon-symbol-field symbol-field"></span>color
+Type: optional [protocol.chat.v1.Format.Color](#formatcolor)
+
+a text format for coloured text
+### <span class="codicon codicon-symbol-field symbol-field"></span>localization
+Type: optional [protocol.chat.v1.Format.Localization](#formatlocalization)
+
+a text format for localization
+
+------
+## <span class="codicon codicon-symbol-structure symbol-structure"></span>Format.Bold
+
+
+This item has no fields.
+
+------
+## <span class="codicon codicon-symbol-structure symbol-structure"></span>Format.Italic
+
+
+This item has no fields.
+
+------
+## <span class="codicon codicon-symbol-structure symbol-structure"></span>Format.Underline
+
+
+This item has no fields.
+
+------
+## <span class="codicon codicon-symbol-structure symbol-structure"></span>Format.Monospace
+
+
+This item has no fields.
+
+------
+## <span class="codicon codicon-symbol-structure symbol-structure"></span>Format.Superscript
+
+
+This item has no fields.
+
+------
+## <span class="codicon codicon-symbol-structure symbol-structure"></span>Format.Subscript
+
+
+This item has no fields.
+
+------
+## <span class="codicon codicon-symbol-structure symbol-structure"></span>Format.CodeBlock
+
+
+<span class="h3" aria-level="3">Fields</span>
+### <span class="codicon codicon-symbol-field symbol-field"></span>language
+Type: optional `string`
+
+
+
+------
+## <span class="codicon codicon-symbol-structure symbol-structure"></span>Format.UserMention
+
+
+<span class="h3" aria-level="3">Fields</span>
+### <span class="codicon codicon-symbol-field symbol-field"></span>user_id
+Type: optional `uint64`
+
+
+
+------
+## <span class="codicon codicon-symbol-structure symbol-structure"></span>Format.RoleMention
+
+
+<span class="h3" aria-level="3">Fields</span>
+### <span class="codicon codicon-symbol-field symbol-field"></span>role_id
+Type: optional `uint64`
+
+
+
+------
+## <span class="codicon codicon-symbol-structure symbol-structure"></span>Format.ChannelMention
+
+
+<span class="h3" aria-level="3">Fields</span>
+### <span class="codicon codicon-symbol-field symbol-field"></span>channel_id
+Type: optional `uint64`
+
+
+
+------
+## <span class="codicon codicon-symbol-structure symbol-structure"></span>Format.GuildMention
+
+
+<span class="h3" aria-level="3">Fields</span>
+### <span class="codicon codicon-symbol-field symbol-field"></span>guild_id
+Type: optional `uint64`
+
+
+### <span class="codicon codicon-symbol-field symbol-field"></span>homeserver
+Type: optional `string`
+
+
+
+------
+## <span class="codicon codicon-symbol-structure symbol-structure"></span>Format.Emoji
+
+
+<span class="h3" aria-level="3">Fields</span>
+### <span class="codicon codicon-symbol-field symbol-field"></span>image_hmc
+Type: optional `string`
+
+
+### <span class="codicon codicon-symbol-field symbol-field"></span>pack_id
+Type: optional `uint64`
+
+
+
+------
+## <span class="codicon codicon-symbol-structure symbol-structure"></span>Format.Color
+
+
+<span class="h3" aria-level="3">Fields</span>
+### <span class="codicon codicon-symbol-field symbol-field"></span>kind
+Type: UNHANDLED | TYPE
+
+
+
+------
+## <span class="codicon codicon-symbol-structure symbol-structure"></span>Format.Localization
+
+
+<span class="h3" aria-level="3">Fields</span>
+### <span class="codicon codicon-symbol-field symbol-field"></span>i18n_code
+Type: optional `string`
+
+
+
+------
+## <span class="codicon codicon-symbol-structure symbol-structure"></span>FormattedText
+Formatted text
+
+<span class="h3" aria-level="3">Fields</span>
+### <span class="codicon codicon-symbol-field symbol-field"></span>text
+Type: optional `string`
+
+The textual content of a message
+### <span class="codicon codicon-symbol-field symbol-field"></span>format
+Type: repeated [protocol.chat.v1.Format](#format)
+
+The formats for a message
+
+------
+## <span class="codicon codicon-symbol-structure symbol-structure"></span>Message
+Object representing a message without the ID part.
+
+<span class="h3" aria-level="3">Fields</span>
+### <span class="codicon codicon-symbol-field symbol-field"></span>metadata
+Type: optional [protocol.harmonytypes.v1.Metadata]({{< ref "protocol.harmonytypes.v1.md" >}}#metadata)
+
+Metadata of this message.
+### <span class="codicon codicon-symbol-field symbol-field"></span>overrides
+Type: optional [protocol.chat.v1.Overrides](#overrides)
+
+Overrides of this message.
+### <span class="codicon codicon-symbol-field symbol-field"></span>author_id
+Type: optional `uint64`
+
+User ID of the user who sent this message.
+### <span class="codicon codicon-symbol-field symbol-field"></span>created_at
+Type: optional `uint64`
+
+When this message was created, in miliseconds since unix epoch
+### <span class="codicon codicon-symbol-field symbol-field"></span>edited_at
+Type: optional `uint64`
+
+The most recent time this message was edited, in milliseconds since unix epoch
+### <span class="codicon codicon-symbol-field symbol-field"></span>in_reply_to
+Type: optional `uint64`
+
+The message this message is a reply to.
+### <span class="codicon codicon-symbol-field symbol-field"></span>content
+Type: optional [protocol.chat.v1.Content](#content)
+
+The content of the message.
+### <span class="codicon codicon-symbol-field symbol-field"></span>reactions
+Type: repeated [protocol.chat.v1.Reaction](#reaction)
+
+The reactions of the message.
+
+------
+## <span class="codicon codicon-symbol-structure symbol-structure"></span>MessageWithId
+Object representing a message with it's ID.
+
+<span class="h3" aria-level="3">Fields</span>
+### <span class="codicon codicon-symbol-field symbol-field"></span>message_id
+Type: optional `uint64`
+
+ID of the message.
+### <span class="codicon codicon-symbol-field symbol-field"></span>message
+Type: optional [protocol.chat.v1.Message](#message)
+
+The message data.
+
+------
+## <span class="codicon codicon-symbol-structure symbol-structure"></span>Permission
+Object representing a single permission node.
+
+<span class="h3" aria-level="3">Fields</span>
+### <span class="codicon codicon-symbol-field symbol-field"></span>matches
+Type: optional `string`
+
+the permission matcher. (example: roles.manage)
+### <span class="codicon codicon-symbol-field symbol-field"></span>ok
+Type: optional `bool`
+
+whether the permission is allowed or not.
+
+------
+## <span class="codicon codicon-symbol-structure symbol-structure"></span>Role
+Object representing a role without the ID.
+
+<span class="h3" aria-level="3">Fields</span>
+### <span class="codicon codicon-symbol-field symbol-field"></span>name
+Type: optional `string`
+
+the role name.
+### <span class="codicon codicon-symbol-field symbol-field"></span>color
+Type: optional `int32`
+
+the role color.
+### <span class="codicon codicon-symbol-field symbol-field"></span>hoist
+Type: optional `bool`
+
+whether the role is hoisted or not.
+### <span class="codicon codicon-symbol-field symbol-field"></span>pingable
+Type: optional `bool`
+
+whether the role is mentionable or not.
+
+------
+## <span class="codicon codicon-symbol-structure symbol-structure"></span>RoleWithId
+Object representing a role with it's ID.
+
+The role ID for the default role in a guild should always be 0.
+
+<span class="h3" aria-level="3">Fields</span>
+### <span class="codicon codicon-symbol-field symbol-field"></span>role_id
+Type: optional `uint64`
+
+ID of the role.
+### <span class="codicon codicon-symbol-field symbol-field"></span>role
+Type: optional [protocol.chat.v1.Role](#role)
+
+The role data.
+
+------
+## <span class="codicon codicon-symbol-structure symbol-structure"></span>StreamEventsRequest
+Request type for use in the `StreamEvents` endpoint.
+By default, this endpoint will subscribe to all events.
+Any guilds joined in the future will be added to the subscription as well.
+Use the UnsubscribeFromAll event for unsubscribing from all current subscriptions and disable the automatic guild subscriptions
+
+<span class="h3" aria-level="3">Fields</span>
+### <span class="codicon codicon-symbol-field symbol-field"></span>subscribe_to_guild
+Type: optional [protocol.chat.v1.StreamEventsRequest.SubscribeToGuild](#streameventsrequestsubscribetoguild)
+
+Subscribe to the guild event source.
+### <span class="codicon codicon-symbol-field symbol-field"></span>subscribe_to_actions
+Type: optional [protocol.chat.v1.StreamEventsRequest.SubscribeToActions](#streameventsrequestsubscribetoactions)
+
+Subscribe to the action event source.
+### <span class="codicon codicon-symbol-field symbol-field"></span>subscribe_to_homeserver_events
+Type: optional [protocol.chat.v1.StreamEventsRequest.SubscribeToHomeserverEvents](#streameventsrequestsubscribetohomeserverevents)
+
+Subscribe to the homeserver event source.
+### <span class="codicon codicon-symbol-field symbol-field"></span>unsubscribe_from_all
+Type: optional [protocol.chat.v1.StreamEventsRequest.UnsubscribeFromAll](#streameventsrequestunsubscribefromall)
+
+Unsubscribe from all events.
+
+------
+## <span class="codicon codicon-symbol-structure symbol-structure"></span>StreamEventsRequest.SubscribeToGuild
+
+
+<span class="h3" aria-level="3">Fields</span>
+### <span class="codicon codicon-symbol-field symbol-field"></span>guild_id
+Type: optional `uint64`
+
+
+
+------
+## <span class="codicon codicon-symbol-structure symbol-structure"></span>StreamEventsRequest.SubscribeToActions
+
+
+This item has no fields.
+
+------
+## <span class="codicon codicon-symbol-structure symbol-structure"></span>StreamEventsRequest.SubscribeToHomeserverEvents
+
+
+This item has no fields.
+
+------
+## <span class="codicon codicon-symbol-structure symbol-structure"></span>StreamEventsRequest.UnsubscribeFromAll
+
+
+This item has no fields.
+
+------
+## <span class="codicon codicon-symbol-structure symbol-structure"></span>StreamEvent
+Describes an event.
+
+<span class="h3" aria-level="3">Fields</span>
+### <span class="codicon codicon-symbol-field symbol-field"></span>guild_added_to_list
+Type: optional [protocol.chat.v1.StreamEvent.GuildAddedToList](#streameventguildaddedtolist)
+
+Send the guild added to list event.
+### <span class="codicon codicon-symbol-field symbol-field"></span>guild_removed_from_list
+Type: optional [protocol.chat.v1.StreamEvent.GuildRemovedFromList](#streameventguildremovedfromlist)
+
+Send the guild removed from list event.
+### <span class="codicon codicon-symbol-field symbol-field"></span>action_performed
+Type: optional [protocol.chat.v1.StreamEvent.ActionPerformed](#streameventactionperformed)
+
+Send the action performed event.
+### <span class="codicon codicon-symbol-field symbol-field"></span>sent_message
+Type: optional [protocol.chat.v1.StreamEvent.MessageSent](#streameventmessagesent)
+
+Send the message sent event.
+### <span class="codicon codicon-symbol-field symbol-field"></span>edited_message
+Type: optional [protocol.chat.v1.StreamEvent.MessageUpdated](#streameventmessageupdated)
+
+Send the message updated event.
+### <span class="codicon codicon-symbol-field symbol-field"></span>deleted_message
+Type: optional [protocol.chat.v1.StreamEvent.MessageDeleted](#streameventmessagedeleted)
+
+Send the message deleted event.
+### <span class="codicon codicon-symbol-field symbol-field"></span>created_channel
+Type: optional [protocol.chat.v1.StreamEvent.ChannelCreated](#streameventchannelcreated)
+
+Send the channel created event.
+### <span class="codicon codicon-symbol-field symbol-field"></span>edited_channel
+Type: optional [protocol.chat.v1.StreamEvent.ChannelUpdated](#streameventchannelupdated)
+
+Send the channel updated event.
+### <span class="codicon codicon-symbol-field symbol-field"></span>deleted_channel
+Type: optional [protocol.chat.v1.StreamEvent.ChannelDeleted](#streameventchanneldeleted)
+
+Send the channel deleted event.
+### <span class="codicon codicon-symbol-field symbol-field"></span>edited_guild
+Type: optional [protocol.chat.v1.StreamEvent.GuildUpdated](#streameventguildupdated)
+
+Send the guild updated event.
+### <span class="codicon codicon-symbol-field symbol-field"></span>deleted_guild
+Type: optional [protocol.chat.v1.StreamEvent.GuildDeleted](#streameventguilddeleted)
+
+Send the guild deleted event.
+### <span class="codicon codicon-symbol-field symbol-field"></span>joined_member
+Type: optional [protocol.chat.v1.StreamEvent.MemberJoined](#streameventmemberjoined)
+
+Send the member joined event.
+### <span class="codicon codicon-symbol-field symbol-field"></span>left_member
+Type: optional [protocol.chat.v1.StreamEvent.MemberLeft](#streameventmemberleft)
+
+Send the member left event.
+### <span class="codicon codicon-symbol-field symbol-field"></span>typing
+Type: optional [protocol.chat.v1.StreamEvent.Typing](#streameventtyping)
+
+Send the typing event.
+### <span class="codicon codicon-symbol-field symbol-field"></span>role_created
+Type: optional [protocol.chat.v1.StreamEvent.RoleCreated](#streameventrolecreated)
+
+Send the role created event.
+### <span class="codicon codicon-symbol-field symbol-field"></span>role_deleted
+Type: optional [protocol.chat.v1.StreamEvent.RoleDeleted](#streameventroledeleted)
+
+Send the role deleted event.
+### <span class="codicon codicon-symbol-field symbol-field"></span>role_moved
+Type: optional [protocol.chat.v1.StreamEvent.RoleMoved](#streameventrolemoved)
+
+Send the role moved event.
+### <span class="codicon codicon-symbol-field symbol-field"></span>role_updated
+Type: optional [protocol.chat.v1.StreamEvent.RoleUpdated](#streameventroleupdated)
+
+Send the role updated event.
+### <span class="codicon codicon-symbol-field symbol-field"></span>role_perms_updated
+Type: optional [protocol.chat.v1.StreamEvent.RolePermissionsUpdated](#streameventrolepermissionsupdated)
+
+Send the role perms updated event.
+### <span class="codicon codicon-symbol-field symbol-field"></span>user_roles_updated
+Type: optional [protocol.chat.v1.StreamEvent.UserRolesUpdated](#streameventuserrolesupdated)
+
+Send the user roles updated event.
+### <span class="codicon codicon-symbol-field symbol-field"></span>permission_updated
+Type: optional [protocol.chat.v1.StreamEvent.PermissionUpdated](#streameventpermissionupdated)
+
+Send the permission updated event.
+### <span class="codicon codicon-symbol-field symbol-field"></span>channels_reordered
+Type: optional [protocol.chat.v1.StreamEvent.ChannelsReordered](#streameventchannelsreordered)
+
+The channels have been completely reordered.
+### <span class="codicon codicon-symbol-field symbol-field"></span>edited_channel_position
+Type: optional [protocol.chat.v1.StreamEvent.ChannelPositionUpdated](#streameventchannelpositionupdated)
+
+Send the channel position updated event.
+### <span class="codicon codicon-symbol-field symbol-field"></span>message_pinned
+Type: optional [protocol.chat.v1.StreamEvent.MessagePinned](#streameventmessagepinned)
+
+Send the message pinned event.
+### <span class="codicon codicon-symbol-field symbol-field"></span>message_unpinned
+Type: optional [protocol.chat.v1.StreamEvent.MessageUnpinned](#streameventmessageunpinned)
+
+Send the message unpinned event.
+### <span class="codicon codicon-symbol-field symbol-field"></span>reaction_updated
+Type: optional [protocol.chat.v1.StreamEvent.ReactionUpdated](#streameventreactionupdated)
+
+Send the reaction updated event.
+### <span class="codicon codicon-symbol-field symbol-field"></span>owner_added
+Type: optional [protocol.chat.v1.StreamEvent.OwnerAdded](#streameventowneradded)
+
+Send the owner added event.
+### <span class="codicon codicon-symbol-field symbol-field"></span>owner_removed
+Type: optional [protocol.chat.v1.StreamEvent.OwnerRemoved](#streameventownerremoved)
+
+Send the owner removed event.
+### <span class="codicon codicon-symbol-field symbol-field"></span>invite_received
+Type: optional [protocol.chat.v1.StreamEvent.InviteReceived](#streameventinvitereceived)
+
+Send the guild invite received event.
+### <span class="codicon codicon-symbol-field symbol-field"></span>invite_rejected
+Type: optional [protocol.chat.v1.StreamEvent.InviteRejected](#streameventinviterejected)
+
+Send the guild invite rejected event.
+
+------
+## <span class="codicon codicon-symbol-structure symbol-structure"></span>StreamEvent.MessageSent
+
+
+<span class="h3" aria-level="3">Fields</span>
+### <span class="codicon codicon-symbol-field symbol-field"></span>echo_id
+Type: optional `uint64`
+
+
+### <span class="codicon codicon-symbol-field symbol-field"></span>guild_id
+Type: optional `uint64`
+
+
+### <span class="codicon codicon-symbol-field symbol-field"></span>channel_id
+Type: optional `uint64`
+
+
+### <span class="codicon codicon-symbol-field symbol-field"></span>message_id
+Type: optional `uint64`
+
+
+### <span class="codicon codicon-symbol-field symbol-field"></span>message
+Type: optional [protocol.chat.v1.Message](#message)
+
+
+
+------
+## <span class="codicon codicon-symbol-structure symbol-structure"></span>StreamEvent.MessageUpdated
+
+
+<span class="h3" aria-level="3">Fields</span>
+### <span class="codicon codicon-symbol-field symbol-field"></span>guild_id
+Type: optional `uint64`
+
+
+### <span class="codicon codicon-symbol-field symbol-field"></span>channel_id
+Type: optional `uint64`
+
+
+### <span class="codicon codicon-symbol-field symbol-field"></span>message_id
+Type: optional `uint64`
+
+
+### <span class="codicon codicon-symbol-field symbol-field"></span>edited_at
+Type: optional `uint64`
+
+
+### <span class="codicon codicon-symbol-field symbol-field"></span>new_content
+Type: optional [protocol.chat.v1.FormattedText](#formattedtext)
+
+
+
+------
+## <span class="codicon codicon-symbol-structure symbol-structure"></span>StreamEvent.MessageDeleted
+
+
+<span class="h3" aria-level="3">Fields</span>
+### <span class="codicon codicon-symbol-field symbol-field"></span>guild_id
+Type: optional `uint64`
+
+
+### <span class="codicon codicon-symbol-field symbol-field"></span>channel_id
+Type: optional `uint64`
+
+
+### <span class="codicon codicon-symbol-field symbol-field"></span>message_id
+Type: optional `uint64`
+
+
+
+------
+## <span class="codicon codicon-symbol-structure symbol-structure"></span>StreamEvent.ChannelCreated
+
+
+<span class="h3" aria-level="3">Fields</span>
+### <span class="codicon codicon-symbol-field symbol-field"></span>guild_id
+Type: optional `uint64`
+
+
+### <span class="codicon codicon-symbol-field symbol-field"></span>channel_id
+Type: optional `uint64`
+
+
+### <span class="codicon codicon-symbol-field symbol-field"></span>name
+Type: optional `string`
+
+
+### <span class="codicon codicon-symbol-field symbol-field"></span>position
+Type: optional [protocol.harmonytypes.v1.ItemPosition]({{< ref "protocol.harmonytypes.v1.md" >}}#itemposition)
+
+
+### <span class="codicon codicon-symbol-field symbol-field"></span>kind
+Type: UNHANDLED | TYPE
+
+
+### <span class="codicon codicon-symbol-field symbol-field"></span>metadata
+Type: optional [protocol.harmonytypes.v1.Metadata]({{< ref "protocol.harmonytypes.v1.md" >}}#metadata)
+
+
+
+------
+## <span class="codicon codicon-symbol-structure symbol-structure"></span>StreamEvent.ChannelUpdated
+
+
+<span class="h3" aria-level="3">Fields</span>
+### <span class="codicon codicon-symbol-field symbol-field"></span>guild_id
+Type: optional `uint64`
+
+
+### <span class="codicon codicon-symbol-field symbol-field"></span>channel_id
+Type: optional `uint64`
+
+
+### <span class="codicon codicon-symbol-field symbol-field"></span>new_name
+Type: optional `string`
+
+
+### <span class="codicon codicon-symbol-field symbol-field"></span>new_metadata
+Type: optional [protocol.harmonytypes.v1.Metadata]({{< ref "protocol.harmonytypes.v1.md" >}}#metadata)
+
+
+
+------
+## <span class="codicon codicon-symbol-structure symbol-structure"></span>StreamEvent.ChannelPositionUpdated
+
+
+<span class="h3" aria-level="3">Fields</span>
+### <span class="codicon codicon-symbol-field symbol-field"></span>guild_id
+Type: optional `uint64`
+
+
+### <span class="codicon codicon-symbol-field symbol-field"></span>channel_id
+Type: optional `uint64`
+
+
+### <span class="codicon codicon-symbol-field symbol-field"></span>new_position
+Type: optional [protocol.harmonytypes.v1.ItemPosition]({{< ref "protocol.harmonytypes.v1.md" >}}#itemposition)
+
+
+
+------
+## <span class="codicon codicon-symbol-structure symbol-structure"></span>StreamEvent.ChannelsReordered
+
+
+<span class="h3" aria-level="3">Fields</span>
+### <span class="codicon codicon-symbol-field symbol-field"></span>guild_id
+Type: optional `uint64`
+
+
+### <span class="codicon codicon-symbol-field symbol-field"></span>channel_ids
+Type: repeated `uint64`
+
+
+
+------
+## <span class="codicon codicon-symbol-structure symbol-structure"></span>StreamEvent.ChannelDeleted
+
+
+<span class="h3" aria-level="3">Fields</span>
+### <span class="codicon codicon-symbol-field symbol-field"></span>guild_id
+Type: optional `uint64`
+
+
+### <span class="codicon codicon-symbol-field symbol-field"></span>channel_id
+Type: optional `uint64`
+
+
+
+------
+## <span class="codicon codicon-symbol-structure symbol-structure"></span>StreamEvent.GuildUpdated
+
+
+<span class="h3" aria-level="3">Fields</span>
+### <span class="codicon codicon-symbol-field symbol-field"></span>guild_id
+Type: optional `uint64`
+
+
+### <span class="codicon codicon-symbol-field symbol-field"></span>new_name
+Type: optional `string`
+
+
+### <span class="codicon codicon-symbol-field symbol-field"></span>new_picture
+Type: optional `string`
+
+
+### <span class="codicon codicon-symbol-field symbol-field"></span>new_metadata
+Type: optional [protocol.harmonytypes.v1.Metadata]({{< ref "protocol.harmonytypes.v1.md" >}}#metadata)
+
+
+
+------
+## <span class="codicon codicon-symbol-structure symbol-structure"></span>StreamEvent.GuildDeleted
+
+
+<span class="h3" aria-level="3">Fields</span>
+### <span class="codicon codicon-symbol-field symbol-field"></span>guild_id
+Type: optional `uint64`
+
+
+
+------
+## <span class="codicon codicon-symbol-structure symbol-structure"></span>StreamEvent.MemberJoined
+
+
+<span class="h3" aria-level="3">Fields</span>
+### <span class="codicon codicon-symbol-field symbol-field"></span>member_id
+Type: optional `uint64`
+
+
+### <span class="codicon codicon-symbol-field symbol-field"></span>guild_id
+Type: optional `uint64`
+
+
+
+------
+## <span class="codicon codicon-symbol-structure symbol-structure"></span>StreamEvent.MemberLeft
+
+
+<span class="h3" aria-level="3">Fields</span>
+### <span class="codicon codicon-symbol-field symbol-field"></span>member_id
+Type: optional `uint64`
+
+
+### <span class="codicon codicon-symbol-field symbol-field"></span>guild_id
+Type: optional `uint64`
+
+
+### <span class="codicon codicon-symbol-field symbol-field"></span>leave_reason
+Type: UNHANDLED | TYPE
+
+
+
+------
+## <span class="codicon codicon-symbol-structure symbol-structure"></span>StreamEvent.GuildAddedToList
+
+
+<span class="h3" aria-level="3">Fields</span>
+### <span class="codicon codicon-symbol-field symbol-field"></span>guild_id
+Type: optional `uint64`
+
+
+### <span class="codicon codicon-symbol-field symbol-field"></span>homeserver
+Type: optional `string`
+
+
+
+------
+## <span class="codicon codicon-symbol-structure symbol-structure"></span>StreamEvent.GuildRemovedFromList
+
+
+<span class="h3" aria-level="3">Fields</span>
+### <span class="codicon codicon-symbol-field symbol-field"></span>guild_id
+Type: optional `uint64`
+
+
+### <span class="codicon codicon-symbol-field symbol-field"></span>homeserver
+Type: optional `string`
+
+
+
+------
+## <span class="codicon codicon-symbol-structure symbol-structure"></span>StreamEvent.ActionPerformed
+
+
+<span class="h3" aria-level="3">Fields</span>
+### <span class="codicon codicon-symbol-field symbol-field"></span>guild_id
+Type: optional `uint64`
+
+
+### <span class="codicon codicon-symbol-field symbol-field"></span>channel_id
+Type: optional `uint64`
+
+
+### <span class="codicon codicon-symbol-field symbol-field"></span>message_id
+Type: optional `uint64`
+
+
+### <span class="codicon codicon-symbol-field symbol-field"></span>user_id
+Type: optional `uint64`
+
+
+### <span class="codicon codicon-symbol-field symbol-field"></span>payload
+Type: optional [protocol.chat.v1.ActionPayload](#actionpayload)
+
+
+
+------
+## <span class="codicon codicon-symbol-structure symbol-structure"></span>StreamEvent.RoleMoved
+
+
+<span class="h3" aria-level="3">Fields</span>
+### <span class="codicon codicon-symbol-field symbol-field"></span>guild_id
+Type: optional `uint64`
+
+
+### <span class="codicon codicon-symbol-field symbol-field"></span>role_id
+Type: optional `uint64`
+
+
+### <span class="codicon codicon-symbol-field symbol-field"></span>new_position
+Type: optional [protocol.harmonytypes.v1.ItemPosition]({{< ref "protocol.harmonytypes.v1.md" >}}#itemposition)
+
+
+
+------
+## <span class="codicon codicon-symbol-structure symbol-structure"></span>StreamEvent.RoleDeleted
+
+
+<span class="h3" aria-level="3">Fields</span>
+### <span class="codicon codicon-symbol-field symbol-field"></span>guild_id
+Type: optional `uint64`
+
+
+### <span class="codicon codicon-symbol-field symbol-field"></span>role_id
+Type: optional `uint64`
+
+
+
+------
+## <span class="codicon codicon-symbol-structure symbol-structure"></span>StreamEvent.RoleCreated
+
+
+<span class="h3" aria-level="3">Fields</span>
+### <span class="codicon codicon-symbol-field symbol-field"></span>guild_id
+Type: optional `uint64`
+
+
+### <span class="codicon codicon-symbol-field symbol-field"></span>role_id
+Type: optional `uint64`
+
+
+### <span class="codicon codicon-symbol-field symbol-field"></span>name
+Type: optional `string`
+
+
+### <span class="codicon codicon-symbol-field symbol-field"></span>color
+Type: optional `int32`
+
+
+### <span class="codicon codicon-symbol-field symbol-field"></span>hoist
+Type: optional `bool`
+
+
+### <span class="codicon codicon-symbol-field symbol-field"></span>pingable
+Type: optional `bool`
+
+
+
+------
+## <span class="codicon codicon-symbol-structure symbol-structure"></span>StreamEvent.RoleUpdated
+
+
+<span class="h3" aria-level="3">Fields</span>
+### <span class="codicon codicon-symbol-field symbol-field"></span>guild_id
+Type: optional `uint64`
+
+
+### <span class="codicon codicon-symbol-field symbol-field"></span>role_id
+Type: optional `uint64`
+
+
+### <span class="codicon codicon-symbol-field symbol-field"></span>new_name
+Type: optional `string`
+
+
+### <span class="codicon codicon-symbol-field symbol-field"></span>new_color
+Type: optional `int32`
+
+
+### <span class="codicon codicon-symbol-field symbol-field"></span>new_hoist
+Type: optional `bool`
+
+
+### <span class="codicon codicon-symbol-field symbol-field"></span>new_pingable
+Type: optional `bool`
+
+
+
+------
+## <span class="codicon codicon-symbol-structure symbol-structure"></span>StreamEvent.RolePermissionsUpdated
+
+
+<span class="h3" aria-level="3">Fields</span>
+### <span class="codicon codicon-symbol-field symbol-field"></span>guild_id
+Type: optional `uint64`
+
+
+### <span class="codicon codicon-symbol-field symbol-field"></span>channel_id
+Type: optional `uint64`
+
+
+### <span class="codicon codicon-symbol-field symbol-field"></span>role_id
+Type: optional `uint64`
+
+
+### <span class="codicon codicon-symbol-field symbol-field"></span>new_perms
+Type: repeated [protocol.chat.v1.Permission](#permission)
+
+
+
+------
+## <span class="codicon codicon-symbol-structure symbol-structure"></span>StreamEvent.UserRolesUpdated
+
+
+<span class="h3" aria-level="3">Fields</span>
+### <span class="codicon codicon-symbol-field symbol-field"></span>guild_id
+Type: optional `uint64`
+
+
+### <span class="codicon codicon-symbol-field symbol-field"></span>user_id
+Type: optional `uint64`
+
+
+### <span class="codicon codicon-symbol-field symbol-field"></span>new_role_ids
+Type: repeated `uint64`
+
+
+
+------
+## <span class="codicon codicon-symbol-structure symbol-structure"></span>StreamEvent.Typing
+
+
+<span class="h3" aria-level="3">Fields</span>
+### <span class="codicon codicon-symbol-field symbol-field"></span>user_id
+Type: optional `uint64`
+
+
+### <span class="codicon codicon-symbol-field symbol-field"></span>guild_id
+Type: optional `uint64`
+
+
+### <span class="codicon codicon-symbol-field symbol-field"></span>channel_id
+Type: optional `uint64`
+
+
+
+------
+## <span class="codicon codicon-symbol-structure symbol-structure"></span>StreamEvent.PermissionUpdated
+
+
+<span class="h3" aria-level="3">Fields</span>
+### <span class="codicon codicon-symbol-field symbol-field"></span>guild_id
+Type: optional `uint64`
+
+
+### <span class="codicon codicon-symbol-field symbol-field"></span>channel_id
+Type: optional `uint64`
+
+
+### <span class="codicon codicon-symbol-field symbol-field"></span>query
+Type: optional `string`
+
+
+### <span class="codicon codicon-symbol-field symbol-field"></span>ok
+Type: optional `bool`
+
+
+
+------
+## <span class="codicon codicon-symbol-structure symbol-structure"></span>StreamEvent.MessagePinned
+
+
+<span class="h3" aria-level="3">Fields</span>
+### <span class="codicon codicon-symbol-field symbol-field"></span>guild_id
+Type: optional `uint64`
+
+
+### <span class="codicon codicon-symbol-field symbol-field"></span>channel_id
+Type: optional `uint64`
+
+
+### <span class="codicon codicon-symbol-field symbol-field"></span>message_id
+Type: optional `uint64`
+
+
+
+------
+## <span class="codicon codicon-symbol-structure symbol-structure"></span>StreamEvent.MessageUnpinned
+
+
+<span class="h3" aria-level="3">Fields</span>
+### <span class="codicon codicon-symbol-field symbol-field"></span>guild_id
+Type: optional `uint64`
+
+
+### <span class="codicon codicon-symbol-field symbol-field"></span>channel_id
+Type: optional `uint64`
+
+
+### <span class="codicon codicon-symbol-field symbol-field"></span>message_id
+Type: optional `uint64`
+
+
+
+------
+## <span class="codicon codicon-symbol-structure symbol-structure"></span>StreamEvent.ReactionUpdated
+
+
+<span class="h3" aria-level="3">Fields</span>
+### <span class="codicon codicon-symbol-field symbol-field"></span>guild_id
+Type: optional `uint64`
+
+
+### <span class="codicon codicon-symbol-field symbol-field"></span>channel_id
+Type: optional `uint64`
+
+
+### <span class="codicon codicon-symbol-field symbol-field"></span>message_id
+Type: optional `uint64`
+
+
+### <span class="codicon codicon-symbol-field symbol-field"></span>reaction
+Type: optional [protocol.chat.v1.Reaction](#reaction)
+
+
+
+------
+## <span class="codicon codicon-symbol-structure symbol-structure"></span>StreamEvent.OwnerAdded
+
+
+<span class="h3" aria-level="3">Fields</span>
+### <span class="codicon codicon-symbol-field symbol-field"></span>user_id
+Type: optional `uint64`
+
+
+
+------
+## <span class="codicon codicon-symbol-structure symbol-structure"></span>StreamEvent.OwnerRemoved
+
+
+<span class="h3" aria-level="3">Fields</span>
+### <span class="codicon codicon-symbol-field symbol-field"></span>user_id
+Type: optional `uint64`
+
+
+
+------
+## <span class="codicon codicon-symbol-structure symbol-structure"></span>StreamEvent.InviteReceived
+
+
+<span class="h3" aria-level="3">Fields</span>
+### <span class="codicon codicon-symbol-field symbol-field"></span>invite_id
+Type: optional `string`
+
+
+### <span class="codicon codicon-symbol-field symbol-field"></span>server_id
+Type: optional `string`
+
+
+### <span class="codicon codicon-symbol-field symbol-field"></span>inviter_id
+Type: optional `uint64`
+
+
+
+------
+## <span class="codicon codicon-symbol-structure symbol-structure"></span>StreamEvent.InviteRejected
+
+
+<span class="h3" aria-level="3">Fields</span>
+### <span class="codicon codicon-symbol-field symbol-field"></span>guild_id
+Type: optional `uint64`
+
+
+### <span class="codicon codicon-symbol-field symbol-field"></span>invite_id
+Type: optional `string`
+
+
+### <span class="codicon codicon-symbol-field symbol-field"></span>user_id
+Type: optional `uint64`
+
+
+
+# Enums 
+
+## <span class="codicon codicon-symbol-enum symbol-enum"></span>ChannelKind
+
+What kind the channel is.
+### <span class="codicon codicon-symbol-enum-member symbol-enum-member"></span>CHANNEL_KIND_TEXT_UNSPECIFIED
+A text channel. Allows you to simply send messages to a group of people.
+
+### <span class="codicon codicon-symbol-enum-member symbol-enum-member"></span>CHANNEL_KIND_VOICE_MEDIA
+A voice channel. Allows you to talk to other people with voice.
+
+### <span class="codicon codicon-symbol-enum-member symbol-enum-member"></span>CHANNEL_KIND_CATEGORY
+A category channel. All channels under this channel down to another
+category channel belongs to this category channel.
+
+------
+## <span class="codicon codicon-symbol-enum symbol-enum"></span>LeaveReason
+
+A reason for why a user has left a guild.
+### <span class="codicon codicon-symbol-enum-member symbol-enum-member"></span>LEAVE_REASON_WILLINGLY_UNSPECIFIED
+The user left the guild willingly.
+
+### <span class="codicon codicon-symbol-enum-member symbol-enum-member"></span>LEAVE_REASON_BANNED
+The user was banned from the guild.
+
+### <span class="codicon codicon-symbol-enum-member symbol-enum-member"></span>LEAVE_REASON_KICKED
+The user was kicked from the guild.
+
+------
+## <span class="codicon codicon-symbol-enum symbol-enum"></span>Type
+
+
+### <span class="codicon codicon-symbol-enum-member symbol-enum-member"></span>TYPE_NORMAL_UNSPECIFIED
+
+
+### <span class="codicon codicon-symbol-enum-member symbol-enum-member"></span>TYPE_PRIMARY
+
+
+### <span class="codicon codicon-symbol-enum-member symbol-enum-member"></span>TYPE_DESTRUCTIVE
+
+
+------
+## <span class="codicon codicon-symbol-enum symbol-enum"></span>Direction
+
+
+### <span class="codicon codicon-symbol-enum-member symbol-enum-member"></span>DIRECTION_BEFORE_UNSPECIFIED
+
+
+### <span class="codicon codicon-symbol-enum-member symbol-enum-member"></span>DIRECTION_AROUND
+
+
+### <span class="codicon codicon-symbol-enum-member symbol-enum-member"></span>DIRECTION_AFTER
+
+
+------
+## <span class="codicon codicon-symbol-enum symbol-enum"></span>Embed.Presentation
+
+
+### <span class="codicon codicon-symbol-enum-member symbol-enum-member"></span>PRESENTATION_DATA_UNSPECIFIED
+
+
+### <span class="codicon codicon-symbol-enum-member symbol-enum-member"></span>PRESENTATION_CAPTIONED_IMAGE
+
+
+### <span class="codicon codicon-symbol-enum-member symbol-enum-member"></span>PRESENTATION_ROW
+
+
+------
+## <span class="codicon codicon-symbol-enum symbol-enum"></span>Format.Kind
+
+
+### <span class="codicon codicon-symbol-enum-member symbol-enum-member"></span>KIND_DIM_UNSPECIFIED
+
+
+### <span class="codicon codicon-symbol-enum-member symbol-enum-member"></span>KIND_BRIGHT
+
+
+### <span class="codicon codicon-symbol-enum-member symbol-enum-member"></span>KIND_NEGATIVE
+
+
+### <span class="codicon codicon-symbol-enum-member symbol-enum-member"></span>KIND_POSITIVE
+
+
+### <span class="codicon codicon-symbol-enum-member symbol-enum-member"></span>KIND_INFO
+
+
+### <span class="codicon codicon-symbol-enum-member symbol-enum-member"></span>KIND_WARNING
+
 

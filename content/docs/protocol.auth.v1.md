@@ -1,199 +1,6 @@
 ---
 title: "Reference: protocol.auth.v1"
 ---
-# Standalone Message Types 
-
-## <span class="codicon codicon-symbol-structure symbol-structure"></span>Session
-Session
-Session contains the information for a new session;
-the user_id you logged in as and the session_token
-which should be passed to authorisation
-
-<span class="h3" aria-level="3">Fields</span>
-### <span class="codicon codicon-symbol-field symbol-field"></span>user_id
-Type: optional `uint64`
-
-user_id: the ID of the user you logged in as
-### <span class="codicon codicon-symbol-field symbol-field"></span>session_token
-Type: optional `string`
-
-session_token: the session token to use in authorization
-
-------
-## <span class="codicon codicon-symbol-structure symbol-structure"></span>AuthStep
-AuthStep
-A step in the authentication process
-Contains a variety of different types of views
-It is recommended to have a fallback_url specified
-For non-trivial authentication procedures (such as captchas)
-
-<span class="h3" aria-level="3">Fields</span>
-### <span class="codicon codicon-symbol-field symbol-field"></span>fallback_url
-Type: optional `string`
-
-fallback_url: unused
-### <span class="codicon codicon-symbol-field symbol-field"></span>can_go_back
-Type: optional `bool`
-
-can_go_back: whether or not the client can request the
-server to send the previous step
-### <span class="codicon codicon-symbol-field symbol-field"></span>choice
-Type: optional [protocol.auth.v1.AuthStep.Choice](#authstepchoice)
-
-choice: the user must pick a thing out of a list of options
-### <span class="codicon codicon-symbol-field symbol-field"></span>form
-Type: optional [protocol.auth.v1.AuthStep.Form](#authstepform)
-
-form: the user must complete a form
-### <span class="codicon codicon-symbol-field symbol-field"></span>session
-Type: optional [protocol.auth.v1.Session](#session)
-
-session: you've completed auth, and have a session
-### <span class="codicon codicon-symbol-field symbol-field"></span>waiting
-Type: optional [protocol.auth.v1.AuthStep.Waiting](#authstepwaiting)
-
-waiting: you're waiting on something
-
-------
-## <span class="codicon codicon-symbol-structure symbol-structure"></span>AuthStep.Choice
-
-
-<span class="h3" aria-level="3">Fields</span>
-### <span class="codicon codicon-symbol-field symbol-field"></span>title
-Type: optional `string`
-
-
-### <span class="codicon codicon-symbol-field symbol-field"></span>options
-Type: repeated `string`
-
-
-
-------
-## <span class="codicon codicon-symbol-structure symbol-structure"></span>AuthStep.Form
-
-
-<span class="h3" aria-level="3">Fields</span>
-### <span class="codicon codicon-symbol-field symbol-field"></span>title
-Type: optional `string`
-
-
-### <span class="codicon codicon-symbol-field symbol-field"></span>fields
-Type: repeated [protocol.auth.v1.AuthStep.Form.FormField](#authstepformformfield)
-
-
-
-------
-## <span class="codicon codicon-symbol-structure symbol-structure"></span>AuthStep.Form.FormField
-
-
-<span class="h3" aria-level="3">Fields</span>
-### <span class="codicon codicon-symbol-field symbol-field"></span>name
-Type: optional `string`
-
-
-### <span class="codicon codicon-symbol-field symbol-field"></span>type
-Type: optional `string`
-
-
-
-------
-## <span class="codicon codicon-symbol-structure symbol-structure"></span>AuthStep.Waiting
-
-
-<span class="h3" aria-level="3">Fields</span>
-### <span class="codicon codicon-symbol-field symbol-field"></span>title
-Type: optional `string`
-
-
-### <span class="codicon codicon-symbol-field symbol-field"></span>description
-Type: optional `string`
-
-
-
-------
-## <span class="codicon codicon-symbol-structure symbol-structure"></span>NextStepRequest
-NextStepRequest
-contains the client's response to the server's challenge
-This needs to be called first with no arguments to
-receive the first step
-
-<span class="h3" aria-level="3">Fields</span>
-### <span class="codicon codicon-symbol-field symbol-field"></span>auth_id
-Type: optional `string`
-
-auth_id: the authentication session you want
-the next step of
-### <span class="codicon codicon-symbol-field symbol-field"></span>choice
-Type: optional [protocol.auth.v1.NextStepRequest.Choice](#nextsteprequestchoice)
-
-choice: the choice the user picked
-### <span class="codicon codicon-symbol-field symbol-field"></span>form
-Type: optional [protocol.auth.v1.NextStepRequest.Form](#nextsteprequestform)
-
-form: the form the user filled out
-
-------
-## <span class="codicon codicon-symbol-structure symbol-structure"></span>NextStepRequest.Choice
-
-
-<span class="h3" aria-level="3">Fields</span>
-### <span class="codicon codicon-symbol-field symbol-field"></span>choice
-Type: optional `string`
-
-
-
-------
-## <span class="codicon codicon-symbol-structure symbol-structure"></span>NextStepRequest.FormFields
-
-
-<span class="h3" aria-level="3">Fields</span>
-### <span class="codicon codicon-symbol-field symbol-field"></span>bytes
-Type: optional `bytes`
-
-
-### <span class="codicon codicon-symbol-field symbol-field"></span>string
-Type: optional `string`
-
-
-### <span class="codicon codicon-symbol-field symbol-field"></span>number
-Type: optional `int64`
-
-
-
-------
-## <span class="codicon codicon-symbol-structure symbol-structure"></span>NextStepRequest.Form
-
-
-<span class="h3" aria-level="3">Fields</span>
-### <span class="codicon codicon-symbol-field symbol-field"></span>fields
-Type: repeated [protocol.auth.v1.NextStepRequest.FormFields](#nextsteprequestformfields)
-
-
-
-------
-## <span class="codicon codicon-symbol-structure symbol-structure"></span>TokenData
-Information sent by a client's homeserver, in a `harmonytypes.v1.Token`.
-It will be sent to a foreignserver by the client.
-
-<span class="h3" aria-level="3">Fields</span>
-### <span class="codicon codicon-symbol-field symbol-field"></span>user_id
-Type: optional `uint64`
-
-The client's user ID on the homeserver.
-### <span class="codicon codicon-symbol-field symbol-field"></span>server_id
-Type: optional `string`
-
-The foreignserver's server ID.
-### <span class="codicon codicon-symbol-field symbol-field"></span>username
-Type: optional `string`
-
-The username of the client.
-### <span class="codicon codicon-symbol-field symbol-field"></span>avatar
-Type: optional `string`
-
-The avatar of the client.
-
-------
 # Services 
 
 ## <span class="codicon codicon-symbol-class symbol-class"></span>AuthService
@@ -422,3 +229,196 @@ Used in `CheckLoggedIn` endpoint.
 
 This item has no fields.
 
+# Standalone Message Types 
+
+## <span class="codicon codicon-symbol-structure symbol-structure"></span>Session
+Session
+Session contains the information for a new session;
+the user_id you logged in as and the session_token
+which should be passed to authorisation
+
+<span class="h3" aria-level="3">Fields</span>
+### <span class="codicon codicon-symbol-field symbol-field"></span>user_id
+Type: optional `uint64`
+
+user_id: the ID of the user you logged in as
+### <span class="codicon codicon-symbol-field symbol-field"></span>session_token
+Type: optional `string`
+
+session_token: the session token to use in authorization
+
+------
+## <span class="codicon codicon-symbol-structure symbol-structure"></span>AuthStep
+AuthStep
+A step in the authentication process
+Contains a variety of different types of views
+It is recommended to have a fallback_url specified
+For non-trivial authentication procedures (such as captchas)
+
+<span class="h3" aria-level="3">Fields</span>
+### <span class="codicon codicon-symbol-field symbol-field"></span>fallback_url
+Type: optional `string`
+
+fallback_url: unused
+### <span class="codicon codicon-symbol-field symbol-field"></span>can_go_back
+Type: optional `bool`
+
+can_go_back: whether or not the client can request the
+server to send the previous step
+### <span class="codicon codicon-symbol-field symbol-field"></span>choice
+Type: optional [protocol.auth.v1.AuthStep.Choice](#authstepchoice)
+
+choice: the user must pick a thing out of a list of options
+### <span class="codicon codicon-symbol-field symbol-field"></span>form
+Type: optional [protocol.auth.v1.AuthStep.Form](#authstepform)
+
+form: the user must complete a form
+### <span class="codicon codicon-symbol-field symbol-field"></span>session
+Type: optional [protocol.auth.v1.Session](#session)
+
+session: you've completed auth, and have a session
+### <span class="codicon codicon-symbol-field symbol-field"></span>waiting
+Type: optional [protocol.auth.v1.AuthStep.Waiting](#authstepwaiting)
+
+waiting: you're waiting on something
+
+------
+## <span class="codicon codicon-symbol-structure symbol-structure"></span>AuthStep.Choice
+
+
+<span class="h3" aria-level="3">Fields</span>
+### <span class="codicon codicon-symbol-field symbol-field"></span>title
+Type: optional `string`
+
+
+### <span class="codicon codicon-symbol-field symbol-field"></span>options
+Type: repeated `string`
+
+
+
+------
+## <span class="codicon codicon-symbol-structure symbol-structure"></span>AuthStep.Form
+
+
+<span class="h3" aria-level="3">Fields</span>
+### <span class="codicon codicon-symbol-field symbol-field"></span>title
+Type: optional `string`
+
+
+### <span class="codicon codicon-symbol-field symbol-field"></span>fields
+Type: repeated [protocol.auth.v1.AuthStep.Form.FormField](#authstepformformfield)
+
+
+
+------
+## <span class="codicon codicon-symbol-structure symbol-structure"></span>AuthStep.Form.FormField
+
+
+<span class="h3" aria-level="3">Fields</span>
+### <span class="codicon codicon-symbol-field symbol-field"></span>name
+Type: optional `string`
+
+
+### <span class="codicon codicon-symbol-field symbol-field"></span>type
+Type: optional `string`
+
+
+
+------
+## <span class="codicon codicon-symbol-structure symbol-structure"></span>AuthStep.Waiting
+
+
+<span class="h3" aria-level="3">Fields</span>
+### <span class="codicon codicon-symbol-field symbol-field"></span>title
+Type: optional `string`
+
+
+### <span class="codicon codicon-symbol-field symbol-field"></span>description
+Type: optional `string`
+
+
+
+------
+## <span class="codicon codicon-symbol-structure symbol-structure"></span>NextStepRequest
+NextStepRequest
+contains the client's response to the server's challenge
+This needs to be called first with no arguments to
+receive the first step
+
+<span class="h3" aria-level="3">Fields</span>
+### <span class="codicon codicon-symbol-field symbol-field"></span>auth_id
+Type: optional `string`
+
+auth_id: the authentication session you want
+the next step of
+### <span class="codicon codicon-symbol-field symbol-field"></span>choice
+Type: optional [protocol.auth.v1.NextStepRequest.Choice](#nextsteprequestchoice)
+
+choice: the choice the user picked
+### <span class="codicon codicon-symbol-field symbol-field"></span>form
+Type: optional [protocol.auth.v1.NextStepRequest.Form](#nextsteprequestform)
+
+form: the form the user filled out
+
+------
+## <span class="codicon codicon-symbol-structure symbol-structure"></span>NextStepRequest.Choice
+
+
+<span class="h3" aria-level="3">Fields</span>
+### <span class="codicon codicon-symbol-field symbol-field"></span>choice
+Type: optional `string`
+
+
+
+------
+## <span class="codicon codicon-symbol-structure symbol-structure"></span>NextStepRequest.FormFields
+
+
+<span class="h3" aria-level="3">Fields</span>
+### <span class="codicon codicon-symbol-field symbol-field"></span>bytes
+Type: optional `bytes`
+
+
+### <span class="codicon codicon-symbol-field symbol-field"></span>string
+Type: optional `string`
+
+
+### <span class="codicon codicon-symbol-field symbol-field"></span>number
+Type: optional `int64`
+
+
+
+------
+## <span class="codicon codicon-symbol-structure symbol-structure"></span>NextStepRequest.Form
+
+
+<span class="h3" aria-level="3">Fields</span>
+### <span class="codicon codicon-symbol-field symbol-field"></span>fields
+Type: repeated [protocol.auth.v1.NextStepRequest.FormFields](#nextsteprequestformfields)
+
+
+
+------
+## <span class="codicon codicon-symbol-structure symbol-structure"></span>TokenData
+Information sent by a client's homeserver, in a `harmonytypes.v1.Token`.
+It will be sent to a foreignserver by the client.
+
+<span class="h3" aria-level="3">Fields</span>
+### <span class="codicon codicon-symbol-field symbol-field"></span>user_id
+Type: optional `uint64`
+
+The client's user ID on the homeserver.
+### <span class="codicon codicon-symbol-field symbol-field"></span>server_id
+Type: optional `string`
+
+The foreignserver's server ID.
+### <span class="codicon codicon-symbol-field symbol-field"></span>username
+Type: optional `string`
+
+The username of the client.
+### <span class="codicon codicon-symbol-field symbol-field"></span>avatar
+Type: optional `string`
+
+The avatar of the client.
+
+------

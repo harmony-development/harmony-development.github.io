@@ -1,6 +1,136 @@
 ---
 title: "Reference: protocol.profile.v1"
 ---
+# Services 
+
+## <span class="codicon codicon-symbol-class symbol-class"></span>ProfileService
+
+Harmony's Profile service manages the profiles of the users.
+<span class="h3" aria-level="3">Fields</span>
+#### <span class="codicon codicon-symbol-method symbol-method"></span>GetProfile
+[protocol.profile.v1.GetProfileRequest](#getprofilerequest) -> [protocol.profile.v1.GetProfileResponse](#getprofileresponse)
+
+Gets a user's profile.
+
+<br/>
+
+##### <span class="codicon codicon-symbol-structure symbol-structure"></span>GetProfileRequest
+Used in `GetProfile` endpoint.
+
+<span class="h5" aria-level="5">Fields</span>
+###### <span class="codicon codicon-symbol-field symbol-field"></span>user_id
+Type: optional `uint64`
+
+The id of the user to get.
+
+
+<br/>
+
+##### <span class="codicon codicon-symbol-structure symbol-structure"></span>GetProfileResponse
+Used in `GetProfile` endpoint.
+
+<span class="h5" aria-level="5">Fields</span>
+###### <span class="codicon codicon-symbol-field symbol-field"></span>profile
+Type: optional [protocol.profile.v1.Profile](#profile)
+
+The user's profile
+
+------
+#### <span class="codicon codicon-symbol-method symbol-method"></span>UpdateProfile
+[protocol.profile.v1.UpdateProfileRequest](#updateprofilerequest) -> [protocol.profile.v1.UpdateProfileResponse](#updateprofileresponse)
+
+Updates the user's profile.
+
+<br/>
+
+##### <span class="codicon codicon-symbol-structure symbol-structure"></span>UpdateProfileRequest
+Used in `UpdateProfile` endpoint.
+
+<span class="h5" aria-level="5">Fields</span>
+###### <span class="codicon codicon-symbol-field symbol-field"></span>new_user_name
+Type: optional `string`
+
+new name of the user.
+###### <span class="codicon codicon-symbol-field symbol-field"></span>new_user_avatar
+Type: optional `string`
+
+new user avatar. The avatar will be removed if the string is empty.
+###### <span class="codicon codicon-symbol-field symbol-field"></span>new_user_status
+Type: UNHANDLED | TYPE
+
+new status of the user.
+###### <span class="codicon codicon-symbol-field symbol-field"></span>new_is_bot
+Type: optional `bool`
+
+new whether the user is a bot or not.
+
+
+<br/>
+
+##### <span class="codicon codicon-symbol-structure symbol-structure"></span>UpdateProfileResponse
+Used in `UpdateProfile` endpoint.
+
+This item has no fields.
+
+------
+#### <span class="codicon codicon-symbol-method symbol-method"></span>GetAppData
+[protocol.profile.v1.GetAppDataRequest](#getappdatarequest) -> [protocol.profile.v1.GetAppDataResponse](#getappdataresponse)
+
+Gets app data for a user (this can be used to store user preferences which
+is synchronized across devices).
+
+<br/>
+
+##### <span class="codicon codicon-symbol-structure symbol-structure"></span>GetAppDataRequest
+Used in `GetAppData` endpoint.
+
+<span class="h5" aria-level="5">Fields</span>
+###### <span class="codicon codicon-symbol-field symbol-field"></span>app_id
+Type: optional `string`
+
+the app id.
+
+
+<br/>
+
+##### <span class="codicon codicon-symbol-structure symbol-structure"></span>GetAppDataResponse
+Used in `GetAppData` endpoint.
+
+<span class="h5" aria-level="5">Fields</span>
+###### <span class="codicon codicon-symbol-field symbol-field"></span>app_data
+Type: optional `bytes`
+
+the app data.
+
+------
+#### <span class="codicon codicon-symbol-method symbol-method"></span>SetAppData
+[protocol.profile.v1.SetAppDataRequest](#setappdatarequest) -> [protocol.profile.v1.SetAppDataResponse](#setappdataresponse)
+
+Sets the app data for a user.
+
+<br/>
+
+##### <span class="codicon codicon-symbol-structure symbol-structure"></span>SetAppDataRequest
+Used in `SetAppData` endpoint.
+
+<span class="h5" aria-level="5">Fields</span>
+###### <span class="codicon codicon-symbol-field symbol-field"></span>app_id
+Type: optional `string`
+
+the app id.
+###### <span class="codicon codicon-symbol-field symbol-field"></span>app_data
+Type: optional `bytes`
+
+the app data.
+
+
+<br/>
+
+##### <span class="codicon codicon-symbol-structure symbol-structure"></span>SetAppDataResponse
+Used in `SetAppData` endpoint.
+
+This item has no fields.
+
 # Standalone Message Types 
 
 ## <span class="codicon codicon-symbol-structure symbol-structure"></span>OverrideTag
@@ -141,134 +271,4 @@ User is on mobile.
 
 ### <span class="codicon codicon-symbol-enum-member symbol-enum-member"></span>USER_STATUS_STREAMING
 User is streaming
-
-# Services 
-
-## <span class="codicon codicon-symbol-class symbol-class"></span>ProfileService
-
-Harmony's Profile service manages the profiles of the users.
-<span class="h3" aria-level="3">Fields</span>
-#### <span class="codicon codicon-symbol-method symbol-method"></span>GetProfile
-[protocol.profile.v1.GetProfileRequest](#getprofilerequest) -> [protocol.profile.v1.GetProfileResponse](#getprofileresponse)
-
-Gets a user's profile.
-
-<br/>
-
-##### <span class="codicon codicon-symbol-structure symbol-structure"></span>GetProfileRequest
-Used in `GetProfile` endpoint.
-
-<span class="h5" aria-level="5">Fields</span>
-###### <span class="codicon codicon-symbol-field symbol-field"></span>user_id
-Type: optional `uint64`
-
-The id of the user to get.
-
-
-<br/>
-
-##### <span class="codicon codicon-symbol-structure symbol-structure"></span>GetProfileResponse
-Used in `GetProfile` endpoint.
-
-<span class="h5" aria-level="5">Fields</span>
-###### <span class="codicon codicon-symbol-field symbol-field"></span>profile
-Type: optional [protocol.profile.v1.Profile](#profile)
-
-The user's profile
-
-------
-#### <span class="codicon codicon-symbol-method symbol-method"></span>UpdateProfile
-[protocol.profile.v1.UpdateProfileRequest](#updateprofilerequest) -> [protocol.profile.v1.UpdateProfileResponse](#updateprofileresponse)
-
-Updates the user's profile.
-
-<br/>
-
-##### <span class="codicon codicon-symbol-structure symbol-structure"></span>UpdateProfileRequest
-Used in `UpdateProfile` endpoint.
-
-<span class="h5" aria-level="5">Fields</span>
-###### <span class="codicon codicon-symbol-field symbol-field"></span>new_user_name
-Type: optional `string`
-
-new name of the user.
-###### <span class="codicon codicon-symbol-field symbol-field"></span>new_user_avatar
-Type: optional `string`
-
-new user avatar. The avatar will be removed if the string is empty.
-###### <span class="codicon codicon-symbol-field symbol-field"></span>new_user_status
-Type: UNHANDLED | TYPE
-
-new status of the user.
-###### <span class="codicon codicon-symbol-field symbol-field"></span>new_is_bot
-Type: optional `bool`
-
-new whether the user is a bot or not.
-
-
-<br/>
-
-##### <span class="codicon codicon-symbol-structure symbol-structure"></span>UpdateProfileResponse
-Used in `UpdateProfile` endpoint.
-
-This item has no fields.
-
-------
-#### <span class="codicon codicon-symbol-method symbol-method"></span>GetAppData
-[protocol.profile.v1.GetAppDataRequest](#getappdatarequest) -> [protocol.profile.v1.GetAppDataResponse](#getappdataresponse)
-
-Gets app data for a user (this can be used to store user preferences which
-is synchronized across devices).
-
-<br/>
-
-##### <span class="codicon codicon-symbol-structure symbol-structure"></span>GetAppDataRequest
-Used in `GetAppData` endpoint.
-
-<span class="h5" aria-level="5">Fields</span>
-###### <span class="codicon codicon-symbol-field symbol-field"></span>app_id
-Type: optional `string`
-
-the app id.
-
-
-<br/>
-
-##### <span class="codicon codicon-symbol-structure symbol-structure"></span>GetAppDataResponse
-Used in `GetAppData` endpoint.
-
-<span class="h5" aria-level="5">Fields</span>
-###### <span class="codicon codicon-symbol-field symbol-field"></span>app_data
-Type: optional `bytes`
-
-the app data.
-
-------
-#### <span class="codicon codicon-symbol-method symbol-method"></span>SetAppData
-[protocol.profile.v1.SetAppDataRequest](#setappdatarequest) -> [protocol.profile.v1.SetAppDataResponse](#setappdataresponse)
-
-Sets the app data for a user.
-
-<br/>
-
-##### <span class="codicon codicon-symbol-structure symbol-structure"></span>SetAppDataRequest
-Used in `SetAppData` endpoint.
-
-<span class="h5" aria-level="5">Fields</span>
-###### <span class="codicon codicon-symbol-field symbol-field"></span>app_id
-Type: optional `string`
-
-the app id.
-###### <span class="codicon codicon-symbol-field symbol-field"></span>app_data
-Type: optional `bytes`
-
-the app data.
-
-
-<br/>
-
-##### <span class="codicon codicon-symbol-structure symbol-structure"></span>SetAppDataResponse
-Used in `SetAppData` endpoint.
-
-This item has no fields.
 

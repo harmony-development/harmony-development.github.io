@@ -1,123 +1,6 @@
 ---
 title: "Reference: protocol.emote.v1"
 ---
-# Standalone Message Types 
-
-## <span class="codicon codicon-symbol-structure symbol-structure"></span>EmotePack
-Data for a single pack of emotes.
-
-<span class="h3" aria-level="3">Fields</span>
-### <span class="codicon codicon-symbol-field symbol-field"></span>pack_id
-Type: optional `uint64`
-
-The ID of the pack.
-### <span class="codicon codicon-symbol-field symbol-field"></span>pack_owner
-Type: optional `uint64`
-
-The ID of the user who created the pack.
-### <span class="codicon codicon-symbol-field symbol-field"></span>pack_name
-Type: optional `string`
-
-The name of the pack.
-
-------
-## <span class="codicon codicon-symbol-structure symbol-structure"></span>Emote
-Data for a single emote.
-
-<span class="h3" aria-level="3">Fields</span>
-### <span class="codicon codicon-symbol-field symbol-field"></span>image_id
-Type: optional `string`
-
-The image ID of the emote. This is the ID of the image in the image store
-(same place attachments are stored).
-### <span class="codicon codicon-symbol-field symbol-field"></span>name
-Type: optional `string`
-
-The name of the emote.
-
-------
-## <span class="codicon codicon-symbol-structure symbol-structure"></span>EmotePackUpdated
-Event sent when an emote pack's information is changed.
-
-Should only be sent to users who have the pack equipped.
-
-<span class="h3" aria-level="3">Fields</span>
-### <span class="codicon codicon-symbol-field symbol-field"></span>pack_id
-Type: optional `uint64`
-
-ID of the pack that was updated.
-### <span class="codicon codicon-symbol-field symbol-field"></span>new_pack_name
-Type: optional `string`
-
-New pack name of the pack.
-
-------
-## <span class="codicon codicon-symbol-structure symbol-structure"></span>EmotePackDeleted
-Event sent when an emote pack is deleted.
-
-Should only be sent to users who have the pack equipped.
-Should also be sent if a user dequips an emote pack, only to the user that dequipped it.
-
-<span class="h3" aria-level="3">Fields</span>
-### <span class="codicon codicon-symbol-field symbol-field"></span>pack_id
-Type: optional `uint64`
-
-ID of the pack that was deleted.
-
-------
-## <span class="codicon codicon-symbol-structure symbol-structure"></span>EmotePackAdded
-Event sent when an emote pack is added.
-
-Should only be sent to the user who equipped the pack.
-
-<span class="h3" aria-level="3">Fields</span>
-### <span class="codicon codicon-symbol-field symbol-field"></span>pack
-Type: optional [protocol.emote.v1.EmotePack](#emotepack)
-
-Emote pack that was equipped by the user.
-
-------
-## <span class="codicon codicon-symbol-structure symbol-structure"></span>EmotePackEmotesUpdated
-Event sent when an emote pack's emotes were changed.
-
-Should only be sent to users who have the pack equipped.
-
-<span class="h3" aria-level="3">Fields</span>
-### <span class="codicon codicon-symbol-field symbol-field"></span>pack_id
-Type: optional `uint64`
-
-ID of the pack to update the emotes of.
-### <span class="codicon codicon-symbol-field symbol-field"></span>added_emotes
-Type: repeated [protocol.emote.v1.Emote](#emote)
-
-The added emotes.
-### <span class="codicon codicon-symbol-field symbol-field"></span>deleted_emotes
-Type: repeated `string`
-
-The names of the deleted emotes.
-
-------
-## <span class="codicon codicon-symbol-structure symbol-structure"></span>StreamEvent
-Describes an emote service event.
-
-<span class="h3" aria-level="3">Fields</span>
-### <span class="codicon codicon-symbol-field symbol-field"></span>emote_pack_added
-Type: optional [protocol.emote.v1.EmotePackAdded](#emotepackadded)
-
-Send the emote pack added event.
-### <span class="codicon codicon-symbol-field symbol-field"></span>emote_pack_updated
-Type: optional [protocol.emote.v1.EmotePackUpdated](#emotepackupdated)
-
-Send the emote pack updated event.
-### <span class="codicon codicon-symbol-field symbol-field"></span>emote_pack_deleted
-Type: optional [protocol.emote.v1.EmotePackDeleted](#emotepackdeleted)
-
-Send the emote pack deleted event.
-### <span class="codicon codicon-symbol-field symbol-field"></span>emote_pack_emotes_updated
-Type: optional [protocol.emote.v1.EmotePackEmotesUpdated](#emotepackemotesupdated)
-
-Send the emote pack emotes updated event.
-
 # Services 
 
 ## <span class="codicon codicon-symbol-class symbol-class"></span>EmoteService
@@ -338,4 +221,121 @@ The ID of the pack.
 Used in the `EquipEmotePack` endpoint.
 
 This item has no fields.
+
+# Standalone Message Types 
+
+## <span class="codicon codicon-symbol-structure symbol-structure"></span>EmotePack
+Data for a single pack of emotes.
+
+<span class="h3" aria-level="3">Fields</span>
+### <span class="codicon codicon-symbol-field symbol-field"></span>pack_id
+Type: optional `uint64`
+
+The ID of the pack.
+### <span class="codicon codicon-symbol-field symbol-field"></span>pack_owner
+Type: optional `uint64`
+
+The ID of the user who created the pack.
+### <span class="codicon codicon-symbol-field symbol-field"></span>pack_name
+Type: optional `string`
+
+The name of the pack.
+
+------
+## <span class="codicon codicon-symbol-structure symbol-structure"></span>Emote
+Data for a single emote.
+
+<span class="h3" aria-level="3">Fields</span>
+### <span class="codicon codicon-symbol-field symbol-field"></span>image_id
+Type: optional `string`
+
+The image ID of the emote. This is the ID of the image in the image store
+(same place attachments are stored).
+### <span class="codicon codicon-symbol-field symbol-field"></span>name
+Type: optional `string`
+
+The name of the emote.
+
+------
+## <span class="codicon codicon-symbol-structure symbol-structure"></span>EmotePackUpdated
+Event sent when an emote pack's information is changed.
+
+Should only be sent to users who have the pack equipped.
+
+<span class="h3" aria-level="3">Fields</span>
+### <span class="codicon codicon-symbol-field symbol-field"></span>pack_id
+Type: optional `uint64`
+
+ID of the pack that was updated.
+### <span class="codicon codicon-symbol-field symbol-field"></span>new_pack_name
+Type: optional `string`
+
+New pack name of the pack.
+
+------
+## <span class="codicon codicon-symbol-structure symbol-structure"></span>EmotePackDeleted
+Event sent when an emote pack is deleted.
+
+Should only be sent to users who have the pack equipped.
+Should also be sent if a user dequips an emote pack, only to the user that dequipped it.
+
+<span class="h3" aria-level="3">Fields</span>
+### <span class="codicon codicon-symbol-field symbol-field"></span>pack_id
+Type: optional `uint64`
+
+ID of the pack that was deleted.
+
+------
+## <span class="codicon codicon-symbol-structure symbol-structure"></span>EmotePackAdded
+Event sent when an emote pack is added.
+
+Should only be sent to the user who equipped the pack.
+
+<span class="h3" aria-level="3">Fields</span>
+### <span class="codicon codicon-symbol-field symbol-field"></span>pack
+Type: optional [protocol.emote.v1.EmotePack](#emotepack)
+
+Emote pack that was equipped by the user.
+
+------
+## <span class="codicon codicon-symbol-structure symbol-structure"></span>EmotePackEmotesUpdated
+Event sent when an emote pack's emotes were changed.
+
+Should only be sent to users who have the pack equipped.
+
+<span class="h3" aria-level="3">Fields</span>
+### <span class="codicon codicon-symbol-field symbol-field"></span>pack_id
+Type: optional `uint64`
+
+ID of the pack to update the emotes of.
+### <span class="codicon codicon-symbol-field symbol-field"></span>added_emotes
+Type: repeated [protocol.emote.v1.Emote](#emote)
+
+The added emotes.
+### <span class="codicon codicon-symbol-field symbol-field"></span>deleted_emotes
+Type: repeated `string`
+
+The names of the deleted emotes.
+
+------
+## <span class="codicon codicon-symbol-structure symbol-structure"></span>StreamEvent
+Describes an emote service event.
+
+<span class="h3" aria-level="3">Fields</span>
+### <span class="codicon codicon-symbol-field symbol-field"></span>emote_pack_added
+Type: optional [protocol.emote.v1.EmotePackAdded](#emotepackadded)
+
+Send the emote pack added event.
+### <span class="codicon codicon-symbol-field symbol-field"></span>emote_pack_updated
+Type: optional [protocol.emote.v1.EmotePackUpdated](#emotepackupdated)
+
+Send the emote pack updated event.
+### <span class="codicon codicon-symbol-field symbol-field"></span>emote_pack_deleted
+Type: optional [protocol.emote.v1.EmotePackDeleted](#emotepackdeleted)
+
+Send the emote pack deleted event.
+### <span class="codicon codicon-symbol-field symbol-field"></span>emote_pack_emotes_updated
+Type: optional [protocol.emote.v1.EmotePackEmotesUpdated](#emotepackemotesupdated)
+
+Send the emote pack emotes updated event.
 

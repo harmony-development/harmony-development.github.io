@@ -1,8 +1,6 @@
 ---
 title: "Reference: protocol.batch.v1"
 ---
-# Standalone Message Types 
-
 # Services 
 
 ## <span class="codicon codicon-symbol-class symbol-class"></span>BatchService
@@ -74,4 +72,6 @@ Used in `BatchSame` endpoint.
 Type: repeated `bytes`
 
 The list of responses to the requests.
+
+# Standalone Message Types 
 

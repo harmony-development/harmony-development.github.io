@@ -1,52 +1,6 @@
 ---
 title: "Reference: protocol.mediaproxy.v1"
 ---
-# Standalone Message Types 
-
-## <span class="codicon codicon-symbol-structure symbol-structure"></span>SiteMetadata
-Object representing the metadata of a website.
-
-<span class="h3" aria-level="3">Fields</span>
-### <span class="codicon codicon-symbol-field symbol-field"></span>site_title
-Type: optional `string`
-
-Title of the website.
-### <span class="codicon codicon-symbol-field symbol-field"></span>page_title
-Type: optional `string`
-
-Page title of the website page.
-### <span class="codicon codicon-symbol-field symbol-field"></span>kind
-Type: optional `string`
-
-Kind of the website.
-### <span class="codicon codicon-symbol-field symbol-field"></span>description
-Type: optional `string`
-
-Description of the website page.
-### <span class="codicon codicon-symbol-field symbol-field"></span>url
-Type: optional `string`
-
-URL of the website.
-### <span class="codicon codicon-symbol-field symbol-field"></span>image
-Type: optional `string`
-
-A thumbnail image of the website.
-
-------
-## <span class="codicon codicon-symbol-structure symbol-structure"></span>MediaMetadata
-Object represeting the metadata of a media.
-
-<span class="h3" aria-level="3">Fields</span>
-### <span class="codicon codicon-symbol-field symbol-field"></span>mimetype
-Type: optional `string`
-
-Mimetype of the media.
-### <span class="codicon codicon-symbol-field symbol-field"></span>filename
-Type: optional `string`
-
-Filename of the media.
-
-------
 # Services 
 
 ## <span class="codicon codicon-symbol-class symbol-class"></span>MediaProxyService
@@ -151,3 +105,49 @@ Type: optional `bool`
 
 Whether the server generate an instant view for the URL queried.
 
+# Standalone Message Types 
+
+## <span class="codicon codicon-symbol-structure symbol-structure"></span>SiteMetadata
+Object representing the metadata of a website.
+
+<span class="h3" aria-level="3">Fields</span>
+### <span class="codicon codicon-symbol-field symbol-field"></span>site_title
+Type: optional `string`
+
+Title of the website.
+### <span class="codicon codicon-symbol-field symbol-field"></span>page_title
+Type: optional `string`
+
+Page title of the website page.
+### <span class="codicon codicon-symbol-field symbol-field"></span>kind
+Type: optional `string`
+
+Kind of the website.
+### <span class="codicon codicon-symbol-field symbol-field"></span>description
+Type: optional `string`
+
+Description of the website page.
+### <span class="codicon codicon-symbol-field symbol-field"></span>url
+Type: optional `string`
+
+URL of the website.
+### <span class="codicon codicon-symbol-field symbol-field"></span>image
+Type: optional `string`
+
+A thumbnail image of the website.
+
+------
+## <span class="codicon codicon-symbol-structure symbol-structure"></span>MediaMetadata
+Object represeting the metadata of a media.
+
+<span class="h3" aria-level="3">Fields</span>
+### <span class="codicon codicon-symbol-field symbol-field"></span>mimetype
+Type: optional `string`
+
+Mimetype of the media.
+### <span class="codicon codicon-symbol-field symbol-field"></span>filename
+Type: optional `string`
+
+Filename of the media.
+
+------

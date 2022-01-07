@@ -1,113 +1,6 @@
 ---
 title: "Reference: protocol.sync.v1"
 ---
-# Standalone Message Types 
-
-## <span class="codicon codicon-symbol-structure symbol-structure"></span>AuthData
-Authentication data that will be sent in a `harmonytypes.v1.Token`.
-
-<span class="h3" aria-level="3">Fields</span>
-### <span class="codicon codicon-symbol-field symbol-field"></span>server_id
-Type: optional `string`
-
-The server ID of the server initiating the transaction. For Pull,
-this tells the server being connected to which homeservers' events it should send.
-For Push, this tells the server being connected to which homeservers' events it is
-receiving.
-### <span class="codicon codicon-symbol-field symbol-field"></span>time
-Type: optional `uint64`
-
-The UTC UNIX time in seconds of when the request is started. Servers should reject
-tokens with a time too far from the current time, at their discretion. A recommended
-variance is 1 minute.
-
-------
-## <span class="codicon codicon-symbol-structure symbol-structure"></span>Event
-Object representing a postbox event.
-
-<span class="h3" aria-level="3">Fields</span>
-### <span class="codicon codicon-symbol-field symbol-field"></span>user_removed_from_guild
-Type: optional [protocol.sync.v1.Event.UserRemovedFromGuild](#eventuserremovedfromguild)
-
-User removed from a guild.
-### <span class="codicon codicon-symbol-field symbol-field"></span>user_added_to_guild
-Type: optional [protocol.sync.v1.Event.UserAddedToGuild](#eventuseraddedtoguild)
-
-User added to a guild.
-### <span class="codicon codicon-symbol-field symbol-field"></span>user_invited
-Type: optional [protocol.sync.v1.Event.UserInvited](#eventuserinvited)
-
-User invited to a guild.
-### <span class="codicon codicon-symbol-field symbol-field"></span>user_rejected_invite
-Type: optional [protocol.sync.v1.Event.UserRejectedInvite](#eventuserrejectedinvite)
-
-User rejected a guild invitation.
-
-------
-## <span class="codicon codicon-symbol-structure symbol-structure"></span>Event.UserRemovedFromGuild
-
-
-<span class="h3" aria-level="3">Fields</span>
-### <span class="codicon codicon-symbol-field symbol-field"></span>user_id
-Type: optional `uint64`
-
-
-### <span class="codicon codicon-symbol-field symbol-field"></span>guild_id
-Type: optional `uint64`
-
-
-
-------
-## <span class="codicon codicon-symbol-structure symbol-structure"></span>Event.UserAddedToGuild
-
-
-<span class="h3" aria-level="3">Fields</span>
-### <span class="codicon codicon-symbol-field symbol-field"></span>user_id
-Type: optional `uint64`
-
-
-### <span class="codicon codicon-symbol-field symbol-field"></span>guild_id
-Type: optional `uint64`
-
-
-
-------
-## <span class="codicon codicon-symbol-structure symbol-structure"></span>Event.UserInvited
-
-
-<span class="h3" aria-level="3">Fields</span>
-### <span class="codicon codicon-symbol-field symbol-field"></span>user_id
-Type: optional `uint64`
-
-
-### <span class="codicon codicon-symbol-field symbol-field"></span>inviter_id
-Type: optional `uint64`
-
-
-### <span class="codicon codicon-symbol-field symbol-field"></span>invite_id
-Type: optional `string`
-
-
-
-------
-## <span class="codicon codicon-symbol-structure symbol-structure"></span>Event.UserRejectedInvite
-
-
-<span class="h3" aria-level="3">Fields</span>
-### <span class="codicon codicon-symbol-field symbol-field"></span>guild_id
-Type: optional `uint64`
-
-
-### <span class="codicon codicon-symbol-field symbol-field"></span>user_id
-Type: optional `uint64`
-
-
-### <span class="codicon codicon-symbol-field symbol-field"></span>invite_id
-Type: optional `string`
-
-
-
-------
 # Services 
 
 ## <span class="codicon codicon-symbol-class symbol-class"></span>PostboxService
@@ -229,3 +122,110 @@ Used in `NotifyNewId` endpoint.
 
 This item has no fields.
 
+# Standalone Message Types 
+
+## <span class="codicon codicon-symbol-structure symbol-structure"></span>AuthData
+Authentication data that will be sent in a `harmonytypes.v1.Token`.
+
+<span class="h3" aria-level="3">Fields</span>
+### <span class="codicon codicon-symbol-field symbol-field"></span>server_id
+Type: optional `string`
+
+The server ID of the server initiating the transaction. For Pull,
+this tells the server being connected to which homeservers' events it should send.
+For Push, this tells the server being connected to which homeservers' events it is
+receiving.
+### <span class="codicon codicon-symbol-field symbol-field"></span>time
+Type: optional `uint64`
+
+The UTC UNIX time in seconds of when the request is started. Servers should reject
+tokens with a time too far from the current time, at their discretion. A recommended
+variance is 1 minute.
+
+------
+## <span class="codicon codicon-symbol-structure symbol-structure"></span>Event
+Object representing a postbox event.
+
+<span class="h3" aria-level="3">Fields</span>
+### <span class="codicon codicon-symbol-field symbol-field"></span>user_removed_from_guild
+Type: optional [protocol.sync.v1.Event.UserRemovedFromGuild](#eventuserremovedfromguild)
+
+User removed from a guild.
+### <span class="codicon codicon-symbol-field symbol-field"></span>user_added_to_guild
+Type: optional [protocol.sync.v1.Event.UserAddedToGuild](#eventuseraddedtoguild)
+
+User added to a guild.
+### <span class="codicon codicon-symbol-field symbol-field"></span>user_invited
+Type: optional [protocol.sync.v1.Event.UserInvited](#eventuserinvited)
+
+User invited to a guild.
+### <span class="codicon codicon-symbol-field symbol-field"></span>user_rejected_invite
+Type: optional [protocol.sync.v1.Event.UserRejectedInvite](#eventuserrejectedinvite)
+
+User rejected a guild invitation.
+
+------
+## <span class="codicon codicon-symbol-structure symbol-structure"></span>Event.UserRemovedFromGuild
+
+
+<span class="h3" aria-level="3">Fields</span>
+### <span class="codicon codicon-symbol-field symbol-field"></span>user_id
+Type: optional `uint64`
+
+
+### <span class="codicon codicon-symbol-field symbol-field"></span>guild_id
+Type: optional `uint64`
+
+
+
+------
+## <span class="codicon codicon-symbol-structure symbol-structure"></span>Event.UserAddedToGuild
+
+
+<span class="h3" aria-level="3">Fields</span>
+### <span class="codicon codicon-symbol-field symbol-field"></span>user_id
+Type: optional `uint64`
+
+
+### <span class="codicon codicon-symbol-field symbol-field"></span>guild_id
+Type: optional `uint64`
+
+
+
+------
+## <span class="codicon codicon-symbol-structure symbol-structure"></span>Event.UserInvited
+
+
+<span class="h3" aria-level="3">Fields</span>
+### <span class="codicon codicon-symbol-field symbol-field"></span>user_id
+Type: optional `uint64`
+
+
+### <span class="codicon codicon-symbol-field symbol-field"></span>inviter_id
+Type: optional `uint64`
+
+
+### <span class="codicon codicon-symbol-field symbol-field"></span>invite_id
+Type: optional `string`
+
+
+
+------
+## <span class="codicon codicon-symbol-structure symbol-structure"></span>Event.UserRejectedInvite
+
+
+<span class="h3" aria-level="3">Fields</span>
+### <span class="codicon codicon-symbol-field symbol-field"></span>guild_id
+Type: optional `uint64`
+
+
+### <span class="codicon codicon-symbol-field symbol-field"></span>user_id
+Type: optional `uint64`
+
+
+### <span class="codicon codicon-symbol-field symbol-field"></span>invite_id
+Type: optional `string`
+
+
+
+------
