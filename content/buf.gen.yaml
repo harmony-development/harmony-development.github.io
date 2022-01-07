@@ -1,0 +1,11 @@
+version: v1
+managed:
+  enabled: true
+  go_package_prefix:
+    default: github.com/harmony-development/shibshib/gen
+plugins:
+  - name: hdocs
+    out: docs
+    opt:
+      - paths=source_relative
+      - markdown,reference.md

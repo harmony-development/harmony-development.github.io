@@ -3,71 +3,211 @@ title: "Reference: protocol.chat.v1"
 ---
 ## Message Types 
 
-### GetUserRequest
+### Channel
 
 Fields
 
 | Name | Type |
 | ---- | ---- |
-| user_id | `uint64` |
-
-### GetUserResponse
-
-Fields
-
-| Name | Type |
-| ---- | ---- |
-| user_name | `string` |
-| user_avatar | `string` |
+| channel_name | `string` |
 | UNHANDLED | TYPE |
-| is_bot | `bool` |
+| metadata | [protocol.harmonytypes.v1.Metadata]({{< ref "protocol.harmonytypes.v1.md" >}}#metadata) |
 
-### GetUserBulkRequest
-
-Fields
-
-| Name | Type |
-| ---- | ---- |
-| user_ids | `uint64` |
-
-### GetUserBulkResponse
+### ChannelWithId
 
 Fields
 
 | Name | Type |
 | ---- | ---- |
-| users | [protocol.chat.v1.GetUserResponse](#getuserresponse) |
+| channel_id | `uint64` |
+| channel | [protocol.chat.v1.Channel](#channel) |
 
-### GetUserMetadataRequest
-
-Fields
-
-| Name | Type |
-| ---- | ---- |
-| app_id | `string` |
-
-### GetUserMetadataResponse
+### CreateChannelRequest
 
 Fields
 
 | Name | Type |
 | ---- | ---- |
-| metadata | `string` |
-
-### ProfileUpdateRequest
-
-Fields
-
-| Name | Type |
-| ---- | ---- |
-| new_username | `string` |
-| update_username | `bool` |
-| new_avatar | `string` |
-| update_avatar | `bool` |
+| guild_id | `uint64` |
+| channel_name | `string` |
 | UNHANDLED | TYPE |
-| update_status | `bool` |
-| is_bot | `bool` |
-| update_is_bot | `bool` |
+| metadata | [protocol.harmonytypes.v1.Metadata]({{< ref "protocol.harmonytypes.v1.md" >}}#metadata) |
+| position | [protocol.harmonytypes.v1.ItemPosition]({{< ref "protocol.harmonytypes.v1.md" >}}#itemposition) |
+
+### CreateChannelResponse
+
+Fields
+
+| Name | Type |
+| ---- | ---- |
+| channel_id | `uint64` |
+
+### GetGuildChannelsRequest
+
+Fields
+
+| Name | Type |
+| ---- | ---- |
+| guild_id | `uint64` |
+
+### GetGuildChannelsResponse
+
+Fields
+
+| Name | Type |
+| ---- | ---- |
+| channels | [protocol.chat.v1.ChannelWithId](#channelwithid) |
+
+### UpdateChannelInformationRequest
+
+Fields
+
+| Name | Type |
+| ---- | ---- |
+| guild_id | `uint64` |
+| channel_id | `uint64` |
+| new_name | `string` |
+| new_metadata | [protocol.harmonytypes.v1.Metadata]({{< ref "protocol.harmonytypes.v1.md" >}}#metadata) |
+
+### UpdateChannelInformationResponse
+
+Fields
+
+| Name | Type |
+| ---- | ---- |
+
+### UpdateChannelOrderRequest
+
+Fields
+
+| Name | Type |
+| ---- | ---- |
+| guild_id | `uint64` |
+| channel_id | `uint64` |
+| new_position | [protocol.harmonytypes.v1.ItemPosition]({{< ref "protocol.harmonytypes.v1.md" >}}#itemposition) |
+
+### UpdateChannelOrderResponse
+
+Fields
+
+| Name | Type |
+| ---- | ---- |
+
+### UpdateAllChannelOrderRequest
+
+Fields
+
+| Name | Type |
+| ---- | ---- |
+| guild_id | `uint64` |
+| channel_ids | `uint64` |
+
+### UpdateAllChannelOrderResponse
+
+Fields
+
+| Name | Type |
+| ---- | ---- |
+
+### DeleteChannelRequest
+
+Fields
+
+| Name | Type |
+| ---- | ---- |
+| guild_id | `uint64` |
+| channel_id | `uint64` |
+
+### DeleteChannelResponse
+
+Fields
+
+| Name | Type |
+| ---- | ---- |
+
+### TypingRequest
+
+Fields
+
+| Name | Type |
+| ---- | ---- |
+| guild_id | `uint64` |
+| channel_id | `uint64` |
+
+### TypingResponse
+
+Fields
+
+| Name | Type |
+| ---- | ---- |
+
+### GuildKind
+
+Fields
+
+| Name | Type |
+| ---- | ---- |
+| normal | [protocol.chat.v1.GuildKind.Normal](#guildkind-normal) |
+| room | [protocol.chat.v1.GuildKind.Room](#guildkind-room) |
+| direct_message | [protocol.chat.v1.GuildKind.DirectMessage](#guildkind-directmessage) |
+
+### Guild
+
+Fields
+
+| Name | Type |
+| ---- | ---- |
+| name | `string` |
+| picture | `string` |
+| owner_ids | `uint64` |
+| kind | [protocol.chat.v1.GuildKind](#guildkind) |
+| metadata | [protocol.harmonytypes.v1.Metadata]({{< ref "protocol.harmonytypes.v1.md" >}}#metadata) |
+
+### GuildWithId
+
+Fields
+
+| Name | Type |
+| ---- | ---- |
+| guild_id | `uint64` |
+| guild | [protocol.chat.v1.Guild](#guild) |
+
+### Invite
+
+Fields
+
+| Name | Type |
+| ---- | ---- |
+| possible_uses | `uint32` |
+| use_count | `uint32` |
+
+### InviteWithId
+
+Fields
+
+| Name | Type |
+| ---- | ---- |
+| invite_id | `string` |
+| invite | [protocol.chat.v1.Invite](#invite) |
+
+### PendingInvite
+
+Fields
+
+| Name | Type |
+| ---- | ---- |
+| invite_id | `string` |
+| server_id | `string` |
+| inviter_id | `uint64` |
+
+### GuildListEntry
+
+Fields
+
+| Name | Type |
+| ---- | ---- |
+| guild_id | `uint64` |
+| server_id | `string` |
 
 ### CreateGuildRequest
 
@@ -75,11 +215,46 @@ Fields
 
 | Name | Type |
 | ---- | ---- |
+| name | `string` |
+| picture | `string` |
 | metadata | [protocol.harmonytypes.v1.Metadata]({{< ref "protocol.harmonytypes.v1.md" >}}#metadata) |
-| guild_name | `string` |
-| picture_url | `string` |
 
 ### CreateGuildResponse
+
+Fields
+
+| Name | Type |
+| ---- | ---- |
+| guild_id | `uint64` |
+
+### CreateRoomRequest
+
+Fields
+
+| Name | Type |
+| ---- | ---- |
+| name | `string` |
+| picture | `string` |
+| metadata | [protocol.harmonytypes.v1.Metadata]({{< ref "protocol.harmonytypes.v1.md" >}}#metadata) |
+
+### CreateRoomResponse
+
+Fields
+
+| Name | Type |
+| ---- | ---- |
+| guild_id | `uint64` |
+
+### CreateDirectMessageRequest
+
+Fields
+
+| Name | Type |
+| ---- | ---- |
+| user_name | `string` |
+| server_id | `string` |
+
+### CreateDirectMessageResponse
 
 Fields
 
@@ -95,7 +270,7 @@ Fields
 | ---- | ---- |
 | guild_id | `uint64` |
 | name | `string` |
-| possible_uses | `int32` |
+| possible_uses | `uint32` |
 
 ### CreateInviteResponse
 
@@ -103,7 +278,7 @@ Fields
 
 | Name | Type |
 | ---- | ---- |
-| name | `string` |
+| invite_id | `string` |
 
 ### GetGuildListRequest
 
@@ -118,7 +293,7 @@ Fields
 
 | Name | Type |
 | ---- | ---- |
-| guilds | [protocol.chat.v1.GetGuildListResponse.GuildListEntry](#getguildlistresponse-guildlistentry) |
+| guilds | [protocol.chat.v1.GuildListEntry](#guildlistentry) |
 
 ### GetGuildRequest
 
@@ -134,10 +309,7 @@ Fields
 
 | Name | Type |
 | ---- | ---- |
-| metadata | [protocol.harmonytypes.v1.Metadata]({{< ref "protocol.harmonytypes.v1.md" >}}#metadata) |
-| guild_name | `string` |
-| guild_owner | `uint64` |
-| guild_picture | `string` |
+| guild | [protocol.chat.v1.Guild](#guild) |
 
 ### GetGuildInvitesRequest
 
@@ -153,7 +325,7 @@ Fields
 
 | Name | Type |
 | ---- | ---- |
-| invites | [protocol.chat.v1.GetGuildInvitesResponse.Invite](#getguildinvitesresponse-invite) |
+| invites | [protocol.chat.v1.InviteWithId](#invitewithid) |
 
 ### GetGuildMembersRequest
 
@@ -178,12 +350,31 @@ Fields
 | Name | Type |
 | ---- | ---- |
 | guild_id | `uint64` |
-| new_guild_name | `string` |
-| update_guild_name | `bool` |
-| new_guild_picture | `string` |
-| update_guild_picture | `bool` |
-| metadata | [protocol.harmonytypes.v1.Metadata]({{< ref "protocol.harmonytypes.v1.md" >}}#metadata) |
-| update_metadata | `bool` |
+| new_name | `string` |
+| new_picture | `string` |
+| new_metadata | [protocol.harmonytypes.v1.Metadata]({{< ref "protocol.harmonytypes.v1.md" >}}#metadata) |
+
+### UpdateGuildInformationResponse
+
+Fields
+
+| Name | Type |
+| ---- | ---- |
+
+### UpgradeRoomToGuildRequest
+
+Fields
+
+| Name | Type |
+| ---- | ---- |
+| guild_id | `uint64` |
+
+### UpgradeRoomToGuildResponse
+
+Fields
+
+| Name | Type |
+| ---- | ---- |
 
 ### DeleteGuildRequest
 
@@ -193,6 +384,13 @@ Fields
 | ---- | ---- |
 | guild_id | `uint64` |
 
+### DeleteGuildResponse
+
+Fields
+
+| Name | Type |
+| ---- | ---- |
+
 ### DeleteInviteRequest
 
 Fields
@@ -201,6 +399,13 @@ Fields
 | ---- | ---- |
 | guild_id | `uint64` |
 | invite_id | `string` |
+
+### DeleteInviteResponse
+
+Fields
+
+| Name | Type |
+| ---- | ---- |
 
 ### JoinGuildRequest
 
@@ -233,7 +438,7 @@ Fields
 | Name | Type |
 | ---- | ---- |
 | name | `string` |
-| avatar | `string` |
+| picture | `string` |
 | member_count | `uint64` |
 
 ### LeaveGuildRequest
@@ -244,6 +449,13 @@ Fields
 | ---- | ---- |
 | guild_id | `uint64` |
 
+### LeaveGuildResponse
+
+Fields
+
+| Name | Type |
+| ---- | ---- |
+
 ### BanUserRequest
 
 Fields
@@ -252,6 +464,13 @@ Fields
 | ---- | ---- |
 | guild_id | `uint64` |
 | user_id | `uint64` |
+
+### BanUserResponse
+
+Fields
+
+| Name | Type |
+| ---- | ---- |
 
 ### KickUserRequest
 
@@ -262,6 +481,13 @@ Fields
 | guild_id | `uint64` |
 | user_id | `uint64` |
 
+### KickUserResponse
+
+Fields
+
+| Name | Type |
+| ---- | ---- |
+
 ### UnbanUserRequest
 
 Fields
@@ -271,114 +497,308 @@ Fields
 | guild_id | `uint64` |
 | user_id | `uint64` |
 
-### GetGuildListResponse.GuildListEntry
+### UnbanUserResponse
+
+Fields
+
+| Name | Type |
+| ---- | ---- |
+
+### GetBannedUsersRequest
 
 Fields
 
 | Name | Type |
 | ---- | ---- |
 | guild_id | `uint64` |
-| host | `string` |
 
-### GetGuildInvitesResponse.Invite
+### GetBannedUsersResponse
+
+Fields
+
+| Name | Type |
+| ---- | ---- |
+| banned_users | `uint64` |
+
+### GrantOwnershipRequest
+
+Fields
+
+| Name | Type |
+| ---- | ---- |
+| guild_id | `uint64` |
+| new_owner_id | `uint64` |
+
+### GrantOwnershipResponse
+
+Fields
+
+| Name | Type |
+| ---- | ---- |
+
+### GiveUpOwnershipRequest
+
+Fields
+
+| Name | Type |
+| ---- | ---- |
+| guild_id | `uint64` |
+
+### GiveUpOwnershipResponse
+
+Fields
+
+| Name | Type |
+| ---- | ---- |
+
+### GetPendingInvitesRequest
+
+Fields
+
+| Name | Type |
+| ---- | ---- |
+
+### GetPendingInvitesResponse
+
+Fields
+
+| Name | Type |
+| ---- | ---- |
+| pending_invites | [protocol.chat.v1.PendingInvite](#pendinginvite) |
+
+### RejectPendingInviteRequest
 
 Fields
 
 | Name | Type |
 | ---- | ---- |
 | invite_id | `string` |
-| possible_uses | `int32` |
-| use_count | `int32` |
+| server_id | `string` |
 
-### CreateChannelRequest
+### RejectPendingInviteResponse
 
 Fields
 
 | Name | Type |
 | ---- | ---- |
+
+### IgnorePendingInviteRequest
+
+Fields
+
+| Name | Type |
+| ---- | ---- |
+| invite_id | `string` |
+| server_id | `string` |
+
+### IgnorePendingInviteResponse
+
+Fields
+
+| Name | Type |
+| ---- | ---- |
+
+### InviteUserToGuildRequest
+
+Fields
+
+| Name | Type |
+| ---- | ---- |
+| user_name | `string` |
+| server_id | `string` |
 | guild_id | `uint64` |
-| channel_name | `string` |
-| is_category | `bool` |
-| previous_id | `uint64` |
-| next_id | `uint64` |
-| metadata | [protocol.harmonytypes.v1.Metadata]({{< ref "protocol.harmonytypes.v1.md" >}}#metadata) |
 
-### CreateChannelResponse
+### InviteUserToGuildResponse
 
 Fields
 
 | Name | Type |
 | ---- | ---- |
-| channel_id | `uint64` |
 
-### GetGuildChannelsRequest
-
-Fields
-
-| Name | Type |
-| ---- | ---- |
-| guild_id | `uint64` |
-
-### GetGuildChannelsResponse
+### GuildKind.Normal
 
 Fields
 
 | Name | Type |
 | ---- | ---- |
-| channels | [protocol.chat.v1.GetGuildChannelsResponse.Channel](#getguildchannelsresponse-channel) |
 
-### UpdateChannelInformationRequest
+### GuildKind.Room
 
 Fields
 
 | Name | Type |
 | ---- | ---- |
-| guild_id | `uint64` |
-| channel_id | `uint64` |
+
+### GuildKind.DirectMessage
+
+Fields
+
+| Name | Type |
+| ---- | ---- |
+| rejected | `bool` |
+
+### Overrides
+
+Fields
+
+| Name | Type |
+| ---- | ---- |
+| username | `string` |
+| avatar | `string` |
+| user_defined | `string` |
+| webhook | [protocol.harmonytypes.v1.Empty]({{< ref "protocol.harmonytypes.v1.md" >}}#empty) |
+| system_plurality | [protocol.harmonytypes.v1.Empty]({{< ref "protocol.harmonytypes.v1.md" >}}#empty) |
+| system_message | [protocol.harmonytypes.v1.Empty]({{< ref "protocol.harmonytypes.v1.md" >}}#empty) |
+| bridge | [protocol.harmonytypes.v1.Empty]({{< ref "protocol.harmonytypes.v1.md" >}}#empty) |
+
+### ActionPayload
+
+Fields
+
+| Name | Type |
+| ---- | ---- |
+| button | [protocol.chat.v1.ActionPayload.Button](#actionpayload-button) |
+| dropdown | [protocol.chat.v1.ActionPayload.Dropdown](#actionpayload-dropdown) |
+| input | [protocol.chat.v1.ActionPayload.Input](#actionpayload-input) |
+
+### Action
+
+Fields
+
+| Name | Type |
+| ---- | ---- |
+| UNHANDLED | TYPE |
+| button | [protocol.chat.v1.Action.Button](#action-button) |
+| dropdown | [protocol.chat.v1.Action.Dropdown](#action-dropdown) |
+| input | [protocol.chat.v1.Action.Input](#action-input) |
+
+### Embed
+
+Fields
+
+| Name | Type |
+| ---- | ---- |
+| title | `string` |
+| body | [protocol.chat.v1.FormattedText](#formattedtext) |
+| color | `int32` |
+| header | [protocol.chat.v1.Embed.EmbedHeading](#embed-embedheading) |
+| footer | [protocol.chat.v1.Embed.EmbedHeading](#embed-embedheading) |
+| fields | [protocol.chat.v1.Embed.EmbedField](#embed-embedfield) |
+
+### Minithumbnail
+
+Fields
+
+| Name | Type |
+| ---- | ---- |
+| width | `uint32` |
+| height | `uint32` |
+| data | `bytes` |
+
+### Photo
+
+Fields
+
+| Name | Type |
+| ---- | ---- |
+| hmc | `string` |
 | name | `string` |
-| update_name | `bool` |
+| file_size | `uint32` |
+| height | `uint32` |
+| width | `uint32` |
+| caption | [protocol.chat.v1.FormattedText](#formattedtext) |
+| minithumbnail | [protocol.chat.v1.Minithumbnail](#minithumbnail) |
+
+### Attachment
+
+Fields
+
+| Name | Type |
+| ---- | ---- |
+| id | `string` |
+| name | `string` |
+| mimetype | `string` |
+| size | `uint32` |
+| caption | [protocol.chat.v1.FormattedText](#formattedtext) |
+
+### Content
+
+Fields
+
+| Name | Type |
+| ---- | ---- |
+| text_message | [protocol.chat.v1.Content.TextContent](#content-textcontent) |
+| embed_message | [protocol.chat.v1.Content.EmbedContent](#content-embedcontent) |
+| attachment_message | [protocol.chat.v1.Content.AttachmentContent](#content-attachmentcontent) |
+| photo_message | [protocol.chat.v1.Content.PhotoContent](#content-photocontent) |
+| invite_rejected | [protocol.chat.v1.Content.InviteRejected](#content-inviterejected) |
+| invite_accepted | [protocol.chat.v1.Content.InviteAccepted](#content-inviteaccepted) |
+| room_upgraded_to_guild | [protocol.chat.v1.Content.RoomUpgradedToGuild](#content-roomupgradedtoguild) |
+
+### Reaction
+
+Fields
+
+| Name | Type |
+| ---- | ---- |
+| emote | [protocol.emote.v1.Emote]({{< ref "protocol.emote.v1.md" >}}#emote) |
+| count | `uint32` |
+
+### Format
+
+Fields
+
+| Name | Type |
+| ---- | ---- |
+| start | `uint32` |
+| length | `uint32` |
+| bold | [protocol.chat.v1.Format.Bold](#format-bold) |
+| italic | [protocol.chat.v1.Format.Italic](#format-italic) |
+| underline | [protocol.chat.v1.Format.Underline](#format-underline) |
+| monospace | [protocol.chat.v1.Format.Monospace](#format-monospace) |
+| superscript | [protocol.chat.v1.Format.Superscript](#format-superscript) |
+| subscript | [protocol.chat.v1.Format.Subscript](#format-subscript) |
+| code_block | [protocol.chat.v1.Format.CodeBlock](#format-codeblock) |
+| user_mention | [protocol.chat.v1.Format.UserMention](#format-usermention) |
+| role_mention | [protocol.chat.v1.Format.RoleMention](#format-rolemention) |
+| channel_mention | [protocol.chat.v1.Format.ChannelMention](#format-channelmention) |
+| guild_mention | [protocol.chat.v1.Format.GuildMention](#format-guildmention) |
+| emoji | [protocol.chat.v1.Format.Emoji](#format-emoji) |
+| color | [protocol.chat.v1.Format.Color](#format-color) |
+| localization | [protocol.chat.v1.Format.Localization](#format-localization) |
+
+### FormattedText
+
+Fields
+
+| Name | Type |
+| ---- | ---- |
+| text | `string` |
+| format | [protocol.chat.v1.Format](#format) |
+
+### Message
+
+Fields
+
+| Name | Type |
+| ---- | ---- |
 | metadata | [protocol.harmonytypes.v1.Metadata]({{< ref "protocol.harmonytypes.v1.md" >}}#metadata) |
-| update_metadata | `bool` |
+| overrides | [protocol.chat.v1.Overrides](#overrides) |
+| author_id | `uint64` |
+| created_at | `uint64` |
+| edited_at | `uint64` |
+| in_reply_to | `uint64` |
+| content | [protocol.chat.v1.Content](#content) |
+| reactions | [protocol.chat.v1.Reaction](#reaction) |
 
-### UpdateChannelOrderRequest
-
-Fields
-
-| Name | Type |
-| ---- | ---- |
-| guild_id | `uint64` |
-| channel_id | `uint64` |
-| previous_id | `uint64` |
-| next_id | `uint64` |
-
-### DeleteChannelRequest
+### MessageWithId
 
 Fields
 
 | Name | Type |
 | ---- | ---- |
-| guild_id | `uint64` |
-| channel_id | `uint64` |
-
-### TypingRequest
-
-Fields
-
-| Name | Type |
-| ---- | ---- |
-| guild_id | `uint64` |
-| channel_id | `uint64` |
-
-### GetGuildChannelsResponse.Channel
-
-Fields
-
-| Name | Type |
-| ---- | ---- |
-| metadata | [protocol.harmonytypes.v1.Metadata]({{< ref "protocol.harmonytypes.v1.md" >}}#metadata) |
-| channel_id | `uint64` |
-| channel_name | `string` |
-| is_category | `bool` |
+| message_id | `uint64` |
+| message | [protocol.chat.v1.Message](#message) |
 
 ### GetChannelMessagesRequest
 
@@ -388,7 +808,9 @@ Fields
 | ---- | ---- |
 | guild_id | `uint64` |
 | channel_id | `uint64` |
-| before_message | `uint64` |
+| message_id | `uint64` |
+| UNHANDLED | TYPE |
+| count | `uint32` |
 
 ### GetChannelMessagesResponse
 
@@ -397,7 +819,8 @@ Fields
 | Name | Type |
 | ---- | ---- |
 | reached_top | `bool` |
-| messages | [protocol.harmonytypes.v1.Message]({{< ref "protocol.harmonytypes.v1.md" >}}#message) |
+| reached_bottom | `bool` |
+| messages | [protocol.chat.v1.MessageWithId](#messagewithid) |
 
 ### GetMessageRequest
 
@@ -415,7 +838,7 @@ Fields
 
 | Name | Type |
 | ---- | ---- |
-| message | [protocol.harmonytypes.v1.Message]({{< ref "protocol.harmonytypes.v1.md" >}}#message) |
+| message | [protocol.chat.v1.Message](#message) |
 
 ### DeleteMessageRequest
 
@@ -427,6 +850,13 @@ Fields
 | channel_id | `uint64` |
 | message_id | `uint64` |
 
+### DeleteMessageResponse
+
+Fields
+
+| Name | Type |
+| ---- | ---- |
+
 ### TriggerActionRequest
 
 Fields
@@ -436,8 +866,14 @@ Fields
 | guild_id | `uint64` |
 | channel_id | `uint64` |
 | message_id | `uint64` |
-| action_id | `string` |
-| action_data | `string` |
+| payload | [protocol.chat.v1.ActionPayload](#actionpayload) |
+
+### TriggerActionResponse
+
+Fields
+
+| Name | Type |
+| ---- | ---- |
 
 ### SendMessageRequest
 
@@ -447,11 +883,11 @@ Fields
 | ---- | ---- |
 | guild_id | `uint64` |
 | channel_id | `uint64` |
-| content | [protocol.harmonytypes.v1.Content]({{< ref "protocol.harmonytypes.v1.md" >}}#content) |
+| content | [protocol.chat.v1.Content](#content) |
 | echo_id | `uint64` |
-| metadata | [protocol.harmonytypes.v1.Metadata]({{< ref "protocol.harmonytypes.v1.md" >}}#metadata) |
-| overrides | [protocol.harmonytypes.v1.Override]({{< ref "protocol.harmonytypes.v1.md" >}}#override) |
+| overrides | [protocol.chat.v1.Overrides](#overrides) |
 | in_reply_to | `uint64` |
+| metadata | [protocol.harmonytypes.v1.Metadata]({{< ref "protocol.harmonytypes.v1.md" >}}#metadata) |
 
 ### SendMessageResponse
 
@@ -470,110 +906,16 @@ Fields
 | guild_id | `uint64` |
 | channel_id | `uint64` |
 | message_id | `uint64` |
-| new_content | `string` |
+| new_content | [protocol.chat.v1.FormattedText](#formattedtext) |
 
-### CreateEmotePackRequest
-
-Fields
-
-| Name | Type |
-| ---- | ---- |
-| pack_name | `string` |
-
-### CreateEmotePackResponse
-
-Fields
-
-| Name | Type |
-| ---- | ---- |
-| pack_id | `uint64` |
-
-### GetEmotePacksRequest
+### UpdateMessageTextResponse
 
 Fields
 
 | Name | Type |
 | ---- | ---- |
 
-### GetEmotePacksResponse
-
-Fields
-
-| Name | Type |
-| ---- | ---- |
-| packs | [protocol.chat.v1.GetEmotePacksResponse.EmotePack](#getemotepacksresponse-emotepack) |
-
-### GetEmotePackEmotesRequest
-
-Fields
-
-| Name | Type |
-| ---- | ---- |
-| pack_id | `uint64` |
-
-### GetEmotePackEmotesResponse
-
-Fields
-
-| Name | Type |
-| ---- | ---- |
-| emotes | [protocol.chat.v1.GetEmotePackEmotesResponse.Emote](#getemotepackemotesresponse-emote) |
-
-### AddEmoteToPackRequest
-
-Fields
-
-| Name | Type |
-| ---- | ---- |
-| pack_id | `uint64` |
-| image_id | `string` |
-| name | `string` |
-
-### DeleteEmoteFromPackRequest
-
-Fields
-
-| Name | Type |
-| ---- | ---- |
-| pack_id | `uint64` |
-| image_id | `string` |
-
-### DeleteEmotePackRequest
-
-Fields
-
-| Name | Type |
-| ---- | ---- |
-| pack_id | `uint64` |
-
-### DequipEmotePackRequest
-
-Fields
-
-| Name | Type |
-| ---- | ---- |
-| pack_id | `uint64` |
-
-### GetEmotePacksResponse.EmotePack
-
-Fields
-
-| Name | Type |
-| ---- | ---- |
-| pack_id | `uint64` |
-| pack_owner | `uint64` |
-| pack_name | `string` |
-
-### GetEmotePackEmotesResponse.Emote
-
-Fields
-
-| Name | Type |
-| ---- | ---- |
-| image_id | `string` |
-| name | `string` |
-
-### QueryPermissionsRequest
+### PinMessageRequest
 
 Fields
 
@@ -581,16 +923,337 @@ Fields
 | ---- | ---- |
 | guild_id | `uint64` |
 | channel_id | `uint64` |
-| check_for | `string` |
-| as | `uint64` |
+| message_id | `uint64` |
 
-### QueryPermissionsResponse
+### PinMessageResponse
 
 Fields
 
 | Name | Type |
 | ---- | ---- |
-| ok | `bool` |
+
+### UnpinMessageRequest
+
+Fields
+
+| Name | Type |
+| ---- | ---- |
+| guild_id | `uint64` |
+| channel_id | `uint64` |
+| message_id | `uint64` |
+
+### UnpinMessageResponse
+
+Fields
+
+| Name | Type |
+| ---- | ---- |
+
+### GetPinnedMessagesRequest
+
+Fields
+
+| Name | Type |
+| ---- | ---- |
+| guild_id | `uint64` |
+| channel_id | `uint64` |
+
+### GetPinnedMessagesResponse
+
+Fields
+
+| Name | Type |
+| ---- | ---- |
+| pinned_message_ids | `uint64` |
+
+### AddReactionRequest
+
+Fields
+
+| Name | Type |
+| ---- | ---- |
+| guild_id | `uint64` |
+| channel_id | `uint64` |
+| message_id | `uint64` |
+| emote | [protocol.emote.v1.Emote]({{< ref "protocol.emote.v1.md" >}}#emote) |
+
+### AddReactionResponse
+
+Fields
+
+| Name | Type |
+| ---- | ---- |
+
+### RemoveReactionRequest
+
+Fields
+
+| Name | Type |
+| ---- | ---- |
+| guild_id | `uint64` |
+| channel_id | `uint64` |
+| message_id | `uint64` |
+| emote | [protocol.emote.v1.Emote]({{< ref "protocol.emote.v1.md" >}}#emote) |
+
+### RemoveReactionResponse
+
+Fields
+
+| Name | Type |
+| ---- | ---- |
+
+### ActionPayload.Button
+
+Fields
+
+| Name | Type |
+| ---- | ---- |
+| data | `bytes` |
+
+### ActionPayload.Dropdown
+
+Fields
+
+| Name | Type |
+| ---- | ---- |
+| choice | `bytes` |
+
+### ActionPayload.Input
+
+Fields
+
+| Name | Type |
+| ---- | ---- |
+| input | `string` |
+| data | `bytes` |
+
+### Action.Button
+
+Fields
+
+| Name | Type |
+| ---- | ---- |
+| text | `string` |
+| data | `bytes` |
+| url | `string` |
+
+### Action.Dropdown
+
+Fields
+
+| Name | Type |
+| ---- | ---- |
+| label | `string` |
+| entries | [protocol.chat.v1.Action.Dropdown.Entry](#action-dropdown-entry) |
+
+### Action.Input
+
+Fields
+
+| Name | Type |
+| ---- | ---- |
+| label | `string` |
+| multiline | `bool` |
+| data | `bytes` |
+
+### Action.Dropdown.Entry
+
+Fields
+
+| Name | Type |
+| ---- | ---- |
+| label | `string` |
+| data | `bytes` |
+
+### Embed.EmbedHeading
+
+Fields
+
+| Name | Type |
+| ---- | ---- |
+| text | `string` |
+| subtext | `string` |
+| url | `string` |
+| icon | `string` |
+
+### Embed.EmbedField
+
+Fields
+
+| Name | Type |
+| ---- | ---- |
+| title | `string` |
+| subtitle | `string` |
+| body | [protocol.chat.v1.FormattedText](#formattedtext) |
+| image_url | `string` |
+| UNHANDLED | TYPE |
+| actions | [protocol.chat.v1.Action](#action) |
+
+### Content.TextContent
+
+Fields
+
+| Name | Type |
+| ---- | ---- |
+| content | [protocol.chat.v1.FormattedText](#formattedtext) |
+
+### Content.EmbedContent
+
+Fields
+
+| Name | Type |
+| ---- | ---- |
+| embeds | [protocol.chat.v1.Embed](#embed) |
+
+### Content.AttachmentContent
+
+Fields
+
+| Name | Type |
+| ---- | ---- |
+| files | [protocol.chat.v1.Attachment](#attachment) |
+
+### Content.PhotoContent
+
+Fields
+
+| Name | Type |
+| ---- | ---- |
+| photos | [protocol.chat.v1.Photo](#photo) |
+
+### Content.InviteRejected
+
+Fields
+
+| Name | Type |
+| ---- | ---- |
+| invitee_id | `uint64` |
+| inviter_id | `uint64` |
+
+### Content.InviteAccepted
+
+Fields
+
+| Name | Type |
+| ---- | ---- |
+| invitee_id | `uint64` |
+| inviter_id | `uint64` |
+
+### Content.RoomUpgradedToGuild
+
+Fields
+
+| Name | Type |
+| ---- | ---- |
+| upgraded_by | `uint64` |
+
+### Format.Bold
+
+Fields
+
+| Name | Type |
+| ---- | ---- |
+
+### Format.Italic
+
+Fields
+
+| Name | Type |
+| ---- | ---- |
+
+### Format.Underline
+
+Fields
+
+| Name | Type |
+| ---- | ---- |
+
+### Format.Monospace
+
+Fields
+
+| Name | Type |
+| ---- | ---- |
+
+### Format.Superscript
+
+Fields
+
+| Name | Type |
+| ---- | ---- |
+
+### Format.Subscript
+
+Fields
+
+| Name | Type |
+| ---- | ---- |
+
+### Format.CodeBlock
+
+Fields
+
+| Name | Type |
+| ---- | ---- |
+| language | `string` |
+
+### Format.UserMention
+
+Fields
+
+| Name | Type |
+| ---- | ---- |
+| user_id | `uint64` |
+
+### Format.RoleMention
+
+Fields
+
+| Name | Type |
+| ---- | ---- |
+| role_id | `uint64` |
+
+### Format.ChannelMention
+
+Fields
+
+| Name | Type |
+| ---- | ---- |
+| channel_id | `uint64` |
+
+### Format.GuildMention
+
+Fields
+
+| Name | Type |
+| ---- | ---- |
+| guild_id | `uint64` |
+| homeserver | `string` |
+
+### Format.Emoji
+
+Fields
+
+| Name | Type |
+| ---- | ---- |
+| image_hmc | `string` |
+| pack_id | `uint64` |
+
+### Format.Color
+
+Fields
+
+| Name | Type |
+| ---- | ---- |
+| UNHANDLED | TYPE |
+
+### Format.Localization
+
+Fields
+
+| Name | Type |
+| ---- | ---- |
+| i18n_code | `string` |
 
 ### Permission
 
@@ -599,15 +1262,46 @@ Fields
 | Name | Type |
 | ---- | ---- |
 | matches | `string` |
-| UNHANDLED | TYPE |
+| ok | `bool` |
 
-### PermissionList
+### Role
 
 Fields
 
 | Name | Type |
 | ---- | ---- |
-| permissions | [protocol.chat.v1.Permission](#permission) |
+| name | `string` |
+| color | `int32` |
+| hoist | `bool` |
+| pingable | `bool` |
+
+### RoleWithId
+
+Fields
+
+| Name | Type |
+| ---- | ---- |
+| role_id | `uint64` |
+| role | [protocol.chat.v1.Role](#role) |
+
+### QueryHasPermissionRequest
+
+Fields
+
+| Name | Type |
+| ---- | ---- |
+| guild_id | `uint64` |
+| channel_id | `uint64` |
+| as | `uint64` |
+| check_for | `string` |
+
+### QueryHasPermissionResponse
+
+Fields
+
+| Name | Type |
+| ---- | ---- |
+| ok | `bool` |
 
 ### SetPermissionsRequest
 
@@ -618,7 +1312,14 @@ Fields
 | guild_id | `uint64` |
 | channel_id | `uint64` |
 | role_id | `uint64` |
-| perms | [protocol.chat.v1.PermissionList](#permissionlist) |
+| perms_to_give | [protocol.chat.v1.Permission](#permission) |
+
+### SetPermissionsResponse
+
+Fields
+
+| Name | Type |
+| ---- | ---- |
 
 ### GetPermissionsRequest
 
@@ -636,19 +1337,7 @@ Fields
 
 | Name | Type |
 | ---- | ---- |
-| perms | [protocol.chat.v1.PermissionList](#permissionlist) |
-
-### Role
-
-Fields
-
-| Name | Type |
-| ---- | ---- |
-| role_id | `uint64` |
-| name | `string` |
-| color | `int32` |
-| hoist | `bool` |
-| pingable | `bool` |
+| perms | [protocol.chat.v1.Permission](#permission) |
 
 ### MoveRoleRequest
 
@@ -658,8 +1347,7 @@ Fields
 | ---- | ---- |
 | guild_id | `uint64` |
 | role_id | `uint64` |
-| before_id | `uint64` |
-| after_id | `uint64` |
+| new_position | [protocol.harmonytypes.v1.ItemPosition]({{< ref "protocol.harmonytypes.v1.md" >}}#itemposition) |
 
 ### MoveRoleResponse
 
@@ -682,7 +1370,7 @@ Fields
 
 | Name | Type |
 | ---- | ---- |
-| roles | [protocol.chat.v1.Role](#role) |
+| roles | [protocol.chat.v1.RoleWithId](#rolewithid) |
 
 ### AddGuildRoleRequest
 
@@ -691,7 +1379,10 @@ Fields
 | Name | Type |
 | ---- | ---- |
 | guild_id | `uint64` |
-| role | [protocol.chat.v1.Role](#role) |
+| name | `string` |
+| color | `int32` |
+| hoist | `bool` |
+| pingable | `bool` |
 
 ### AddGuildRoleResponse
 
@@ -710,6 +1401,13 @@ Fields
 | guild_id | `uint64` |
 | role_id | `uint64` |
 
+### DeleteGuildRoleResponse
+
+Fields
+
+| Name | Type |
+| ---- | ---- |
+
 ### ModifyGuildRoleRequest
 
 Fields
@@ -717,11 +1415,18 @@ Fields
 | Name | Type |
 | ---- | ---- |
 | guild_id | `uint64` |
-| role | [protocol.chat.v1.Role](#role) |
-| modify_name | `bool` |
-| modify_color | `bool` |
-| modify_hoist | `bool` |
-| modify_pingable | `bool` |
+| role_id | `uint64` |
+| new_name | `string` |
+| new_color | `int32` |
+| new_hoist | `bool` |
+| new_pingable | `bool` |
+
+### ModifyGuildRoleResponse
+
+Fields
+
+| Name | Type |
+| ---- | ---- |
 
 ### ManageUserRolesRequest
 
@@ -733,6 +1438,13 @@ Fields
 | user_id | `uint64` |
 | give_role_ids | `uint64` |
 | take_role_ids | `uint64` |
+
+### ManageUserRolesResponse
+
+Fields
+
+| Name | Type |
+| ---- | ---- |
 
 ### GetUserRolesRequest
 
@@ -760,29 +1472,54 @@ Fields
 | subscribe_to_guild | [protocol.chat.v1.StreamEventsRequest.SubscribeToGuild](#streameventsrequest-subscribetoguild) |
 | subscribe_to_actions | [protocol.chat.v1.StreamEventsRequest.SubscribeToActions](#streameventsrequest-subscribetoactions) |
 | subscribe_to_homeserver_events | [protocol.chat.v1.StreamEventsRequest.SubscribeToHomeserverEvents](#streameventsrequest-subscribetohomeserverevents) |
+| unsubscribe_from_all | [protocol.chat.v1.StreamEventsRequest.UnsubscribeFromAll](#streameventsrequest-unsubscribefromall) |
 
-### Event
+### StreamEventsResponse
 
 Fields
 
 | Name | Type |
 | ---- | ---- |
-| guild_added_to_list | [protocol.chat.v1.Event.GuildAddedToList](#event-guildaddedtolist) |
-| guild_removed_from_list | [protocol.chat.v1.Event.GuildRemovedFromList](#event-guildremovedfromlist) |
-| action_performed | [protocol.chat.v1.Event.ActionPerformed](#event-actionperformed) |
-| sent_message | [protocol.chat.v1.Event.MessageSent](#event-messagesent) |
-| edited_message | [protocol.chat.v1.Event.MessageUpdated](#event-messageupdated) |
-| deleted_message | [protocol.chat.v1.Event.MessageDeleted](#event-messagedeleted) |
-| created_channel | [protocol.chat.v1.Event.ChannelCreated](#event-channelcreated) |
-| edited_channel | [protocol.chat.v1.Event.ChannelUpdated](#event-channelupdated) |
-| deleted_channel | [protocol.chat.v1.Event.ChannelDeleted](#event-channeldeleted) |
-| edited_guild | [protocol.chat.v1.Event.GuildUpdated](#event-guildupdated) |
-| deleted_guild | [protocol.chat.v1.Event.GuildDeleted](#event-guilddeleted) |
-| joined_member | [protocol.chat.v1.Event.MemberJoined](#event-memberjoined) |
-| left_member | [protocol.chat.v1.Event.MemberLeft](#event-memberleft) |
-| role_moved | [protocol.chat.v1.Event.RoleMoved](#event-rolemoved) |
-| profile_updated | [protocol.chat.v1.Event.ProfileUpdated](#event-profileupdated) |
-| typing | [protocol.chat.v1.Event.Typing](#event-typing) |
+| chat | [protocol.chat.v1.StreamEvent](#streamevent) |
+| emote | [protocol.emote.v1.StreamEvent]({{< ref "protocol.emote.v1.md" >}}#streamevent) |
+| profile | [protocol.profile.v1.StreamEvent]({{< ref "protocol.profile.v1.md" >}}#streamevent) |
+
+### StreamEvent
+
+Fields
+
+| Name | Type |
+| ---- | ---- |
+| guild_added_to_list | [protocol.chat.v1.StreamEvent.GuildAddedToList](#streamevent-guildaddedtolist) |
+| guild_removed_from_list | [protocol.chat.v1.StreamEvent.GuildRemovedFromList](#streamevent-guildremovedfromlist) |
+| action_performed | [protocol.chat.v1.StreamEvent.ActionPerformed](#streamevent-actionperformed) |
+| sent_message | [protocol.chat.v1.StreamEvent.MessageSent](#streamevent-messagesent) |
+| edited_message | [protocol.chat.v1.StreamEvent.MessageUpdated](#streamevent-messageupdated) |
+| deleted_message | [protocol.chat.v1.StreamEvent.MessageDeleted](#streamevent-messagedeleted) |
+| created_channel | [protocol.chat.v1.StreamEvent.ChannelCreated](#streamevent-channelcreated) |
+| edited_channel | [protocol.chat.v1.StreamEvent.ChannelUpdated](#streamevent-channelupdated) |
+| deleted_channel | [protocol.chat.v1.StreamEvent.ChannelDeleted](#streamevent-channeldeleted) |
+| edited_guild | [protocol.chat.v1.StreamEvent.GuildUpdated](#streamevent-guildupdated) |
+| deleted_guild | [protocol.chat.v1.StreamEvent.GuildDeleted](#streamevent-guilddeleted) |
+| joined_member | [protocol.chat.v1.StreamEvent.MemberJoined](#streamevent-memberjoined) |
+| left_member | [protocol.chat.v1.StreamEvent.MemberLeft](#streamevent-memberleft) |
+| typing | [protocol.chat.v1.StreamEvent.Typing](#streamevent-typing) |
+| role_created | [protocol.chat.v1.StreamEvent.RoleCreated](#streamevent-rolecreated) |
+| role_deleted | [protocol.chat.v1.StreamEvent.RoleDeleted](#streamevent-roledeleted) |
+| role_moved | [protocol.chat.v1.StreamEvent.RoleMoved](#streamevent-rolemoved) |
+| role_updated | [protocol.chat.v1.StreamEvent.RoleUpdated](#streamevent-roleupdated) |
+| role_perms_updated | [protocol.chat.v1.StreamEvent.RolePermissionsUpdated](#streamevent-rolepermissionsupdated) |
+| user_roles_updated | [protocol.chat.v1.StreamEvent.UserRolesUpdated](#streamevent-userrolesupdated) |
+| permission_updated | [protocol.chat.v1.StreamEvent.PermissionUpdated](#streamevent-permissionupdated) |
+| channels_reordered | [protocol.chat.v1.StreamEvent.ChannelsReordered](#streamevent-channelsreordered) |
+| edited_channel_position | [protocol.chat.v1.StreamEvent.ChannelPositionUpdated](#streamevent-channelpositionupdated) |
+| message_pinned | [protocol.chat.v1.StreamEvent.MessagePinned](#streamevent-messagepinned) |
+| message_unpinned | [protocol.chat.v1.StreamEvent.MessageUnpinned](#streamevent-messageunpinned) |
+| reaction_updated | [protocol.chat.v1.StreamEvent.ReactionUpdated](#streamevent-reactionupdated) |
+| owner_added | [protocol.chat.v1.StreamEvent.OwnerAdded](#streamevent-owneradded) |
+| owner_removed | [protocol.chat.v1.StreamEvent.OwnerRemoved](#streamevent-ownerremoved) |
+| invite_received | [protocol.chat.v1.StreamEvent.InviteReceived](#streamevent-invitereceived) |
+| invite_rejected | [protocol.chat.v1.StreamEvent.InviteRejected](#streamevent-inviterejected) |
 
 ### StreamEventsRequest.SubscribeToGuild
 
@@ -806,16 +1543,26 @@ Fields
 | Name | Type |
 | ---- | ---- |
 
-### Event.MessageSent
+### StreamEventsRequest.UnsubscribeFromAll
+
+Fields
+
+| Name | Type |
+| ---- | ---- |
+
+### StreamEvent.MessageSent
 
 Fields
 
 | Name | Type |
 | ---- | ---- |
 | echo_id | `uint64` |
-| message | [protocol.harmonytypes.v1.Message]({{< ref "protocol.harmonytypes.v1.md" >}}#message) |
+| guild_id | `uint64` |
+| channel_id | `uint64` |
+| message_id | `uint64` |
+| message | [protocol.chat.v1.Message](#message) |
 
-### Event.MessageUpdated
+### StreamEvent.MessageUpdated
 
 Fields
 
@@ -824,10 +1571,10 @@ Fields
 | guild_id | `uint64` |
 | channel_id | `uint64` |
 | message_id | `uint64` |
-| edited_at | [google.protobuf.Timestamp]({{< ref "google.protobuf.md" >}}#timestamp) |
-| content | `string` |
+| edited_at | `uint64` |
+| new_content | [protocol.chat.v1.FormattedText](#formattedtext) |
 
-### Event.MessageDeleted
+### StreamEvent.MessageDeleted
 
 Fields
 
@@ -837,7 +1584,7 @@ Fields
 | channel_id | `uint64` |
 | message_id | `uint64` |
 
-### Event.ChannelCreated
+### StreamEvent.ChannelCreated
 
 Fields
 
@@ -846,12 +1593,11 @@ Fields
 | guild_id | `uint64` |
 | channel_id | `uint64` |
 | name | `string` |
-| previous_id | `uint64` |
-| next_id | `uint64` |
-| is_category | `bool` |
+| position | [protocol.harmonytypes.v1.ItemPosition]({{< ref "protocol.harmonytypes.v1.md" >}}#itemposition) |
+| UNHANDLED | TYPE |
 | metadata | [protocol.harmonytypes.v1.Metadata]({{< ref "protocol.harmonytypes.v1.md" >}}#metadata) |
 
-### Event.ChannelUpdated
+### StreamEvent.ChannelUpdated
 
 Fields
 
@@ -859,15 +1605,29 @@ Fields
 | ---- | ---- |
 | guild_id | `uint64` |
 | channel_id | `uint64` |
-| name | `string` |
-| update_name | `bool` |
-| previous_id | `uint64` |
-| next_id | `uint64` |
-| update_order | `bool` |
-| metadata | [protocol.harmonytypes.v1.Metadata]({{< ref "protocol.harmonytypes.v1.md" >}}#metadata) |
-| update_metadata | `bool` |
+| new_name | `string` |
+| new_metadata | [protocol.harmonytypes.v1.Metadata]({{< ref "protocol.harmonytypes.v1.md" >}}#metadata) |
 
-### Event.ChannelDeleted
+### StreamEvent.ChannelPositionUpdated
+
+Fields
+
+| Name | Type |
+| ---- | ---- |
+| guild_id | `uint64` |
+| channel_id | `uint64` |
+| new_position | [protocol.harmonytypes.v1.ItemPosition]({{< ref "protocol.harmonytypes.v1.md" >}}#itemposition) |
+
+### StreamEvent.ChannelsReordered
+
+Fields
+
+| Name | Type |
+| ---- | ---- |
+| guild_id | `uint64` |
+| channel_ids | `uint64` |
+
+### StreamEvent.ChannelDeleted
 
 Fields
 
@@ -876,21 +1636,18 @@ Fields
 | guild_id | `uint64` |
 | channel_id | `uint64` |
 
-### Event.GuildUpdated
+### StreamEvent.GuildUpdated
 
 Fields
 
 | Name | Type |
 | ---- | ---- |
 | guild_id | `uint64` |
-| name | `string` |
-| update_name | `bool` |
-| picture | `string` |
-| update_picture | `bool` |
-| metadata | [protocol.harmonytypes.v1.Metadata]({{< ref "protocol.harmonytypes.v1.md" >}}#metadata) |
-| update_metadata | `bool` |
+| new_name | `string` |
+| new_picture | `string` |
+| new_metadata | [protocol.harmonytypes.v1.Metadata]({{< ref "protocol.harmonytypes.v1.md" >}}#metadata) |
 
-### Event.GuildDeleted
+### StreamEvent.GuildDeleted
 
 Fields
 
@@ -898,7 +1655,7 @@ Fields
 | ---- | ---- |
 | guild_id | `uint64` |
 
-### Event.MemberJoined
+### StreamEvent.MemberJoined
 
 Fields
 
@@ -907,7 +1664,7 @@ Fields
 | member_id | `uint64` |
 | guild_id | `uint64` |
 
-### Event.MemberLeft
+### StreamEvent.MemberLeft
 
 Fields
 
@@ -917,7 +1674,7 @@ Fields
 | guild_id | `uint64` |
 | UNHANDLED | TYPE |
 
-### Event.GuildAddedToList
+### StreamEvent.GuildAddedToList
 
 Fields
 
@@ -926,7 +1683,7 @@ Fields
 | guild_id | `uint64` |
 | homeserver | `string` |
 
-### Event.GuildRemovedFromList
+### StreamEvent.GuildRemovedFromList
 
 Fields
 
@@ -935,7 +1692,7 @@ Fields
 | guild_id | `uint64` |
 | homeserver | `string` |
 
-### Event.ActionPerformed
+### StreamEvent.ActionPerformed
 
 Fields
 
@@ -944,10 +1701,20 @@ Fields
 | guild_id | `uint64` |
 | channel_id | `uint64` |
 | message_id | `uint64` |
-| action_id | `string` |
-| action_data | `string` |
+| user_id | `uint64` |
+| payload | [protocol.chat.v1.ActionPayload](#actionpayload) |
 
-### Event.RoleMoved
+### StreamEvent.RoleMoved
+
+Fields
+
+| Name | Type |
+| ---- | ---- |
+| guild_id | `uint64` |
+| role_id | `uint64` |
+| new_position | [protocol.harmonytypes.v1.ItemPosition]({{< ref "protocol.harmonytypes.v1.md" >}}#itemposition) |
+
+### StreamEvent.RoleDeleted
 
 Fields
 
@@ -956,23 +1723,54 @@ Fields
 | guild_id | `uint64` |
 | role_id | `uint64` |
 
-### Event.ProfileUpdated
+### StreamEvent.RoleCreated
 
 Fields
 
 | Name | Type |
 | ---- | ---- |
-| user_id | `uint64` |
-| new_username | `string` |
-| update_username | `bool` |
-| new_avatar | `string` |
-| update_avatar | `bool` |
-| UNHANDLED | TYPE |
-| update_status | `bool` |
-| is_bot | `bool` |
-| update_is_bot | `bool` |
+| guild_id | `uint64` |
+| role_id | `uint64` |
+| name | `string` |
+| color | `int32` |
+| hoist | `bool` |
+| pingable | `bool` |
 
-### Event.Typing
+### StreamEvent.RoleUpdated
+
+Fields
+
+| Name | Type |
+| ---- | ---- |
+| guild_id | `uint64` |
+| role_id | `uint64` |
+| new_name | `string` |
+| new_color | `int32` |
+| new_hoist | `bool` |
+| new_pingable | `bool` |
+
+### StreamEvent.RolePermissionsUpdated
+
+Fields
+
+| Name | Type |
+| ---- | ---- |
+| guild_id | `uint64` |
+| channel_id | `uint64` |
+| role_id | `uint64` |
+| new_perms | [protocol.chat.v1.Permission](#permission) |
+
+### StreamEvent.UserRolesUpdated
+
+Fields
+
+| Name | Type |
+| ---- | ---- |
+| guild_id | `uint64` |
+| user_id | `uint64` |
+| new_role_ids | `uint64` |
+
+### StreamEvent.Typing
 
 Fields
 
@@ -981,6 +1779,84 @@ Fields
 | user_id | `uint64` |
 | guild_id | `uint64` |
 | channel_id | `uint64` |
+
+### StreamEvent.PermissionUpdated
+
+Fields
+
+| Name | Type |
+| ---- | ---- |
+| guild_id | `uint64` |
+| channel_id | `uint64` |
+| query | `string` |
+| ok | `bool` |
+
+### StreamEvent.MessagePinned
+
+Fields
+
+| Name | Type |
+| ---- | ---- |
+| guild_id | `uint64` |
+| channel_id | `uint64` |
+| message_id | `uint64` |
+
+### StreamEvent.MessageUnpinned
+
+Fields
+
+| Name | Type |
+| ---- | ---- |
+| guild_id | `uint64` |
+| channel_id | `uint64` |
+| message_id | `uint64` |
+
+### StreamEvent.ReactionUpdated
+
+Fields
+
+| Name | Type |
+| ---- | ---- |
+| guild_id | `uint64` |
+| channel_id | `uint64` |
+| message_id | `uint64` |
+| reaction | [protocol.chat.v1.Reaction](#reaction) |
+
+### StreamEvent.OwnerAdded
+
+Fields
+
+| Name | Type |
+| ---- | ---- |
+| user_id | `uint64` |
+
+### StreamEvent.OwnerRemoved
+
+Fields
+
+| Name | Type |
+| ---- | ---- |
+| user_id | `uint64` |
+
+### StreamEvent.InviteReceived
+
+Fields
+
+| Name | Type |
+| ---- | ---- |
+| invite_id | `string` |
+| server_id | `string` |
+| inviter_id | `uint64` |
+
+### StreamEvent.InviteRejected
+
+Fields
+
+| Name | Type |
+| ---- | ---- |
+| guild_id | `uint64` |
+| invite_id | `string` |
+| user_id | `uint64` |
 
 ## Services 
 
@@ -991,56 +1867,61 @@ Fields
 | Name | Request | Response |
 | ---- | ------- | -------- |
 |CreateGuild|[protocol.chat.v1.CreateGuildRequest](#createguildrequest)|[protocol.chat.v1.CreateGuildResponse](#createguildresponse)|
+|CreateRoom|[protocol.chat.v1.CreateRoomRequest](#createroomrequest)|[protocol.chat.v1.CreateRoomResponse](#createroomresponse)|
+|CreateDirectMessage|[protocol.chat.v1.CreateDirectMessageRequest](#createdirectmessagerequest)|[protocol.chat.v1.CreateDirectMessageResponse](#createdirectmessageresponse)|
+|UpgradeRoomToGuild|[protocol.chat.v1.UpgradeRoomToGuildRequest](#upgraderoomtoguildrequest)|[protocol.chat.v1.UpgradeRoomToGuildResponse](#upgraderoomtoguildresponse)|
 |CreateInvite|[protocol.chat.v1.CreateInviteRequest](#createinviterequest)|[protocol.chat.v1.CreateInviteResponse](#createinviteresponse)|
 |CreateChannel|[protocol.chat.v1.CreateChannelRequest](#createchannelrequest)|[protocol.chat.v1.CreateChannelResponse](#createchannelresponse)|
-|CreateEmotePack|[protocol.chat.v1.CreateEmotePackRequest](#createemotepackrequest)|[protocol.chat.v1.CreateEmotePackResponse](#createemotepackresponse)|
 |GetGuildList|[protocol.chat.v1.GetGuildListRequest](#getguildlistrequest)|[protocol.chat.v1.GetGuildListResponse](#getguildlistresponse)|
+|InviteUserToGuild|[protocol.chat.v1.InviteUserToGuildRequest](#inviteusertoguildrequest)|[protocol.chat.v1.InviteUserToGuildResponse](#inviteusertoguildresponse)|
+|GetPendingInvites|[protocol.chat.v1.GetPendingInvitesRequest](#getpendinginvitesrequest)|[protocol.chat.v1.GetPendingInvitesResponse](#getpendinginvitesresponse)|
+|RejectPendingInvite|[protocol.chat.v1.RejectPendingInviteRequest](#rejectpendinginviterequest)|[protocol.chat.v1.RejectPendingInviteResponse](#rejectpendinginviteresponse)|
+|IgnorePendingInvite|[protocol.chat.v1.IgnorePendingInviteRequest](#ignorependinginviterequest)|[protocol.chat.v1.IgnorePendingInviteResponse](#ignorependinginviteresponse)|
 |GetGuild|[protocol.chat.v1.GetGuildRequest](#getguildrequest)|[protocol.chat.v1.GetGuildResponse](#getguildresponse)|
 |GetGuildInvites|[protocol.chat.v1.GetGuildInvitesRequest](#getguildinvitesrequest)|[protocol.chat.v1.GetGuildInvitesResponse](#getguildinvitesresponse)|
 |GetGuildMembers|[protocol.chat.v1.GetGuildMembersRequest](#getguildmembersrequest)|[protocol.chat.v1.GetGuildMembersResponse](#getguildmembersresponse)|
 |GetGuildChannels|[protocol.chat.v1.GetGuildChannelsRequest](#getguildchannelsrequest)|[protocol.chat.v1.GetGuildChannelsResponse](#getguildchannelsresponse)|
 |GetChannelMessages|[protocol.chat.v1.GetChannelMessagesRequest](#getchannelmessagesrequest)|[protocol.chat.v1.GetChannelMessagesResponse](#getchannelmessagesresponse)|
 |GetMessage|[protocol.chat.v1.GetMessageRequest](#getmessagerequest)|[protocol.chat.v1.GetMessageResponse](#getmessageresponse)|
-|GetEmotePacks|[protocol.chat.v1.GetEmotePacksRequest](#getemotepacksrequest)|[protocol.chat.v1.GetEmotePacksResponse](#getemotepacksresponse)|
-|GetEmotePackEmotes|[protocol.chat.v1.GetEmotePackEmotesRequest](#getemotepackemotesrequest)|[protocol.chat.v1.GetEmotePackEmotesResponse](#getemotepackemotesresponse)|
-|UpdateGuildInformation|[protocol.chat.v1.UpdateGuildInformationRequest](#updateguildinformationrequest)|[google.protobuf.Empty]({{< ref "google.protobuf.md" >}}#empty)|
-|UpdateChannelInformation|[protocol.chat.v1.UpdateChannelInformationRequest](#updatechannelinformationrequest)|[google.protobuf.Empty]({{< ref "google.protobuf.md" >}}#empty)|
-|UpdateChannelOrder|[protocol.chat.v1.UpdateChannelOrderRequest](#updatechannelorderrequest)|[google.protobuf.Empty]({{< ref "google.protobuf.md" >}}#empty)|
-|UpdateMessageText|[protocol.chat.v1.UpdateMessageTextRequest](#updatemessagetextrequest)|[google.protobuf.Empty]({{< ref "google.protobuf.md" >}}#empty)|
-|AddEmoteToPack|[protocol.chat.v1.AddEmoteToPackRequest](#addemotetopackrequest)|[google.protobuf.Empty]({{< ref "google.protobuf.md" >}}#empty)|
-|DeleteGuild|[protocol.chat.v1.DeleteGuildRequest](#deleteguildrequest)|[google.protobuf.Empty]({{< ref "google.protobuf.md" >}}#empty)|
-|DeleteInvite|[protocol.chat.v1.DeleteInviteRequest](#deleteinviterequest)|[google.protobuf.Empty]({{< ref "google.protobuf.md" >}}#empty)|
-|DeleteChannel|[protocol.chat.v1.DeleteChannelRequest](#deletechannelrequest)|[google.protobuf.Empty]({{< ref "google.protobuf.md" >}}#empty)|
-|DeleteMessage|[protocol.chat.v1.DeleteMessageRequest](#deletemessagerequest)|[google.protobuf.Empty]({{< ref "google.protobuf.md" >}}#empty)|
-|DeleteEmoteFromPack|[protocol.chat.v1.DeleteEmoteFromPackRequest](#deleteemotefrompackrequest)|[google.protobuf.Empty]({{< ref "google.protobuf.md" >}}#empty)|
-|DeleteEmotePack|[protocol.chat.v1.DeleteEmotePackRequest](#deleteemotepackrequest)|[google.protobuf.Empty]({{< ref "google.protobuf.md" >}}#empty)|
-|DequipEmotePack|[protocol.chat.v1.DequipEmotePackRequest](#dequipemotepackrequest)|[google.protobuf.Empty]({{< ref "google.protobuf.md" >}}#empty)|
+|UpdateGuildInformation|[protocol.chat.v1.UpdateGuildInformationRequest](#updateguildinformationrequest)|[protocol.chat.v1.UpdateGuildInformationResponse](#updateguildinformationresponse)|
+|UpdateChannelInformation|[protocol.chat.v1.UpdateChannelInformationRequest](#updatechannelinformationrequest)|[protocol.chat.v1.UpdateChannelInformationResponse](#updatechannelinformationresponse)|
+|UpdateChannelOrder|[protocol.chat.v1.UpdateChannelOrderRequest](#updatechannelorderrequest)|[protocol.chat.v1.UpdateChannelOrderResponse](#updatechannelorderresponse)|
+|UpdateAllChannelOrder|[protocol.chat.v1.UpdateAllChannelOrderRequest](#updateallchannelorderrequest)|[protocol.chat.v1.UpdateAllChannelOrderResponse](#updateallchannelorderresponse)|
+|UpdateMessageText|[protocol.chat.v1.UpdateMessageTextRequest](#updatemessagetextrequest)|[protocol.chat.v1.UpdateMessageTextResponse](#updatemessagetextresponse)|
+|DeleteGuild|[protocol.chat.v1.DeleteGuildRequest](#deleteguildrequest)|[protocol.chat.v1.DeleteGuildResponse](#deleteguildresponse)|
+|DeleteInvite|[protocol.chat.v1.DeleteInviteRequest](#deleteinviterequest)|[protocol.chat.v1.DeleteInviteResponse](#deleteinviteresponse)|
+|DeleteChannel|[protocol.chat.v1.DeleteChannelRequest](#deletechannelrequest)|[protocol.chat.v1.DeleteChannelResponse](#deletechannelresponse)|
+|DeleteMessage|[protocol.chat.v1.DeleteMessageRequest](#deletemessagerequest)|[protocol.chat.v1.DeleteMessageResponse](#deletemessageresponse)|
 |JoinGuild|[protocol.chat.v1.JoinGuildRequest](#joinguildrequest)|[protocol.chat.v1.JoinGuildResponse](#joinguildresponse)|
-|LeaveGuild|[protocol.chat.v1.LeaveGuildRequest](#leaveguildrequest)|[google.protobuf.Empty]({{< ref "google.protobuf.md" >}}#empty)|
-|TriggerAction|[protocol.chat.v1.TriggerActionRequest](#triggeractionrequest)|[google.protobuf.Empty]({{< ref "google.protobuf.md" >}}#empty)|
+|LeaveGuild|[protocol.chat.v1.LeaveGuildRequest](#leaveguildrequest)|[protocol.chat.v1.LeaveGuildResponse](#leaveguildresponse)|
+|TriggerAction|[protocol.chat.v1.TriggerActionRequest](#triggeractionrequest)|[protocol.chat.v1.TriggerActionResponse](#triggeractionresponse)|
 |SendMessage|[protocol.chat.v1.SendMessageRequest](#sendmessagerequest)|[protocol.chat.v1.SendMessageResponse](#sendmessageresponse)|
-|QueryHasPermission|[protocol.chat.v1.QueryPermissionsRequest](#querypermissionsrequest)|[protocol.chat.v1.QueryPermissionsResponse](#querypermissionsresponse)|
-|SetPermissions|[protocol.chat.v1.SetPermissionsRequest](#setpermissionsrequest)|[google.protobuf.Empty]({{< ref "google.protobuf.md" >}}#empty)|
+|QueryHasPermission|[protocol.chat.v1.QueryHasPermissionRequest](#queryhaspermissionrequest)|[protocol.chat.v1.QueryHasPermissionResponse](#queryhaspermissionresponse)|
+|SetPermissions|[protocol.chat.v1.SetPermissionsRequest](#setpermissionsrequest)|[protocol.chat.v1.SetPermissionsResponse](#setpermissionsresponse)|
 |GetPermissions|[protocol.chat.v1.GetPermissionsRequest](#getpermissionsrequest)|[protocol.chat.v1.GetPermissionsResponse](#getpermissionsresponse)|
 |MoveRole|[protocol.chat.v1.MoveRoleRequest](#moverolerequest)|[protocol.chat.v1.MoveRoleResponse](#moveroleresponse)|
 |GetGuildRoles|[protocol.chat.v1.GetGuildRolesRequest](#getguildrolesrequest)|[protocol.chat.v1.GetGuildRolesResponse](#getguildrolesresponse)|
 |AddGuildRole|[protocol.chat.v1.AddGuildRoleRequest](#addguildrolerequest)|[protocol.chat.v1.AddGuildRoleResponse](#addguildroleresponse)|
-|ModifyGuildRole|[protocol.chat.v1.ModifyGuildRoleRequest](#modifyguildrolerequest)|[google.protobuf.Empty]({{< ref "google.protobuf.md" >}}#empty)|
-|DeleteGuildRole|[protocol.chat.v1.DeleteGuildRoleRequest](#deleteguildrolerequest)|[google.protobuf.Empty]({{< ref "google.protobuf.md" >}}#empty)|
-|ManageUserRoles|[protocol.chat.v1.ManageUserRolesRequest](#manageuserrolesrequest)|[google.protobuf.Empty]({{< ref "google.protobuf.md" >}}#empty)|
+|ModifyGuildRole|[protocol.chat.v1.ModifyGuildRoleRequest](#modifyguildrolerequest)|[protocol.chat.v1.ModifyGuildRoleResponse](#modifyguildroleresponse)|
+|DeleteGuildRole|[protocol.chat.v1.DeleteGuildRoleRequest](#deleteguildrolerequest)|[protocol.chat.v1.DeleteGuildRoleResponse](#deleteguildroleresponse)|
+|ManageUserRoles|[protocol.chat.v1.ManageUserRolesRequest](#manageuserrolesrequest)|[protocol.chat.v1.ManageUserRolesResponse](#manageuserrolesresponse)|
 |GetUserRoles|[protocol.chat.v1.GetUserRolesRequest](#getuserrolesrequest)|[protocol.chat.v1.GetUserRolesResponse](#getuserrolesresponse)|
-|GetUser|[protocol.chat.v1.GetUserRequest](#getuserrequest)|[protocol.chat.v1.GetUserResponse](#getuserresponse)|
-|GetUserBulk|[protocol.chat.v1.GetUserBulkRequest](#getuserbulkrequest)|[protocol.chat.v1.GetUserBulkResponse](#getuserbulkresponse)|
-|GetUserMetadata|[protocol.chat.v1.GetUserMetadataRequest](#getusermetadatarequest)|[protocol.chat.v1.GetUserMetadataResponse](#getusermetadataresponse)|
-|ProfileUpdate|[protocol.chat.v1.ProfileUpdateRequest](#profileupdaterequest)|[google.protobuf.Empty]({{< ref "google.protobuf.md" >}}#empty)|
-|Typing|[protocol.chat.v1.TypingRequest](#typingrequest)|[google.protobuf.Empty]({{< ref "google.protobuf.md" >}}#empty)|
+|Typing|[protocol.chat.v1.TypingRequest](#typingrequest)|[protocol.chat.v1.TypingResponse](#typingresponse)|
 |PreviewGuild|[protocol.chat.v1.PreviewGuildRequest](#previewguildrequest)|[protocol.chat.v1.PreviewGuildResponse](#previewguildresponse)|
-|BanUser|[protocol.chat.v1.BanUserRequest](#banuserrequest)|[google.protobuf.Empty]({{< ref "google.protobuf.md" >}}#empty)|
-|KickUser|[protocol.chat.v1.KickUserRequest](#kickuserrequest)|[google.protobuf.Empty]({{< ref "google.protobuf.md" >}}#empty)|
-|UnbanUser|[protocol.chat.v1.UnbanUserRequest](#unbanuserrequest)|[google.protobuf.Empty]({{< ref "google.protobuf.md" >}}#empty)|
+|GetBannedUsers|[protocol.chat.v1.GetBannedUsersRequest](#getbannedusersrequest)|[protocol.chat.v1.GetBannedUsersResponse](#getbannedusersresponse)|
+|BanUser|[protocol.chat.v1.BanUserRequest](#banuserrequest)|[protocol.chat.v1.BanUserResponse](#banuserresponse)|
+|KickUser|[protocol.chat.v1.KickUserRequest](#kickuserrequest)|[protocol.chat.v1.KickUserResponse](#kickuserresponse)|
+|UnbanUser|[protocol.chat.v1.UnbanUserRequest](#unbanuserrequest)|[protocol.chat.v1.UnbanUserResponse](#unbanuserresponse)|
+|GetPinnedMessages|[protocol.chat.v1.GetPinnedMessagesRequest](#getpinnedmessagesrequest)|[protocol.chat.v1.GetPinnedMessagesResponse](#getpinnedmessagesresponse)|
+|PinMessage|[protocol.chat.v1.PinMessageRequest](#pinmessagerequest)|[protocol.chat.v1.PinMessageResponse](#pinmessageresponse)|
+|UnpinMessage|[protocol.chat.v1.UnpinMessageRequest](#unpinmessagerequest)|[protocol.chat.v1.UnpinMessageResponse](#unpinmessageresponse)|
+|AddReaction|[protocol.chat.v1.AddReactionRequest](#addreactionrequest)|[protocol.chat.v1.AddReactionResponse](#addreactionresponse)|
+|RemoveReaction|[protocol.chat.v1.RemoveReactionRequest](#removereactionrequest)|[protocol.chat.v1.RemoveReactionResponse](#removereactionresponse)|
+|GrantOwnership|[protocol.chat.v1.GrantOwnershipRequest](#grantownershiprequest)|[protocol.chat.v1.GrantOwnershipResponse](#grantownershipresponse)|
+|GiveUpOwnership|[protocol.chat.v1.GiveUpOwnershipRequest](#giveupownershiprequest)|[protocol.chat.v1.GiveUpOwnershipResponse](#giveupownershipresponse)|
 
 #### Streaming Methods
 
 | Name | Client Streams | Server Streams |
 | ---- | -------------- | -------------- |
-|StreamEvents|[protocol.chat.v1.StreamEventsRequest](#streameventsrequest)|[protocol.chat.v1.Event](#event)|
+|StreamEvents|[protocol.chat.v1.StreamEventsRequest](#streameventsrequest)|[protocol.chat.v1.StreamEventsResponse](#streameventsresponse)|

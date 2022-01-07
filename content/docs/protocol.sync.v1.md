@@ -20,6 +20,8 @@ Fields
 | ---- | ---- |
 | user_removed_from_guild | [protocol.sync.v1.Event.UserRemovedFromGuild](#event-userremovedfromguild) |
 | user_added_to_guild | [protocol.sync.v1.Event.UserAddedToGuild](#event-useraddedtoguild) |
+| user_invited | [protocol.sync.v1.Event.UserInvited](#event-userinvited) |
+| user_rejected_invite | [protocol.sync.v1.Event.UserRejectedInvite](#event-userrejectedinvite) |
 
 ### PullRequest
 
@@ -83,6 +85,26 @@ Fields
 | ---- | ---- |
 | user_id | `uint64` |
 | guild_id | `uint64` |
+
+### Event.UserInvited
+
+Fields
+
+| Name | Type |
+| ---- | ---- |
+| user_id | `uint64` |
+| inviter_id | `uint64` |
+| invite_id | `string` |
+
+### Event.UserRejectedInvite
+
+Fields
+
+| Name | Type |
+| ---- | ---- |
+| guild_id | `uint64` |
+| user_id | `uint64` |
+| invite_id | `string` |
 
 ## Services 
 

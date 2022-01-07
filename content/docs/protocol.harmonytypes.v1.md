@@ -12,6 +12,7 @@ Fields
 | requires_authentication | `bool` |
 | requires_local | `bool` |
 | requires_permission_node | `string` |
+| requires_owner | `bool` |
 
 ### Anything
 
