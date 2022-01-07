@@ -22,7 +22,9 @@ A permission is just a string, such as roles. ">
 Permission In a community, there will be features, management functionality, bot commands, and other things which exist. Most of these actions have a permission associated with them, allowing you to control which members have access to each feature.
 A permission is just a string, such as roles." />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://harmonyapp.io/docs/permissions/" />
+<meta property="og:url" content="https://harmonyapp.io/docs/permissions/" /><meta property="article:section" content="docs" />
+
+
 
 
     <meta name="twitter:card" content="summary"/>
@@ -174,7 +176,7 @@ For example, you may want to allow <code>@everyone</code> to <code>messages.send
 <p>Some actions may not query permissions in a channel or category, such as changing the name of a community.</p>
 <p>If an action queries in the context of a channel, it&rsquo;ll first check the overrides of the channel, then the rules of the category of the channel if applicable, then the rules associated with a guild.</p>
 <h2 id="evaluation">Evaluation</h2>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#75715e">// Mode determines whether a permission will glob or not
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#75715e">// Mode determines whether a permission will glob or not
 </span><span style="color:#75715e"></span><span style="color:#66d9ef">type</span> <span style="color:#a6e22e">Mode</span> <span style="color:#66d9ef">int</span>
 
 <span style="color:#75715e">// RoleID is the ID of a role

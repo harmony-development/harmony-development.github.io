@@ -22,7 +22,9 @@ When IP Address (xxx.xxx.xxx.xxx &#43; optional :port) When the server name is a
 A server name is resolved to an IP address and port using the following process:
 When IP Address (xxx.xxx.xxx.xxx &#43; optional :port) When the server name is an IP address, this is the resolved IP of the server that requests should be sent to." />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://harmonyapp.io/protocol/stable/name-resolution/name-resolution/" />
+<meta property="og:url" content="https://harmonyapp.io/protocol/stable/name-resolution/name-resolution/" /><meta property="article:section" content="protocol" />
+
+
 
 
     <meta name="twitter:card" content="summary"/>
@@ -150,7 +152,7 @@ When IP Address (xxx.xxx.xxx.xxx &#43; optional :port) When the server name is a
 <p>The <code>Host</code> header in requests should be set to the domain name and given port, not the resolved IP address.</p>
 <h2 id="when-domain-without-port-examplecom">When domain without port (<code>example.com</code>)</h2>
 <p>When the server name is a host without a port, a request should be made to <code>https://hostname/_harmony/server</code>. If the request fails with a 404, resolution of the server name should be done as if it had port 2289 specified using the above method for resolving domains with ports. Otherwise, the request is expected to return a JSON object with the following schema:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">{
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">{
     <span style="color:#f92672">&#34;h.server&#34;</span>: <span style="color:#e6db74">&#34;&#34;</span>,
 }
 </code></pre></div><p><code>h.server</code> should be either an IP address or a domain + port. It may not be another domain without a port. <code>h.server</code> should be resolved using the above two methods as per usual to an IP address. This IP address will be the one requests are sent to.</p>
