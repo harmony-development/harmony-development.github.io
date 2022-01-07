@@ -1,0 +1,606 @@
+<!DOCTYPE html>
+<html lang="en-us"><head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no">
+    <title>Reference: protocol.emote.v1 | Harmony</title>
+    <meta name="description" content="Message Types EmotePack Fields
+   Name Type     pack_id uint64   pack_owner uint64   pack_name string    Emote Fields
+   Name Type     image_id string   name string    CreateEmotePackRequest Fields
+   Name Type     pack_name string    CreateEmotePackResponse Fields
+   Name Type     pack_id uint64    GetEmotePacksRequest Fields ">
+    <link rel="canonical" href="https://harmonyapp.io/docs/protocol.emote.v1/" />
+
+    
+
+    
+      
+      <link rel="stylesheet" href="/css/main.min.8e1883f7dd16d57c3348aedb1f5e7ac9e93af3c97a2c19469cf0f09661db5c00.css" integrity="sha256-jhiD990W1XwzSK7bH156yek688l6LBlGnPDwlmHbXAA="/>
+    
+
+    <meta property="og:title" content="Reference: protocol.emote.v1" />
+<meta property="og:description" content="Message Types EmotePack Fields
+   Name Type     pack_id uint64   pack_owner uint64   pack_name string    Emote Fields
+   Name Type     image_id string   name string    CreateEmotePackRequest Fields
+   Name Type     pack_name string    CreateEmotePackResponse Fields
+   Name Type     pack_id uint64    GetEmotePacksRequest Fields" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://harmonyapp.io/docs/protocol.emote.v1/" />
+
+
+    <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Reference: protocol.emote.v1"/>
+<meta name="twitter:description" content="Message Types EmotePack Fields
+   Name Type     pack_id uint64   pack_owner uint64   pack_name string    Emote Fields
+   Name Type     image_id string   name string    CreateEmotePackRequest Fields
+   Name Type     pack_name string    CreateEmotePackResponse Fields
+   Name Type     pack_id uint64    GetEmotePacksRequest Fields"/>
+
+    <meta name="theme-color" content="#E93D58">
+    <meta property="og:image" content="https://harmonyapp.io/img/harmony-embed.png" />
+
+    <script src="https://unpkg.com/quicklink@2.0.0/dist/quicklink.umd.js"></script>
+    <script defer>
+        quicklink.listen()
+    </script>
+</head>
+<body class="dark:text-white"><header class="w-full bg-gray-200 header flex text-lg">
+  <div class="flex flex-row w-full items-center">
+    <div class="flex-auto px-3 justify-start order-first inline-flex">
+      <a class="font-header" href="/">
+        <span class="font-light">Harmony </span
+        ><span class="font-bold">Chat</span>
+      </a>
+    </div>
+    <div class="flex-auto p-2 justify-end order-last inline-flex gap-1">
+      
+      <a
+        href="/docs/faq"
+        class="
+          ml-2
+          nu-top-app-bar__link
+          h1-minor-minor
+          border-2 border-transparent
+          px-2
+          hover:border-current hover:bg-white hover:bg-opacity-5
+          rounded-sm
+          transition
+          duration-100
+        "
+      >
+        FAQ
+      </a>
+      
+      <a
+        href="/docs"
+        class="
+          ml-2
+          nu-top-app-bar__link
+          h1-minor-minor
+          border-2 border-transparent
+          px-2
+          hover:border-current hover:bg-white hover:bg-opacity-5
+          rounded-sm
+          transition
+          duration-100
+        "
+      >
+        Docs
+      </a>
+      
+      <a
+        href="https://github.com/harmony-development"
+        class="
+          ml-2
+          nu-top-app-bar__link
+          h1-minor-minor
+          border-2 border-transparent
+          px-2
+          hover:border-current hover:bg-white hover:bg-opacity-5
+          rounded-sm
+          transition
+          duration-100
+        "
+      >
+        Github
+      </a>
+      
+    </div>
+  </div>
+</header>
+<main>
+
+<div class="prose-wrapper">
+  <aside class="prose-toc">
+    <h4><strong>Table Of Contents</strong></h4>
+    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#message-types">Message Types</a>
+      <ul>
+        <li><a href="#emotepack">EmotePack</a></li>
+        <li><a href="#emote">Emote</a></li>
+        <li><a href="#createemotepackrequest">CreateEmotePackRequest</a></li>
+        <li><a href="#createemotepackresponse">CreateEmotePackResponse</a></li>
+        <li><a href="#getemotepacksrequest">GetEmotePacksRequest</a></li>
+        <li><a href="#getemotepacksresponse">GetEmotePacksResponse</a></li>
+        <li><a href="#getemotepackemotesrequest">GetEmotePackEmotesRequest</a></li>
+        <li><a href="#getemotepackemotesresponse">GetEmotePackEmotesResponse</a></li>
+        <li><a href="#addemotetopackrequest">AddEmoteToPackRequest</a></li>
+        <li><a href="#addemotetopackresponse">AddEmoteToPackResponse</a></li>
+        <li><a href="#deleteemotefrompackrequest">DeleteEmoteFromPackRequest</a></li>
+        <li><a href="#deleteemotefrompackresponse">DeleteEmoteFromPackResponse</a></li>
+        <li><a href="#deleteemotepackrequest">DeleteEmotePackRequest</a></li>
+        <li><a href="#deleteemotepackresponse">DeleteEmotePackResponse</a></li>
+        <li><a href="#dequipemotepackrequest">DequipEmotePackRequest</a></li>
+        <li><a href="#dequipemotepackresponse">DequipEmotePackResponse</a></li>
+        <li><a href="#equipemotepackrequest">EquipEmotePackRequest</a></li>
+        <li><a href="#equipemotepackresponse">EquipEmotePackResponse</a></li>
+        <li><a href="#emotepackupdated">EmotePackUpdated</a></li>
+        <li><a href="#emotepackdeleted">EmotePackDeleted</a></li>
+        <li><a href="#emotepackadded">EmotePackAdded</a></li>
+        <li><a href="#emotepackemotesupdated">EmotePackEmotesUpdated</a></li>
+        <li><a href="#streamevent">StreamEvent</a></li>
+      </ul>
+    </li>
+    <li><a href="#services">Services</a>
+      <ul>
+        <li><a href="#emoteservice">EmoteService</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+  </aside>
+  <div class="flex justify-center pb-8 w-full">
+    <article class="prose">
+      <h1 class="h1">Reference: protocol.emote.v1</h1>
+      <h2 id="message-types">Message Types</h2>
+<h3 id="emotepack">EmotePack</h3>
+<p>Fields</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>pack_id</td>
+<td><code>uint64</code></td>
+</tr>
+<tr>
+<td>pack_owner</td>
+<td><code>uint64</code></td>
+</tr>
+<tr>
+<td>pack_name</td>
+<td><code>string</code></td>
+</tr>
+</tbody>
+</table>
+<h3 id="emote">Emote</h3>
+<p>Fields</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>image_id</td>
+<td><code>string</code></td>
+</tr>
+<tr>
+<td>name</td>
+<td><code>string</code></td>
+</tr>
+</tbody>
+</table>
+<h3 id="createemotepackrequest">CreateEmotePackRequest</h3>
+<p>Fields</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>pack_name</td>
+<td><code>string</code></td>
+</tr>
+</tbody>
+</table>
+<h3 id="createemotepackresponse">CreateEmotePackResponse</h3>
+<p>Fields</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>pack_id</td>
+<td><code>uint64</code></td>
+</tr>
+</tbody>
+</table>
+<h3 id="getemotepacksrequest">GetEmotePacksRequest</h3>
+<p>Fields</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+</tr>
+</thead>
+</table>
+<h3 id="getemotepacksresponse">GetEmotePacksResponse</h3>
+<p>Fields</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>packs</td>
+<td><a href="#emotepack">protocol.emote.v1.EmotePack</a></td>
+</tr>
+</tbody>
+</table>
+<h3 id="getemotepackemotesrequest">GetEmotePackEmotesRequest</h3>
+<p>Fields</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>pack_id</td>
+<td><code>uint64</code></td>
+</tr>
+</tbody>
+</table>
+<h3 id="getemotepackemotesresponse">GetEmotePackEmotesResponse</h3>
+<p>Fields</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>emotes</td>
+<td><a href="#emote">protocol.emote.v1.Emote</a></td>
+</tr>
+</tbody>
+</table>
+<h3 id="addemotetopackrequest">AddEmoteToPackRequest</h3>
+<p>Fields</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>pack_id</td>
+<td><code>uint64</code></td>
+</tr>
+<tr>
+<td>emote</td>
+<td><a href="#emote">protocol.emote.v1.Emote</a></td>
+</tr>
+</tbody>
+</table>
+<h3 id="addemotetopackresponse">AddEmoteToPackResponse</h3>
+<p>Fields</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+</tr>
+</thead>
+</table>
+<h3 id="deleteemotefrompackrequest">DeleteEmoteFromPackRequest</h3>
+<p>Fields</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>pack_id</td>
+<td><code>uint64</code></td>
+</tr>
+<tr>
+<td>name</td>
+<td><code>string</code></td>
+</tr>
+</tbody>
+</table>
+<h3 id="deleteemotefrompackresponse">DeleteEmoteFromPackResponse</h3>
+<p>Fields</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+</tr>
+</thead>
+</table>
+<h3 id="deleteemotepackrequest">DeleteEmotePackRequest</h3>
+<p>Fields</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>pack_id</td>
+<td><code>uint64</code></td>
+</tr>
+</tbody>
+</table>
+<h3 id="deleteemotepackresponse">DeleteEmotePackResponse</h3>
+<p>Fields</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+</tr>
+</thead>
+</table>
+<h3 id="dequipemotepackrequest">DequipEmotePackRequest</h3>
+<p>Fields</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>pack_id</td>
+<td><code>uint64</code></td>
+</tr>
+</tbody>
+</table>
+<h3 id="dequipemotepackresponse">DequipEmotePackResponse</h3>
+<p>Fields</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+</tr>
+</thead>
+</table>
+<h3 id="equipemotepackrequest">EquipEmotePackRequest</h3>
+<p>Fields</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>pack_id</td>
+<td><code>uint64</code></td>
+</tr>
+</tbody>
+</table>
+<h3 id="equipemotepackresponse">EquipEmotePackResponse</h3>
+<p>Fields</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+</tr>
+</thead>
+</table>
+<h3 id="emotepackupdated">EmotePackUpdated</h3>
+<p>Fields</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>pack_id</td>
+<td><code>uint64</code></td>
+</tr>
+<tr>
+<td>new_pack_name</td>
+<td><code>string</code></td>
+</tr>
+</tbody>
+</table>
+<h3 id="emotepackdeleted">EmotePackDeleted</h3>
+<p>Fields</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>pack_id</td>
+<td><code>uint64</code></td>
+</tr>
+</tbody>
+</table>
+<h3 id="emotepackadded">EmotePackAdded</h3>
+<p>Fields</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>pack</td>
+<td><a href="#emotepack">protocol.emote.v1.EmotePack</a></td>
+</tr>
+</tbody>
+</table>
+<h3 id="emotepackemotesupdated">EmotePackEmotesUpdated</h3>
+<p>Fields</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>pack_id</td>
+<td><code>uint64</code></td>
+</tr>
+<tr>
+<td>added_emotes</td>
+<td><a href="#emote">protocol.emote.v1.Emote</a></td>
+</tr>
+<tr>
+<td>deleted_emotes</td>
+<td><code>string</code></td>
+</tr>
+</tbody>
+</table>
+<h3 id="streamevent">StreamEvent</h3>
+<p>Fields</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>emote_pack_added</td>
+<td><a href="#emotepackadded">protocol.emote.v1.EmotePackAdded</a></td>
+</tr>
+<tr>
+<td>emote_pack_updated</td>
+<td><a href="#emotepackupdated">protocol.emote.v1.EmotePackUpdated</a></td>
+</tr>
+<tr>
+<td>emote_pack_deleted</td>
+<td><a href="#emotepackdeleted">protocol.emote.v1.EmotePackDeleted</a></td>
+</tr>
+<tr>
+<td>emote_pack_emotes_updated</td>
+<td><a href="#emotepackemotesupdated">protocol.emote.v1.EmotePackEmotesUpdated</a></td>
+</tr>
+</tbody>
+</table>
+<h2 id="services">Services</h2>
+<h3 id="emoteservice">EmoteService</h3>
+<h4 id="unary-methods">Unary Methods</h4>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Request</th>
+<th>Response</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>CreateEmotePack</td>
+<td><a href="#createemotepackrequest">protocol.emote.v1.CreateEmotePackRequest</a></td>
+<td><a href="#createemotepackresponse">protocol.emote.v1.CreateEmotePackResponse</a></td>
+</tr>
+<tr>
+<td>GetEmotePacks</td>
+<td><a href="#getemotepacksrequest">protocol.emote.v1.GetEmotePacksRequest</a></td>
+<td><a href="#getemotepacksresponse">protocol.emote.v1.GetEmotePacksResponse</a></td>
+</tr>
+<tr>
+<td>GetEmotePackEmotes</td>
+<td><a href="#getemotepackemotesrequest">protocol.emote.v1.GetEmotePackEmotesRequest</a></td>
+<td><a href="#getemotepackemotesresponse">protocol.emote.v1.GetEmotePackEmotesResponse</a></td>
+</tr>
+<tr>
+<td>AddEmoteToPack</td>
+<td><a href="#addemotetopackrequest">protocol.emote.v1.AddEmoteToPackRequest</a></td>
+<td><a href="#addemotetopackresponse">protocol.emote.v1.AddEmoteToPackResponse</a></td>
+</tr>
+<tr>
+<td>DeleteEmotePack</td>
+<td><a href="#deleteemotepackrequest">protocol.emote.v1.DeleteEmotePackRequest</a></td>
+<td><a href="#deleteemotepackresponse">protocol.emote.v1.DeleteEmotePackResponse</a></td>
+</tr>
+<tr>
+<td>DeleteEmoteFromPack</td>
+<td><a href="#deleteemotefrompackrequest">protocol.emote.v1.DeleteEmoteFromPackRequest</a></td>
+<td><a href="#deleteemotefrompackresponse">protocol.emote.v1.DeleteEmoteFromPackResponse</a></td>
+</tr>
+<tr>
+<td>DequipEmotePack</td>
+<td><a href="#dequipemotepackrequest">protocol.emote.v1.DequipEmotePackRequest</a></td>
+<td><a href="#dequipemotepackresponse">protocol.emote.v1.DequipEmotePackResponse</a></td>
+</tr>
+<tr>
+<td>EquipEmotePack</td>
+<td><a href="#equipemotepackrequest">protocol.emote.v1.EquipEmotePackRequest</a></td>
+<td><a href="#equipemotepackresponse">protocol.emote.v1.EquipEmotePackResponse</a></td>
+</tr>
+</tbody>
+</table>
+<h4 id="streaming-methods">Streaming Methods</h4>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Client Streams</th>
+<th>Server Streams</th>
+</tr>
+</thead>
+</table>
+
+    </article>
+  </div>
+</div>
+
+
+        </main><footer class="py-8 bg-light-900 dark:bg-dark-900 flex justify-center">
+  <div class="max-w-prose">Harmony Development</div>
+</footer>
+</body>
+</html>

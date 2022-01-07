@@ -1,54 +1,110 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  
   <url>
     <loc>https://harmonyapp.io/</loc>
     <lastmod>2020-06-29T21:07:15-04:00</lastmod>
-  </url><url>
+  </url>
+  
+  <url>
     <loc>https://harmonyapp.io/protocol/readme/</loc>
-  </url><url>
+  </url>
+  
+  <url>
     <loc>https://harmonyapp.io/categories/</loc>
-  </url><url>
+  </url>
+  
+  <url>
     <loc>https://harmonyapp.io/docs/</loc>
-  </url><url>
+  </url>
+  
+  <url>
     <loc>https://harmonyapp.io/docs/faq/</loc>
-  </url><url>
+  </url>
+  
+  <url>
     <loc>https://harmonyapp.io/protocol/faq/</loc>
-  </url><url>
+  </url>
+  
+  <url>
     <loc>https://harmonyapp.io/docs/permissions/</loc>
-  </url><url>
-    <loc>https://harmonyapp.io/protocol/chat/v1/permissions/</loc>
-  </url><url>
+  </url>
+  
+  <url>
+    <loc>https://harmonyapp.io/protocol/stable/chat/v1/permissions/</loc>
+  </url>
+  
+  <url>
     <loc>https://harmonyapp.io/docs/guidelines/</loc>
-  </url><url>
+  </url>
+  
+  <url>
     <loc>https://harmonyapp.io/protocol/guidelines/</loc>
-  </url><url>
+  </url>
+  
+  <url>
     <loc>https://harmonyapp.io/protocol/</loc>
-  </url><url>
+  </url>
+  
+  <url>
     <loc>https://harmonyapp.io/docs/google.protobuf/</loc>
-  </url><url>
+  </url>
+  
+  <url>
     <loc>https://harmonyapp.io/docs/protocol.auth.v1/</loc>
-  </url><url>
+  </url>
+  
+  <url>
     <loc>https://harmonyapp.io/docs/protocol.batch.v1/</loc>
-  </url><url>
+  </url>
+  
+  <url>
     <loc>https://harmonyapp.io/docs/protocol.chat.v1/</loc>
-  </url><url>
+  </url>
+  
+  <url>
+    <loc>https://harmonyapp.io/docs/protocol.emote.v1/</loc>
+  </url>
+  
+  <url>
     <loc>https://harmonyapp.io/docs/protocol.harmonytypes.v1/</loc>
-  </url><url>
+  </url>
+  
+  <url>
     <loc>https://harmonyapp.io/docs/protocol.mediaproxy.v1/</loc>
-  </url><url>
+  </url>
+  
+  <url>
+    <loc>https://harmonyapp.io/docs/protocol.profile.v1/</loc>
+  </url>
+  
+  <url>
     <loc>https://harmonyapp.io/docs/protocol.sync.v1/</loc>
-  </url><url>
+  </url>
+  
+  <url>
     <loc>https://harmonyapp.io/docs/protocol.voice.v1/</loc>
-  </url><url>
+  </url>
+  
+  <url>
     <loc>https://harmonyapp.io/docs/rest/</loc>
-  </url><url>
-    <loc>https://harmonyapp.io/protocol/rest/rest/</loc>
-  </url><url>
+  </url>
+  
+  <url>
+    <loc>https://harmonyapp.io/protocol/stable/rest/rest/</loc>
+  </url>
+  
+  <url>
     <loc>https://harmonyapp.io/docs/name-resolution/</loc>
-  </url><url>
-    <loc>https://harmonyapp.io/protocol/name-resolution/name-resolution/</loc>
-  </url><url>
+  </url>
+  
+  <url>
+    <loc>https://harmonyapp.io/protocol/stable/name-resolution/name-resolution/</loc>
+  </url>
+  
+  <url>
     <loc>https://harmonyapp.io/tags/</loc>
   </url>
+  
 </urlset>

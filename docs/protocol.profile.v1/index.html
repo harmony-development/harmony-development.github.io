@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html lang="en-us"><head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no">
+    <title>Reference: protocol.profile.v1 | Harmony</title>
+    <meta name="description" content="Message Types OverrideTag Fields
+   Name Type     before string   after string    ProfileOverride Fields
+   Name Type     username string   avatar string   tags protocol.profile.v1.OverrideTag   user_defined string   system_plurality protocol.harmonytypes.v1.Empty    AppDataOverrides Fields
+   Name Type     overrides protocol.profile.v1.ProfileOverride    Profile Fields ">
+    <link rel="canonical" href="https://harmonyapp.io/docs/protocol.profile.v1/" />
+
+    
+
+    
+      
+      <link rel="stylesheet" href="/css/main.min.8e1883f7dd16d57c3348aedb1f5e7ac9e93af3c97a2c19469cf0f09661db5c00.css" integrity="sha256-jhiD990W1XwzSK7bH156yek688l6LBlGnPDwlmHbXAA="/>
+    
+
+    <meta property="og:title" content="Reference: protocol.profile.v1" />
+<meta property="og:description" content="Message Types OverrideTag Fields
+   Name Type     before string   after string    ProfileOverride Fields
+   Name Type     username string   avatar string   tags protocol.profile.v1.OverrideTag   user_defined string   system_plurality protocol.harmonytypes.v1.Empty    AppDataOverrides Fields
+   Name Type     overrides protocol.profile.v1.ProfileOverride    Profile Fields" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://harmonyapp.io/docs/protocol.profile.v1/" />
+
+
+    <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Reference: protocol.profile.v1"/>
+<meta name="twitter:description" content="Message Types OverrideTag Fields
+   Name Type     before string   after string    ProfileOverride Fields
+   Name Type     username string   avatar string   tags protocol.profile.v1.OverrideTag   user_defined string   system_plurality protocol.harmonytypes.v1.Empty    AppDataOverrides Fields
+   Name Type     overrides protocol.profile.v1.ProfileOverride    Profile Fields"/>
+
+    <meta name="theme-color" content="#E93D58">
+    <meta property="og:image" content="https://harmonyapp.io/img/harmony-embed.png" />
+
+    <script src="https://unpkg.com/quicklink@2.0.0/dist/quicklink.umd.js"></script>
+    <script defer>
+        quicklink.listen()
+    </script>
+</head>
+<body class="dark:text-white"><header class="w-full bg-gray-200 header flex text-lg">
+  <div class="flex flex-row w-full items-center">
+    <div class="flex-auto px-3 justify-start order-first inline-flex">
+      <a class="font-header" href="/">
+        <span class="font-light">Harmony </span
+        ><span class="font-bold">Chat</span>
+      </a>
+    </div>
+    <div class="flex-auto p-2 justify-end order-last inline-flex gap-1">
+      
+      <a
+        href="/docs/faq"
+        class="
+          ml-2
+          nu-top-app-bar__link
+          h1-minor-minor
+          border-2 border-transparent
+          px-2
+          hover:border-current hover:bg-white hover:bg-opacity-5
+          rounded-sm
+          transition
+          duration-100
+        "
+      >
+        FAQ
+      </a>
+      
+      <a
+        href="/docs"
+        class="
+          ml-2
+          nu-top-app-bar__link
+          h1-minor-minor
+          border-2 border-transparent
+          px-2
+          hover:border-current hover:bg-white hover:bg-opacity-5
+          rounded-sm
+          transition
+          duration-100
+        "
+      >
+        Docs
+      </a>
+      
+      <a
+        href="https://github.com/harmony-development"
+        class="
+          ml-2
+          nu-top-app-bar__link
+          h1-minor-minor
+          border-2 border-transparent
+          px-2
+          hover:border-current hover:bg-white hover:bg-opacity-5
+          rounded-sm
+          transition
+          duration-100
+        "
+      >
+        Github
+      </a>
+      
+    </div>
+  </div>
+</header>
+<main>
+
+<div class="prose-wrapper">
+  <aside class="prose-toc">
+    <h4><strong>Table Of Contents</strong></h4>
+    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#message-types">Message Types</a>
+      <ul>
+        <li><a href="#overridetag">OverrideTag</a></li>
+        <li><a href="#profileoverride">ProfileOverride</a></li>
+        <li><a href="#appdataoverrides">AppDataOverrides</a></li>
+        <li><a href="#profile">Profile</a></li>
+        <li><a href="#getprofilerequest">GetProfileRequest</a></li>
+        <li><a href="#getprofileresponse">GetProfileResponse</a></li>
+        <li><a href="#updateprofilerequest">UpdateProfileRequest</a></li>
+        <li><a href="#updateprofileresponse">UpdateProfileResponse</a></li>
+        <li><a href="#getappdatarequest">GetAppDataRequest</a></li>
+        <li><a href="#getappdataresponse">GetAppDataResponse</a></li>
+        <li><a href="#setappdatarequest">SetAppDataRequest</a></li>
+        <li><a href="#setappdataresponse">SetAppDataResponse</a></li>
+        <li><a href="#profileupdated">ProfileUpdated</a></li>
+        <li><a href="#streamevent">StreamEvent</a></li>
+      </ul>
+    </li>
+    <li><a href="#services">Services</a>
+      <ul>
+        <li><a href="#profileservice">ProfileService</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+  </aside>
+  <div class="flex justify-center pb-8 w-full">
+    <article class="prose">
+      <h1 class="h1">Reference: protocol.profile.v1</h1>
+      <h2 id="message-types">Message Types</h2>
+<h3 id="overridetag">OverrideTag</h3>
+<p>Fields</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>before</td>
+<td><code>string</code></td>
+</tr>
+<tr>
+<td>after</td>
+<td><code>string</code></td>
+</tr>
+</tbody>
+</table>
+<h3 id="profileoverride">ProfileOverride</h3>
+<p>Fields</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>username</td>
+<td><code>string</code></td>
+</tr>
+<tr>
+<td>avatar</td>
+<td><code>string</code></td>
+</tr>
+<tr>
+<td>tags</td>
+<td><a href="#overridetag">protocol.profile.v1.OverrideTag</a></td>
+</tr>
+<tr>
+<td>user_defined</td>
+<td><code>string</code></td>
+</tr>
+<tr>
+<td>system_plurality</td>
+<td><a href="https://harmonyapp.io/docs/protocol.harmonytypes.v1/#empty">protocol.harmonytypes.v1.Empty</a></td>
+</tr>
+</tbody>
+</table>
+<h3 id="appdataoverrides">AppDataOverrides</h3>
+<p>Fields</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>overrides</td>
+<td><a href="#profileoverride">protocol.profile.v1.ProfileOverride</a></td>
+</tr>
+</tbody>
+</table>
+<h3 id="profile">Profile</h3>
+<p>Fields</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>user_name</td>
+<td><code>string</code></td>
+</tr>
+<tr>
+<td>user_avatar</td>
+<td><code>string</code></td>
+</tr>
+<tr>
+<td>UNHANDLED</td>
+<td>TYPE</td>
+</tr>
+<tr>
+<td>is_bot</td>
+<td><code>bool</code></td>
+</tr>
+</tbody>
+</table>
+<h3 id="getprofilerequest">GetProfileRequest</h3>
+<p>Fields</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>user_id</td>
+<td><code>uint64</code></td>
+</tr>
+</tbody>
+</table>
+<h3 id="getprofileresponse">GetProfileResponse</h3>
+<p>Fields</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>profile</td>
+<td><a href="#profile">protocol.profile.v1.Profile</a></td>
+</tr>
+</tbody>
+</table>
+<h3 id="updateprofilerequest">UpdateProfileRequest</h3>
+<p>Fields</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>new_user_name</td>
+<td><code>string</code></td>
+</tr>
+<tr>
+<td>new_user_avatar</td>
+<td><code>string</code></td>
+</tr>
+<tr>
+<td>UNHANDLED</td>
+<td>TYPE</td>
+</tr>
+<tr>
+<td>new_is_bot</td>
+<td><code>bool</code></td>
+</tr>
+</tbody>
+</table>
+<h3 id="updateprofileresponse">UpdateProfileResponse</h3>
+<p>Fields</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+</tr>
+</thead>
+</table>
+<h3 id="getappdatarequest">GetAppDataRequest</h3>
+<p>Fields</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>app_id</td>
+<td><code>string</code></td>
+</tr>
+</tbody>
+</table>
+<h3 id="getappdataresponse">GetAppDataResponse</h3>
+<p>Fields</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>app_data</td>
+<td><code>bytes</code></td>
+</tr>
+</tbody>
+</table>
+<h3 id="setappdatarequest">SetAppDataRequest</h3>
+<p>Fields</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>app_id</td>
+<td><code>string</code></td>
+</tr>
+<tr>
+<td>app_data</td>
+<td><code>bytes</code></td>
+</tr>
+</tbody>
+</table>
+<h3 id="setappdataresponse">SetAppDataResponse</h3>
+<p>Fields</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+</tr>
+</thead>
+</table>
+<h3 id="profileupdated">ProfileUpdated</h3>
+<p>Fields</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>user_id</td>
+<td><code>uint64</code></td>
+</tr>
+<tr>
+<td>new_username</td>
+<td><code>string</code></td>
+</tr>
+<tr>
+<td>new_avatar</td>
+<td><code>string</code></td>
+</tr>
+<tr>
+<td>UNHANDLED</td>
+<td>TYPE</td>
+</tr>
+<tr>
+<td>new_is_bot</td>
+<td><code>bool</code></td>
+</tr>
+</tbody>
+</table>
+<h3 id="streamevent">StreamEvent</h3>
+<p>Fields</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>profile_updated</td>
+<td><a href="#profileupdated">protocol.profile.v1.ProfileUpdated</a></td>
+</tr>
+</tbody>
+</table>
+<h2 id="services">Services</h2>
+<h3 id="profileservice">ProfileService</h3>
+<h4 id="unary-methods">Unary Methods</h4>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Request</th>
+<th>Response</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>GetProfile</td>
+<td><a href="#getprofilerequest">protocol.profile.v1.GetProfileRequest</a></td>
+<td><a href="#getprofileresponse">protocol.profile.v1.GetProfileResponse</a></td>
+</tr>
+<tr>
+<td>UpdateProfile</td>
+<td><a href="#updateprofilerequest">protocol.profile.v1.UpdateProfileRequest</a></td>
+<td><a href="#updateprofileresponse">protocol.profile.v1.UpdateProfileResponse</a></td>
+</tr>
+<tr>
+<td>GetAppData</td>
+<td><a href="#getappdatarequest">protocol.profile.v1.GetAppDataRequest</a></td>
+<td><a href="#getappdataresponse">protocol.profile.v1.GetAppDataResponse</a></td>
+</tr>
+<tr>
+<td>SetAppData</td>
+<td><a href="#setappdatarequest">protocol.profile.v1.SetAppDataRequest</a></td>
+<td><a href="#setappdataresponse">protocol.profile.v1.SetAppDataResponse</a></td>
+</tr>
+</tbody>
+</table>
+<h4 id="streaming-methods">Streaming Methods</h4>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Client Streams</th>
+<th>Server Streams</th>
+</tr>
+</thead>
+</table>
+
+    </article>
+  </div>
+</div>
+
+
+        </main><footer class="py-8 bg-light-900 dark:bg-dark-900 flex justify-center">
+  <div class="max-w-prose">Harmony Development</div>
+</footer>
+</body>
+</html>

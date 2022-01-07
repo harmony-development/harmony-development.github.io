@@ -7,14 +7,14 @@
 Read here for frequently asked questions.
 To read about protocol conventions, please read GUIDELINES.
 If you are looking for:
- a client to communicate with, check out Tempest, Challah or Crust. a server to host, check out Scherzo. an SDK to develop bots / clients / servers with, check out Rust SDK, Web SDK and C&#43;&#43; SDK.   ">
+ a client to communicate with, check out Tempest, Challah or Crust. a server to host, check out Scherzo. an SDK to develop bots / clients / servers with, check out Rust SDK, Web SDK and C&#43;&#43; SDK.  Stable v. ">
     <link rel="canonical" href="https://harmonyapp.io/protocol/readme/" />
 
     
 
     
       
-      <link rel="stylesheet" href="/css/main.min.311dd27bcdd3bd667afc406dcbd8a42f32ab62b388c139148d77302bc1dd814b.css" integrity="sha256-MR3Se83TvWZ6/EBty9ikLzKrYrOIwTkUjXcwK8HdgUs="/>
+      <link rel="stylesheet" href="/css/main.min.8e1883f7dd16d57c3348aedb1f5e7ac9e93af3c97a2c19469cf0f09661db5c00.css" integrity="sha256-jhiD990W1XwzSK7bH156yek688l6LBlGnPDwlmHbXAA="/>
     
 
     <meta property="og:title" content="" />
@@ -22,11 +22,9 @@ If you are looking for:
 Read here for frequently asked questions.
 To read about protocol conventions, please read GUIDELINES.
 If you are looking for:
- a client to communicate with, check out Tempest, Challah or Crust. a server to host, check out Scherzo. an SDK to develop bots / clients / servers with, check out Rust SDK, Web SDK and C&#43;&#43; SDK.  " />
+ a client to communicate with, check out Tempest, Challah or Crust. a server to host, check out Scherzo. an SDK to develop bots / clients / servers with, check out Rust SDK, Web SDK and C&#43;&#43; SDK.  Stable v." />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://harmonyapp.io/protocol/readme/" /><meta property="article:section" content="protocol" />
-
-
+<meta property="og:url" content="https://harmonyapp.io/protocol/readme/" />
 
 
     <meta name="twitter:card" content="summary"/>
@@ -35,7 +33,7 @@ If you are looking for:
 Read here for frequently asked questions.
 To read about protocol conventions, please read GUIDELINES.
 If you are looking for:
- a client to communicate with, check out Tempest, Challah or Crust. a server to host, check out Scherzo. an SDK to develop bots / clients / servers with, check out Rust SDK, Web SDK and C&#43;&#43; SDK.  "/>
+ a client to communicate with, check out Tempest, Challah or Crust. a server to host, check out Scherzo. an SDK to develop bots / clients / servers with, check out Rust SDK, Web SDK and C&#43;&#43; SDK.  Stable v."/>
 
     <meta name="theme-color" content="#E93D58">
     <meta property="og:image" content="https://harmonyapp.io/img/harmony-embed.png" />
@@ -116,7 +114,7 @@ If you are looking for:
     <h4><strong>Table Of Contents</strong></h4>
     <nav id="TableOfContents"></nav>
   </aside>
-  <div class="flex justify-center w-full">
+  <div class="flex justify-center pb-8 w-full">
     <article class="prose">
       <h1 class="h1"></h1>
       <h1 id="harmony-protocol">Harmony Protocol</h1>
@@ -129,13 +127,25 @@ If you are looking for:
 <li>a server to host, check out <a href="https://github.com/harmony-development/scherzo">Scherzo</a>.</li>
 <li>an SDK to develop bots / clients / servers with, check out <a href="https://github.com/harmony-development/harmony_rust_sdk">Rust SDK</a>, <a href="https://github.com/harmony-development/harmony-web-sdk">Web SDK</a> and <a href="https://github.com/harmony-development/Chometz">C++ SDK</a>.</li>
 </ul>
+<h1 id="stable-v-staging">Stable v. Staging</h1>
+<p>Harmony has two types of protocol components: stable and staging.</p>
+<p>Stable protocols are long-lived protocols that are not expected to be
+replaced in the near future, and that have wide server and client support.</p>
+<p>Staging protocols are protocols that may be replaced in the near future, and they
+may not have wide server or client support.</p>
+<p>Both stable and staging protocols follow semantic versioning: breaking changes
+are only permitted with a corresponding increase in the major version, while
+non-breaking changes result in an increase in the minor version.</p>
+<p>Heavily in-dev protocols may be found on work branches in the Harmony repository,
+and are subject to no compatibility guarantees. They must have at least 1 server and
+2 client implementations before becoming staging protocols.</p>
 
     </article>
   </div>
 </div>
 
 
-        </main><footer class="py-8 bg-dark-900 flex justify-center">
+        </main><footer class="py-8 bg-light-900 dark:bg-dark-900 flex justify-center">
   <div class="max-w-prose">Harmony Development</div>
 </footer>
 </body>

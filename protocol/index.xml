@@ -16,7 +16,7 @@
 Read here for frequently asked questions.
 To read about protocol conventions, please read GUIDELINES.
 If you are looking for:
- a client to communicate with, check out Tempest, Challah or Crust. a server to host, check out Scherzo. an SDK to develop bots / clients / servers with, check out Rust SDK, Web SDK and C++ SDK.  </description>
+ a client to communicate with, check out Tempest, Challah or Crust. a server to host, check out Scherzo. an SDK to develop bots / clients / servers with, check out Rust SDK, Web SDK and C++ SDK.  Stable v.</description>
     </item>
     
     <item>
@@ -31,10 +31,10 @@ If you are looking for:
     
     <item>
       <title>Permissions</title>
-      <link>https://harmonyapp.io/protocol/chat/v1/permissions/</link>
+      <link>https://harmonyapp.io/protocol/stable/chat/v1/permissions/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://harmonyapp.io/protocol/chat/v1/permissions/</guid>
+      <guid>https://harmonyapp.io/protocol/stable/chat/v1/permissions/</guid>
       <description>The permissions system of Harmony resembles that of the permissions system common to open-source Minecraft server software, featuring rules and querying a node string against those rules.
 Permission In a community, there will be features, management functionality, bot commands, and other things which exist. Most of these actions have a permission associated with them, allowing you to control which members have access to each feature.
 A permission is just a string, such as roles.</description>
@@ -56,22 +56,22 @@ A permission is just a string, such as roles.</description>
     
     <item>
       <title>RESTful Endpoints</title>
-      <link>https://harmonyapp.io/protocol/rest/rest/</link>
+      <link>https://harmonyapp.io/protocol/stable/rest/rest/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://harmonyapp.io/protocol/rest/rest/</guid>
+      <guid>https://harmonyapp.io/protocol/stable/rest/rest/</guid>
       <description>Authentication If an endpoint expects authentication, the user should set the Authorization header to a valid token from the hRPC API.
 POST /_harmony/media/upload Expects authentication: yes
-The body should be POST-ed as a multipart form (multipart/form-data), with a single part named file which contains the body of the file being uploaded.
-URL Parameters    Name Description     filename The name of the file being uploaded.   contentType The MIME type of the file.</description>
+The body should be POST-ed as a multipart form (multipart/form-data), with a single part named file which contains the body of the file being uploaded, the name of the file and the MIME type of the file.
+Responses 200 OK The body will contain a JSON object in the following format:</description>
     </item>
     
     <item>
       <title>Server Name Resolution</title>
-      <link>https://harmonyapp.io/protocol/name-resolution/name-resolution/</link>
+      <link>https://harmonyapp.io/protocol/stable/name-resolution/name-resolution/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://harmonyapp.io/protocol/name-resolution/name-resolution/</guid>
+      <guid>https://harmonyapp.io/protocol/stable/name-resolution/name-resolution/</guid>
       <description>Every Harmony homeserver is identified by a &amp;ldquo;server name.&amp;rdquo; A server name uniquely identifies a server, regardless of whether the resolved IP address changes or not. Two server names pointing to the same IP address would be considered two different homeservers.
 A server name is resolved to an IP address and port using the following process:
 When IP Address (xxx.xxx.xxx.xxx + optional :port) When the server name is an IP address, this is the resolved IP of the server that requests should be sent to.</description>

@@ -3,39 +3,34 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no">
     <title>Reference: protocol.voice.v1 | Harmony</title>
-    <meta name="description" content="Message Types Signal Fields
-   Name Type     ice_candidate string   renegotiation_needed protocol.harmonytypes.v1.Empty    ConnectRequest Fields
-   Name Type     guild_id uint64   channel_id uint64   offer string    ConnectResponse Fields
-   Name Type     answer string    StreamStateRequest Fields
-   Name Type     guild_id uint64   channel_id uint64    StreamStateResponse Fields ">
+    <meta name="description" content="Message Types UserConsumerOptions Fields
+   Name Type     user_id uint64   producer_id string   consumer_id string   rtp_parameters string    TransportOptions Fields
+   Name Type     id string   dtls_parameters string   ice_candidates string   ice_parameters string    StreamMessageRequest Fields
+   Name Type     initialize protocol. ">
     <link rel="canonical" href="https://harmonyapp.io/docs/protocol.voice.v1/" />
 
     
 
     
       
-      <link rel="stylesheet" href="/css/main.min.311dd27bcdd3bd667afc406dcbd8a42f32ab62b388c139148d77302bc1dd814b.css" integrity="sha256-MR3Se83TvWZ6/EBty9ikLzKrYrOIwTkUjXcwK8HdgUs="/>
+      <link rel="stylesheet" href="/css/main.min.8e1883f7dd16d57c3348aedb1f5e7ac9e93af3c97a2c19469cf0f09661db5c00.css" integrity="sha256-jhiD990W1XwzSK7bH156yek688l6LBlGnPDwlmHbXAA="/>
     
 
     <meta property="og:title" content="Reference: protocol.voice.v1" />
-<meta property="og:description" content="Message Types Signal Fields
-   Name Type     ice_candidate string   renegotiation_needed protocol.harmonytypes.v1.Empty    ConnectRequest Fields
-   Name Type     guild_id uint64   channel_id uint64   offer string    ConnectResponse Fields
-   Name Type     answer string    StreamStateRequest Fields
-   Name Type     guild_id uint64   channel_id uint64    StreamStateResponse Fields" />
+<meta property="og:description" content="Message Types UserConsumerOptions Fields
+   Name Type     user_id uint64   producer_id string   consumer_id string   rtp_parameters string    TransportOptions Fields
+   Name Type     id string   dtls_parameters string   ice_candidates string   ice_parameters string    StreamMessageRequest Fields
+   Name Type     initialize protocol." />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://harmonyapp.io/docs/protocol.voice.v1/" /><meta property="article:section" content="docs" />
-
-
+<meta property="og:url" content="https://harmonyapp.io/docs/protocol.voice.v1/" />
 
 
     <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Reference: protocol.voice.v1"/>
-<meta name="twitter:description" content="Message Types Signal Fields
-   Name Type     ice_candidate string   renegotiation_needed protocol.harmonytypes.v1.Empty    ConnectRequest Fields
-   Name Type     guild_id uint64   channel_id uint64   offer string    ConnectResponse Fields
-   Name Type     answer string    StreamStateRequest Fields
-   Name Type     guild_id uint64   channel_id uint64    StreamStateResponse Fields"/>
+<meta name="twitter:description" content="Message Types UserConsumerOptions Fields
+   Name Type     user_id uint64   producer_id string   consumer_id string   rtp_parameters string    TransportOptions Fields
+   Name Type     id string   dtls_parameters string   ice_candidates string   ice_parameters string    StreamMessageRequest Fields
+   Name Type     initialize protocol."/>
 
     <meta name="theme-color" content="#E93D58">
     <meta property="og:image" content="https://harmonyapp.io/img/harmony-embed.png" />
@@ -118,11 +113,19 @@
   <ul>
     <li><a href="#message-types">Message Types</a>
       <ul>
-        <li><a href="#signal">Signal</a></li>
-        <li><a href="#connectrequest">ConnectRequest</a></li>
-        <li><a href="#connectresponse">ConnectResponse</a></li>
-        <li><a href="#streamstaterequest">StreamStateRequest</a></li>
-        <li><a href="#streamstateresponse">StreamStateResponse</a></li>
+        <li><a href="#userconsumeroptions">UserConsumerOptions</a></li>
+        <li><a href="#transportoptions">TransportOptions</a></li>
+        <li><a href="#streammessagerequest">StreamMessageRequest</a></li>
+        <li><a href="#streammessageresponse">StreamMessageResponse</a></li>
+        <li><a href="#streammessagerequestinitialize">StreamMessageRequest.Initialize</a></li>
+        <li><a href="#streammessagerequestprepareforjoinchannel">StreamMessageRequest.PrepareForJoinChannel</a></li>
+        <li><a href="#streammessagerequestjoinchannel">StreamMessageRequest.JoinChannel</a></li>
+        <li><a href="#streammessagerequestresumeconsumer">StreamMessageRequest.ResumeConsumer</a></li>
+        <li><a href="#streammessageresponseinitialized">StreamMessageResponse.Initialized</a></li>
+        <li><a href="#streammessageresponsepreparedforjoinchannel">StreamMessageResponse.PreparedForJoinChannel</a></li>
+        <li><a href="#streammessageresponsejoinedchannel">StreamMessageResponse.JoinedChannel</a></li>
+        <li><a href="#streammessageresponseuserjoined">StreamMessageResponse.UserJoined</a></li>
+        <li><a href="#streammessageresponseuserleft">StreamMessageResponse.UserLeft</a></li>
       </ul>
     </li>
     <li><a href="#services">Services</a>
@@ -133,11 +136,11 @@
   </ul>
 </nav>
   </aside>
-  <div class="flex justify-center w-full">
+  <div class="flex justify-center pb-8 w-full">
     <article class="prose">
       <h1 class="h1">Reference: protocol.voice.v1</h1>
       <h2 id="message-types">Message Types</h2>
-<h3 id="signal">Signal</h3>
+<h3 id="userconsumeroptions">UserConsumerOptions</h3>
 <p>Fields</p>
 <table>
 <thead>
@@ -148,16 +151,112 @@
 </thead>
 <tbody>
 <tr>
-<td>ice_candidate</td>
+<td>user_id</td>
+<td><code>uint64</code></td>
+</tr>
+<tr>
+<td>producer_id</td>
 <td><code>string</code></td>
 </tr>
 <tr>
-<td>renegotiation_needed</td>
-<td><a href="https://harmonyapp.io/docs/protocol.harmonytypes.v1/#empty">protocol.harmonytypes.v1.Empty</a></td>
+<td>consumer_id</td>
+<td><code>string</code></td>
+</tr>
+<tr>
+<td>rtp_parameters</td>
+<td><code>string</code></td>
 </tr>
 </tbody>
 </table>
-<h3 id="connectrequest">ConnectRequest</h3>
+<h3 id="transportoptions">TransportOptions</h3>
+<p>Fields</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>id</td>
+<td><code>string</code></td>
+</tr>
+<tr>
+<td>dtls_parameters</td>
+<td><code>string</code></td>
+</tr>
+<tr>
+<td>ice_candidates</td>
+<td><code>string</code></td>
+</tr>
+<tr>
+<td>ice_parameters</td>
+<td><code>string</code></td>
+</tr>
+</tbody>
+</table>
+<h3 id="streammessagerequest">StreamMessageRequest</h3>
+<p>Fields</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>initialize</td>
+<td><a href="#streammessagerequest-initialize">protocol.voice.v1.StreamMessageRequest.Initialize</a></td>
+</tr>
+<tr>
+<td>prepare_for_join_channel</td>
+<td><a href="#streammessagerequest-prepareforjoinchannel">protocol.voice.v1.StreamMessageRequest.PrepareForJoinChannel</a></td>
+</tr>
+<tr>
+<td>join_channel</td>
+<td><a href="#streammessagerequest-joinchannel">protocol.voice.v1.StreamMessageRequest.JoinChannel</a></td>
+</tr>
+<tr>
+<td>resume_consumer</td>
+<td><a href="#streammessagerequest-resumeconsumer">protocol.voice.v1.StreamMessageRequest.ResumeConsumer</a></td>
+</tr>
+</tbody>
+</table>
+<h3 id="streammessageresponse">StreamMessageResponse</h3>
+<p>Fields</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>initialized</td>
+<td><a href="#streammessageresponse-initialized">protocol.voice.v1.StreamMessageResponse.Initialized</a></td>
+</tr>
+<tr>
+<td>prepared_for_join_channel</td>
+<td><a href="#streammessageresponse-preparedforjoinchannel">protocol.voice.v1.StreamMessageResponse.PreparedForJoinChannel</a></td>
+</tr>
+<tr>
+<td>joined_channel</td>
+<td><a href="#streammessageresponse-joinedchannel">protocol.voice.v1.StreamMessageResponse.JoinedChannel</a></td>
+</tr>
+<tr>
+<td>user_joined</td>
+<td><a href="#streammessageresponse-userjoined">protocol.voice.v1.StreamMessageResponse.UserJoined</a></td>
+</tr>
+<tr>
+<td>user_left</td>
+<td><a href="#streammessageresponse-userleft">protocol.voice.v1.StreamMessageResponse.UserLeft</a></td>
+</tr>
+</tbody>
+</table>
+<h3 id="streammessagerequestinitialize">StreamMessageRequest.Initialize</h3>
 <p>Fields</p>
 <table>
 <thead>
@@ -175,13 +274,25 @@
 <td>channel_id</td>
 <td><code>uint64</code></td>
 </tr>
+</tbody>
+</table>
+<h3 id="streammessagerequestprepareforjoinchannel">StreamMessageRequest.PrepareForJoinChannel</h3>
+<p>Fields</p>
+<table>
+<thead>
 <tr>
-<td>offer</td>
+<th>Name</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>rtp_capabilities</td>
 <td><code>string</code></td>
 </tr>
 </tbody>
 </table>
-<h3 id="connectresponse">ConnectResponse</h3>
+<h3 id="streammessagerequestjoinchannel">StreamMessageRequest.JoinChannel</h3>
 <p>Fields</p>
 <table>
 <thead>
@@ -192,12 +303,20 @@
 </thead>
 <tbody>
 <tr>
-<td>answer</td>
+<td>rtp_paramaters</td>
+<td><code>string</code></td>
+</tr>
+<tr>
+<td>producer_dtls_paramaters</td>
+<td><code>string</code></td>
+</tr>
+<tr>
+<td>consumer_dtls_paramaters</td>
 <td><code>string</code></td>
 </tr>
 </tbody>
 </table>
-<h3 id="streamstaterequest">StreamStateRequest</h3>
+<h3 id="streammessagerequestresumeconsumer">StreamMessageRequest.ResumeConsumer</h3>
 <p>Fields</p>
 <table>
 <thead>
@@ -208,16 +327,12 @@
 </thead>
 <tbody>
 <tr>
-<td>guild_id</td>
-<td><code>uint64</code></td>
-</tr>
-<tr>
-<td>channel_id</td>
-<td><code>uint64</code></td>
+<td>consumer_id</td>
+<td><code>string</code></td>
 </tr>
 </tbody>
 </table>
-<h3 id="streamstateresponse">StreamStateResponse</h3>
+<h3 id="streammessageresponseinitialized">StreamMessageResponse.Initialized</h3>
 <p>Fields</p>
 <table>
 <thead>
@@ -228,8 +343,76 @@
 </thead>
 <tbody>
 <tr>
-<td>signal</td>
-<td><a href="#signal">protocol.voice.v1.Signal</a></td>
+<td>rtp_capabilities</td>
+<td><code>string</code></td>
+</tr>
+</tbody>
+</table>
+<h3 id="streammessageresponsepreparedforjoinchannel">StreamMessageResponse.PreparedForJoinChannel</h3>
+<p>Fields</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>consumer_transport_options</td>
+<td><a href="#transportoptions">protocol.voice.v1.TransportOptions</a></td>
+</tr>
+<tr>
+<td>producer_transport_options</td>
+<td><a href="#transportoptions">protocol.voice.v1.TransportOptions</a></td>
+</tr>
+</tbody>
+</table>
+<h3 id="streammessageresponsejoinedchannel">StreamMessageResponse.JoinedChannel</h3>
+<p>Fields</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>other_users</td>
+<td><a href="#userconsumeroptions">protocol.voice.v1.UserConsumerOptions</a></td>
+</tr>
+</tbody>
+</table>
+<h3 id="streammessageresponseuserjoined">StreamMessageResponse.UserJoined</h3>
+<p>Fields</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>data</td>
+<td><a href="#userconsumeroptions">protocol.voice.v1.UserConsumerOptions</a></td>
+</tr>
+</tbody>
+</table>
+<h3 id="streammessageresponseuserleft">StreamMessageResponse.UserLeft</h3>
+<p>Fields</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>user_id</td>
+<td><code>uint64</code></td>
 </tr>
 </tbody>
 </table>
@@ -244,13 +427,6 @@
 <th>Response</th>
 </tr>
 </thead>
-<tbody>
-<tr>
-<td>Connect</td>
-<td><a href="#connectrequest">protocol.voice.v1.ConnectRequest</a></td>
-<td><a href="#connectresponse">protocol.voice.v1.ConnectResponse</a></td>
-</tr>
-</tbody>
 </table>
 <h4 id="streaming-methods">Streaming Methods</h4>
 <table>
@@ -261,6 +437,13 @@
 <th>Server Streams</th>
 </tr>
 </thead>
+<tbody>
+<tr>
+<td>StreamMessage</td>
+<td><a href="#streammessagerequest">protocol.voice.v1.StreamMessageRequest</a></td>
+<td><a href="#streammessageresponse">protocol.voice.v1.StreamMessageResponse</a></td>
+</tr>
+</tbody>
 </table>
 
     </article>
@@ -268,7 +451,7 @@
 </div>
 
 
-        </main><footer class="py-8 bg-dark-900 flex justify-center">
+        </main><footer class="py-8 bg-light-900 dark:bg-dark-900 flex justify-center">
   <div class="max-w-prose">Harmony Development</div>
 </footer>
 </body>

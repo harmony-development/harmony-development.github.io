@@ -4,38 +4,33 @@
     <meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no">
     <title>Reference: protocol.harmonytypes.v1 | Harmony</title>
     <meta name="description" content="Message Types HarmonyMethodMetadata Fields
-   Name Type     requires_authentication bool   requires_local bool   requires_permission_node string    Anything Fields
+   Name Type     requires_authentication bool   requires_local bool   requires_permission_node string   requires_owner bool    Anything Fields
    Name Type     kind string   body bytes    Metadata Fields
-   Name Type     kind string   extension protocol.harmonytypes.v1.Metadata.ExtensionEntry    Error Fields
-   Name Type     identifier string   human_message string   more_details bytes    Token Fields ">
+   Name Type     kind string   extension protocol.harmonytypes.v1.Metadata.ExtensionEntry    Error Fields ">
     <link rel="canonical" href="https://harmonyapp.io/docs/protocol.harmonytypes.v1/" />
 
     
 
     
       
-      <link rel="stylesheet" href="/css/main.min.311dd27bcdd3bd667afc406dcbd8a42f32ab62b388c139148d77302bc1dd814b.css" integrity="sha256-MR3Se83TvWZ6/EBty9ikLzKrYrOIwTkUjXcwK8HdgUs="/>
+      <link rel="stylesheet" href="/css/main.min.8e1883f7dd16d57c3348aedb1f5e7ac9e93af3c97a2c19469cf0f09661db5c00.css" integrity="sha256-jhiD990W1XwzSK7bH156yek688l6LBlGnPDwlmHbXAA="/>
     
 
     <meta property="og:title" content="Reference: protocol.harmonytypes.v1" />
 <meta property="og:description" content="Message Types HarmonyMethodMetadata Fields
-   Name Type     requires_authentication bool   requires_local bool   requires_permission_node string    Anything Fields
+   Name Type     requires_authentication bool   requires_local bool   requires_permission_node string   requires_owner bool    Anything Fields
    Name Type     kind string   body bytes    Metadata Fields
-   Name Type     kind string   extension protocol.harmonytypes.v1.Metadata.ExtensionEntry    Error Fields
-   Name Type     identifier string   human_message string   more_details bytes    Token Fields" />
+   Name Type     kind string   extension protocol.harmonytypes.v1.Metadata.ExtensionEntry    Error Fields" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://harmonyapp.io/docs/protocol.harmonytypes.v1/" /><meta property="article:section" content="docs" />
-
-
+<meta property="og:url" content="https://harmonyapp.io/docs/protocol.harmonytypes.v1/" />
 
 
     <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Reference: protocol.harmonytypes.v1"/>
 <meta name="twitter:description" content="Message Types HarmonyMethodMetadata Fields
-   Name Type     requires_authentication bool   requires_local bool   requires_permission_node string    Anything Fields
+   Name Type     requires_authentication bool   requires_local bool   requires_permission_node string   requires_owner bool    Anything Fields
    Name Type     kind string   body bytes    Metadata Fields
-   Name Type     kind string   extension protocol.harmonytypes.v1.Metadata.ExtensionEntry    Error Fields
-   Name Type     identifier string   human_message string   more_details bytes    Token Fields"/>
+   Name Type     kind string   extension protocol.harmonytypes.v1.Metadata.ExtensionEntry    Error Fields"/>
 
     <meta name="theme-color" content="#E93D58">
     <meta property="og:image" content="https://harmonyapp.io/img/harmony-embed.png" />
@@ -132,7 +127,7 @@
   </ul>
 </nav>
   </aside>
-  <div class="flex justify-center w-full">
+  <div class="flex justify-center pb-8 w-full">
     <article class="prose">
       <h1 class="h1">Reference: protocol.harmonytypes.v1</h1>
       <h2 id="message-types">Message Types</h2>
@@ -157,6 +152,10 @@
 <tr>
 <td>requires_permission_node</td>
 <td><code>string</code></td>
+</tr>
+<tr>
+<td>requires_owner</td>
+<td><code>bool</code></td>
 </tr>
 </tbody>
 </table>
@@ -301,7 +300,7 @@
 </div>
 
 
-        </main><footer class="py-8 bg-dark-900 flex justify-center">
+        </main><footer class="py-8 bg-light-900 dark:bg-dark-900 flex justify-center">
   <div class="max-w-prose">Harmony Development</div>
 </footer>
 </body>

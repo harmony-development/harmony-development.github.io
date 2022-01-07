@@ -3,39 +3,34 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no">
     <title>Reference: protocol.chat.v1 | Harmony</title>
-    <meta name="description" content="Message Types GetUserRequest Fields
-   Name Type     user_id uint64    GetUserResponse Fields
-   Name Type     user_name string   user_avatar string   UNHANDLED TYPE   is_bot bool    GetUserBulkRequest Fields
-   Name Type     user_ids uint64    GetUserBulkResponse Fields
-   Name Type     users protocol. ">
+    <meta name="description" content="Message Types Channel Fields
+   Name Type     channel_name string   UNHANDLED TYPE   metadata protocol.harmonytypes.v1.Metadata    ChannelWithId Fields
+   Name Type     channel_id uint64   channel protocol.chat.v1.Channel    CreateChannelRequest Fields
+   Name Type     guild_id uint64   channel_name string   UNHANDLED TYPE   metadata protocol. ">
     <link rel="canonical" href="https://harmonyapp.io/docs/protocol.chat.v1/" />
 
     
 
     
       
-      <link rel="stylesheet" href="/css/main.min.311dd27bcdd3bd667afc406dcbd8a42f32ab62b388c139148d77302bc1dd814b.css" integrity="sha256-MR3Se83TvWZ6/EBty9ikLzKrYrOIwTkUjXcwK8HdgUs="/>
+      <link rel="stylesheet" href="/css/main.min.8e1883f7dd16d57c3348aedb1f5e7ac9e93af3c97a2c19469cf0f09661db5c00.css" integrity="sha256-jhiD990W1XwzSK7bH156yek688l6LBlGnPDwlmHbXAA="/>
     
 
     <meta property="og:title" content="Reference: protocol.chat.v1" />
-<meta property="og:description" content="Message Types GetUserRequest Fields
-   Name Type     user_id uint64    GetUserResponse Fields
-   Name Type     user_name string   user_avatar string   UNHANDLED TYPE   is_bot bool    GetUserBulkRequest Fields
-   Name Type     user_ids uint64    GetUserBulkResponse Fields
-   Name Type     users protocol." />
+<meta property="og:description" content="Message Types Channel Fields
+   Name Type     channel_name string   UNHANDLED TYPE   metadata protocol.harmonytypes.v1.Metadata    ChannelWithId Fields
+   Name Type     channel_id uint64   channel protocol.chat.v1.Channel    CreateChannelRequest Fields
+   Name Type     guild_id uint64   channel_name string   UNHANDLED TYPE   metadata protocol." />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://harmonyapp.io/docs/protocol.chat.v1/" /><meta property="article:section" content="docs" />
-
-
+<meta property="og:url" content="https://harmonyapp.io/docs/protocol.chat.v1/" />
 
 
     <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Reference: protocol.chat.v1"/>
-<meta name="twitter:description" content="Message Types GetUserRequest Fields
-   Name Type     user_id uint64    GetUserResponse Fields
-   Name Type     user_name string   user_avatar string   UNHANDLED TYPE   is_bot bool    GetUserBulkRequest Fields
-   Name Type     user_ids uint64    GetUserBulkResponse Fields
-   Name Type     users protocol."/>
+<meta name="twitter:description" content="Message Types Channel Fields
+   Name Type     channel_name string   UNHANDLED TYPE   metadata protocol.harmonytypes.v1.Metadata    ChannelWithId Fields
+   Name Type     channel_id uint64   channel protocol.chat.v1.Channel    CreateChannelRequest Fields
+   Name Type     guild_id uint64   channel_name string   UNHANDLED TYPE   metadata protocol."/>
 
     <meta name="theme-color" content="#E93D58">
     <meta property="og:image" content="https://harmonyapp.io/img/harmony-embed.png" />
@@ -118,15 +113,35 @@
   <ul>
     <li><a href="#message-types">Message Types</a>
       <ul>
-        <li><a href="#getuserrequest">GetUserRequest</a></li>
-        <li><a href="#getuserresponse">GetUserResponse</a></li>
-        <li><a href="#getuserbulkrequest">GetUserBulkRequest</a></li>
-        <li><a href="#getuserbulkresponse">GetUserBulkResponse</a></li>
-        <li><a href="#getusermetadatarequest">GetUserMetadataRequest</a></li>
-        <li><a href="#getusermetadataresponse">GetUserMetadataResponse</a></li>
-        <li><a href="#profileupdaterequest">ProfileUpdateRequest</a></li>
+        <li><a href="#channel">Channel</a></li>
+        <li><a href="#channelwithid">ChannelWithId</a></li>
+        <li><a href="#createchannelrequest">CreateChannelRequest</a></li>
+        <li><a href="#createchannelresponse">CreateChannelResponse</a></li>
+        <li><a href="#getguildchannelsrequest">GetGuildChannelsRequest</a></li>
+        <li><a href="#getguildchannelsresponse">GetGuildChannelsResponse</a></li>
+        <li><a href="#updatechannelinformationrequest">UpdateChannelInformationRequest</a></li>
+        <li><a href="#updatechannelinformationresponse">UpdateChannelInformationResponse</a></li>
+        <li><a href="#updatechannelorderrequest">UpdateChannelOrderRequest</a></li>
+        <li><a href="#updatechannelorderresponse">UpdateChannelOrderResponse</a></li>
+        <li><a href="#updateallchannelorderrequest">UpdateAllChannelOrderRequest</a></li>
+        <li><a href="#updateallchannelorderresponse">UpdateAllChannelOrderResponse</a></li>
+        <li><a href="#deletechannelrequest">DeleteChannelRequest</a></li>
+        <li><a href="#deletechannelresponse">DeleteChannelResponse</a></li>
+        <li><a href="#typingrequest">TypingRequest</a></li>
+        <li><a href="#typingresponse">TypingResponse</a></li>
+        <li><a href="#guildkind">GuildKind</a></li>
+        <li><a href="#guild">Guild</a></li>
+        <li><a href="#guildwithid">GuildWithId</a></li>
+        <li><a href="#invite">Invite</a></li>
+        <li><a href="#invitewithid">InviteWithId</a></li>
+        <li><a href="#pendinginvite">PendingInvite</a></li>
+        <li><a href="#guildlistentry">GuildListEntry</a></li>
         <li><a href="#createguildrequest">CreateGuildRequest</a></li>
         <li><a href="#createguildresponse">CreateGuildResponse</a></li>
+        <li><a href="#createroomrequest">CreateRoomRequest</a></li>
+        <li><a href="#createroomresponse">CreateRoomResponse</a></li>
+        <li><a href="#createdirectmessagerequest">CreateDirectMessageRequest</a></li>
+        <li><a href="#createdirectmessageresponse">CreateDirectMessageResponse</a></li>
         <li><a href="#createinviterequest">CreateInviteRequest</a></li>
         <li><a href="#createinviteresponse">CreateInviteResponse</a></li>
         <li><a href="#getguildlistrequest">GetGuildListRequest</a></li>
@@ -138,56 +153,116 @@
         <li><a href="#getguildmembersrequest">GetGuildMembersRequest</a></li>
         <li><a href="#getguildmembersresponse">GetGuildMembersResponse</a></li>
         <li><a href="#updateguildinformationrequest">UpdateGuildInformationRequest</a></li>
+        <li><a href="#updateguildinformationresponse">UpdateGuildInformationResponse</a></li>
+        <li><a href="#upgraderoomtoguildrequest">UpgradeRoomToGuildRequest</a></li>
+        <li><a href="#upgraderoomtoguildresponse">UpgradeRoomToGuildResponse</a></li>
         <li><a href="#deleteguildrequest">DeleteGuildRequest</a></li>
+        <li><a href="#deleteguildresponse">DeleteGuildResponse</a></li>
         <li><a href="#deleteinviterequest">DeleteInviteRequest</a></li>
+        <li><a href="#deleteinviteresponse">DeleteInviteResponse</a></li>
         <li><a href="#joinguildrequest">JoinGuildRequest</a></li>
         <li><a href="#joinguildresponse">JoinGuildResponse</a></li>
         <li><a href="#previewguildrequest">PreviewGuildRequest</a></li>
         <li><a href="#previewguildresponse">PreviewGuildResponse</a></li>
         <li><a href="#leaveguildrequest">LeaveGuildRequest</a></li>
+        <li><a href="#leaveguildresponse">LeaveGuildResponse</a></li>
         <li><a href="#banuserrequest">BanUserRequest</a></li>
+        <li><a href="#banuserresponse">BanUserResponse</a></li>
         <li><a href="#kickuserrequest">KickUserRequest</a></li>
+        <li><a href="#kickuserresponse">KickUserResponse</a></li>
         <li><a href="#unbanuserrequest">UnbanUserRequest</a></li>
-        <li><a href="#getguildlistresponseguildlistentry">GetGuildListResponse.GuildListEntry</a></li>
-        <li><a href="#getguildinvitesresponseinvite">GetGuildInvitesResponse.Invite</a></li>
-        <li><a href="#createchannelrequest">CreateChannelRequest</a></li>
-        <li><a href="#createchannelresponse">CreateChannelResponse</a></li>
-        <li><a href="#getguildchannelsrequest">GetGuildChannelsRequest</a></li>
-        <li><a href="#getguildchannelsresponse">GetGuildChannelsResponse</a></li>
-        <li><a href="#updatechannelinformationrequest">UpdateChannelInformationRequest</a></li>
-        <li><a href="#updatechannelorderrequest">UpdateChannelOrderRequest</a></li>
-        <li><a href="#deletechannelrequest">DeleteChannelRequest</a></li>
-        <li><a href="#typingrequest">TypingRequest</a></li>
-        <li><a href="#getguildchannelsresponsechannel">GetGuildChannelsResponse.Channel</a></li>
+        <li><a href="#unbanuserresponse">UnbanUserResponse</a></li>
+        <li><a href="#getbannedusersrequest">GetBannedUsersRequest</a></li>
+        <li><a href="#getbannedusersresponse">GetBannedUsersResponse</a></li>
+        <li><a href="#grantownershiprequest">GrantOwnershipRequest</a></li>
+        <li><a href="#grantownershipresponse">GrantOwnershipResponse</a></li>
+        <li><a href="#giveupownershiprequest">GiveUpOwnershipRequest</a></li>
+        <li><a href="#giveupownershipresponse">GiveUpOwnershipResponse</a></li>
+        <li><a href="#getpendinginvitesrequest">GetPendingInvitesRequest</a></li>
+        <li><a href="#getpendinginvitesresponse">GetPendingInvitesResponse</a></li>
+        <li><a href="#rejectpendinginviterequest">RejectPendingInviteRequest</a></li>
+        <li><a href="#rejectpendinginviteresponse">RejectPendingInviteResponse</a></li>
+        <li><a href="#ignorependinginviterequest">IgnorePendingInviteRequest</a></li>
+        <li><a href="#ignorependinginviteresponse">IgnorePendingInviteResponse</a></li>
+        <li><a href="#inviteusertoguildrequest">InviteUserToGuildRequest</a></li>
+        <li><a href="#inviteusertoguildresponse">InviteUserToGuildResponse</a></li>
+        <li><a href="#guildkindnormal">GuildKind.Normal</a></li>
+        <li><a href="#guildkindroom">GuildKind.Room</a></li>
+        <li><a href="#guildkinddirectmessage">GuildKind.DirectMessage</a></li>
+        <li><a href="#overrides">Overrides</a></li>
+        <li><a href="#actionpayload">ActionPayload</a></li>
+        <li><a href="#action">Action</a></li>
+        <li><a href="#embed">Embed</a></li>
+        <li><a href="#minithumbnail">Minithumbnail</a></li>
+        <li><a href="#photo">Photo</a></li>
+        <li><a href="#attachment">Attachment</a></li>
+        <li><a href="#content">Content</a></li>
+        <li><a href="#reaction">Reaction</a></li>
+        <li><a href="#format">Format</a></li>
+        <li><a href="#formattedtext">FormattedText</a></li>
+        <li><a href="#message">Message</a></li>
+        <li><a href="#messagewithid">MessageWithId</a></li>
         <li><a href="#getchannelmessagesrequest">GetChannelMessagesRequest</a></li>
         <li><a href="#getchannelmessagesresponse">GetChannelMessagesResponse</a></li>
         <li><a href="#getmessagerequest">GetMessageRequest</a></li>
         <li><a href="#getmessageresponse">GetMessageResponse</a></li>
         <li><a href="#deletemessagerequest">DeleteMessageRequest</a></li>
+        <li><a href="#deletemessageresponse">DeleteMessageResponse</a></li>
         <li><a href="#triggeractionrequest">TriggerActionRequest</a></li>
+        <li><a href="#triggeractionresponse">TriggerActionResponse</a></li>
         <li><a href="#sendmessagerequest">SendMessageRequest</a></li>
         <li><a href="#sendmessageresponse">SendMessageResponse</a></li>
         <li><a href="#updatemessagetextrequest">UpdateMessageTextRequest</a></li>
-        <li><a href="#createemotepackrequest">CreateEmotePackRequest</a></li>
-        <li><a href="#createemotepackresponse">CreateEmotePackResponse</a></li>
-        <li><a href="#getemotepacksrequest">GetEmotePacksRequest</a></li>
-        <li><a href="#getemotepacksresponse">GetEmotePacksResponse</a></li>
-        <li><a href="#getemotepackemotesrequest">GetEmotePackEmotesRequest</a></li>
-        <li><a href="#getemotepackemotesresponse">GetEmotePackEmotesResponse</a></li>
-        <li><a href="#addemotetopackrequest">AddEmoteToPackRequest</a></li>
-        <li><a href="#deleteemotefrompackrequest">DeleteEmoteFromPackRequest</a></li>
-        <li><a href="#deleteemotepackrequest">DeleteEmotePackRequest</a></li>
-        <li><a href="#dequipemotepackrequest">DequipEmotePackRequest</a></li>
-        <li><a href="#getemotepacksresponseemotepack">GetEmotePacksResponse.EmotePack</a></li>
-        <li><a href="#getemotepackemotesresponseemote">GetEmotePackEmotesResponse.Emote</a></li>
-        <li><a href="#querypermissionsrequest">QueryPermissionsRequest</a></li>
-        <li><a href="#querypermissionsresponse">QueryPermissionsResponse</a></li>
+        <li><a href="#updatemessagetextresponse">UpdateMessageTextResponse</a></li>
+        <li><a href="#pinmessagerequest">PinMessageRequest</a></li>
+        <li><a href="#pinmessageresponse">PinMessageResponse</a></li>
+        <li><a href="#unpinmessagerequest">UnpinMessageRequest</a></li>
+        <li><a href="#unpinmessageresponse">UnpinMessageResponse</a></li>
+        <li><a href="#getpinnedmessagesrequest">GetPinnedMessagesRequest</a></li>
+        <li><a href="#getpinnedmessagesresponse">GetPinnedMessagesResponse</a></li>
+        <li><a href="#addreactionrequest">AddReactionRequest</a></li>
+        <li><a href="#addreactionresponse">AddReactionResponse</a></li>
+        <li><a href="#removereactionrequest">RemoveReactionRequest</a></li>
+        <li><a href="#removereactionresponse">RemoveReactionResponse</a></li>
+        <li><a href="#actionpayloadbutton">ActionPayload.Button</a></li>
+        <li><a href="#actionpayloaddropdown">ActionPayload.Dropdown</a></li>
+        <li><a href="#actionpayloadinput">ActionPayload.Input</a></li>
+        <li><a href="#actionbutton">Action.Button</a></li>
+        <li><a href="#actiondropdown">Action.Dropdown</a></li>
+        <li><a href="#actioninput">Action.Input</a></li>
+        <li><a href="#actiondropdownentry">Action.Dropdown.Entry</a></li>
+        <li><a href="#embedembedheading">Embed.EmbedHeading</a></li>
+        <li><a href="#embedembedfield">Embed.EmbedField</a></li>
+        <li><a href="#contenttextcontent">Content.TextContent</a></li>
+        <li><a href="#contentembedcontent">Content.EmbedContent</a></li>
+        <li><a href="#contentattachmentcontent">Content.AttachmentContent</a></li>
+        <li><a href="#contentphotocontent">Content.PhotoContent</a></li>
+        <li><a href="#contentinviterejected">Content.InviteRejected</a></li>
+        <li><a href="#contentinviteaccepted">Content.InviteAccepted</a></li>
+        <li><a href="#contentroomupgradedtoguild">Content.RoomUpgradedToGuild</a></li>
+        <li><a href="#formatbold">Format.Bold</a></li>
+        <li><a href="#formatitalic">Format.Italic</a></li>
+        <li><a href="#formatunderline">Format.Underline</a></li>
+        <li><a href="#formatmonospace">Format.Monospace</a></li>
+        <li><a href="#formatsuperscript">Format.Superscript</a></li>
+        <li><a href="#formatsubscript">Format.Subscript</a></li>
+        <li><a href="#formatcodeblock">Format.CodeBlock</a></li>
+        <li><a href="#formatusermention">Format.UserMention</a></li>
+        <li><a href="#formatrolemention">Format.RoleMention</a></li>
+        <li><a href="#formatchannelmention">Format.ChannelMention</a></li>
+        <li><a href="#formatguildmention">Format.GuildMention</a></li>
+        <li><a href="#formatemoji">Format.Emoji</a></li>
+        <li><a href="#formatcolor">Format.Color</a></li>
+        <li><a href="#formatlocalization">Format.Localization</a></li>
         <li><a href="#permission">Permission</a></li>
-        <li><a href="#permissionlist">PermissionList</a></li>
+        <li><a href="#role">Role</a></li>
+        <li><a href="#rolewithid">RoleWithId</a></li>
+        <li><a href="#queryhaspermissionrequest">QueryHasPermissionRequest</a></li>
+        <li><a href="#queryhaspermissionresponse">QueryHasPermissionResponse</a></li>
         <li><a href="#setpermissionsrequest">SetPermissionsRequest</a></li>
+        <li><a href="#setpermissionsresponse">SetPermissionsResponse</a></li>
         <li><a href="#getpermissionsrequest">GetPermissionsRequest</a></li>
         <li><a href="#getpermissionsresponse">GetPermissionsResponse</a></li>
-        <li><a href="#role">Role</a></li>
         <li><a href="#moverolerequest">MoveRoleRequest</a></li>
         <li><a href="#moveroleresponse">MoveRoleResponse</a></li>
         <li><a href="#getguildrolesrequest">GetGuildRolesRequest</a></li>
@@ -195,31 +270,50 @@
         <li><a href="#addguildrolerequest">AddGuildRoleRequest</a></li>
         <li><a href="#addguildroleresponse">AddGuildRoleResponse</a></li>
         <li><a href="#deleteguildrolerequest">DeleteGuildRoleRequest</a></li>
+        <li><a href="#deleteguildroleresponse">DeleteGuildRoleResponse</a></li>
         <li><a href="#modifyguildrolerequest">ModifyGuildRoleRequest</a></li>
+        <li><a href="#modifyguildroleresponse">ModifyGuildRoleResponse</a></li>
         <li><a href="#manageuserrolesrequest">ManageUserRolesRequest</a></li>
+        <li><a href="#manageuserrolesresponse">ManageUserRolesResponse</a></li>
         <li><a href="#getuserrolesrequest">GetUserRolesRequest</a></li>
         <li><a href="#getuserrolesresponse">GetUserRolesResponse</a></li>
         <li><a href="#streameventsrequest">StreamEventsRequest</a></li>
-        <li><a href="#event">Event</a></li>
+        <li><a href="#streameventsresponse">StreamEventsResponse</a></li>
+        <li><a href="#streamevent">StreamEvent</a></li>
         <li><a href="#streameventsrequestsubscribetoguild">StreamEventsRequest.SubscribeToGuild</a></li>
         <li><a href="#streameventsrequestsubscribetoactions">StreamEventsRequest.SubscribeToActions</a></li>
         <li><a href="#streameventsrequestsubscribetohomeserverevents">StreamEventsRequest.SubscribeToHomeserverEvents</a></li>
-        <li><a href="#eventmessagesent">Event.MessageSent</a></li>
-        <li><a href="#eventmessageupdated">Event.MessageUpdated</a></li>
-        <li><a href="#eventmessagedeleted">Event.MessageDeleted</a></li>
-        <li><a href="#eventchannelcreated">Event.ChannelCreated</a></li>
-        <li><a href="#eventchannelupdated">Event.ChannelUpdated</a></li>
-        <li><a href="#eventchanneldeleted">Event.ChannelDeleted</a></li>
-        <li><a href="#eventguildupdated">Event.GuildUpdated</a></li>
-        <li><a href="#eventguilddeleted">Event.GuildDeleted</a></li>
-        <li><a href="#eventmemberjoined">Event.MemberJoined</a></li>
-        <li><a href="#eventmemberleft">Event.MemberLeft</a></li>
-        <li><a href="#eventguildaddedtolist">Event.GuildAddedToList</a></li>
-        <li><a href="#eventguildremovedfromlist">Event.GuildRemovedFromList</a></li>
-        <li><a href="#eventactionperformed">Event.ActionPerformed</a></li>
-        <li><a href="#eventrolemoved">Event.RoleMoved</a></li>
-        <li><a href="#eventprofileupdated">Event.ProfileUpdated</a></li>
-        <li><a href="#eventtyping">Event.Typing</a></li>
+        <li><a href="#streameventsrequestunsubscribefromall">StreamEventsRequest.UnsubscribeFromAll</a></li>
+        <li><a href="#streameventmessagesent">StreamEvent.MessageSent</a></li>
+        <li><a href="#streameventmessageupdated">StreamEvent.MessageUpdated</a></li>
+        <li><a href="#streameventmessagedeleted">StreamEvent.MessageDeleted</a></li>
+        <li><a href="#streameventchannelcreated">StreamEvent.ChannelCreated</a></li>
+        <li><a href="#streameventchannelupdated">StreamEvent.ChannelUpdated</a></li>
+        <li><a href="#streameventchannelpositionupdated">StreamEvent.ChannelPositionUpdated</a></li>
+        <li><a href="#streameventchannelsreordered">StreamEvent.ChannelsReordered</a></li>
+        <li><a href="#streameventchanneldeleted">StreamEvent.ChannelDeleted</a></li>
+        <li><a href="#streameventguildupdated">StreamEvent.GuildUpdated</a></li>
+        <li><a href="#streameventguilddeleted">StreamEvent.GuildDeleted</a></li>
+        <li><a href="#streameventmemberjoined">StreamEvent.MemberJoined</a></li>
+        <li><a href="#streameventmemberleft">StreamEvent.MemberLeft</a></li>
+        <li><a href="#streameventguildaddedtolist">StreamEvent.GuildAddedToList</a></li>
+        <li><a href="#streameventguildremovedfromlist">StreamEvent.GuildRemovedFromList</a></li>
+        <li><a href="#streameventactionperformed">StreamEvent.ActionPerformed</a></li>
+        <li><a href="#streameventrolemoved">StreamEvent.RoleMoved</a></li>
+        <li><a href="#streameventroledeleted">StreamEvent.RoleDeleted</a></li>
+        <li><a href="#streameventrolecreated">StreamEvent.RoleCreated</a></li>
+        <li><a href="#streameventroleupdated">StreamEvent.RoleUpdated</a></li>
+        <li><a href="#streameventrolepermissionsupdated">StreamEvent.RolePermissionsUpdated</a></li>
+        <li><a href="#streameventuserrolesupdated">StreamEvent.UserRolesUpdated</a></li>
+        <li><a href="#streameventtyping">StreamEvent.Typing</a></li>
+        <li><a href="#streameventpermissionupdated">StreamEvent.PermissionUpdated</a></li>
+        <li><a href="#streameventmessagepinned">StreamEvent.MessagePinned</a></li>
+        <li><a href="#streameventmessageunpinned">StreamEvent.MessageUnpinned</a></li>
+        <li><a href="#streameventreactionupdated">StreamEvent.ReactionUpdated</a></li>
+        <li><a href="#streameventowneradded">StreamEvent.OwnerAdded</a></li>
+        <li><a href="#streameventownerremoved">StreamEvent.OwnerRemoved</a></li>
+        <li><a href="#streameventinvitereceived">StreamEvent.InviteReceived</a></li>
+        <li><a href="#streameventinviterejected">StreamEvent.InviteRejected</a></li>
       </ul>
     </li>
     <li><a href="#services">Services</a>
@@ -230,11 +324,11 @@
   </ul>
 </nav>
   </aside>
-  <div class="flex justify-center w-full">
+  <div class="flex justify-center pb-8 w-full">
     <article class="prose">
       <h1 class="h1">Reference: protocol.chat.v1</h1>
       <h2 id="message-types">Message Types</h2>
-<h3 id="getuserrequest">GetUserRequest</h3>
+<h3 id="channel">Channel</h3>
 <p>Fields</p>
 <table>
 <thead>
@@ -245,104 +339,20 @@
 </thead>
 <tbody>
 <tr>
-<td>user_id</td>
-<td><code>uint64</code></td>
-</tr>
-</tbody>
-</table>
-<h3 id="getuserresponse">GetUserResponse</h3>
-<p>Fields</p>
-<table>
-<thead>
-<tr>
-<th>Name</th>
-<th>Type</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>user_name</td>
-<td><code>string</code></td>
-</tr>
-<tr>
-<td>user_avatar</td>
+<td>channel_name</td>
 <td><code>string</code></td>
 </tr>
 <tr>
 <td>UNHANDLED</td>
 <td>TYPE</td>
 </tr>
-<tr>
-<td>is_bot</td>
-<td><code>bool</code></td>
-</tr>
-</tbody>
-</table>
-<h3 id="getuserbulkrequest">GetUserBulkRequest</h3>
-<p>Fields</p>
-<table>
-<thead>
-<tr>
-<th>Name</th>
-<th>Type</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>user_ids</td>
-<td><code>uint64</code></td>
-</tr>
-</tbody>
-</table>
-<h3 id="getuserbulkresponse">GetUserBulkResponse</h3>
-<p>Fields</p>
-<table>
-<thead>
-<tr>
-<th>Name</th>
-<th>Type</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>users</td>
-<td><a href="#getuserresponse">protocol.chat.v1.GetUserResponse</a></td>
-</tr>
-</tbody>
-</table>
-<h3 id="getusermetadatarequest">GetUserMetadataRequest</h3>
-<p>Fields</p>
-<table>
-<thead>
-<tr>
-<th>Name</th>
-<th>Type</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>app_id</td>
-<td><code>string</code></td>
-</tr>
-</tbody>
-</table>
-<h3 id="getusermetadataresponse">GetUserMetadataResponse</h3>
-<p>Fields</p>
-<table>
-<thead>
-<tr>
-<th>Name</th>
-<th>Type</th>
-</tr>
-</thead>
-<tbody>
 <tr>
 <td>metadata</td>
-<td><code>string</code></td>
+<td><a href="https://harmonyapp.io/docs/protocol.harmonytypes.v1/#metadata">protocol.harmonytypes.v1.Metadata</a></td>
 </tr>
 </tbody>
 </table>
-<h3 id="profileupdaterequest">ProfileUpdateRequest</h3>
+<h3 id="channelwithid">ChannelWithId</h3>
 <p>Fields</p>
 <table>
 <thead>
@@ -353,36 +363,414 @@
 </thead>
 <tbody>
 <tr>
-<td>new_username</td>
+<td>channel_id</td>
+<td><code>uint64</code></td>
+</tr>
+<tr>
+<td>channel</td>
+<td><a href="#channel">protocol.chat.v1.Channel</a></td>
+</tr>
+</tbody>
+</table>
+<h3 id="createchannelrequest">CreateChannelRequest</h3>
+<p>Fields</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>guild_id</td>
+<td><code>uint64</code></td>
+</tr>
+<tr>
+<td>channel_name</td>
 <td><code>string</code></td>
-</tr>
-<tr>
-<td>update_username</td>
-<td><code>bool</code></td>
-</tr>
-<tr>
-<td>new_avatar</td>
-<td><code>string</code></td>
-</tr>
-<tr>
-<td>update_avatar</td>
-<td><code>bool</code></td>
 </tr>
 <tr>
 <td>UNHANDLED</td>
 <td>TYPE</td>
 </tr>
 <tr>
-<td>update_status</td>
-<td><code>bool</code></td>
+<td>metadata</td>
+<td><a href="https://harmonyapp.io/docs/protocol.harmonytypes.v1/#metadata">protocol.harmonytypes.v1.Metadata</a></td>
 </tr>
 <tr>
-<td>is_bot</td>
-<td><code>bool</code></td>
+<td>position</td>
+<td><a href="https://harmonyapp.io/docs/protocol.harmonytypes.v1/#itemposition">protocol.harmonytypes.v1.ItemPosition</a></td>
+</tr>
+</tbody>
+</table>
+<h3 id="createchannelresponse">CreateChannelResponse</h3>
+<p>Fields</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>channel_id</td>
+<td><code>uint64</code></td>
+</tr>
+</tbody>
+</table>
+<h3 id="getguildchannelsrequest">GetGuildChannelsRequest</h3>
+<p>Fields</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>guild_id</td>
+<td><code>uint64</code></td>
+</tr>
+</tbody>
+</table>
+<h3 id="getguildchannelsresponse">GetGuildChannelsResponse</h3>
+<p>Fields</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>channels</td>
+<td><a href="#channelwithid">protocol.chat.v1.ChannelWithId</a></td>
+</tr>
+</tbody>
+</table>
+<h3 id="updatechannelinformationrequest">UpdateChannelInformationRequest</h3>
+<p>Fields</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>guild_id</td>
+<td><code>uint64</code></td>
 </tr>
 <tr>
-<td>update_is_bot</td>
-<td><code>bool</code></td>
+<td>channel_id</td>
+<td><code>uint64</code></td>
+</tr>
+<tr>
+<td>new_name</td>
+<td><code>string</code></td>
+</tr>
+<tr>
+<td>new_metadata</td>
+<td><a href="https://harmonyapp.io/docs/protocol.harmonytypes.v1/#metadata">protocol.harmonytypes.v1.Metadata</a></td>
+</tr>
+</tbody>
+</table>
+<h3 id="updatechannelinformationresponse">UpdateChannelInformationResponse</h3>
+<p>Fields</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+</tr>
+</thead>
+</table>
+<h3 id="updatechannelorderrequest">UpdateChannelOrderRequest</h3>
+<p>Fields</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>guild_id</td>
+<td><code>uint64</code></td>
+</tr>
+<tr>
+<td>channel_id</td>
+<td><code>uint64</code></td>
+</tr>
+<tr>
+<td>new_position</td>
+<td><a href="https://harmonyapp.io/docs/protocol.harmonytypes.v1/#itemposition">protocol.harmonytypes.v1.ItemPosition</a></td>
+</tr>
+</tbody>
+</table>
+<h3 id="updatechannelorderresponse">UpdateChannelOrderResponse</h3>
+<p>Fields</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+</tr>
+</thead>
+</table>
+<h3 id="updateallchannelorderrequest">UpdateAllChannelOrderRequest</h3>
+<p>Fields</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>guild_id</td>
+<td><code>uint64</code></td>
+</tr>
+<tr>
+<td>channel_ids</td>
+<td><code>uint64</code></td>
+</tr>
+</tbody>
+</table>
+<h3 id="updateallchannelorderresponse">UpdateAllChannelOrderResponse</h3>
+<p>Fields</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+</tr>
+</thead>
+</table>
+<h3 id="deletechannelrequest">DeleteChannelRequest</h3>
+<p>Fields</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>guild_id</td>
+<td><code>uint64</code></td>
+</tr>
+<tr>
+<td>channel_id</td>
+<td><code>uint64</code></td>
+</tr>
+</tbody>
+</table>
+<h3 id="deletechannelresponse">DeleteChannelResponse</h3>
+<p>Fields</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+</tr>
+</thead>
+</table>
+<h3 id="typingrequest">TypingRequest</h3>
+<p>Fields</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>guild_id</td>
+<td><code>uint64</code></td>
+</tr>
+<tr>
+<td>channel_id</td>
+<td><code>uint64</code></td>
+</tr>
+</tbody>
+</table>
+<h3 id="typingresponse">TypingResponse</h3>
+<p>Fields</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+</tr>
+</thead>
+</table>
+<h3 id="guildkind">GuildKind</h3>
+<p>Fields</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>normal</td>
+<td><a href="#guildkind-normal">protocol.chat.v1.GuildKind.Normal</a></td>
+</tr>
+<tr>
+<td>room</td>
+<td><a href="#guildkind-room">protocol.chat.v1.GuildKind.Room</a></td>
+</tr>
+<tr>
+<td>direct_message</td>
+<td><a href="#guildkind-directmessage">protocol.chat.v1.GuildKind.DirectMessage</a></td>
+</tr>
+</tbody>
+</table>
+<h3 id="guild">Guild</h3>
+<p>Fields</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>name</td>
+<td><code>string</code></td>
+</tr>
+<tr>
+<td>picture</td>
+<td><code>string</code></td>
+</tr>
+<tr>
+<td>owner_ids</td>
+<td><code>uint64</code></td>
+</tr>
+<tr>
+<td>kind</td>
+<td><a href="#guildkind">protocol.chat.v1.GuildKind</a></td>
+</tr>
+<tr>
+<td>metadata</td>
+<td><a href="https://harmonyapp.io/docs/protocol.harmonytypes.v1/#metadata">protocol.harmonytypes.v1.Metadata</a></td>
+</tr>
+</tbody>
+</table>
+<h3 id="guildwithid">GuildWithId</h3>
+<p>Fields</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>guild_id</td>
+<td><code>uint64</code></td>
+</tr>
+<tr>
+<td>guild</td>
+<td><a href="#guild">protocol.chat.v1.Guild</a></td>
+</tr>
+</tbody>
+</table>
+<h3 id="invite">Invite</h3>
+<p>Fields</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>possible_uses</td>
+<td><code>uint32</code></td>
+</tr>
+<tr>
+<td>use_count</td>
+<td><code>uint32</code></td>
+</tr>
+</tbody>
+</table>
+<h3 id="invitewithid">InviteWithId</h3>
+<p>Fields</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>invite_id</td>
+<td><code>string</code></td>
+</tr>
+<tr>
+<td>invite</td>
+<td><a href="#invite">protocol.chat.v1.Invite</a></td>
+</tr>
+</tbody>
+</table>
+<h3 id="pendinginvite">PendingInvite</h3>
+<p>Fields</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>invite_id</td>
+<td><code>string</code></td>
+</tr>
+<tr>
+<td>server_id</td>
+<td><code>string</code></td>
+</tr>
+<tr>
+<td>inviter_id</td>
+<td><code>uint64</code></td>
+</tr>
+</tbody>
+</table>
+<h3 id="guildlistentry">GuildListEntry</h3>
+<p>Fields</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>guild_id</td>
+<td><code>uint64</code></td>
+</tr>
+<tr>
+<td>server_id</td>
+<td><code>string</code></td>
 </tr>
 </tbody>
 </table>
@@ -397,20 +785,96 @@
 </thead>
 <tbody>
 <tr>
+<td>name</td>
+<td><code>string</code></td>
+</tr>
+<tr>
+<td>picture</td>
+<td><code>string</code></td>
+</tr>
+<tr>
 <td>metadata</td>
 <td><a href="https://harmonyapp.io/docs/protocol.harmonytypes.v1/#metadata">protocol.harmonytypes.v1.Metadata</a></td>
-</tr>
-<tr>
-<td>guild_name</td>
-<td><code>string</code></td>
-</tr>
-<tr>
-<td>picture_url</td>
-<td><code>string</code></td>
 </tr>
 </tbody>
 </table>
 <h3 id="createguildresponse">CreateGuildResponse</h3>
+<p>Fields</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>guild_id</td>
+<td><code>uint64</code></td>
+</tr>
+</tbody>
+</table>
+<h3 id="createroomrequest">CreateRoomRequest</h3>
+<p>Fields</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>name</td>
+<td><code>string</code></td>
+</tr>
+<tr>
+<td>picture</td>
+<td><code>string</code></td>
+</tr>
+<tr>
+<td>metadata</td>
+<td><a href="https://harmonyapp.io/docs/protocol.harmonytypes.v1/#metadata">protocol.harmonytypes.v1.Metadata</a></td>
+</tr>
+</tbody>
+</table>
+<h3 id="createroomresponse">CreateRoomResponse</h3>
+<p>Fields</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>guild_id</td>
+<td><code>uint64</code></td>
+</tr>
+</tbody>
+</table>
+<h3 id="createdirectmessagerequest">CreateDirectMessageRequest</h3>
+<p>Fields</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>user_name</td>
+<td><code>string</code></td>
+</tr>
+<tr>
+<td>server_id</td>
+<td><code>string</code></td>
+</tr>
+</tbody>
+</table>
+<h3 id="createdirectmessageresponse">CreateDirectMessageResponse</h3>
 <p>Fields</p>
 <table>
 <thead>
@@ -446,7 +910,7 @@
 </tr>
 <tr>
 <td>possible_uses</td>
-<td><code>int32</code></td>
+<td><code>uint32</code></td>
 </tr>
 </tbody>
 </table>
@@ -461,7 +925,7 @@
 </thead>
 <tbody>
 <tr>
-<td>name</td>
+<td>invite_id</td>
 <td><code>string</code></td>
 </tr>
 </tbody>
@@ -488,7 +952,7 @@
 <tbody>
 <tr>
 <td>guilds</td>
-<td><a href="#getguildlistresponse-guildlistentry">protocol.chat.v1.GetGuildListResponse.GuildListEntry</a></td>
+<td><a href="#guildlistentry">protocol.chat.v1.GuildListEntry</a></td>
 </tr>
 </tbody>
 </table>
@@ -519,20 +983,8 @@
 </thead>
 <tbody>
 <tr>
-<td>metadata</td>
-<td><a href="https://harmonyapp.io/docs/protocol.harmonytypes.v1/#metadata">protocol.harmonytypes.v1.Metadata</a></td>
-</tr>
-<tr>
-<td>guild_name</td>
-<td><code>string</code></td>
-</tr>
-<tr>
-<td>guild_owner</td>
-<td><code>uint64</code></td>
-</tr>
-<tr>
-<td>guild_picture</td>
-<td><code>string</code></td>
+<td>guild</td>
+<td><a href="#guild">protocol.chat.v1.Guild</a></td>
 </tr>
 </tbody>
 </table>
@@ -564,7 +1016,7 @@
 <tbody>
 <tr>
 <td>invites</td>
-<td><a href="#getguildinvitesresponse-invite">protocol.chat.v1.GetGuildInvitesResponse.Invite</a></td>
+<td><a href="#invitewithid">protocol.chat.v1.InviteWithId</a></td>
 </tr>
 </tbody>
 </table>
@@ -615,30 +1067,54 @@
 <td><code>uint64</code></td>
 </tr>
 <tr>
-<td>new_guild_name</td>
+<td>new_name</td>
 <td><code>string</code></td>
 </tr>
 <tr>
-<td>update_guild_name</td>
-<td><code>bool</code></td>
-</tr>
-<tr>
-<td>new_guild_picture</td>
+<td>new_picture</td>
 <td><code>string</code></td>
 </tr>
 <tr>
-<td>update_guild_picture</td>
-<td><code>bool</code></td>
-</tr>
-<tr>
-<td>metadata</td>
+<td>new_metadata</td>
 <td><a href="https://harmonyapp.io/docs/protocol.harmonytypes.v1/#metadata">protocol.harmonytypes.v1.Metadata</a></td>
 </tr>
+</tbody>
+</table>
+<h3 id="updateguildinformationresponse">UpdateGuildInformationResponse</h3>
+<p>Fields</p>
+<table>
+<thead>
 <tr>
-<td>update_metadata</td>
-<td><code>bool</code></td>
+<th>Name</th>
+<th>Type</th>
+</tr>
+</thead>
+</table>
+<h3 id="upgraderoomtoguildrequest">UpgradeRoomToGuildRequest</h3>
+<p>Fields</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>guild_id</td>
+<td><code>uint64</code></td>
 </tr>
 </tbody>
+</table>
+<h3 id="upgraderoomtoguildresponse">UpgradeRoomToGuildResponse</h3>
+<p>Fields</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+</tr>
+</thead>
 </table>
 <h3 id="deleteguildrequest">DeleteGuildRequest</h3>
 <p>Fields</p>
@@ -655,6 +1131,16 @@
 <td><code>uint64</code></td>
 </tr>
 </tbody>
+</table>
+<h3 id="deleteguildresponse">DeleteGuildResponse</h3>
+<p>Fields</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+</tr>
+</thead>
 </table>
 <h3 id="deleteinviterequest">DeleteInviteRequest</h3>
 <p>Fields</p>
@@ -675,6 +1161,16 @@
 <td><code>string</code></td>
 </tr>
 </tbody>
+</table>
+<h3 id="deleteinviteresponse">DeleteInviteResponse</h3>
+<p>Fields</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+</tr>
+</thead>
 </table>
 <h3 id="joinguildrequest">JoinGuildRequest</h3>
 <p>Fields</p>
@@ -739,7 +1235,7 @@
 <td><code>string</code></td>
 </tr>
 <tr>
-<td>avatar</td>
+<td>picture</td>
 <td><code>string</code></td>
 </tr>
 <tr>
@@ -764,6 +1260,16 @@
 </tr>
 </tbody>
 </table>
+<h3 id="leaveguildresponse">LeaveGuildResponse</h3>
+<p>Fields</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+</tr>
+</thead>
+</table>
 <h3 id="banuserrequest">BanUserRequest</h3>
 <p>Fields</p>
 <table>
@@ -783,6 +1289,16 @@
 <td><code>uint64</code></td>
 </tr>
 </tbody>
+</table>
+<h3 id="banuserresponse">BanUserResponse</h3>
+<p>Fields</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+</tr>
+</thead>
 </table>
 <h3 id="kickuserrequest">KickUserRequest</h3>
 <p>Fields</p>
@@ -804,6 +1320,16 @@
 </tr>
 </tbody>
 </table>
+<h3 id="kickuserresponse">KickUserResponse</h3>
+<p>Fields</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+</tr>
+</thead>
+</table>
 <h3 id="unbanuserrequest">UnbanUserRequest</h3>
 <p>Fields</p>
 <table>
@@ -824,7 +1350,49 @@
 </tr>
 </tbody>
 </table>
-<h3 id="getguildlistresponseguildlistentry">GetGuildListResponse.GuildListEntry</h3>
+<h3 id="unbanuserresponse">UnbanUserResponse</h3>
+<p>Fields</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+</tr>
+</thead>
+</table>
+<h3 id="getbannedusersrequest">GetBannedUsersRequest</h3>
+<p>Fields</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>guild_id</td>
+<td><code>uint64</code></td>
+</tr>
+</tbody>
+</table>
+<h3 id="getbannedusersresponse">GetBannedUsersResponse</h3>
+<p>Fields</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>banned_users</td>
+<td><code>uint64</code></td>
+</tr>
+</tbody>
+</table>
+<h3 id="grantownershiprequest">GrantOwnershipRequest</h3>
 <p>Fields</p>
 <table>
 <thead>
@@ -839,12 +1407,74 @@
 <td><code>uint64</code></td>
 </tr>
 <tr>
-<td>host</td>
-<td><code>string</code></td>
+<td>new_owner_id</td>
+<td><code>uint64</code></td>
 </tr>
 </tbody>
 </table>
-<h3 id="getguildinvitesresponseinvite">GetGuildInvitesResponse.Invite</h3>
+<h3 id="grantownershipresponse">GrantOwnershipResponse</h3>
+<p>Fields</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+</tr>
+</thead>
+</table>
+<h3 id="giveupownershiprequest">GiveUpOwnershipRequest</h3>
+<p>Fields</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>guild_id</td>
+<td><code>uint64</code></td>
+</tr>
+</tbody>
+</table>
+<h3 id="giveupownershipresponse">GiveUpOwnershipResponse</h3>
+<p>Fields</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+</tr>
+</thead>
+</table>
+<h3 id="getpendinginvitesrequest">GetPendingInvitesRequest</h3>
+<p>Fields</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+</tr>
+</thead>
+</table>
+<h3 id="getpendinginvitesresponse">GetPendingInvitesResponse</h3>
+<p>Fields</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>pending_invites</td>
+<td><a href="#pendinginvite">protocol.chat.v1.PendingInvite</a></td>
+</tr>
+</tbody>
+</table>
+<h3 id="rejectpendinginviterequest">RejectPendingInviteRequest</h3>
 <p>Fields</p>
 <table>
 <thead>
@@ -859,16 +1489,22 @@
 <td><code>string</code></td>
 </tr>
 <tr>
-<td>possible_uses</td>
-<td><code>int32</code></td>
-</tr>
-<tr>
-<td>use_count</td>
-<td><code>int32</code></td>
+<td>server_id</td>
+<td><code>string</code></td>
 </tr>
 </tbody>
 </table>
-<h3 id="createchannelrequest">CreateChannelRequest</h3>
+<h3 id="rejectpendinginviteresponse">RejectPendingInviteResponse</h3>
+<p>Fields</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+</tr>
+</thead>
+</table>
+<h3 id="ignorependinginviterequest">IgnorePendingInviteRequest</h3>
 <p>Fields</p>
 <table>
 <thead>
@@ -879,32 +1515,96 @@
 </thead>
 <tbody>
 <tr>
-<td>guild_id</td>
-<td><code>uint64</code></td>
-</tr>
-<tr>
-<td>channel_name</td>
+<td>invite_id</td>
 <td><code>string</code></td>
 </tr>
 <tr>
-<td>is_category</td>
+<td>server_id</td>
+<td><code>string</code></td>
+</tr>
+</tbody>
+</table>
+<h3 id="ignorependinginviteresponse">IgnorePendingInviteResponse</h3>
+<p>Fields</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+</tr>
+</thead>
+</table>
+<h3 id="inviteusertoguildrequest">InviteUserToGuildRequest</h3>
+<p>Fields</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>user_name</td>
+<td><code>string</code></td>
+</tr>
+<tr>
+<td>server_id</td>
+<td><code>string</code></td>
+</tr>
+<tr>
+<td>guild_id</td>
+<td><code>uint64</code></td>
+</tr>
+</tbody>
+</table>
+<h3 id="inviteusertoguildresponse">InviteUserToGuildResponse</h3>
+<p>Fields</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+</tr>
+</thead>
+</table>
+<h3 id="guildkindnormal">GuildKind.Normal</h3>
+<p>Fields</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+</tr>
+</thead>
+</table>
+<h3 id="guildkindroom">GuildKind.Room</h3>
+<p>Fields</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+</tr>
+</thead>
+</table>
+<h3 id="guildkinddirectmessage">GuildKind.DirectMessage</h3>
+<p>Fields</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>rejected</td>
 <td><code>bool</code></td>
 </tr>
-<tr>
-<td>previous_id</td>
-<td><code>uint64</code></td>
-</tr>
-<tr>
-<td>next_id</td>
-<td><code>uint64</code></td>
-</tr>
-<tr>
-<td>metadata</td>
-<td><a href="https://harmonyapp.io/docs/protocol.harmonytypes.v1/#metadata">protocol.harmonytypes.v1.Metadata</a></td>
-</tr>
 </tbody>
 </table>
-<h3 id="createchannelresponse">CreateChannelResponse</h3>
+<h3 id="overrides">Overrides</h3>
 <p>Fields</p>
 <table>
 <thead>
@@ -915,12 +1615,36 @@
 </thead>
 <tbody>
 <tr>
-<td>channel_id</td>
-<td><code>uint64</code></td>
+<td>username</td>
+<td><code>string</code></td>
+</tr>
+<tr>
+<td>avatar</td>
+<td><code>string</code></td>
+</tr>
+<tr>
+<td>user_defined</td>
+<td><code>string</code></td>
+</tr>
+<tr>
+<td>webhook</td>
+<td><a href="https://harmonyapp.io/docs/protocol.harmonytypes.v1/#empty">protocol.harmonytypes.v1.Empty</a></td>
+</tr>
+<tr>
+<td>system_plurality</td>
+<td><a href="https://harmonyapp.io/docs/protocol.harmonytypes.v1/#empty">protocol.harmonytypes.v1.Empty</a></td>
+</tr>
+<tr>
+<td>system_message</td>
+<td><a href="https://harmonyapp.io/docs/protocol.harmonytypes.v1/#empty">protocol.harmonytypes.v1.Empty</a></td>
+</tr>
+<tr>
+<td>bridge</td>
+<td><a href="https://harmonyapp.io/docs/protocol.harmonytypes.v1/#empty">protocol.harmonytypes.v1.Empty</a></td>
 </tr>
 </tbody>
 </table>
-<h3 id="getguildchannelsrequest">GetGuildChannelsRequest</h3>
+<h3 id="actionpayload">ActionPayload</h3>
 <p>Fields</p>
 <table>
 <thead>
@@ -931,12 +1655,20 @@
 </thead>
 <tbody>
 <tr>
-<td>guild_id</td>
-<td><code>uint64</code></td>
+<td>button</td>
+<td><a href="#actionpayload-button">protocol.chat.v1.ActionPayload.Button</a></td>
+</tr>
+<tr>
+<td>dropdown</td>
+<td><a href="#actionpayload-dropdown">protocol.chat.v1.ActionPayload.Dropdown</a></td>
+</tr>
+<tr>
+<td>input</td>
+<td><a href="#actionpayload-input">protocol.chat.v1.ActionPayload.Input</a></td>
 </tr>
 </tbody>
 </table>
-<h3 id="getguildchannelsresponse">GetGuildChannelsResponse</h3>
+<h3 id="action">Action</h3>
 <p>Fields</p>
 <table>
 <thead>
@@ -947,12 +1679,24 @@
 </thead>
 <tbody>
 <tr>
-<td>channels</td>
-<td><a href="#getguildchannelsresponse-channel">protocol.chat.v1.GetGuildChannelsResponse.Channel</a></td>
+<td>UNHANDLED</td>
+<td>TYPE</td>
+</tr>
+<tr>
+<td>button</td>
+<td><a href="#action-button">protocol.chat.v1.Action.Button</a></td>
+</tr>
+<tr>
+<td>dropdown</td>
+<td><a href="#action-dropdown">protocol.chat.v1.Action.Dropdown</a></td>
+</tr>
+<tr>
+<td>input</td>
+<td><a href="#action-input">protocol.chat.v1.Action.Input</a></td>
 </tr>
 </tbody>
 </table>
-<h3 id="updatechannelinformationrequest">UpdateChannelInformationRequest</h3>
+<h3 id="embed">Embed</h3>
 <p>Fields</p>
 <table>
 <thead>
@@ -963,32 +1707,96 @@
 </thead>
 <tbody>
 <tr>
-<td>guild_id</td>
-<td><code>uint64</code></td>
+<td>title</td>
+<td><code>string</code></td>
 </tr>
 <tr>
-<td>channel_id</td>
-<td><code>uint64</code></td>
+<td>body</td>
+<td><a href="#formattedtext">protocol.chat.v1.FormattedText</a></td>
+</tr>
+<tr>
+<td>color</td>
+<td><code>int32</code></td>
+</tr>
+<tr>
+<td>header</td>
+<td><a href="#embed-embedheading">protocol.chat.v1.Embed.EmbedHeading</a></td>
+</tr>
+<tr>
+<td>footer</td>
+<td><a href="#embed-embedheading">protocol.chat.v1.Embed.EmbedHeading</a></td>
+</tr>
+<tr>
+<td>fields</td>
+<td><a href="#embed-embedfield">protocol.chat.v1.Embed.EmbedField</a></td>
+</tr>
+</tbody>
+</table>
+<h3 id="minithumbnail">Minithumbnail</h3>
+<p>Fields</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>width</td>
+<td><code>uint32</code></td>
+</tr>
+<tr>
+<td>height</td>
+<td><code>uint32</code></td>
+</tr>
+<tr>
+<td>data</td>
+<td><code>bytes</code></td>
+</tr>
+</tbody>
+</table>
+<h3 id="photo">Photo</h3>
+<p>Fields</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>hmc</td>
+<td><code>string</code></td>
 </tr>
 <tr>
 <td>name</td>
 <td><code>string</code></td>
 </tr>
 <tr>
-<td>update_name</td>
-<td><code>bool</code></td>
+<td>file_size</td>
+<td><code>uint32</code></td>
 </tr>
 <tr>
-<td>metadata</td>
-<td><a href="https://harmonyapp.io/docs/protocol.harmonytypes.v1/#metadata">protocol.harmonytypes.v1.Metadata</a></td>
+<td>height</td>
+<td><code>uint32</code></td>
 </tr>
 <tr>
-<td>update_metadata</td>
-<td><code>bool</code></td>
+<td>width</td>
+<td><code>uint32</code></td>
+</tr>
+<tr>
+<td>caption</td>
+<td><a href="#formattedtext">protocol.chat.v1.FormattedText</a></td>
+</tr>
+<tr>
+<td>minithumbnail</td>
+<td><a href="#minithumbnail">protocol.chat.v1.Minithumbnail</a></td>
 </tr>
 </tbody>
 </table>
-<h3 id="updatechannelorderrequest">UpdateChannelOrderRequest</h3>
+<h3 id="attachment">Attachment</h3>
 <p>Fields</p>
 <table>
 <thead>
@@ -999,88 +1807,244 @@
 </thead>
 <tbody>
 <tr>
-<td>guild_id</td>
-<td><code>uint64</code></td>
-</tr>
-<tr>
-<td>channel_id</td>
-<td><code>uint64</code></td>
-</tr>
-<tr>
-<td>previous_id</td>
-<td><code>uint64</code></td>
-</tr>
-<tr>
-<td>next_id</td>
-<td><code>uint64</code></td>
-</tr>
-</tbody>
-</table>
-<h3 id="deletechannelrequest">DeleteChannelRequest</h3>
-<p>Fields</p>
-<table>
-<thead>
-<tr>
-<th>Name</th>
-<th>Type</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>guild_id</td>
-<td><code>uint64</code></td>
-</tr>
-<tr>
-<td>channel_id</td>
-<td><code>uint64</code></td>
-</tr>
-</tbody>
-</table>
-<h3 id="typingrequest">TypingRequest</h3>
-<p>Fields</p>
-<table>
-<thead>
-<tr>
-<th>Name</th>
-<th>Type</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>guild_id</td>
-<td><code>uint64</code></td>
-</tr>
-<tr>
-<td>channel_id</td>
-<td><code>uint64</code></td>
-</tr>
-</tbody>
-</table>
-<h3 id="getguildchannelsresponsechannel">GetGuildChannelsResponse.Channel</h3>
-<p>Fields</p>
-<table>
-<thead>
-<tr>
-<th>Name</th>
-<th>Type</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>metadata</td>
-<td><a href="https://harmonyapp.io/docs/protocol.harmonytypes.v1/#metadata">protocol.harmonytypes.v1.Metadata</a></td>
-</tr>
-<tr>
-<td>channel_id</td>
-<td><code>uint64</code></td>
-</tr>
-<tr>
-<td>channel_name</td>
+<td>id</td>
 <td><code>string</code></td>
 </tr>
 <tr>
-<td>is_category</td>
-<td><code>bool</code></td>
+<td>name</td>
+<td><code>string</code></td>
+</tr>
+<tr>
+<td>mimetype</td>
+<td><code>string</code></td>
+</tr>
+<tr>
+<td>size</td>
+<td><code>uint32</code></td>
+</tr>
+<tr>
+<td>caption</td>
+<td><a href="#formattedtext">protocol.chat.v1.FormattedText</a></td>
+</tr>
+</tbody>
+</table>
+<h3 id="content">Content</h3>
+<p>Fields</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>text_message</td>
+<td><a href="#content-textcontent">protocol.chat.v1.Content.TextContent</a></td>
+</tr>
+<tr>
+<td>embed_message</td>
+<td><a href="#content-embedcontent">protocol.chat.v1.Content.EmbedContent</a></td>
+</tr>
+<tr>
+<td>attachment_message</td>
+<td><a href="#content-attachmentcontent">protocol.chat.v1.Content.AttachmentContent</a></td>
+</tr>
+<tr>
+<td>photo_message</td>
+<td><a href="#content-photocontent">protocol.chat.v1.Content.PhotoContent</a></td>
+</tr>
+<tr>
+<td>invite_rejected</td>
+<td><a href="#content-inviterejected">protocol.chat.v1.Content.InviteRejected</a></td>
+</tr>
+<tr>
+<td>invite_accepted</td>
+<td><a href="#content-inviteaccepted">protocol.chat.v1.Content.InviteAccepted</a></td>
+</tr>
+<tr>
+<td>room_upgraded_to_guild</td>
+<td><a href="#content-roomupgradedtoguild">protocol.chat.v1.Content.RoomUpgradedToGuild</a></td>
+</tr>
+</tbody>
+</table>
+<h3 id="reaction">Reaction</h3>
+<p>Fields</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>emote</td>
+<td><a href="https://harmonyapp.io/docs/protocol.emote.v1/#emote">protocol.emote.v1.Emote</a></td>
+</tr>
+<tr>
+<td>count</td>
+<td><code>uint32</code></td>
+</tr>
+</tbody>
+</table>
+<h3 id="format">Format</h3>
+<p>Fields</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>start</td>
+<td><code>uint32</code></td>
+</tr>
+<tr>
+<td>length</td>
+<td><code>uint32</code></td>
+</tr>
+<tr>
+<td>bold</td>
+<td><a href="#format-bold">protocol.chat.v1.Format.Bold</a></td>
+</tr>
+<tr>
+<td>italic</td>
+<td><a href="#format-italic">protocol.chat.v1.Format.Italic</a></td>
+</tr>
+<tr>
+<td>underline</td>
+<td><a href="#format-underline">protocol.chat.v1.Format.Underline</a></td>
+</tr>
+<tr>
+<td>monospace</td>
+<td><a href="#format-monospace">protocol.chat.v1.Format.Monospace</a></td>
+</tr>
+<tr>
+<td>superscript</td>
+<td><a href="#format-superscript">protocol.chat.v1.Format.Superscript</a></td>
+</tr>
+<tr>
+<td>subscript</td>
+<td><a href="#format-subscript">protocol.chat.v1.Format.Subscript</a></td>
+</tr>
+<tr>
+<td>code_block</td>
+<td><a href="#format-codeblock">protocol.chat.v1.Format.CodeBlock</a></td>
+</tr>
+<tr>
+<td>user_mention</td>
+<td><a href="#format-usermention">protocol.chat.v1.Format.UserMention</a></td>
+</tr>
+<tr>
+<td>role_mention</td>
+<td><a href="#format-rolemention">protocol.chat.v1.Format.RoleMention</a></td>
+</tr>
+<tr>
+<td>channel_mention</td>
+<td><a href="#format-channelmention">protocol.chat.v1.Format.ChannelMention</a></td>
+</tr>
+<tr>
+<td>guild_mention</td>
+<td><a href="#format-guildmention">protocol.chat.v1.Format.GuildMention</a></td>
+</tr>
+<tr>
+<td>emoji</td>
+<td><a href="#format-emoji">protocol.chat.v1.Format.Emoji</a></td>
+</tr>
+<tr>
+<td>color</td>
+<td><a href="#format-color">protocol.chat.v1.Format.Color</a></td>
+</tr>
+<tr>
+<td>localization</td>
+<td><a href="#format-localization">protocol.chat.v1.Format.Localization</a></td>
+</tr>
+</tbody>
+</table>
+<h3 id="formattedtext">FormattedText</h3>
+<p>Fields</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>text</td>
+<td><code>string</code></td>
+</tr>
+<tr>
+<td>format</td>
+<td><a href="#format">protocol.chat.v1.Format</a></td>
+</tr>
+</tbody>
+</table>
+<h3 id="message">Message</h3>
+<p>Fields</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>metadata</td>
+<td><a href="https://harmonyapp.io/docs/protocol.harmonytypes.v1/#metadata">protocol.harmonytypes.v1.Metadata</a></td>
+</tr>
+<tr>
+<td>overrides</td>
+<td><a href="#overrides">protocol.chat.v1.Overrides</a></td>
+</tr>
+<tr>
+<td>author_id</td>
+<td><code>uint64</code></td>
+</tr>
+<tr>
+<td>created_at</td>
+<td><code>uint64</code></td>
+</tr>
+<tr>
+<td>edited_at</td>
+<td><code>uint64</code></td>
+</tr>
+<tr>
+<td>in_reply_to</td>
+<td><code>uint64</code></td>
+</tr>
+<tr>
+<td>content</td>
+<td><a href="#content">protocol.chat.v1.Content</a></td>
+</tr>
+<tr>
+<td>reactions</td>
+<td><a href="#reaction">protocol.chat.v1.Reaction</a></td>
+</tr>
+</tbody>
+</table>
+<h3 id="messagewithid">MessageWithId</h3>
+<p>Fields</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>message_id</td>
+<td><code>uint64</code></td>
+</tr>
+<tr>
+<td>message</td>
+<td><a href="#message">protocol.chat.v1.Message</a></td>
 </tr>
 </tbody>
 </table>
@@ -1103,8 +2067,16 @@
 <td><code>uint64</code></td>
 </tr>
 <tr>
-<td>before_message</td>
+<td>message_id</td>
 <td><code>uint64</code></td>
+</tr>
+<tr>
+<td>UNHANDLED</td>
+<td>TYPE</td>
+</tr>
+<tr>
+<td>count</td>
+<td><code>uint32</code></td>
 </tr>
 </tbody>
 </table>
@@ -1123,8 +2095,12 @@
 <td><code>bool</code></td>
 </tr>
 <tr>
+<td>reached_bottom</td>
+<td><code>bool</code></td>
+</tr>
+<tr>
 <td>messages</td>
-<td><a href="https://harmonyapp.io/docs/protocol.harmonytypes.v1/#message">protocol.harmonytypes.v1.Message</a></td>
+<td><a href="#messagewithid">protocol.chat.v1.MessageWithId</a></td>
 </tr>
 </tbody>
 </table>
@@ -1164,7 +2140,7 @@
 <tbody>
 <tr>
 <td>message</td>
-<td><a href="https://harmonyapp.io/docs/protocol.harmonytypes.v1/#message">protocol.harmonytypes.v1.Message</a></td>
+<td><a href="#message">protocol.chat.v1.Message</a></td>
 </tr>
 </tbody>
 </table>
@@ -1192,6 +2168,16 @@
 </tr>
 </tbody>
 </table>
+<h3 id="deletemessageresponse">DeleteMessageResponse</h3>
+<p>Fields</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+</tr>
+</thead>
+</table>
 <h3 id="triggeractionrequest">TriggerActionRequest</h3>
 <p>Fields</p>
 <table>
@@ -1215,14 +2201,20 @@
 <td><code>uint64</code></td>
 </tr>
 <tr>
-<td>action_id</td>
-<td><code>string</code></td>
-</tr>
-<tr>
-<td>action_data</td>
-<td><code>string</code></td>
+<td>payload</td>
+<td><a href="#actionpayload">protocol.chat.v1.ActionPayload</a></td>
 </tr>
 </tbody>
+</table>
+<h3 id="triggeractionresponse">TriggerActionResponse</h3>
+<p>Fields</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+</tr>
+</thead>
 </table>
 <h3 id="sendmessagerequest">SendMessageRequest</h3>
 <p>Fields</p>
@@ -1244,23 +2236,23 @@
 </tr>
 <tr>
 <td>content</td>
-<td><a href="https://harmonyapp.io/docs/protocol.harmonytypes.v1/#content">protocol.harmonytypes.v1.Content</a></td>
+<td><a href="#content">protocol.chat.v1.Content</a></td>
 </tr>
 <tr>
 <td>echo_id</td>
 <td><code>uint64</code></td>
 </tr>
 <tr>
-<td>metadata</td>
-<td><a href="https://harmonyapp.io/docs/protocol.harmonytypes.v1/#metadata">protocol.harmonytypes.v1.Metadata</a></td>
-</tr>
-<tr>
 <td>overrides</td>
-<td><a href="https://harmonyapp.io/docs/protocol.harmonytypes.v1/#override">protocol.harmonytypes.v1.Override</a></td>
+<td><a href="#overrides">protocol.chat.v1.Overrides</a></td>
 </tr>
 <tr>
 <td>in_reply_to</td>
 <td><code>uint64</code></td>
+</tr>
+<tr>
+<td>metadata</td>
+<td><a href="https://harmonyapp.io/docs/protocol.harmonytypes.v1/#metadata">protocol.harmonytypes.v1.Metadata</a></td>
 </tr>
 </tbody>
 </table>
@@ -1304,43 +2296,11 @@
 </tr>
 <tr>
 <td>new_content</td>
-<td><code>string</code></td>
+<td><a href="#formattedtext">protocol.chat.v1.FormattedText</a></td>
 </tr>
 </tbody>
 </table>
-<h3 id="createemotepackrequest">CreateEmotePackRequest</h3>
-<p>Fields</p>
-<table>
-<thead>
-<tr>
-<th>Name</th>
-<th>Type</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>pack_name</td>
-<td><code>string</code></td>
-</tr>
-</tbody>
-</table>
-<h3 id="createemotepackresponse">CreateEmotePackResponse</h3>
-<p>Fields</p>
-<table>
-<thead>
-<tr>
-<th>Name</th>
-<th>Type</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>pack_id</td>
-<td><code>uint64</code></td>
-</tr>
-</tbody>
-</table>
-<h3 id="getemotepacksrequest">GetEmotePacksRequest</h3>
+<h3 id="updatemessagetextresponse">UpdateMessageTextResponse</h3>
 <p>Fields</p>
 <table>
 <thead>
@@ -1350,175 +2310,7 @@
 </tr>
 </thead>
 </table>
-<h3 id="getemotepacksresponse">GetEmotePacksResponse</h3>
-<p>Fields</p>
-<table>
-<thead>
-<tr>
-<th>Name</th>
-<th>Type</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>packs</td>
-<td><a href="#getemotepacksresponse-emotepack">protocol.chat.v1.GetEmotePacksResponse.EmotePack</a></td>
-</tr>
-</tbody>
-</table>
-<h3 id="getemotepackemotesrequest">GetEmotePackEmotesRequest</h3>
-<p>Fields</p>
-<table>
-<thead>
-<tr>
-<th>Name</th>
-<th>Type</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>pack_id</td>
-<td><code>uint64</code></td>
-</tr>
-</tbody>
-</table>
-<h3 id="getemotepackemotesresponse">GetEmotePackEmotesResponse</h3>
-<p>Fields</p>
-<table>
-<thead>
-<tr>
-<th>Name</th>
-<th>Type</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>emotes</td>
-<td><a href="#getemotepackemotesresponse-emote">protocol.chat.v1.GetEmotePackEmotesResponse.Emote</a></td>
-</tr>
-</tbody>
-</table>
-<h3 id="addemotetopackrequest">AddEmoteToPackRequest</h3>
-<p>Fields</p>
-<table>
-<thead>
-<tr>
-<th>Name</th>
-<th>Type</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>pack_id</td>
-<td><code>uint64</code></td>
-</tr>
-<tr>
-<td>image_id</td>
-<td><code>string</code></td>
-</tr>
-<tr>
-<td>name</td>
-<td><code>string</code></td>
-</tr>
-</tbody>
-</table>
-<h3 id="deleteemotefrompackrequest">DeleteEmoteFromPackRequest</h3>
-<p>Fields</p>
-<table>
-<thead>
-<tr>
-<th>Name</th>
-<th>Type</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>pack_id</td>
-<td><code>uint64</code></td>
-</tr>
-<tr>
-<td>image_id</td>
-<td><code>string</code></td>
-</tr>
-</tbody>
-</table>
-<h3 id="deleteemotepackrequest">DeleteEmotePackRequest</h3>
-<p>Fields</p>
-<table>
-<thead>
-<tr>
-<th>Name</th>
-<th>Type</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>pack_id</td>
-<td><code>uint64</code></td>
-</tr>
-</tbody>
-</table>
-<h3 id="dequipemotepackrequest">DequipEmotePackRequest</h3>
-<p>Fields</p>
-<table>
-<thead>
-<tr>
-<th>Name</th>
-<th>Type</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>pack_id</td>
-<td><code>uint64</code></td>
-</tr>
-</tbody>
-</table>
-<h3 id="getemotepacksresponseemotepack">GetEmotePacksResponse.EmotePack</h3>
-<p>Fields</p>
-<table>
-<thead>
-<tr>
-<th>Name</th>
-<th>Type</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>pack_id</td>
-<td><code>uint64</code></td>
-</tr>
-<tr>
-<td>pack_owner</td>
-<td><code>uint64</code></td>
-</tr>
-<tr>
-<td>pack_name</td>
-<td><code>string</code></td>
-</tr>
-</tbody>
-</table>
-<h3 id="getemotepackemotesresponseemote">GetEmotePackEmotesResponse.Emote</h3>
-<p>Fields</p>
-<table>
-<thead>
-<tr>
-<th>Name</th>
-<th>Type</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>image_id</td>
-<td><code>string</code></td>
-</tr>
-<tr>
-<td>name</td>
-<td><code>string</code></td>
-</tr>
-</tbody>
-</table>
-<h3 id="querypermissionsrequest">QueryPermissionsRequest</h3>
+<h3 id="pinmessagerequest">PinMessageRequest</h3>
 <p>Fields</p>
 <table>
 <thead>
@@ -1537,16 +2329,22 @@
 <td><code>uint64</code></td>
 </tr>
 <tr>
-<td>check_for</td>
-<td><code>string</code></td>
-</tr>
-<tr>
-<td>as</td>
+<td>message_id</td>
 <td><code>uint64</code></td>
 </tr>
 </tbody>
 </table>
-<h3 id="querypermissionsresponse">QueryPermissionsResponse</h3>
+<h3 id="pinmessageresponse">PinMessageResponse</h3>
+<p>Fields</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+</tr>
+</thead>
+</table>
+<h3 id="unpinmessagerequest">UnpinMessageRequest</h3>
 <p>Fields</p>
 <table>
 <thead>
@@ -1557,8 +2355,658 @@
 </thead>
 <tbody>
 <tr>
-<td>ok</td>
+<td>guild_id</td>
+<td><code>uint64</code></td>
+</tr>
+<tr>
+<td>channel_id</td>
+<td><code>uint64</code></td>
+</tr>
+<tr>
+<td>message_id</td>
+<td><code>uint64</code></td>
+</tr>
+</tbody>
+</table>
+<h3 id="unpinmessageresponse">UnpinMessageResponse</h3>
+<p>Fields</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+</tr>
+</thead>
+</table>
+<h3 id="getpinnedmessagesrequest">GetPinnedMessagesRequest</h3>
+<p>Fields</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>guild_id</td>
+<td><code>uint64</code></td>
+</tr>
+<tr>
+<td>channel_id</td>
+<td><code>uint64</code></td>
+</tr>
+</tbody>
+</table>
+<h3 id="getpinnedmessagesresponse">GetPinnedMessagesResponse</h3>
+<p>Fields</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>pinned_message_ids</td>
+<td><code>uint64</code></td>
+</tr>
+</tbody>
+</table>
+<h3 id="addreactionrequest">AddReactionRequest</h3>
+<p>Fields</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>guild_id</td>
+<td><code>uint64</code></td>
+</tr>
+<tr>
+<td>channel_id</td>
+<td><code>uint64</code></td>
+</tr>
+<tr>
+<td>message_id</td>
+<td><code>uint64</code></td>
+</tr>
+<tr>
+<td>emote</td>
+<td><a href="https://harmonyapp.io/docs/protocol.emote.v1/#emote">protocol.emote.v1.Emote</a></td>
+</tr>
+</tbody>
+</table>
+<h3 id="addreactionresponse">AddReactionResponse</h3>
+<p>Fields</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+</tr>
+</thead>
+</table>
+<h3 id="removereactionrequest">RemoveReactionRequest</h3>
+<p>Fields</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>guild_id</td>
+<td><code>uint64</code></td>
+</tr>
+<tr>
+<td>channel_id</td>
+<td><code>uint64</code></td>
+</tr>
+<tr>
+<td>message_id</td>
+<td><code>uint64</code></td>
+</tr>
+<tr>
+<td>emote</td>
+<td><a href="https://harmonyapp.io/docs/protocol.emote.v1/#emote">protocol.emote.v1.Emote</a></td>
+</tr>
+</tbody>
+</table>
+<h3 id="removereactionresponse">RemoveReactionResponse</h3>
+<p>Fields</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+</tr>
+</thead>
+</table>
+<h3 id="actionpayloadbutton">ActionPayload.Button</h3>
+<p>Fields</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>data</td>
+<td><code>bytes</code></td>
+</tr>
+</tbody>
+</table>
+<h3 id="actionpayloaddropdown">ActionPayload.Dropdown</h3>
+<p>Fields</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>choice</td>
+<td><code>bytes</code></td>
+</tr>
+</tbody>
+</table>
+<h3 id="actionpayloadinput">ActionPayload.Input</h3>
+<p>Fields</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>input</td>
+<td><code>string</code></td>
+</tr>
+<tr>
+<td>data</td>
+<td><code>bytes</code></td>
+</tr>
+</tbody>
+</table>
+<h3 id="actionbutton">Action.Button</h3>
+<p>Fields</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>text</td>
+<td><code>string</code></td>
+</tr>
+<tr>
+<td>data</td>
+<td><code>bytes</code></td>
+</tr>
+<tr>
+<td>url</td>
+<td><code>string</code></td>
+</tr>
+</tbody>
+</table>
+<h3 id="actiondropdown">Action.Dropdown</h3>
+<p>Fields</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>label</td>
+<td><code>string</code></td>
+</tr>
+<tr>
+<td>entries</td>
+<td><a href="#action-dropdown-entry">protocol.chat.v1.Action.Dropdown.Entry</a></td>
+</tr>
+</tbody>
+</table>
+<h3 id="actioninput">Action.Input</h3>
+<p>Fields</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>label</td>
+<td><code>string</code></td>
+</tr>
+<tr>
+<td>multiline</td>
 <td><code>bool</code></td>
+</tr>
+<tr>
+<td>data</td>
+<td><code>bytes</code></td>
+</tr>
+</tbody>
+</table>
+<h3 id="actiondropdownentry">Action.Dropdown.Entry</h3>
+<p>Fields</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>label</td>
+<td><code>string</code></td>
+</tr>
+<tr>
+<td>data</td>
+<td><code>bytes</code></td>
+</tr>
+</tbody>
+</table>
+<h3 id="embedembedheading">Embed.EmbedHeading</h3>
+<p>Fields</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>text</td>
+<td><code>string</code></td>
+</tr>
+<tr>
+<td>subtext</td>
+<td><code>string</code></td>
+</tr>
+<tr>
+<td>url</td>
+<td><code>string</code></td>
+</tr>
+<tr>
+<td>icon</td>
+<td><code>string</code></td>
+</tr>
+</tbody>
+</table>
+<h3 id="embedembedfield">Embed.EmbedField</h3>
+<p>Fields</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>title</td>
+<td><code>string</code></td>
+</tr>
+<tr>
+<td>subtitle</td>
+<td><code>string</code></td>
+</tr>
+<tr>
+<td>body</td>
+<td><a href="#formattedtext">protocol.chat.v1.FormattedText</a></td>
+</tr>
+<tr>
+<td>image_url</td>
+<td><code>string</code></td>
+</tr>
+<tr>
+<td>UNHANDLED</td>
+<td>TYPE</td>
+</tr>
+<tr>
+<td>actions</td>
+<td><a href="#action">protocol.chat.v1.Action</a></td>
+</tr>
+</tbody>
+</table>
+<h3 id="contenttextcontent">Content.TextContent</h3>
+<p>Fields</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>content</td>
+<td><a href="#formattedtext">protocol.chat.v1.FormattedText</a></td>
+</tr>
+</tbody>
+</table>
+<h3 id="contentembedcontent">Content.EmbedContent</h3>
+<p>Fields</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>embeds</td>
+<td><a href="#embed">protocol.chat.v1.Embed</a></td>
+</tr>
+</tbody>
+</table>
+<h3 id="contentattachmentcontent">Content.AttachmentContent</h3>
+<p>Fields</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>files</td>
+<td><a href="#attachment">protocol.chat.v1.Attachment</a></td>
+</tr>
+</tbody>
+</table>
+<h3 id="contentphotocontent">Content.PhotoContent</h3>
+<p>Fields</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>photos</td>
+<td><a href="#photo">protocol.chat.v1.Photo</a></td>
+</tr>
+</tbody>
+</table>
+<h3 id="contentinviterejected">Content.InviteRejected</h3>
+<p>Fields</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>invitee_id</td>
+<td><code>uint64</code></td>
+</tr>
+<tr>
+<td>inviter_id</td>
+<td><code>uint64</code></td>
+</tr>
+</tbody>
+</table>
+<h3 id="contentinviteaccepted">Content.InviteAccepted</h3>
+<p>Fields</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>invitee_id</td>
+<td><code>uint64</code></td>
+</tr>
+<tr>
+<td>inviter_id</td>
+<td><code>uint64</code></td>
+</tr>
+</tbody>
+</table>
+<h3 id="contentroomupgradedtoguild">Content.RoomUpgradedToGuild</h3>
+<p>Fields</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>upgraded_by</td>
+<td><code>uint64</code></td>
+</tr>
+</tbody>
+</table>
+<h3 id="formatbold">Format.Bold</h3>
+<p>Fields</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+</tr>
+</thead>
+</table>
+<h3 id="formatitalic">Format.Italic</h3>
+<p>Fields</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+</tr>
+</thead>
+</table>
+<h3 id="formatunderline">Format.Underline</h3>
+<p>Fields</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+</tr>
+</thead>
+</table>
+<h3 id="formatmonospace">Format.Monospace</h3>
+<p>Fields</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+</tr>
+</thead>
+</table>
+<h3 id="formatsuperscript">Format.Superscript</h3>
+<p>Fields</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+</tr>
+</thead>
+</table>
+<h3 id="formatsubscript">Format.Subscript</h3>
+<p>Fields</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+</tr>
+</thead>
+</table>
+<h3 id="formatcodeblock">Format.CodeBlock</h3>
+<p>Fields</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>language</td>
+<td><code>string</code></td>
+</tr>
+</tbody>
+</table>
+<h3 id="formatusermention">Format.UserMention</h3>
+<p>Fields</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>user_id</td>
+<td><code>uint64</code></td>
+</tr>
+</tbody>
+</table>
+<h3 id="formatrolemention">Format.RoleMention</h3>
+<p>Fields</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>role_id</td>
+<td><code>uint64</code></td>
+</tr>
+</tbody>
+</table>
+<h3 id="formatchannelmention">Format.ChannelMention</h3>
+<p>Fields</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>channel_id</td>
+<td><code>uint64</code></td>
+</tr>
+</tbody>
+</table>
+<h3 id="formatguildmention">Format.GuildMention</h3>
+<p>Fields</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>guild_id</td>
+<td><code>uint64</code></td>
+</tr>
+<tr>
+<td>homeserver</td>
+<td><code>string</code></td>
+</tr>
+</tbody>
+</table>
+<h3 id="formatemoji">Format.Emoji</h3>
+<p>Fields</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>image_hmc</td>
+<td><code>string</code></td>
+</tr>
+<tr>
+<td>pack_id</td>
+<td><code>uint64</code></td>
+</tr>
+</tbody>
+</table>
+<h3 id="formatcolor">Format.Color</h3>
+<p>Fields</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>UNHANDLED</td>
+<td>TYPE</td>
+</tr>
+</tbody>
+</table>
+<h3 id="formatlocalization">Format.Localization</h3>
+<p>Fields</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>i18n_code</td>
+<td><code>string</code></td>
 </tr>
 </tbody>
 </table>
@@ -1577,12 +3025,12 @@
 <td><code>string</code></td>
 </tr>
 <tr>
-<td>UNHANDLED</td>
-<td>TYPE</td>
+<td>ok</td>
+<td><code>bool</code></td>
 </tr>
 </tbody>
 </table>
-<h3 id="permissionlist">PermissionList</h3>
+<h3 id="role">Role</h3>
 <p>Fields</p>
 <table>
 <thead>
@@ -1593,8 +3041,84 @@
 </thead>
 <tbody>
 <tr>
-<td>permissions</td>
-<td><a href="#permission">protocol.chat.v1.Permission</a></td>
+<td>name</td>
+<td><code>string</code></td>
+</tr>
+<tr>
+<td>color</td>
+<td><code>int32</code></td>
+</tr>
+<tr>
+<td>hoist</td>
+<td><code>bool</code></td>
+</tr>
+<tr>
+<td>pingable</td>
+<td><code>bool</code></td>
+</tr>
+</tbody>
+</table>
+<h3 id="rolewithid">RoleWithId</h3>
+<p>Fields</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>role_id</td>
+<td><code>uint64</code></td>
+</tr>
+<tr>
+<td>role</td>
+<td><a href="#role">protocol.chat.v1.Role</a></td>
+</tr>
+</tbody>
+</table>
+<h3 id="queryhaspermissionrequest">QueryHasPermissionRequest</h3>
+<p>Fields</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>guild_id</td>
+<td><code>uint64</code></td>
+</tr>
+<tr>
+<td>channel_id</td>
+<td><code>uint64</code></td>
+</tr>
+<tr>
+<td>as</td>
+<td><code>uint64</code></td>
+</tr>
+<tr>
+<td>check_for</td>
+<td><code>string</code></td>
+</tr>
+</tbody>
+</table>
+<h3 id="queryhaspermissionresponse">QueryHasPermissionResponse</h3>
+<p>Fields</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ok</td>
+<td><code>bool</code></td>
 </tr>
 </tbody>
 </table>
@@ -1621,10 +3145,20 @@
 <td><code>uint64</code></td>
 </tr>
 <tr>
-<td>perms</td>
-<td><a href="#permissionlist">protocol.chat.v1.PermissionList</a></td>
+<td>perms_to_give</td>
+<td><a href="#permission">protocol.chat.v1.Permission</a></td>
 </tr>
 </tbody>
+</table>
+<h3 id="setpermissionsresponse">SetPermissionsResponse</h3>
+<p>Fields</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+</tr>
+</thead>
 </table>
 <h3 id="getpermissionsrequest">GetPermissionsRequest</h3>
 <p>Fields</p>
@@ -1662,39 +3196,7 @@
 <tbody>
 <tr>
 <td>perms</td>
-<td><a href="#permissionlist">protocol.chat.v1.PermissionList</a></td>
-</tr>
-</tbody>
-</table>
-<h3 id="role">Role</h3>
-<p>Fields</p>
-<table>
-<thead>
-<tr>
-<th>Name</th>
-<th>Type</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>role_id</td>
-<td><code>uint64</code></td>
-</tr>
-<tr>
-<td>name</td>
-<td><code>string</code></td>
-</tr>
-<tr>
-<td>color</td>
-<td><code>int32</code></td>
-</tr>
-<tr>
-<td>hoist</td>
-<td><code>bool</code></td>
-</tr>
-<tr>
-<td>pingable</td>
-<td><code>bool</code></td>
+<td><a href="#permission">protocol.chat.v1.Permission</a></td>
 </tr>
 </tbody>
 </table>
@@ -1717,12 +3219,8 @@
 <td><code>uint64</code></td>
 </tr>
 <tr>
-<td>before_id</td>
-<td><code>uint64</code></td>
-</tr>
-<tr>
-<td>after_id</td>
-<td><code>uint64</code></td>
+<td>new_position</td>
+<td><a href="https://harmonyapp.io/docs/protocol.harmonytypes.v1/#itemposition">protocol.harmonytypes.v1.ItemPosition</a></td>
 </tr>
 </tbody>
 </table>
@@ -1764,7 +3262,7 @@
 <tbody>
 <tr>
 <td>roles</td>
-<td><a href="#role">protocol.chat.v1.Role</a></td>
+<td><a href="#rolewithid">protocol.chat.v1.RoleWithId</a></td>
 </tr>
 </tbody>
 </table>
@@ -1783,8 +3281,20 @@
 <td><code>uint64</code></td>
 </tr>
 <tr>
-<td>role</td>
-<td><a href="#role">protocol.chat.v1.Role</a></td>
+<td>name</td>
+<td><code>string</code></td>
+</tr>
+<tr>
+<td>color</td>
+<td><code>int32</code></td>
+</tr>
+<tr>
+<td>hoist</td>
+<td><code>bool</code></td>
+</tr>
+<tr>
+<td>pingable</td>
+<td><code>bool</code></td>
 </tr>
 </tbody>
 </table>
@@ -1824,6 +3334,16 @@
 </tr>
 </tbody>
 </table>
+<h3 id="deleteguildroleresponse">DeleteGuildRoleResponse</h3>
+<p>Fields</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+</tr>
+</thead>
+</table>
 <h3 id="modifyguildrolerequest">ModifyGuildRoleRequest</h3>
 <p>Fields</p>
 <table>
@@ -1839,26 +3359,36 @@
 <td><code>uint64</code></td>
 </tr>
 <tr>
-<td>role</td>
-<td><a href="#role">protocol.chat.v1.Role</a></td>
+<td>role_id</td>
+<td><code>uint64</code></td>
 </tr>
 <tr>
-<td>modify_name</td>
+<td>new_name</td>
+<td><code>string</code></td>
+</tr>
+<tr>
+<td>new_color</td>
+<td><code>int32</code></td>
+</tr>
+<tr>
+<td>new_hoist</td>
 <td><code>bool</code></td>
 </tr>
 <tr>
-<td>modify_color</td>
-<td><code>bool</code></td>
-</tr>
-<tr>
-<td>modify_hoist</td>
-<td><code>bool</code></td>
-</tr>
-<tr>
-<td>modify_pingable</td>
+<td>new_pingable</td>
 <td><code>bool</code></td>
 </tr>
 </tbody>
+</table>
+<h3 id="modifyguildroleresponse">ModifyGuildRoleResponse</h3>
+<p>Fields</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+</tr>
+</thead>
 </table>
 <h3 id="manageuserrolesrequest">ManageUserRolesRequest</h3>
 <p>Fields</p>
@@ -1887,6 +3417,16 @@
 <td><code>uint64</code></td>
 </tr>
 </tbody>
+</table>
+<h3 id="manageuserrolesresponse">ManageUserRolesResponse</h3>
+<p>Fields</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+</tr>
+</thead>
 </table>
 <h3 id="getuserrolesrequest">GetUserRolesRequest</h3>
 <p>Fields</p>
@@ -1946,9 +3486,37 @@
 <td>subscribe_to_homeserver_events</td>
 <td><a href="#streameventsrequest-subscribetohomeserverevents">protocol.chat.v1.StreamEventsRequest.SubscribeToHomeserverEvents</a></td>
 </tr>
+<tr>
+<td>unsubscribe_from_all</td>
+<td><a href="#streameventsrequest-unsubscribefromall">protocol.chat.v1.StreamEventsRequest.UnsubscribeFromAll</a></td>
+</tr>
 </tbody>
 </table>
-<h3 id="event">Event</h3>
+<h3 id="streameventsresponse">StreamEventsResponse</h3>
+<p>Fields</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>chat</td>
+<td><a href="#streamevent">protocol.chat.v1.StreamEvent</a></td>
+</tr>
+<tr>
+<td>emote</td>
+<td><a href="https://harmonyapp.io/docs/protocol.emote.v1/#streamevent">protocol.emote.v1.StreamEvent</a></td>
+</tr>
+<tr>
+<td>profile</td>
+<td><a href="https://harmonyapp.io/docs/protocol.profile.v1/#streamevent">protocol.profile.v1.StreamEvent</a></td>
+</tr>
+</tbody>
+</table>
+<h3 id="streamevent">StreamEvent</h3>
 <p>Fields</p>
 <table>
 <thead>
@@ -1960,67 +3528,123 @@
 <tbody>
 <tr>
 <td>guild_added_to_list</td>
-<td><a href="#event-guildaddedtolist">protocol.chat.v1.Event.GuildAddedToList</a></td>
+<td><a href="#streamevent-guildaddedtolist">protocol.chat.v1.StreamEvent.GuildAddedToList</a></td>
 </tr>
 <tr>
 <td>guild_removed_from_list</td>
-<td><a href="#event-guildremovedfromlist">protocol.chat.v1.Event.GuildRemovedFromList</a></td>
+<td><a href="#streamevent-guildremovedfromlist">protocol.chat.v1.StreamEvent.GuildRemovedFromList</a></td>
 </tr>
 <tr>
 <td>action_performed</td>
-<td><a href="#event-actionperformed">protocol.chat.v1.Event.ActionPerformed</a></td>
+<td><a href="#streamevent-actionperformed">protocol.chat.v1.StreamEvent.ActionPerformed</a></td>
 </tr>
 <tr>
 <td>sent_message</td>
-<td><a href="#event-messagesent">protocol.chat.v1.Event.MessageSent</a></td>
+<td><a href="#streamevent-messagesent">protocol.chat.v1.StreamEvent.MessageSent</a></td>
 </tr>
 <tr>
 <td>edited_message</td>
-<td><a href="#event-messageupdated">protocol.chat.v1.Event.MessageUpdated</a></td>
+<td><a href="#streamevent-messageupdated">protocol.chat.v1.StreamEvent.MessageUpdated</a></td>
 </tr>
 <tr>
 <td>deleted_message</td>
-<td><a href="#event-messagedeleted">protocol.chat.v1.Event.MessageDeleted</a></td>
+<td><a href="#streamevent-messagedeleted">protocol.chat.v1.StreamEvent.MessageDeleted</a></td>
 </tr>
 <tr>
 <td>created_channel</td>
-<td><a href="#event-channelcreated">protocol.chat.v1.Event.ChannelCreated</a></td>
+<td><a href="#streamevent-channelcreated">protocol.chat.v1.StreamEvent.ChannelCreated</a></td>
 </tr>
 <tr>
 <td>edited_channel</td>
-<td><a href="#event-channelupdated">protocol.chat.v1.Event.ChannelUpdated</a></td>
+<td><a href="#streamevent-channelupdated">protocol.chat.v1.StreamEvent.ChannelUpdated</a></td>
 </tr>
 <tr>
 <td>deleted_channel</td>
-<td><a href="#event-channeldeleted">protocol.chat.v1.Event.ChannelDeleted</a></td>
+<td><a href="#streamevent-channeldeleted">protocol.chat.v1.StreamEvent.ChannelDeleted</a></td>
 </tr>
 <tr>
 <td>edited_guild</td>
-<td><a href="#event-guildupdated">protocol.chat.v1.Event.GuildUpdated</a></td>
+<td><a href="#streamevent-guildupdated">protocol.chat.v1.StreamEvent.GuildUpdated</a></td>
 </tr>
 <tr>
 <td>deleted_guild</td>
-<td><a href="#event-guilddeleted">protocol.chat.v1.Event.GuildDeleted</a></td>
+<td><a href="#streamevent-guilddeleted">protocol.chat.v1.StreamEvent.GuildDeleted</a></td>
 </tr>
 <tr>
 <td>joined_member</td>
-<td><a href="#event-memberjoined">protocol.chat.v1.Event.MemberJoined</a></td>
+<td><a href="#streamevent-memberjoined">protocol.chat.v1.StreamEvent.MemberJoined</a></td>
 </tr>
 <tr>
 <td>left_member</td>
-<td><a href="#event-memberleft">protocol.chat.v1.Event.MemberLeft</a></td>
-</tr>
-<tr>
-<td>role_moved</td>
-<td><a href="#event-rolemoved">protocol.chat.v1.Event.RoleMoved</a></td>
-</tr>
-<tr>
-<td>profile_updated</td>
-<td><a href="#event-profileupdated">protocol.chat.v1.Event.ProfileUpdated</a></td>
+<td><a href="#streamevent-memberleft">protocol.chat.v1.StreamEvent.MemberLeft</a></td>
 </tr>
 <tr>
 <td>typing</td>
-<td><a href="#event-typing">protocol.chat.v1.Event.Typing</a></td>
+<td><a href="#streamevent-typing">protocol.chat.v1.StreamEvent.Typing</a></td>
+</tr>
+<tr>
+<td>role_created</td>
+<td><a href="#streamevent-rolecreated">protocol.chat.v1.StreamEvent.RoleCreated</a></td>
+</tr>
+<tr>
+<td>role_deleted</td>
+<td><a href="#streamevent-roledeleted">protocol.chat.v1.StreamEvent.RoleDeleted</a></td>
+</tr>
+<tr>
+<td>role_moved</td>
+<td><a href="#streamevent-rolemoved">protocol.chat.v1.StreamEvent.RoleMoved</a></td>
+</tr>
+<tr>
+<td>role_updated</td>
+<td><a href="#streamevent-roleupdated">protocol.chat.v1.StreamEvent.RoleUpdated</a></td>
+</tr>
+<tr>
+<td>role_perms_updated</td>
+<td><a href="#streamevent-rolepermissionsupdated">protocol.chat.v1.StreamEvent.RolePermissionsUpdated</a></td>
+</tr>
+<tr>
+<td>user_roles_updated</td>
+<td><a href="#streamevent-userrolesupdated">protocol.chat.v1.StreamEvent.UserRolesUpdated</a></td>
+</tr>
+<tr>
+<td>permission_updated</td>
+<td><a href="#streamevent-permissionupdated">protocol.chat.v1.StreamEvent.PermissionUpdated</a></td>
+</tr>
+<tr>
+<td>channels_reordered</td>
+<td><a href="#streamevent-channelsreordered">protocol.chat.v1.StreamEvent.ChannelsReordered</a></td>
+</tr>
+<tr>
+<td>edited_channel_position</td>
+<td><a href="#streamevent-channelpositionupdated">protocol.chat.v1.StreamEvent.ChannelPositionUpdated</a></td>
+</tr>
+<tr>
+<td>message_pinned</td>
+<td><a href="#streamevent-messagepinned">protocol.chat.v1.StreamEvent.MessagePinned</a></td>
+</tr>
+<tr>
+<td>message_unpinned</td>
+<td><a href="#streamevent-messageunpinned">protocol.chat.v1.StreamEvent.MessageUnpinned</a></td>
+</tr>
+<tr>
+<td>reaction_updated</td>
+<td><a href="#streamevent-reactionupdated">protocol.chat.v1.StreamEvent.ReactionUpdated</a></td>
+</tr>
+<tr>
+<td>owner_added</td>
+<td><a href="#streamevent-owneradded">protocol.chat.v1.StreamEvent.OwnerAdded</a></td>
+</tr>
+<tr>
+<td>owner_removed</td>
+<td><a href="#streamevent-ownerremoved">protocol.chat.v1.StreamEvent.OwnerRemoved</a></td>
+</tr>
+<tr>
+<td>invite_received</td>
+<td><a href="#streamevent-invitereceived">protocol.chat.v1.StreamEvent.InviteReceived</a></td>
+</tr>
+<tr>
+<td>invite_rejected</td>
+<td><a href="#streamevent-inviterejected">protocol.chat.v1.StreamEvent.InviteRejected</a></td>
 </tr>
 </tbody>
 </table>
@@ -2060,7 +3684,17 @@
 </tr>
 </thead>
 </table>
-<h3 id="eventmessagesent">Event.MessageSent</h3>
+<h3 id="streameventsrequestunsubscribefromall">StreamEventsRequest.UnsubscribeFromAll</h3>
+<p>Fields</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+</tr>
+</thead>
+</table>
+<h3 id="streameventmessagesent">StreamEvent.MessageSent</h3>
 <p>Fields</p>
 <table>
 <thead>
@@ -2075,12 +3709,24 @@
 <td><code>uint64</code></td>
 </tr>
 <tr>
+<td>guild_id</td>
+<td><code>uint64</code></td>
+</tr>
+<tr>
+<td>channel_id</td>
+<td><code>uint64</code></td>
+</tr>
+<tr>
+<td>message_id</td>
+<td><code>uint64</code></td>
+</tr>
+<tr>
 <td>message</td>
-<td><a href="https://harmonyapp.io/docs/protocol.harmonytypes.v1/#message">protocol.harmonytypes.v1.Message</a></td>
+<td><a href="#message">protocol.chat.v1.Message</a></td>
 </tr>
 </tbody>
 </table>
-<h3 id="eventmessageupdated">Event.MessageUpdated</h3>
+<h3 id="streameventmessageupdated">StreamEvent.MessageUpdated</h3>
 <p>Fields</p>
 <table>
 <thead>
@@ -2104,15 +3750,15 @@
 </tr>
 <tr>
 <td>edited_at</td>
-<td><a href="https://harmonyapp.io/docs/google.protobuf/#timestamp">google.protobuf.Timestamp</a></td>
+<td><code>uint64</code></td>
 </tr>
 <tr>
-<td>content</td>
-<td><code>string</code></td>
+<td>new_content</td>
+<td><a href="#formattedtext">protocol.chat.v1.FormattedText</a></td>
 </tr>
 </tbody>
 </table>
-<h3 id="eventmessagedeleted">Event.MessageDeleted</h3>
+<h3 id="streameventmessagedeleted">StreamEvent.MessageDeleted</h3>
 <p>Fields</p>
 <table>
 <thead>
@@ -2136,7 +3782,7 @@
 </tr>
 </tbody>
 </table>
-<h3 id="eventchannelcreated">Event.ChannelCreated</h3>
+<h3 id="streameventchannelcreated">StreamEvent.ChannelCreated</h3>
 <p>Fields</p>
 <table>
 <thead>
@@ -2159,16 +3805,12 @@
 <td><code>string</code></td>
 </tr>
 <tr>
-<td>previous_id</td>
-<td><code>uint64</code></td>
+<td>position</td>
+<td><a href="https://harmonyapp.io/docs/protocol.harmonytypes.v1/#itemposition">protocol.harmonytypes.v1.ItemPosition</a></td>
 </tr>
 <tr>
-<td>next_id</td>
-<td><code>uint64</code></td>
-</tr>
-<tr>
-<td>is_category</td>
-<td><code>bool</code></td>
+<td>UNHANDLED</td>
+<td>TYPE</td>
 </tr>
 <tr>
 <td>metadata</td>
@@ -2176,7 +3818,7 @@
 </tr>
 </tbody>
 </table>
-<h3 id="eventchannelupdated">Event.ChannelUpdated</h3>
+<h3 id="streameventchannelupdated">StreamEvent.ChannelUpdated</h3>
 <p>Fields</p>
 <table>
 <thead>
@@ -2195,36 +3837,60 @@
 <td><code>uint64</code></td>
 </tr>
 <tr>
-<td>name</td>
+<td>new_name</td>
 <td><code>string</code></td>
 </tr>
 <tr>
-<td>update_name</td>
-<td><code>bool</code></td>
-</tr>
-<tr>
-<td>previous_id</td>
-<td><code>uint64</code></td>
-</tr>
-<tr>
-<td>next_id</td>
-<td><code>uint64</code></td>
-</tr>
-<tr>
-<td>update_order</td>
-<td><code>bool</code></td>
-</tr>
-<tr>
-<td>metadata</td>
+<td>new_metadata</td>
 <td><a href="https://harmonyapp.io/docs/protocol.harmonytypes.v1/#metadata">protocol.harmonytypes.v1.Metadata</a></td>
-</tr>
-<tr>
-<td>update_metadata</td>
-<td><code>bool</code></td>
 </tr>
 </tbody>
 </table>
-<h3 id="eventchanneldeleted">Event.ChannelDeleted</h3>
+<h3 id="streameventchannelpositionupdated">StreamEvent.ChannelPositionUpdated</h3>
+<p>Fields</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>guild_id</td>
+<td><code>uint64</code></td>
+</tr>
+<tr>
+<td>channel_id</td>
+<td><code>uint64</code></td>
+</tr>
+<tr>
+<td>new_position</td>
+<td><a href="https://harmonyapp.io/docs/protocol.harmonytypes.v1/#itemposition">protocol.harmonytypes.v1.ItemPosition</a></td>
+</tr>
+</tbody>
+</table>
+<h3 id="streameventchannelsreordered">StreamEvent.ChannelsReordered</h3>
+<p>Fields</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>guild_id</td>
+<td><code>uint64</code></td>
+</tr>
+<tr>
+<td>channel_ids</td>
+<td><code>uint64</code></td>
+</tr>
+</tbody>
+</table>
+<h3 id="streameventchanneldeleted">StreamEvent.ChannelDeleted</h3>
 <p>Fields</p>
 <table>
 <thead>
@@ -2244,7 +3910,7 @@
 </tr>
 </tbody>
 </table>
-<h3 id="eventguildupdated">Event.GuildUpdated</h3>
+<h3 id="streameventguildupdated">StreamEvent.GuildUpdated</h3>
 <p>Fields</p>
 <table>
 <thead>
@@ -2259,32 +3925,20 @@
 <td><code>uint64</code></td>
 </tr>
 <tr>
-<td>name</td>
+<td>new_name</td>
 <td><code>string</code></td>
 </tr>
 <tr>
-<td>update_name</td>
-<td><code>bool</code></td>
-</tr>
-<tr>
-<td>picture</td>
+<td>new_picture</td>
 <td><code>string</code></td>
 </tr>
 <tr>
-<td>update_picture</td>
-<td><code>bool</code></td>
-</tr>
-<tr>
-<td>metadata</td>
+<td>new_metadata</td>
 <td><a href="https://harmonyapp.io/docs/protocol.harmonytypes.v1/#metadata">protocol.harmonytypes.v1.Metadata</a></td>
 </tr>
-<tr>
-<td>update_metadata</td>
-<td><code>bool</code></td>
-</tr>
 </tbody>
 </table>
-<h3 id="eventguilddeleted">Event.GuildDeleted</h3>
+<h3 id="streameventguilddeleted">StreamEvent.GuildDeleted</h3>
 <p>Fields</p>
 <table>
 <thead>
@@ -2300,7 +3954,7 @@
 </tr>
 </tbody>
 </table>
-<h3 id="eventmemberjoined">Event.MemberJoined</h3>
+<h3 id="streameventmemberjoined">StreamEvent.MemberJoined</h3>
 <p>Fields</p>
 <table>
 <thead>
@@ -2320,7 +3974,7 @@
 </tr>
 </tbody>
 </table>
-<h3 id="eventmemberleft">Event.MemberLeft</h3>
+<h3 id="streameventmemberleft">StreamEvent.MemberLeft</h3>
 <p>Fields</p>
 <table>
 <thead>
@@ -2344,7 +3998,7 @@
 </tr>
 </tbody>
 </table>
-<h3 id="eventguildaddedtolist">Event.GuildAddedToList</h3>
+<h3 id="streameventguildaddedtolist">StreamEvent.GuildAddedToList</h3>
 <p>Fields</p>
 <table>
 <thead>
@@ -2364,7 +4018,7 @@
 </tr>
 </tbody>
 </table>
-<h3 id="eventguildremovedfromlist">Event.GuildRemovedFromList</h3>
+<h3 id="streameventguildremovedfromlist">StreamEvent.GuildRemovedFromList</h3>
 <p>Fields</p>
 <table>
 <thead>
@@ -2384,7 +4038,7 @@
 </tr>
 </tbody>
 </table>
-<h3 id="eventactionperformed">Event.ActionPerformed</h3>
+<h3 id="streameventactionperformed">StreamEvent.ActionPerformed</h3>
 <p>Fields</p>
 <table>
 <thead>
@@ -2407,16 +4061,40 @@
 <td><code>uint64</code></td>
 </tr>
 <tr>
-<td>action_id</td>
-<td><code>string</code></td>
+<td>user_id</td>
+<td><code>uint64</code></td>
 </tr>
 <tr>
-<td>action_data</td>
-<td><code>string</code></td>
+<td>payload</td>
+<td><a href="#actionpayload">protocol.chat.v1.ActionPayload</a></td>
 </tr>
 </tbody>
 </table>
-<h3 id="eventrolemoved">Event.RoleMoved</h3>
+<h3 id="streameventrolemoved">StreamEvent.RoleMoved</h3>
+<p>Fields</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>guild_id</td>
+<td><code>uint64</code></td>
+</tr>
+<tr>
+<td>role_id</td>
+<td><code>uint64</code></td>
+</tr>
+<tr>
+<td>new_position</td>
+<td><a href="https://harmonyapp.io/docs/protocol.harmonytypes.v1/#itemposition">protocol.harmonytypes.v1.ItemPosition</a></td>
+</tr>
+</tbody>
+</table>
+<h3 id="streameventroledeleted">StreamEvent.RoleDeleted</h3>
 <p>Fields</p>
 <table>
 <thead>
@@ -2436,7 +4114,7 @@
 </tr>
 </tbody>
 </table>
-<h3 id="eventprofileupdated">Event.ProfileUpdated</h3>
+<h3 id="streameventrolecreated">StreamEvent.RoleCreated</h3>
 <p>Fields</p>
 <table>
 <thead>
@@ -2447,44 +4125,120 @@
 </thead>
 <tbody>
 <tr>
-<td>user_id</td>
+<td>guild_id</td>
 <td><code>uint64</code></td>
 </tr>
 <tr>
-<td>new_username</td>
+<td>role_id</td>
+<td><code>uint64</code></td>
+</tr>
+<tr>
+<td>name</td>
 <td><code>string</code></td>
 </tr>
 <tr>
-<td>update_username</td>
+<td>color</td>
+<td><code>int32</code></td>
+</tr>
+<tr>
+<td>hoist</td>
 <td><code>bool</code></td>
 </tr>
 <tr>
-<td>new_avatar</td>
-<td><code>string</code></td>
-</tr>
-<tr>
-<td>update_avatar</td>
-<td><code>bool</code></td>
-</tr>
-<tr>
-<td>UNHANDLED</td>
-<td>TYPE</td>
-</tr>
-<tr>
-<td>update_status</td>
-<td><code>bool</code></td>
-</tr>
-<tr>
-<td>is_bot</td>
-<td><code>bool</code></td>
-</tr>
-<tr>
-<td>update_is_bot</td>
+<td>pingable</td>
 <td><code>bool</code></td>
 </tr>
 </tbody>
 </table>
-<h3 id="eventtyping">Event.Typing</h3>
+<h3 id="streameventroleupdated">StreamEvent.RoleUpdated</h3>
+<p>Fields</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>guild_id</td>
+<td><code>uint64</code></td>
+</tr>
+<tr>
+<td>role_id</td>
+<td><code>uint64</code></td>
+</tr>
+<tr>
+<td>new_name</td>
+<td><code>string</code></td>
+</tr>
+<tr>
+<td>new_color</td>
+<td><code>int32</code></td>
+</tr>
+<tr>
+<td>new_hoist</td>
+<td><code>bool</code></td>
+</tr>
+<tr>
+<td>new_pingable</td>
+<td><code>bool</code></td>
+</tr>
+</tbody>
+</table>
+<h3 id="streameventrolepermissionsupdated">StreamEvent.RolePermissionsUpdated</h3>
+<p>Fields</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>guild_id</td>
+<td><code>uint64</code></td>
+</tr>
+<tr>
+<td>channel_id</td>
+<td><code>uint64</code></td>
+</tr>
+<tr>
+<td>role_id</td>
+<td><code>uint64</code></td>
+</tr>
+<tr>
+<td>new_perms</td>
+<td><a href="#permission">protocol.chat.v1.Permission</a></td>
+</tr>
+</tbody>
+</table>
+<h3 id="streameventuserrolesupdated">StreamEvent.UserRolesUpdated</h3>
+<p>Fields</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>guild_id</td>
+<td><code>uint64</code></td>
+</tr>
+<tr>
+<td>user_id</td>
+<td><code>uint64</code></td>
+</tr>
+<tr>
+<td>new_role_ids</td>
+<td><code>uint64</code></td>
+</tr>
+</tbody>
+</table>
+<h3 id="streameventtyping">StreamEvent.Typing</h3>
 <p>Fields</p>
 <table>
 <thead>
@@ -2504,6 +4258,190 @@
 </tr>
 <tr>
 <td>channel_id</td>
+<td><code>uint64</code></td>
+</tr>
+</tbody>
+</table>
+<h3 id="streameventpermissionupdated">StreamEvent.PermissionUpdated</h3>
+<p>Fields</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>guild_id</td>
+<td><code>uint64</code></td>
+</tr>
+<tr>
+<td>channel_id</td>
+<td><code>uint64</code></td>
+</tr>
+<tr>
+<td>query</td>
+<td><code>string</code></td>
+</tr>
+<tr>
+<td>ok</td>
+<td><code>bool</code></td>
+</tr>
+</tbody>
+</table>
+<h3 id="streameventmessagepinned">StreamEvent.MessagePinned</h3>
+<p>Fields</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>guild_id</td>
+<td><code>uint64</code></td>
+</tr>
+<tr>
+<td>channel_id</td>
+<td><code>uint64</code></td>
+</tr>
+<tr>
+<td>message_id</td>
+<td><code>uint64</code></td>
+</tr>
+</tbody>
+</table>
+<h3 id="streameventmessageunpinned">StreamEvent.MessageUnpinned</h3>
+<p>Fields</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>guild_id</td>
+<td><code>uint64</code></td>
+</tr>
+<tr>
+<td>channel_id</td>
+<td><code>uint64</code></td>
+</tr>
+<tr>
+<td>message_id</td>
+<td><code>uint64</code></td>
+</tr>
+</tbody>
+</table>
+<h3 id="streameventreactionupdated">StreamEvent.ReactionUpdated</h3>
+<p>Fields</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>guild_id</td>
+<td><code>uint64</code></td>
+</tr>
+<tr>
+<td>channel_id</td>
+<td><code>uint64</code></td>
+</tr>
+<tr>
+<td>message_id</td>
+<td><code>uint64</code></td>
+</tr>
+<tr>
+<td>reaction</td>
+<td><a href="#reaction">protocol.chat.v1.Reaction</a></td>
+</tr>
+</tbody>
+</table>
+<h3 id="streameventowneradded">StreamEvent.OwnerAdded</h3>
+<p>Fields</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>user_id</td>
+<td><code>uint64</code></td>
+</tr>
+</tbody>
+</table>
+<h3 id="streameventownerremoved">StreamEvent.OwnerRemoved</h3>
+<p>Fields</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>user_id</td>
+<td><code>uint64</code></td>
+</tr>
+</tbody>
+</table>
+<h3 id="streameventinvitereceived">StreamEvent.InviteReceived</h3>
+<p>Fields</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>invite_id</td>
+<td><code>string</code></td>
+</tr>
+<tr>
+<td>server_id</td>
+<td><code>string</code></td>
+</tr>
+<tr>
+<td>inviter_id</td>
+<td><code>uint64</code></td>
+</tr>
+</tbody>
+</table>
+<h3 id="streameventinviterejected">StreamEvent.InviteRejected</h3>
+<p>Fields</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>guild_id</td>
+<td><code>uint64</code></td>
+</tr>
+<tr>
+<td>invite_id</td>
+<td><code>string</code></td>
+</tr>
+<tr>
+<td>user_id</td>
 <td><code>uint64</code></td>
 </tr>
 </tbody>
@@ -2526,6 +4464,21 @@
 <td><a href="#createguildresponse">protocol.chat.v1.CreateGuildResponse</a></td>
 </tr>
 <tr>
+<td>CreateRoom</td>
+<td><a href="#createroomrequest">protocol.chat.v1.CreateRoomRequest</a></td>
+<td><a href="#createroomresponse">protocol.chat.v1.CreateRoomResponse</a></td>
+</tr>
+<tr>
+<td>CreateDirectMessage</td>
+<td><a href="#createdirectmessagerequest">protocol.chat.v1.CreateDirectMessageRequest</a></td>
+<td><a href="#createdirectmessageresponse">protocol.chat.v1.CreateDirectMessageResponse</a></td>
+</tr>
+<tr>
+<td>UpgradeRoomToGuild</td>
+<td><a href="#upgraderoomtoguildrequest">protocol.chat.v1.UpgradeRoomToGuildRequest</a></td>
+<td><a href="#upgraderoomtoguildresponse">protocol.chat.v1.UpgradeRoomToGuildResponse</a></td>
+</tr>
+<tr>
 <td>CreateInvite</td>
 <td><a href="#createinviterequest">protocol.chat.v1.CreateInviteRequest</a></td>
 <td><a href="#createinviteresponse">protocol.chat.v1.CreateInviteResponse</a></td>
@@ -2536,14 +4489,29 @@
 <td><a href="#createchannelresponse">protocol.chat.v1.CreateChannelResponse</a></td>
 </tr>
 <tr>
-<td>CreateEmotePack</td>
-<td><a href="#createemotepackrequest">protocol.chat.v1.CreateEmotePackRequest</a></td>
-<td><a href="#createemotepackresponse">protocol.chat.v1.CreateEmotePackResponse</a></td>
-</tr>
-<tr>
 <td>GetGuildList</td>
 <td><a href="#getguildlistrequest">protocol.chat.v1.GetGuildListRequest</a></td>
 <td><a href="#getguildlistresponse">protocol.chat.v1.GetGuildListResponse</a></td>
+</tr>
+<tr>
+<td>InviteUserToGuild</td>
+<td><a href="#inviteusertoguildrequest">protocol.chat.v1.InviteUserToGuildRequest</a></td>
+<td><a href="#inviteusertoguildresponse">protocol.chat.v1.InviteUserToGuildResponse</a></td>
+</tr>
+<tr>
+<td>GetPendingInvites</td>
+<td><a href="#getpendinginvitesrequest">protocol.chat.v1.GetPendingInvitesRequest</a></td>
+<td><a href="#getpendinginvitesresponse">protocol.chat.v1.GetPendingInvitesResponse</a></td>
+</tr>
+<tr>
+<td>RejectPendingInvite</td>
+<td><a href="#rejectpendinginviterequest">protocol.chat.v1.RejectPendingInviteRequest</a></td>
+<td><a href="#rejectpendinginviteresponse">protocol.chat.v1.RejectPendingInviteResponse</a></td>
+</tr>
+<tr>
+<td>IgnorePendingInvite</td>
+<td><a href="#ignorependinginviterequest">protocol.chat.v1.IgnorePendingInviteRequest</a></td>
+<td><a href="#ignorependinginviteresponse">protocol.chat.v1.IgnorePendingInviteResponse</a></td>
 </tr>
 <tr>
 <td>GetGuild</td>
@@ -2576,74 +4544,49 @@
 <td><a href="#getmessageresponse">protocol.chat.v1.GetMessageResponse</a></td>
 </tr>
 <tr>
-<td>GetEmotePacks</td>
-<td><a href="#getemotepacksrequest">protocol.chat.v1.GetEmotePacksRequest</a></td>
-<td><a href="#getemotepacksresponse">protocol.chat.v1.GetEmotePacksResponse</a></td>
-</tr>
-<tr>
-<td>GetEmotePackEmotes</td>
-<td><a href="#getemotepackemotesrequest">protocol.chat.v1.GetEmotePackEmotesRequest</a></td>
-<td><a href="#getemotepackemotesresponse">protocol.chat.v1.GetEmotePackEmotesResponse</a></td>
-</tr>
-<tr>
 <td>UpdateGuildInformation</td>
 <td><a href="#updateguildinformationrequest">protocol.chat.v1.UpdateGuildInformationRequest</a></td>
-<td><a href="https://harmonyapp.io/docs/google.protobuf/#empty">google.protobuf.Empty</a></td>
+<td><a href="#updateguildinformationresponse">protocol.chat.v1.UpdateGuildInformationResponse</a></td>
 </tr>
 <tr>
 <td>UpdateChannelInformation</td>
 <td><a href="#updatechannelinformationrequest">protocol.chat.v1.UpdateChannelInformationRequest</a></td>
-<td><a href="https://harmonyapp.io/docs/google.protobuf/#empty">google.protobuf.Empty</a></td>
+<td><a href="#updatechannelinformationresponse">protocol.chat.v1.UpdateChannelInformationResponse</a></td>
 </tr>
 <tr>
 <td>UpdateChannelOrder</td>
 <td><a href="#updatechannelorderrequest">protocol.chat.v1.UpdateChannelOrderRequest</a></td>
-<td><a href="https://harmonyapp.io/docs/google.protobuf/#empty">google.protobuf.Empty</a></td>
+<td><a href="#updatechannelorderresponse">protocol.chat.v1.UpdateChannelOrderResponse</a></td>
+</tr>
+<tr>
+<td>UpdateAllChannelOrder</td>
+<td><a href="#updateallchannelorderrequest">protocol.chat.v1.UpdateAllChannelOrderRequest</a></td>
+<td><a href="#updateallchannelorderresponse">protocol.chat.v1.UpdateAllChannelOrderResponse</a></td>
 </tr>
 <tr>
 <td>UpdateMessageText</td>
 <td><a href="#updatemessagetextrequest">protocol.chat.v1.UpdateMessageTextRequest</a></td>
-<td><a href="https://harmonyapp.io/docs/google.protobuf/#empty">google.protobuf.Empty</a></td>
-</tr>
-<tr>
-<td>AddEmoteToPack</td>
-<td><a href="#addemotetopackrequest">protocol.chat.v1.AddEmoteToPackRequest</a></td>
-<td><a href="https://harmonyapp.io/docs/google.protobuf/#empty">google.protobuf.Empty</a></td>
+<td><a href="#updatemessagetextresponse">protocol.chat.v1.UpdateMessageTextResponse</a></td>
 </tr>
 <tr>
 <td>DeleteGuild</td>
 <td><a href="#deleteguildrequest">protocol.chat.v1.DeleteGuildRequest</a></td>
-<td><a href="https://harmonyapp.io/docs/google.protobuf/#empty">google.protobuf.Empty</a></td>
+<td><a href="#deleteguildresponse">protocol.chat.v1.DeleteGuildResponse</a></td>
 </tr>
 <tr>
 <td>DeleteInvite</td>
 <td><a href="#deleteinviterequest">protocol.chat.v1.DeleteInviteRequest</a></td>
-<td><a href="https://harmonyapp.io/docs/google.protobuf/#empty">google.protobuf.Empty</a></td>
+<td><a href="#deleteinviteresponse">protocol.chat.v1.DeleteInviteResponse</a></td>
 </tr>
 <tr>
 <td>DeleteChannel</td>
 <td><a href="#deletechannelrequest">protocol.chat.v1.DeleteChannelRequest</a></td>
-<td><a href="https://harmonyapp.io/docs/google.protobuf/#empty">google.protobuf.Empty</a></td>
+<td><a href="#deletechannelresponse">protocol.chat.v1.DeleteChannelResponse</a></td>
 </tr>
 <tr>
 <td>DeleteMessage</td>
 <td><a href="#deletemessagerequest">protocol.chat.v1.DeleteMessageRequest</a></td>
-<td><a href="https://harmonyapp.io/docs/google.protobuf/#empty">google.protobuf.Empty</a></td>
-</tr>
-<tr>
-<td>DeleteEmoteFromPack</td>
-<td><a href="#deleteemotefrompackrequest">protocol.chat.v1.DeleteEmoteFromPackRequest</a></td>
-<td><a href="https://harmonyapp.io/docs/google.protobuf/#empty">google.protobuf.Empty</a></td>
-</tr>
-<tr>
-<td>DeleteEmotePack</td>
-<td><a href="#deleteemotepackrequest">protocol.chat.v1.DeleteEmotePackRequest</a></td>
-<td><a href="https://harmonyapp.io/docs/google.protobuf/#empty">google.protobuf.Empty</a></td>
-</tr>
-<tr>
-<td>DequipEmotePack</td>
-<td><a href="#dequipemotepackrequest">protocol.chat.v1.DequipEmotePackRequest</a></td>
-<td><a href="https://harmonyapp.io/docs/google.protobuf/#empty">google.protobuf.Empty</a></td>
+<td><a href="#deletemessageresponse">protocol.chat.v1.DeleteMessageResponse</a></td>
 </tr>
 <tr>
 <td>JoinGuild</td>
@@ -2653,12 +4596,12 @@
 <tr>
 <td>LeaveGuild</td>
 <td><a href="#leaveguildrequest">protocol.chat.v1.LeaveGuildRequest</a></td>
-<td><a href="https://harmonyapp.io/docs/google.protobuf/#empty">google.protobuf.Empty</a></td>
+<td><a href="#leaveguildresponse">protocol.chat.v1.LeaveGuildResponse</a></td>
 </tr>
 <tr>
 <td>TriggerAction</td>
 <td><a href="#triggeractionrequest">protocol.chat.v1.TriggerActionRequest</a></td>
-<td><a href="https://harmonyapp.io/docs/google.protobuf/#empty">google.protobuf.Empty</a></td>
+<td><a href="#triggeractionresponse">protocol.chat.v1.TriggerActionResponse</a></td>
 </tr>
 <tr>
 <td>SendMessage</td>
@@ -2667,13 +4610,13 @@
 </tr>
 <tr>
 <td>QueryHasPermission</td>
-<td><a href="#querypermissionsrequest">protocol.chat.v1.QueryPermissionsRequest</a></td>
-<td><a href="#querypermissionsresponse">protocol.chat.v1.QueryPermissionsResponse</a></td>
+<td><a href="#queryhaspermissionrequest">protocol.chat.v1.QueryHasPermissionRequest</a></td>
+<td><a href="#queryhaspermissionresponse">protocol.chat.v1.QueryHasPermissionResponse</a></td>
 </tr>
 <tr>
 <td>SetPermissions</td>
 <td><a href="#setpermissionsrequest">protocol.chat.v1.SetPermissionsRequest</a></td>
-<td><a href="https://harmonyapp.io/docs/google.protobuf/#empty">google.protobuf.Empty</a></td>
+<td><a href="#setpermissionsresponse">protocol.chat.v1.SetPermissionsResponse</a></td>
 </tr>
 <tr>
 <td>GetPermissions</td>
@@ -2698,17 +4641,17 @@
 <tr>
 <td>ModifyGuildRole</td>
 <td><a href="#modifyguildrolerequest">protocol.chat.v1.ModifyGuildRoleRequest</a></td>
-<td><a href="https://harmonyapp.io/docs/google.protobuf/#empty">google.protobuf.Empty</a></td>
+<td><a href="#modifyguildroleresponse">protocol.chat.v1.ModifyGuildRoleResponse</a></td>
 </tr>
 <tr>
 <td>DeleteGuildRole</td>
 <td><a href="#deleteguildrolerequest">protocol.chat.v1.DeleteGuildRoleRequest</a></td>
-<td><a href="https://harmonyapp.io/docs/google.protobuf/#empty">google.protobuf.Empty</a></td>
+<td><a href="#deleteguildroleresponse">protocol.chat.v1.DeleteGuildRoleResponse</a></td>
 </tr>
 <tr>
 <td>ManageUserRoles</td>
 <td><a href="#manageuserrolesrequest">protocol.chat.v1.ManageUserRolesRequest</a></td>
-<td><a href="https://harmonyapp.io/docs/google.protobuf/#empty">google.protobuf.Empty</a></td>
+<td><a href="#manageuserrolesresponse">protocol.chat.v1.ManageUserRolesResponse</a></td>
 </tr>
 <tr>
 <td>GetUserRoles</td>
@@ -2716,29 +4659,9 @@
 <td><a href="#getuserrolesresponse">protocol.chat.v1.GetUserRolesResponse</a></td>
 </tr>
 <tr>
-<td>GetUser</td>
-<td><a href="#getuserrequest">protocol.chat.v1.GetUserRequest</a></td>
-<td><a href="#getuserresponse">protocol.chat.v1.GetUserResponse</a></td>
-</tr>
-<tr>
-<td>GetUserBulk</td>
-<td><a href="#getuserbulkrequest">protocol.chat.v1.GetUserBulkRequest</a></td>
-<td><a href="#getuserbulkresponse">protocol.chat.v1.GetUserBulkResponse</a></td>
-</tr>
-<tr>
-<td>GetUserMetadata</td>
-<td><a href="#getusermetadatarequest">protocol.chat.v1.GetUserMetadataRequest</a></td>
-<td><a href="#getusermetadataresponse">protocol.chat.v1.GetUserMetadataResponse</a></td>
-</tr>
-<tr>
-<td>ProfileUpdate</td>
-<td><a href="#profileupdaterequest">protocol.chat.v1.ProfileUpdateRequest</a></td>
-<td><a href="https://harmonyapp.io/docs/google.protobuf/#empty">google.protobuf.Empty</a></td>
-</tr>
-<tr>
 <td>Typing</td>
 <td><a href="#typingrequest">protocol.chat.v1.TypingRequest</a></td>
-<td><a href="https://harmonyapp.io/docs/google.protobuf/#empty">google.protobuf.Empty</a></td>
+<td><a href="#typingresponse">protocol.chat.v1.TypingResponse</a></td>
 </tr>
 <tr>
 <td>PreviewGuild</td>
@@ -2746,19 +4669,59 @@
 <td><a href="#previewguildresponse">protocol.chat.v1.PreviewGuildResponse</a></td>
 </tr>
 <tr>
+<td>GetBannedUsers</td>
+<td><a href="#getbannedusersrequest">protocol.chat.v1.GetBannedUsersRequest</a></td>
+<td><a href="#getbannedusersresponse">protocol.chat.v1.GetBannedUsersResponse</a></td>
+</tr>
+<tr>
 <td>BanUser</td>
 <td><a href="#banuserrequest">protocol.chat.v1.BanUserRequest</a></td>
-<td><a href="https://harmonyapp.io/docs/google.protobuf/#empty">google.protobuf.Empty</a></td>
+<td><a href="#banuserresponse">protocol.chat.v1.BanUserResponse</a></td>
 </tr>
 <tr>
 <td>KickUser</td>
 <td><a href="#kickuserrequest">protocol.chat.v1.KickUserRequest</a></td>
-<td><a href="https://harmonyapp.io/docs/google.protobuf/#empty">google.protobuf.Empty</a></td>
+<td><a href="#kickuserresponse">protocol.chat.v1.KickUserResponse</a></td>
 </tr>
 <tr>
 <td>UnbanUser</td>
 <td><a href="#unbanuserrequest">protocol.chat.v1.UnbanUserRequest</a></td>
-<td><a href="https://harmonyapp.io/docs/google.protobuf/#empty">google.protobuf.Empty</a></td>
+<td><a href="#unbanuserresponse">protocol.chat.v1.UnbanUserResponse</a></td>
+</tr>
+<tr>
+<td>GetPinnedMessages</td>
+<td><a href="#getpinnedmessagesrequest">protocol.chat.v1.GetPinnedMessagesRequest</a></td>
+<td><a href="#getpinnedmessagesresponse">protocol.chat.v1.GetPinnedMessagesResponse</a></td>
+</tr>
+<tr>
+<td>PinMessage</td>
+<td><a href="#pinmessagerequest">protocol.chat.v1.PinMessageRequest</a></td>
+<td><a href="#pinmessageresponse">protocol.chat.v1.PinMessageResponse</a></td>
+</tr>
+<tr>
+<td>UnpinMessage</td>
+<td><a href="#unpinmessagerequest">protocol.chat.v1.UnpinMessageRequest</a></td>
+<td><a href="#unpinmessageresponse">protocol.chat.v1.UnpinMessageResponse</a></td>
+</tr>
+<tr>
+<td>AddReaction</td>
+<td><a href="#addreactionrequest">protocol.chat.v1.AddReactionRequest</a></td>
+<td><a href="#addreactionresponse">protocol.chat.v1.AddReactionResponse</a></td>
+</tr>
+<tr>
+<td>RemoveReaction</td>
+<td><a href="#removereactionrequest">protocol.chat.v1.RemoveReactionRequest</a></td>
+<td><a href="#removereactionresponse">protocol.chat.v1.RemoveReactionResponse</a></td>
+</tr>
+<tr>
+<td>GrantOwnership</td>
+<td><a href="#grantownershiprequest">protocol.chat.v1.GrantOwnershipRequest</a></td>
+<td><a href="#grantownershipresponse">protocol.chat.v1.GrantOwnershipResponse</a></td>
+</tr>
+<tr>
+<td>GiveUpOwnership</td>
+<td><a href="#giveupownershiprequest">protocol.chat.v1.GiveUpOwnershipRequest</a></td>
+<td><a href="#giveupownershipresponse">protocol.chat.v1.GiveUpOwnershipResponse</a></td>
 </tr>
 </tbody>
 </table>
@@ -2775,7 +4738,7 @@
 <tr>
 <td>StreamEvents</td>
 <td><a href="#streameventsrequest">protocol.chat.v1.StreamEventsRequest</a></td>
-<td><a href="#event">protocol.chat.v1.Event</a></td>
+<td><a href="#streameventsresponse">protocol.chat.v1.StreamEventsResponse</a></td>
 </tr>
 </tbody>
 </table>
@@ -2785,7 +4748,7 @@
 </div>
 
 
-        </main><footer class="py-8 bg-dark-900 flex justify-center">
+        </main><footer class="py-8 bg-light-900 dark:bg-dark-900 flex justify-center">
   <div class="max-w-prose">Harmony Development</div>
 </footer>
 </body>
