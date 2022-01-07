@@ -174,7 +174,7 @@ The UTC UNIX time in seconds of when the request is started."/>
         <li><a href="#authorisation">Authorisation</a></li>
         <li><a href="#events">Events</a>
           <ul>
-            <li><a href="#methods">Methods</a>
+            <li>
               <ul>
                 <li><a href="#span-classcodicon-codicon-symbol-method-symbol-methodspanpull"><span class="codicon codicon-symbol-method symbol-method"></span>Pull</a>
                   <ul>
@@ -312,8 +312,8 @@ all new events should be dispatched to the queue. No new Push RPC should be made
 before the queue is emptied. This ensures that events are always received in the
 right order.</p>
 <p>It is recommended that receivers try pulling periodically, for example, every
-1 minute after the last Push RPC by the sender. This ensures that events are recieved.</p>
-<h3 id="methods">Methods</h3>
+1 minute after the last Push RPC by the sender. This ensures that events are recieved.
+<span class="h3" aria-level="3">Fields</span></p>
 <h4 id="span-classcodicon-codicon-symbol-method-symbol-methodspanpull"><span class="codicon codicon-symbol-method symbol-method"></span>Pull</h4>
 <p><a href="#pullrequest">protocol.sync.v1.PullRequest</a> -&gt; <a href="#pullresponse">protocol.sync.v1.PullResponse</a></p>
 <p>Endpoint to pull events.</p>

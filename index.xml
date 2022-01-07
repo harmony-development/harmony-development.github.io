@@ -132,8 +132,8 @@ session_token: the session token to use in authorization
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://harmonyapp.io/docs/protocol.batch.v1/</guid>
-      <description>Standalone Message Types Services BatchService Service to batch requests.
-Methods Batch protocol.batch.v1.BatchRequest -&amp;gt; protocol.batch.v1.BatchResponse
+      <description>Standalone Message Types Services BatchService Service to batch requests. Fields
+Batch protocol.batch.v1.BatchRequest -&amp;gt; protocol.batch.v1.BatchResponse
 Batch requests. Does not support batching stream requests. Batched requests should be verified and an error should be thrown if they are invalid.
  BatchRequest Used in Batch endpoint.
 Fields

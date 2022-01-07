@@ -220,7 +220,7 @@ consumer_id Type: optional string"/>
       <ul>
         <li><a href="#how-this-looks-for-servers">How this looks for servers</a>
           <ul>
-            <li><a href="#methods">Methods</a>
+            <li>
               <ul>
                 <li><a href="#span-classcodicon-codicon-symbol-method-symbol-methodspanstreammessage"><span class="codicon codicon-symbol-method symbol-method"></span>StreamMessage</a></li>
               </ul>
@@ -406,9 +406,9 @@ and uses the RTP paramaters to create a producer for the client</li>
 <li>Sends JoinedChannel over stream with the created producer ID and all other users' data (UserData)</li>
 <li>When another user does 1 to 7, sends UserJoined over stream to all other users;
 when a user leaves the channel (when their stream ends), sends UserLeft to all other users</li>
-<li>When receiving a ResumeConsumer message, unpauses the consumer corresponding to the consumer ID</li>
+<li>When receiving a ResumeConsumer message, unpauses the consumer corresponding to the consumer ID
+<span class="h3" aria-level="3">Fields</span></li>
 </ol>
-<h3 id="methods">Methods</h3>
 <h4 id="span-classcodicon-codicon-symbol-method-symbol-methodspanstreammessage"><span class="codicon codicon-symbol-method symbol-method"></span>StreamMessage</h4>
 <p>streaming <a href="#streammessagerequest">protocol.voice.v1.StreamMessageRequest</a> -&gt; streaming <a href="#streammessageresponse">protocol.voice.v1.StreamMessageResponse</a></p>
 <p>Endpoint to stream messages between client and server.</p>
