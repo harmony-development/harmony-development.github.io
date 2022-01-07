@@ -146,10 +146,9 @@
 }
 
 .prose pre {
-  @apply bg-light-700 dark:bg-dark-900 dark:text-white;
+  @apply !bg-light-700 dark:!bg-dark-900 p-2 dark:text-white;
 
   border-radius: 10px;
-  padding: 4px;
 }
 
 .prose pre > code {
