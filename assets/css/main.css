@@ -66,12 +66,17 @@
   content: "▾ ";
 }
 
+.prose-toc li, .prose-toc a {
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
 .prose-toc ul ul {
-  @apply pl-3;
+  @apply pl-1.5;
 }
 
 .prose-toc a {
-  @apply transition-all duration-100 pl-4 py-2 rounded-md w-full hover:bg-light-800 dark:hover:bg-dark-500 block;
+  @apply transition-all duration-100 py-2 rounded-md w-full hover:bg-light-800 dark:hover:bg-dark-500 block;
 }
 
 .prose-toc h4 {
