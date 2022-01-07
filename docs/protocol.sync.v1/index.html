@@ -3,12 +3,10 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no">
     <title>Reference: protocol.sync.v1 | Harmony</title>
-    <meta name="description" content="Standalone Message Types AuthData Authentication data that will be sent in a harmonytypes.v1.Token.
-Fields
-server_id Type: optional string
-The server ID of the server initiating the transaction. For Pull, this tells the server being connected to which homeservers&#39; events it should send. For Push, this tells the server being connected to which homeservers&#39; events it is receiving.
-time Type: optional uint64
-The UTC UNIX time in seconds of when the request is started. ">
+    <meta name="description" content="Services PostboxService Postbox The postbox service forms the core of Harmony&rsquo;s server &lt;-&gt; server communications.
+It concerns the transfer of Events between servers, as well as ensuring reliable delivery of them.
+The semantics of events are documented in the event types. The postbox service is solely reliable for reliable pushing and pulling.
+Server Identification Servers are identified using their domain, and the port which they serve. This is called the &ldquo;server ID&rdquo;, and must be formatted as domain:port. ">
     <link rel="canonical" href="https://harmonyapp.io/docs/protocol.sync.v1/" />
 
     <link rel="stylesheet" href="/css/codicon.css" />
@@ -21,24 +19,20 @@ The UTC UNIX time in seconds of when the request is started. ">
     
 
     <meta property="og:title" content="Reference: protocol.sync.v1" />
-<meta property="og:description" content="Standalone Message Types AuthData Authentication data that will be sent in a harmonytypes.v1.Token.
-Fields
-server_id Type: optional string
-The server ID of the server initiating the transaction. For Pull, this tells the server being connected to which homeservers&#39; events it should send. For Push, this tells the server being connected to which homeservers&#39; events it is receiving.
-time Type: optional uint64
-The UTC UNIX time in seconds of when the request is started." />
+<meta property="og:description" content="Services PostboxService Postbox The postbox service forms the core of Harmony&rsquo;s server &lt;-&gt; server communications.
+It concerns the transfer of Events between servers, as well as ensuring reliable delivery of them.
+The semantics of events are documented in the event types. The postbox service is solely reliable for reliable pushing and pulling.
+Server Identification Servers are identified using their domain, and the port which they serve. This is called the &ldquo;server ID&rdquo;, and must be formatted as domain:port." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://harmonyapp.io/docs/protocol.sync.v1/" />
 
 
     <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Reference: protocol.sync.v1"/>
-<meta name="twitter:description" content="Standalone Message Types AuthData Authentication data that will be sent in a harmonytypes.v1.Token.
-Fields
-server_id Type: optional string
-The server ID of the server initiating the transaction. For Pull, this tells the server being connected to which homeservers&#39; events it should send. For Push, this tells the server being connected to which homeservers&#39; events it is receiving.
-time Type: optional uint64
-The UTC UNIX time in seconds of when the request is started."/>
+<meta name="twitter:description" content="Services PostboxService Postbox The postbox service forms the core of Harmony&rsquo;s server &lt;-&gt; server communications.
+It concerns the transfer of Events between servers, as well as ensuring reliable delivery of them.
+The semantics of events are documented in the event types. The postbox service is solely reliable for reliable pushing and pulling.
+Server Identification Servers are identified using their domain, and the port which they serve. This is called the &ldquo;server ID&rdquo;, and must be formatted as domain:port."/>
 
     <meta name="theme-color" content="#E93D58">
     <meta property="og:image" content="https://harmonyapp.io/img/harmony-embed.png" />
@@ -119,50 +113,6 @@ The UTC UNIX time in seconds of when the request is started."/>
     <h4><strong>Table Of Contents</strong></h4>
     <nav id="TableOfContents">
   <ul>
-    <li><a href="#standalone-message-types">Standalone Message Types</a>
-      <ul>
-        <li><a href="#span-classcodicon-codicon-symbol-structure-symbol-structurespanauthdata"><span class="codicon codicon-symbol-structure symbol-structure"></span>AuthData</a>
-          <ul>
-            <li><a href="#span-classcodicon-codicon-symbol-field-symbol-fieldspanserver_id"><span class="codicon codicon-symbol-field symbol-field"></span>server_id</a></li>
-            <li><a href="#span-classcodicon-codicon-symbol-field-symbol-fieldspantime"><span class="codicon codicon-symbol-field symbol-field"></span>time</a></li>
-          </ul>
-        </li>
-        <li><a href="#span-classcodicon-codicon-symbol-structure-symbol-structurespanevent"><span class="codicon codicon-symbol-structure symbol-structure"></span>Event</a>
-          <ul>
-            <li><a href="#span-classcodicon-codicon-symbol-field-symbol-fieldspanuser_removed_from_guild"><span class="codicon codicon-symbol-field symbol-field"></span>user_removed_from_guild</a></li>
-            <li><a href="#span-classcodicon-codicon-symbol-field-symbol-fieldspanuser_added_to_guild"><span class="codicon codicon-symbol-field symbol-field"></span>user_added_to_guild</a></li>
-            <li><a href="#span-classcodicon-codicon-symbol-field-symbol-fieldspanuser_invited"><span class="codicon codicon-symbol-field symbol-field"></span>user_invited</a></li>
-            <li><a href="#span-classcodicon-codicon-symbol-field-symbol-fieldspanuser_rejected_invite"><span class="codicon codicon-symbol-field symbol-field"></span>user_rejected_invite</a></li>
-          </ul>
-        </li>
-        <li><a href="#span-classcodicon-codicon-symbol-structure-symbol-structurespaneventuserremovedfromguild"><span class="codicon codicon-symbol-structure symbol-structure"></span>Event.UserRemovedFromGuild</a>
-          <ul>
-            <li><a href="#span-classcodicon-codicon-symbol-field-symbol-fieldspanuser_id"><span class="codicon codicon-symbol-field symbol-field"></span>user_id</a></li>
-            <li><a href="#span-classcodicon-codicon-symbol-field-symbol-fieldspanguild_id"><span class="codicon codicon-symbol-field symbol-field"></span>guild_id</a></li>
-          </ul>
-        </li>
-        <li><a href="#span-classcodicon-codicon-symbol-structure-symbol-structurespaneventuseraddedtoguild"><span class="codicon codicon-symbol-structure symbol-structure"></span>Event.UserAddedToGuild</a>
-          <ul>
-            <li><a href="#span-classcodicon-codicon-symbol-field-symbol-fieldspanuser_id-1"><span class="codicon codicon-symbol-field symbol-field"></span>user_id</a></li>
-            <li><a href="#span-classcodicon-codicon-symbol-field-symbol-fieldspanguild_id-1"><span class="codicon codicon-symbol-field symbol-field"></span>guild_id</a></li>
-          </ul>
-        </li>
-        <li><a href="#span-classcodicon-codicon-symbol-structure-symbol-structurespaneventuserinvited"><span class="codicon codicon-symbol-structure symbol-structure"></span>Event.UserInvited</a>
-          <ul>
-            <li><a href="#span-classcodicon-codicon-symbol-field-symbol-fieldspanuser_id-2"><span class="codicon codicon-symbol-field symbol-field"></span>user_id</a></li>
-            <li><a href="#span-classcodicon-codicon-symbol-field-symbol-fieldspaninviter_id"><span class="codicon codicon-symbol-field symbol-field"></span>inviter_id</a></li>
-            <li><a href="#span-classcodicon-codicon-symbol-field-symbol-fieldspaninvite_id"><span class="codicon codicon-symbol-field symbol-field"></span>invite_id</a></li>
-          </ul>
-        </li>
-        <li><a href="#span-classcodicon-codicon-symbol-structure-symbol-structurespaneventuserrejectedinvite"><span class="codicon codicon-symbol-structure symbol-structure"></span>Event.UserRejectedInvite</a>
-          <ul>
-            <li><a href="#span-classcodicon-codicon-symbol-field-symbol-fieldspanguild_id-2"><span class="codicon codicon-symbol-field symbol-field"></span>guild_id</a></li>
-            <li><a href="#span-classcodicon-codicon-symbol-field-symbol-fieldspanuser_id-3"><span class="codicon codicon-symbol-field symbol-field"></span>user_id</a></li>
-            <li><a href="#span-classcodicon-codicon-symbol-field-symbol-fieldspaninvite_id-1"><span class="codicon codicon-symbol-field symbol-field"></span>invite_id</a></li>
-          </ul>
-        </li>
-      </ul>
-    </li>
     <li><a href="#services">Services</a>
       <ul>
         <li><a href="#span-classcodicon-codicon-symbol-class-symbol-classspanpostboxservice"><span class="codicon codicon-symbol-class symbol-class"></span>PostboxService</a></li>
@@ -212,77 +162,57 @@ The UTC UNIX time in seconds of when the request is started."/>
         </li>
       </ul>
     </li>
+    <li><a href="#standalone-message-types">Standalone Message Types</a>
+      <ul>
+        <li><a href="#span-classcodicon-codicon-symbol-structure-symbol-structurespanauthdata"><span class="codicon codicon-symbol-structure symbol-structure"></span>AuthData</a>
+          <ul>
+            <li><a href="#span-classcodicon-codicon-symbol-field-symbol-fieldspanserver_id"><span class="codicon codicon-symbol-field symbol-field"></span>server_id</a></li>
+            <li><a href="#span-classcodicon-codicon-symbol-field-symbol-fieldspantime"><span class="codicon codicon-symbol-field symbol-field"></span>time</a></li>
+          </ul>
+        </li>
+        <li><a href="#span-classcodicon-codicon-symbol-structure-symbol-structurespanevent"><span class="codicon codicon-symbol-structure symbol-structure"></span>Event</a>
+          <ul>
+            <li><a href="#span-classcodicon-codicon-symbol-field-symbol-fieldspanuser_removed_from_guild"><span class="codicon codicon-symbol-field symbol-field"></span>user_removed_from_guild</a></li>
+            <li><a href="#span-classcodicon-codicon-symbol-field-symbol-fieldspanuser_added_to_guild"><span class="codicon codicon-symbol-field symbol-field"></span>user_added_to_guild</a></li>
+            <li><a href="#span-classcodicon-codicon-symbol-field-symbol-fieldspanuser_invited"><span class="codicon codicon-symbol-field symbol-field"></span>user_invited</a></li>
+            <li><a href="#span-classcodicon-codicon-symbol-field-symbol-fieldspanuser_rejected_invite"><span class="codicon codicon-symbol-field symbol-field"></span>user_rejected_invite</a></li>
+          </ul>
+        </li>
+        <li><a href="#span-classcodicon-codicon-symbol-structure-symbol-structurespaneventuserremovedfromguild"><span class="codicon codicon-symbol-structure symbol-structure"></span>Event.UserRemovedFromGuild</a>
+          <ul>
+            <li><a href="#span-classcodicon-codicon-symbol-field-symbol-fieldspanuser_id"><span class="codicon codicon-symbol-field symbol-field"></span>user_id</a></li>
+            <li><a href="#span-classcodicon-codicon-symbol-field-symbol-fieldspanguild_id"><span class="codicon codicon-symbol-field symbol-field"></span>guild_id</a></li>
+          </ul>
+        </li>
+        <li><a href="#span-classcodicon-codicon-symbol-structure-symbol-structurespaneventuseraddedtoguild"><span class="codicon codicon-symbol-structure symbol-structure"></span>Event.UserAddedToGuild</a>
+          <ul>
+            <li><a href="#span-classcodicon-codicon-symbol-field-symbol-fieldspanuser_id-1"><span class="codicon codicon-symbol-field symbol-field"></span>user_id</a></li>
+            <li><a href="#span-classcodicon-codicon-symbol-field-symbol-fieldspanguild_id-1"><span class="codicon codicon-symbol-field symbol-field"></span>guild_id</a></li>
+          </ul>
+        </li>
+        <li><a href="#span-classcodicon-codicon-symbol-structure-symbol-structurespaneventuserinvited"><span class="codicon codicon-symbol-structure symbol-structure"></span>Event.UserInvited</a>
+          <ul>
+            <li><a href="#span-classcodicon-codicon-symbol-field-symbol-fieldspanuser_id-2"><span class="codicon codicon-symbol-field symbol-field"></span>user_id</a></li>
+            <li><a href="#span-classcodicon-codicon-symbol-field-symbol-fieldspaninviter_id"><span class="codicon codicon-symbol-field symbol-field"></span>inviter_id</a></li>
+            <li><a href="#span-classcodicon-codicon-symbol-field-symbol-fieldspaninvite_id"><span class="codicon codicon-symbol-field symbol-field"></span>invite_id</a></li>
+          </ul>
+        </li>
+        <li><a href="#span-classcodicon-codicon-symbol-structure-symbol-structurespaneventuserrejectedinvite"><span class="codicon codicon-symbol-structure symbol-structure"></span>Event.UserRejectedInvite</a>
+          <ul>
+            <li><a href="#span-classcodicon-codicon-symbol-field-symbol-fieldspanguild_id-2"><span class="codicon codicon-symbol-field symbol-field"></span>guild_id</a></li>
+            <li><a href="#span-classcodicon-codicon-symbol-field-symbol-fieldspanuser_id-3"><span class="codicon codicon-symbol-field symbol-field"></span>user_id</a></li>
+            <li><a href="#span-classcodicon-codicon-symbol-field-symbol-fieldspaninvite_id-1"><span class="codicon codicon-symbol-field symbol-field"></span>invite_id</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
   </ul>
 </nav>
   </aside>
   <div class="flex justify-center pb-8 w-full">
     <article class="prose">
       <h1 class="h1">Reference: protocol.sync.v1</h1>
-      <h1 id="standalone-message-types">Standalone Message Types</h1>
-<h2 id="span-classcodicon-codicon-symbol-structure-symbol-structurespanauthdata"><span class="codicon codicon-symbol-structure symbol-structure"></span>AuthData</h2>
-<p>Authentication data that will be sent in a <code>harmonytypes.v1.Token</code>.</p>
-<p><span class="h3" aria-level="3">Fields</span></p>
-<h3 id="span-classcodicon-codicon-symbol-field-symbol-fieldspanserver_id"><span class="codicon codicon-symbol-field symbol-field"></span>server_id</h3>
-<p>Type: optional <code>string</code></p>
-<p>The server ID of the server initiating the transaction. For Pull,
-this tells the server being connected to which homeservers' events it should send.
-For Push, this tells the server being connected to which homeservers' events it is
-receiving.</p>
-<h3 id="span-classcodicon-codicon-symbol-field-symbol-fieldspantime"><span class="codicon codicon-symbol-field symbol-field"></span>time</h3>
-<p>Type: optional <code>uint64</code></p>
-<p>The UTC UNIX time in seconds of when the request is started. Servers should reject
-tokens with a time too far from the current time, at their discretion. A recommended
-variance is 1 minute.</p>
-<hr>
-<h2 id="span-classcodicon-codicon-symbol-structure-symbol-structurespanevent"><span class="codicon codicon-symbol-structure symbol-structure"></span>Event</h2>
-<p>Object representing a postbox event.</p>
-<p><span class="h3" aria-level="3">Fields</span></p>
-<h3 id="span-classcodicon-codicon-symbol-field-symbol-fieldspanuser_removed_from_guild"><span class="codicon codicon-symbol-field symbol-field"></span>user_removed_from_guild</h3>
-<p>Type: optional <a href="#eventuserremovedfromguild">protocol.sync.v1.Event.UserRemovedFromGuild</a></p>
-<p>User removed from a guild.</p>
-<h3 id="span-classcodicon-codicon-symbol-field-symbol-fieldspanuser_added_to_guild"><span class="codicon codicon-symbol-field symbol-field"></span>user_added_to_guild</h3>
-<p>Type: optional <a href="#eventuseraddedtoguild">protocol.sync.v1.Event.UserAddedToGuild</a></p>
-<p>User added to a guild.</p>
-<h3 id="span-classcodicon-codicon-symbol-field-symbol-fieldspanuser_invited"><span class="codicon codicon-symbol-field symbol-field"></span>user_invited</h3>
-<p>Type: optional <a href="#eventuserinvited">protocol.sync.v1.Event.UserInvited</a></p>
-<p>User invited to a guild.</p>
-<h3 id="span-classcodicon-codicon-symbol-field-symbol-fieldspanuser_rejected_invite"><span class="codicon codicon-symbol-field symbol-field"></span>user_rejected_invite</h3>
-<p>Type: optional <a href="#eventuserrejectedinvite">protocol.sync.v1.Event.UserRejectedInvite</a></p>
-<p>User rejected a guild invitation.</p>
-<hr>
-<h2 id="span-classcodicon-codicon-symbol-structure-symbol-structurespaneventuserremovedfromguild"><span class="codicon codicon-symbol-structure symbol-structure"></span>Event.UserRemovedFromGuild</h2>
-<p><span class="h3" aria-level="3">Fields</span></p>
-<h3 id="span-classcodicon-codicon-symbol-field-symbol-fieldspanuser_id"><span class="codicon codicon-symbol-field symbol-field"></span>user_id</h3>
-<p>Type: optional <code>uint64</code></p>
-<h3 id="span-classcodicon-codicon-symbol-field-symbol-fieldspanguild_id"><span class="codicon codicon-symbol-field symbol-field"></span>guild_id</h3>
-<p>Type: optional <code>uint64</code></p>
-<hr>
-<h2 id="span-classcodicon-codicon-symbol-structure-symbol-structurespaneventuseraddedtoguild"><span class="codicon codicon-symbol-structure symbol-structure"></span>Event.UserAddedToGuild</h2>
-<p><span class="h3" aria-level="3">Fields</span></p>
-<h3 id="span-classcodicon-codicon-symbol-field-symbol-fieldspanuser_id-1"><span class="codicon codicon-symbol-field symbol-field"></span>user_id</h3>
-<p>Type: optional <code>uint64</code></p>
-<h3 id="span-classcodicon-codicon-symbol-field-symbol-fieldspanguild_id-1"><span class="codicon codicon-symbol-field symbol-field"></span>guild_id</h3>
-<p>Type: optional <code>uint64</code></p>
-<hr>
-<h2 id="span-classcodicon-codicon-symbol-structure-symbol-structurespaneventuserinvited"><span class="codicon codicon-symbol-structure symbol-structure"></span>Event.UserInvited</h2>
-<p><span class="h3" aria-level="3">Fields</span></p>
-<h3 id="span-classcodicon-codicon-symbol-field-symbol-fieldspanuser_id-2"><span class="codicon codicon-symbol-field symbol-field"></span>user_id</h3>
-<p>Type: optional <code>uint64</code></p>
-<h3 id="span-classcodicon-codicon-symbol-field-symbol-fieldspaninviter_id"><span class="codicon codicon-symbol-field symbol-field"></span>inviter_id</h3>
-<p>Type: optional <code>uint64</code></p>
-<h3 id="span-classcodicon-codicon-symbol-field-symbol-fieldspaninvite_id"><span class="codicon codicon-symbol-field symbol-field"></span>invite_id</h3>
-<p>Type: optional <code>string</code></p>
-<hr>
-<h2 id="span-classcodicon-codicon-symbol-structure-symbol-structurespaneventuserrejectedinvite"><span class="codicon codicon-symbol-structure symbol-structure"></span>Event.UserRejectedInvite</h2>
-<p><span class="h3" aria-level="3">Fields</span></p>
-<h3 id="span-classcodicon-codicon-symbol-field-symbol-fieldspanguild_id-2"><span class="codicon codicon-symbol-field symbol-field"></span>guild_id</h3>
-<p>Type: optional <code>uint64</code></p>
-<h3 id="span-classcodicon-codicon-symbol-field-symbol-fieldspanuser_id-3"><span class="codicon codicon-symbol-field symbol-field"></span>user_id</h3>
-<p>Type: optional <code>uint64</code></p>
-<h3 id="span-classcodicon-codicon-symbol-field-symbol-fieldspaninvite_id-1"><span class="codicon codicon-symbol-field symbol-field"></span>invite_id</h3>
-<p>Type: optional <code>string</code></p>
-<hr>
-<h1 id="services">Services</h1>
+      <h1 id="services">Services</h1>
 <h2 id="span-classcodicon-codicon-symbol-class-symbol-classspanpostboxservice"><span class="codicon codicon-symbol-class symbol-class"></span>PostboxService</h2>
 <h1 id="postbox">Postbox</h1>
 <p>The postbox service forms the core of Harmony&rsquo;s server &lt;-&gt; server communications.</p>
@@ -359,6 +289,70 @@ that had it&rsquo;s server ID changed for all servers it has federated with.</p>
 <h5 id="span-classcodicon-codicon-symbol-structure-symbol-structurespannotifynewidresponse"><span class="codicon codicon-symbol-structure symbol-structure"></span>NotifyNewIdResponse</h5>
 <p>Used in <code>NotifyNewId</code> endpoint.</p>
 <p>This item has no fields.</p>
+<h1 id="standalone-message-types">Standalone Message Types</h1>
+<h2 id="span-classcodicon-codicon-symbol-structure-symbol-structurespanauthdata"><span class="codicon codicon-symbol-structure symbol-structure"></span>AuthData</h2>
+<p>Authentication data that will be sent in a <code>harmonytypes.v1.Token</code>.</p>
+<p><span class="h3" aria-level="3">Fields</span></p>
+<h3 id="span-classcodicon-codicon-symbol-field-symbol-fieldspanserver_id"><span class="codicon codicon-symbol-field symbol-field"></span>server_id</h3>
+<p>Type: optional <code>string</code></p>
+<p>The server ID of the server initiating the transaction. For Pull,
+this tells the server being connected to which homeservers' events it should send.
+For Push, this tells the server being connected to which homeservers' events it is
+receiving.</p>
+<h3 id="span-classcodicon-codicon-symbol-field-symbol-fieldspantime"><span class="codicon codicon-symbol-field symbol-field"></span>time</h3>
+<p>Type: optional <code>uint64</code></p>
+<p>The UTC UNIX time in seconds of when the request is started. Servers should reject
+tokens with a time too far from the current time, at their discretion. A recommended
+variance is 1 minute.</p>
+<hr>
+<h2 id="span-classcodicon-codicon-symbol-structure-symbol-structurespanevent"><span class="codicon codicon-symbol-structure symbol-structure"></span>Event</h2>
+<p>Object representing a postbox event.</p>
+<p><span class="h3" aria-level="3">Fields</span></p>
+<h3 id="span-classcodicon-codicon-symbol-field-symbol-fieldspanuser_removed_from_guild"><span class="codicon codicon-symbol-field symbol-field"></span>user_removed_from_guild</h3>
+<p>Type: optional <a href="#eventuserremovedfromguild">protocol.sync.v1.Event.UserRemovedFromGuild</a></p>
+<p>User removed from a guild.</p>
+<h3 id="span-classcodicon-codicon-symbol-field-symbol-fieldspanuser_added_to_guild"><span class="codicon codicon-symbol-field symbol-field"></span>user_added_to_guild</h3>
+<p>Type: optional <a href="#eventuseraddedtoguild">protocol.sync.v1.Event.UserAddedToGuild</a></p>
+<p>User added to a guild.</p>
+<h3 id="span-classcodicon-codicon-symbol-field-symbol-fieldspanuser_invited"><span class="codicon codicon-symbol-field symbol-field"></span>user_invited</h3>
+<p>Type: optional <a href="#eventuserinvited">protocol.sync.v1.Event.UserInvited</a></p>
+<p>User invited to a guild.</p>
+<h3 id="span-classcodicon-codicon-symbol-field-symbol-fieldspanuser_rejected_invite"><span class="codicon codicon-symbol-field symbol-field"></span>user_rejected_invite</h3>
+<p>Type: optional <a href="#eventuserrejectedinvite">protocol.sync.v1.Event.UserRejectedInvite</a></p>
+<p>User rejected a guild invitation.</p>
+<hr>
+<h2 id="span-classcodicon-codicon-symbol-structure-symbol-structurespaneventuserremovedfromguild"><span class="codicon codicon-symbol-structure symbol-structure"></span>Event.UserRemovedFromGuild</h2>
+<p><span class="h3" aria-level="3">Fields</span></p>
+<h3 id="span-classcodicon-codicon-symbol-field-symbol-fieldspanuser_id"><span class="codicon codicon-symbol-field symbol-field"></span>user_id</h3>
+<p>Type: optional <code>uint64</code></p>
+<h3 id="span-classcodicon-codicon-symbol-field-symbol-fieldspanguild_id"><span class="codicon codicon-symbol-field symbol-field"></span>guild_id</h3>
+<p>Type: optional <code>uint64</code></p>
+<hr>
+<h2 id="span-classcodicon-codicon-symbol-structure-symbol-structurespaneventuseraddedtoguild"><span class="codicon codicon-symbol-structure symbol-structure"></span>Event.UserAddedToGuild</h2>
+<p><span class="h3" aria-level="3">Fields</span></p>
+<h3 id="span-classcodicon-codicon-symbol-field-symbol-fieldspanuser_id-1"><span class="codicon codicon-symbol-field symbol-field"></span>user_id</h3>
+<p>Type: optional <code>uint64</code></p>
+<h3 id="span-classcodicon-codicon-symbol-field-symbol-fieldspanguild_id-1"><span class="codicon codicon-symbol-field symbol-field"></span>guild_id</h3>
+<p>Type: optional <code>uint64</code></p>
+<hr>
+<h2 id="span-classcodicon-codicon-symbol-structure-symbol-structurespaneventuserinvited"><span class="codicon codicon-symbol-structure symbol-structure"></span>Event.UserInvited</h2>
+<p><span class="h3" aria-level="3">Fields</span></p>
+<h3 id="span-classcodicon-codicon-symbol-field-symbol-fieldspanuser_id-2"><span class="codicon codicon-symbol-field symbol-field"></span>user_id</h3>
+<p>Type: optional <code>uint64</code></p>
+<h3 id="span-classcodicon-codicon-symbol-field-symbol-fieldspaninviter_id"><span class="codicon codicon-symbol-field symbol-field"></span>inviter_id</h3>
+<p>Type: optional <code>uint64</code></p>
+<h3 id="span-classcodicon-codicon-symbol-field-symbol-fieldspaninvite_id"><span class="codicon codicon-symbol-field symbol-field"></span>invite_id</h3>
+<p>Type: optional <code>string</code></p>
+<hr>
+<h2 id="span-classcodicon-codicon-symbol-structure-symbol-structurespaneventuserrejectedinvite"><span class="codicon codicon-symbol-structure symbol-structure"></span>Event.UserRejectedInvite</h2>
+<p><span class="h3" aria-level="3">Fields</span></p>
+<h3 id="span-classcodicon-codicon-symbol-field-symbol-fieldspanguild_id-2"><span class="codicon codicon-symbol-field symbol-field"></span>guild_id</h3>
+<p>Type: optional <code>uint64</code></p>
+<h3 id="span-classcodicon-codicon-symbol-field-symbol-fieldspanuser_id-3"><span class="codicon codicon-symbol-field symbol-field"></span>user_id</h3>
+<p>Type: optional <code>uint64</code></p>
+<h3 id="span-classcodicon-codicon-symbol-field-symbol-fieldspaninvite_id-1"><span class="codicon codicon-symbol-field symbol-field"></span>invite_id</h3>
+<p>Type: optional <code>string</code></p>
+<hr>
 
     </article>
   </div>

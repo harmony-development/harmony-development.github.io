@@ -117,13 +117,14 @@ Indexes of the weak imported files in the dependency list.</description>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://harmonyapp.io/docs/protocol.auth.v1/</guid>
-      <description>Standalone Message Types Session Session Session contains the information for a new session; the user_id you logged in as and the session_token which should be passed to authorisation
+      <description>Services AuthService The service containing authorization/entication methods Fields
+Federate protocol.auth.v1.FederateRequest -&amp;gt; protocol.auth.v1.FederateResponse
+Federate with a foreignserver, obtaining a token you can use to call LoginFederated on it
+ FederateRequest The request to federate with a foreign server.
 Fields
-user_id Type: optional uint64
-user_id: the ID of the user you logged in as
-session_token Type: optional string
-session_token: the session token to use in authorization
- AuthStep AuthStep A step in the authentication process Contains a variety of different types of views It is recommended to have a fallback_url specified For non-trivial authentication procedures (such as captchas)</description>
+server_id Type: optional string
+The server ID foreign server you want to federate with
+ FederateResponse The reply to a successful federation request, containing the token you need to present to the foreign server.</description>
     </item>
     
     <item>
@@ -132,7 +133,7 @@ session_token: the session token to use in authorization
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://harmonyapp.io/docs/protocol.batch.v1/</guid>
-      <description>Standalone Message Types Services BatchService Service to batch requests. Fields
+      <description>Services BatchService Service to batch requests. Fields
 Batch protocol.batch.v1.BatchRequest -&amp;gt; protocol.batch.v1.BatchResponse
 Batch requests. Does not support batching stream requests. Batched requests should be verified and an error should be thrown if they are invalid.
  BatchRequest Used in Batch endpoint.
@@ -151,15 +152,21 @@ The list of responses to the requests.</description>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://harmonyapp.io/docs/protocol.chat.v1/</guid>
-      <description>Standalone Message Types Channel An object representing a channel, without the ID.
+      <description>Services ChatService The core of Harmony&amp;rsquo;s chat operations. Fields
+CreateGuild protocol.chat.v1.CreateGuildRequest -&amp;gt; protocol.chat.v1.CreateGuildResponse
+Endpoint to create a guild.
+ CreateGuildRequest Request type used in CreateGuild endpoint.
 Fields
-channel_name Type: optional string
-The name of this channel.
-kind Type: UNHANDLED | TYPE
-The kind of channel this is. Data does not get inherently stored in the Channel type Instead, clients who understand a certain ChannelKind should fetch them from a separate RPC.
+name Type: optional string
+The name of the guild.
+picture Type: optional string
+The picture HMC of the guild.
 metadata Type: optional protocol.harmonytypes.v1.Metadata
-The metadata of this channel.
- ChannelWithId The channel alongside with an ID.</description>
+Metadata of the guild.
+ CreateGuildResponse Used in the CreateGuild endpoint.
+Fields
+guild_id Type: optional uint64
+Guild ID of the guild that was created.</description>
     </item>
     
     <item>
@@ -168,18 +175,19 @@ The metadata of this channel.
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://harmonyapp.io/docs/protocol.emote.v1/</guid>
-      <description>Standalone Message Types EmotePack Data for a single pack of emotes.
+      <description>Services EmoteService Harmony&amp;rsquo;s Emote service manages the emotes and emote packs. Fields
+CreateEmotePack protocol.emote.v1.CreateEmotePackRequest -&amp;gt; protocol.emote.v1.CreateEmotePackResponse
+Endpoint to create an emote pack.
+ CreateEmotePackRequest Used in the CreateEmotePack endpoint.
+Fields
+pack_name Type: optional string
+the name of the pack.
+ CreateEmotePackResponse Used in the CreateEmotePack endpoint.
 Fields
 pack_id Type: optional uint64
 The ID of the pack.
-pack_owner Type: optional uint64
-The ID of the user who created the pack.
-pack_name Type: optional string
-The name of the pack.
- Emote Data for a single emote.
-Fields
-image_id Type: optional string
-The image ID of the emote. This is the ID of the image in the image store (same place attachments are stored).</description>
+ GetEmotePacks protocol.emote.v1.GetEmotePacksRequest -&amp;gt; protocol.emote.v1.GetEmotePacksResponse
+Endpoint to get the emote packs you have equipped.</description>
     </item>
     
     <item>
@@ -209,21 +217,20 @@ kind Type: optional string</description>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://harmonyapp.io/docs/protocol.mediaproxy.v1/</guid>
-      <description>Standalone Message Types SiteMetadata Object representing the metadata of a website.
+      <description>Services MediaProxyService Harmony service for fetching metadata and generating instant view for URLs. Fields
+FetchLinkMetadata protocol.mediaproxy.v1.FetchLinkMetadataRequest -&amp;gt; protocol.mediaproxy.v1.FetchLinkMetadataResponse
+Endpoint to fetch metadata for a URL.
+ FetchLinkMetadataRequest Used in the FetchLinkMetadata endpoint.
 Fields
-site_title Type: optional string
-Title of the website.
-page_title Type: optional string
-Page title of the website page.
-kind Type: optional string
-Kind of the website.
-description Type: optional string
-Description of the website page.
 url Type: optional string
-URL of the website.
-image Type: optional string
-A thumbnail image of the website.
- MediaMetadata Object represeting the metadata of a media.</description>
+URL to fetch metadata from.
+ FetchLinkMetadataResponse Used in the FetchLinkMetadata endpoint.
+Fields
+is_site Type: optional protocol.mediaproxy.v1.SiteMetadata
+Site metadata for the URL.
+is_media Type: optional protocol.mediaproxy.v1.MediaMetadata
+Media metadata for the URL.
+ InstantView protocol.</description>
     </item>
     
     <item>
@@ -232,12 +239,22 @@ A thumbnail image of the website.
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://harmonyapp.io/docs/protocol.profile.v1/</guid>
-      <description>Standalone Message Types OverrideTag A tag for an override. This is used as a standard shorthand for sending a message with an override. If a message starts with before and ends with after, clients should send a message with the override the tag belongs to, stripping the tag indicators.
+      <description>Services ProfileService Harmony&amp;rsquo;s Profile service manages the profiles of the users. Fields
+GetProfile protocol.profile.v1.GetProfileRequest -&amp;gt; protocol.profile.v1.GetProfileResponse
+Gets a user&amp;rsquo;s profile.
+ GetProfileRequest Used in GetProfile endpoint.
 Fields
-before Type: optional string
-The portion of the tag before the messge.
-after Type: optional string
-The portion of the tag after the messge.</description>
+user_id Type: optional uint64
+The id of the user to get.
+ GetProfileResponse Used in GetProfile endpoint.
+Fields
+profile Type: optional protocol.profile.v1.Profile
+The user&amp;rsquo;s profile
+ UpdateProfile protocol.profile.v1.UpdateProfileRequest -&amp;gt; protocol.profile.v1.UpdateProfileResponse
+Updates the user&amp;rsquo;s profile.
+ UpdateProfileRequest Used in UpdateProfile endpoint.
+Fields
+new_user_name Type: optional string</description>
     </item>
     
     <item>
@@ -246,12 +263,10 @@ The portion of the tag after the messge.</description>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://harmonyapp.io/docs/protocol.sync.v1/</guid>
-      <description>Standalone Message Types AuthData Authentication data that will be sent in a harmonytypes.v1.Token.
-Fields
-server_id Type: optional string
-The server ID of the server initiating the transaction. For Pull, this tells the server being connected to which homeservers&#39; events it should send. For Push, this tells the server being connected to which homeservers&#39; events it is receiving.
-time Type: optional uint64
-The UTC UNIX time in seconds of when the request is started.</description>
+      <description>Services PostboxService Postbox The postbox service forms the core of Harmony&amp;rsquo;s server &amp;lt;-&amp;gt; server communications.
+It concerns the transfer of Events between servers, as well as ensuring reliable delivery of them.
+The semantics of events are documented in the event types. The postbox service is solely reliable for reliable pushing and pulling.
+Server Identification Servers are identified using their domain, and the port which they serve. This is called the &amp;ldquo;server ID&amp;rdquo;, and must be formatted as domain:port.</description>
     </item>
     
     <item>
@@ -260,14 +275,8 @@ The UTC UNIX time in seconds of when the request is started.</description>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://harmonyapp.io/docs/protocol.voice.v1/</guid>
-      <description>Standalone Message Types UserConsumerOptions Data containing all the necessary information to create a consumer for a user in a voice channel
-This corresponds to https://mediasoup.org/documentation/v3/mediasoup-client/api/#ConsumerOptions on client:
- consumer_id -&amp;gt; id producer_id -&amp;gt; producerId rtp_parameters -&amp;gt; rtpParameters and kind should be set to &amp;ldquo;audio&amp;rdquo;.  Fields
-user_id Type: optional uint64
-User ID of the user.
-producer_id Type: optional string
-Producer ID of the producer being consumed.
-consumer_id Type: optional string</description>
+      <description>Services VoiceService Harmony service for facilitating voice operations using WebRTC.
+Usage (for client) Call StreamMessage to be able to send RTC commands to server Send Initialize over stream with guild_id and channel_id of the request set to the channel you want to join Init device by using the RTP capabilities sent in the response message, which should be Initialized Send PrepareForJoinChannel over stream with client rtp capabilities Wait for PreparedForJoinChannel, which contains transport options Connect both transports using the transport options on client Send JoinChannel over stream containing RTP paramaters for your Audio track and DTLS paramaters for both consumer and producer Wait for JoinedChannel, which confirms you have successfully joined the voice channel; handle other_users which will be described in 8 (UserJoined handling) Handle UserJoined and UserLeft events appropiately   For UserJoined; use the received consumer ID, producer ID and RTP parameters on your consumer transport to consume the producer, afterwards send ResumeConsumer message with the consumer ID, then if that&amp;rsquo;s successful add the track to a user ID -&amp;gt; Track map For UserLeft, remove the user track from the user ID -&amp;gt; Track map  How this looks for servers Receives StreamMessage, starts the socket Waits for Initialize Sends Initialized over stream with it&amp;rsquo;s RTP capabilities Receives PrepareForJoinChannel with client RTP capabilities Sends PreparedForJoinChannel over stream with consumer and producer transport options Receives JoinChannel, checks for DTLS parameters for consumer and producer transports and uses the RTP paramaters to create a producer for the client Sends JoinedChannel over stream with the created producer ID and all other users&#39; data (UserData) When another user does 1 to 7, sends UserJoined over stream to all other users; when a user leaves the channel (when their stream ends), sends UserLeft to all other users When receiving a ResumeConsumer message, unpauses the consumer corresponding to the consumer ID Fields  StreamMessage streaming protocol.</description>
     </item>
     
     <item>

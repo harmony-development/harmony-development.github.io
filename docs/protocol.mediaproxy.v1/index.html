@@ -3,21 +3,20 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no">
     <title>Reference: protocol.mediaproxy.v1 | Harmony</title>
-    <meta name="description" content="Standalone Message Types SiteMetadata Object representing the metadata of a website.
+    <meta name="description" content="Services MediaProxyService Harmony service for fetching metadata and generating instant view for URLs. Fields
+FetchLinkMetadata protocol.mediaproxy.v1.FetchLinkMetadataRequest -&gt; protocol.mediaproxy.v1.FetchLinkMetadataResponse
+Endpoint to fetch metadata for a URL.
+ FetchLinkMetadataRequest Used in the FetchLinkMetadata endpoint.
 Fields
-site_title Type: optional string
-Title of the website.
-page_title Type: optional string
-Page title of the website page.
-kind Type: optional string
-Kind of the website.
-description Type: optional string
-Description of the website page.
 url Type: optional string
-URL of the website.
-image Type: optional string
-A thumbnail image of the website.
- MediaMetadata Object represeting the metadata of a media. ">
+URL to fetch metadata from.
+ FetchLinkMetadataResponse Used in the FetchLinkMetadata endpoint.
+Fields
+is_site Type: optional protocol.mediaproxy.v1.SiteMetadata
+Site metadata for the URL.
+is_media Type: optional protocol.mediaproxy.v1.MediaMetadata
+Media metadata for the URL.
+ InstantView protocol. ">
     <link rel="canonical" href="https://harmonyapp.io/docs/protocol.mediaproxy.v1/" />
 
     <link rel="stylesheet" href="/css/codicon.css" />
@@ -30,42 +29,40 @@ A thumbnail image of the website.
     
 
     <meta property="og:title" content="Reference: protocol.mediaproxy.v1" />
-<meta property="og:description" content="Standalone Message Types SiteMetadata Object representing the metadata of a website.
+<meta property="og:description" content="Services MediaProxyService Harmony service for fetching metadata and generating instant view for URLs. Fields
+FetchLinkMetadata protocol.mediaproxy.v1.FetchLinkMetadataRequest -&gt; protocol.mediaproxy.v1.FetchLinkMetadataResponse
+Endpoint to fetch metadata for a URL.
+ FetchLinkMetadataRequest Used in the FetchLinkMetadata endpoint.
 Fields
-site_title Type: optional string
-Title of the website.
-page_title Type: optional string
-Page title of the website page.
-kind Type: optional string
-Kind of the website.
-description Type: optional string
-Description of the website page.
 url Type: optional string
-URL of the website.
-image Type: optional string
-A thumbnail image of the website.
- MediaMetadata Object represeting the metadata of a media." />
+URL to fetch metadata from.
+ FetchLinkMetadataResponse Used in the FetchLinkMetadata endpoint.
+Fields
+is_site Type: optional protocol.mediaproxy.v1.SiteMetadata
+Site metadata for the URL.
+is_media Type: optional protocol.mediaproxy.v1.MediaMetadata
+Media metadata for the URL.
+ InstantView protocol." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://harmonyapp.io/docs/protocol.mediaproxy.v1/" />
 
 
     <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Reference: protocol.mediaproxy.v1"/>
-<meta name="twitter:description" content="Standalone Message Types SiteMetadata Object representing the metadata of a website.
+<meta name="twitter:description" content="Services MediaProxyService Harmony service for fetching metadata and generating instant view for URLs. Fields
+FetchLinkMetadata protocol.mediaproxy.v1.FetchLinkMetadataRequest -&gt; protocol.mediaproxy.v1.FetchLinkMetadataResponse
+Endpoint to fetch metadata for a URL.
+ FetchLinkMetadataRequest Used in the FetchLinkMetadata endpoint.
 Fields
-site_title Type: optional string
-Title of the website.
-page_title Type: optional string
-Page title of the website page.
-kind Type: optional string
-Kind of the website.
-description Type: optional string
-Description of the website page.
 url Type: optional string
-URL of the website.
-image Type: optional string
-A thumbnail image of the website.
- MediaMetadata Object represeting the metadata of a media."/>
+URL to fetch metadata from.
+ FetchLinkMetadataResponse Used in the FetchLinkMetadata endpoint.
+Fields
+is_site Type: optional protocol.mediaproxy.v1.SiteMetadata
+Site metadata for the URL.
+is_media Type: optional protocol.mediaproxy.v1.MediaMetadata
+Media metadata for the URL.
+ InstantView protocol."/>
 
     <meta name="theme-color" content="#E93D58">
     <meta property="og:image" content="https://harmonyapp.io/img/harmony-embed.png" />
@@ -146,26 +143,6 @@ A thumbnail image of the website.
     <h4><strong>Table Of Contents</strong></h4>
     <nav id="TableOfContents">
   <ul>
-    <li><a href="#standalone-message-types">Standalone Message Types</a>
-      <ul>
-        <li><a href="#span-classcodicon-codicon-symbol-structure-symbol-structurespansitemetadata"><span class="codicon codicon-symbol-structure symbol-structure"></span>SiteMetadata</a>
-          <ul>
-            <li><a href="#span-classcodicon-codicon-symbol-field-symbol-fieldspansite_title"><span class="codicon codicon-symbol-field symbol-field"></span>site_title</a></li>
-            <li><a href="#span-classcodicon-codicon-symbol-field-symbol-fieldspanpage_title"><span class="codicon codicon-symbol-field symbol-field"></span>page_title</a></li>
-            <li><a href="#span-classcodicon-codicon-symbol-field-symbol-fieldspankind"><span class="codicon codicon-symbol-field symbol-field"></span>kind</a></li>
-            <li><a href="#span-classcodicon-codicon-symbol-field-symbol-fieldspandescription"><span class="codicon codicon-symbol-field symbol-field"></span>description</a></li>
-            <li><a href="#span-classcodicon-codicon-symbol-field-symbol-fieldspanurl"><span class="codicon codicon-symbol-field symbol-field"></span>url</a></li>
-            <li><a href="#span-classcodicon-codicon-symbol-field-symbol-fieldspanimage"><span class="codicon codicon-symbol-field symbol-field"></span>image</a></li>
-          </ul>
-        </li>
-        <li><a href="#span-classcodicon-codicon-symbol-structure-symbol-structurespanmediametadata"><span class="codicon codicon-symbol-structure symbol-structure"></span>MediaMetadata</a>
-          <ul>
-            <li><a href="#span-classcodicon-codicon-symbol-field-symbol-fieldspanmimetype"><span class="codicon codicon-symbol-field symbol-field"></span>mimetype</a></li>
-            <li><a href="#span-classcodicon-codicon-symbol-field-symbol-fieldspanfilename"><span class="codicon codicon-symbol-field symbol-field"></span>filename</a></li>
-          </ul>
-        </li>
-      </ul>
-    </li>
     <li><a href="#services">Services</a>
       <ul>
         <li><a href="#span-classcodicon-codicon-symbol-class-symbol-classspanmediaproxyservice"><span class="codicon codicon-symbol-class symbol-class"></span>MediaProxyService</a>
@@ -176,7 +153,7 @@ A thumbnail image of the website.
                   <ul>
                     <li><a href="#span-classcodicon-codicon-symbol-structure-symbol-structurespanfetchlinkmetadatarequest"><span class="codicon codicon-symbol-structure symbol-structure"></span>FetchLinkMetadataRequest</a>
                       <ul>
-                        <li><a href="#span-classcodicon-codicon-symbol-field-symbol-fieldspanurl-1"><span class="codicon codicon-symbol-field symbol-field"></span>url</a></li>
+                        <li><a href="#span-classcodicon-codicon-symbol-field-symbol-fieldspanurl"><span class="codicon codicon-symbol-field symbol-field"></span>url</a></li>
                       </ul>
                     </li>
                     <li><a href="#span-classcodicon-codicon-symbol-structure-symbol-structurespanfetchlinkmetadataresponse"><span class="codicon codicon-symbol-structure symbol-structure"></span>FetchLinkMetadataResponse</a>
@@ -191,7 +168,7 @@ A thumbnail image of the website.
                   <ul>
                     <li><a href="#span-classcodicon-codicon-symbol-structure-symbol-structurespaninstantviewrequest"><span class="codicon codicon-symbol-structure symbol-structure"></span>InstantViewRequest</a>
                       <ul>
-                        <li><a href="#span-classcodicon-codicon-symbol-field-symbol-fieldspanurl-2"><span class="codicon codicon-symbol-field symbol-field"></span>url</a></li>
+                        <li><a href="#span-classcodicon-codicon-symbol-field-symbol-fieldspanurl-1"><span class="codicon codicon-symbol-field symbol-field"></span>url</a></li>
                       </ul>
                     </li>
                     <li><a href="#span-classcodicon-codicon-symbol-structure-symbol-structurespaninstantviewresponse"><span class="codicon codicon-symbol-structure symbol-structure"></span>InstantViewResponse</a>
@@ -207,7 +184,7 @@ A thumbnail image of the website.
                   <ul>
                     <li><a href="#span-classcodicon-codicon-symbol-structure-symbol-structurespancaninstantviewrequest"><span class="codicon codicon-symbol-structure symbol-structure"></span>CanInstantViewRequest</a>
                       <ul>
-                        <li><a href="#span-classcodicon-codicon-symbol-field-symbol-fieldspanurl-3"><span class="codicon codicon-symbol-field symbol-field"></span>url</a></li>
+                        <li><a href="#span-classcodicon-codicon-symbol-field-symbol-fieldspanurl-2"><span class="codicon codicon-symbol-field symbol-field"></span>url</a></li>
                       </ul>
                     </li>
                     <li><a href="#span-classcodicon-codicon-symbol-structure-symbol-structurespancaninstantviewresponse"><span class="codicon codicon-symbol-structure symbol-structure"></span>CanInstantViewResponse</a>
@@ -223,46 +200,33 @@ A thumbnail image of the website.
         </li>
       </ul>
     </li>
+    <li><a href="#standalone-message-types">Standalone Message Types</a>
+      <ul>
+        <li><a href="#span-classcodicon-codicon-symbol-structure-symbol-structurespansitemetadata"><span class="codicon codicon-symbol-structure symbol-structure"></span>SiteMetadata</a>
+          <ul>
+            <li><a href="#span-classcodicon-codicon-symbol-field-symbol-fieldspansite_title"><span class="codicon codicon-symbol-field symbol-field"></span>site_title</a></li>
+            <li><a href="#span-classcodicon-codicon-symbol-field-symbol-fieldspanpage_title"><span class="codicon codicon-symbol-field symbol-field"></span>page_title</a></li>
+            <li><a href="#span-classcodicon-codicon-symbol-field-symbol-fieldspankind"><span class="codicon codicon-symbol-field symbol-field"></span>kind</a></li>
+            <li><a href="#span-classcodicon-codicon-symbol-field-symbol-fieldspandescription"><span class="codicon codicon-symbol-field symbol-field"></span>description</a></li>
+            <li><a href="#span-classcodicon-codicon-symbol-field-symbol-fieldspanurl-3"><span class="codicon codicon-symbol-field symbol-field"></span>url</a></li>
+            <li><a href="#span-classcodicon-codicon-symbol-field-symbol-fieldspanimage"><span class="codicon codicon-symbol-field symbol-field"></span>image</a></li>
+          </ul>
+        </li>
+        <li><a href="#span-classcodicon-codicon-symbol-structure-symbol-structurespanmediametadata"><span class="codicon codicon-symbol-structure symbol-structure"></span>MediaMetadata</a>
+          <ul>
+            <li><a href="#span-classcodicon-codicon-symbol-field-symbol-fieldspanmimetype"><span class="codicon codicon-symbol-field symbol-field"></span>mimetype</a></li>
+            <li><a href="#span-classcodicon-codicon-symbol-field-symbol-fieldspanfilename"><span class="codicon codicon-symbol-field symbol-field"></span>filename</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
   </ul>
 </nav>
   </aside>
   <div class="flex justify-center pb-8 w-full">
     <article class="prose">
       <h1 class="h1">Reference: protocol.mediaproxy.v1</h1>
-      <h1 id="standalone-message-types">Standalone Message Types</h1>
-<h2 id="span-classcodicon-codicon-symbol-structure-symbol-structurespansitemetadata"><span class="codicon codicon-symbol-structure symbol-structure"></span>SiteMetadata</h2>
-<p>Object representing the metadata of a website.</p>
-<p><span class="h3" aria-level="3">Fields</span></p>
-<h3 id="span-classcodicon-codicon-symbol-field-symbol-fieldspansite_title"><span class="codicon codicon-symbol-field symbol-field"></span>site_title</h3>
-<p>Type: optional <code>string</code></p>
-<p>Title of the website.</p>
-<h3 id="span-classcodicon-codicon-symbol-field-symbol-fieldspanpage_title"><span class="codicon codicon-symbol-field symbol-field"></span>page_title</h3>
-<p>Type: optional <code>string</code></p>
-<p>Page title of the website page.</p>
-<h3 id="span-classcodicon-codicon-symbol-field-symbol-fieldspankind"><span class="codicon codicon-symbol-field symbol-field"></span>kind</h3>
-<p>Type: optional <code>string</code></p>
-<p>Kind of the website.</p>
-<h3 id="span-classcodicon-codicon-symbol-field-symbol-fieldspandescription"><span class="codicon codicon-symbol-field symbol-field"></span>description</h3>
-<p>Type: optional <code>string</code></p>
-<p>Description of the website page.</p>
-<h3 id="span-classcodicon-codicon-symbol-field-symbol-fieldspanurl"><span class="codicon codicon-symbol-field symbol-field"></span>url</h3>
-<p>Type: optional <code>string</code></p>
-<p>URL of the website.</p>
-<h3 id="span-classcodicon-codicon-symbol-field-symbol-fieldspanimage"><span class="codicon codicon-symbol-field symbol-field"></span>image</h3>
-<p>Type: optional <code>string</code></p>
-<p>A thumbnail image of the website.</p>
-<hr>
-<h2 id="span-classcodicon-codicon-symbol-structure-symbol-structurespanmediametadata"><span class="codicon codicon-symbol-structure symbol-structure"></span>MediaMetadata</h2>
-<p>Object represeting the metadata of a media.</p>
-<p><span class="h3" aria-level="3">Fields</span></p>
-<h3 id="span-classcodicon-codicon-symbol-field-symbol-fieldspanmimetype"><span class="codicon codicon-symbol-field symbol-field"></span>mimetype</h3>
-<p>Type: optional <code>string</code></p>
-<p>Mimetype of the media.</p>
-<h3 id="span-classcodicon-codicon-symbol-field-symbol-fieldspanfilename"><span class="codicon codicon-symbol-field symbol-field"></span>filename</h3>
-<p>Type: optional <code>string</code></p>
-<p>Filename of the media.</p>
-<hr>
-<h1 id="services">Services</h1>
+      <h1 id="services">Services</h1>
 <h2 id="span-classcodicon-codicon-symbol-class-symbol-classspanmediaproxyservice"><span class="codicon codicon-symbol-class symbol-class"></span>MediaProxyService</h2>
 <p>Harmony service for fetching metadata and generating instant view for URLs.
 <span class="h3" aria-level="3">Fields</span></p>
@@ -273,7 +237,7 @@ A thumbnail image of the website.
 <h5 id="span-classcodicon-codicon-symbol-structure-symbol-structurespanfetchlinkmetadatarequest"><span class="codicon codicon-symbol-structure symbol-structure"></span>FetchLinkMetadataRequest</h5>
 <p>Used in the <code>FetchLinkMetadata</code> endpoint.</p>
 <p><span class="h5" aria-level="5">Fields</span></p>
-<h6 id="span-classcodicon-codicon-symbol-field-symbol-fieldspanurl-1"><span class="codicon codicon-symbol-field symbol-field"></span>url</h6>
+<h6 id="span-classcodicon-codicon-symbol-field-symbol-fieldspanurl"><span class="codicon codicon-symbol-field symbol-field"></span>url</h6>
 <p>Type: optional <code>string</code></p>
 <p>URL to fetch metadata from.</p>
 <br/>
@@ -294,7 +258,7 @@ A thumbnail image of the website.
 <h5 id="span-classcodicon-codicon-symbol-structure-symbol-structurespaninstantviewrequest"><span class="codicon codicon-symbol-structure symbol-structure"></span>InstantViewRequest</h5>
 <p>Used in the <code>InstantView</code> endpoint.</p>
 <p><span class="h5" aria-level="5">Fields</span></p>
-<h6 id="span-classcodicon-codicon-symbol-field-symbol-fieldspanurl-2"><span class="codicon codicon-symbol-field symbol-field"></span>url</h6>
+<h6 id="span-classcodicon-codicon-symbol-field-symbol-fieldspanurl-1"><span class="codicon codicon-symbol-field symbol-field"></span>url</h6>
 <p>Type: optional <code>string</code></p>
 <p>URL to get instant view for.</p>
 <br/>
@@ -318,7 +282,7 @@ A thumbnail image of the website.
 <h5 id="span-classcodicon-codicon-symbol-structure-symbol-structurespancaninstantviewrequest"><span class="codicon codicon-symbol-structure symbol-structure"></span>CanInstantViewRequest</h5>
 <p>Used in the <code>CanInstantView</code> endpoint.</p>
 <p><span class="h5" aria-level="5">Fields</span></p>
-<h6 id="span-classcodicon-codicon-symbol-field-symbol-fieldspanurl-3"><span class="codicon codicon-symbol-field symbol-field"></span>url</h6>
+<h6 id="span-classcodicon-codicon-symbol-field-symbol-fieldspanurl-2"><span class="codicon codicon-symbol-field symbol-field"></span>url</h6>
 <p>Type: optional <code>string</code></p>
 <p>URL to query if server can instant view the website.</p>
 <br/>
@@ -328,6 +292,39 @@ A thumbnail image of the website.
 <h6 id="span-classcodicon-codicon-symbol-field-symbol-fieldspancan_instant_view"><span class="codicon codicon-symbol-field symbol-field"></span>can_instant_view</h6>
 <p>Type: optional <code>bool</code></p>
 <p>Whether the server generate an instant view for the URL queried.</p>
+<h1 id="standalone-message-types">Standalone Message Types</h1>
+<h2 id="span-classcodicon-codicon-symbol-structure-symbol-structurespansitemetadata"><span class="codicon codicon-symbol-structure symbol-structure"></span>SiteMetadata</h2>
+<p>Object representing the metadata of a website.</p>
+<p><span class="h3" aria-level="3">Fields</span></p>
+<h3 id="span-classcodicon-codicon-symbol-field-symbol-fieldspansite_title"><span class="codicon codicon-symbol-field symbol-field"></span>site_title</h3>
+<p>Type: optional <code>string</code></p>
+<p>Title of the website.</p>
+<h3 id="span-classcodicon-codicon-symbol-field-symbol-fieldspanpage_title"><span class="codicon codicon-symbol-field symbol-field"></span>page_title</h3>
+<p>Type: optional <code>string</code></p>
+<p>Page title of the website page.</p>
+<h3 id="span-classcodicon-codicon-symbol-field-symbol-fieldspankind"><span class="codicon codicon-symbol-field symbol-field"></span>kind</h3>
+<p>Type: optional <code>string</code></p>
+<p>Kind of the website.</p>
+<h3 id="span-classcodicon-codicon-symbol-field-symbol-fieldspandescription"><span class="codicon codicon-symbol-field symbol-field"></span>description</h3>
+<p>Type: optional <code>string</code></p>
+<p>Description of the website page.</p>
+<h3 id="span-classcodicon-codicon-symbol-field-symbol-fieldspanurl-3"><span class="codicon codicon-symbol-field symbol-field"></span>url</h3>
+<p>Type: optional <code>string</code></p>
+<p>URL of the website.</p>
+<h3 id="span-classcodicon-codicon-symbol-field-symbol-fieldspanimage"><span class="codicon codicon-symbol-field symbol-field"></span>image</h3>
+<p>Type: optional <code>string</code></p>
+<p>A thumbnail image of the website.</p>
+<hr>
+<h2 id="span-classcodicon-codicon-symbol-structure-symbol-structurespanmediametadata"><span class="codicon codicon-symbol-structure symbol-structure"></span>MediaMetadata</h2>
+<p>Object represeting the metadata of a media.</p>
+<p><span class="h3" aria-level="3">Fields</span></p>
+<h3 id="span-classcodicon-codicon-symbol-field-symbol-fieldspanmimetype"><span class="codicon codicon-symbol-field symbol-field"></span>mimetype</h3>
+<p>Type: optional <code>string</code></p>
+<p>Mimetype of the media.</p>
+<h3 id="span-classcodicon-codicon-symbol-field-symbol-fieldspanfilename"><span class="codicon codicon-symbol-field symbol-field"></span>filename</h3>
+<p>Type: optional <code>string</code></p>
+<p>Filename of the media.</p>
+<hr>
 
     </article>
   </div>

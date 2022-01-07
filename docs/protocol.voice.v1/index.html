@@ -3,14 +3,8 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no">
     <title>Reference: protocol.voice.v1 | Harmony</title>
-    <meta name="description" content="Standalone Message Types UserConsumerOptions Data containing all the necessary information to create a consumer for a user in a voice channel
-This corresponds to https://mediasoup.org/documentation/v3/mediasoup-client/api/#ConsumerOptions on client:
- consumer_id -&gt; id producer_id -&gt; producerId rtp_parameters -&gt; rtpParameters and kind should be set to &ldquo;audio&rdquo;.  Fields
-user_id Type: optional uint64
-User ID of the user.
-producer_id Type: optional string
-Producer ID of the producer being consumed.
-consumer_id Type: optional string ">
+    <meta name="description" content="Services VoiceService Harmony service for facilitating voice operations using WebRTC.
+Usage (for client) Call StreamMessage to be able to send RTC commands to server Send Initialize over stream with guild_id and channel_id of the request set to the channel you want to join Init device by using the RTP capabilities sent in the response message, which should be Initialized Send PrepareForJoinChannel over stream with client rtp capabilities Wait for PreparedForJoinChannel, which contains transport options Connect both transports using the transport options on client Send JoinChannel over stream containing RTP paramaters for your Audio track and DTLS paramaters for both consumer and producer Wait for JoinedChannel, which confirms you have successfully joined the voice channel; handle other_users which will be described in 8 (UserJoined handling) Handle UserJoined and UserLeft events appropiately   For UserJoined; use the received consumer ID, producer ID and RTP parameters on your consumer transport to consume the producer, afterwards send ResumeConsumer message with the consumer ID, then if that&rsquo;s successful add the track to a user ID -&gt; Track map For UserLeft, remove the user track from the user ID -&gt; Track map  How this looks for servers Receives StreamMessage, starts the socket Waits for Initialize Sends Initialized over stream with it&rsquo;s RTP capabilities Receives PrepareForJoinChannel with client RTP capabilities Sends PreparedForJoinChannel over stream with consumer and producer transport options Receives JoinChannel, checks for DTLS parameters for consumer and producer transports and uses the RTP paramaters to create a producer for the client Sends JoinedChannel over stream with the created producer ID and all other users&#39; data (UserData) When another user does 1 to 7, sends UserJoined over stream to all other users; when a user leaves the channel (when their stream ends), sends UserLeft to all other users When receiving a ResumeConsumer message, unpauses the consumer corresponding to the consumer ID Fields  StreamMessage streaming protocol. ">
     <link rel="canonical" href="https://harmonyapp.io/docs/protocol.voice.v1/" />
 
     <link rel="stylesheet" href="/css/codicon.css" />
@@ -23,28 +17,16 @@ consumer_id Type: optional string ">
     
 
     <meta property="og:title" content="Reference: protocol.voice.v1" />
-<meta property="og:description" content="Standalone Message Types UserConsumerOptions Data containing all the necessary information to create a consumer for a user in a voice channel
-This corresponds to https://mediasoup.org/documentation/v3/mediasoup-client/api/#ConsumerOptions on client:
- consumer_id -&gt; id producer_id -&gt; producerId rtp_parameters -&gt; rtpParameters and kind should be set to &ldquo;audio&rdquo;.  Fields
-user_id Type: optional uint64
-User ID of the user.
-producer_id Type: optional string
-Producer ID of the producer being consumed.
-consumer_id Type: optional string" />
+<meta property="og:description" content="Services VoiceService Harmony service for facilitating voice operations using WebRTC.
+Usage (for client) Call StreamMessage to be able to send RTC commands to server Send Initialize over stream with guild_id and channel_id of the request set to the channel you want to join Init device by using the RTP capabilities sent in the response message, which should be Initialized Send PrepareForJoinChannel over stream with client rtp capabilities Wait for PreparedForJoinChannel, which contains transport options Connect both transports using the transport options on client Send JoinChannel over stream containing RTP paramaters for your Audio track and DTLS paramaters for both consumer and producer Wait for JoinedChannel, which confirms you have successfully joined the voice channel; handle other_users which will be described in 8 (UserJoined handling) Handle UserJoined and UserLeft events appropiately   For UserJoined; use the received consumer ID, producer ID and RTP parameters on your consumer transport to consume the producer, afterwards send ResumeConsumer message with the consumer ID, then if that&rsquo;s successful add the track to a user ID -&gt; Track map For UserLeft, remove the user track from the user ID -&gt; Track map  How this looks for servers Receives StreamMessage, starts the socket Waits for Initialize Sends Initialized over stream with it&rsquo;s RTP capabilities Receives PrepareForJoinChannel with client RTP capabilities Sends PreparedForJoinChannel over stream with consumer and producer transport options Receives JoinChannel, checks for DTLS parameters for consumer and producer transports and uses the RTP paramaters to create a producer for the client Sends JoinedChannel over stream with the created producer ID and all other users&#39; data (UserData) When another user does 1 to 7, sends UserJoined over stream to all other users; when a user leaves the channel (when their stream ends), sends UserLeft to all other users When receiving a ResumeConsumer message, unpauses the consumer corresponding to the consumer ID Fields  StreamMessage streaming protocol." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://harmonyapp.io/docs/protocol.voice.v1/" />
 
 
     <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Reference: protocol.voice.v1"/>
-<meta name="twitter:description" content="Standalone Message Types UserConsumerOptions Data containing all the necessary information to create a consumer for a user in a voice channel
-This corresponds to https://mediasoup.org/documentation/v3/mediasoup-client/api/#ConsumerOptions on client:
- consumer_id -&gt; id producer_id -&gt; producerId rtp_parameters -&gt; rtpParameters and kind should be set to &ldquo;audio&rdquo;.  Fields
-user_id Type: optional uint64
-User ID of the user.
-producer_id Type: optional string
-Producer ID of the producer being consumed.
-consumer_id Type: optional string"/>
+<meta name="twitter:description" content="Services VoiceService Harmony service for facilitating voice operations using WebRTC.
+Usage (for client) Call StreamMessage to be able to send RTC commands to server Send Initialize over stream with guild_id and channel_id of the request set to the channel you want to join Init device by using the RTP capabilities sent in the response message, which should be Initialized Send PrepareForJoinChannel over stream with client rtp capabilities Wait for PreparedForJoinChannel, which contains transport options Connect both transports using the transport options on client Send JoinChannel over stream containing RTP paramaters for your Audio track and DTLS paramaters for both consumer and producer Wait for JoinedChannel, which confirms you have successfully joined the voice channel; handle other_users which will be described in 8 (UserJoined handling) Handle UserJoined and UserLeft events appropiately   For UserJoined; use the received consumer ID, producer ID and RTP parameters on your consumer transport to consume the producer, afterwards send ResumeConsumer message with the consumer ID, then if that&rsquo;s successful add the track to a user ID -&gt; Track map For UserLeft, remove the user track from the user ID -&gt; Track map  How this looks for servers Receives StreamMessage, starts the socket Waits for Initialize Sends Initialized over stream with it&rsquo;s RTP capabilities Receives PrepareForJoinChannel with client RTP capabilities Sends PreparedForJoinChannel over stream with consumer and producer transport options Receives JoinChannel, checks for DTLS parameters for consumer and producer transports and uses the RTP paramaters to create a producer for the client Sends JoinedChannel over stream with the created producer ID and all other users&#39; data (UserData) When another user does 1 to 7, sends UserJoined over stream to all other users; when a user leaves the channel (when their stream ends), sends UserLeft to all other users When receiving a ResumeConsumer message, unpauses the consumer corresponding to the consumer ID Fields  StreamMessage streaming protocol."/>
 
     <meta name="theme-color" content="#E93D58">
     <meta property="og:image" content="https://harmonyapp.io/img/harmony-embed.png" />
@@ -125,6 +107,24 @@ consumer_id Type: optional string"/>
     <h4><strong>Table Of Contents</strong></h4>
     <nav id="TableOfContents">
   <ul>
+    <li><a href="#services">Services</a>
+      <ul>
+        <li><a href="#span-classcodicon-codicon-symbol-class-symbol-classspanvoiceservice"><span class="codicon codicon-symbol-class symbol-class"></span>VoiceService</a></li>
+      </ul>
+    </li>
+    <li><a href="#usage-for-client">Usage (for client)</a>
+      <ul>
+        <li><a href="#how-this-looks-for-servers">How this looks for servers</a>
+          <ul>
+            <li>
+              <ul>
+                <li><a href="#span-classcodicon-codicon-symbol-method-symbol-methodspanstreammessage"><span class="codicon codicon-symbol-method symbol-method"></span>StreamMessage</a></li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </li>
     <li><a href="#standalone-message-types">Standalone Message Types</a>
       <ul>
         <li><a href="#span-classcodicon-codicon-symbol-structure-symbol-structurespanuserconsumeroptions"><span class="codicon codicon-symbol-structure symbol-structure"></span>UserConsumerOptions</a>
@@ -211,31 +211,59 @@ consumer_id Type: optional string"/>
         </li>
       </ul>
     </li>
-    <li><a href="#services">Services</a>
-      <ul>
-        <li><a href="#span-classcodicon-codicon-symbol-class-symbol-classspanvoiceservice"><span class="codicon codicon-symbol-class symbol-class"></span>VoiceService</a></li>
-      </ul>
-    </li>
-    <li><a href="#usage-for-client">Usage (for client)</a>
-      <ul>
-        <li><a href="#how-this-looks-for-servers">How this looks for servers</a>
-          <ul>
-            <li>
-              <ul>
-                <li><a href="#span-classcodicon-codicon-symbol-method-symbol-methodspanstreammessage"><span class="codicon codicon-symbol-method symbol-method"></span>StreamMessage</a></li>
-              </ul>
-            </li>
-          </ul>
-        </li>
-      </ul>
-    </li>
   </ul>
 </nav>
   </aside>
   <div class="flex justify-center pb-8 w-full">
     <article class="prose">
       <h1 class="h1">Reference: protocol.voice.v1</h1>
-      <h1 id="standalone-message-types">Standalone Message Types</h1>
+      <h1 id="services">Services</h1>
+<h2 id="span-classcodicon-codicon-symbol-class-symbol-classspanvoiceservice"><span class="codicon codicon-symbol-class symbol-class"></span>VoiceService</h2>
+<p>Harmony service for facilitating voice operations using WebRTC.</p>
+<h1 id="usage-for-client">Usage (for client)</h1>
+<ol start="0">
+<li>Call StreamMessage to be able to send RTC commands to server</li>
+<li>Send Initialize over stream with guild_id and channel_id of the request set to the channel you want to join</li>
+<li>Init device by using the RTP capabilities sent in the response message, which should be Initialized</li>
+<li>Send PrepareForJoinChannel over stream with client rtp capabilities</li>
+<li>Wait for PreparedForJoinChannel, which contains transport options</li>
+<li>Connect both transports using the transport options on client</li>
+<li>Send JoinChannel over stream containing RTP paramaters for your Audio track
+and DTLS paramaters for both consumer and producer</li>
+<li>Wait for JoinedChannel, which confirms you have successfully joined the voice channel;
+handle other_users which will be described in 8 (UserJoined handling)</li>
+<li>Handle UserJoined and UserLeft events appropiately</li>
+</ol>
+<ul>
+<li>For UserJoined; use the received consumer ID, producer ID and RTP parameters on your
+consumer transport to consume the producer, afterwards send ResumeConsumer message
+with the consumer ID, then if that&rsquo;s successful add the track to a <code>user ID -&gt; Track</code> map</li>
+<li>For UserLeft, remove the user track from the <code>user ID -&gt; Track</code> map</li>
+</ul>
+<h2 id="how-this-looks-for-servers">How this looks for servers</h2>
+<ol start="0">
+<li>Receives StreamMessage, starts the socket</li>
+<li>Waits for Initialize</li>
+<li>Sends Initialized over stream with it&rsquo;s RTP capabilities</li>
+<li>Receives PrepareForJoinChannel with client RTP capabilities</li>
+<li>Sends PreparedForJoinChannel over stream with consumer and producer transport options</li>
+<li>Receives JoinChannel, checks for DTLS parameters for consumer and producer transports
+and uses the RTP paramaters to create a producer for the client</li>
+<li>Sends JoinedChannel over stream with the created producer ID and all other users' data (UserData)</li>
+<li>When another user does 1 to 7, sends UserJoined over stream to all other users;
+when a user leaves the channel (when their stream ends), sends UserLeft to all other users</li>
+<li>When receiving a ResumeConsumer message, unpauses the consumer corresponding to the consumer ID
+<span class="h3" aria-level="3">Fields</span></li>
+</ol>
+<h4 id="span-classcodicon-codicon-symbol-method-symbol-methodspanstreammessage"><span class="codicon codicon-symbol-method symbol-method"></span>StreamMessage</h4>
+<p>streaming <a href="#streammessagerequest">protocol.voice.v1.StreamMessageRequest</a> -&gt; streaming <a href="#streammessageresponse">protocol.voice.v1.StreamMessageResponse</a></p>
+<p>Endpoint to stream messages between client and server.</p>
+<ul>
+<li>One StreamMessage stream corresponds to being in one voice channel.</li>
+<li>It&rsquo;s recommended that users should not be able to be in more than one voice channel,
+but this limitation is left up to the server implementation.</li>
+</ul>
+<h1 id="standalone-message-types">Standalone Message Types</h1>
 <h2 id="span-classcodicon-codicon-symbol-structure-symbol-structurespanuserconsumeroptions"><span class="codicon codicon-symbol-structure symbol-structure"></span>UserConsumerOptions</h2>
 <p>Data containing all the necessary information to
 create a consumer for a user in a voice channel</p>
@@ -371,52 +399,6 @@ from the server to establish transport connection on the client</p>
 <p><span class="h3" aria-level="3">Fields</span></p>
 <h3 id="span-classcodicon-codicon-symbol-field-symbol-fieldspanuser_id-1"><span class="codicon codicon-symbol-field symbol-field"></span>user_id</h3>
 <p>Type: optional <code>uint64</code></p>
-<h1 id="services">Services</h1>
-<h2 id="span-classcodicon-codicon-symbol-class-symbol-classspanvoiceservice"><span class="codicon codicon-symbol-class symbol-class"></span>VoiceService</h2>
-<p>Harmony service for facilitating voice operations using WebRTC.</p>
-<h1 id="usage-for-client">Usage (for client)</h1>
-<ol start="0">
-<li>Call StreamMessage to be able to send RTC commands to server</li>
-<li>Send Initialize over stream with guild_id and channel_id of the request set to the channel you want to join</li>
-<li>Init device by using the RTP capabilities sent in the response message, which should be Initialized</li>
-<li>Send PrepareForJoinChannel over stream with client rtp capabilities</li>
-<li>Wait for PreparedForJoinChannel, which contains transport options</li>
-<li>Connect both transports using the transport options on client</li>
-<li>Send JoinChannel over stream containing RTP paramaters for your Audio track
-and DTLS paramaters for both consumer and producer</li>
-<li>Wait for JoinedChannel, which confirms you have successfully joined the voice channel;
-handle other_users which will be described in 8 (UserJoined handling)</li>
-<li>Handle UserJoined and UserLeft events appropiately</li>
-</ol>
-<ul>
-<li>For UserJoined; use the received consumer ID, producer ID and RTP parameters on your
-consumer transport to consume the producer, afterwards send ResumeConsumer message
-with the consumer ID, then if that&rsquo;s successful add the track to a <code>user ID -&gt; Track</code> map</li>
-<li>For UserLeft, remove the user track from the <code>user ID -&gt; Track</code> map</li>
-</ul>
-<h2 id="how-this-looks-for-servers">How this looks for servers</h2>
-<ol start="0">
-<li>Receives StreamMessage, starts the socket</li>
-<li>Waits for Initialize</li>
-<li>Sends Initialized over stream with it&rsquo;s RTP capabilities</li>
-<li>Receives PrepareForJoinChannel with client RTP capabilities</li>
-<li>Sends PreparedForJoinChannel over stream with consumer and producer transport options</li>
-<li>Receives JoinChannel, checks for DTLS parameters for consumer and producer transports
-and uses the RTP paramaters to create a producer for the client</li>
-<li>Sends JoinedChannel over stream with the created producer ID and all other users' data (UserData)</li>
-<li>When another user does 1 to 7, sends UserJoined over stream to all other users;
-when a user leaves the channel (when their stream ends), sends UserLeft to all other users</li>
-<li>When receiving a ResumeConsumer message, unpauses the consumer corresponding to the consumer ID
-<span class="h3" aria-level="3">Fields</span></li>
-</ol>
-<h4 id="span-classcodicon-codicon-symbol-method-symbol-methodspanstreammessage"><span class="codicon codicon-symbol-method symbol-method"></span>StreamMessage</h4>
-<p>streaming <a href="#streammessagerequest">protocol.voice.v1.StreamMessageRequest</a> -&gt; streaming <a href="#streammessageresponse">protocol.voice.v1.StreamMessageResponse</a></p>
-<p>Endpoint to stream messages between client and server.</p>
-<ul>
-<li>One StreamMessage stream corresponds to being in one voice channel.</li>
-<li>It&rsquo;s recommended that users should not be able to be in more than one voice channel,
-but this limitation is left up to the server implementation.</li>
-</ul>
 
     </article>
   </div>
