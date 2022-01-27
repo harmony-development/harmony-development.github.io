@@ -149,5 +149,13 @@ Mimetype of the media.
 Type: optional `string`
 
 Filename of the media.
+### <span class="codicon codicon-symbol-field symbol-field"></span>size
+Type: optional `uint32`
+
+Sıze of the media.
+
+This should (usually) be the size taken from the `Content-Length` header
+(for HTTP requests).
+If this is not included, then it means the size could not be determined.
 
 ------

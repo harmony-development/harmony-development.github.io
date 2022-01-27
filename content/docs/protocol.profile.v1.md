@@ -62,7 +62,10 @@ new status of the user.
 ###### <span class="codicon codicon-symbol-field symbol-field"></span>new_is_bot
 Type: optional `bool`
 
-new whether the user is a bot or not.
+new whether the user is a bot or not
+
+Deprecated; see bot service and guest handling
+in auth.
 
 
 <br/>
@@ -208,7 +211,11 @@ the status of the user.
 ### <span class="codicon codicon-symbol-field symbol-field"></span>is_bot
 Type: optional `bool`
 
-whether the user is a bot or not.
+whether the user is a bot or not
+### <span class="codicon codicon-symbol-field symbol-field"></span>account_kind
+Type: UNHANDLED | TYPE
+
+what kind of account the user is, e.g. full, guest, bot
 
 ------
 ## <span class="codicon codicon-symbol-structure symbol-structure"></span>ProfileUpdated
@@ -238,6 +245,11 @@ New status for this user.
 Type: optional `bool`
 
 New is bot or not for this user.
+Deprecated, prefer new_account_kind if set.
+### <span class="codicon codicon-symbol-field symbol-field"></span>new_account_kind
+Type: UNHANDLED | TYPE
+
+The new account kind for this account
 
 ------
 ## <span class="codicon codicon-symbol-structure symbol-structure"></span>StreamEvent
@@ -271,4 +283,17 @@ User is on mobile.
 
 ### <span class="codicon codicon-symbol-enum-member symbol-enum-member"></span>USER_STATUS_STREAMING
 User is streaming
+
+------
+## <span class="codicon codicon-symbol-enum symbol-enum"></span>AccountKind
+
+The possible kinds of an account
+### <span class="codicon codicon-symbol-enum-member symbol-enum-member"></span>ACCOUNT_KIND_FULL_UNSPECIFIED
+The account is a full-fledged account controlled by a human
+
+### <span class="codicon codicon-symbol-enum-member symbol-enum-member"></span>ACCOUNT_KIND_BOT
+The account is an account controlled by a bot
+
+### <span class="codicon codicon-symbol-enum-member symbol-enum-member"></span>ACCOUNT_KIND_GUEST
+The account is a guest account controlled by a human
 

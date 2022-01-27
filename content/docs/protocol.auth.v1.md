@@ -111,7 +111,18 @@ Begins an authentication session
 ##### <span class="codicon codicon-symbol-structure symbol-structure"></span>BeginAuthRequest
 Used in `BeginAuth` endpoint.
 
-This item has no fields.
+<span class="h5" aria-level="5">Fields</span>
+###### <span class="codicon codicon-symbol-field symbol-field"></span>for_guest_token
+Type: optional `string`
+
+If provided, this is the guest token
+for the account being upgraded from
+a guest account to a full account
+during the auth flow.
+
+This token is provided by the server
+at the end of the auth flow that
+created the guest account.
 
 
 <br/>
@@ -246,6 +257,24 @@ user_id: the ID of the user you logged in as
 Type: optional `string`
 
 session_token: the session token to use in authorization
+### <span class="codicon codicon-symbol-field symbol-field"></span>guest_token
+Type: optional `string`
+
+A token allowing for this account to be upgraded to a
+"full" account by beginning an auth session and providing
+this token.
+
+The guest token only exists to upgrade a guest account to a full
+account, and does not permit logging in with a guest account
+on more than one session.
+
+A "guest token" MAY be provided to BeginAuth to begin
+an authorization process that will upgrade the guest account
+to a full account if completed successfully.
+This MUST only affect now being able to log
+into the account with more than one session, and MUST not
+change other information about the account, such as username
+and password.
 
 ------
 ## <span class="codicon codicon-symbol-structure symbol-structure"></span>AuthStep
