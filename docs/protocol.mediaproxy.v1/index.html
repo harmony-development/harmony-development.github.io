@@ -233,6 +233,7 @@ Media metadata for the URL.
           <ul>
             <li><a href="#span-classcodicon-codicon-symbol-field-symbol-fieldspanmimetype"><span class="codicon codicon-symbol-field symbol-field"></span>mimetype</a></li>
             <li><a href="#span-classcodicon-codicon-symbol-field-symbol-fieldspanfilename"><span class="codicon codicon-symbol-field symbol-field"></span>filename</a></li>
+            <li><a href="#span-classcodicon-codicon-symbol-field-symbol-fieldspansize"><span class="codicon codicon-symbol-field symbol-field"></span>size</a></li>
           </ul>
         </li>
       </ul>
@@ -341,6 +342,12 @@ Media metadata for the URL.
 <h3 id="span-classcodicon-codicon-symbol-field-symbol-fieldspanfilename"><span class="codicon codicon-symbol-field symbol-field"></span>filename</h3>
 <p>Type: optional <code>string</code></p>
 <p>Filename of the media.</p>
+<h3 id="span-classcodicon-codicon-symbol-field-symbol-fieldspansize"><span class="codicon codicon-symbol-field symbol-field"></span>size</h3>
+<p>Type: optional <code>uint32</code></p>
+<p>Sıze of the media.</p>
+<p>This should (usually) be the size taken from the <code>Content-Length</code> header
+(for HTTP requests).
+If this is not included, then it means the size could not be determined.</p>
 <hr>
 
     </article>

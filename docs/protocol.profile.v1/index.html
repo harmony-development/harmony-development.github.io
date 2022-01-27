@@ -258,6 +258,7 @@ new_user_name Type: optional string"/>
             <li><a href="#span-classcodicon-codicon-symbol-field-symbol-fieldspanuser_avatar"><span class="codicon codicon-symbol-field symbol-field"></span>user_avatar</a></li>
             <li><a href="#span-classcodicon-codicon-symbol-field-symbol-fieldspanuser_status"><span class="codicon codicon-symbol-field symbol-field"></span>user_status</a></li>
             <li><a href="#span-classcodicon-codicon-symbol-field-symbol-fieldspanis_bot"><span class="codicon codicon-symbol-field symbol-field"></span>is_bot</a></li>
+            <li><a href="#span-classcodicon-codicon-symbol-field-symbol-fieldspanaccount_kind"><span class="codicon codicon-symbol-field symbol-field"></span>account_kind</a></li>
           </ul>
         </li>
         <li><a href="#span-classcodicon-codicon-symbol-structure-symbol-structurespanprofileupdated"><span class="codicon codicon-symbol-structure symbol-structure"></span>ProfileUpdated</a>
@@ -267,6 +268,7 @@ new_user_name Type: optional string"/>
             <li><a href="#span-classcodicon-codicon-symbol-field-symbol-fieldspannew_avatar"><span class="codicon codicon-symbol-field symbol-field"></span>new_avatar</a></li>
             <li><a href="#span-classcodicon-codicon-symbol-field-symbol-fieldspannew_status"><span class="codicon codicon-symbol-field symbol-field"></span>new_status</a></li>
             <li><a href="#span-classcodicon-codicon-symbol-field-symbol-fieldspannew_is_bot-1"><span class="codicon codicon-symbol-field symbol-field"></span>new_is_bot</a></li>
+            <li><a href="#span-classcodicon-codicon-symbol-field-symbol-fieldspannew_account_kind"><span class="codicon codicon-symbol-field symbol-field"></span>new_account_kind</a></li>
           </ul>
         </li>
         <li><a href="#span-classcodicon-codicon-symbol-structure-symbol-structurespanstreamevent"><span class="codicon codicon-symbol-structure symbol-structure"></span>StreamEvent</a>
@@ -286,6 +288,13 @@ new_user_name Type: optional string"/>
             <li><a href="#span-classcodicon-codicon-symbol-enum-member-symbol-enum-memberspanuser_status_do_not_disturb"><span class="codicon codicon-symbol-enum-member symbol-enum-member"></span>USER_STATUS_DO_NOT_DISTURB</a></li>
             <li><a href="#span-classcodicon-codicon-symbol-enum-member-symbol-enum-memberspanuser_status_mobile"><span class="codicon codicon-symbol-enum-member symbol-enum-member"></span>USER_STATUS_MOBILE</a></li>
             <li><a href="#span-classcodicon-codicon-symbol-enum-member-symbol-enum-memberspanuser_status_streaming"><span class="codicon codicon-symbol-enum-member symbol-enum-member"></span>USER_STATUS_STREAMING</a></li>
+          </ul>
+        </li>
+        <li><a href="#span-classcodicon-codicon-symbol-enum-symbol-enumspanaccountkind"><span class="codicon codicon-symbol-enum symbol-enum"></span>AccountKind</a>
+          <ul>
+            <li><a href="#span-classcodicon-codicon-symbol-enum-member-symbol-enum-memberspanaccount_kind_full_unspecified"><span class="codicon codicon-symbol-enum-member symbol-enum-member"></span>ACCOUNT_KIND_FULL_UNSPECIFIED</a></li>
+            <li><a href="#span-classcodicon-codicon-symbol-enum-member-symbol-enum-memberspanaccount_kind_bot"><span class="codicon codicon-symbol-enum-member symbol-enum-member"></span>ACCOUNT_KIND_BOT</a></li>
+            <li><a href="#span-classcodicon-codicon-symbol-enum-member-symbol-enum-memberspanaccount_kind_guest"><span class="codicon codicon-symbol-enum-member symbol-enum-member"></span>ACCOUNT_KIND_GUEST</a></li>
           </ul>
         </li>
       </ul>
@@ -336,7 +345,9 @@ new_user_name Type: optional string"/>
 <p>new status of the user.</p>
 <h6 id="span-classcodicon-codicon-symbol-field-symbol-fieldspannew_is_bot"><span class="codicon codicon-symbol-field symbol-field"></span>new_is_bot</h6>
 <p>Type: optional <code>bool</code></p>
-<p>new whether the user is a bot or not.</p>
+<p>new whether the user is a bot or not</p>
+<p>Deprecated; see bot service and guest handling
+in auth.</p>
 <br/>
 <h5 id="span-classcodicon-codicon-symbol-structure-symbol-structurespanupdateprofileresponse"><span class="codicon codicon-symbol-structure symbol-structure"></span>UpdateProfileResponse</h5>
 <p>Used in <code>UpdateProfile</code> endpoint.</p>
@@ -435,7 +446,10 @@ of appdata.</p>
 <p>the status of the user.</p>
 <h3 id="span-classcodicon-codicon-symbol-field-symbol-fieldspanis_bot"><span class="codicon codicon-symbol-field symbol-field"></span>is_bot</h3>
 <p>Type: optional <code>bool</code></p>
-<p>whether the user is a bot or not.</p>
+<p>whether the user is a bot or not</p>
+<h3 id="span-classcodicon-codicon-symbol-field-symbol-fieldspanaccount_kind"><span class="codicon codicon-symbol-field symbol-field"></span>account_kind</h3>
+<p>Type: UNHANDLED | TYPE</p>
+<p>what kind of account the user is, e.g. full, guest, bot</p>
 <hr>
 <h2 id="span-classcodicon-codicon-symbol-structure-symbol-structurespanprofileupdated"><span class="codicon codicon-symbol-structure symbol-structure"></span>ProfileUpdated</h2>
 <p>Event sent when a user&rsquo;s profile is updated.</p>
@@ -456,7 +470,11 @@ in the same guild) the user this event was triggered by.</p>
 <p>New status for this user.</p>
 <h3 id="span-classcodicon-codicon-symbol-field-symbol-fieldspannew_is_bot-1"><span class="codicon codicon-symbol-field symbol-field"></span>new_is_bot</h3>
 <p>Type: optional <code>bool</code></p>
-<p>New is bot or not for this user.</p>
+<p>New is bot or not for this user.
+Deprecated, prefer new_account_kind if set.</p>
+<h3 id="span-classcodicon-codicon-symbol-field-symbol-fieldspannew_account_kind"><span class="codicon codicon-symbol-field symbol-field"></span>new_account_kind</h3>
+<p>Type: UNHANDLED | TYPE</p>
+<p>The new account kind for this account</p>
 <hr>
 <h2 id="span-classcodicon-codicon-symbol-structure-symbol-structurespanstreamevent"><span class="codicon codicon-symbol-structure symbol-structure"></span>StreamEvent</h2>
 <p>Describes an emote service event.</p>
@@ -479,6 +497,15 @@ in the same guild) the user this event was triggered by.</p>
 <p>User is on mobile.</p>
 <h3 id="span-classcodicon-codicon-symbol-enum-member-symbol-enum-memberspanuser_status_streaming"><span class="codicon codicon-symbol-enum-member symbol-enum-member"></span>USER_STATUS_STREAMING</h3>
 <p>User is streaming</p>
+<hr>
+<h2 id="span-classcodicon-codicon-symbol-enum-symbol-enumspanaccountkind"><span class="codicon codicon-symbol-enum symbol-enum"></span>AccountKind</h2>
+<p>The possible kinds of an account</p>
+<h3 id="span-classcodicon-codicon-symbol-enum-member-symbol-enum-memberspanaccount_kind_full_unspecified"><span class="codicon codicon-symbol-enum-member symbol-enum-member"></span>ACCOUNT_KIND_FULL_UNSPECIFIED</h3>
+<p>The account is a full-fledged account controlled by a human</p>
+<h3 id="span-classcodicon-codicon-symbol-enum-member-symbol-enum-memberspanaccount_kind_bot"><span class="codicon codicon-symbol-enum-member symbol-enum-member"></span>ACCOUNT_KIND_BOT</h3>
+<p>The account is an account controlled by a bot</p>
+<h3 id="span-classcodicon-codicon-symbol-enum-member-symbol-enum-memberspanaccount_kind_guest"><span class="codicon codicon-symbol-enum-member symbol-enum-member"></span>ACCOUNT_KIND_GUEST</h3>
+<p>The account is a guest account controlled by a human</p>
 
     </article>
   </div>

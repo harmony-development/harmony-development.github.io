@@ -147,6 +147,22 @@ The list of responses to the requests.</description>
     </item>
     
     <item>
+      <title>Reference: protocol.bots.v1</title>
+      <link>https://harmonyapp.io/docs/protocol.bots.v1/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://harmonyapp.io/docs/protocol.bots.v1/</guid>
+      <description>Bot Invite Codes Bot invite codes work similarly to HMC URLs. They can either be server+code or just code, to refer to a bot on the current homeserver.
+The format for an invite code is:
+ [url[:port]/]code
+ where code is a purely alphanumeric code.
+Services BotsService The Bots service allows the management of bot accounts Fields
+MyBots protocol.bots.v1.MyBotsRequest -&amp;gt; protocol.bots.v1.MyBotsResponse
+Gets the list of bots that you own
+ MyBotsRequest Request type for MyBots</description>
+    </item>
+    
+    <item>
       <title>Reference: protocol.chat.v1</title>
       <link>https://harmonyapp.io/docs/protocol.chat.v1/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>

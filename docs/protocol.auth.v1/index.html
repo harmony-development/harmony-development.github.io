@@ -189,7 +189,11 @@ The server ID foreign server you want to federate with
                 </li>
                 <li><a href="#span-classcodicon-codicon-symbol-method-symbol-methodspanbeginauth"><span class="codicon codicon-symbol-method symbol-method"></span>BeginAuth</a>
                   <ul>
-                    <li><a href="#span-classcodicon-codicon-symbol-structure-symbol-structurespanbeginauthrequest"><span class="codicon codicon-symbol-structure symbol-structure"></span>BeginAuthRequest</a></li>
+                    <li><a href="#span-classcodicon-codicon-symbol-structure-symbol-structurespanbeginauthrequest"><span class="codicon codicon-symbol-structure symbol-structure"></span>BeginAuthRequest</a>
+                      <ul>
+                        <li><a href="#span-classcodicon-codicon-symbol-field-symbol-fieldspanfor_guest_token"><span class="codicon codicon-symbol-field symbol-field"></span>for_guest_token</a></li>
+                      </ul>
+                    </li>
                     <li><a href="#span-classcodicon-codicon-symbol-structure-symbol-structurespanbeginauthresponse"><span class="codicon codicon-symbol-structure symbol-structure"></span>BeginAuthResponse</a>
                       <ul>
                         <li><a href="#span-classcodicon-codicon-symbol-field-symbol-fieldspanauth_id"><span class="codicon codicon-symbol-field symbol-field"></span>auth_id</a></li>
@@ -252,6 +256,7 @@ The server ID foreign server you want to federate with
           <ul>
             <li><a href="#span-classcodicon-codicon-symbol-field-symbol-fieldspanuser_id"><span class="codicon codicon-symbol-field symbol-field"></span>user_id</a></li>
             <li><a href="#span-classcodicon-codicon-symbol-field-symbol-fieldspansession_token"><span class="codicon codicon-symbol-field symbol-field"></span>session_token</a></li>
+            <li><a href="#span-classcodicon-codicon-symbol-field-symbol-fieldspanguest_token"><span class="codicon codicon-symbol-field symbol-field"></span>guest_token</a></li>
           </ul>
         </li>
         <li><a href="#span-classcodicon-codicon-symbol-structure-symbol-structurespanauthstep"><span class="codicon codicon-symbol-structure symbol-structure"></span>AuthStep</a>
@@ -399,7 +404,16 @@ It is signed with the homeserver&rsquo;s private key.</p>
 <br/>
 <h5 id="span-classcodicon-codicon-symbol-structure-symbol-structurespanbeginauthrequest"><span class="codicon codicon-symbol-structure symbol-structure"></span>BeginAuthRequest</h5>
 <p>Used in <code>BeginAuth</code> endpoint.</p>
-<p>This item has no fields.</p>
+<p><span class="h5" aria-level="5">Fields</span></p>
+<h6 id="span-classcodicon-codicon-symbol-field-symbol-fieldspanfor_guest_token"><span class="codicon codicon-symbol-field symbol-field"></span>for_guest_token</h6>
+<p>Type: optional <code>string</code></p>
+<p>If provided, this is the guest token
+for the account being upgraded from
+a guest account to a full account
+during the auth flow.</p>
+<p>This token is provided by the server
+at the end of the auth flow that
+created the guest account.</p>
 <br/>
 <h5 id="span-classcodicon-codicon-symbol-structure-symbol-structurespanbeginauthresponse"><span class="codicon codicon-symbol-structure symbol-structure"></span>BeginAuthResponse</h5>
 <p>BeginAuthResponse
@@ -489,6 +503,21 @@ which should be passed to authorisation</p>
 <h3 id="span-classcodicon-codicon-symbol-field-symbol-fieldspansession_token"><span class="codicon codicon-symbol-field symbol-field"></span>session_token</h3>
 <p>Type: optional <code>string</code></p>
 <p>session_token: the session token to use in authorization</p>
+<h3 id="span-classcodicon-codicon-symbol-field-symbol-fieldspanguest_token"><span class="codicon codicon-symbol-field symbol-field"></span>guest_token</h3>
+<p>Type: optional <code>string</code></p>
+<p>A token allowing for this account to be upgraded to a
+&ldquo;full&rdquo; account by beginning an auth session and providing
+this token.</p>
+<p>The guest token only exists to upgrade a guest account to a full
+account, and does not permit logging in with a guest account
+on more than one session.</p>
+<p>A &ldquo;guest token&rdquo; MAY be provided to BeginAuth to begin
+an authorization process that will upgrade the guest account
+to a full account if completed successfully.
+This MUST only affect now being able to log
+into the account with more than one session, and MUST not
+change other information about the account, such as username
+and password.</p>
 <hr>
 <h2 id="span-classcodicon-codicon-symbol-structure-symbol-structurespanauthstep"><span class="codicon codicon-symbol-structure symbol-structure"></span>AuthStep</h2>
 <p>AuthStep

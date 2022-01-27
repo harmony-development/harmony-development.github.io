@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="en-us"><head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no">
+    <title>Reference: protocol.bots.v1 | Harmony</title>
+    <meta name="description" content="Bot Invite Codes Bot invite codes work similarly to HMC URLs. They can either be server&#43;code or just code, to refer to a bot on the current homeserver.
+The format for an invite code is:
+ [url[:port]/]code
+ where code is a purely alphanumeric code.
+Services BotsService The Bots service allows the management of bot accounts Fields
+MyBots protocol.bots.v1.MyBotsRequest -&gt; protocol.bots.v1.MyBotsResponse
+Gets the list of bots that you own
+ MyBotsRequest Request type for MyBots ">
+    <link rel="canonical" href="https://harmonyapp.io/docs/protocol.bots.v1/" />
+
+    <link rel="stylesheet" href="/css/codicon.css" />
+
+    
+
+    
+      
+      <link rel="stylesheet" href="/css/main.min.453714d804f29a5e1710162898129891ab819acc73fec7546f953fef9b0351a2.css" integrity="sha256-RTcU2ATyml4XEBYomBKYkauBmsxz/sdUb5U/75sDUaI="/>
+    
+
+    <meta property="og:title" content="Reference: protocol.bots.v1" />
+<meta property="og:description" content="Bot Invite Codes Bot invite codes work similarly to HMC URLs. They can either be server&#43;code or just code, to refer to a bot on the current homeserver.
+The format for an invite code is:
+ [url[:port]/]code
+ where code is a purely alphanumeric code.
+Services BotsService The Bots service allows the management of bot accounts Fields
+MyBots protocol.bots.v1.MyBotsRequest -&gt; protocol.bots.v1.MyBotsResponse
+Gets the list of bots that you own
+ MyBotsRequest Request type for MyBots" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://harmonyapp.io/docs/protocol.bots.v1/" />
+
+
+    <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Reference: protocol.bots.v1"/>
+<meta name="twitter:description" content="Bot Invite Codes Bot invite codes work similarly to HMC URLs. They can either be server&#43;code or just code, to refer to a bot on the current homeserver.
+The format for an invite code is:
+ [url[:port]/]code
+ where code is a purely alphanumeric code.
+Services BotsService The Bots service allows the management of bot accounts Fields
+MyBots protocol.bots.v1.MyBotsRequest -&gt; protocol.bots.v1.MyBotsResponse
+Gets the list of bots that you own
+ MyBotsRequest Request type for MyBots"/>
+
+    <meta name="theme-color" content="#E93D58">
+    <meta property="og:image" content="https://harmonyapp.io/img/harmony-embed.png" />
+
+    <script src="https://unpkg.com/quicklink@2.0.0/dist/quicklink.umd.js"></script>
+    <script defer>
+        quicklink.listen()
+    </script>
+</head>
+<body class="dark:text-white"><header class="w-full bg-gray-200 header flex text-lg">
+  <div class="flex flex-col md:flex-row w-full items-center">
+    <div class="flex-auto pt-2 md:pt-0 px-3 justify-start order-first inline-flex">
+      <a class="font-header" href="/">
+        <span class="font-light">Harmony </span
+        ><span class="font-bold">Chat</span>
+      </a>
+    </div>
+    <div class="flex-auto p-2 justify-end order-last inline-flex gap-1">
+      
+      <a
+        href="/docs/faq"
+        class="
+          ml-2
+          nu-top-app-bar__link
+          h1-minor-minor
+          border-2 border-transparent
+          px-2
+          hover:border-current hover:bg-white hover:bg-opacity-5
+          rounded-sm
+          transition
+          duration-100
+        "
+      >
+        FAQ
+      </a>
+      
+      <a
+        href="/docs"
+        class="
+          ml-2
+          nu-top-app-bar__link
+          h1-minor-minor
+          border-2 border-transparent
+          px-2
+          hover:border-current hover:bg-white hover:bg-opacity-5
+          rounded-sm
+          transition
+          duration-100
+        "
+      >
+        Docs
+      </a>
+      
+      <a
+        href="/projects"
+        class="
+          ml-2
+          nu-top-app-bar__link
+          h1-minor-minor
+          border-2 border-transparent
+          px-2
+          hover:border-current hover:bg-white hover:bg-opacity-5
+          rounded-sm
+          transition
+          duration-100
+        "
+      >
+        Projects
+      </a>
+      
+      <a
+        href="https://github.com/harmony-development"
+        class="
+          ml-2
+          nu-top-app-bar__link
+          h1-minor-minor
+          border-2 border-transparent
+          px-2
+          hover:border-current hover:bg-white hover:bg-opacity-5
+          rounded-sm
+          transition
+          duration-100
+        "
+      >
+        Github
+      </a>
+      
+    </div>
+  </div>
+</header>
+<main>
+
+<div class="prose-wrapper">
+  <aside class="prose-toc">
+    <h4><strong>Table Of Contents</strong></h4>
+    <nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#bot-invite-codes">Bot Invite Codes</a></li>
+      </ul>
+    </li>
+    <li><a href="#services">Services</a>
+      <ul>
+        <li><a href="#span-classcodicon-codicon-symbol-class-symbol-classspanbotsservice"><span class="codicon codicon-symbol-class symbol-class"></span>BotsService</a>
+          <ul>
+            <li>
+              <ul>
+                <li><a href="#span-classcodicon-codicon-symbol-method-symbol-methodspanmybots"><span class="codicon codicon-symbol-method symbol-method"></span>MyBots</a>
+                  <ul>
+                    <li><a href="#span-classcodicon-codicon-symbol-structure-symbol-structurespanmybotsrequest"><span class="codicon codicon-symbol-structure symbol-structure"></span>MyBotsRequest</a></li>
+                    <li><a href="#span-classcodicon-codicon-symbol-structure-symbol-structurespanmybotsresponse"><span class="codicon codicon-symbol-structure symbol-structure"></span>MyBotsResponse</a>
+                      <ul>
+                        <li><a href="#span-classcodicon-codicon-symbol-field-symbol-fieldspanbots"><span class="codicon codicon-symbol-field symbol-field"></span>bots</a></li>
+                      </ul>
+                    </li>
+                  </ul>
+                </li>
+                <li><a href="#span-classcodicon-codicon-symbol-method-symbol-methodspangetbot"><span class="codicon codicon-symbol-method symbol-method"></span>GetBot</a>
+                  <ul>
+                    <li><a href="#span-classcodicon-codicon-symbol-structure-symbol-structurespangetbotrequest"><span class="codicon codicon-symbol-structure symbol-structure"></span>GetBotRequest</a>
+                      <ul>
+                        <li><a href="#span-classcodicon-codicon-symbol-field-symbol-fieldspanbot_id"><span class="codicon codicon-symbol-field symbol-field"></span>bot_id</a></li>
+                      </ul>
+                    </li>
+                    <li><a href="#span-classcodicon-codicon-symbol-structure-symbol-structurespangetbotresponse"><span class="codicon codicon-symbol-structure symbol-structure"></span>GetBotResponse</a>
+                      <ul>
+                        <li><a href="#span-classcodicon-codicon-symbol-field-symbol-fieldspanbot"><span class="codicon codicon-symbol-field symbol-field"></span>bot</a></li>
+                      </ul>
+                    </li>
+                  </ul>
+                </li>
+                <li><a href="#span-classcodicon-codicon-symbol-method-symbol-methodspancreatebot"><span class="codicon codicon-symbol-method symbol-method"></span>CreateBot</a>
+                  <ul>
+                    <li><a href="#span-classcodicon-codicon-symbol-structure-symbol-structurespancreatebotrequest"><span class="codicon codicon-symbol-structure symbol-structure"></span>CreateBotRequest</a>
+                      <ul>
+                        <li><a href="#span-classcodicon-codicon-symbol-field-symbol-fieldspandisplay_name"><span class="codicon codicon-symbol-field symbol-field"></span>display_name</a></li>
+                        <li><a href="#span-classcodicon-codicon-symbol-field-symbol-fieldspanavatar_url"><span class="codicon codicon-symbol-field symbol-field"></span>avatar_url</a></li>
+                        <li><a href="#span-classcodicon-codicon-symbol-field-symbol-fieldspaninvite"><span class="codicon codicon-symbol-field symbol-field"></span>invite</a></li>
+                      </ul>
+                    </li>
+                    <li><a href="#span-classcodicon-codicon-symbol-structure-symbol-structurespancreatebotresponse"><span class="codicon codicon-symbol-structure symbol-structure"></span>CreateBotResponse</a>
+                      <ul>
+                        <li><a href="#span-classcodicon-codicon-symbol-field-symbol-fieldspanbot_id-1"><span class="codicon codicon-symbol-field symbol-field"></span>bot_id</a></li>
+                      </ul>
+                    </li>
+                  </ul>
+                </li>
+                <li><a href="#span-classcodicon-codicon-symbol-method-symbol-methodspaneditbot"><span class="codicon codicon-symbol-method symbol-method"></span>EditBot</a>
+                  <ul>
+                    <li><a href="#span-classcodicon-codicon-symbol-structure-symbol-structurespaneditbotrequest"><span class="codicon codicon-symbol-structure symbol-structure"></span>EditBotRequest</a>
+                      <ul>
+                        <li><a href="#span-classcodicon-codicon-symbol-field-symbol-fieldspanbot_id-2"><span class="codicon codicon-symbol-field symbol-field"></span>bot_id</a></li>
+                        <li><a href="#span-classcodicon-codicon-symbol-field-symbol-fieldspannew_display_name"><span class="codicon codicon-symbol-field symbol-field"></span>new_display_name</a></li>
+                        <li><a href="#span-classcodicon-codicon-symbol-field-symbol-fieldspannew_avatar_url"><span class="codicon codicon-symbol-field symbol-field"></span>new_avatar_url</a></li>
+                        <li><a href="#span-classcodicon-codicon-symbol-field-symbol-fieldspaninvite-1"><span class="codicon codicon-symbol-field symbol-field"></span>invite</a></li>
+                      </ul>
+                    </li>
+                    <li><a href="#span-classcodicon-codicon-symbol-structure-symbol-structurespaneditbotresponse"><span class="codicon codicon-symbol-structure symbol-structure"></span>EditBotResponse</a></li>
+                  </ul>
+                </li>
+                <li><a href="#span-classcodicon-codicon-symbol-method-symbol-methodspandeletebot"><span class="codicon codicon-symbol-method symbol-method"></span>DeleteBot</a>
+                  <ul>
+                    <li><a href="#span-classcodicon-codicon-symbol-structure-symbol-structurespandeletebotrequest"><span class="codicon codicon-symbol-structure symbol-structure"></span>DeleteBotRequest</a>
+                      <ul>
+                        <li><a href="#span-classcodicon-codicon-symbol-field-symbol-fieldspanbot_id-3"><span class="codicon codicon-symbol-field symbol-field"></span>bot_id</a></li>
+                      </ul>
+                    </li>
+                    <li><a href="#span-classcodicon-codicon-symbol-structure-symbol-structurespandeletebotresponse"><span class="codicon codicon-symbol-structure symbol-structure"></span>DeleteBotResponse</a></li>
+                  </ul>
+                </li>
+                <li><a href="#span-classcodicon-codicon-symbol-method-symbol-methodspanpolicies"><span class="codicon codicon-symbol-method symbol-method"></span>Policies</a>
+                  <ul>
+                    <li><a href="#span-classcodicon-codicon-symbol-structure-symbol-structurespanpoliciesrequest"><span class="codicon codicon-symbol-structure symbol-structure"></span>PoliciesRequest</a></li>
+                    <li><a href="#span-classcodicon-codicon-symbol-structure-symbol-structurespanpoliciesresponse"><span class="codicon codicon-symbol-structure symbol-structure"></span>PoliciesResponse</a>
+                      <ul>
+                        <li><a href="#span-classcodicon-codicon-symbol-field-symbol-fieldspanmax_bots"><span class="codicon codicon-symbol-field symbol-field"></span>max_bots</a></li>
+                      </ul>
+                    </li>
+                  </ul>
+                </li>
+                <li><a href="#span-classcodicon-codicon-symbol-method-symbol-methodspanaddbot"><span class="codicon codicon-symbol-method symbol-method"></span>AddBot</a>
+                  <ul>
+                    <li><a href="#span-classcodicon-codicon-symbol-structure-symbol-structurespanaddbotrequest"><span class="codicon codicon-symbol-structure symbol-structure"></span>AddBotRequest</a>
+                      <ul>
+                        <li><a href="#span-classcodicon-codicon-symbol-field-symbol-fieldspanguild_id"><span class="codicon codicon-symbol-field symbol-field"></span>guild_id</a></li>
+                        <li><a href="#span-classcodicon-codicon-symbol-field-symbol-fieldspaninvite_code"><span class="codicon codicon-symbol-field symbol-field"></span>invite_code</a></li>
+                      </ul>
+                    </li>
+                    <li><a href="#span-classcodicon-codicon-symbol-structure-symbol-structurespanaddbotresponse"><span class="codicon codicon-symbol-structure symbol-structure"></span>AddBotResponse</a></li>
+                  </ul>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+    <li><a href="#standalone-message-types">Standalone Message Types</a>
+      <ul>
+        <li><a href="#span-classcodicon-codicon-symbol-structure-symbol-structurespanbot"><span class="codicon codicon-symbol-structure symbol-structure"></span>Bot</a>
+          <ul>
+            <li><a href="#span-classcodicon-codicon-symbol-field-symbol-fieldspanbot_id-4"><span class="codicon codicon-symbol-field symbol-field"></span>bot_id</a></li>
+            <li><a href="#span-classcodicon-codicon-symbol-field-symbol-fieldspandisplay_name-1"><span class="codicon codicon-symbol-field symbol-field"></span>display_name</a></li>
+            <li><a href="#span-classcodicon-codicon-symbol-field-symbol-fieldspanavatar_url-1"><span class="codicon codicon-symbol-field symbol-field"></span>avatar_url</a></li>
+            <li><a href="#span-classcodicon-codicon-symbol-field-symbol-fieldspaninvite-2"><span class="codicon codicon-symbol-field symbol-field"></span>invite</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+  </aside>
+  <div class="flex justify-center pb-8 w-full">
+    <article class="prose">
+      <h1 class="h1">Reference: protocol.bots.v1</h1>
+      <h2 id="bot-invite-codes">Bot Invite Codes</h2>
+<p>Bot invite codes work similarly to HMC URLs.
+They can either be server+code or just code,
+to refer to a bot on the current homeserver.</p>
+<p>The format for an invite code is:</p>
+<blockquote>
+<p>[url[:port]/]code</p>
+</blockquote>
+<p>where <code>code</code> is a purely alphanumeric code.</p>
+<h1 id="services">Services</h1>
+<h2 id="span-classcodicon-codicon-symbol-class-symbol-classspanbotsservice"><span class="codicon codicon-symbol-class symbol-class"></span>BotsService</h2>
+<p>The Bots service allows the management of bot accounts
+<span class="h3" aria-level="3">Fields</span></p>
+<h4 id="span-classcodicon-codicon-symbol-method-symbol-methodspanmybots"><span class="codicon codicon-symbol-method symbol-method"></span>MyBots</h4>
+<p><a href="#mybotsrequest">protocol.bots.v1.MyBotsRequest</a> -&gt; <a href="#mybotsresponse">protocol.bots.v1.MyBotsResponse</a></p>
+<p>Gets the list of bots that you own</p>
+<br/>
+<h5 id="span-classcodicon-codicon-symbol-structure-symbol-structurespanmybotsrequest"><span class="codicon codicon-symbol-structure symbol-structure"></span>MyBotsRequest</h5>
+<p>Request type for MyBots</p>
+<p>This item has no fields.</p>
+<br/>
+<h5 id="span-classcodicon-codicon-symbol-structure-symbol-structurespanmybotsresponse"><span class="codicon codicon-symbol-structure symbol-structure"></span>MyBotsResponse</h5>
+<p>Response type for MyBots</p>
+<p><span class="h5" aria-level="5">Fields</span></p>
+<h6 id="span-classcodicon-codicon-symbol-field-symbol-fieldspanbots"><span class="codicon codicon-symbol-field symbol-field"></span>bots</h6>
+<p>Type: repeated <a href="#bot">protocol.bots.v1.Bot</a></p>
+<p>The list of owned bots</p>
+<hr>
+<h4 id="span-classcodicon-codicon-symbol-method-symbol-methodspangetbot"><span class="codicon codicon-symbol-method symbol-method"></span>GetBot</h4>
+<p><a href="#getbotrequest">protocol.bots.v1.GetBotRequest</a> -&gt; <a href="#getbotresponse">protocol.bots.v1.GetBotResponse</a></p>
+<p>Gets information on a given bot</p>
+<br/>
+<h5 id="span-classcodicon-codicon-symbol-structure-symbol-structurespangetbotrequest"><span class="codicon codicon-symbol-structure symbol-structure"></span>GetBotRequest</h5>
+<p>Request type for GetBot</p>
+<p><span class="h5" aria-level="5">Fields</span></p>
+<h6 id="span-classcodicon-codicon-symbol-field-symbol-fieldspanbot_id"><span class="codicon codicon-symbol-field symbol-field"></span>bot_id</h6>
+<p>Type: optional <code>uint64</code></p>
+<p>The bot to get the information of</p>
+<br/>
+<h5 id="span-classcodicon-codicon-symbol-structure-symbol-structurespangetbotresponse"><span class="codicon codicon-symbol-structure symbol-structure"></span>GetBotResponse</h5>
+<p>Response type for GetBot</p>
+<p><span class="h5" aria-level="5">Fields</span></p>
+<h6 id="span-classcodicon-codicon-symbol-field-symbol-fieldspanbot"><span class="codicon codicon-symbol-field symbol-field"></span>bot</h6>
+<p>Type: optional <a href="#bot">protocol.bots.v1.Bot</a></p>
+<p>The requested bot</p>
+<hr>
+<h4 id="span-classcodicon-codicon-symbol-method-symbol-methodspancreatebot"><span class="codicon codicon-symbol-method symbol-method"></span>CreateBot</h4>
+<p><a href="#createbotrequest">protocol.bots.v1.CreateBotRequest</a> -&gt; <a href="#createbotresponse">protocol.bots.v1.CreateBotResponse</a></p>
+<p>Creates a new bot account</p>
+<br/>
+<h5 id="span-classcodicon-codicon-symbol-structure-symbol-structurespancreatebotrequest"><span class="codicon codicon-symbol-structure symbol-structure"></span>CreateBotRequest</h5>
+<p>Request type for CreateBot</p>
+<p><span class="h5" aria-level="5">Fields</span></p>
+<h6 id="span-classcodicon-codicon-symbol-field-symbol-fieldspandisplay_name"><span class="codicon codicon-symbol-field symbol-field"></span>display_name</h6>
+<p>Type: optional <code>string</code></p>
+<p>The bot&rsquo;s display name</p>
+<h6 id="span-classcodicon-codicon-symbol-field-symbol-fieldspanavatar_url"><span class="codicon codicon-symbol-field symbol-field"></span>avatar_url</h6>
+<p>Type: optional <code>string</code></p>
+<p>The bot&rsquo;s avatar URL</p>
+<h6 id="span-classcodicon-codicon-symbol-field-symbol-fieldspaninvite"><span class="codicon codicon-symbol-field symbol-field"></span>invite</h6>
+<p>Type: optional <code>string</code></p>
+<p>The bot&rsquo;s invite code, if it has one</p>
+<br/>
+<h5 id="span-classcodicon-codicon-symbol-structure-symbol-structurespancreatebotresponse"><span class="codicon codicon-symbol-structure symbol-structure"></span>CreateBotResponse</h5>
+<p>Response type for CreateBot</p>
+<p><span class="h5" aria-level="5">Fields</span></p>
+<h6 id="span-classcodicon-codicon-symbol-field-symbol-fieldspanbot_id-1"><span class="codicon codicon-symbol-field symbol-field"></span>bot_id</h6>
+<p>Type: optional <code>uint64</code></p>
+<p>The newly minted ID of the bot</p>
+<hr>
+<h4 id="span-classcodicon-codicon-symbol-method-symbol-methodspaneditbot"><span class="codicon codicon-symbol-method symbol-method"></span>EditBot</h4>
+<p><a href="#editbotrequest">protocol.bots.v1.EditBotRequest</a> -&gt; <a href="#editbotresponse">protocol.bots.v1.EditBotResponse</a></p>
+<p>Modifies a bot account that you own</p>
+<br/>
+<h5 id="span-classcodicon-codicon-symbol-structure-symbol-structurespaneditbotrequest"><span class="codicon codicon-symbol-structure symbol-structure"></span>EditBotRequest</h5>
+<p>Request type for EditBot</p>
+<p><span class="h5" aria-level="5">Fields</span></p>
+<h6 id="span-classcodicon-codicon-symbol-field-symbol-fieldspanbot_id-2"><span class="codicon codicon-symbol-field symbol-field"></span>bot_id</h6>
+<p>Type: optional <code>uint64</code></p>
+<p>The ID of the bot to edit</p>
+<h6 id="span-classcodicon-codicon-symbol-field-symbol-fieldspannew_display_name"><span class="codicon codicon-symbol-field symbol-field"></span>new_display_name</h6>
+<p>Type: optional <code>string</code></p>
+<p>The bot&rsquo;s new display name</p>
+<h6 id="span-classcodicon-codicon-symbol-field-symbol-fieldspannew_avatar_url"><span class="codicon codicon-symbol-field symbol-field"></span>new_avatar_url</h6>
+<p>Type: optional <code>string</code></p>
+<p>The bot&rsquo;s new avatar URL</p>
+<h6 id="span-classcodicon-codicon-symbol-field-symbol-fieldspaninvite-1"><span class="codicon codicon-symbol-field symbol-field"></span>invite</h6>
+<p>Type: optional <code>string</code></p>
+<p>The bot&rsquo;s new invite code</p>
+<br/>
+<h5 id="span-classcodicon-codicon-symbol-structure-symbol-structurespaneditbotresponse"><span class="codicon codicon-symbol-structure symbol-structure"></span>EditBotResponse</h5>
+<p>Response type for EditBot</p>
+<p>This item has no fields.</p>
+<hr>
+<h4 id="span-classcodicon-codicon-symbol-method-symbol-methodspandeletebot"><span class="codicon codicon-symbol-method symbol-method"></span>DeleteBot</h4>
+<p><a href="#deletebotrequest">protocol.bots.v1.DeleteBotRequest</a> -&gt; <a href="#deletebotresponse">protocol.bots.v1.DeleteBotResponse</a></p>
+<p>Deletes a bot account that you own</p>
+<br/>
+<h5 id="span-classcodicon-codicon-symbol-structure-symbol-structurespandeletebotrequest"><span class="codicon codicon-symbol-structure symbol-structure"></span>DeleteBotRequest</h5>
+<p>Request type for DeleteBot</p>
+<p><span class="h5" aria-level="5">Fields</span></p>
+<h6 id="span-classcodicon-codicon-symbol-field-symbol-fieldspanbot_id-3"><span class="codicon codicon-symbol-field symbol-field"></span>bot_id</h6>
+<p>Type: optional <code>uint64</code></p>
+<p>The bot to delete</p>
+<br/>
+<h5 id="span-classcodicon-codicon-symbol-structure-symbol-structurespandeletebotresponse"><span class="codicon codicon-symbol-structure symbol-structure"></span>DeleteBotResponse</h5>
+<p>Response type for DeleteBot</p>
+<p>This item has no fields.</p>
+<hr>
+<h4 id="span-classcodicon-codicon-symbol-method-symbol-methodspanpolicies"><span class="codicon codicon-symbol-method symbol-method"></span>Policies</h4>
+<p><a href="#policiesrequest">protocol.bots.v1.PoliciesRequest</a> -&gt; <a href="#policiesresponse">protocol.bots.v1.PoliciesResponse</a></p>
+<p>Server policies for bot accounts that the client
+may display in its UI or restrict actions to prevent
+request errors</p>
+<br/>
+<h5 id="span-classcodicon-codicon-symbol-structure-symbol-structurespanpoliciesrequest"><span class="codicon codicon-symbol-structure symbol-structure"></span>PoliciesRequest</h5>
+<p>Request type for Policies</p>
+<p>This item has no fields.</p>
+<br/>
+<h5 id="span-classcodicon-codicon-symbol-structure-symbol-structurespanpoliciesresponse"><span class="codicon codicon-symbol-structure symbol-structure"></span>PoliciesResponse</h5>
+<p>Response type for Policies</p>
+<p><span class="h5" aria-level="5">Fields</span></p>
+<h6 id="span-classcodicon-codicon-symbol-field-symbol-fieldspanmax_bots"><span class="codicon codicon-symbol-field symbol-field"></span>max_bots</h6>
+<p>Type: optional <code>uint32</code></p>
+<p>How many bots an individual account is allowed to own</p>
+<hr>
+<h4 id="span-classcodicon-codicon-symbol-method-symbol-methodspanaddbot"><span class="codicon codicon-symbol-method symbol-method"></span>AddBot</h4>
+<p><a href="#addbotrequest">protocol.bots.v1.AddBotRequest</a> -&gt; <a href="#addbotresponse">protocol.bots.v1.AddBotResponse</a></p>
+<p>Requests a bot to add itself to the guild.</p>
+<p>For cross-server bots, this dispatches a UserInvited
+request across sync, inviting the bot to the guild.</p>
+<br/>
+<h5 id="span-classcodicon-codicon-symbol-structure-symbol-structurespanaddbotrequest"><span class="codicon codicon-symbol-structure symbol-structure"></span>AddBotRequest</h5>
+<p>Request type for AddBot</p>
+<p><span class="h5" aria-level="5">Fields</span></p>
+<h6 id="span-classcodicon-codicon-symbol-field-symbol-fieldspanguild_id"><span class="codicon codicon-symbol-field symbol-field"></span>guild_id</h6>
+<p>Type: optional <code>uint64</code></p>
+<p>The guild to add the bot to</p>
+<h6 id="span-classcodicon-codicon-symbol-field-symbol-fieldspaninvite_code"><span class="codicon codicon-symbol-field symbol-field"></span>invite_code</h6>
+<p>Type: optional <code>string</code></p>
+<p>The bot&rsquo;s invite code.</p>
+<br/>
+<h5 id="span-classcodicon-codicon-symbol-structure-symbol-structurespanaddbotresponse"><span class="codicon codicon-symbol-structure symbol-structure"></span>AddBotResponse</h5>
+<p>Response type for AddBot</p>
+<p>This item has no fields.</p>
+<h1 id="standalone-message-types">Standalone Message Types</h1>
+<h2 id="span-classcodicon-codicon-symbol-structure-symbol-structurespanbot"><span class="codicon codicon-symbol-structure symbol-structure"></span>Bot</h2>
+<p>A description of a bot account</p>
+<p><span class="h3" aria-level="3">Fields</span></p>
+<h3 id="span-classcodicon-codicon-symbol-field-symbol-fieldspanbot_id-4"><span class="codicon codicon-symbol-field symbol-field"></span>bot_id</h3>
+<p>Type: optional <code>uint64</code></p>
+<p>The ID of the bot</p>
+<h3 id="span-classcodicon-codicon-symbol-field-symbol-fieldspandisplay_name-1"><span class="codicon codicon-symbol-field symbol-field"></span>display_name</h3>
+<p>Type: optional <code>string</code></p>
+<p>The bot&rsquo;s display name</p>
+<h3 id="span-classcodicon-codicon-symbol-field-symbol-fieldspanavatar_url-1"><span class="codicon codicon-symbol-field symbol-field"></span>avatar_url</h3>
+<p>Type: optional <code>string</code></p>
+<p>The bot&rsquo;s avatar URL</p>
+<h3 id="span-classcodicon-codicon-symbol-field-symbol-fieldspaninvite-2"><span class="codicon codicon-symbol-field symbol-field"></span>invite</h3>
+<p>Type: optional <code>string</code></p>
+<p>The bot&rsquo;s invite code, if it has one</p>
+<hr>
+
+    </article>
+  </div>
+</div>
+
+
+        </main><footer class="py-8 bg-light-900 dark:bg-dark-900 flex justify-center">
+  <div class="max-w-prose">Harmony Development</div>
+</footer>
+</body>
+</html>
