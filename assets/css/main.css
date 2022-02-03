@@ -119,6 +119,13 @@
   @apply px-4;
 }
 
+.prose-only {
+  max-width: unset;
+
+  padding-left: unset;
+  padding-right: unset;
+}
+
 .prose {
   font-size: 1.125rem;
   @apply dark:text-gray-300;
